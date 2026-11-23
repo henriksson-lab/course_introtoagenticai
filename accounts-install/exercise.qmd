@@ -327,6 +327,18 @@ Both tools release new versions every week or so. When the course and your scree
 | WinGet | `winget upgrade Anthropic.ClaudeCode` | |
 | npm | `npm install -g @anthropic-ai/claude-code@latest` | `npm install -g @openai/codex` |
 
+### Current models
+
+Each tool picks a sensible default model. *Choosing a model: families, sizes and benchmarks* explains when to switch. Model names change every few months, so check the current list in the official docs instead of trusting a list on this page:
+
+| | Claude Code | Codex |
+|---|---|---|
+| Current models | [Models overview](https://docs.claude.com/en/docs/about-claude/models/overview) | [Codex models](https://learn.chatgpt.com/docs/models) |
+| See and switch in a session | `/model` | `/model` |
+| Short names | aliases such as `opus`, `sonnet`, `haiku` that point to the newest model in each tier | the model names shown by `/model` |
+
+At the time of writing (November 2026), the tiers in Claude Code are, from most to least capable, Opus, Sonnet and Haiku, plus Fable on some plans. Codex offers a few GPT-5-family models with a choice of reasoning effort. Treat these as examples; `/model` shows what your plan offers today.
+
 ### Desktop apps and editor extensions
 
 Both tools also exist as a **desktop app** ([Claude desktop app](https://claude.com/download); the [ChatGPT desktop app](https://learn.chatgpt.com/docs/app), which includes Codex) and as **editor extensions** (for example VS Code). They use the same engine. The course uses the **terminal** version because it is the same on every system. The desktop app is a good fallback if the terminal install is blocked on your computer.

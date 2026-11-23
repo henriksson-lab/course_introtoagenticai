@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#7b8794"/></marker></defs>
+  <g font-size="20" text-anchor="middle">
+    <rect x="20" y="60" width="200" height="110" rx="10" fill="#f0f4f8" stroke="#7b8794" stroke-width="2"/>
+    <text x="120" y="105" font-weight="bold" fill="#1f2933">Training data</text>
+    <text x="120" y="135" fill="#52606d" font-size="17">books, web, code,</text>
+    <text x="120" y="157" fill="#52606d" font-size="17">images</text>
+    <rect x="275" y="60" width="180" height="110" rx="10" fill="#f0f4f8" stroke="#7b8794" stroke-width="2"/>
+    <text x="365" y="122" font-weight="bold" fill="#1f2933">Model</text>
+    <rect x="510" y="60" width="200" height="110" rx="10" fill="#f0f4f8" stroke="#7b8794" stroke-width="2"/>
+    <text x="610" y="105" font-weight="bold" fill="#1f2933">Output</text>
+    <text x="610" y="135" fill="#52606d" font-size="17">text, code, figures</text>
+    <rect x="765" y="60" width="215" height="110" rx="10" fill="#f0f4f8" stroke="#7b8794" stroke-width="2"/>
+    <text x="872" y="105" font-weight="bold" fill="#1f2933">Your publication</text>
+    <text x="872" y="135" fill="#52606d" font-size="17">page, paper, slides</text>
+  </g>
+  <line x1="222" y1="115" x2="270" y2="115" stroke="#7b8794" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="457" y1="115" x2="505" y2="115" stroke="#7b8794" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="712" y1="115" x2="760" y2="115" stroke="#7b8794" stroke-width="3" marker-end="url(#a)"/>
+  <!-- questions -->
+  <g font-size="19">
+    <rect x="20" y="215" width="300" height="150" rx="10" fill="#fff" stroke="#7b8794" stroke-width="2" stroke-dasharray="6 4"/>
+    <text x="40" y="250" font-weight="bold" fill="#52606d">1. Was training allowed?</text>
+    <text x="40" y="282" fill="#333">Decided by courts,</text>
+    <text x="40" y="308" fill="#333">case by case.</text>
+    <text x="40" y="345" fill="#7b8794" font-style="italic">Not in your hands</text>
+    <rect x="350" y="215" width="300" height="150" rx="10" fill="#e8f3f5" stroke="#2a7f8f" stroke-width="2.5"/>
+    <text x="370" y="250" font-weight="bold" fill="#2a7f8f">2. Does the output copy?</text>
+    <text x="370" y="282" fill="#333">Memorised or fetched</text>
+    <text x="370" y="308" fill="#333">material, licence headers.</text>
+    <text x="370" y="345" fill="#2a7f8f" font-weight="bold">You check it</text>
+    <rect x="680" y="215" width="300" height="150" rx="10" fill="#f1ecf8" stroke="#6b4fa0" stroke-width="2.5"/>
+    <text x="700" y="250" font-weight="bold" fill="#6b4fa0">3. Who gets credit?</text>
+    <text x="700" y="282" fill="#333">People you built on,</text>
+    <text x="700" y="308" fill="#333">the AI's role disclosed.</text>
+    <text x="700" y="345" fill="#6b4fa0" font-weight="bold">You give it</text>
+  </g>
+  <line x1="170" y1="172" x2="170" y2="212" stroke="#7b8794" stroke-width="2"/>
+  <line x1="560" y1="172" x2="500" y2="212" stroke="#2a7f8f" stroke-width="2"/>
+  <line x1="872" y1="172" x2="830" y2="212" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="500" y="415" font-size="19" fill="#1f2933" text-anchor="middle">Your responsibility sits on the right: what you publish, and whom you credit.</text>
+</svg>

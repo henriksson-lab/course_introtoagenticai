@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="1000" height="460" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="460" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker>
+  </defs>
+  <!-- tools -->
+  <rect x="40" y="40" width="240" height="70" rx="10" fill="#f6efdc" stroke="#8a6a12" stroke-width="2.5"/>
+  <text x="160" y="83" text-anchor="middle" font-size="22" font-weight="bold" fill="#8a6a12">Claude Code</text>
+  <rect x="720" y="40" width="240" height="70" rx="10" fill="#f0ecf7" stroke="#6b4fa0" stroke-width="2.5"/>
+  <text x="840" y="83" text-anchor="middle" font-size="22" font-weight="bold" fill="#6b4fa0">Codex</text>
+  <!-- CLAUDE.md -->
+  <rect x="40" y="180" width="240" height="110" rx="8" fill="#ffffff" stroke="#8a6a12" stroke-width="2"/>
+  <text x="160" y="212" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="19" font-weight="bold" fill="#333">CLAUDE.md</text>
+  <line x1="55" y1="225" x2="265" y2="225" stroke="#ddd"/>
+  <text x="160" y="262" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="22" fill="#a8324a">@AGENTS.md</text>
+  <text x="160" y="320" text-anchor="middle" font-size="16" fill="#555">one line: "import AGENTS.md"</text>
+  <!-- AGENTS.md -->
+  <rect x="380" y="150" width="240" height="270" rx="8" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="500" y="182" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="19" font-weight="bold" fill="#333">AGENTS.md</text>
+  <line x1="395" y1="195" x2="605" y2="195" stroke="#bcd"/>
+  <g font-size="16" fill="#555">
+    <text x="400" y="225"># Bird counts 2025</text>
+    <text x="400" y="255">## Where things are</text>
+    <text x="400" y="285">## Meaning</text>
+    <text x="400" y="315">## Checks</text>
+    <text x="400" y="345">## Rules</text>
+  </g>
+  <text x="500" y="400" text-anchor="middle" font-size="16" fill="#2a7f8f" font-weight="bold">the only file you edit</text>
+  <!-- arrows -->
+  <line x1="160" y1="110" x2="160" y2="176" stroke="#8a6a12" stroke-width="3" marker-end="url(#a)"/>
+  <text x="172" y="150" font-size="15" fill="#8a6a12">reads</text>
+  <line x1="280" y1="250" x2="376" y2="250" stroke="#a8324a" stroke-width="3" marker-end="url(#a)"/>
+  <text x="328" y="240" text-anchor="middle" font-size="15" fill="#a8324a">imports</text>
+  <path d="M840,110 C840,250 720,280 624,280" fill="none" stroke="#6b4fa0" stroke-width="3" marker-end="url(#a)"/>
+  <text x="850" y="190" font-size="15" fill="#6b4fa0">reads</text>
+  <text x="500" y="448" text-anchor="middle" font-size="17" fill="#333">Works whatever the version, and for any other tool that reads AGENTS.md.</text>
+</svg>

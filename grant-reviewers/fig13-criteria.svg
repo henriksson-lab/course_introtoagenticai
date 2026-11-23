@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="500" fill="#fff"/>
+  <text x="20" y="34" font-size="20" font-weight="bold" fill="#333">Swedish Research Council, research grants: four basic criteria</text>
+  <g font-size="18">
+    <rect x="20" y="55" width="560" height="52" rx="6" fill="#2a7f8f"/><text x="35" y="88" fill="#fff" font-weight="bold">Scientific quality of the proposed research</text>
+    <rect x="20" y="115" width="560" height="52" rx="6" fill="#2a7f8f"/><text x="35" y="148" fill="#fff" font-weight="bold">Novelty and originality</text>
+    <rect x="20" y="175" width="560" height="52" rx="6" fill="#2a7f8f"/><text x="35" y="208" fill="#fff" font-weight="bold">Merits of the applicant(s)</text>
+    <rect x="20" y="235" width="560" height="52" rx="6" fill="#8a6a12"/><text x="35" y="268" fill="#fff" font-weight="bold">Feasibility</text>
+    <rect x="20" y="295" width="560" height="52" rx="6" fill="#6b4fa0"/><text x="35" y="328" fill="#fff" font-weight="bold">Overall grade</text>
+    <text x="600" y="88" fill="#333">1 to 7</text><text x="600" y="148" fill="#333">1 to 7</text><text x="600" y="208" fill="#333">1 to 7</text>
+    <text x="600" y="268" fill="#333">1 to 3</text><text x="600" y="328" fill="#333">1 to 7</text>
+  </g>
+  <rect x="690" y="55" width="290" height="232" rx="8" fill="#f4f4f4"/>
+  <g font-size="16" fill="#333">
+    <text x="705" y="82" font-weight="bold">Seven-point scale</text>
+    <text x="705" y="106">7 Outstanding</text><text x="705" y="128">6 Excellent</text><text x="705" y="150">5 Very good to excellent</text><text x="705" y="172">4 Very good</text><text x="705" y="194">3 Good</text><text x="705" y="216">2 Weak</text><text x="705" y="238">1 Poor</text>
+  </g>
+  <rect x="690" y="295" width="290" height="80" rx="8" fill="#f6f1e3"/>
+  <g font-size="16" fill="#333"><text x="705" y="320" font-weight="bold">Three-point scale</text><text x="705" y="343">3 Feasible · 2 Partly feasible</text><text x="705" y="364">1 Not feasible</text></g>
+  <rect x="20" y="388" width="960" height="80" rx="8" fill="#e3f0f2" stroke="#2a7f8f"/>
+  <text x="40" y="420" font-size="18" fill="#333"><tspan font-weight="bold">ERC:</tspan> one criterion, scientific excellence, for the project and the principal investigator.</text>
+  <text x="40" y="448" font-size="18" fill="#333">Criteria differ by funder and grant type: copy them from the current call text.</text>
+  <text x="980" y="496" font-size="13" fill="#999" text-anchor="end">VR criteria and scales as published on vr.se, November 2026</text>
+</svg>

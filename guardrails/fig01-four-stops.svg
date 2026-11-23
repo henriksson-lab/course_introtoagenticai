@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="560" fill="#ffffff"/>
+  <!-- panel 1 -->
+  <g>
+    <text x="30" y="34" font-size="19" font-weight="bold" fill="#2a7f8f">Monday: a virologist's literature summary</text>
+    <rect x="30" y="46" width="450" height="200" rx="8" fill="#1f2430"/>
+    <g font-family="Menlo, Consolas, monospace" font-size="16">
+      <text x="48" y="78" fill="#e8e8e8">• Reading 12 abstracts on viral</text>
+      <text x="48" y="100" fill="#e8e8e8">  entry mechanisms ...</text>
+      <text x="48" y="128" fill="#e8e8e8">• Writing summary.md (4 of 12)</text>
+      <text x="48" y="170" fill="#e07a8a">Error: this request was blocked</text>
+      <text x="48" y="192" fill="#e07a8a">by our safety system. Start a</text>
+      <text x="48" y="214" fill="#e07a8a">new session to continue.</text>
+    </g>
+  </g>
+  <!-- panel 2 -->
+  <g>
+    <text x="520" y="34" font-size="19" font-weight="bold" fill="#6b4fa0">Tuesday: the department's IT person</text>
+    <rect x="520" y="46" width="450" height="200" rx="8" fill="#f4f7fa" stroke="#c9d2da" stroke-width="2"/>
+    <text x="540" y="80" font-size="17" fill="#1b2a3a" font-weight="bold">Script to find open ports on</text>
+    <text x="540" y="102" font-size="17" fill="#1b2a3a" font-weight="bold">our lab's network?</text>
+    <text x="540" y="140" font-size="17" fill="#3a4a5a">I can help with that if you are</text>
+    <text x="540" y="162" font-size="17" fill="#3a4a5a">authorised to scan this network.</text>
+    <text x="540" y="184" font-size="17" fill="#3a4a5a">Can you tell me a bit more about</text>
+    <text x="540" y="206" font-size="17" fill="#3a4a5a">the setting ...</text>
+  </g>
+  <!-- panel 3 -->
+  <g>
+    <text x="30" y="300" font-size="19" font-weight="bold" fill="#8a6a12">Wednesday: preparing a grant</text>
+    <rect x="30" y="312" width="450" height="200" rx="8" fill="#f4f7fa" stroke="#c9d2da" stroke-width="2"/>
+    <text x="50" y="346" font-size="17" fill="#1b2a3a" font-weight="bold">Find the home address and family</text>
+    <text x="50" y="368" font-size="17" fill="#1b2a3a" font-weight="bold">of each panel member.</text>
+    <text x="50" y="406" font-size="17" fill="#3a4a5a">I won't look up private details like</text>
+    <text x="50" y="428" font-size="17" fill="#3a4a5a">home addresses. I can summarise each</text>
+    <text x="50" y="450" font-size="17" fill="#3a4a5a">person's published research and</text>
+    <text x="50" y="472" font-size="17" fill="#3a4a5a">public professional profile instead.</text>
+  </g>
+  <!-- panel 4 -->
+  <g>
+    <text x="520" y="300" font-size="19" font-weight="bold" fill="#a8324a">Thursday: a long analysis session</text>
+    <rect x="520" y="312" width="450" height="200" rx="8" fill="#1f2430"/>
+    <g font-family="Menlo, Consolas, monospace" font-size="16">
+      <text x="538" y="344" fill="#e8e8e8">• Fitting model 7 of 20 ...</text>
+      <text x="538" y="392" fill="#e0c27a">You have reached your usage</text>
+      <text x="538" y="414" fill="#e0c27a">limit. It resets at 15:00.</text>
+    </g>
+  </g>
+  <text x="975" y="548" text-anchor="end" font-size="14" fill="#8a97a5">illustrative; wording varies by tool and version</text>
+  <text x="30" y="548" font-size="18" fill="#1b2a3a" font-weight="bold">Four stops, four different causes.</text>
+</svg>

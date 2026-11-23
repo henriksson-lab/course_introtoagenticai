@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="1000" height="480" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <rect width="1000" height="480" fill="#fff"/>
+  <!-- laptop -->
+  <rect x="50" y="110" width="250" height="160" rx="10" fill="#f4f4f4" stroke="#555" stroke-width="2"/>
+  <rect x="25" y="270" width="300" height="18" rx="6" fill="#ccc" stroke="#555" stroke-width="2"/>
+  <text x="175" y="150" font-size="20" font-weight="bold" fill="#2a7f8f" text-anchor="middle">plant-growth/</text>
+  <text x="80" y="185" font-size="17" fill="#333">README.md</text>
+  <text x="80" y="210" font-size="17" fill="#333">data/  scripts/</text>
+  <text x="80" y="235" font-size="17" fill="#333">results/  .git (history)</text>
+  <text x="175" y="320" font-size="18" fill="#333" text-anchor="middle">your laptop: the only copy</text>
+  <!-- emails -->
+  <g font-size="17">
+    <rect x="420" y="60" width="330" height="70" rx="8" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+    <text x="435" y="88" fill="#a8324a" font-weight="bold">Re: Re: figure?</text>
+    <text x="435" y="114" fill="#333">plant-growth_v3_final.zip</text>
+    <rect x="440" y="160" width="330" height="70" rx="8" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+    <text x="455" y="188" fill="#a8324a" font-weight="bold">Fwd: new version</text>
+    <text x="455" y="214" fill="#333">plant-growth_v4_REALLYfinal.zip</text>
+    <rect x="460" y="260" width="330" height="70" rx="8" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+    <text x="475" y="288" fill="#a8324a" font-weight="bold">which one is current?</text>
+    <text x="475" y="314" fill="#333">plant-growth_v4b.zip</text>
+  </g>
+  <g stroke="#555" stroke-width="2.5" fill="none" marker-end="url(#ar)">
+    <line x1="305" y1="160" x2="412" y2="100"/>
+    <line x1="305" y1="190" x2="432" y2="195"/>
+    <line x1="305" y1="220" x2="452" y2="290"/>
+  </g>
+  <!-- colleague -->
+  <circle cx="890" cy="170" r="32" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+  <rect x="845" y="210" width="90" height="80" rx="30" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="890" y="325" font-size="18" fill="#6b4fa0" text-anchor="middle">colleague</text>
+  <text x="500" y="400" font-size="20" fill="#333" text-anchor="middle">Lost laptop = lost project.  Three zips = three versions.</text>
+  <text x="500" y="435" font-size="20" fill="#333" text-anchor="middle">Nobody can see the history, only a snapshot.</text>
+</svg>

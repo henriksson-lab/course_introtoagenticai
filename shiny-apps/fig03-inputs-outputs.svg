@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="420" fill="#ffffff"/>
+  <text x="140" y="40" font-size="22" fill="#8a6a12" text-anchor="middle" font-weight="bold" xml:space="preserve">Inputs</text>
+  <rect x="20" y="60" width="240" height="70" rx="10" fill="#f5efdf" stroke="#8a6a12" stroke-width="2"/>
+  <text x="140.0" y="100.95" font-size="17" fill="#8a6a12" text-anchor="middle" font-weight="normal" xml:space="preserve">sites (tick boxes)</text>
+  <rect x="20" y="150" width="240" height="70" rx="10" fill="#f5efdf" stroke="#8a6a12" stroke-width="2"/>
+  <text x="140.0" y="190.95" font-size="17" fill="#8a6a12" text-anchor="middle" font-weight="normal" xml:space="preserve">dates (from, to)</text>
+  <rect x="20" y="240" width="240" height="70" rx="10" fill="#f5efdf" stroke="#8a6a12" stroke-width="2"/>
+  <text x="140.0" y="280.95" font-size="17" fill="#8a6a12" text-anchor="middle" font-weight="normal" xml:space="preserve">measurement (menu)</text>
+  <rect x="370" y="140" width="240" height="110" rx="10" fill="#eee9f6" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="490.0" y="189.3" font-size="19" fill="#6b4fa0" text-anchor="middle" font-weight="bold" xml:space="preserve">Selected rows</text>
+  <text x="490.0" y="214.0" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">the data, filtered</text>
+  <line x1="262" y1="95" x2="365" y2="195" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <line x1="262" y1="185" x2="365" y2="195" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <line x1="262" y1="275" x2="365" y2="195" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <text x="860" y="40" font-size="22" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">Outputs</text>
+  <rect x="740" y="60" width="240" height="70" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="860.0" y="100.95" font-size="17" fill="#2a7f8f" text-anchor="middle" font-weight="normal" xml:space="preserve">plot over time</text>
+  <line x1="612" y1="195" x2="735" y2="95" stroke="#2a7f8f" stroke-width="2.5" marker-end="url(#arwt)"/>
+  <rect x="740" y="150" width="240" height="70" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="860.0" y="190.95" font-size="17" fill="#2a7f8f" text-anchor="middle" font-weight="normal" xml:space="preserve">summary table</text>
+  <line x1="612" y1="195" x2="735" y2="185" stroke="#2a7f8f" stroke-width="2.5" marker-end="url(#arwt)"/>
+  <rect x="740" y="240" width="240" height="70" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="860.0" y="280.95" font-size="17" fill="#2a7f8f" text-anchor="middle" font-weight="normal" xml:space="preserve">download button</text>
+  <line x1="612" y1="195" x2="735" y2="275" stroke="#2a7f8f" stroke-width="2.5" marker-end="url(#arwt)"/>
+  <text x="500" y="360" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">Change an input, and everything that depends on it is recomputed.</text>
+  <text x="500" y="392" font-size="18" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">The script describes these connections once; Shiny keeps them up to date.</text>
+</svg>

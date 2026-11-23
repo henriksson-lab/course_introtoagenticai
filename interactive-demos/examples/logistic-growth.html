@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Logistic growth</title>
+<!--
+  Logistic growth: a single self-contained demo (no libraries, no network).
+  Learning goal: growth looks exponential at first, then slows as the population
+  approaches the carrying capacity K; the growth is fastest at N = K/2.
+  Model: dN/dt = r N (1 - N/K), exact solution N(t) = K / (1 + ((K - N0)/N0) e^(-r t)).
+  Known cases used to check it: N(t_half) = K/2 with t_half = ln((K - N0)/N0) / r;
+  early doubling time ln(2)/r; a step-by-step numerical solution must match the formula.
+  Part of the course "Introduction to agentic AI", unit "Interactive demos".
+-->
+<style>
+  :root {
+    --teal: #2a7f8f; --purple: #6b4fa0; --crimson: #a8324a; --ochre: #8a6a12;
+    --ink: #222; --grey: #666; --light: #e6e6e6; --bg: #fff;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 12px; font-family: Helvetica, Arial, sans-serif;
+         color: var(--ink); background: var(--bg); font-size: 16px; line-height: 1.3; }
+  h1 { font-size: 22px; margin: 0 0 4px 0; }
+  .lead { margin: 0 0 10px 0; color: var(--grey); }
+  .wrap { display: flex; gap: 18px; align-items: flex-start; }
+  .controls { flex: 0 0 320px; }
+  .plot { flex: 1 1 auto; min-width: 0; max-width: 740px; }
+  .ctl { margin-bottom: 8px; }
+  .ctl label { display: flex; justify-content: space-between; font-weight: bold; }
+  .ctl output { font-weight: normal; font-variant-numeric: tabular-nums; }
+  .ctl .hint { font-size: 14px; color: var(--grey); }
+  input[type=range] { width: 100%; height: 28px; accent-color: var(--teal); }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+  button { font: inherit; font-size: 15px; padding: 6px 10px; border-radius: 6px;
+           border: 1px solid var(--teal); background: #e3f0f2; color: var(--ink); cursor: pointer; }
+  button:hover { background: #cfe5e9; }
+  :focus-visible { outline: 3px solid var(--ochre); outline-offset: 2px; }
+  .check label { font-weight: normal; display: block; margin: 4px 0; }
+  .readout { background: #f5f5f5; border-radius: 8px; padding: 8px 10px; font-size: 15px;
+             font-variant-numeric: tabular-nums; }
+  .readout b { color: var(--teal); }
+  #checkResult { margin-top: 6px; font-size: 15px; }
+  .ok { color: var(--teal); font-weight: bold; }
+  .bad { color: var(--crimson); font-weight: bold; }
+  svg { width: 100%; height: auto; display: block; touch-action: none; }
+  .axis text { font-size: 15px; fill: var(--grey); }
+  .klabel { font-size: 15px; fill: var(--crimson); font-weight: bold; }
+  .legend { font-size: 15px; }
+  @media (max-width: 760px) {
+    .wrap { flex-direction: column; }
+    .controls { flex: none; width: 100%; }
+  }
+</style>
+</head>
+<body>
+<h1>Why does a growing population level off?</h1>
+<p class="lead">Move the sliders, or drag the red line (the carrying capacity <i>K</i>). Watch where the curve is steepest.</p>
+
+<div class="wrap">
+  <div class="controls">
+    <div class="ctl">
+      <label for="r">Growth rate <i>r</i> <output id="rOut" for="r"></output></label>
+      <input type="range" id="r" min="0.1" max="1.5" step="0.05" value="0.5">
+      <div class="hint">per day; early doubling time = ln 2 / <i>r</i></div>
+    </div>
+    <div class="ctl">
+      <label for="K">Carrying capacity <i>K</i> <output id="KOut" for="K"></output></label>
+      <input type="range" id="K" min="100" max="1000" step="10" value="800">
+      <div class="hint">the most individuals the habitat can support</div>
+    </div>
+    <div class="ctl">
+      <label for="N0">Start population <i>N</i><sub>0</sub> <output id="N0Out" for="N0"></output></label>
+      <input type="range" id="N0" min="1" max="100" step="1" value="10">
+    </div>
+    <div class="check">
+      <label><input type="checkbox" id="showExp"> Compare with unlimited (exponential) growth</label>
+      <label><input type="checkbox" id="showHalf" checked> Mark the steepest point</label>
+    </div>
+    <div class="row">
+      <button id="presetFlask" type="button" title="Bacteria in a flask: fast growth, high K">Bacteria</button>
+      <button id="presetDeer" type="button" title="Deer on an island: slow growth, low K">Deer</button>
+      <button id="reset" type="button">Reset</button>
+    </div>
+    <div class="readout" aria-live="polite" id="readout"></div>
+    <div class="row">
+      <button id="checkBtn" type="button">Check the model</button>
+    </div>
+    <div id="checkResult" aria-live="polite"></div>
+  </div>
+
+  <div class="plot">
+    <svg id="svg" viewBox="0 0 720 470" role="img" aria-labelledby="svgTitle svgDesc">
+      <title id="svgTitle">Population size over time</title>
+      <desc id="svgDesc"></desc>
+    </svg>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var NS = "http://www.w3.org/2000/svg";
+  var svg = document.getElementById("svg");
+  var W = 720, H = 470, L = 70, R = 20, T = 46, B = 60;
+  var TMAX = 40, NMAX = 1100;
+  var DEFAULTS = { r: 0.5, K: 800, N0: 10 };
+
+  var el = function (id) { return document.getElementById(id); };
+  var sR = el("r"), sK = el("K"), sN0 = el("N0");
+
+  function x(t) { return L + (t / TMAX) * (W - L - R); }
+  function y(n) { return H - B - (n / NMAX) * (H - T - B); }
+  function nFromY(py) { return (H - B - py) / (H - T - B) * NMAX; }
+
+  // The model. Exact solution of dN/dt = r N (1 - N/K).
+  function logistic(t, r, K, N0) { return K / (1 + ((K - N0) / N0) * Math.exp(-r * t)); }
+  function tHalf(r, K, N0) { return N0 < K / 2 ? Math.log((K - N0) / N0) / r : NaN; }
+
+  function make(tag, attrs, text) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
+
+  // Static layer: axes and grid.
+  var axes = make("g", { "class": "axis" });
+  for (var t = 0; t <= TMAX; t += 5) {
+    axes.appendChild(make("line", { x1: x(t), x2: x(t), y1: y(0), y2: y(NMAX), stroke: "#eee" }));
+    axes.appendChild(make("text", { x: x(t), y: H - B + 22, "text-anchor": "middle" }, t));
+  }
+  for (var n = 0; n <= NMAX; n += 200) {
+    axes.appendChild(make("line", { x1: x(0), x2: x(TMAX), y1: y(n), y2: y(n), stroke: "#eee" }));
+    axes.appendChild(make("text", { x: L - 8, y: y(n) + 5, "text-anchor": "end" }, n));
+  }
+  axes.appendChild(make("line", { x1: x(0), x2: x(TMAX), y1: y(0), y2: y(0), stroke: "#999" }));
+  axes.appendChild(make("line", { x1: x(0), x2: x(0), y1: y(0), y2: y(NMAX), stroke: "#999" }));
+  axes.appendChild(make("text", { x: (L + W - R) / 2, y: H - 12, "text-anchor": "middle" }, "time (days)"));
+  axes.appendChild(make("text", { x: 18, y: (T + H - B) / 2, "text-anchor": "middle",
+    transform: "rotate(-90 18 " + (T + H - B) / 2 + ")" }, "population size N"));
+  svg.appendChild(axes);
+
+  var clip = make("clipPath", { id: "plotArea" });
+  clip.appendChild(make("rect", { x: L, y: T, width: W - L - R, height: H - T - B }));
+  svg.appendChild(clip);
+
+  var expPath = make("path", { fill: "none", stroke: "#6b4fa0", "stroke-width": 3,
+    "stroke-dasharray": "8 6", "clip-path": "url(#plotArea)" });
+  var curve = make("path", { fill: "none", stroke: "#2a7f8f", "stroke-width": 4 });
+  var kLine = make("line", { stroke: "#a8324a", "stroke-width": 3, "stroke-dasharray": "10 6" });
+  var kHit = make("rect", { fill: "#ffffff", "fill-opacity": 0, style: "cursor: ns-resize" });
+  var kHandle = make("circle", { r: 11, fill: "#a8324a", style: "cursor: ns-resize" });
+  var kText = make("text", { "class": "klabel", "text-anchor": "end" });
+  var halfGroup = make("g", {});
+  var halfV = make("line", { stroke: "#8a6a12", "stroke-width": 2, "stroke-dasharray": "4 4" });
+  var halfH = make("line", { stroke: "#8a6a12", "stroke-width": 2, "stroke-dasharray": "4 4" });
+  var halfDot = make("circle", { r: 8, fill: "#8a6a12" });
+  var halfText = make("text", { "font-size": 15, fill: "#8a6a12", "font-weight": "bold" });
+  [halfV, halfH, halfDot, halfText].forEach(function (e) { halfGroup.appendChild(e); });
+  var legend = make("g", { "class": "legend" });
+  legend.appendChild(make("line", { x1: L, x2: L + 40, y1: 20, y2: 20, stroke: "#2a7f8f", "stroke-width": 4 }));
+  legend.appendChild(make("text", { x: L + 48, y: 25 }, "logistic growth"));
+  var legExp = make("g", {});
+  legExp.appendChild(make("line", { x1: L + 200, x2: L + 240, y1: 20, y2: 20, stroke: "#6b4fa0", "stroke-width": 3, "stroke-dasharray": "8 6" }));
+  legExp.appendChild(make("text", { x: L + 248, y: 25 }, "unlimited growth"));
+  legend.appendChild(legExp);
+
+  [expPath, curve, halfGroup, kLine, kHit, kHandle, kText, legend].forEach(function (e) { svg.appendChild(e); });
+
+  function fmt(v, d) { return Number(v).toFixed(d); }
+
+  function draw() {
+    var r = +sR.value, K = +sK.value, N0 = Math.min(+sN0.value, K);
+    el("rOut").textContent = fmt(r, 2);
+    el("KOut").textContent = K;
+    el("N0Out").textContent = N0;
+
+    var d = "", de = "";
+    for (var i = 0; i <= 400; i++) {
+      var t = TMAX * i / 400;
+      d += (i ? "L" : "M") + x(t).toFixed(1) + "," + y(logistic(t, r, K, N0)).toFixed(1);
+      var ne = Math.min(N0 * Math.exp(r * t), NMAX * 2);
+      de += (i ? "L" : "M") + x(t).toFixed(1) + "," + y(ne).toFixed(1);
+    }
+    curve.setAttribute("d", d);
+    expPath.setAttribute("d", de);
+    var showExp = el("showExp").checked;
+    expPath.style.display = showExp ? "" : "none";
+    legExp.style.display = showExp ? "" : "none";
+
+    kLine.setAttribute("x1", x(0)); kLine.setAttribute("x2", x(TMAX));
+    kLine.setAttribute("y1", y(K)); kLine.setAttribute("y2", y(K));
+    kHit.setAttribute("x", x(0)); kHit.setAttribute("width", x(TMAX) - x(0));
+    kHit.setAttribute("y", y(K) - 14); kHit.setAttribute("height", 28);
+    kHandle.setAttribute("cx", x(TMAX) - 14); kHandle.setAttribute("cy", y(K));
+    kText.setAttribute("x", x(TMAX) - 32); kText.setAttribute("y", y(K) - 12);
+    kText.textContent = "K = " + K + " (drag me)";
+
+    var th = tHalf(r, K, N0);
+    var showHalf = el("showHalf").checked && isFinite(th) && th <= TMAX;
+    halfGroup.style.display = showHalf ? "" : "none";
+    if (showHalf) {
+      halfV.setAttribute("x1", x(th)); halfV.setAttribute("x2", x(th));
+      halfV.setAttribute("y1", y(0)); halfV.setAttribute("y2", y(K / 2));
+      halfH.setAttribute("x1", x(0)); halfH.setAttribute("x2", x(th));
+      halfH.setAttribute("y1", y(K / 2)); halfH.setAttribute("y2", y(K / 2));
+      halfDot.setAttribute("cx", x(th)); halfDot.setAttribute("cy", y(K / 2));
+      var right = x(th) < W - 260;
+      halfText.setAttribute("x", x(th) + (right ? 14 : -14));
+      halfText.setAttribute("text-anchor", right ? "start" : "end");
+      halfText.setAttribute("y", y(K / 2) + 24);
+      halfText.textContent = "steepest at N = K/2";
+    }
+
+    var dbl = Math.log(2) / r;
+    var html = "Early doubling time: <b>" + fmt(dbl, 1) + " days</b><br>";
+    if (isFinite(th)) {
+      html += "Half of K reached at day <b>" + fmt(th, 1) + "</b>" + (th > TMAX ? " (off the plot)" : "") + "<br>";
+    } else {
+      html += "Start is above K/2: growth only slows down.<br>";
+    }
+    if (isFinite(th)) {
+      html += "Fastest growth: <b>" + fmt(r * K / 4, 0) + " per day</b> (= r&middot;K/4)<br>";
+    } else {
+      html += "Fastest growth: <b>" + fmt(r * N0 * (1 - N0 / K), 0) + " per day</b>, at the start<br>";
+    }
+    html += "Population at day " + TMAX + ": <b>" + fmt(logistic(TMAX, r, K, N0), 0) + "</b>";
+    el("readout").innerHTML = html;
+    el("svgDesc").textContent = "S-shaped curve starting at " + N0 + ", levelling off at K = " + K +
+      (isFinite(th) ? "; half of K is reached at day " + fmt(th, 1) + "." : ".");
+    el("checkResult").textContent = "";
+  }
+
+  // Check the model against known cases: a numerical solution of the differential
+  // equation must agree with the formula, and N(t_half) must equal K/2.
+  function checkModel() {
+    var r = +sR.value, K = +sK.value, N0 = Math.min(+sN0.value, K);
+    var dt = 0.0005, n = N0, maxDiff = 0;
+    for (var i = 1; i * dt <= TMAX + 1e-9; i++) {
+      var k1 = r * n * (1 - n / K);                      // RK2 (midpoint) step
+      var nm = n + 0.5 * dt * k1;
+      n = n + dt * r * nm * (1 - nm / K);
+      if (i % 200 === 0) maxDiff = Math.max(maxDiff, Math.abs(n - logistic(i * dt, r, K, N0)));
+    }
+    var th = tHalf(r, K, N0), out = el("checkResult");
+    var lines = [];
+    var ok1 = maxDiff < 0.01 * K;
+    lines.push("Step-by-step solution vs formula: largest difference " + fmt(maxDiff, 3) +
+      " individuals " + (ok1 ? "<span class='ok'>(agrees)</span>" : "<span class='bad'>(does NOT agree)</span>"));
+    if (isFinite(th)) {
+      var nh = logistic(th, r, K, N0), ok2 = Math.abs(nh - K / 2) < 1e-6 * K;
+      lines.push("N at day " + fmt(th, 2) + " = " + fmt(nh, 2) + ", should be K/2 = " + fmt(K / 2, 2) +
+        " " + (ok2 ? "<span class='ok'>(agrees)</span>" : "<span class='bad'>(does NOT agree)</span>"));
+    }
+    out.innerHTML = lines.join("<br>");
+  }
+
+  function set(r, K, N0) { sR.value = r; sK.value = K; sN0.value = N0; draw(); }
+
+  [sR, sK, sN0].forEach(function (s) { s.addEventListener("input", draw); });
+  el("showExp").addEventListener("change", draw);
+  el("showHalf").addEventListener("change", draw);
+  el("reset").addEventListener("click", function () { set(DEFAULTS.r, DEFAULTS.K, DEFAULTS.N0); });
+  el("presetFlask").addEventListener("click", function () { set(1.0, 1000, 2); });
+  el("presetDeer").addEventListener("click", function () { set(0.25, 400, 20); });
+  el("checkBtn").addEventListener("click", checkModel);
+
+  // Drag the K line with mouse, pen or finger (pointer events).
+  var dragging = false;
+  function svgY(evt) {
+    var pt = svg.createSVGPoint(); pt.x = evt.clientX; pt.y = evt.clientY;
+    return pt.matrixTransform(svg.getScreenCTM().inverse()).y;
+  }
+  function startDrag(evt) { dragging = true; svg.setPointerCapture(evt.pointerId); evt.preventDefault(); }
+  kHit.addEventListener("pointerdown", startDrag);
+  kHandle.addEventListener("pointerdown", startDrag);
+  svg.addEventListener("pointermove", function (evt) {
+    if (!dragging) return;
+    var v = Math.round(nFromY(svgY(evt)) / 10) * 10;
+    sK.value = Math.max(+sK.min, Math.min(+sK.max, v));
+    draw();
+  });
+  function stop() { dragging = false; }
+  svg.addEventListener("pointerup", stop);
+  svg.addEventListener("pointercancel", stop);
+
+  draw();
+})();
+</script>
+</body>
+</html>

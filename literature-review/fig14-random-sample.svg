@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#fff"/>
+  <text x="20" y="34" font-size="19" fill="#333">40 rows. The script picks 5 at random (seed written down), you read them.</text>
+  <g id="grid">
+    <g fill="#f0f0f0" stroke="#ccc">
+      <rect x="20" y="60" width="44" height="36"/><rect x="68" y="60" width="44" height="36"/><rect x="116" y="60" width="44" height="36"/><rect x="164" y="60" width="44" height="36"/><rect x="212" y="60" width="44" height="36"/><rect x="260" y="60" width="44" height="36"/><rect x="308" y="60" width="44" height="36"/><rect x="356" y="60" width="44" height="36"/><rect x="404" y="60" width="44" height="36"/><rect x="452" y="60" width="44" height="36"/>
+      <rect x="20" y="100" width="44" height="36"/><rect x="68" y="100" width="44" height="36"/><rect x="116" y="100" width="44" height="36"/><rect x="164" y="100" width="44" height="36"/><rect x="212" y="100" width="44" height="36"/><rect x="260" y="100" width="44" height="36"/><rect x="308" y="100" width="44" height="36"/><rect x="356" y="100" width="44" height="36"/><rect x="404" y="100" width="44" height="36"/><rect x="452" y="100" width="44" height="36"/>
+      <rect x="20" y="140" width="44" height="36"/><rect x="68" y="140" width="44" height="36"/><rect x="116" y="140" width="44" height="36"/><rect x="164" y="140" width="44" height="36"/><rect x="212" y="140" width="44" height="36"/><rect x="260" y="140" width="44" height="36"/><rect x="308" y="140" width="44" height="36"/><rect x="356" y="140" width="44" height="36"/><rect x="404" y="140" width="44" height="36"/><rect x="452" y="140" width="44" height="36"/>
+      <rect x="20" y="180" width="44" height="36"/><rect x="68" y="180" width="44" height="36"/><rect x="116" y="180" width="44" height="36"/><rect x="164" y="180" width="44" height="36"/><rect x="212" y="180" width="44" height="36"/><rect x="260" y="180" width="44" height="36"/><rect x="308" y="180" width="44" height="36"/><rect x="356" y="180" width="44" height="36"/><rect x="404" y="180" width="44" height="36"/><rect x="452" y="180" width="44" height="36"/>
+    </g>
+    <!-- picked: 3, 14, 22, 29, 38 -->
+    <rect x="116" y="60" width="44" height="36" fill="#2a7f8f"/>
+    <rect x="164" y="100" width="44" height="36" fill="#2a7f8f"/>
+    <rect x="68" y="140" width="44" height="36" fill="#a8324a"/>
+    <rect x="452" y="140" width="44" height="36" fill="#2a7f8f"/>
+    <rect x="356" y="180" width="44" height="36" fill="#2a7f8f"/>
+    <g font-size="16" fill="#fff" font-weight="bold" text-anchor="middle">
+      <text x="138" y="84">3</text><text x="186" y="124">14</text><text x="90" y="164">22</text><text x="474" y="164">30</text><text x="378" y="204">38</text>
+    </g>
+  </g>
+  <g font-size="17">
+    <rect x="540" y="60" width="440" height="156" rx="6" fill="#fafafa" stroke="#bbb"/>
+    <text x="555" y="88" font-weight="bold" fill="#333">notes/hand-checks.md</text>
+    <g font-family="Courier New, monospace" font-size="15" fill="#333" xml:space="preserve">
+      <text x="555" y="116">row  3  ok</text>
+      <text x="555" y="138">row 14  ok</text>
+      <text x="555" y="160" fill="#a8324a">row 22  claim says "causes";</text>
+      <text x="555" y="180" fill="#a8324a">        abstract says "associated"</text>
+      <text x="555" y="202">row 30  ok        row 38  ok</text>
+    </g>
+  </g>
+  <g font-size="18" fill="#333">
+    <text x="20" y="270"><tspan font-weight="bold" fill="#a8324a">1 of 5 wrong</tspan> is not "a small error rate". It means: fix that row,</text>
+    <text x="20" y="298">ask the agent to recheck every claim for the same kind of mistake, then draw 5 new rows.</text>
+    <text x="20" y="346"><tspan font-weight="bold" fill="#2a7f8f">5 of 5 right</tspan> does not prove the table is perfect.</text>
+    <text x="20" y="374">It tells you there is no common kind of error you have missed.</text>
+  </g>
+</svg>

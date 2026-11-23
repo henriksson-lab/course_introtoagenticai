@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="500" fill="#fff"/>
+  <rect x="20" y="15" width="960" height="455" rx="10" fill="#1f2430"/>
+  <circle cx="45" cy="37" r="7" fill="#a8324a"/><circle cx="68" cy="37" r="7" fill="#8a6a12"/><circle cx="91" cy="37" r="7" fill="#2a7f8f"/>
+  <text x="500" y="43" font-size="16" fill="#aab" text-anchor="middle">terminal: my-project</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="16" xml:space="preserve">
+    <text x="45" y="80" fill="#8fd3df">&gt; Find three reviews on drought tolerance in barley, 2020-2024.</text>
+    <text x="45" y="112" fill="#c9b6f0">• pubmed - search_articles (query: "barley drought tolerance",</text>
+    <text x="45" y="134" fill="#c9b6f0">    type: review, years: 2020-2024)</text>
+    <text x="45" y="160" fill="#9a9aa8">  12 results returned</text>
+    <text x="45" y="196" fill="#e8e8e8">  PMID 3xxxxxx1  Title A ...   Journal X, 2021</text>
+    <text x="45" y="220" fill="#e8e8e8">  PMID 3xxxxxx2  Title B ...   Journal Y, 2022</text>
+    <text x="45" y="244" fill="#e8e8e8">  PMID 3xxxxxx3  Title C ...   Journal Z, 2024</text>
+    <text x="45" y="296" fill="#e8e8e8">The first review concludes that root traits explain most</text>
+    <text x="45" y="320" fill="#e8e8e8">of the variation in drought tolerance, while the second ...</text>
+  </g>
+  <rect x="35" y="175" width="930" height="82" rx="6" fill="none" stroke="#2a7f8f" stroke-width="3"/>
+  <rect x="35" y="274" width="930" height="60" rx="6" fill="none" stroke="#a8324a" stroke-width="3" stroke-dasharray="8 5"/>
+  <rect x="45" y="360" width="440" height="90" rx="8" fill="#e3f0f2"/>
+  <text x="60" y="392" font-size="18" font-weight="bold" fill="#2a7f8f">From the database</text>
+  <text x="60" y="420" font-size="16" fill="#333">PMIDs, titles, journals, years:</text>
+  <text x="60" y="441" font-size="16" fill="#333">real records, not memory</text>
+  <rect x="515" y="360" width="440" height="90" rx="8" fill="#f8e9ec"/>
+  <text x="530" y="392" font-size="18" font-weight="bold" fill="#a8324a">Written by the model</text>
+  <text x="530" y="420" font-size="16" fill="#333">the summary can still overstate</text>
+  <text x="530" y="441" font-size="16" fill="#333">or misread: open the paper</text>
+  <text x="975" y="492" font-size="14" fill="#999" text-anchor="end">illustrative; tool names and layout differ between connectors and versions</text>
+</svg>

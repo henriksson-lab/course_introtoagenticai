@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="520" fill="#ffffff"/>
+  <rect x="20" y="20" width="305" height="420" rx="12" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="172" y="60" font-size="24" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">Shinylive</text>
+  <text x="172" y="90" font-size="15" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">static files,</text>
+  <text x="172" y="110" font-size="15" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">e.g. on GitHub Pages</text>
+  <circle cx="50" cy="159" r="5" fill="#2a7f8f" stroke="none" stroke-width="0"/>
+  <text x="65" y="165" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">the app runs in the</text>
+  <text x="65" y="191" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">visitor's browser</text>
+  <circle cx="50" cy="249" r="5" fill="#2a7f8f" stroke="none" stroke-width="0"/>
+  <text x="65" y="255" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">no server to run;</text>
+  <text x="65" y="281" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">free, next to your page</text>
+  <circle cx="50" cy="339" r="5" fill="#2a7f8f" stroke="none" stroke-width="0"/>
+  <text x="65" y="345" font-size="19" fill="#a8324a" text-anchor="start" font-weight="bold" xml:space="preserve">all data is public</text>
+  <text x="65" y="371" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve"></text>
+  <rect x="345" y="20" width="305" height="420" rx="12" fill="#eee9f6" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="497" y="60" font-size="24" fill="#6b4fa0" text-anchor="middle" font-weight="bold" xml:space="preserve">Hosted server</text>
+  <text x="497" y="90" font-size="15" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">shinyapps.io, Posit Connect Cloud</text>
+  <circle cx="375" cy="159" r="5" fill="#6b4fa0" stroke="none" stroke-width="0"/>
+  <text x="390" y="165" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">R or Python runs on</text>
+  <text x="390" y="191" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">the provider's server</text>
+  <circle cx="375" cy="249" r="5" fill="#6b4fa0" stroke="none" stroke-width="0"/>
+  <text x="390" y="255" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">an account; free tiers</text>
+  <text x="390" y="281" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">have limits</text>
+  <circle cx="375" cy="339" r="5" fill="#6b4fa0" stroke="none" stroke-width="0"/>
+  <text x="390" y="345" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">login only on</text>
+  <text x="390" y="371" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">some paid plans</text>
+  <rect x="670" y="20" width="305" height="420" rx="12" fill="#f5efdf" stroke="#8a6a12" stroke-width="2"/>
+  <text x="822" y="60" font-size="24" fill="#8a6a12" text-anchor="middle" font-weight="bold" xml:space="preserve">University server</text>
+  <text x="822" y="90" font-size="15" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">Shiny Server or Posit Connect,</text>
+  <text x="822" y="110" font-size="15" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">run by IT</text>
+  <circle cx="700" cy="159" r="5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <text x="715" y="165" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">runs inside the</text>
+  <text x="715" y="191" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">university</text>
+  <circle cx="700" cy="249" r="5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <text x="715" y="255" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">data stays in-house;</text>
+  <text x="715" y="281" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">login possible</text>
+  <circle cx="700" cy="339" r="5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <text x="715" y="345" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">ask IT whether</text>
+  <text x="715" y="371" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">one exists</text>
+  <text x="500" y="490" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">Same app.R in all three. What changes is where the code runs and who can see the data.</text>
+</svg>

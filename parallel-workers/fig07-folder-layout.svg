@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" width="1000" height="430" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="430" fill="#fff"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="19" fill="#333" xml:space="preserve">
+    <text x="40" y="50" font-weight="bold">parallel-workers/</text>
+    <text x="40" y="90">├── lakes.csv</text>
+    <text x="40" y="130">├── <tspan fill="#6b4fa0" font-weight="bold">claude/</tspan></text>
+    <text x="40" y="165">│   ├── lakes.csv</text>
+    <text x="40" y="200">│   ├── summarise.py   (or .R)</text>
+    <text x="40" y="235">│   ├── lake_summary.csv</text>
+    <text x="40" y="270">│   ├── nitrate.png</text>
+    <text x="40" y="305">│   └── decisions.md</text>
+    <text x="40" y="345">├── <tspan fill="#2a7f8f" font-weight="bold">codex/</tspan>      (the same five files)</text>
+    <text x="40" y="385">└── comparison.md</text>
+  </g>
+  <g font-size="17">
+    <rect x="560" y="68" width="420" height="34" rx="6" fill="#f6f1e3"/>
+    <text x="575" y="91" fill="#8a6a12">the original: no agent changes it</text>
+    <rect x="560" y="146" width="420" height="34" rx="6" fill="#f1edf7"/>
+    <text x="575" y="169" fill="#6b4fa0">a copy; Claude Code starts in claude/</text>
+    <rect x="560" y="323" width="420" height="34" rx="6" fill="#e3f0f2"/>
+    <text x="575" y="346" fill="#2a7f8f">a copy; Codex starts in codex/</text>
+    <rect x="560" y="363" width="420" height="34" rx="6" fill="#f6f6f6"/>
+    <text x="575" y="386" fill="#333">written afterwards, by one agent only</text>
+  </g>
+</svg>

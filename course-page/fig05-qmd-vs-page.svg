@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <rect width="1000" height="470" fill="#fff"/>
+  <text x="235" y="32" font-size="19" font-weight="bold" fill="#2a7f8f" text-anchor="middle">results.qmd</text>
+  <rect x="20" y="45" width="440" height="400" rx="8" fill="#f7f7f7" stroke="#bbb" stroke-width="2"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="16" fill="#333" xml:space="preserve">
+    <text x="38" y="80" fill="#8a6a12">---</text>
+    <text x="38" y="104" fill="#8a6a12">title: "Results"</text>
+    <text x="38" y="128" fill="#8a6a12">---</text>
+    <text x="38" y="168">Plants given more nitrogen</text>
+    <text x="38" y="192">grew faster.</text>
+    <text x="38" y="232">![Mean height by treatment.</text>
+    <text x="38" y="256">  Made by scripts/plot_growth.py](</text>
+    <text x="38" y="280">  figures/growth_plot.png)</text>
+    <text x="38" y="320">## Data</text>
+    <text x="38" y="360">24 plants, 3 treatments, weeks</text>
+    <text x="38" y="384">0 to 6. **Synthetic data.**</text>
+  </g>
+  <g font-size="15" fill="#a8324a">
+    <text x="300" y="104">header</text>
+    <text x="350" y="232">figure</text>
+  </g>
+  <line x1="468" y1="245" x2="532" y2="245" stroke="#555" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="765" y="32" font-size="19" font-weight="bold" fill="#6b4fa0" text-anchor="middle">results.html in the browser</text>
+  <rect x="540" y="45" width="440" height="400" rx="8" fill="#fff" stroke="#bbb" stroke-width="2"/>
+  <text x="560" y="92" font-size="28" font-weight="bold" fill="#333">Results</text>
+  <text x="560" y="128" font-size="16" fill="#333">Plants given more nitrogen grew faster.</text>
+  <rect x="560" y="145" width="400" height="160" fill="#f7f7f7" stroke="#ccc"/>
+  <polyline points="580,285 660,255 740,225 820,190 940,160" fill="none" stroke="#6b4fa0" stroke-width="3"/>
+  <polyline points="580,285 660,270 740,255 820,240 940,222" fill="none" stroke="#2a7f8f" stroke-width="3"/>
+  <polyline points="580,285 660,279 740,273 820,267 940,260" fill="none" stroke="#888" stroke-width="3"/>
+  <text x="560" y="328" font-size="14" fill="#555" font-style="italic">Mean height by treatment. Made by scripts/plot_growth.py</text>
+  <text x="560" y="370" font-size="22" font-weight="bold" fill="#333">Data</text>
+  <text x="560" y="402" font-size="16" fill="#333">24 plants, 3 treatments, weeks 0 to 6.</text>
+  <text x="560" y="426" font-size="16" fill="#333" font-weight="bold">Synthetic data.</text>
+</svg>

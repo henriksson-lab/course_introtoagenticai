@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="500" fill="#ffffff"/>
+  <rect x="20" y="16" width="660" height="440" rx="12" fill="#f4f7fa" stroke="#c9d3dc" stroke-width="2"/>
+  <rect x="250" y="40" width="405" height="76" rx="12" fill="#dfe6ec"/>
+  <text x="270" y="72" font-size="17" fill="#3a4a5a" font-style="italic">[a request about a topic in the</text>
+  <text x="270" y="98" font-size="17" fill="#3a4a5a" font-style="italic">core area, not shown here]</text>
+  <rect x="45" y="138" width="610" height="296" rx="12" fill="#ffffff" stroke="#c9d3dc" stroke-width="1.5"/>
+  <g font-size="18" fill="#1b2a3a">
+    <text x="65" y="172">I can't help with the details of this. It is in</text>
+    <text x="65" y="198">an area where step-by-step information could</text>
+    <text x="65" y="224">be misused, whoever is asking.</text>
+    <text x="65" y="262">What I can help with:</text>
+    <text x="80" y="292">• an overview of the published field</text>
+    <text x="80" y="320">• the biosafety rules that apply to this work</text>
+    <text x="80" y="348">• who at your institution to ask</text>
+    <text x="65" y="388">Would one of those be useful?</text>
+  </g>
+  <text x="670" y="448" text-anchor="end" font-size="14" fill="#8a97a5">illustrative; wording varies</text>
+  <g font-size="18" fill="#1b2a3a">
+    <text x="705" y="180" font-weight="bold" fill="#2a7f8f">A normal reply,</text>
+    <text x="705" y="204">written by the model</text>
+    <text x="705" y="228">itself</text>
+    <text x="705" y="300" font-weight="bold" fill="#2a7f8f">Says what it can</text>
+    <text x="705" y="324" font-weight="bold" fill="#2a7f8f">do instead</text>
+    <text x="705" y="348">Take it up on that</text>
+  </g>
+  <line x1="700" y1="196" x2="560" y2="196" stroke="#2a7f8f" stroke-width="2"/>
+  <line x1="700" y1="318" x2="560" y2="318" stroke="#2a7f8f" stroke-width="2"/>
+</svg>

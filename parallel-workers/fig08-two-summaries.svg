@@ -1,0 +1,158 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="470" fill="#fff"/>
+<text x="20" y="32" font-size="20" font-weight="bold" fill="#6b4fa0">claude/lake_summary.csv</text>
+<rect x="20" y="45" width="395" height="34" fill="#e8e8e8" stroke="#bbb"/>
+<text x="28" y="68" font-size="16" font-weight="bold" fill="#333">lake</text>
+<text x="128" y="68" font-size="16" font-weight="bold" fill="#333">year</text>
+<text x="178" y="68" font-size="16" font-weight="bold" fill="#333">n</text>
+<text x="213" y="68" font-size="16" font-weight="bold" fill="#333">temp</text>
+<text x="278" y="68" font-size="16" font-weight="bold" fill="#333">nitrate</text>
+<text x="353" y="68" font-size="16" font-weight="bold" fill="#333">tot_p</text>
+<rect x="20" y="79" width="395" height="40" fill="#fff" stroke="#ddd"/>
+<text x="28" y="105" font-size="16" fill="#333">Björksjön</text>
+<text x="128" y="105" font-size="16" fill="#333">2023</text>
+<rect x="174" y="83" width="32" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="178" y="105" font-size="16" fill="#333">6</text>
+<rect x="209" y="83" width="62" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="213" y="105" font-size="16" fill="#333">14.55</text>
+<rect x="274" y="83" width="72" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="278" y="105" font-size="16" fill="#333">0.943</text>
+<rect x="349" y="83" width="62" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="353" y="105" font-size="16" fill="#333">28.00</text>
+<rect x="20" y="119" width="395" height="40" fill="#fff" stroke="#ddd"/>
+<text x="28" y="145" font-size="16" fill="#333">Björksjön</text>
+<text x="128" y="145" font-size="16" fill="#333">2024</text>
+<text x="178" y="145" font-size="16" fill="#333">6</text>
+<text x="213" y="145" font-size="16" fill="#333">15.04</text>
+<text x="278" y="145" font-size="16" fill="#333">1.030</text>
+<text x="353" y="145" font-size="16" fill="#333">30.00</text>
+<rect x="20" y="159" width="395" height="40" fill="#fff" stroke="#ddd"/>
+<text x="28" y="185" font-size="16" fill="#333">Lilla Sjön</text>
+<text x="128" y="185" font-size="16" fill="#333">2023</text>
+<text x="178" y="185" font-size="16" fill="#333">6</text>
+<text x="213" y="185" font-size="16" fill="#333">15.13</text>
+<text x="278" y="185" font-size="16" fill="#333">1.615</text>
+<text x="353" y="185" font-size="16" fill="#333">45.00</text>
+<rect x="20" y="199" width="395" height="40" fill="#fff" stroke="#ddd"/>
+<text x="28" y="225" font-size="16" fill="#333">Lilla Sjön</text>
+<text x="128" y="225" font-size="16" fill="#333">2024</text>
+<text x="178" y="225" font-size="16" fill="#333">6</text>
+<text x="213" y="225" font-size="16" fill="#333">15.33</text>
+<text x="278" y="225" font-size="16" fill="#333">1.735</text>
+<text x="353" y="225" font-size="16" fill="#333">45.83</text>
+<rect x="20" y="239" width="395" height="40" fill="#fff" stroke="#ddd"/>
+<text x="28" y="265" font-size="16" fill="#333">Mörtsjön</text>
+<text x="128" y="265" font-size="16" fill="#333">2023</text>
+<text x="178" y="265" font-size="16" fill="#333">6</text>
+<text x="213" y="265" font-size="16" fill="#333">14.42</text>
+<text x="278" y="265" font-size="16" fill="#333">0.547</text>
+<text x="353" y="265" font-size="16" fill="#333">14.33</text>
+<rect x="20" y="279" width="395" height="40" fill="#fff" stroke="#ddd"/>
+<text x="28" y="305" font-size="16" fill="#333">Mörtsjön</text>
+<text x="128" y="305" font-size="16" fill="#333">2024</text>
+<rect x="174" y="283" width="32" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="178" y="305" font-size="16" fill="#333">6</text>
+<rect x="209" y="283" width="62" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="213" y="305" font-size="16" fill="#333">13.15</text>
+<rect x="274" y="283" width="72" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="278" y="305" font-size="16" fill="#333">0.592</text>
+<rect x="349" y="283" width="62" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="353" y="305" font-size="16" fill="#333">16.50</text>
+<rect x="20" y="319" width="395" height="40" fill="#fff" stroke="#ddd"/>
+<text x="28" y="345" font-size="16" fill="#333">Tallträsk</text>
+<text x="128" y="345" font-size="16" fill="#333">2023</text>
+<rect x="174" y="323" width="32" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="178" y="345" font-size="16" fill="#333">6</text>
+<rect x="209" y="323" width="62" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="213" y="345" font-size="16" fill="#333">11.92</text>
+<text x="278" y="345" font-size="16" fill="#333">0.210</text>
+<rect x="349" y="323" width="62" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="353" y="345" font-size="16" fill="#333">5.33</text>
+<rect x="20" y="359" width="395" height="40" fill="#fff" stroke="#ddd"/>
+<text x="28" y="385" font-size="16" fill="#333">Tallträsk</text>
+<text x="128" y="385" font-size="16" fill="#333">2024</text>
+<text x="178" y="385" font-size="16" fill="#333">6</text>
+<text x="213" y="385" font-size="16" fill="#333">11.95</text>
+<text x="278" y="385" font-size="16" fill="#333">0.238</text>
+<rect x="349" y="363" width="62" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="353" y="385" font-size="16" fill="#333">5.67</text>
+<text x="585" y="32" font-size="20" font-weight="bold" fill="#2a7f8f">codex/lake_summary.csv</text>
+<rect x="585" y="45" width="395" height="34" fill="#e8e8e8" stroke="#bbb"/>
+<text x="593" y="68" font-size="16" font-weight="bold" fill="#333">lake</text>
+<text x="693" y="68" font-size="16" font-weight="bold" fill="#333">year</text>
+<text x="743" y="68" font-size="16" font-weight="bold" fill="#333">n</text>
+<text x="778" y="68" font-size="16" font-weight="bold" fill="#333">temp</text>
+<text x="843" y="68" font-size="16" font-weight="bold" fill="#333">nitrate</text>
+<text x="918" y="68" font-size="16" font-weight="bold" fill="#333">tot_p</text>
+<rect x="585" y="79" width="395" height="40" fill="#fff" stroke="#ddd"/>
+<text x="593" y="105" font-size="16" fill="#333">Björksjön</text>
+<text x="693" y="105" font-size="16" fill="#333">2023</text>
+<rect x="739" y="83" width="32" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="743" y="105" font-size="16" fill="#333">7</text>
+<rect x="774" y="83" width="62" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="778" y="105" font-size="16" fill="#333">14.63</text>
+<rect x="839" y="83" width="72" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="843" y="105" font-size="16" fill="#333">0.954</text>
+<rect x="914" y="83" width="62" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="918" y="105" font-size="16" fill="#333">27.86</text>
+<rect x="585" y="119" width="395" height="40" fill="#fff" stroke="#ddd"/>
+<text x="593" y="145" font-size="16" fill="#333">Björksjön</text>
+<text x="693" y="145" font-size="16" fill="#333">2024</text>
+<text x="743" y="145" font-size="16" fill="#333">6</text>
+<text x="778" y="145" font-size="16" fill="#333">15.04</text>
+<text x="843" y="145" font-size="16" fill="#333">1.030</text>
+<text x="918" y="145" font-size="16" fill="#333">30.00</text>
+<rect x="585" y="159" width="395" height="40" fill="#fff" stroke="#ddd"/>
+<text x="593" y="185" font-size="16" fill="#333">Lilla Sjön</text>
+<text x="693" y="185" font-size="16" fill="#333">2023</text>
+<text x="743" y="185" font-size="16" fill="#333">6</text>
+<text x="778" y="185" font-size="16" fill="#333">15.13</text>
+<text x="843" y="185" font-size="16" fill="#333">1.615</text>
+<text x="918" y="185" font-size="16" fill="#333">45.00</text>
+<rect x="585" y="199" width="395" height="40" fill="#fff" stroke="#ddd"/>
+<text x="593" y="225" font-size="16" fill="#333">Lilla Sjön</text>
+<text x="693" y="225" font-size="16" fill="#333">2024</text>
+<text x="743" y="225" font-size="16" fill="#333">6</text>
+<text x="778" y="225" font-size="16" fill="#333">15.33</text>
+<text x="843" y="225" font-size="16" fill="#333">1.735</text>
+<text x="918" y="225" font-size="16" fill="#333">45.83</text>
+<rect x="585" y="239" width="395" height="40" fill="#fff" stroke="#ddd"/>
+<text x="593" y="265" font-size="16" fill="#333">Mörtsjön</text>
+<text x="693" y="265" font-size="16" fill="#333">2023</text>
+<text x="743" y="265" font-size="16" fill="#333">6</text>
+<text x="778" y="265" font-size="16" fill="#333">14.42</text>
+<text x="843" y="265" font-size="16" fill="#333">0.547</text>
+<text x="918" y="265" font-size="16" fill="#333">14.33</text>
+<rect x="585" y="279" width="395" height="40" fill="#fff" stroke="#ddd"/>
+<text x="593" y="305" font-size="16" fill="#333">Mörtsjön</text>
+<text x="693" y="305" font-size="16" fill="#333">2024</text>
+<rect x="739" y="283" width="32" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="743" y="305" font-size="16" fill="#333">7</text>
+<rect x="774" y="283" width="62" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="778" y="305" font-size="16" fill="#333">13.99</text>
+<rect x="839" y="283" width="72" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="843" y="305" font-size="16" fill="#333">0.576</text>
+<rect x="914" y="283" width="62" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="918" y="305" font-size="16" fill="#333">16.29</text>
+<rect x="585" y="319" width="395" height="40" fill="#fff" stroke="#ddd"/>
+<text x="593" y="345" font-size="16" fill="#333">Tallträsk</text>
+<text x="693" y="345" font-size="16" fill="#333">2023</text>
+<rect x="739" y="323" width="32" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="743" y="345" font-size="16" fill="#333">7</text>
+<rect x="774" y="323" width="62" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="778" y="345" font-size="16" fill="#333">11.71</text>
+<text x="843" y="345" font-size="16" fill="#333">0.210</text>
+<rect x="914" y="323" width="62" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="918" y="345" font-size="16" fill="#333">6.80</text>
+<rect x="585" y="359" width="395" height="40" fill="#fff" stroke="#ddd"/>
+<text x="593" y="385" font-size="16" fill="#333">Tallträsk</text>
+<text x="693" y="385" font-size="16" fill="#333">2024</text>
+<text x="743" y="385" font-size="16" fill="#333">6</text>
+<text x="778" y="385" font-size="16" fill="#333">11.95</text>
+<text x="843" y="385" font-size="16" fill="#333">0.238</text>
+<rect x="914" y="363" width="62" height="32" fill="#f8e9ec" stroke="#a8324a" stroke-width="1.5"/>
+<text x="918" y="385" font-size="16" fill="#333">7.25</text>
+<text x="500" y="420" font-size="18" fill="#a8324a" text-anchor="middle">12 cells differ, in 4 rows. Each one points to a decision.</text>
+<text x="500" y="448" font-size="16" fill="#555" text-anchor="middle">temp in °C, nitrate in mg/L, tot_p in µg/L (means per lake and year)</text>
+<text x="985" y="465" font-size="13" fill="#999" text-anchor="end">illustrative; your results will differ</text>
+</svg>

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="1000" height="480" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="480" fill="#fff"/>
+  <g text-anchor="middle">
+    <rect x="30" y="30" width="300" height="80" rx="10" fill="#2a7f8f"/>
+    <text x="180" y="65" font-size="23" fill="#fff" font-weight="bold">1. Bulk file or API</text>
+    <text x="180" y="94" font-size="18" fill="#fff">data made for programs</text>
+    <rect x="350" y="30" width="300" height="80" rx="10" fill="#8a6a12"/>
+    <text x="500" y="65" font-size="23" fill="#fff" font-weight="bold">2. Export button</text>
+    <text x="500" y="94" font-size="18" fill="#fff">a spreadsheet from the search page</text>
+    <rect x="670" y="30" width="300" height="80" rx="10" fill="#a8324a"/>
+    <text x="820" y="65" font-size="23" fill="#fff" font-weight="bold">3. Scraping</text>
+    <text x="820" y="94" font-size="18" fill="#fff">reading pages made for people</text>
+  </g>
+  <g font-size="19" fill="#333">
+    <text x="20" y="160" font-weight="bold" fill="#555">Stable?</text>
+    <text x="50" y="190">✓ documented fields</text>
+    <text x="370" y="190">✓ for one search</text>
+    <text x="690" y="190">✗ breaks when layouts change</text>
+    <text x="20" y="240" font-weight="bold" fill="#555">Allowed?</text>
+    <text x="50" y="270">✓ made for this; read the limits</text>
+    <text x="370" y="270">✓ made for people</text>
+    <text x="690" y="270">? often limited by terms,</text>
+    <text x="710" y="295">robots.txt, or blocked</text>
+    <text x="20" y="340" font-weight="bold" fill="#555">Size?</text>
+    <text x="50" y="370">✓ thousands of records</text>
+    <text x="370" y="370">~ often a row limit</text>
+    <text x="690" y="370">~ slow, many requests</text>
+  </g>
+  <line x1="30" y1="400" x2="970" y2="400" stroke="#ccc"/>
+  <text x="500" y="435" font-size="21" fill="#333" text-anchor="middle">Prefer from left to right.</text>
+  <text x="500" y="462" font-size="21" fill="#333" text-anchor="middle">Scrape only when nothing else exists and the terms allow it.</text>
+</svg>

@@ -1,0 +1,285 @@
+---
+title: "Exercise: publish a page"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- **Quarto** installed, with the agent's help,
+- a small **Quarto website** for the example project, with a sidebar, a results page with a figure, a slide deck and an about page,
+- that site **published on GitHub Pages** from the `docs/` folder of a public repository, and **checked live**,
+- a clear answer to **what became public**, and why the example project itself stayed private,
+- a **page for your own project or one of your courses**, with your figures from *Reproducible figures* as the first content, published, and
+- the link **sent to a colleague**, who has opened it.
+
+Your session will look different from anyone else's. Compare **results**, not sessions.
+
+## Before you start
+
+- You finished the *GitHub* exercise: `gh auth status` says you are logged in, and `~/agentic-course/plant-growth/` exists with its figure `results/growth_plot.png` (if not, download [plant-growth.zip](../github/data/plant-growth.zip) and unzip it into your course folder).
+- Your own project has at least one figure made by a script (*Reproducible figures*) and is a private repository on GitHub (*GitHub*).
+- Know your GitHub **username**: it becomes part of the address, `https://<username>.github.io/...`.
+
+## Worked example
+
+We build a page for the synthetic plant-growth project. The project repository stays **private**: in the GitHub exercise you saw that its history still contains `notes/contacts.txt`. So the page gets its **own, separate repository**, which will be public and hold only what we choose.
+
+### Step 1: Install Quarto
+
+Start the agent in your **course folder** and type:
+
+```text
+Is Quarto installed? If not, install it with the official method for
+my operating system. Explain each command before you run it. Then run
+quarto --version.
+```
+
+**What to look for.** On a Mac the agent often proposes `brew install --cask quarto` or downloading the installer from [quarto.org](https://quarto.org/docs/get-started/); on Windows `winget` or the installer. An installer may open a system window asking for your computer password: type it there, never into the agent. If your computer is managed by your university and the install is blocked, ask IT, or install from [quarto.org](https://quarto.org/docs/get-started/) yourself.
+
+#### Check the result
+
+`quarto --version` prints a version number (for example 1.8 or higher). If it says "command not found", close the terminal, open a new one and try again.
+
+### Step 2: Make the page folder and start the agent there
+
+Exit the agent (`/exit`). Make a new, empty folder next to `plant-growth` and start the agent in it:
+
+::: {.panel-tabset}
+## Claude Code
+```bash
+mkdir ~/agentic-course/plant-growth-page
+cd ~/agentic-course/plant-growth-page
+claude
+```
+Use a mode that asks before commands (Shift+Tab; Manual is fine).
+
+## Codex
+```bash
+mkdir ~/agentic-course/plant-growth-page
+cd ~/agentic-course/plant-growth-page
+codex
+```
+The folder is not a git repository yet, so Codex may start read-only. Type `/permissions` and choose the level that lets it edit files in the workspace (not full access).
+:::
+
+### Step 3: Let the agent scaffold the site
+
+```text
+Make a Quarto website in this folder for the example project in
+../plant-growth. Read ../plant-growth/README.md and look at its figure,
+but do not change anything in ../plant-growth.
+
+Pages, in this order in a sidebar:
+- Home (index.qmd): what the trial is, in 3 or 4 sentences. Say clearly
+  that the data is synthetic.
+- Results (results.qmd): the figure, copied from
+  ../plant-growth/results/growth_plot.png into figures/, with a caption
+  that names the script that made it. One short paragraph on what the
+  figure shows, using only what the figure shows.
+- About (about.qmd): "Made by <MY NAME>" as a placeholder, licence
+  CC BY 4.0 for text and figures, and one sentence on how AI was used.
+
+Settings: output-dir docs; an empty .nojekyll file, listed under project
+resources so Quarto copies it into docs/; theme cosmo.
+Also a README.md: what this repository is, how to render it, and which
+commit of ../plant-growth the figure was copied from.
+Copy nothing else from ../plant-growth. Then run quarto render and list
+the files in docs/.
+```
+
+**What to look for.**
+
+- The agent will ask to **read files outside its folder** (`../plant-growth`). That is expected here; approve reading, but it should not ask to write there. If it does, say no.
+- It may run `quarto create project website` first and then change the files, or write them directly. Either is fine.
+- To find the commit, it runs something like `git -C ../plant-growth log -1`. That only looks.
+
+When it is done, open `_quarto.yml` and `results.qmd` in a text editor (or ask "show me _quarto.yml and results.qmd"). You should recognise the parts from the lecture: `output-dir: docs`, the sidebar list, the figure line `![...](figures/growth_plot.png)`.
+
+### Step 4: Look at the site before anything is public
+
+Open the folder in your file browser, go into `docs`, and double-click `index.html`. It opens in your web browser.
+
+#### Check the result
+
+1. The sidebar shows **Home, Results, About**, in that order, and each link works.
+2. The Results page shows the figure, with a caption that names `scripts/plot_growth.py`.
+3. The text on the Results page matches the figure. In week 6, the mean heights are about **19.4 cm (high_N), 17.8 cm (low_N) and 14.2 cm (control)**; all three start near **4 cm**. "High nitrogen grew fastest, control slowest" is right. Any claim about significance, p-values or "proves" is not supported by a figure and should go.
+4. Home says the data is **synthetic**.
+5. About has the placeholder for your name, **CC BY 4.0**, and one sentence on AI use.
+6. In the `docs` folder there is a file `.nojekyll` (it may be hidden: on a Mac press Cmd+Shift+. in Finder; on Windows, View → Show → Hidden items).
+
+Correct anything you do not like by saying what is wrong, for example:
+
+```text
+On the Results page, remove the sentence "the effect is significant":
+a figure of means cannot show that. Replace the <MY NAME> placeholder
+with "<your name>, <your department>". Render again.
+```
+
+### Step 5: Add a short slide deck
+
+```text
+Add slides.qmd with format revealjs: a title slide and three slides,
+"The question", "The result" (the same figure) and "What next"
+(one bullet: repeat with three bean lines). Put it in the sidebar
+between Results and About as "Slides". Render again.
+```
+
+Open `docs/slides.html` in your browser. Press the right arrow to move through the slides, **F** for full screen and **Esc** to leave it.
+
+### Step 6: Check what will become public
+
+This repository will be public. Ask, before it exists on GitHub:
+
+```text
+I am going to publish this folder as a PUBLIC GitHub repository.
+List every file that will be in it, and every file in docs/.
+Flag anything that is personal, confidential, or that was not meant to
+be published. Do not change anything.
+```
+
+#### Check the result
+
+The list should hold only the page sources (`_quarto.yml`, the `.qmd` files, `README.md`, `.nojekyll`), `figures/growth_plot.png`, and the rendered `docs/` folder. There must be **no** `contacts.txt`, no `notes/`, no `data/`. If something else is there, ask the agent to remove it before the first commit.
+
+### Step 7: Create the public repository and push
+
+```text
+Make this folder a git repository with the branch name main. Commit
+everything, including docs/, with the message "First version of the
+page". Then create a PUBLIC GitHub repository called plant-growth-page
+from this folder and push. Show me each command before you run it.
+```
+
+Before you approve `gh repo create`, check: the name is `plant-growth-page` and it says `--public`. This time public is right: you checked the contents in step 6, and there is no history yet beyond this one commit.
+
+Open `https://github.com/<your-username>/plant-growth-page`. The label next to the name says **Public**, and you see the files from step 6.
+
+### Step 8: Switch on GitHub Pages
+
+Choose **one** of the two ways.
+
+**On the website.** In the repository: **Settings** → **Pages** (left menu). Under **Build and deployment**, set **Source** to **Deploy from a branch**, choose branch **main** and folder **/docs**, and click **Save**.
+
+**With the agent.**
+
+```text
+Switch on GitHub Pages for this repository, serving the /docs folder of
+the main branch. Use gh api. Then tell me the address of the site.
+```
+
+The agent proposes something like:
+
+```bash
+echo '{"source":{"branch":"main","path":"/docs"}}' | gh api -X POST repos/<your-username>/plant-growth-page/pages --input -
+```
+
+Check that the branch is `main` and the path is `/docs` before you approve.
+
+### Step 9: Check the live site
+
+Wait a minute or two. Refresh **Settings → Pages** until it says your site is live, or open the address directly:
+
+`https://<your-username>.github.io/plant-growth-page/`
+
+If you get a 404 error, wait another minute. If it persists, look at the **Actions** tab of the repository: a failed "pages build and deployment" run shows why.
+
+#### Check the result
+
+Do every check yourself; the agent cannot see your browser.
+
+1. The address opens and shows your Home page.
+2. Every sidebar link works: Home, Results, Slides, About.
+3. The figure shows on the Results page.
+4. The slides open and advance with the arrow keys.
+5. Open the address in a **private browser window** (not logged in to GitHub). It looks the same.
+6. Open it on your **phone**. The sidebar becomes a menu; the figure fits the screen.
+7. Read every page once more as a stranger. Is there anything you would not want a student, a reviewer or a journalist to read?
+
+### Step 10: Change something and publish again
+
+```text
+On the Home page, add one sentence at the end: "Last updated <today's
+date>." Render the site, show me which files changed, then commit with
+a clear message and push.
+```
+
+Wait a minute or two, then reload the live Home page (Shift+reload, or Cmd+Shift+R / Ctrl+F5, to skip the cache). The new sentence is there. This is the loop you will repeat in every later unit: **edit, render, look, commit, push, check live**.
+
+::: {.callout-note collapse="true" title="Expected outcome for the worked example"}
+- Folder `~/agentic-course/plant-growth-page/` with `_quarto.yml`, `index.qmd`, `results.qmd`, `slides.qmd`, `about.qmd`, `README.md`, `.nojekyll`, `figures/growth_plot.png` and `docs/` (with `index.html`, `results.html`, `slides.html`, `about.html`, `.nojekyll`, `search.json` and `site_libs/`).
+- `_quarto.yml` contains `output-dir: docs`, a `resources` entry for `.nojekyll`, and a sidebar listing the four pages in the order Home, Results, Slides, About.
+- A public repository `plant-growth-page` with 2 commits, and Pages serving `main` `/docs`.
+- The live site at `https://<your-username>.github.io/plant-growth-page/`.
+- The project repository `plant-growth` is still **private**, untouched.
+:::
+
+## On your own project
+
+Now the same for your own project, or for one of your courses if your project is a course. The **first content is your figure from *Reproducible figures***.
+
+### Step 11: Decide where the page lives
+
+| If… | then… |
+|---|---|
+| everything in your project folder **and its whole history** may be public (for example open data, your own teaching material) | the page can live **in the project repository**, as this course's site does. You will have to make the project repository public. |
+| anything in the project is internal, personal or confidential, or you have **not checked the history** | make a **separate page repository**, as in the worked example. This is the default. |
+
+If you choose the same repository: ask the agent to list every file ever committed (as in step 9 of the *GitHub* exercise) and read the list before you go on. Also tell the agent to add a `render:` list to `_quarto.yml`, like this course's, so that notes, `CLAUDE.md`/`AGENTS.md` and data are **not** rendered as pages: by default Quarto turns every `.qmd` and `.md` file in the folder into a page (except `README.md`).
+
+### Step 12: Build the page
+
+Make the folder (for example `~/agentic-course/soil-funding-map-page/`), start the agent there, and adapt this prompt:
+
+```text
+Make a Quarto website in this folder for my project in ../<my-project>.
+Read ../<my-project>/README.md for the goal and the data class. Copy
+only the files I name below, and nothing else.
+
+Pages, in this order in a sidebar:
+- Home: the goal of the project in plain words, for <who the page is for>.
+- Results: the figure(s) <file names in ../<my-project>/results/>,
+  copied into figures/, each with a caption that names the script and
+  the data it came from.
+- About: my name and <department>, a contact route (my university
+  profile page: <link>), the licence (CC BY 4.0 for text and figures),
+  where the data comes from, and one sentence on how AI was used.
+
+Settings: output-dir docs; an empty .nojekyll listed under project
+resources; theme cosmo. A README.md saying which commit of
+../<my-project> each figure came from.
+Render the site and list the files in docs/.
+```
+
+For a **course page**, use pages such as Home (what the course is, for whom), Schedule, Material (links to slides and exercises), and About. A slide deck (`format: revealjs`) for one lecture is a good second step.
+
+Open `docs/index.html` and check it as in step 4. Then do the **public check** from step 6, against the **Never put in this folder** list in your project's README. A figure can also leak data: a plot with individual points labelled by student name, a map with a patient's home town. Look at each figure with that in mind.
+
+### Step 13: Publish and check
+
+Create the public page repository and push (step 7), switch on Pages (step 8), and go through the live checklist (step 9): every link, every figure, a private window, your phone, and a last read as a stranger.
+
+### Step 14: Send the link to a colleague
+
+Send the address to one colleague, for example:
+
+> I am trying out a project page made with Quarto and GitHub Pages: https://&lt;username&gt;.github.io/&lt;repo&gt;/. Does it open for you, and is it clear what the project is about from the first page?
+
+Their answer is the real test. Note any confusion as an issue on the page repository (*GitHub*), so it is on your to-do list.
+
+Finally, add a line to the **Log of AI use** in your project README, for example: "2026-11-30, Codex (Plus): built and published the project page from my figures; I checked every page and figure." Add the page address to the project README too.
+
+## What you should have now
+
+- Quarto installed (`quarto --version` works).
+- `plant-growth-page`: a public repository with a Quarto site, and a live page at `https://<your-username>.github.io/plant-growth-page/`, while `plant-growth` stays private.
+- A **page for your own project or course**, live, with your figure from *Reproducible figures* as the first content, a caption that names its script, an About page with licence and AI-use statement, and nothing on it that should not be public.
+- The link **sent to a colleague**, and their answer.
+- The update loop in your hands: **edit, render, look, commit, push, check live**. In *Interactive demos* you add an interactive page to this site.

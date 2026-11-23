@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="400" fill="#ffffff"/>
+  <rect x="10" y="110" width="176" height="150" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="98.0" y="145" font-size="18" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">1. Goal</text>
+  <text x="98.0" y="190.0" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">students understand</text>
+  <text x="98.0" y="212.1" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">carrying capacity</text>
+  <line x1="188" y1="185" x2="204" y2="185" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <rect x="206" y="110" width="176" height="150" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="294.0" y="145" font-size="18" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">2. Discovery</text>
+  <text x="294.0" y="190.0" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">growth is fastest</text>
+  <text x="294.0" y="212.1" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">at half of K</text>
+  <line x1="384" y1="185" x2="400" y2="185" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <rect x="402" y="110" width="176" height="150" rx="10" fill="#eee9f6" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="490.0" y="145" font-size="18" fill="#6b4fa0" text-anchor="middle" font-weight="bold" xml:space="preserve">3. One control</text>
+  <text x="490.0" y="190.0" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">a slider for K</text>
+  <text x="490.0" y="212.1" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">(drag the line)</text>
+  <line x1="580" y1="185" x2="596" y2="185" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <rect x="598" y="110" width="176" height="150" rx="10" fill="#eee9f6" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="686.0" y="145" font-size="18" fill="#6b4fa0" text-anchor="middle" font-weight="bold" xml:space="preserve">4. What to watch</text>
+  <text x="686.0" y="190.0" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">the steepest point</text>
+  <text x="686.0" y="212.1" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">follows K / 2</text>
+  <line x1="776" y1="185" x2="792" y2="185" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <rect x="794" y="110" width="176" height="150" rx="10" fill="#f5efdf" stroke="#8a6a12" stroke-width="2"/>
+  <text x="882.0" y="145" font-size="18" fill="#8a6a12" text-anchor="middle" font-weight="bold" xml:space="preserve">5. Known case</text>
+  <text x="882.0" y="190.0" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">at N = K/2 the slope</text>
+  <text x="882.0" y="212.1" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">is r·K/4</text>
+  <text x="98.0" y="70" font-size="20" fill="#a8324a" text-anchor="middle" font-weight="bold" xml:space="preserve">start here</text>
+  <line x1="98.0" y1="78" x2="98.0" y2="104" stroke="#a8324a" stroke-width="2.5" marker-end="url(#arwc)"/>
+  <text x="500" y="320" font-size="20" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">Steps 1 and 2 are yours. The agent is good at 3 and 4.</text>
+  <text x="500" y="352" font-size="20" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">Step 5 is how you find out whether it got the model right.</text>
+</svg>

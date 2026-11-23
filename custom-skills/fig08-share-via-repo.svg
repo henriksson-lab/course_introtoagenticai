@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+  <rect width="1000" height="440" fill="#fff"/>
+  <!-- you -->
+  <rect x="20" y="60" width="280" height="260" rx="10" fill="#fafafa" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="160" y="45" font-size="20" font-weight="bold" fill="#2a7f8f" text-anchor="middle">Your computer</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="16" fill="#333">
+    <text x="35" y="95">soil-project/</text>
+    <text x="50" y="122">CLAUDE.md</text>
+    <text x="50" y="149">scripts/  data/</text>
+    <text x="50" y="176">.claude/skills/</text>
+    <text x="65" y="203" fill="#2a7f8f" font-weight="bold">figure-style/</text>
+    <text x="50" y="230">.agents/skills/</text>
+    <text x="65" y="257" fill="#2a7f8f" font-weight="bold">figure-style/</text>
+  </g>
+  <!-- github -->
+  <rect x="370" y="120" width="260" height="140" rx="10" fill="#f4f4f4" stroke="#555" stroke-width="2"/>
+  <text x="500" y="170" font-size="21" font-weight="bold" fill="#333" text-anchor="middle">GitHub</text>
+  <text x="500" y="200" font-size="17" fill="#555" text-anchor="middle">the same repository,</text>
+  <text x="500" y="224" font-size="17" fill="#555" text-anchor="middle">skills included</text>
+  <!-- colleague -->
+  <rect x="700" y="60" width="280" height="260" rx="10" fill="#fafafa" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="840" y="45" font-size="20" font-weight="bold" fill="#6b4fa0" text-anchor="middle">Co-author's computer</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="16" fill="#333">
+    <text x="715" y="95">soil-project/</text>
+    <text x="730" y="122">...</text>
+    <text x="730" y="149">.claude/skills/</text>
+    <text x="745" y="176" fill="#2a7f8f" font-weight="bold">figure-style/</text>
+  </g>
+  <text x="840" y="235" font-size="17" fill="#333" text-anchor="middle">their agent uses</text>
+  <text x="840" y="259" font-size="17" fill="#333" text-anchor="middle">the same house style</text>
+  <g stroke="#555" stroke-width="2.5" marker-end="url(#ar)">
+    <line x1="305" y1="190" x2="362" y2="190"/>
+    <line x1="635" y1="190" x2="692" y2="190"/>
+  </g>
+  <text x="333" y="180" font-size="16" fill="#555" text-anchor="middle">push</text>
+  <text x="663" y="180" font-size="16" fill="#555" text-anchor="middle">clone</text>
+  <rect x="20" y="350" width="960" height="70" rx="10" fill="#f6f1e3" stroke="#8a6a12" stroke-width="2"/>
+  <text x="500" y="382" font-size="18" fill="#333" text-anchor="middle">Change a shared skill like shared code: a clear commit message, and tell people.</text>
+  <text x="500" y="407" font-size="17" fill="#8a6a12" text-anchor="middle">Personal skills (~/.claude/skills, ~/.agents/skills) stay on your computer.</text>
+</svg>

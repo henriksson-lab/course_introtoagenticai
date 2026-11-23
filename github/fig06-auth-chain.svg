@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <rect width="1000" height="440" fill="#fff"/>
+  <text x="500" y="38" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">Once, by you, in your own terminal</text>
+  <g font-size="17" text-anchor="middle">
+    <rect x="20" y="70" width="210" height="110" rx="12" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="125" y="110" font-weight="bold" fill="#2a7f8f">1. You type</text>
+    <text x="125" y="140" fill="#333" font-family="Menlo, Consolas, monospace">gh auth login</text>
+    <rect x="270" y="70" width="210" height="110" rx="12" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="375" y="110" font-weight="bold" fill="#2a7f8f">2. Browser opens</text>
+    <text x="375" y="140" fill="#333">you sign in to GitHub</text>
+    <text x="375" y="162" fill="#333">and type a short code</text>
+    <rect x="520" y="70" width="210" height="110" rx="12" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="625" y="110" font-weight="bold" fill="#2a7f8f">3. GitHub issues</text>
+    <text x="625" y="140" fill="#333">a token: a key for</text>
+    <text x="625" y="162" fill="#333">this computer only</text>
+    <rect x="770" y="70" width="210" height="110" rx="12" fill="#f6f1e3" stroke="#8a6a12" stroke-width="2"/>
+    <text x="875" y="110" font-weight="bold" fill="#8a6a12">4. Key store</text>
+    <text x="875" y="140" fill="#333">kept by your system,</text>
+    <text x="875" y="162" fill="#333">not in your project</text>
+  </g>
+  <g stroke="#555" stroke-width="2.5" marker-end="url(#ar)">
+    <line x1="232" y1="125" x2="263" y2="125"/><line x1="482" y1="125" x2="513" y2="125"/><line x1="732" y1="125" x2="763" y2="125"/>
+  </g>
+  <line x1="40" y1="225" x2="960" y2="225" stroke="#ddd" stroke-width="2"/>
+  <text x="500" y="265" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">Afterwards, every day, by the agent</text>
+  <rect x="140" y="295" width="300" height="95" rx="12" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="290" y="335" font-size="18" font-weight="bold" fill="#6b4fa0" text-anchor="middle">agent runs git push</text>
+  <text x="290" y="363" font-size="17" fill="#333" text-anchor="middle">(you approve the command)</text>
+  <rect x="600" y="295" width="300" height="95" rx="12" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="750" y="335" font-size="18" font-weight="bold" fill="#6b4fa0" text-anchor="middle">git asks the key store</text>
+  <text x="750" y="363" font-size="17" fill="#333" text-anchor="middle">GitHub accepts the push</text>
+  <line x1="442" y1="342" x2="593" y2="342" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <path d="M875,185 C 900,240 860,270 800,292" stroke="#8a6a12" stroke-width="2.5" fill="none" stroke-dasharray="6,5" marker-end="url(#ar)"/>
+  <text x="500" y="425" font-size="17" fill="#a8324a" text-anchor="middle" font-style="italic">The agent never sees your password and never needs to.</text>
+</svg>

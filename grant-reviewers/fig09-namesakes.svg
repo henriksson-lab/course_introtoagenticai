@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+  <rect width="1000" height="500" fill="#fff"/>
+  <rect x="20" y="20" width="450" height="170" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="40" y="55" font-size="21" font-weight="bold" fill="#2a7f8f">Jonas Ekbacka</text>
+  <g font-size="17" fill="#333"><text x="40" y="85">fictional-id-0002 · Kustby University</text><text x="40" y="113">microbial ecology, amplicon sequencing</text><text x="40" y="141">"Microbial community memory after</text><text x="40" y="163">repeated drying-rewetting cycles"</text></g>
+  <rect x="530" y="20" width="450" height="170" rx="10" fill="#f6f1e3" stroke="#8a6a12" stroke-width="2"/>
+  <text x="550" y="55" font-size="21" font-weight="bold" fill="#8a6a12">Jonas Ekbacka</text>
+  <g font-size="17" fill="#333"><text x="550" y="85">fictional-id-0901 · Norrvik U., History</text><text x="550" y="113">agrarian history, famines</text><text x="550" y="141">"Peasant memory of the famine</text><text x="550" y="163">years 1771-1773"</text></g>
+  <rect x="20" y="250" width="450" height="150" rx="10" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+  <text x="40" y="285" font-size="19" font-weight="bold" fill="#a8324a">Search by name ✗</text>
+  <g font-size="17" fill="#333"><text x="40" y="318">"Works on microbial memory and on</text><text x="40" y="342">drought and famine memory in history;</text><text x="40" y="366">interdisciplinary profile."</text></g>
+  <rect x="530" y="250" width="450" height="150" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="550" y="285" font-size="19" font-weight="bold" fill="#2a7f8f">Start from the identifier ✓</text>
+  <g font-size="17" fill="#333"><text x="550" y="318">Keeps 4 works of fictional-id-0002.</text><text x="550" y="342">Excluded: 2 works by fictional-id-0901</text><text x="550" y="366">(other affiliation, other field).</text></g>
+  <line x1="245" y1="192" x2="245" y2="246" stroke="#a8324a" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="755" y1="192" x2="300" y2="246" stroke="#a8324a" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="245" y1="192" x2="700" y2="246" stroke="#2a7f8f" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="500" y="445" font-size="19" fill="#333" text-anchor="middle">Ask the agent to list what it excluded and why; then compare with the person's own page.</text>
+  <text x="980" y="490" font-size="13" fill="#999" text-anchor="end">FICTIONAL people</text>
+</svg>

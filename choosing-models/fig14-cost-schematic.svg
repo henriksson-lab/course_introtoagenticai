@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#fff"/>
+  <rect x="20" y="10" width="960" height="40" rx="6" fill="#f6e4e8"/>
+  <text x="500" y="37" font-size="19" text-anchor="middle" fill="#a8324a" font-weight="bold">SCHEMATIC, NOT DATA: shape only. See the linked sources for the real graphs.</text>
+  <line x1="110" y1="350" x2="900" y2="350" stroke="#333" stroke-width="1.5"/>
+  <line x1="110" y1="70" x2="110" y2="350" stroke="#333" stroke-width="1.5"/>
+  <text x="505" y="385" font-size="17" text-anchor="middle" fill="#333">time</text>
+  <text x="60" y="210" font-size="17" text-anchor="middle" fill="#333" transform="rotate(-90 60 210)">price to reach the score (log scale)</text>
+  <g fill="none" stroke-width="3">
+    <path d="M140,100 L300,150 L460,200 L620,240 L780,270" stroke="#2a7f8f"/>
+    <path d="M300,110 L420,220 L540,300 L640,335" stroke="#6b4fa0"/>
+  </g>
+  <g fill="#2a7f8f"><circle cx="140" cy="100" r="6"/><circle cx="300" cy="150" r="6"/><circle cx="460" cy="200" r="6"/><circle cx="620" cy="240" r="6"/><circle cx="780" cy="270" r="6"/></g>
+  <g fill="#6b4fa0"><rect x="294" y="104" width="12" height="12"/><rect x="414" y="214" width="12" height="12"/><rect x="534" y="294" width="12" height="12"/><rect x="634" y="329" width="12" height="12"/></g>
+  <g font-size="17">
+    <text x="800" y="262" fill="#2a7f8f">task A: falls slowly</text>
+    <text x="660" y="330" fill="#6b4fa0">task B: falls fast</text>
+    <text x="150" y="85" fill="#333">first model to reach the score: expensive</text>
+    <text x="480" y="160" fill="#333">later, cheaper models reach it too</text>
+  </g>
+  <text x="985" y="412" font-size="14" fill="#999" text-anchor="end">after the pattern in Epoch AI, "LLM inference prices have fallen rapidly but unequally across tasks" (March 2025)</text>
+</svg>

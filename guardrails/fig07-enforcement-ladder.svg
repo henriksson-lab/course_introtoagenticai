@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#ffffff"/>
+  <!-- steps -->
+  <rect x="20" y="270" width="230" height="110" rx="10" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="135" y="306" text-anchor="middle" font-size="18" font-weight="bold" fill="#2a7f8f">One blocked</text>
+  <text x="135" y="330" text-anchor="middle" font-size="18" font-weight="bold" fill="#2a7f8f">request</text>
+  <text x="135" y="360" text-anchor="middle" font-size="16" fill="#1b2a3a">not a violation in itself</text>
+  <rect x="265" y="200" width="230" height="180" rx="10" fill="#fbf6e8" stroke="#8a6a12" stroke-width="2.5"/>
+  <text x="380" y="236" text-anchor="middle" font-size="18" font-weight="bold" fill="#8a6a12">A warning</text>
+  <text x="380" y="266" text-anchor="middle" font-size="16" fill="#1b2a3a">e-mail or message</text>
+  <text x="380" y="290" text-anchor="middle" font-size="16" fill="#1b2a3a">about a pattern of</text>
+  <text x="380" y="314" text-anchor="middle" font-size="16" fill="#1b2a3a">requests</text>
+  <rect x="510" y="130" width="230" height="250" rx="10" fill="#f4f1f9" stroke="#6b4fa0" stroke-width="2.5"/>
+  <text x="625" y="166" text-anchor="middle" font-size="18" font-weight="bold" fill="#6b4fa0">Limited access</text>
+  <text x="625" y="196" text-anchor="middle" font-size="16" fill="#1b2a3a">throttled, features</text>
+  <text x="625" y="220" text-anchor="middle" font-size="16" fill="#1b2a3a">or models removed</text>
+  <rect x="755" y="60" width="225" height="320" rx="10" fill="#fbeef1" stroke="#a8324a" stroke-width="2.5"/>
+  <text x="867" y="96" text-anchor="middle" font-size="18" font-weight="bold" fill="#a8324a">Suspended or</text>
+  <text x="867" y="120" text-anchor="middle" font-size="18" font-weight="bold" fill="#a8324a">closed account</text>
+  <text x="867" y="150" text-anchor="middle" font-size="16" fill="#1b2a3a">appeal possible</text>
+  <!-- arrow -->
+  <line x1="40" y1="400" x2="960" y2="400" stroke="#9aa5b1" stroke-width="2"/>
+  <text x="500" y="40" text-anchor="middle" font-size="19" font-weight="bold" fill="#1b2a3a">The provider looks at patterns over time, under its usage policy</text>
+  <text x="20" y="416" font-size="15" fill="#3a4a5a">steps differ between providers; this is a typical shape, not a fixed sequence</text>
+</svg>

@@ -1,0 +1,307 @@
+---
+title: "Exercise: a house style and a connector"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- written a **`figure-style` skill**: your house style for figures, in a `SKILL.md` file,
+- **tested** it on two different figures in a fresh session, both by calling it by name and by letting the agent pick it up,
+- **checked** the result with numbers: the PNG size in pixels, the colours, the files,
+- **updated** the skill once after correcting the agent,
+- **added one connector** (PubMed) and checked that the references it returns are real,
+- read a third-party skill **before** installing anything, and
+- done the same for **your own project**: a house-style skill in the repository, shared through GitHub.
+
+Your session will look different from anyone else's. Compare **results**, not sessions.
+
+## Before you start
+
+- You have done *Reproducible figures* and have a project folder that is a **git repository** with a `CLAUDE.md` or `AGENTS.md` (*Organising a project for an agent*) and is on GitHub (*GitHub*).
+- R with ggplot2, or Python with matplotlib, works on your computer (*Reproducible figures*).
+- Make a folder for the worked example inside your course folder: `~/agentic-course/custom-skills` (Windows: `C:\Users\<you>\agentic-course\custom-skills`). Inside it, make a folder `data` and download the two example files into it:
+
+| File | What is inside |
+|---|---|
+| [growth.csv](data/growth.csv) | plant height in a greenhouse trial: 3 treatments (`control`, `low_N`, `high_N`), 6 plants each, measured on days 0, 7, 14, 21 and 28 (90 rows) |
+| [course-eval.csv](data/course-eval.csv) | aggregated course-evaluation scores: 4 questions, 2021-2025, mean score (1-5) and number of responses (20 rows) |
+
+Both files are **synthetic**. They are deliberately unlike each other: a time course and a yearly summary. A good house style makes both figures look like one family.
+
+- For the connector step with **Codex**: the PubMed connector we use runs with **Node.js**. In a terminal, type `node --version`. If you get a version number (20 or higher), you are set. If not, ask your agent: "Install Node.js LTS for me, using the official installer or my system's package manager. Explain each step before you run it."
+
+::: {.callout-note}
+**Folders that start with a dot.** Skills live in folders such as `.claude/skills` or `.agents/skills`. Finder and Explorer hide folders whose names start with a dot. On a Mac, press **Cmd+Shift+.** in Finder to show them; on Windows, choose **View › Show › Hidden items** in Explorer. You can also just ask the agent: "List the files in .claude/skills".
+:::
+
+## Worked example
+
+### Step 1: one figure, with the style typed out in full
+
+Start the agent in `~/agentic-course/custom-skills`. This first figure is made the old way: every rule in the prompt. Change any rule you would like differently; it is your style.
+
+```text
+Make a figure from data/growth.csv: mean plant height over time, one
+line per treatment, with the standard error as a shaded band.
+
+Style rules:
+- Size: 8.5 cm wide and 6.5 cm high. Save at exactly this size; do not
+  crop or use "tight" bounding boxes.
+- Font: Arial or Helvetica, 8 pt everywhere. Axis labels with units in
+  brackets, e.g. "Height (cm)".
+- Colours: Okabe-Ito, in this order: #000000, #E69F00, #56B4E9, #009E73.
+  A control group is always black.
+- No title, no grey background, no box around the plot.
+- Save as PDF and as PNG at 300 dpi in results/figures/, named after the script.
+- Write the figure as a script in scripts/, so it can be rerun.
+
+When done, tell me the file names, the PNG size in pixels, and which
+colour went to which treatment.
+```
+
+**What to look for.** The agent writes a short script in R or Python, runs it and reports. If it asks which language to use and you have no preference, choose the one you used in *Reproducible figures*.
+
+#### Check the result
+
+1. **Files.** `results/figures/` holds one `.pdf` and one `.png` with the same name as the script in `scripts/`.
+2. **Size.** Look at the PNG's size in pixels. On a Mac: select the file in Finder, **File › Get Info**, "Dimensions". On Windows: right-click › **Properties › Details**, "Width" and "Height". It should be **1003 × 767** (8.5 × 6.5 cm at 300 dpi; a pixel more is rounding). A size like 950 × 712 means the figure was cropped.
+3. **Colours.** Open the PNG. `control` is **black**, `low_N` orange, `high_N` sky blue. No title, no grey background.
+4. **Does it look right?** By day 28, `high_N` is the tallest and `low_N` the shortest (mean heights about 28.7, 21.5 and 17.6 cm for high_N, control and low_N). If the lines are in another order, check the data before you check the style.
+
+Correct anything that is wrong, the way you learned in *First delegations*: say exactly what is wrong.
+
+### Step 2: turn the rules into a skill
+
+Stay in the same session. Ask the agent to write the skill. Use the line for your tool:
+
+::: {.panel-tabset}
+## Claude Code
+```text
+Write a skill called figure-style that captures the style rules we used,
+including any corrections I made, so that future sessions make figures
+the same way. Put it in .claude/skills/figure-style/SKILL.md.
+Keep it to one screen. The description must say when to use it: whenever
+a plot or chart is made, changed or exported.
+End the skill with the checks the agent should report: file names, PNG
+size in pixels, and the colour of each group.
+Show me the file before you save it.
+```
+## Codex
+```text
+Write a skill called figure-style that captures the style rules we used,
+including any corrections I made, so that future sessions make figures
+the same way. Put it in .agents/skills/figure-style/SKILL.md, with
+name and description in the header.
+Keep it to one screen. The description must say when to use it: whenever
+a plot or chart is made, changed or exported.
+End the skill with the checks the agent should report: file names, PNG
+size in pixels, and the colour of each group.
+Show me the file before you save it.
+```
+:::
+
+**What to look for.** Read every line before you approve. Delete anything you did not decide: agents like to add rules of their own, such as a particular theme, grid lines or a font you never mentioned. The file should look much like this:
+
+::: {.callout-note collapse="true" title="An example SKILL.md (yours will differ)"}
+```markdown
+---
+name: figure-style
+description: House style for all data figures. Use whenever you make,
+  change or export a plot or chart.
+---
+Make every figure in this style:
+
+- Size: 8.5 cm wide and 6.5 cm high (one journal column). Save at exactly
+  this size; do not crop or use "tight" bounding boxes.
+- Font: Arial or Helvetica, 8 pt everywhere. Axis labels with units in
+  brackets, e.g. "Height (cm)".
+- Colours: Okabe-Ito, in this order: #000000, #E69F00, #56B4E9, #009E73.
+  A control group is always black.
+- No title, no grey background, no box around the plot.
+- Save as PDF and as PNG at 300 dpi, in results/figures/, named after the script.
+- Write the figure as a script in scripts/, so it can be rerun.
+
+When done, report: file names, PNG size in pixels (about 1003 x 767),
+and which colour went to which group.
+```
+:::
+
+If you use both tools, ask the agent to copy the folder to the other location too (`.agents/skills/figure-style/` or `.claude/skills/figure-style/`), so both tools find the same skill.
+
+### Step 3: test the skill in a fresh session
+
+Close the session (`/exit` in Claude Code, `/quit` or Ctrl+C in Codex) and start a new one in the same folder. A fresh session has not heard your rules, so only the skill can make the next figure look right.
+
+**Test A: call the skill by name.**
+
+| Claude Code | Codex |
+|---|---|
+| `/figure-style Plot the mean score per question over the years from data/course-eval.csv, one line per question.` | `$figure-style Plot the mean score per question over the years from data/course-eval.csv, one line per question.` |
+
+In Codex you can also type `/skills` and choose `figure-style` from the list.
+
+**Test B: let the agent pick it up.** Start one more fresh session and ask without naming the skill:
+
+```text
+Make a bar chart of the number of responses per year in
+data/course-eval.csv, for the question "Q4 overall".
+```
+
+**What to look for.** In both tests, the session should show that the agent read or used the `figure-style` skill, before it writes the script. If it does not in test B, the description did not match your request. That is worth knowing: improve the description (for example add "bar chart" and "any plot"), or simply call the skill by name when it matters.
+
+#### Check the result
+
+Put the three PNGs side by side (growth, scores, responses).
+
+1. **Size.** All three are **1003 × 767** pixels.
+2. **Family.** Same font and font size, no titles, no grey background, the same first colour. In the growth figure, `control` is black.
+3. **Files.** Each figure has a PDF and a PNG in `results/figures/`, and a script in `scripts/`.
+4. **Report.** The agent reported the pixel size and the colours without being asked in the prompt. That came from the skill.
+5. **Data.** The scores figure has 4 lines with 5 years each; "Q3 reasonable workload" is the lowest line throughout (from 2.82 in 2021 to 3.65 in 2025). The responses for "Q4 overall" go 40, 62, 55, 53, 55.
+
+If a test failed, find out why before you change anything: was the skill not loaded (check the session), or loaded and not followed (then a rule is unclear)?
+
+### Step 4: correct once, then update the skill
+
+Pick something you would like differently in the figures, for example the legend. Tell the agent, then ask it to put the rule in the skill:
+
+```text
+Put the legend inside the plot area, top left, without a box. Redo the
+growth figure. Then add this as a rule to the figure-style skill and
+show me the change.
+```
+
+Read the change. If you keep both copies (Claude Code and Codex), ask: "Copy the updated SKILL.md to the other skill folder and confirm the two files are identical."
+
+Then test once more in a fresh session with one figure. The legend should now be inside the plot without you saying so.
+
+### Step 5: add one connector (PubMed)
+
+Close the agent. Connectors are added **in the terminal, outside the session**.
+
+::: {.panel-tabset}
+## Claude Code
+Anthropic runs a PubMed connector for Claude. It needs no sign-in. In the terminal, type:
+
+```bash
+claude mcp add --transport http pubmed https://pubmed.mcp.claude.com/mcp
+```
+
+Start `claude` again and type `/mcp`. The list should show `pubmed` as connected.
+
+## Codex
+Codex uses an open-source PubMed connector that runs on your computer ([cyanheads/pubmed-mcp-server](https://github.com/cyanheads/pubmed-mcp-server)). It needs Node.js (see *Before you start*). Look up the current version number in its README and put it after the `@`, so you know which version you run. At the time of writing it was 2.12.3:
+
+```bash
+codex mcp add pubmed -- npx -y @cyanheads/pubmed-mcp-server@2.12.3
+```
+
+Start `codex` again and type `/mcp`. The list should show `pubmed` and its tools. The setting is stored in `~/.codex/config.toml` under `[mcp_servers.pubmed]`.
+
+Anthropic's PubMed address (the Claude Code tab) also answers from Codex without sign-in (`codex mcp add pubmed --url https://pubmed.mcp.claude.com/mcp`), but its use outside Claude is not documented, so we do not rely on it here.
+:::
+
+Now ask:
+
+```text
+Use the PubMed connector, not web search, to find three review articles
+from 2020 to 2024 on drought tolerance in barley. For each, give the
+PMID, title, journal, year, and one sentence quoted from the abstract
+that says what the review covers. Tell me which tool calls you made.
+Write the result to notes/pubmed-test.md.
+```
+
+**What to look for.** The session should show calls to the PubMed connector's tools (named something like `search_articles`), not a web search. The agent may ask permission the first time it uses a connector tool; read what it wants to send. Only your search terms go to PubMed.
+
+#### Check the result
+
+1. **Every PMID is real.** Open `https://pubmed.ncbi.nlm.nih.gov/<PMID>/` for each one. Title, journal and year match.
+2. **They are reviews.** PubMed's page shows "Review" under the title.
+3. **The quote is in the abstract.** Find the sentence with Ctrl+F (Cmd+F). A paraphrase presented as a quote counts as a failure.
+4. **The years are 2020 to 2024.**
+
+A connector makes invented references much rarer, but the sentence about each paper is still the model's work. That is why check 3 matters.
+
+**To remove the connector later:** `claude mcp remove pubmed` or `codex mcp remove pubmed` (or delete the `[mcp_servers.pubmed]` block from `~/.codex/config.toml`).
+
+### Optional: a Zotero connector
+
+If you keep your references in Zotero, a connector lets the agent search your own library. At the time of writing, two maintained options exist, both written by volunteers, not by Zotero:
+
+- [54yyyu/zotero-mcp](https://github.com/54yyyu/zotero-mcp): a Python program with a setup command; reads your local Zotero library.
+- [cookjohn/zotero-mcp](https://github.com/cookjohn/zotero-mcp): a Zotero 7 plugin with a built-in connector that you add to the agent by its local address.
+
+Setup changes often, so follow the README of the one you choose, and give both the README and these five questions to your agent before installing: who made it, is it maintained, what can it reach, have you read it, is it allowed. Most options need the Zotero setting **"Allow other applications on this computer to communicate with Zotero"** (Zotero › Settings › Advanced).
+
+::: {.callout-warning}
+Your Zotero library may hold notes on manuscripts you reviewed, unpublished drafts or annotations about colleagues. Anything the agent reads from it goes to the model provider. Use a connector that only reads, and point it at a collection with published papers only.
+:::
+
+**Check:** ask "How many items are in my collection *X*?" and compare with the number Zotero shows. Ask for three items with their DOIs and check them.
+
+### Step 6: read a third-party skill before you install anything
+
+Skills written by others are easy to find. Practise looking before installing. Open Anthropic's public skills repository at [github.com/anthropics/skills](https://github.com/anthropics/skills), pick one skill folder and open its `SKILL.md`. Do **not** install it. Answer:
+
+1. Who made it, and when was it last changed?
+2. What does it tell the agent to do? Does any line surprise you?
+3. Does the folder contain scripts? What would the agent run?
+4. What could it reach on your computer if you installed it?
+
+You can ask your agent to help: "Read this SKILL.md and any scripts in its folder [paste the link]. List everything it would make an agent do, every command it would run, and anything that sends data off the computer. Do not install it." Then check its answer against the file yourself.
+
+## On your own project
+
+::: {.callout-warning}
+**Privacy reminder.** A skill describes *how* you work; it should hold no data, names or confidential details. A connector sends what the agent gives it to someone else's server or runs a stranger's program on your computer. Check your project's data class (README, *Privacy, ethics and safety*) before you add one.
+:::
+
+1. **Write your house style.** Start the agent in your project folder. Use the figure you made in *Reproducible figures* as the reference:
+
+```text
+Look at the figure script in scripts/ and the figure it makes. Together
+with me, write a house-style skill for figures in this project, called
+figure-style. First ask me about size, font, colours, file formats and
+anything special for my field (for example a fixed colour per group or
+sample type). Then write .claude/skills/figure-style/SKILL.md and an
+identical copy in .agents/skills/figure-style/SKILL.md. Keep it to one
+screen and end with checks the agent must report.
+Add one line to CLAUDE.md / AGENTS.md: "The two figure-style skill
+copies must stay identical."
+```
+
+  If your project produces reports rather than figures, write a `report-style` skill instead (see the lecture for a sketch).
+
+2. **Test it** in a fresh session on **two different** figures (or reports) from your project: one by name, one without naming it. Check size, fonts, colours and files as in step 3. Fix the skill until both pass.
+
+3. **Share it.** Ask the agent to commit the skill folders with a clear message ("Add figure-style house style skill") and push to GitHub. Look at your repository on GitHub: the folders `.claude/skills/figure-style` and `.agents/skills/figure-style` are there.
+
+4. **Decide on a connector.** Would a connector help this project: PubMed or Zotero for literature, or another database from your field? Use the five questions from the lecture. If you add one, write in your README which connector, from whom, and what it can reach. If not, write one line saying why. Never commit an API key.
+
+5. **Log it.** Add a line to the "Log of AI use" in your README: date, tool, "added figure-style skill; tested on two figures", and the connector if any.
+
+6. **Optional:** copy the skill to your personal folder (`~/.claude/skills/` or `~/.agents/skills/`) so that it works in all your projects.
+
+### Check the result
+
+- In a fresh session, two figures from your project come out with the same size in pixels, the same fonts and the same colour for the same group, without any style rules in the prompt.
+- On GitHub, the skill folders are in the repository, and the two copies are identical (ask the agent to compare them, then look at both yourself).
+- The README says which connectors the project uses, or why none.
+- No key, password or personal data is in any committed file.
+
+## What you should have now
+
+- A **`figure-style` skill** (or `report-style`) in your own project, in both tool folders, committed and pushed to GitHub.
+- Two figures from your project made with the skill in a fresh session, with checked pixel sizes and colours.
+- A **PubMed connector** you know how to add, check with `/mcp` and remove, and a `notes/pubmed-test.md` with three checked references.
+- A line in your README about connectors, and a new entry in your **Log of AI use**.
+- The habit: **the second time you correct the agent on the same point, put it in the skill**, and read any third-party skill or connector before you install it.
+
+In *Reading other people's code* you will point the agent at code someone else wrote, and your house style will make the ported figures match yours.

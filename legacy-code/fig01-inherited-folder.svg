@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#fff"/>
+  <rect x="20" y="15" width="960" height="430" rx="8" fill="#fff" stroke="#999" stroke-width="2"/>
+  <rect x="20" y="15" width="960" height="36" rx="8" fill="#e6e6e6"/>
+  <rect x="20" y="40" width="960" height="11" fill="#e6e6e6"/>
+  <text x="40" y="40" font-size="17" fill="#333">jonas_analysis_FINAL   (63 items)</text>
+  <g font-size="16" fill="#333">
+    <text x="40" y="82">README.txt</text>
+    <text x="40" y="108">main_analysis.m</text>
+    <text x="40" y="134">main_analysis_new.m</text>
+    <text x="40" y="160">main_analysis_old2.m</text>
+    <text x="40" y="186">blcorr.m</text>
+    <text x="40" y="212">fitwin.m</text>
+    <text x="40" y="238">fitwin_test.m</text>
+    <text x="40" y="264">mvavg.m</text>
+    <text x="40" y="290">fig3_paper.m</text>
+    <text x="40" y="316">fig3_paper_v2.m</text>
+    <text x="40" y="342">stats_tmp.m</text>
+    <text x="40" y="368">readTecan.m</text>
+    <text x="40" y="394">… and 41 more .m files</text>
+    <text x="370" y="82">plate_0312.csv</text>
+    <text x="370" y="108">plate_0313.csv</text>
+    <text x="370" y="134">gr_out_0312.txt</text>
+    <text x="370" y="160">results_ALL.mat</text>
+    <text x="370" y="186">fig3.fig</text>
+    <text x="370" y="212">fig3_final.png</text>
+    <text x="370" y="238">notes.docx</text>
+  </g>
+  <rect x="680" y="70" width="285" height="120" rx="6" fill="#fafafa" stroke="#bbb"/>
+  <text x="695" y="96" font-size="15" fill="#666">README.txt</text>
+  <text x="695" y="126" font-size="16" fill="#333" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">run main_analysis,</text>
+  <text x="695" y="150" font-size="16" fill="#333" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">change filename first</text>
+  <text x="695" y="174" font-size="16" fill="#333" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">/J</text>
+  <g font-size="18" font-weight="bold">
+    <rect x="680" y="215" width="285" height="60" rx="8" fill="#f8e9ec" stroke="#a8324a"/>
+    <text x="695" y="241" fill="#a8324a">3000 lines, almost</text>
+    <text x="695" y="264" fill="#a8324a">no comments</text>
+    <rect x="680" y="290" width="285" height="60" rx="8" fill="#f6f1e3" stroke="#8a6a12"/>
+    <text x="695" y="316" fill="#8a6a12">which version made</text>
+    <text x="695" y="339" fill="#8a6a12">the paper's figure 3?</text>
+    <rect x="680" y="365" width="285" height="60" rx="8" fill="#f1edf7" stroke="#6b4fa0"/>
+    <text x="695" y="391" fill="#6b4fa0">MATLAB licence ends;</text>
+    <text x="695" y="414" fill="#6b4fa0">new student uses R</text>
+  </g>
+  <text x="980" y="462" font-size="14" fill="#999" text-anchor="end">illustrative</text>
+</svg>

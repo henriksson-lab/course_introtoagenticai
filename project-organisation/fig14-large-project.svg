@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="1000" height="480" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="480" fill="#ffffff"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="18" fill="#333" xml:space="preserve">
+    <text x="30" y="40" font-weight="bold">thesis/</text>
+    <text x="50" y="76">├── <tspan fill="#2a7f8f" font-weight="bold">AGENTS.md</tspan></text>
+    <text x="50" y="108">├── README.md</text>
+    <text x="50" y="140">├── notes/plan.md</text>
+    <text x="50" y="176">├── study1-survey/</text>
+    <text x="50" y="208">│   ├── <tspan fill="#6b4fa0" font-weight="bold">AGENTS.md</tspan></text>
+    <text x="50" y="240">│   └── data/ scripts/ results/</text>
+    <text x="50" y="276">├── study2-imaging/</text>
+    <text x="50" y="308">│   ├── <tspan fill="#6b4fa0" font-weight="bold">AGENTS.md</tspan></text>
+    <text x="50" y="340">│   └── data/ scripts/ results/</text>
+    <text x="50" y="376">└── text/</text>
+    <text x="50" y="408">    └── chapter-1.md ...</text>
+  </g>
+  <g font-size="18">
+    <text x="470" y="72" fill="#2a7f8f" font-weight="bold">Top level: a short map</text>
+    <text x="470" y="98" fill="#555">what the parts are; rules for all</text>
+    <text x="470" y="190" fill="#6b4fa0" font-weight="bold">Per part: its own rules</text>
+    <text x="470" y="216" fill="#555">units, codes, checks for that study</text>
+    <text x="470" y="242" fill="#555">Claude Code: read when it works there</text>
+    <text x="470" y="268" fill="#555">Codex: start it in that folder</text>
+    <text x="470" y="340" fill="#333" font-weight="bold">Plus:</text>
+    <text x="470" y="366" fill="#555">one task per session; plan.md for the current state;</text>
+    <text x="470" y="392" fill="#555">names that say what is inside; let the agent search</text>
+  </g>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#ffffff"/>
+  <text x="170" y="40" text-anchor="middle" font-size="21" font-weight="bold" fill="#2a7f8f">What the agent sees</text>
+  <rect x="30" y="60" width="280" height="90" rx="8" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="50" y="98" font-family="Menlo, Consolas, monospace" font-size="17" fill="#333">reaction-times.csv</text>
+  <text x="50" y="126" font-size="16" fill="#555">participant, condition, ...</text>
+  <rect x="30" y="170" width="280" height="70" rx="8" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="50" y="212" font-family="Menlo, Consolas, monospace" font-size="17" fill="#333">"Make a nice plot"</text>
+  <text x="170" y="290" text-anchor="middle" font-size="17" fill="#555">That is all.</text>
+  <text x="170" y="315" text-anchor="middle" font-size="17" fill="#555">The rest is guessed.</text>
+  <!-- table of gaps -->
+  <text x="545" y="40" text-anchor="middle" font-size="21" font-weight="bold" fill="#6b4fa0">What only you know</text>
+  <text x="845" y="40" text-anchor="middle" font-size="21" font-weight="bold" fill="#a8324a">The agent's guess</text>
+  <g font-size="17" fill="#333">
+    <rect x="390" y="60" width="590" height="56" fill="#f4f1f9"/>
+    <text x="405" y="94">Plausible values: 150 to 1000 ms</text>
+    <text x="725" y="94" fill="#a8324a">anything goes</text>
+    <text x="405" y="150">False starts are excluded</text>
+    <text x="725" y="150" fill="#a8324a">keep every row</text>
+    <rect x="390" y="172" width="590" height="56" fill="#f4f1f9"/>
+    <text x="405" y="206">P07 may have typed seconds</text>
+    <text x="725" y="206" fill="#a8324a">all values are ms</text>
+    <text x="405" y="262">It is for tomorrow's lab session</text>
+    <text x="725" y="262" fill="#a8324a">a generic figure</text>
+    <rect x="390" y="284" width="590" height="56" fill="#f4f1f9"/>
+    <text x="405" y="318">Show each student, not just means</text>
+    <text x="725" y="318" fill="#a8324a">bars of means</text>
+    <text x="405" y="374">Do not touch the original file</text>
+    <text x="725" y="374" fill="#a8324a">"cleans" it in place?</text>
+  </g>
+  <line x1="710" y1="60" x2="710" y2="396" stroke="#ccc" stroke-width="1.5"/>
+  <text x="500" y="440" text-anchor="middle" font-size="19" fill="#333">Most guesses are fine. A brief closes the gaps that matter.</text>
+</svg>

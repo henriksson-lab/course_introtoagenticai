@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="500" fill="#fff"/>
+  <rect x="20" y="15" width="960" height="455" rx="10" fill="#1f2430"/>
+  <circle cx="45" cy="37" r="7" fill="#a8324a"/><circle cx="68" cy="37" r="7" fill="#8a6a12"/><circle cx="91" cy="37" r="7" fill="#2a7f8f"/>
+  <text x="500" y="43" font-size="16" fill="#aab" text-anchor="middle">terminal: soil-funding-map</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="17" xml:space="preserve">
+    <text x="45" y="82" fill="#8fd3df">&gt; Undo your last change to scripts/clean.py. Before you do,</text>
+    <text x="45" y="106" fill="#8fd3df">  tell me what will be thrown away and what will be kept.</text>
+    <text x="45" y="144" fill="#9a9aa8">• git status   →  modified: scripts/clean.py, results/clean.csv</text>
+    <text x="45" y="170" fill="#9a9aa8">• git diff scripts/clean.py   →  2 lines changed (the amount filter)</text>
+    <text x="45" y="206" fill="#e8e8e8">This will discard the 2 changed lines in scripts/clean.py and</text>
+    <text x="45" y="230" fill="#e8e8e8">bring back the version from the last commit (a41be07).</text>
+    <text x="45" y="254" fill="#e8e8e8">results/clean.csv was also changed by the last run. I will</text>
+    <text x="45" y="278" fill="#e8e8e8">restore it too, so it matches the script. Nothing else changes.</text>
+  </g>
+  <rect x="40" y="300" width="920" height="105" rx="6" fill="none" stroke="#e0b84a" stroke-width="2"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="17" xml:space="preserve">
+    <text x="60" y="330" fill="#e0b84a">Run this command?</text>
+    <text x="60" y="358" fill="#e8e8e8">  git restore scripts/clean.py results/clean.csv</text>
+    <text x="60" y="390" fill="#8fd3df">  1. Yes      2. Yes, and don't ask again      3. No</text>
+    <text x="45" y="440" fill="#9a9aa8">• git status   →  nothing to commit, working tree clean</text>
+  </g>
+  <text x="975" y="492" font-size="14" fill="#999" text-anchor="end">illustrative; wording differs between tools and versions</text>
+</svg>

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#fff"/>
+  <rect x="20" y="20" width="560" height="360" rx="12" fill="#f0f4f8" stroke="#52606d" stroke-width="2.5"/>
+  <text x="45" y="60" font-size="22" font-weight="bold" fill="#1f2933">question-bank-qti.zip</text>
+  <g font-size="19">
+    <rect x="50" y="85" width="500" height="70" rx="8" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="70" y="115" font-family="Courier New, monospace" fill="#2a7f8f" font-weight="bold">imsmanifest.xml</text>
+    <text x="70" y="140" fill="#52606d" font-size="17">list of what is inside</text>
+    <rect x="50" y="170" width="500" height="90" rx="8" fill="#fff" stroke="#6b4fa0" stroke-width="2"/>
+    <text x="70" y="200" font-family="Courier New, monospace" fill="#6b4fa0" font-weight="bold">quiz/quiz.xml</text>
+    <text x="70" y="225" fill="#52606d" font-size="17">questions, choices, correct answers,</text>
+    <text x="70" y="247" fill="#52606d" font-size="17">feedback per choice (QTI 1.2)</text>
+    <rect x="50" y="275" width="500" height="80" rx="8" fill="#fff" stroke="#8a6a12" stroke-width="2"/>
+    <text x="70" y="305" font-family="Courier New, monospace" fill="#8a6a12" font-weight="bold">quiz/assessment_meta.xml</text>
+    <text x="70" y="330" fill="#52606d" font-size="17">Canvas settings: title, shuffle, attempts</text>
+  </g>
+  <g font-size="20" fill="#333">
+    <text x="615" y="120">A standard format</text>
+    <text x="615" y="150">for test questions.</text>
+    <text x="615" y="210">You never read the XML:</text>
+    <text x="615" y="240">the script writes it,</text>
+    <text x="615" y="270">Canvas reads it,</text>
+    <text x="615" y="300" font-weight="bold" fill="#2a7f8f">you check the quiz.</text>
+  </g>
+</svg>

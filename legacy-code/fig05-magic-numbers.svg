@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="450" fill="#fff"/>
+  <rect x="20" y="15" width="590" height="420" rx="8" fill="#f7f7f7" stroke="#bbb"/>
+  <g xml:space="preserve" style="white-space:pre" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17" fill="#333">
+    <text x="38" y="50" fill="#888">% gr_calc.m (excerpt)</text>
+    <text x="38" y="82">fname = 'plate_0312.csv';</text>
+    <text x="38" y="114">t = (0:n-1)' * <tspan fill="#a8324a" font-weight="bold">15</tspan>/60;</text>
+    <text x="38" y="146" fill="#888">% blanks are col 1 (A1 B1 C1 D1)</text>
+    <text x="38" y="172">bl = <tspan fill="#a8324a" font-weight="bold">[1 7 13]</tspan>;</text>
+    <text x="38" y="204">Ys = mvavg(Y, <tspan fill="#8a6a12" font-weight="bold">3</tspan>);</text>
+    <text x="38" y="236">th1 = <tspan fill="#8a6a12" font-weight="bold">0.02</tspan>;  th2 = <tspan fill="#8a6a12" font-weight="bold">0.2</tspan>;</text>
+    <text x="38" y="262" fill="#888">%th1 = 0.05; th2 = 0.3;  % old values</text>
+    <text x="38" y="294">td(k) = <tspan fill="#6b4fa0" font-weight="bold">0.6931</tspan> / mu(k) * 60;</text>
+    <text x="38" y="326">fo = ['gr_out_' fname(<tspan fill="#6b4fa0" font-weight="bold">7:10</tspan>) '.txt'];</text>
+    <text x="38" y="358" fill="#888">% (blcorr.m)</text>
+    <text x="38" y="384">Y(Y &lt; <tspan fill="#8a6a12" font-weight="bold">0.001</tspan>) = 0.001;</text>
+  </g>
+  <g font-size="17">
+    <rect x="630" y="20" width="355" height="80" rx="8" fill="#f6e4e8" stroke="#a8324a"/>
+    <text x="645" y="48" fill="#a8324a" font-weight="bold">15: a reading every 15 min.</text>
+    <text x="645" y="72" fill="#333">The file has a time column,</text>
+    <text x="645" y="93" fill="#333">but the script ignores it.</text>
+    <rect x="630" y="112" width="355" height="80" rx="8" fill="#f6e4e8" stroke="#a8324a"/>
+    <text x="645" y="140" fill="#a8324a" font-weight="bold">[1 7 13]: A1, B1, C1.</text>
+    <text x="645" y="164" fill="#333">The comment says four blanks.</text>
+    <text x="645" y="185" fill="#333">Where is D1 (well 19)?</text>
+    <rect x="630" y="204" width="355" height="104" rx="8" fill="#f5efdd" stroke="#8a6a12"/>
+    <text x="645" y="232" fill="#8a6a12" font-weight="bold">3, 0.02, 0.2, 0.001:</text>
+    <text x="645" y="256" fill="#333">scientific choices; reasons in</text>
+    <text x="645" y="278" fill="#333">"notebook 3 p. 41", not in</text>
+    <text x="645" y="300" fill="#333">the code</text>
+    <rect x="630" y="320" width="355" height="104" rx="8" fill="#eeeaf5" stroke="#6b4fa0"/>
+    <text x="645" y="348" fill="#6b4fa0" font-weight="bold">0.6931, 7:10:</text>
+    <text x="645" y="372" fill="#333">ln 2 typed in; the date taken</text>
+    <text x="645" y="394" fill="#333">from fixed letters of the file</text>
+    <text x="645" y="416" fill="#333">name. Fine, but fragile.</text>
+  </g>
+</svg>

@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#fff"/>
+  <!-- left terminal -->
+  <rect x="15" y="15" width="475" height="410" rx="10" fill="#1f2430"/>
+  <circle cx="38" cy="37" r="7" fill="#a8324a"/><circle cx="60" cy="37" r="7" fill="#8a6a12"/><circle cx="82" cy="37" r="7" fill="#2a7f8f"/>
+  <text x="270" y="43" font-size="16" fill="#aab" text-anchor="middle">window 1: parallel-workers/claude</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="16" xml:space="preserve">
+    <text x="35" y="85" fill="#8fd3df">$ cd ~/agentic-course/</text>
+    <text x="35" y="107" fill="#8fd3df">    parallel-workers/claude</text>
+    <text x="35" y="131" fill="#8fd3df">$ claude</text>
+    <text x="35" y="167" fill="#e8e8e8">&gt; lakes.csv holds two years of</text>
+    <text x="35" y="189" fill="#e8e8e8">  lake samples. Make a summary</text>
+    <text x="35" y="211" fill="#e8e8e8">  table and a figure ...</text>
+    <text x="35" y="249" fill="#9a9aa8">• Read lakes.csv (51 rows)</text>
+    <text x="35" y="273" fill="#9a9aa8">• Writing summarise.py</text>
+    <text x="35" y="297" fill="#c9a8f0">  working ...</text>
+  </g>
+  <!-- right terminal -->
+  <rect x="510" y="15" width="475" height="410" rx="10" fill="#1f2430"/>
+  <circle cx="533" cy="37" r="7" fill="#a8324a"/><circle cx="555" cy="37" r="7" fill="#8a6a12"/><circle cx="577" cy="37" r="7" fill="#2a7f8f"/>
+  <text x="765" y="43" font-size="16" fill="#aab" text-anchor="middle">window 2: parallel-workers/codex</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="16" xml:space="preserve">
+    <text x="530" y="85" fill="#8fd3df">$ cd ~/agentic-course/</text>
+    <text x="530" y="107" fill="#8fd3df">    parallel-workers/codex</text>
+    <text x="530" y="131" fill="#8fd3df">$ codex</text>
+    <text x="530" y="167" fill="#e8e8e8">&gt; lakes.csv holds two years of</text>
+    <text x="530" y="189" fill="#e8e8e8">  lake samples. Make a summary</text>
+    <text x="530" y="211" fill="#e8e8e8">  table and a figure ...</text>
+    <text x="530" y="249" fill="#9a9aa8">• Ran: head -5 lakes.csv</text>
+    <text x="530" y="273" fill="#9a9aa8">• Editing summary.R</text>
+    <text x="530" y="297" fill="#c9a8f0">  working ...</text>
+  </g>
+  <rect x="35" y="340" width="435" height="60" rx="6" fill="none" stroke="#e0b84a" stroke-width="2"/>
+  <text x="252" y="376" font-size="17" fill="#e0b84a" text-anchor="middle">its own folder, its own copy of the data</text>
+  <rect x="530" y="340" width="435" height="60" rx="6" fill="none" stroke="#e0b84a" stroke-width="2"/>
+  <text x="747" y="376" font-size="17" fill="#e0b84a" text-anchor="middle">its own folder, its own copy of the data</text>
+  <text x="985" y="455" font-size="14" fill="#999" text-anchor="end">illustrative; your sessions will look different</text>
+</svg>

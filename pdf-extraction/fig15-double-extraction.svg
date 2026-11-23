@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <rect width="1000" height="420" fill="#fff"/>
+  <rect x="20" y="150" width="140" height="100" rx="8" fill="#fff" stroke="#a8324a" stroke-width="2"/>
+  <text x="90" y="190" font-size="17" font-weight="bold" fill="#a8324a" text-anchor="middle">papers/</text>
+  <text x="90" y="214" font-size="15" fill="#555" text-anchor="middle">same PDFs,</text>
+  <text x="90" y="234" font-size="15" fill="#555" text-anchor="middle">same definition</text>
+  <line x1="165" y1="180" x2="240" y2="110" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="165" y1="220" x2="240" y2="290" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="250" y="60" width="200" height="90" rx="8" fill="#efeaf6" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="350" y="98" font-size="18" font-weight="bold" fill="#6b4fa0" text-anchor="middle">Agent A</text>
+  <text x="350" y="124" font-size="15" fill="#555" text-anchor="middle">e.g. Claude Code</text>
+  <rect x="250" y="250" width="200" height="90" rx="8" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="350" y="288" font-size="18" font-weight="bold" fill="#2a7f8f" text-anchor="middle">Agent B</text>
+  <text x="350" y="314" font-size="15" fill="#555" text-anchor="middle">e.g. Codex, new session</text>
+  <line x1="455" y1="105" x2="515" y2="105" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="455" y1="295" x2="515" y2="295" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="525" y="75" width="140" height="60" rx="6" fill="#fff" stroke="#6b4fa0"/>
+  <text x="595" y="111" font-size="16" fill="#333" text-anchor="middle">extraction_A.csv</text>
+  <rect x="525" y="265" width="140" height="60" rx="6" fill="#fff" stroke="#2a7f8f"/>
+  <text x="595" y="301" font-size="16" fill="#333" text-anchor="middle">extraction_B.csv</text>
+  <line x1="670" y1="110" x2="735" y2="185" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="670" y1="290" x2="735" y2="215" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="745" y="150" width="235" height="100" rx="8" fill="#f5efdd" stroke="#8a6a12" stroke-width="2"/>
+  <text x="862" y="186" font-size="18" font-weight="bold" fill="#8a6a12" text-anchor="middle">compare (diff)</text>
+  <text x="862" y="212" font-size="15" fill="#555" text-anchor="middle">a script lists every cell</text>
+  <text x="862" y="232" font-size="15" fill="#555" text-anchor="middle">that differs</text>
+  <text x="862" y="290" font-size="16" fill="#a8324a" text-anchor="middle" font-weight="bold">you settle each</text>
+  <text x="862" y="312" font-size="16" fill="#a8324a" text-anchor="middle" font-weight="bold">difference with the PDF</text>
+  <text x="20" y="395" font-size="17" fill="#333">B must not see A's table. Two readers agreeing by chance on the same wrong number is rare.</text>
+</svg>

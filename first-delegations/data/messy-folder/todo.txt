@@ -1,3 +1,0 @@
-- book microscope
-- send survey reminder
-- update figure 2

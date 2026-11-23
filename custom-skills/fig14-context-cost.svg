@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#fff"/>
+  <text x="20" y="40" font-size="20" font-weight="bold" fill="#333">The agent's context at the start of a session</text>
+  <text x="20" y="100" font-size="18" fill="#333">1 connector</text>
+  <g>
+    <rect x="200" y="75" width="90" height="40" fill="#bbb"/>
+    <rect x="290" y="75" width="60" height="40" fill="#8a6a12"/>
+    <rect x="350" y="75" width="30" height="40" fill="#2a7f8f"/>
+    <rect x="380" y="75" width="40" height="40" fill="#6b4fa0"/>
+    <rect x="420" y="75" width="560" height="40" fill="#e3f0f2" stroke="#2a7f8f"/>
+    <text x="700" y="101" font-size="17" fill="#2a7f8f" text-anchor="middle">room for your data and conversation</text>
+  </g>
+  <text x="20" y="190" font-size="18" fill="#333">10 connectors</text>
+  <g>
+    <rect x="200" y="165" width="90" height="40" fill="#bbb"/>
+    <rect x="290" y="165" width="60" height="40" fill="#8a6a12"/>
+    <rect x="350" y="165" width="30" height="40" fill="#2a7f8f"/>
+    <rect x="380" y="165" width="330" height="40" fill="#6b4fa0"/>
+    <rect x="710" y="165" width="270" height="40" fill="#e3f0f2" stroke="#2a7f8f"/>
+    <text x="545" y="191" font-size="17" fill="#fff" text-anchor="middle">tool descriptions</text>
+    <text x="845" y="191" font-size="17" fill="#2a7f8f" text-anchor="middle">less room</text>
+  </g>
+  <g font-size="16" fill="#333">
+    <rect x="200" y="250" width="22" height="22" fill="#bbb"/><text x="230" y="267">the tool's own instructions</text>
+    <rect x="200" y="285" width="22" height="22" fill="#8a6a12"/><text x="230" y="302">CLAUDE.md / AGENTS.md</text>
+    <rect x="560" y="250" width="22" height="22" fill="#2a7f8f"/><text x="590" y="267">skill names and descriptions</text>
+    <rect x="560" y="285" width="22" height="22" fill="#6b4fa0"/><text x="590" y="302">connector tool descriptions</text>
+  </g>
+  <text x="20" y="355" font-size="18" fill="#a8324a">More tools also make it harder for the agent to pick the right one.</text>
+  <text x="980" y="390" font-size="14" fill="#999" text-anchor="end">schematic; proportions are not measured</text>
+</svg>

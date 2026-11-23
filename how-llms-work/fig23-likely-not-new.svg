@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="430" fill="#ffffff"/>
+  <text x="20" y="32" font-size="19" fill="#666">"Suggest a research question on soil microbes and drought." Possible answers, by how likely the model finds them:</text>
+  <line x1="60" y1="330" x2="960" y2="330" stroke="#333" stroke-width="1.5"/>
+  <path d="M60,328 C140,328 170,80 260,80 C350,80 380,250 500,290 C620,312 800,314 960,316" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="3"/>
+  <path d="M700,309 C800,313 880,315 960,316 L960,330 L700,330 Z" fill="#6b4fa0" opacity="0.6"/>
+  <g font-size="17" fill="#333">
+    <text x="260" y="62" text-anchor="middle" font-weight="bold" fill="#2a7f8f">the typical answers</text>
+    <text x="418" y="120">"How does drought change</text>
+    <text x="418" y="142">microbial diversity?"</text>
+    <text x="418" y="176" fill="#666">what most papers say;</text>
+    <text x="418" y="198" fill="#666">the model picks from here</text>
+    <text x="830" y="240" text-anchor="middle" font-weight="bold" fill="#6b4fa0">unusual, possibly original</text>
+    <text x="830" y="264" text-anchor="middle">rarely picked by default</text>
+    <text x="830" y="288" text-anchor="middle" fill="#666">(and some are just wrong)</text>
+  </g>
+  <text x="510" y="358" font-size="17" text-anchor="middle" fill="#333">common  ←  answers  →  rare</text>
+  <g font-size="17">
+    <rect x="20" y="375" width="470" height="48" rx="8" fill="#eeeaf5" stroke="#6b4fa0"/>
+    <text x="36" y="405" fill="#333"><tspan font-weight="bold" fill="#6b4fa0">Push:</tspan> "ten alternatives", "what would a critic say?"</text>
+    <rect x="510" y="375" width="470" height="48" rx="8" fill="#f5efdd" stroke="#8a6a12"/>
+    <text x="526" y="405" fill="#333"><tspan font-weight="bold" fill="#8a6a12">Judge:</tspan> is it new? Search the literature</text>
+  </g>
+  <text x="985" y="80" font-size="14" fill="#999" text-anchor="end">schematic</text>
+</svg>

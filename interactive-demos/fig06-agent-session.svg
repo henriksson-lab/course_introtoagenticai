@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="500" fill="#ffffff"/>
+  <rect x="20" y="20" width="960" height="400" rx="10" fill="#1e2630" stroke="#3a4654" stroke-width="1.5"/>
+  <rect x="20" y="20" width="960" height="34" rx="10" fill="#2d3743"/>
+  <rect x="20" y="44" width="960" height="10" fill="#2d3743"/>
+  <circle cx="40" cy="37" r="6.5" fill="#e0605a"/>
+  <circle cx="62" cy="37" r="6.5" fill="#e6b84f"/>
+  <circle cx="84" cy="37" r="6.5" fill="#5fbf6a"/>
+  <text x="500.0" y="43" font-size="15" fill="#b8c2cc" text-anchor="middle" font-weight="normal" xml:space="preserve">interactive-demos: agent session</text>
+  <text x="38" y="82" font-size="18" fill="#9fe0ea" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">&gt; Make one self-contained HTML file logistic-growth.html ...</text>
+  <text x="38" y="112" font-size="18" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve"></text>
+  <text x="38" y="142" font-size="18" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">● I'll write a single file: HTML, CSS and plain JavaScript,</text>
+  <text x="38" y="172" font-size="18" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  no libraries and nothing loaded from the internet.</text>
+  <text x="38" y="202" font-size="18" fill="#e6b84f" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  Write(logistic-growth.html)   +281 lines</text>
+  <text x="38" y="232" font-size="18" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve"></text>
+  <text x="38" y="262" font-size="18" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">● Done. Open logistic-growth.html in your browser.</text>
+  <text x="38" y="292" font-size="18" fill="#c8e6a0" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  Model: N(t) = K / (1 + ((K - N0)/N0) e^(-r t))</text>
+  <text x="38" y="322" font-size="18" fill="#c8e6a0" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  Check: at t = ln((K - N0)/N0) / r, N should be K/2.</text>
+  <text x="38" y="352" font-size="18" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  Try: drag K, press 'Check the model'.</text>
+  <rect x="28" y="120" width="620" height="92" rx="6" fill="none" stroke="#e6b84f" stroke-width="2.5"/>
+  <rect x="28" y="270" width="690" height="62" rx="6" fill="none" stroke="#c8e6a0" stroke-width="2.5"/>
+  <text x="30" y="452" font-size="19" fill="#8a6a12" text-anchor="start" font-weight="bold" xml:space="preserve">One file, no libraries.</text>
+  <text x="330" y="452" font-size="19" fill="#2a7f8f" text-anchor="start" font-weight="bold" xml:space="preserve">The agent states the formula and a known case: check both.</text>
+  <text x="990" y="490" font-size="14" fill="#9aa4ad" text-anchor="end" font-weight="normal" font-style="italic" xml:space="preserve">illustrative: your session will look different</text>
+</svg>

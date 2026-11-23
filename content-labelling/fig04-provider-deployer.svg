@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker></defs>
+  <rect width="1000" height="400" fill="#ffffff"/>
+  <rect x="20" y="40" width="300" height="260" rx="12" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="170" y="74" text-anchor="middle" font-size="20" font-weight="bold" fill="#6b4fa0">Provider</text>
+  <text x="170" y="100" text-anchor="middle" font-size="15" fill="#3a4a5a">Anthropic, OpenAI, Google ...</text>
+  <g font-size="16" fill="#1b2a3a"><text x="40" y="146">Article 50(2):</text><text x="40" y="172">mark output so machines</text><text x="40" y="196">can tell it is AI-made</text><text x="40" y="236">offer a way to check</text><text x="40" y="260">the mark</text></g>
+  <rect x="350" y="40" width="300" height="260" rx="12" fill="#eef6f7" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="500" y="74" text-anchor="middle" font-size="20" font-weight="bold" fill="#2a7f8f">Deployer: usually you</text>
+  <text x="500" y="100" text-anchor="middle" font-size="15" fill="#3a4a5a">using AI in your work</text>
+  <g font-size="16" fill="#1b2a3a"><text x="370" y="146">Article 50(4): tell people</text><text x="370" y="172">when you publish</text><text x="370" y="204">- a deepfake image, audio</text><text x="370" y="228">  or video</text><text x="370" y="260">- AI text informing the</text><text x="370" y="284">  public, if not reviewed</text></g>
+  <rect x="680" y="40" width="300" height="260" rx="12" fill="#f4f7fa" stroke="#9aa8b5" stroke-width="2"/>
+  <text x="830" y="74" text-anchor="middle" font-size="20" font-weight="bold" fill="#3a4a5a">The public</text>
+  <text x="830" y="100" text-anchor="middle" font-size="15" fill="#3a4a5a">students, readers, viewers</text>
+  <g font-size="16" fill="#1b2a3a"><text x="700" y="146">sees the label</text><text x="700" y="186">can check the mark</text><text x="700" y="210">with a provider's tool</text></g>
+  <line x1="322" y1="170" x2="344" y2="170" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="652" y1="170" x2="674" y2="170" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="500" y="344" text-anchor="middle" font-size="17" fill="#1b2a3a">If you build a chatbot for others, you may be its provider too: Article 50(1) says</text>
+  <text x="500" y="368" text-anchor="middle" font-size="17" fill="#1b2a3a">people must be told they are talking to an AI, unless it is obvious.</text>
+</svg>

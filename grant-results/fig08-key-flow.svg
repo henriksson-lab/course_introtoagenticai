@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+    <marker id="ag" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2a7f8f"/></marker>
+  </defs>
+  <rect width="1000" height="520" fill="#fff"/>
+  <!-- you -->
+  <rect x="20" y="40" width="200" height="90" rx="10" fill="#f6f1e3" stroke="#8a6a12" stroke-width="2"/>
+  <text x="120" y="78" font-size="20" text-anchor="middle" font-weight="bold" fill="#333">You</text>
+  <text x="120" y="105" font-size="17" text-anchor="middle" fill="#333">in a text editor</text>
+  <!-- .env -->
+  <rect x="300" y="40" width="300" height="90" rx="10" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+  <text x="450" y="75" font-size="20" text-anchor="middle" font-weight="bold" fill="#a8324a">.env</text>
+  <text x="450" y="106" font-size="17" text-anchor="middle" fill="#333" font-family="Menlo, Consolas, monospace">SWECRIS_TOKEN=ab12...9f</text>
+  <line x1="220" y1="85" x2="296" y2="85" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="258" y="72" font-size="15" fill="#555" text-anchor="middle">paste</text>
+  <!-- script -->
+  <rect x="300" y="230" width="300" height="90" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="450" y="266" font-size="20" text-anchor="middle" font-weight="bold" fill="#333">download script</text>
+  <text x="450" y="295" font-size="17" text-anchor="middle" fill="#333">reads the key when it runs</text>
+  <line x1="450" y1="132" x2="450" y2="226" stroke="#2a7f8f" stroke-width="2.5" marker-end="url(#ag)"/>
+  <!-- api -->
+  <rect x="720" y="230" width="250" height="90" rx="10" fill="#2a7f8f"/>
+  <text x="845" y="268" font-size="20" text-anchor="middle" font-weight="bold" fill="#fff">Swecris API</text>
+  <text x="845" y="296" font-size="17" text-anchor="middle" fill="#fff">checks the key</text>
+  <line x1="600" y1="275" x2="716" y2="275" stroke="#2a7f8f" stroke-width="2.5" marker-end="url(#ag)"/>
+  <!-- github blocked -->
+  <rect x="720" y="40" width="250" height="90" rx="10" fill="#fff" stroke="#999" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="845" y="78" font-size="20" text-anchor="middle" fill="#777">git / GitHub</text>
+  <text x="845" y="106" font-size="17" text-anchor="middle" fill="#777">never sees .env</text>
+  <line x1="600" y1="85" x2="700" y2="85" stroke="#a8324a" stroke-width="3"/>
+  <line x1="640" y1="65" x2="670" y2="105" stroke="#a8324a" stroke-width="4"/><line x1="670" y1="65" x2="640" y2="105" stroke="#a8324a" stroke-width="4"/>
+  <text x="655" y="148" font-size="16" fill="#a8324a" text-anchor="middle">.gitignore</text>
+  <!-- agent -->
+  <rect x="20" y="380" width="430" height="110" rx="10" fill="#ece6f5" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="235" y="415" font-size="20" text-anchor="middle" font-weight="bold" fill="#6b4fa0">The agent</text>
+  <text x="235" y="444" font-size="17" text-anchor="middle" fill="#333">writes and runs the script; knows only</text>
+  <text x="235" y="468" font-size="17" text-anchor="middle" fill="#333">the name SWECRIS_TOKEN, not the value</text>
+  <line x1="300" y1="378" x2="360" y2="324" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="290" y="355" font-size="15" fill="#555" text-anchor="end">runs</text>
+  <!-- blocked read -->
+  <path d="M200,378 C200,250 230,170 296,120" fill="none" stroke="#a8324a" stroke-width="2.5" stroke-dasharray="7 5"/>
+  <line x1="190" y1="220" x2="230" y2="260" stroke="#a8324a" stroke-width="4"/><line x1="230" y1="220" x2="190" y2="260" stroke="#a8324a" stroke-width="4"/>
+  <text x="120" y="215" font-size="16" fill="#a8324a" text-anchor="middle">does not open</text>
+  <text x="120" y="290" font-size="16" fill="#a8324a" text-anchor="middle">(rule + deny</text>
+  <text x="120" y="310" font-size="16" fill="#a8324a" text-anchor="middle">setting)</text>
+  <!-- chat -->
+  <rect x="540" y="380" width="430" height="110" rx="10" fill="#fff" stroke="#999" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="755" y="420" font-size="20" text-anchor="middle" fill="#777">The chat and session logs</text>
+  <text x="755" y="452" font-size="17" text-anchor="middle" fill="#777">never contain the key: not typed,</text>
+  <text x="755" y="476" font-size="17" text-anchor="middle" fill="#777">not printed, not in any output file</text>
+</svg>

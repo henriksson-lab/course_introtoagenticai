@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+  </defs>
+  <rect width="1000" height="440" fill="#ffffff"/>
+  <rect x="20" y="150" width="160" height="90" rx="10" fill="#6b4fa0"/>
+  <text x="100" y="190" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">New model</text>
+  <text x="100" y="214" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">trained</text>
+  <line x1="180" y1="195" x2="222" y2="195" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="228" y="120" width="250" height="150" rx="10" fill="#f4f7fa" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="353" y="152" text-anchor="middle" font-size="18" font-weight="bold" fill="#1b2a3a">Dangerous-capability</text>
+  <text x="353" y="176" text-anchor="middle" font-size="18" font-weight="bold" fill="#1b2a3a">tests</text>
+  <text x="353" y="206" text-anchor="middle" font-size="16" fill="#3a4a5a">bio and chem, cyber,</text>
+  <text x="353" y="228" text-anchor="middle" font-size="16" fill="#3a4a5a">AI research, autonomy;</text>
+  <text x="353" y="250" text-anchor="middle" font-size="16" fill="#3a4a5a">in-house and external</text>
+  <!-- branch -->
+  <line x1="478" y1="170" x2="560" y2="100" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="478" y1="220" x2="560" y2="290" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="508" y="116" text-anchor="middle" font-size="16" fill="#3a4a5a">below</text>
+  <text x="508" y="296" text-anchor="middle" font-size="16" fill="#3a4a5a">at or near</text>
+  <rect x="566" y="50" width="250" height="100" rx="10" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="691" y="88" text-anchor="middle" font-size="18" font-weight="bold" fill="#2a7f8f">Standard</text>
+  <text x="691" y="112" text-anchor="middle" font-size="18" font-weight="bold" fill="#2a7f8f">protections</text>
+  <rect x="566" y="230" width="250" height="160" rx="10" fill="#fbeef1" stroke="#a8324a" stroke-width="2.5"/>
+  <text x="691" y="262" text-anchor="middle" font-size="18" font-weight="bold" fill="#a8324a">Stronger protections</text>
+  <text x="691" y="292" text-anchor="middle" font-size="16" fill="#1b2a3a">safety classifiers</text>
+  <text x="691" y="316" text-anchor="middle" font-size="16" fill="#1b2a3a">monitoring for misuse</text>
+  <text x="691" y="340" text-anchor="middle" font-size="16" fill="#1b2a3a">tighter security of the</text>
+  <text x="691" y="364" text-anchor="middle" font-size="16" fill="#1b2a3a">model weights</text>
+  <line x1="816" y1="100" x2="858" y2="180" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="816" y1="300" x2="858" y2="220" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="862" y="160" width="120" height="70" rx="10" fill="#1b2a3a"/>
+  <text x="922" y="202" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">Release</text>
+  <text x="500" y="30" text-anchor="middle" font-size="19" font-weight="bold" fill="#1b2a3a">Each framework: test first, then match the protections to the result</text>
+  <text x="500" y="424" text-anchor="middle" font-size="17" fill="#3a4a5a">"At or near": providers often apply the stronger level as a precaution when they cannot rule the threshold out.</text>
+</svg>

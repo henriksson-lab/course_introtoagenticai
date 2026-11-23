@@ -1,0 +1,204 @@
+---
+title: "Exercise: the same task on a closed and an open model"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- run the **same small extraction task** on your usual cloud agent (Claude Code or Codex) and on an **open-weights model**: on SciLifeLab OpenLLM if you are eligible, or on your own computer with LM Studio,
+- **checked both results** against an answer key and counted the errors,
+- written down, for each run, **where the data went**,
+- decided which route (provider's cloud, hosted service, own computer) fits **your own project's data**, and recorded that decision in its `README.md`.
+
+All data in the worked example is **synthetic** and public, so it may go to any of the three routes. Your session will look different from anyone else's; compare **results**, not sessions.
+
+## Before you start
+
+- You have Claude Code or Codex working (*Accounts and installation*), and your course folder `~/agentic-course` (Windows: `C:\Users\<you>\agentic-course`).
+- Download [methods-snippets.zip](data/methods-snippets.zip) and unzip it into a new folder `~/agentic-course/open-weights/`. It holds one file, `methods-snippets.txt`: eight short, made-up methods paragraphs. Open it and read two or three paragraphs, so you know what the task is.
+- Do **not** put the answer key in that folder. You will use it at the end, from this page.
+- Decide which open-model route you will use. You need **one** of these:
+
+| Route | Who can use it | What you need |
+|---|---|---|
+| **A. SciLifeLab OpenLLM** (hosted, Sweden) | Staff at SciLifeLab infrastructure units, members of SciLifeLab-affiliated research groups, and their collaborators (see [Creating an account](https://openllm.scilifelab.se/docs/registration/)) | An approved account. Registration is reviewed by hand and can take days, so register well before the exercise. |
+| **B. LM Studio** (your own computer) | Anyone | A computer with at least 8 GB of memory (16 GB is better) and about 5 GB of free disk space. Permission from IT to install software, if your computer is managed. |
+| **C. An agent with a local model** (optional, for the curious) | Anyone with route B's hardware, or more | Comfort with the terminal. Described at the end of the worked example. |
+
+If you can do neither A nor B (no account, and a locked or small computer), pair up with someone who can, and do the checking and the comparison table together.
+
+::: {.callout-note}
+SciLifeLab OpenLLM is a **pilot**. Its use policy asks users to send only information that is public. The synthetic paragraphs in this exercise are public, so they are fine. Your own project's data is a different question; see "On your own project".
+:::
+
+## Worked example
+
+### Step 1: Run the task on your usual cloud agent
+
+1. Open a terminal, go to `~/agentic-course/open-weights/` with `cd`, and start the agent (`claude` or `codex`).
+2. The agent needs to create one file. In Claude Code, manual mode is fine: approve the write when asked. In Codex, if it starts read-only (the folder is not a git repository), type `/permissions` and choose the mode that lets it edit files in the folder (not full access).
+3. Type this prompt:
+
+```text
+Read methods-snippets.txt. It has eight short methods paragraphs, S1 to S8.
+For each paragraph, extract:
+- organism_or_material: what was studied
+- sample_size: the number of units actually analysed. Add up groups and
+  subtract exclusions where the text says so.
+- temperature_C: in degrees Celsius
+- duration_days: the length of the treatment or observation, in days
+Write "not stated" when a paragraph does not give a value. Do not guess.
+Save the result as extraction-cloud.csv with the columns
+id, organism_or_material, sample_size, temperature_C, duration_days, note
+where note explains any calculation or conversion you made.
+Do not change methods-snippets.txt. Show me the table when done.
+```
+
+4. Note the **time** it took, roughly, and the **tool and plan** you used.
+5. Leave the session open, or close it; you will not need it again until the check.
+
+**Where did the data go?** To Anthropic or OpenAI, under your plan's terms (*Privacy, ethics and safety*). Write that down.
+
+### Step 2a: Run it on SciLifeLab OpenLLM (route A)
+
+1. Go to [openllm.scilifelab.se](https://openllm.scilifelab.se) and click **Log in**. You arrive in the web interface (Open WebUI).
+2. Choose a model in the model selector. The service's [Models page](https://openllm.scilifelab.se/docs/models/) recommends models for different jobs. Start with one of the large general models; note its exact name.
+3. Paste this prompt, followed by the **full text** of `methods-snippets.txt` (open the file in a text editor, select all, copy):
+
+```text
+Below are eight short methods paragraphs, S1 to S8.
+For each paragraph, extract:
+- organism_or_material: what was studied
+- sample_size: the number of units actually analysed. Add up groups and
+  subtract exclusions where the text says so.
+- temperature_C: in degrees Celsius
+- duration_days: the length of the treatment or observation, in days
+Write "not stated" when a paragraph does not give a value. Do not guess.
+Give the result as CSV text with the columns
+id, organism_or_material, sample_size, temperature_C, duration_days, note
+where note explains any calculation or conversion you made.
+
+<paste the paragraphs here>
+```
+
+4. Copy the answer into a new text file `extraction-openllm.csv` in your folder. Note the model name and the time.
+5. If you have time, run it once more with a **different** model from the list, and save that as `extraction-openllm-2.csv`.
+
+**Where did the data go?** To the SciLifeLab OpenLLM service: its front end at KTH and GPUs at one of its sites in Sweden. The chat is also stored in your chat history on the service.
+
+### Step 2b: Run it on your own computer with LM Studio (route B)
+
+1. Download LM Studio from [lmstudio.ai](https://lmstudio.ai) and install it like any other app. On a managed computer, ask IT first.
+2. In LM Studio, open its model search (the menus change between versions; look for **Discover** or a search icon). Search for a small, recent instruction-tuned model. Good starting points in November 2026:
+   - with **8 GB** of memory: a model of about 3 to 4 billion parameters, for example a small Qwen3 or Llama 3.2 3B,
+   - with **16 GB** or more: a model of about 7 to 14 billion parameters, for example Qwen3 8B, or gpt-oss-20b.
+
+   LM Studio shows the download size and often warns if a model is too large for your computer. Pick a version whose size is well below your memory.
+3. Download the model (a few GB; this is the only step that needs the internet). Then **load** it and open a new chat.
+4. Paste the same prompt and text as in Step 2a. Save the answer as `extraction-local.csv`. Note the model name, its size (for example "8B, 4-bit") and how long the answer took.
+5. Optional: switch off your Wi-Fi and run it again. It still works: the model is on your computer.
+
+**Where did the data go?** Nowhere. It stayed on your computer.
+
+::: {.callout-tip collapse="true" title="Step 2c (optional): connect an agent to a local model"}
+This is for those who are comfortable in the terminal and have at least 16 GB of memory. It shows what happens when the *agent* (not just a chat) runs on an open model. Expect it to be slow, and expect it to go wrong more often than with the agent's usual model.
+
+| | Codex | Claude Code |
+|---|---|---|
+| What the tool offers | A built-in option for local models: `--oss`, which talks to **Ollama** or **LM Studio** on the same computer | Can be pointed at another address with `ANTHROPIC_BASE_URL`. Anthropic **does not support** this for non-Claude models. |
+| Set-up | Install [Ollama](https://ollama.com) or use LM Studio. Download a model (Ollama's documentation suggests `gpt-oss:20b` for Codex). For LM Studio, start its local server from the app. | Install [Ollama](https://ollama.com) and follow its [Claude Code page](https://docs.ollama.com/integrations/claude-code), which offers `ollama launch claude` to set things up. |
+| Start | In the exercise folder: `codex --oss`. Codex asks whether to use LM Studio or Ollama, or you add `--local-provider ollama` or `--local-provider lmstudio`. | `ollama launch claude`, then choose a model when asked. |
+
+Give it the prompt from Step 1, but ask it to save `extraction-agent-local.csv`. Watch what happens: does it manage to read the file and write the CSV? Does it get stuck, repeat itself, or produce a malformed command? Write one line about it in your notes. Close the session when done; your normal `claude` or `codex` command is not changed by Codex's `--oss` flag. If you used `ollama launch claude`, read Ollama's page on how to go back to your normal set-up, or simply open a new terminal.
+
+SciLifeLab OpenLLM users can also connect an agent to the service through an API key. Its documentation has pages for [Claude Code](https://openllm.scilifelab.se/docs/claudecode/) and other tools. Never paste an API key into an agent's chat, and keep it out of your project folder (*Privacy, ethics and safety*).
+:::
+
+### Check the result
+
+Open the answer key below only **after** you have saved your results.
+
+::: {.callout-note collapse="true" title="Answer key"}
+
+| id | organism or material | sample size | temperature (°C) | duration (days) | why |
+|---|---|---|---|---|---|
+| S1 | Arabidopsis thaliana | 43 | 22 | 10 | 3 plates × 15 = 45, minus 2 excluded |
+| S2 | first-year engineering students | 287 | not stated | 21 | 287 analysed, not 412 invited; three weeks = 21 days |
+| S3 | zebrafish (Danio rerio) | 96 | 28.5 | 3 | exposed from day 2 to day 5 |
+| S4 | steel coupons | 24 | 35 | 42 | six weeks = 42 days; the 12 reference coupons belong to another report |
+| S5 | soil | 9 | not stated | 3 | 72 hours = 3 days; "constant" temperature has no value. "9 sites" is the best answer; "not stated" with a note about cores per site is also fair |
+| S6 | Escherichia coli K-12 | 12 | 37 | not stated | triplicate × 4 conditions = 12; "overnight plus 3 hours" is not a stated number of days |
+| S7 | hospital pharmacists | 18 | not stated | not stated | March to May is when interviews were held, not a treatment length |
+| S8 | Daphnia magna | 180 | 20 | 21 | 10 animals × 6 beakers × 3 treatments; use the Celsius value |
+
+The answer key is also available as [answer-key.csv](data/answer-key.csv).
+:::
+
+For each of your result files:
+
+- **Count the correct values**: four values per paragraph, 32 in total. Do not count the note column. Small differences in wording ("zebrafish" vs "Danio rerio") are fine; numbers must match.
+- **Look at the traps**: S1 and S8 (adding up groups), S2 (invited vs analysed), S4 (the reference batch), S8 (Celsius vs Fahrenheit). Which model fell into which trap?
+- **Look at the "not stated" cells**: S2, S5, S6, S7. Did any model **invent** a value where the text gives none? That is the most dangerous kind of error, because it looks like data.
+- **Read the note column**: when a model explains a calculation, is the explanation right? A right number with a wrong explanation is luck.
+- Fill in this table, in a text file `comparison.md` in your folder (or on paper):
+
+| | Cloud agent | Open model 1 | Open model 2 (optional) |
+|---|---|---|---|
+| Tool and model name | | | |
+| Values correct (of 32) | | | |
+| Invented values | | | |
+| Saved a file itself? | | | |
+| Time | | | |
+| **Where the data went** | | | |
+
+Typical results: the cloud agent and the large hosted models get most values right; small local models miss traps and sometimes invent values. Your results may differ, and the same model can do better or worse on a second run (*How LLMs and agents work*). If you have time, run the weakest model twice: does it make the same mistakes?
+
+## On your own project
+
+::: {.callout-warning}
+**Privacy reminder.** Do not send your project's data to any service in this part, including SciLifeLab OpenLLM, whose pilot policy asks for public information only. You only **decide and record** which route fits your data. If you want to try an open model on your own task, use public data or the synthetic stand-in from *Privacy, ethics and safety*.
+:::
+
+1. Open your project's `README.md` and look at its **data class** and **precautions** (from *Privacy, ethics and safety*).
+2. Using the table on the slide "Match the route to the data class", decide which route fits each kind of data in your project: provider's cloud, a hosted service, or your own computer. Most projects with public or internal data stay with the cloud agent, and that is a fine answer.
+3. If any of your data is personal or sensitive, find out whether your university, or a national infrastructure you belong to, offers a **hosted model service**, and what its policy says it may be used for. Search your university's IT or AI pages, or ask the agent to search the web for you (the prompt contains only your university's name):
+
+```text
+Search the web for whether <my university> offers its staff a hosted or
+local AI language model service (for example open-weights models run on
+university servers), and what kinds of data it may be used for.
+Only use pages on the university's own domain or national research
+infrastructure sites. Give the link for every claim. If you cannot find
+anything, say so; do not guess. Do not create or change any files.
+```
+
+4. Start the agent in your **project folder** and ask it to add a section to the README. Paste your own decisions at the end:
+
+```text
+Add a section "## Where the model runs" to README.md, just after
+"Data class and precautions". Use my notes below. Keep my wording;
+fix only spelling. Include a short table with one row per kind of data:
+data, data class, route (provider's cloud / hosted service / own computer),
+why, and who approved it (or "to ask: <person>").
+Then add one line to "Log of AI use": today's date, the tool, and
+"recorded model route per data class".
+Do not change any other part of the README.
+
+My notes:
+<your decisions from steps 2 and 3>
+```
+
+5. **Check:** open `README.md` yourself. The new section says what you decided, not something the agent added; the "who approved it" column is honest (an open question is better than a guess); nothing else in the README changed. If you use git (*Git as undo button*), ask the agent to show you the change and commit it with a clear message.
+
+## What you should have now
+
+- In `~/agentic-course/open-weights/`: your result files (`extraction-cloud.csv` and at least one open-model result) and `comparison.md` with the filled-in table, including **where the data went** for each run.
+- A first-hand sense of the **quality gap** on a task you could check exactly.
+- In your project's `README.md`: a **"Where the model runs"** section with a route for each kind of data, and a new line in the AI-use log.

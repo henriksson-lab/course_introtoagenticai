@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="1000" height="480" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="480" fill="#fff"/>
+  <rect x="20" y="15" width="960" height="435" rx="10" fill="#1f2430"/>
+  <circle cx="45" cy="37" r="7" fill="#a8324a"/><circle cx="68" cy="37" r="7" fill="#8a6a12"/><circle cx="91" cy="37" r="7" fill="#2a7f8f"/>
+  <text x="500" y="43" font-size="16" fill="#aab" text-anchor="middle">terminal: claude, after /rewind (or Esc twice)</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="17" xml:space="preserve">
+    <text x="45" y="82" fill="#e0b84a">Rewind: pick the point to go back to</text>
+    <text x="45" y="118" fill="#9a9aa8">   "Make the growth plot with a log y axis"      2 files changed</text>
+    <rect x="40" y="130" width="920" height="30" fill="#2e3646"/>
+    <text x="45" y="151" fill="#e8e8e8"> &gt; "Also tidy up clean.py while you are there"  4 files changed</text>
+    <text x="45" y="184" fill="#9a9aa8">   "Rename the columns to English"              1 file changed</text>
+    <text x="45" y="232" fill="#e0b84a">What should be restored?</text>
+    <text x="45" y="266" fill="#8fd3df">  1. Restore code and conversation</text>
+    <text x="45" y="294" fill="#e8e8e8">  2. Restore conversation</text>
+    <text x="45" y="322" fill="#e8e8e8">  3. Restore code</text>
+    <text x="45" y="350" fill="#e8e8e8">  4. Summarize from here</text>
+    <text x="45" y="378" fill="#e8e8e8">  5. Summarize up to here</text>
+    <text x="45" y="406" fill="#e8e8e8">  6. Never mind</text>
+  </g>
+  <text x="45" y="438" font-size="16" fill="#9a9aa8">Tracks Claude's own file edits in this session. Not a replacement for git.</text>
+  <text x="975" y="472" font-size="14" fill="#999" text-anchor="end">illustrative; menu wording from code.claude.com/docs (checkpointing), may change</text>
+</svg>

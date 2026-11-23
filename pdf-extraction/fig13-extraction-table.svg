@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#fff"/>
+  <text x="20" y="30" font-size="19" font-weight="bold" fill="#333">extraction.csv</text>
+  <g font-size="15" fill="#333">
+    <rect x="20" y="44" width="960" height="36" fill="#e3f1f3"/>
+    <g font-weight="bold" fill="#2a7f8f">
+      <text x="28" y="67">file</text><text x="140" y="67">n</text><text x="185" y="67">as printed</text><text x="275" y="67">unit</text>
+      <text x="345" y="67">nmol/L</text><text x="415" y="67">page</text><text x="465" y="67">table</text><text x="530" y="67">method</text><text x="610" y="67">quote / note</text>
+    </g>
+    <g stroke="#ddd">
+      <line x1="20" y1="80" x2="980" y2="80"/><line x1="20" y1="122" x2="980" y2="122"/><line x1="20" y1="164" x2="980" y2="164"/>
+      <line x1="20" y1="206" x2="980" y2="206"/><line x1="20" y1="248" x2="980" y2="248"/><line x1="20" y1="290" x2="980" y2="290"/>
+    </g>
+    <text x="28" y="107">01_Aldersen</text><text x="140" y="107">212</text><text x="185" y="107">58.4</text><text x="275" y="107">nmol/L</text><text x="345" y="107">58.4</text><text x="415" y="107">2</text><text x="465" y="107">1</text><text x="530" y="107">text</text><text x="610" y="107">"All 212 58.4 20.2 31"</text>
+    <text x="28" y="149">02_Moreau</text><text x="140" y="149">140</text><text x="185" y="149">21.6</text><text x="275" y="149" fill="#a8324a" font-weight="bold">ng/mL</text><text x="345" y="149" fill="#a8324a" font-weight="bold">53.9</text><text x="415" y="149">2</text><text x="465" y="149">1</text><text x="530" y="149">text</text><text x="610" y="149">converted × 2.496</text>
+    <text x="28" y="191">03_Nyberg</text><text x="140" y="191">416</text><text x="185" y="191">48,2</text><text x="275" y="191">nmol/L</text><text x="345" y="191">48.2</text><text x="415" y="191">2</text><text x="465" y="191">1</text><text x="530" y="191">layout</text><text x="610" y="191">last row; header on p. 1</text>
+    <text x="28" y="233">04_Okonkwo</text><text x="140" y="233">96</text><text x="185" y="233">66.0</text><text x="275" y="233">nmol/L</text><text x="345" y="233">66.0</text><text x="415" y="233">2</text><text x="465" y="233">1</text><text x="530" y="233" fill="#a8324a" font-weight="bold">OCR</text><text x="610" y="233">image-only PDF</text>
+    <text x="28" y="275">…</text>
+  </g>
+  <rect x="180" y="44" width="160" height="246" fill="none" stroke="#8a6a12" stroke-width="2.5"/>
+  <rect x="525" y="44" width="80" height="246" fill="none" stroke="#6b4fa0" stroke-width="2.5"/>
+  <g font-size="17">
+    <text x="20" y="330" fill="#8a6a12" font-weight="bold">as printed + unit:</text>
+    <text x="20" y="354" fill="#333">what the paper says, untouched.</text>
+    <text x="20" y="378" fill="#333">The converted value sits next to it.</text>
+    <text x="420" y="330" fill="#6b4fa0" font-weight="bold">method:</text>
+    <text x="420" y="354" fill="#333">how the value was read (text, layout,</text>
+    <text x="420" y="378" fill="#333">OCR, page image). Check OCR rows first.</text>
+  </g>
+  <text x="985" y="412" font-size="14" fill="#999" text-anchor="end">illustrative, shortened</text>
+</svg>

@@ -1,0 +1,330 @@
+---
+title: "Exercise: a simulation you can trust"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- a **simulation script** built by the agent from your description in words, reading its numbers from a **parameter file** with units and sources,
+- a **check table** that the script prints every time it runs: known answers, conservation, extreme cases,
+- a **refinement check** showing that the key result no longer changes when the steps get smaller,
+- a **runs log** of the what-if questions you asked, and
+- one figure and the check table, committed with git, ready for your project page.
+
+You do not need to read or write equations or code. You describe the model, supply the numbers and the expected answers, and judge the result.
+
+Your session will look different from anyone else's, including the examples below. Compare **results** (the numbers in the check table), not sessions.
+
+## Before you start
+
+- You have done *Reproducible figures*: you know how to ask for a script that makes a figure, and why package versions are recorded. You have used git (*Git as undo button and lab notebook*).
+- Python is installed, or the agent can install it with you (*Terminal survival kit*). If you prefer R, that works too: say "in R, with the deSolve package" in the prompts below.
+- Create a folder for the track inside your course folder and start the agent there:
+
+::: {.panel-tabset}
+## Claude Code
+```bash
+mkdir ~/agentic-course/track-simulation
+cd ~/agentic-course/track-simulation
+claude
+```
+## Codex
+```bash
+mkdir ~/agentic-course/track-simulation
+cd ~/agentic-course/track-simulation
+codex
+```
+:::
+
+On Windows the course folder is `C:\Users\<you>\agentic-course`.
+
+A new folder is not yet a git repository, so Codex starts in read-only mode there and asks before every change. That is fine for step 1; at the end of step 1 you make the folder a repository, and from the next session on Codex starts in its usual Auto mode. Claude Code asks according to the permission mode you chose in *Terminal survival kit*.
+
+- **Pick one option.** Everyone does option A first if they have no preference; it takes about an hour. Options B and C are for those who want the finite element method or an individual-based model. You can do more than one.
+
+| Option | Model | Fits if you work with... |
+|---|---|---|
+| **A** (worked in full below) | a drug in the blood, then an epidemic (boxes and arrows) | medicine, pharmacology, public health, ecology, chemistry |
+| **B** | heat in a plate, then a bent beam (finite elements, scikit-fem) | engineering, physics, materials, geosciences |
+| **C** | random walkers compared with diffusion (agent-based) | cell biology, ecology, behaviour, social science |
+
+- Keep a note called **what went wrong**, as in *First delegations*. Every number that did not match, every unit the agent guessed: one line each.
+
+::: {.callout-note collapse="true" title="Reference solutions (look only after you have your own)"}
+These are scripts of the kind an agent might write, with all the checks below. They are here so you can compare numbers if your result disagrees with the expected outcome. They are not the only correct way to do it.
+
+- [pk_one_compartment.py](examples/pk_one_compartment.py): option A, drug model
+- [sir_model.py](examples/sir_model.py): option A, epidemic
+- [heat_1d_fd.py](examples/heat_1d_fd.py): a heated rod with finite differences, including an unstable time step
+- [fem_plate_and_beam.py](examples/fem_plate_and_beam.py): option B (needs scikit-fem)
+- [random_walk_diffusion.py](examples/random_walk_diffusion.py): option C
+:::
+
+## Worked example
+
+### Option A, step 1: write the parameter file
+
+Start with the numbers, before any code. Type:
+
+```text
+I want to build a small simulation of a drug in the blood, step by step.
+First, create parameters.csv with the columns name, value, unit, meaning,
+source. Put in these rows:
+- dose 500 mg, IV bolus at time 0, source "invented for the exercise"
+- volume 50 L, volume of distribution, invented
+- half_life 6 h, elimination half-life, invented
+- interval 8 h, time between doses, invented
+- effective 2 mg/L, lowest concentration that works, invented
+Also create a README.md that says what this folder is for. Do not write
+any model code yet.
+```
+
+**What to look for.** Open `parameters.csv` in Excel or LibreOffice. Five rows, and every row has a unit. If the agent added rows you did not ask for (for example a "typical" absorption rate), ask it to remove them: in this model, every number comes from you.
+
+Make this folder a git repository and commit (ask the agent: "Make this folder a git repository and commit the two files with a short message").
+
+### Option A, step 2: the drug model, checks first
+
+```text
+Build a one-compartment pharmacokinetic model in Python (scipy).
+The drug is given as an IV bolus; it is removed at a rate proportional
+to the amount present.
+
+Parameters, with units, are in parameters.csv. Read them from there.
+Report time in hours and concentration in mg/L.
+
+Before anything else, add checks and print them as a table
+(check, expected, got, OK):
+- concentration after one half-life is half the starting value
+- at 24 h it is 1/16 of the starting value
+- twice the dose gives twice the concentration
+- halving the solver tolerance changes the 24 h value by < 0.1 %
+Then plot concentration against time for 0-24 h, save it as
+figures/single_dose.png, and report how long the level stays above
+the effective level. Ask me if anything is unclear.
+```
+
+**What to look for.** The agent will probably install or check for `scipy` and `matplotlib` and ask before it runs commands. Read each permission prompt (*Terminal survival kit*). In Codex, installing packages needs network access, which the default mode does not give; Codex asks for approval before it goes outside its sandbox. Read the command, then approve.
+
+When it has run, look at the check table before you look at the plot.
+
+#### Check the result
+
+1. **The check table.** All four checks say OK. The starting concentration is dose / volume = 500 / 50 = **10 mg/L**. After 6 h: **5.000**. At 24 h: **0.625**.
+2. **The answer to the question.** The level stays above 2 mg/L for about **13.9 hours**. You can check this without the agent: 10 → 5 → 2.5 takes 12 hours, and 2.5 → 2 takes a little under 2 hours more.
+3. **Units.** Every number in the output has a unit. The x-axis of the plot says hours.
+4. **Numbers from nowhere.** Ask: "List every number the script uses that is not in parameters.csv, and why." Expected: only things like the solver tolerance and the 24-hour time span. Anything else, ask about.
+
+### Option A, step 3: what the checks do not catch
+
+Try this on purpose:
+
+```text
+Change the unit of half_life in parameters.csv to min (keep the value 6)
+and rerun. Do the checks still pass? What is the time above the
+effective level now?
+```
+
+**What to look for.** The checks still pass, because they compare the model with itself: "half after one half-life" is true whatever the half-life is. But the time above the effective level drops from about 14 hours to well under one hour. A check table only protects you if the **inputs** are right. That is your part: a drug given every 8 hours with a half-life of 6 minutes would make no sense, and you know that; the agent may not say so.
+
+Change the unit back to `h` and rerun. Note this in your *what went wrong* list.
+
+### Option A, step 4: repeated doses
+
+```text
+Now give the dose every 8 h (interval in parameters.csv) for 10 doses.
+Add a check: the peak after many doses should approach
+C0 / (1 - exp(-k * interval)), with k = ln(2) / half_life.
+Save the plot as figures/repeated_doses.png and add a row to the check
+table. Report the peak and the lowest level just before a dose, at
+steady state.
+```
+
+You do not need to understand the formula. It is a textbook result for this model; it is given to the agent as the expected answer.
+
+#### Check the result
+
+- Peak at steady state: about **16.58 mg/L**. Lowest level just before a dose: about **6.58 mg/L**. Both well above the effective level.
+- The plot shows a saw-tooth that rises and levels off. It never falls to zero between doses.
+- The check table now has five rows, all OK. Commit: "Commit the script, parameters and figures with a message that says what the model does."
+
+### Option A, step 5: an epidemic, same habits
+
+Start a new file for the epidemic. Notice how the prompt has the same parts: model in words, numbers with units, checks with expected answers, then the question.
+
+```text
+Build an SIR epidemic model in a new script sir.py, with its own
+parameter file sir_parameters.csv (name, value, unit, meaning, source):
+population 10000 people, initially infected 10 people,
+beta 0.3 per day (infection rate), gamma 0.1 per day (recovery rate),
+run for 200 days. Everyone else starts susceptible.
+
+Checks, printed as a table (check, expected, got, OK):
+- S + I + R stays equal to the population at every time point
+- the number infected peaks when S is close to population / R0,
+  where R0 = beta / gamma
+- with beta = 0.08 per day (R0 below 1) the number infected only falls
+- halving the solver tolerance changes the peak by < 0.1 %
+Then plot S, I and R against time (figures/sir.png) and report the
+day of the peak, the number infected at the peak, and the share of
+the population ever infected.
+```
+
+#### Check the result
+
+| Quantity | Expected |
+|---|---|
+| total S + I + R | 10 000 at every time (differences below 0.001) |
+| S at the peak | about 3320 (population / R0 = 3333; the small gap is because 10 people start infected) |
+| peak | about **3008** infected, on day **38** |
+| share ever infected | about **94 %** (0.94) |
+| R0 = 0.8 | no outbreak: the number infected only falls |
+
+If your peak day is 3.8 or 380, the time unit has gone wrong somewhere. If the total drifts, something in the model's flows does not balance: ask the agent to explain each flow in words.
+
+**Ask for a second opinion.** In a new session (or with the other agent), give only `sir_parameters.csv` and the plain-language description, and ask for the peak day and size. Two independent implementations that agree are strong evidence. This is a preview of *Parallel workers*.
+
+::: {.callout-note collapse="true" title="Expected outcome, option A"}
+- Single dose: 10 mg/L at 0 h, 5 at 6 h, 2.5 at 12 h, 0.625 at 24 h; above 2 mg/L for 13.9 h.
+- Repeated every 8 h: steady-state peak 16.58 mg/L, trough 6.58 mg/L (the 10th peak is already within 0.1 % of the formula).
+- SIR: peak 3008 infected on day 38, S at the peak about 3320, 94.1 % ever infected; with beta 0.08 per day, the number infected falls from 10 to below 1 over 200 days.
+- Reference scripts: `examples/pk_one_compartment.py` and `examples/sir_model.py`.
+:::
+
+### Option B: heat in a plate and a bent beam (finite elements)
+
+**Step B1: set up scikit-fem in a project environment.**
+
+```text
+I want to use the finite element library scikit-fem in Python for this
+project. Install it for this project only, in a virtual environment in
+this folder, not system-wide. Also install matplotlib there. Record the
+exact versions in requirements.txt and explain in README.md how to
+activate the environment. Then check that "import skfem" works and tell
+me the version.
+```
+
+Read the install command before you approve it: it should install into the project folder (often `.venv`), not into the whole computer. When this page was written, the current version was 12.0.2.
+
+**Step B2: the plate, with a known answer.**
+
+```text
+Use scikit-fem to compute the steady temperature in a square plate,
+1 m by 1 m, thermal conductivity 200 W/(m K). Boundary conditions:
+left edge held at 100 C, right edge held at 20 C, top and bottom edges
+insulated (no heat flows through them). No heat sources inside.
+Use a triangle mesh with about 20 cells along each side.
+
+Checks, printed as a table (check, expected, got, OK):
+- the exact answer is a straight line from 100 C on the left to 20 C
+  on the right: report the largest difference from it
+- the temperature at the centre is 60 C
+- no temperature is above 100 C or below 20 C
+Plot the temperature on the mesh (figures/plate.png) and draw the mesh.
+```
+
+Expected: centre **60.000 °C**; the largest difference from the straight line is tiny (about 0.0000000000001 °C), because the elements can represent a straight line exactly. If the plot shows the plate getting cold at the top and bottom, the agent treated the insulated edges as fixed-temperature edges: say so.
+
+**Step B3: the beam, refined.**
+
+```text
+Now a steel cantilever beam in 2D (plane stress): length 1 m, height
+0.05 m, thickness 0.01 m, E = 210 GPa, Poisson's ratio 0.3. Clamped at
+the left end, a total downward force of 100 N spread over the right
+end. Compute the tip deflection in mm.
+
+Known answer for a slender beam: P L^3 / (3 E I), with I = t h^3 / 12.
+Make a refinement table: meshes with 80, 320, 1280 and 5120 triangles,
+tip deflection and difference from the formula in per cent, once with
+linear (P1) and once with quadratic (P2) triangles.
+```
+
+#### Check the result
+
+| Triangles | Quadratic (P2) | Linear (P1) |
+|---|---|---|
+| 80 | 1.522 mm (−0.1 %) | 0.560 mm (−63 %) |
+| 320 | 1.525 mm | 1.064 mm (−30 %) |
+| 1280 | 1.525 mm | 1.376 mm (−10 %) |
+| 5120 | 1.525 mm (+0.1 %) | 1.485 mm (−2.6 %) |
+
+The formula gives **1.524 mm**. Quadratic triangles agree from the start; linear triangles are far too stiff on a coarse mesh ("locking") and creep towards the answer. Plot both meshes' deformed beams: they look equally convincing. Only the table tells them apart. Your numbers may differ slightly in the last digit depending on how the force is applied; the pattern should not.
+
+Reference script: `examples/fem_plate_and_beam.py`.
+
+### Option C: random walkers and diffusion (agent-based)
+
+```text
+Build an agent-based random walk in Python: 20000 walkers start at
+position 0. Each time step of 0.01 s, each walker moves 1 micrometre left
+or right with equal chance. Run 1000 steps (10 s). Use a fixed random
+seed and print it.
+
+Diffusion predicts D = step^2 / (2 * time step) = 50 um^2/s and a mean
+squared distance from the start of 2 D t. Checks, as a table:
+- mean squared distance against 2 D t at 1, 2.5, 5 and 10 s (ratio
+  should be close to 1)
+- share of walkers within one standard deviation sqrt(2 D t) of the
+  start at 10 s (about 68 % for a bell curve)
+Then repeat the whole run with only 50 walkers, for 5 different seeds,
+and report the ratio at 10 s for each. Plot the histogram of positions
+at 10 s with the bell curve on top (figures/walkers.png).
+```
+
+#### Check the result
+
+- With 20 000 walkers: ratios between about **0.98 and 1.03**; about **67-68 %** within one standard deviation (31.6 µm).
+- With 50 walkers: the five ratios differ a lot, often by 20-30 % or more. That is not a bug; it is chance. Report the spread, never one run.
+- Rerun with the same seed: identical numbers. Rerun with a new seed: slightly different numbers. If both give identical numbers, the seed is not doing what you think.
+
+Reference script: `examples/random_walk_diffusion.py`.
+
+### For everyone: a refinement check and a runs log
+
+Whatever option you chose, finish with these two prompts.
+
+```text
+Add a refinement check for the key result of this model: halve the time
+step (or the solver tolerance, or the cell size) twice and report the
+key result each time, with the change in per cent. Add it to the check
+table.
+```
+
+```text
+Run three what-if cases, changing one parameter at a time: [describe,
+for example half-life 4, 6 and 8 h]. Append one row per run to runs.csv:
+date, what changed, key result with unit, all checks passed (yes/no).
+Do not overwrite earlier rows. Then commit.
+```
+
+**Check.** The key result changes by less than 0.1 % in the refinement check (if it changes more, refine further before you trust it). `runs.csv` has one row per run, and you could repeat any of them from the information in that row plus the parameter file.
+
+## On your own project
+
+Now apply the same habits to a simulation that matters to your own project. If your project is not about simulation, pick a small what-if question from your field that a model of one of the three kinds could answer: how long a sample stays above a threshold in a freezer that fails, how a student cohort moves through a programme with drop-outs (boxes and arrows), how fast a dye spreads in a gel, how many plants a pest reaches in a greenhouse.
+
+::: {.callout-warning}
+**Privacy and confidentiality.** Parameters from unpublished experiments, industrial partners or patient data may be confidential (see the scenarios in *Privacy, ethics and safety*). Use published or invented values while you build and check the model, and keep confidential numbers in a parameter file the agent does not need to read.
+:::
+
+1. **Describe the model in words.** Write three to six sentences in your project's `README.md` under a new heading "Simulation": what the boxes, pieces or individuals are, what moves between them, and what happens at the edges. Draw a sketch on paper. Ask the agent: "Read the Simulation section of README.md. Which of the three kinds of model is this? What would you need to know to build it? List your questions; do not write code yet."
+2. **Write the parameter file.** Every number with its unit and source (a paper, a protocol, "my estimate", "invented"). Ask the agent to list any number it thinks is missing, and supply it yourself.
+3. **Find at least one known answer.** A simple case your field knows the answer to, a conservation law (nothing appears from nowhere), an extreme case (no input, no effect), or a published result for the same model. Write the expected value down **before** the agent runs anything.
+4. **Build it with checks first,** using the option A step 2 prompt as a template.
+5. **Refine** until your key result changes by less than you would care about, and say how much that is.
+6. **Validate, as far as you can.** One paragraph in the README: which simplifications does the model make, and are they acceptable for your question? Which measurement could tell you it is wrong?
+7. **Log and commit.** Add an entry to the "Log of AI use" in your README (what the agent built, what you checked, what went wrong). Commit, push, and add the figure and the check table to your project page (*A course or project page*).
+
+## What you should have now
+
+- In `~/agentic-course/track-simulation/`: a parameter file, a model script with a built-in **check table**, figures, a `runs.csv`, a README and (for option B) `requirements.txt`, all in git.
+- Your *what went wrong* list, including what the checks did **not** catch in option A step 3.
+- In your own project: a "Simulation" section in the README with the model in words and its simplifications, a parameter file with units and sources, a script whose checks pass, a refinement result, and a figure with its check table on your project page.
+- The three habits for any simulation: **units and sources for every number, known answers before new answers, refine until it stops changing.**

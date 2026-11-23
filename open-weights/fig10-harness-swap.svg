@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker></defs>
+  <rect width="1000" height="420" fill="#ffffff"/>
+  <rect x="20" y="40" width="380" height="300" rx="12" fill="#f4f7fa" stroke="#9aa8b5" stroke-width="2"/>
+  <text x="210" y="72" text-anchor="middle" font-size="19" font-weight="bold" fill="#1b2a3a">Your computer</text>
+  <rect x="50" y="96" width="320" height="170" rx="10" fill="#ffffff" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="210" y="128" text-anchor="middle" font-size="18" font-weight="bold" fill="#2a7f8f">The harness</text>
+  <text x="210" y="154" text-anchor="middle" font-size="16" fill="#1b2a3a">Claude Code or Codex</text>
+  <text x="210" y="186" text-anchor="middle" font-size="15" fill="#3a4a5a">reads files, runs commands,</text>
+  <text x="210" y="208" text-anchor="middle" font-size="15" fill="#3a4a5a">asks your permission</text>
+  <text x="210" y="240" text-anchor="middle" font-size="15" fill="#3a4a5a">needs a model to think</text>
+  <text x="210" y="310" text-anchor="middle" font-size="15" fill="#5a6a7a">settings say which model address to use</text>
+  <g font-size="16" text-anchor="middle">
+    <rect x="560" y="30" width="410" height="80" rx="10" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+    <text x="765" y="62" font-weight="bold" fill="#6b4fa0">Default: the maker's cloud</text>
+    <text x="765" y="88" fill="#1b2a3a">Claude models / OpenAI models</text>
+    <rect x="560" y="140" width="410" height="80" rx="10" fill="#faf5e8" stroke="#8a6a12" stroke-width="2"/>
+    <text x="765" y="172" font-weight="bold" fill="#8a6a12">A hosted open-model service</text>
+    <text x="765" y="198" fill="#1b2a3a">e.g. SciLifeLab OpenLLM, with an API key</text>
+    <rect x="560" y="250" width="410" height="80" rx="10" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="765" y="282" font-weight="bold" fill="#2a7f8f">A local model server</text>
+    <text x="765" y="308" fill="#1b2a3a">Ollama or LM Studio on the same computer</text>
+  </g>
+  <line x1="372" y1="150" x2="554" y2="72" stroke="#6b4fa0" stroke-width="2.5" marker-end="url(#a)"/>
+  <line x1="372" y1="180" x2="554" y2="180" stroke="#8a6a12" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#a)"/>
+  <line x1="372" y1="210" x2="554" y2="288" stroke="#2a7f8f" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#a)"/>
+  <text x="500" y="392" text-anchor="middle" font-size="18" fill="#1b2a3a">Same harness, different brain. The model decides how well the agent works.</text>
+</svg>

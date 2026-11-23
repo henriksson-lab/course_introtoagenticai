@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="560" fill="#ffffff"/>
+  <rect x="20" y="16" width="700" height="520" rx="10" fill="#1f2933"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="16">
+    <text x="40" y="50" fill="#cfd6dc">&gt; Read brief.md and make the plot it describes.</text>
+    <text x="40" y="84" fill="#7fd1de">● Read reaction-times.csv (180 rows)</text>
+    <text x="40" y="116" fill="#ffffff" font-weight="bold">Plan</text>
+    <text x="40" y="142" fill="#ffffff">1. Write plot_rt.R: read the CSV, never change it</text>
+    <text x="40" y="166" fill="#ffffff">2. Exclude the false start (P03, notification, 2)</text>
+    <text x="40" y="190" fill="#ffffff">3. Per student and condition: mean of the trials</text>
+    <text x="40" y="214" fill="#ffffff">4. Plot one line per student, group mean on top</text>
+    <text x="40" y="238" fill="#ffffff">5. Save rt-plot.png, rt-means.csv, changes.md</text>
+    <text x="40" y="272" fill="#e0c27a" font-weight="bold">Questions</text>
+    <text x="40" y="298" fill="#e0c27a">- P07's 15 values are 0.24 to 0.34. Seconds?</text>
+    <text x="40" y="322" fill="#e0c27a">  Convert to ms (x 1000), or exclude P07?</text>
+    <text x="40" y="346" fill="#e0c27a">- P10, music, trial 4 is empty. Mean of 4 trials?</text>
+    <rect x="36" y="370" width="664" height="128" rx="6" fill="#26333f" stroke="#7fd1de" stroke-width="1.5"/>
+    <text x="52" y="398" fill="#ffffff">Would you like to proceed?</text>
+    <text x="52" y="426" fill="#cfd6dc">  1. Yes, and use auto mode</text>
+    <text x="52" y="452" fill="#ffffff">❯ 2. Yes, manually approve edits</text>
+    <text x="52" y="478" fill="#cfd6dc">  3. No, keep planning</text>
+    <text x="40" y="524" fill="#8fb3bd">⏸ plan mode on</text>
+  </g>
+  <rect x="30" y="280" width="620" height="74" rx="4" fill="none" stroke="#a8324a" stroke-width="3"/>
+  <text x="716" y="550" text-anchor="end" font-size="14" fill="#8a97a5">illustrative; wording varies by version</text>
+  <g font-size="17" fill="#1b2a3a">
+    <text x="740" y="150" font-weight="bold" fill="#2a7f8f">Nothing changed yet</text>
+    <text x="740" y="174">It only read the file.</text>
+    <text x="740" y="296" font-weight="bold" fill="#a8324a">It found the traps</text>
+    <text x="740" y="320">and asks instead of</text>
+    <text x="740" y="344">guessing. Answer them.</text>
+    <text x="740" y="430" font-weight="bold" fill="#6b4fa0">Own data: option 2</text>
+    <text x="740" y="454">approve each edit</text>
+    <text x="740" y="478">until you trust it</text>
+  </g>
+</svg>

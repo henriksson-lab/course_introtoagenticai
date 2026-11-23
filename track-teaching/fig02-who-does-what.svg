@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <rect x="20" y="20" width="470" height="400" rx="14" fill="#e8f3f5" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="255" y="62" font-size="25" font-weight="bold" fill="#2a7f8f" text-anchor="middle">The agent</text>
+  <rect x="510" y="20" width="470" height="400" rx="14" fill="#f1ecf8" stroke="#6b4fa0" stroke-width="2.5"/>
+  <text x="745" y="62" font-size="25" font-weight="bold" fill="#6b4fa0" text-anchor="middle">You</text>
+  <g font-size="20" fill="#333">
+    <text x="45" y="112">• drafts questions and distractors</text>
+    <text x="45" y="152">• writes a reason for each choice</text>
+    <text x="45" y="192">• converts formats (text → QTI zip)</text>
+    <text x="45" y="232">• writes the variant script</text>
+    <text x="45" y="272">• drafts slides and speaker notes</text>
+    <text x="45" y="312">• drafts alt text and captions</text>
+    <text x="45" y="352">• drafts rubrics</text>
+    <text x="535" y="112">• choose the learning goals</text>
+    <text x="535" y="152">• name your students' misconceptions</text>
+    <text x="535" y="192">• judge correctness and level</text>
+    <text x="535" y="232">• solve a sample without the key</text>
+    <text x="535" y="272">• take the quiz in Student View</text>
+    <text x="535" y="312">• calibrate rubrics, decide grades</text>
+    <text x="535" y="352">• keep student data out</text>
+  </g>
+  <text x="255" y="400" font-size="18" fill="#2a7f8f" text-anchor="middle" font-style="italic">fast, tireless, sometimes wrong</text>
+  <text x="745" y="400" font-size="18" fill="#6b4fa0" text-anchor="middle" font-style="italic">responsible for what students see</text>
+</svg>

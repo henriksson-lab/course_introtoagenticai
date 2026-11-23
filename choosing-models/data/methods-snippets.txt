@@ -1,0 +1,26 @@
+Methods excerpts, one per item. Synthetic examples.
+
+[1] We enrolled 48 participants; 6 withdrew before the second visit, leaving 42 for the analysis. Groups were compared with a two-sided Welch t-test.
+
+[2] Twenty-four mice (twelve per group) were weighed weekly. Final weights were compared between groups with a Mann-Whitney U test.
+
+[3] Soil cores were taken at 15 sites, three cores per site, giving 45 cores. Nitrate content was analysed with a linear mixed model with site as a random effect.
+
+[4] A total of 312 students answered the survey (response rate 41 %). Associations between programme and answer were tested with a chi-squared test of independence.
+
+[5] We analysed 1,204 images from 8 donors. Because images from the same donor are not independent, donor means were compared with a nested ANOVA.
+
+[6] Of the 90 plants sown, 81 germinated and were measured at day 21. Heights were compared with a one-way ANOVA followed by Tukey's HSD.
+
+[7] Pilot data from 10 volunteers, reported elsewhere, motivated this study, in which 64 volunteers were measured before and after training. We used a paired t-test.
+
+[8] Each condition had n = 3 biological replicates, each measured in technical triplicate. Conditions were compared with an unpaired t-test on the replicate means.
+
+[9] Two hundred and six patient records were screened, of which 150 met the inclusion criteria and were analysed. Survival was modelled with a Cox proportional hazards model.
+
+[10] Seventeen classrooms took part. No statistical test was performed; the results are descriptive.
+
+[11] We recruited 30 participants in each of the three arms. Outcomes were compared across arms with a Kruskal-Wallis test.
+
+[12] Samples from treated and untreated plots were classified as infected or not, and the proportions were compared with Fisher's exact test.
+

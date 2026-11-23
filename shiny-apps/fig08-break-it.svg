@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="470" fill="#ffffff"/>
+  <text x="172" y="36" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">No site ticked</text>
+  <rect x="20" y="55" width="305" height="150" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="38" y="85" font-size="16" fill="#2a7f8f" text-anchor="start" font-weight="bold" xml:space="preserve">good</text>
+  <text x="38" y="120" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Choose at least one site.</text>
+  <rect x="20" y="225" width="305" height="130" rx="10" fill="#f7e6ea" stroke="#a8324a" stroke-width="2"/>
+  <text x="38" y="255" font-size="16" fill="#a8324a" text-anchor="start" font-weight="bold" xml:space="preserve">bad</text>
+  <text x="38" y="290" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">red error text,</text>
+  <text x="38" y="316" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">or an empty plot</text>
+  <text x="497" y="36" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">Dates with no samples</text>
+  <rect x="345" y="55" width="305" height="150" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="363" y="85" font-size="16" fill="#2a7f8f" text-anchor="start" font-weight="bold" xml:space="preserve">good</text>
+  <text x="363" y="120" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">No samples in this</text>
+  <text x="363" y="146" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">date range.</text>
+  <rect x="345" y="225" width="305" height="130" rx="10" fill="#f7e6ea" stroke="#a8324a" stroke-width="2"/>
+  <text x="363" y="255" font-size="16" fill="#a8324a" text-anchor="start" font-weight="bold" xml:space="preserve">bad</text>
+  <text x="363" y="290" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">the app stops</text>
+  <text x="363" y="316" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">with an error</text>
+  <text x="822" y="36" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">Oxygen, North Pond 2023</text>
+  <rect x="670" y="55" width="305" height="150" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="688" y="85" font-size="16" fill="#2a7f8f" text-anchor="start" font-weight="bold" xml:space="preserve">good</text>
+  <text x="688" y="120" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">24 samples, 4 missing,</text>
+  <text x="688" y="146" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">mean 11.78</text>
+  <rect x="670" y="225" width="305" height="130" rx="10" fill="#f7e6ea" stroke="#a8324a" stroke-width="2"/>
+  <text x="688" y="255" font-size="16" fill="#a8324a" text-anchor="start" font-weight="bold" xml:space="preserve">bad</text>
+  <text x="688" y="290" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">mean = NA,</text>
+  <text x="688" y="316" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">or rows silently lost</text>
+  <text x="500" y="410" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">Try to break the app on purpose. A good app says what is wrong in plain words,</text>
+  <text x="500" y="438" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">and counts missing values instead of hiding them.</text>
+</svg>

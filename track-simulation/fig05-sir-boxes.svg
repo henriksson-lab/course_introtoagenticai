@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#fff"/>
+  <defs>
+    <marker id="a" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto"><path d="M0,0 L12,6 L0,12 z" fill="#333"/></marker>
+  </defs>
+  <rect x="40" y="90" width="220" height="130" rx="14" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="150" y="145" font-size="26" font-weight="bold" fill="#2a7f8f" text-anchor="middle">Susceptible</text>
+  <text x="150" y="180" font-size="18" fill="#333" text-anchor="middle">can catch it</text>
+  <rect x="390" y="90" width="220" height="130" rx="14" fill="#f8e9ec" stroke="#a8324a" stroke-width="3"/>
+  <text x="500" y="145" font-size="26" font-weight="bold" fill="#a8324a" text-anchor="middle">Infected</text>
+  <text x="500" y="180" font-size="18" fill="#333" text-anchor="middle">can pass it on</text>
+  <rect x="740" y="90" width="220" height="130" rx="14" fill="#f1edf7" stroke="#6b4fa0" stroke-width="3"/>
+  <text x="850" y="145" font-size="26" font-weight="bold" fill="#6b4fa0" text-anchor="middle">Recovered</text>
+  <text x="850" y="180" font-size="18" fill="#333" text-anchor="middle">immune</text>
+  <line x1="262" y1="155" x2="386" y2="155" stroke="#333" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="612" y1="155" x2="736" y2="155" stroke="#333" stroke-width="3" marker-end="url(#a)"/>
+  <text x="325" y="60" font-size="19" font-weight="bold" fill="#333" text-anchor="middle">infection</text>
+  <text x="325" y="250" font-size="17" fill="#333" text-anchor="middle">faster when many</text>
+  <text x="325" y="272" font-size="17" fill="#333" text-anchor="middle">S meet many I</text>
+  <text x="325" y="300" font-size="17" fill="#8a6a12" text-anchor="middle">beta = 0.3 per day</text>
+  <text x="675" y="60" font-size="19" font-weight="bold" fill="#333" text-anchor="middle">recovery</text>
+  <text x="675" y="250" font-size="17" fill="#333" text-anchor="middle">a tenth of the</text>
+  <text x="675" y="272" font-size="17" fill="#333" text-anchor="middle">infected each day</text>
+  <text x="675" y="300" font-size="17" fill="#8a6a12" text-anchor="middle">gamma = 0.1 per day</text>
+  <rect x="140" y="330" width="720" height="56" rx="10" fill="#f6f1e3" stroke="#8a6a12"/>
+  <text x="500" y="365" font-size="19" fill="#333" text-anchor="middle">R0 = beta / gamma = 3: one case infects three others at the start</text>
+</svg>

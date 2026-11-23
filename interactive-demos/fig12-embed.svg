@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="520" fill="#ffffff"/>
+  <text x="20" y="30" font-size="19" fill="#5a6670" text-anchor="start" font-weight="bold" xml:space="preserve">Your page's folder</text>
+  <rect x="20" y="45" width="290" height="270" rx="8" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="35" y="80" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="bold" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">my-course-page/</text>
+  <text x="35" y="116" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  _quarto.yml</text>
+  <text x="35" y="152" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  index.qmd</text>
+  <text x="35" y="188" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  schedule.qmd</text>
+  <text x="35" y="224" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="bold" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  demos/</text>
+  <text x="35" y="260" font-size="17" fill="#2a7f8f" text-anchor="start" font-weight="bold" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">    logistic-growth.html</text>
+  <rect x="28" y="235" width="278" height="32" rx="6" fill="none" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="20" y="350" font-size="19" fill="#5a6670" text-anchor="start" font-weight="bold" xml:space="preserve">In index.qmd (one line):</text>
+  <rect x="20" y="362" width="600" height="96" rx="8" fill="#1e2630" stroke="#1e2630" stroke-width="1.5"/>
+  <text x="36" y="392" font-size="16" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">&lt;iframe src="demos/logistic-growth.html"</text>
+  <text x="36" y="416" font-size="16" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">        width="100%" height="600"</text>
+  <text x="36" y="440" font-size="16" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">        title="Logistic growth demo"&gt;&lt;/iframe&gt;</text>
+  <rect x="560" y="30" width="420" height="310" rx="10" fill="#ffffff" stroke="#9aa4ad" stroke-width="1.5"/>
+  <rect x="560" y="30" width="420" height="40" rx="10" fill="#e9edf1"/>
+  <rect x="560" y="60" width="420" height="10" fill="#e9edf1"/>
+  <circle cx="578" cy="50" r="6" fill="#e0605a"/>
+  <circle cx="598" cy="50" r="6" fill="#e6b84f"/>
+  <circle cx="618" cy="50" r="6" fill="#5fbf6a"/>
+  <rect x="640" y="38" width="325" height="24" rx="12" fill="#ffffff" stroke="#c9d3dd" stroke-width="1"/>
+  <text x="654" y="55" font-size="14" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">you.github.io/my-course-page</text>
+  <text x="580" y="100" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">Week 3: population growth</text>
+  <text x="580" y="130" font-size="15" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">Read chapter 4, then try the</text>
+  <text x="580" y="150" font-size="15" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">demo below before Thursday.</text>
+  <rect x="580" y="175" width="380" height="150" rx="6" fill="#ffffff" stroke="#2a7f8f" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="595" y="205" font-size="14" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">r</text>
+  <line x1="595" y1="221" x2="705" y2="221" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="595" y1="221" x2="639.0" y2="221" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="639.0" cy="221" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="595" y="255" font-size="14" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">K</text>
+  <line x1="595" y1="271" x2="705" y2="271" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="595" y1="271" x2="672.0" y2="271" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="672.0" cy="271" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <line x1="740" y1="310" x2="940" y2="310" stroke="#9aa4ad" stroke-width="2"/>
+  <line x1="740" y1="190" x2="740" y2="310" stroke="#9aa4ad" stroke-width="2"/>
+  <path d="M740.0,308.8 L742.5,308.5 L745.0,308.0 L747.5,307.5 L750.0,306.8 L752.5,305.9 L755.0,304.8 L757.5,303.5 L760.0,301.8 L762.5,299.7 L765.0,297.2 L767.5,294.1 L770.0,290.5 L772.5,286.4 L775.0,281.6 L777.5,276.4 L780.0,270.8 L782.5,264.9 L785.0,258.9 L787.5,253.0 L790.0,247.3 L792.5,242.1 L795.0,237.4 L797.5,233.3 L800.0,229.7 L802.5,226.7 L805.0,224.2 L807.5,222.1 L810.0,220.5 L812.5,219.1 L815.0,218.0 L817.5,217.2 L820.0,216.5 L822.5,215.9 L825.0,215.5 L827.5,215.2 L830.0,214.9 L832.5,214.7 L835.0,214.6 L837.5,214.4 L840.0,214.3 L842.5,214.3 L845.0,214.2 L847.5,214.2 L850.0,214.1 L852.5,214.1 L855.0,214.1 L857.5,214.1 L860.0,214.0 L862.5,214.0 L865.0,214.0 L867.5,214.0 L870.0,214.0 L872.5,214.0 L875.0,214.0 L877.5,214.0 L880.0,214.0 L882.5,214.0 L885.0,214.0 L887.5,214.0 L890.0,214.0 L892.5,214.0 L895.0,214.0 L897.5,214.0 L900.0,214.0 L902.5,214.0 L905.0,214.0 L907.5,214.0 L910.0,214.0 L912.5,214.0 L915.0,214.0 L917.5,214.0 L920.0,214.0 L922.5,214.0 L925.0,214.0 L927.5,214.0 L930.0,214.0 L932.5,214.0 L935.0,214.0 L937.5,214.0 L940.0,214.0" stroke="#2a7f8f" stroke-width="3" fill="none"/>
+  <line x1="315" y1="251" x2="570" y2="251" stroke="#2a7f8f" stroke-width="2.5" marker-end="url(#arwt)"/>
+  <text x="640" y="490" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">The page builder must also copy the .html file:</text>
+  <text x="640" y="512" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">for a Quarto site, list it under resources in _quarto.yml.</text>
+</svg>

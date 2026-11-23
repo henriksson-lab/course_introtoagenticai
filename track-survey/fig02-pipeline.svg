@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#fff"/>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <g font-size="18" text-anchor="middle" font-weight="bold">
+    <rect x="10" y="60" width="140" height="80" rx="10" fill="#f4f4f4" stroke="#555" stroke-width="2"/>
+    <text x="80" y="95" fill="#333">Export</text><text x="80" y="120" fill="#333">(raw, read-only)</text>
+    <rect x="175" y="60" width="140" height="80" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="245" y="95" fill="#2a7f8f">Tidy</text><text x="245" y="120" fill="#2a7f8f">+ codebook</text>
+    <rect x="340" y="60" width="140" height="80" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="410" y="95" fill="#2a7f8f">Describe</text><text x="410" y="120" fill="#2a7f8f">and plot</text>
+    <rect x="505" y="60" width="140" height="80" rx="10" fill="#f6f1e3" stroke="#8a6a12" stroke-width="2"/>
+    <text x="575" y="95" fill="#8a6a12">Compare</text><text x="575" y="120" fill="#8a6a12">groups</text>
+    <rect x="670" y="60" width="140" height="80" rx="10" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+    <text x="740" y="95" fill="#6b4fa0">Free-text</text><text x="740" y="120" fill="#6b4fa0">themes</text>
+    <rect x="835" y="60" width="150" height="80" rx="10" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="910" y="95" fill="#333">Report</text><text x="910" y="120" fill="#333">(Quarto)</text>
+  </g>
+  <g stroke="#555" stroke-width="2">
+    <line x1="150" y1="100" x2="173" y2="100" marker-end="url(#a)"/><line x1="315" y1="100" x2="338" y2="100" marker-end="url(#a)"/>
+    <line x1="480" y1="100" x2="503" y2="100" marker-end="url(#a)"/><line x1="645" y1="100" x2="668" y2="100" marker-end="url(#a)"/>
+    <line x1="810" y1="100" x2="833" y2="100" marker-end="url(#a)"/>
+  </g>
+  <text x="80" y="40" font-size="16" fill="#666" text-anchor="middle">you</text>
+  <text x="575" y="40" font-size="16" fill="#666" text-anchor="middle">the agent writes one script for all of it</text>
+  <line x1="175" y1="48" x2="985" y2="48" stroke="#bbb" stroke-width="2"/>
+  <g font-size="16" fill="#a8324a" text-anchor="middle">
+    <text x="80" y="175">check: rows</text><text x="80" y="197">in the export</text>
+    <text x="245" y="175">check: 120 rows,</text><text x="245" y="197">a list of removals</text>
+    <text x="410" y="175">check: counts</text><text x="410" y="197">match a filter</text>
+    <text x="575" y="175">check: n per</text><text x="575" y="197">group ≥ 5</text>
+    <text x="740" y="175">check: quotes</text><text x="740" y="197">exist verbatim</text>
+    <text x="910" y="175">check: a colleague</text><text x="910" y="197">reads it</text>
+  </g>
+  <rect x="100" y="250" width="800" height="110" rx="12" fill="#f4f4f4" stroke="#999"/>
+  <text x="500" y="290" font-size="20" fill="#333" text-anchor="middle">Next year, a new export goes in at the left and the same script</text>
+  <text x="500" y="320" font-size="20" fill="#333" text-anchor="middle">produces the same report. Every check runs again.</text>
+</svg>

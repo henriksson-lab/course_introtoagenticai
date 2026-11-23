@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+  <rect width="1000" height="440" fill="#fff"/>
+  <text x="250" y="35" font-size="20" font-weight="bold" fill="#2a7f8f" text-anchor="middle">The script's summary table</text>
+  <g font-size="16" font-family="Menlo, Consolas, monospace" fill="#333">
+    <rect x="20" y="50" width="460" height="32" fill="#e3f0f2"/>
+    <text x="30" y="72" font-weight="bold">fertiliser watering      n  mean  sd</text>
+    <text x="30" y="104">none       well-watered  8  117.0 13.4</text>
+    <text x="30" y="132">low        well-watered  8  164.0 16.6</text>
+    <text x="30" y="160">high       well-watered  8  219.0 13.0</text>
+    <text x="30" y="188">none       drought       8   94.9 10.1</text>
+    <rect x="20" y="196" width="460" height="28" fill="#f6f1e3"/>
+    <text x="30" y="216">low        drought       8  117.4 14.9</text>
+    <text x="30" y="244">high       drought       7  124.8 22.3</text>
+  </g>
+  <text x="750" y="35" font-size="20" font-weight="bold" fill="#8a6a12" text-anchor="middle">Your check in the spreadsheet</text>
+  <g font-size="17" fill="#333">
+    <text x="560" y="80">1. Open plant-biomass.csv</text>
+    <text x="560" y="112">2. Filter: low + drought</text>
+    <text x="560" y="144">3. Count the rows: <tspan font-weight="bold">8</tspan></text>
+    <text x="560" y="176">4. =AVERAGE(...): <tspan font-weight="bold">117.4</tspan></text>
+    <text x="560" y="208">5. Find the diamond in the figure:</text>
+    <text x="585" y="232">just under 120 on the axis?</text>
+  </g>
+  <line x1="485" y1="210" x2="550" y2="170" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="20" y="290" width="960" height="130" rx="10" fill="#fafafa" stroke="#ddd"/>
+  <g font-size="18" fill="#333">
+    <text x="40" y="325"><tspan font-weight="bold" fill="#a8324a">n = 7</tspan> for high + drought: is that the plant that died, or was a row lost?</text>
+    <text x="40" y="360"><tspan font-weight="bold" fill="#a8324a">48 rows in, 47 plotted:</tspan> the script should say which one it left out and why.</text>
+    <text x="40" y="395"><tspan font-weight="bold" fill="#a8324a">One group, by hand:</tspan> pick it at random, not the first one.</text>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#fff"/>
+  <text x="30" y="40" font-size="20" font-weight="bold" fill="#333">Share of your plan's usage window, for the same piece of work (a sketch, not a measurement)</text>
+  <g font-size="18" fill="#333">
+    <text x="30" y="110">one agent</text>
+    <text x="30" y="200">two sessions, one tool</text>
+    <text x="30" y="290">one agent + 3 helpers</text>
+  </g>
+  <!-- frames: full limit -->
+  <g fill="none" stroke="#999" stroke-width="1.5">
+    <rect x="300" y="85" width="600" height="36"/>
+    <rect x="300" y="175" width="600" height="36"/>
+    <rect x="300" y="265" width="600" height="36"/>
+  </g>
+  <rect x="300" y="85" width="120" height="36" fill="#6b4fa0"/>
+  <rect x="300" y="175" width="120" height="36" fill="#6b4fa0"/>
+  <rect x="420" y="175" width="120" height="36" fill="#6b4fa0" fill-opacity="0.75"/>
+  <text x="560" y="199" font-size="16" fill="#555">both draw on the same plan</text>
+  <rect x="300" y="265" width="90" height="36" fill="#6b4fa0"/>
+  <rect x="390" y="265" width="100" height="36" fill="#6b4fa0" fill-opacity="0.55"/>
+  <rect x="490" y="265" width="100" height="36" fill="#6b4fa0" fill-opacity="0.55"/>
+  <rect x="590" y="265" width="100" height="36" fill="#6b4fa0" fill-opacity="0.55"/>
+  <text x="710" y="289" font-size="16" fill="#555">helpers count too</text>
+  <line x1="900" y1="70" x2="900" y2="320" stroke="#a8324a" stroke-width="2" stroke-dasharray="6 4"/>
+  <text x="900" y="345" font-size="17" fill="#a8324a" text-anchor="middle">limit reached: wait</text>
+  <text x="900" y="367" font-size="17" fill="#a8324a" text-anchor="middle">for the window to reset</text>
+  <text x="30" y="405" font-size="17" fill="#333">See where you are: Claude Code</text><text x="290" y="405" font-size="17" fill="#333" font-family="Menlo, Consolas, monospace">/usage</text><text x="370" y="405" font-size="17" fill="#333">Codex</text><text x="425" y="405" font-size="17" fill="#333" font-family="Menlo, Consolas, monospace">/status</text><text x="510" y="405" font-size="17" fill="#555">(Claude and Codex have separate limits)</text>
+</svg>

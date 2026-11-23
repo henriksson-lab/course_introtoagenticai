@@ -34,7 +34,7 @@ Your session will look different from anyone else's, including the examples belo
 | 2. Clean a spreadsheet | [messy-sheet.zip](data/messy-sheet.zip) | `messy-sheet.xlsx` |
 | 3. Summarise PDFs | [reports.zip](data/reports.zip) | a folder `reports` with 6 short PDFs |
 
-- Make a folder for this exercise, for example `first-delegations` in your Documents folder, and unzip the three files into it. On a Mac, double-click the zip. On Windows, right-click and choose **Extract All**. Windows sometimes puts the folder inside a folder of the same name; open it and make sure you can see the 40 files (or the 6 PDFs) directly.
+- Make a folder for this exercise, called `first-delegations` inside your course folder `agentic-course` (from *Terminal survival kit*), and unzip the three files into it. On a Mac, double-click the zip. On Windows, right-click and choose **Extract All**. Windows sometimes puts the folder inside a folder of the same name; open it and make sure you can see the 40 files (or the 6 PDFs) directly.
 - Keep a short note open (a text file or paper) called **what went wrong**. Each time the agent does something you did not expect, write one line. We use these notes in the next unit.
 
 ### Starting the agent in a copy
@@ -47,12 +47,12 @@ For every job, **make a copy first** and start the agent in the copy, never in t
 ::: {.panel-tabset}
 ## Claude Code
 ```bash
-cd ~/Documents/first-delegations/messy-folder-work
+cd ~/agentic-course/first-delegations/messy-folder-work
 claude
 ```
 ## Codex
 ```bash
-cd ~/Documents/first-delegations/messy-folder-work
+cd ~/agentic-course/first-delegations/messy-folder-work
 codex
 ```
 :::

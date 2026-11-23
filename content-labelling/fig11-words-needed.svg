@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#ffffff"/>
+  <text x="30" y="36" font-size="19" font-weight="bold" fill="#1b2a3a">Words needed, on average, before a detector is confident</text>
+  <text x="30" y="62" font-size="15" fill="#5a6a7a">"Confident": ordinary text would score this high less than about 1 time in 30,000. Ordinary text is 50% green.</text>
+  <g font-size="17" fill="#1b2a3a">
+    <text x="30" y="122">strong: 75% green</text>
+    <rect x="300" y="104" width="22" height="26" fill="#2a7f8f"/><text x="334" y="123">about 64 words (a few sentences)</text>
+    <text x="30" y="182">medium: 67% green</text>
+    <rect x="300" y="164" width="50" height="26" fill="#2a7f8f"/><text x="362" y="183">about 150 words (a paragraph)</text>
+    <text x="30" y="242">weak: 60% green</text>
+    <rect x="300" y="224" width="140" height="26" fill="#2a7f8f"/><text x="452" y="243">about 400 words (a page)</text>
+    <text x="30" y="302">very weak: 55% green</text>
+    <rect x="300" y="284" width="560" height="26" fill="#2a7f8f"/><text x="852" y="303" text-anchor="end" fill="#ffffff" font-weight="bold">about 1,600 words</text>
+  </g>
+  <text x="30" y="356" font-size="17" fill="#1b2a3a">Halve the extra green share and you need four times as much text. A stronger watermark is easier</text>
+  <text x="30" y="380" font-size="17" fill="#1b2a3a">to detect, but nudges the wording more. Short answers, titles and code carry almost no signal.</text>
+</svg>

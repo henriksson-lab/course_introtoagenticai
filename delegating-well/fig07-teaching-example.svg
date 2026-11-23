@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="520" fill="#ffffff"/>
+  <text x="150" y="36" text-anchor="middle" font-size="21" font-weight="bold" fill="#a8324a">A wish</text>
+  <rect x="20" y="56" width="260" height="110" rx="10" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="16" fill="#333">
+    <text x="36" y="94">Make some exam</text>
+    <text x="36" y="118">questions about</text>
+    <text x="36" y="142">photosynthesis.</text>
+  </g>
+  <g font-size="16" fill="#333">
+    <text x="30" y="205">• Which level? Recall?</text>
+    <text x="30" y="235">• Distractors nobody picks</text>
+    <text x="30" y="265">• "All of the above"</text>
+    <text x="30" y="295">• No key, or a wrong one</text>
+    <text x="30" y="325">• Last year's questions</text>
+    <text x="44" y="349">reworded</text>
+  </g>
+  <text x="640" y="36" text-anchor="middle" font-size="21" font-weight="bold" fill="#2a7f8f">A brief</text>
+  <rect x="300" y="56" width="680" height="450" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="15.5" fill="#333">
+    <text x="318" y="88"><tspan font-weight="bold" fill="#2a7f8f">Goal:</tspan> 10 multiple-choice questions on</text>
+    <text x="318" y="112">photosynthesis for a first-year biology exam</text>
+    <text x="318" y="136">that test understanding, not recall.</text>
+    <text x="318" y="172"><tspan font-weight="bold" fill="#6b4fa0">Context:</tspan> the learning outcomes are in</text>
+    <text x="318" y="196">outcomes.md. Use exam-2025.pdf (public) for style</text>
+    <text x="318" y="220">and level. Students often confuse the light and</text>
+    <text x="318" y="244">dark reactions: use that for distractors.</text>
+    <text x="318" y="280"><tspan font-weight="bold" fill="#8a6a12">Constraints:</tspan> 4 options, exactly one correct;</text>
+    <text x="318" y="304">no "all/none of the above"; do not reuse questions</text>
+    <text x="318" y="328">from exam-2025.pdf. English. Write questions.md only.</text>
+    <text x="318" y="364"><tspan font-weight="bold" fill="#a8324a">Done when:</tspan> each question names the outcome it</text>
+    <text x="318" y="388">tests; no outcome is tested more than twice; an</text>
+    <text x="318" y="412">answer key gives one sentence of reasoning per</text>
+    <text x="318" y="436">question. I will solve them myself and compare.</text>
+    <text x="318" y="472" fill="#555">Start in plan mode: list the outcomes you will cover.</text>
+  </g>
+</svg>

@@ -71,6 +71,174 @@ website:
                 href: privacy-ethics/lec.qmd
               - text: "Exercise: choose your own project"
                 href: privacy-ethics/exercise.qmd
+      - section: "Part 2: A project that lasts"
+        contents:
+          - section: "Delegating well"
+            contents:
+              - text: "Lecture (slides)"
+                href: delegating-well/lec.qmd
+              - text: "Exercise: from weak prompt to brief"
+                href: delegating-well/exercise.qmd
+          - section: "Organising a project for an agent"
+            contents:
+              - text: "Lecture (slides)"
+                href: project-organisation/lec.qmd
+              - text: "Exercise: a folder that explains itself"
+                href: project-organisation/exercise.qmd
+          - section: "Git as undo button and lab notebook"
+            contents:
+              - text: "Lecture (slides)"
+                href: git-basics/lec.qmd
+              - text: "Exercise: git as undo button"
+                href: git-basics/exercise.qmd
+          - section: "Reproducible figures"
+            contents:
+              - text: "Lecture (slides)"
+                href: reproducible-figures/lec.qmd
+              - text: "Exercise: a figure you can remake"
+                href: reproducible-figures/exercise.qmd
+      - section: "Part 3: Sharing"
+        contents:
+          - section: "GitHub"
+            contents:
+              - text: "Lecture (slides)"
+                href: github/lec.qmd
+              - text: "Exercise: push, review, swap"
+                href: github/exercise.qmd
+          - section: "A course or project page"
+            contents:
+              - text: "Lecture (slides)"
+                href: course-page/lec.qmd
+              - text: "Exercise: publish a page"
+                href: course-page/exercise.qmd
+          - section: "Interactive demos"
+            contents:
+              - text: "Lecture (slides)"
+                href: interactive-demos/lec.qmd
+              - text: "Exercise: build a demo"
+                href: interactive-demos/exercise.qmd
+          - section: "Shiny apps"
+            contents:
+              - text: "Lecture (slides)"
+                href: shiny-apps/lec.qmd
+              - text: "Exercise: an app for your data"
+                href: shiny-apps/exercise.qmd
+      - section: "Part 4: Literature, documents and the web"
+        contents:
+          - section: "Literature review on a gene (or topic) set"
+            contents:
+              - text: "Lecture (slides)"
+                href: literature-review/lec.qmd
+              - text: "Exercise: a verified literature table"
+                href: literature-review/exercise.qmd
+          - section: "Extracting data from PDFs"
+            contents:
+              - text: "Lecture (slides)"
+                href: pdf-extraction/lec.qmd
+              - text: "Exercise: one number from many PDFs"
+                href: pdf-extraction/exercise.qmd
+          - section: "Collecting and analysing grant results"
+            contents:
+              - text: "Lecture (slides)"
+                href: grant-results/lec.qmd
+              - text: "Exercise: map the funding of a field"
+                href: grant-results/exercise.qmd
+          - section: "Likely reviewers and mock reviews"
+            contents:
+              - text: "Lecture (slides)"
+                href: grant-reviewers/lec.qmd
+              - text: "Exercise: profile a panel, review your draft"
+                href: grant-reviewers/exercise.qmd
+      - section: "Part 5: Scaling up"
+        contents:
+          - section: "Parallel workers: Claude and Codex"
+            contents:
+              - text: "Lecture (slides)"
+                href: parallel-workers/lec.qmd
+              - text: "Exercise: same task, two agents"
+                href: parallel-workers/exercise.qmd
+          - section: "Making the agent yours"
+            contents:
+              - text: "Lecture (slides)"
+                href: custom-skills/lec.qmd
+              - text: "Exercise: a house style and a connector"
+                href: custom-skills/exercise.qmd
+          - section: "Reading other people's code"
+            contents:
+              - text: "Lecture (slides)"
+                href: legacy-code/lec.qmd
+              - text: "Exercise: port an inherited script"
+                href: legacy-code/exercise.qmd
+      - section: "Part 6: The wider picture"
+        contents:
+          - section: "Choosing a model"
+            contents:
+              - text: "Lecture (slides)"
+                href: choosing-models/lec.qmd
+              - text: "Exercise: test two models on your task"
+                href: choosing-models/exercise.qmd
+          - section: "Open-weights models and data privacy"
+            contents:
+              - text: "Lecture (slides)"
+                href: open-weights/lec.qmd
+              - text: "Exercise: closed vs open model"
+                href: open-weights/exercise.qmd
+          - section: "Labelling AI-generated content"
+            contents:
+              - text: "Lecture (slides)"
+                href: content-labelling/lec.qmd
+              - text: "Exercise: credentials, watermarks, labels"
+                href: content-labelling/exercise.qmd
+          - section: "Guardrails and safety levels"
+            contents:
+              - text: "Lecture (slides)"
+                href: guardrails/lec.qmd
+              - text: "Exercise: which guardrail did I hit?"
+                href: guardrails/exercise.qmd
+          - section: "Limits of AI for biological research"
+            contents:
+              - text: "Lecture (slides)"
+                href: bio-limits/lec.qmd
+              - text: "Exercise: spot what the agent got wrong"
+                href: bio-limits/exercise.qmd
+          - section: "Copyright, memorisation and credit"
+            contents:
+              - text: "Lecture (slides)"
+                href: copyright-credit/lec.qmd
+              - text: "Exercise: check before you publish"
+                href: copyright-credit/exercise.qmd
+      - section: "Tracks"
+        contents:
+          - section: "A. Bulk RNA-seq"
+            contents:
+              - text: "Lecture (slides)"
+                href: track-rnaseq/lec.qmd
+              - text: "Exercise: RNA-seq by prompts"
+                href: track-rnaseq/exercise.qmd
+          - section: "B. Simulation"
+            contents:
+              - text: "Lecture (slides)"
+                href: track-simulation/lec.qmd
+              - text: "Exercise: a simulation you can trust"
+                href: track-simulation/exercise.qmd
+          - section: "C. Image analysis in Python"
+            contents:
+              - text: "Lecture (slides)"
+                href: track-image/lec.qmd
+              - text: "Exercise: count and measure objects"
+                href: track-image/exercise.qmd
+          - section: "D. Survey and tabular data"
+            contents:
+              - text: "Lecture (slides)"
+                href: track-survey/lec.qmd
+              - text: "Exercise: from export to board report"
+                href: track-survey/exercise.qmd
+          - section: "E. Teaching materials"
+            contents:
+              - text: "Lecture (slides)"
+                href: track-teaching/lec.qmd
+              - text: "Exercise: a quiz, variants and slides"
+                href: track-teaching/exercise.qmd
 
 format:
   html:

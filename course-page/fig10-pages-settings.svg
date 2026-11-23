@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="500" fill="#fff"/>
+  <rect x="20" y="10" width="960" height="460" rx="8" fill="#fff" stroke="#bbb" stroke-width="2"/>
+  <rect x="20" y="10" width="960" height="40" rx="8" fill="#eee"/>
+  <rect x="140" y="18" width="560" height="24" rx="12" fill="#fff" stroke="#ccc"/>
+  <text x="160" y="36" font-size="15" fill="#555">github.com/your-username/plant-growth-page/settings/pages</text>
+  <!-- left menu -->
+  <g font-size="16" fill="#333">
+    <text x="45" y="95">General</text>
+    <text x="45" y="125">Collaborators</text>
+    <text x="45" y="165" fill="#777" font-size="14">Code and automation</text>
+    <text x="45" y="195">Branches</text>
+    <text x="45" y="225">Actions</text>
+    <rect x="35" y="240" width="190" height="34" rx="6" fill="#e3f0f2"/>
+    <text x="45" y="263" font-weight="bold">Pages</text>
+  </g>
+  <line x1="240" y1="70" x2="240" y2="450" stroke="#ddd" stroke-width="2"/>
+  <!-- main -->
+  <text x="270" y="98" font-size="26" fill="#333">GitHub Pages</text>
+  <text x="270" y="150" font-size="19" font-weight="bold" fill="#333">Build and deployment</text>
+  <text x="270" y="185" font-size="16" fill="#333">Source</text>
+  <rect x="270" y="197" width="260" height="36" rx="6" fill="#f6f8fa" stroke="#bbb"/>
+  <text x="285" y="221" font-size="16" fill="#333">Deploy from a branch  ▾</text>
+  <text x="270" y="270" font-size="16" fill="#333">Branch</text>
+  <rect x="270" y="282" width="140" height="36" rx="6" fill="#f6f8fa" stroke="#bbb"/>
+  <text x="285" y="306" font-size="16" fill="#333">main  ▾</text>
+  <rect x="420" y="282" width="140" height="36" rx="6" fill="#f6f8fa" stroke="#bbb"/>
+  <text x="435" y="306" font-size="16" fill="#333">/docs  ▾</text>
+  <rect x="570" y="282" width="80" height="36" rx="6" fill="#f6f8fa" stroke="#bbb"/>
+  <text x="610" y="306" font-size="16" fill="#333" text-anchor="middle">Save</text>
+  <rect x="270" y="360" width="650" height="60" rx="6" fill="#e3f0f2" stroke="#2a7f8f"/>
+  <text x="290" y="388" font-size="16" fill="#333">Your site is live at</text>
+  <text x="290" y="410" font-size="16" fill="#2a7f8f" font-weight="bold">https://your-username.github.io/plant-growth-page/</text>
+  <!-- annotations -->
+  <g fill="none" stroke="#a8324a" stroke-width="2.5">
+    <rect x="263" y="190" width="274" height="50" rx="8"/>
+    <rect x="263" y="275" width="394" height="50" rx="8"/>
+  </g>
+  <g font-size="16" fill="#a8324a">
+    <text x="560" y="222">1. Deploy from a branch</text>
+    <text x="680" y="306">2. main, /docs, Save</text>
+    <text x="700" y="345">3. wait, refresh</text>
+  </g>
+  <text x="975" y="492" font-size="14" fill="#999" text-anchor="end">illustrative</text>
+</svg>

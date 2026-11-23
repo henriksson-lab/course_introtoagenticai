@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="500" fill="#fff"/>
+  <rect x="15" y="15" width="970" height="440" rx="10" fill="#1f2430"/>
+  <circle cx="38" cy="37" r="7" fill="#a8324a"/><circle cx="60" cy="37" r="7" fill="#8a6a12"/><circle cx="82" cy="37" r="7" fill="#2a7f8f"/>
+  <text x="500" y="43" font-size="16" fill="#aab" text-anchor="middle">Claude Code in parallel-workers/ : reviewing codex/summary.R (read only)</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="16" xml:space="preserve">
+    <text x="40" y="85" fill="#e8e8e8">Review of codex/summary.R, most serious first:</text>
+    <text x="40" y="120" fill="#f08a9c">1. HIGH  Exact duplicate rows are kept (3 pairs in lakes.csv,</text>
+    <text x="40" y="142" fill="#e8e8e8">         e.g. Björksjön 2023-06-20). n and means are off for</text>
+    <text x="40" y="164" fill="#e8e8e8">         3 lake-years. Evidence: n = 7 in lake_summary.csv.</text>
+    <text x="40" y="199" fill="#e0b84a">2. MED   "&lt;5" becomes NA and is dropped from the tot_p mean.</text>
+    <text x="40" y="221" fill="#e8e8e8">         A choice, not a bug, but decisions.md does not say so.</text>
+    <text x="40" y="256" fill="#e8e8e8">3. LOW   Figure y-axis has no unit.</text>
+    <text x="40" y="291" fill="#e8e8e8">4. MED   Lake names are not trimmed, so "lilla sjön " is a</text>
+    <text x="40" y="313" fill="#e8e8e8">         separate lake.</text>
+    <text x="40" y="348" fill="#9a9aa8">Checked and fine: -999 handled (line 14); ug/L converted</text>
+    <text x="40" y="370" fill="#9a9aa8">(line 18); 8 rows, one per lake and year.</text>
+  </g>
+  <!-- annotation for wrong claim -->
+  <rect x="35" y="273" width="610" height="50" rx="4" fill="none" stroke="#e0b84a" stroke-width="2.5"/>
+  <rect x="660" y="262" width="310" height="80" rx="8" fill="#fff"/>
+  <text x="675" y="290" font-size="17" fill="#a8324a" font-weight="bold">Wrong: line 9 already trims</text>
+  <text x="675" y="314" font-size="17" fill="#a8324a" font-weight="bold">and lower-cases names.</text>
+  <text x="675" y="336" font-size="15" fill="#555">Check every claim.</text>
+  <text x="40" y="420" font-size="16" fill="#8fd3df" font-family="Menlo, Consolas, monospace">&gt; Show me line 9 of codex/summary.R and the rows it affects.</text>
+  <text x="985" y="485" font-size="14" fill="#999" text-anchor="end">illustrative; your review will differ</text>
+</svg>

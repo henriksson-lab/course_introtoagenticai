@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <rect x="60" y="40" width="560" height="360" rx="12" fill="#fafafa" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="85" y="80" font-size="22" font-weight="bold" fill="#2a7f8f">One commit</text>
+  <g font-size="19" fill="#333">
+    <text x="85" y="130"><tspan font-family="Menlo, Consolas, monospace" fill="#8a6a12">3f9c2a1</tspan></text>
+    <text x="85" y="175">Anna Berg  &lt;anna.berg@uni.example&gt;</text>
+    <text x="85" y="220">21 Nov 2026, 14:05</text>
+    <text x="85" y="268" font-weight="bold">Remove plate 7 from the growth analysis</text>
+    <text x="85" y="305" font-size="17">Plate 7 was contaminated (see notes/2026-11-21.md).</text>
+    <text x="85" y="333" font-size="17">clean.py now skips it; n drops from 12 to 11 plates.</text>
+    <text x="85" y="375" font-size="17" fill="#6b4fa0">+ the full state of every file in the folder</text>
+  </g>
+  <g font-size="18" fill="#555">
+    <line x1="625" y1="124" x2="680" y2="124" stroke="#bbb" stroke-width="1.5"/><text x="690" y="130">a unique name (short id)</text>
+    <line x1="625" y1="169" x2="680" y2="169" stroke="#bbb" stroke-width="1.5"/><text x="690" y="175">who</text>
+    <line x1="625" y1="214" x2="680" y2="214" stroke="#bbb" stroke-width="1.5"/><text x="690" y="220">when</text>
+    <line x1="625" y1="262" x2="680" y2="262" stroke="#bbb" stroke-width="1.5"/><text x="690" y="268">what, in one line</text>
+    <line x1="625" y1="318" x2="680" y2="318" stroke="#bbb" stroke-width="1.5"/><text x="690" y="324">why, and what it affects</text>
+    <line x1="625" y1="369" x2="680" y2="369" stroke="#bbb" stroke-width="1.5"/><text x="690" y="375">the snapshot itself</text>
+  </g>
+</svg>

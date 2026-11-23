@@ -1,0 +1,220 @@
+---
+title: "Exercise: one number from many PDFs"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- an **inventory** of a folder of PDFs: pages, and which ones have text and which are scans,
+- an **extraction definition** that says exactly which number you want,
+- an **extraction table** with, for every value, the value as printed, its unit, the converted value, the file, page and table, a quote and the method used,
+- a **check against an answer key** on six synthetic papers, and **random hand checks**,
+- a **second, independent extraction** by another agent (or another session), and a **comparison** of the two,
+- the same done on **five real open-access papers** from your literature table, and the result on your page,
+- the workflow applied to **documents from your own project**.
+
+Your session will look different from anyone else's. Compare **results** and **checks**, not screens.
+
+## Before you start
+
+- You have done *Literature review on a gene (or topic) set* and have `results/literature_table.csv` in `~/agentic-course/literature-review/`.
+- Download the practice papers: [papers.zip](data/papers.zip) (seven small PDFs). They are **synthetic**: invented studies, people and numbers, made for this course.
+- Make a folder `~/agentic-course/pdf-extraction` (Windows: `C:\Users\<you>\agentic-course\pdf-extraction`) and unzip `papers.zip` into it, so that you have `pdf-extraction/papers/` with seven PDFs. **Do not open the answer key** further down this page until you are told to.
+- Open two or three of the PDFs in your normal PDF viewer and try to select a word in each. Note which file does not let you.
+- Start the agent in `pdf-extraction` and set the folder up:
+
+```text
+Make this folder a git repository. Create README.md (title: PDF
+extraction worked example), and the empty folders results and notes.
+Treat everything in papers/ as read-only: never change, rename or
+delete those files. Add that rule to README.md.
+```
+
+| | Claude Code | Codex |
+|---|---|---|
+| Reading PDFs | can open PDFs directly; for long PDFs it reads page ranges and needs `pdftoppm` (poppler), which it may ask to install | runs a program to extract text (`pdftotext`, `pdfplumber`, `pypdf`); may ask to install one |
+| Installing tools | it asks first; approve only what you understand, ask "what does this install?" | same; in Auto mode, installs that need the network ask for approval |
+
+## Worked example
+
+### Step 1: inventory
+
+```text
+For each PDF in papers/, tell me: the number of pages, whether it has a
+text layer (count the characters of extracted text), and anything that
+will make extraction hard (tables over page breaks, references to
+supplements, images instead of text). Write the result to
+notes/inventory.md. Do not extract any values yet.
+```
+
+#### Check the result
+
+- Seven files listed, with page counts (all 1 or 2 pages).
+- **Exactly one file has no text:** the same one you could not select text in. If the agent says all files have text, ask it how many characters it got from each.
+- The inventory mentions the table that runs over a page break and the paper that refers to a supplement. If not, you now know what the agent did not notice.
+
+### Step 2: the definition
+
+Create `extraction-definition.md` by asking the agent to write exactly this (or write it yourself in a text editor):
+
+```text
+Create extraction-definition.md with exactly this content:
+
+For each study (not each file), extract:
+n_analysed    number of participants in the analysis of 25(OH)D
+              (not invited, not recruited)
+value_as_printed, unit_as_printed
+              the mean serum 25(OH)D for ALL analysed participants,
+              exactly as printed, with its unit as printed
+mean_nmol_per_L
+              the same value in nmol/L; ng/mL and ug/L x 2.496,
+              rounded to 1 decimal
+file, page, table
+              where the value was found (a supplement counts; give its
+              file name); table = "text" if it was in running text
+quote         the exact words or table row the value was taken from
+method        text / layout text / OCR / page image
+note          anything unclear
+If the whole-sample mean is not reported, write "not reported"; do not
+compute it from subgroups. Never use a value from another study.
+```
+
+Read it once more. It is the standard for both agents and for your own checks. Commit: "Commit the definition and the inventory."
+
+### Step 3: first extraction (agent A)
+
+```text
+Follow extraction-definition.md exactly for the PDFs in papers/.
+Make results/extraction_A.csv with one row per study.
+
+- A table that continues on the next page is one table.
+- Decimal commas are decimal points.
+- A supplement counts as a source; name its file.
+- If a PDF has no text, tell me before you choose how to read it (OCR
+  or page images), and record the method.
+- Never compute, estimate or take a value from another study; write
+  "not reported" instead.
+Keep any script you write in scripts/. At the end, list every value you
+were unsure about and why.
+```
+
+**What to look for.** The agent should stop at the scanned paper and ask. Either answer is fine: OCR needs Tesseract, which the agent will ask to install; reading the page images needs nothing extra in Claude Code. Note what it chose. Then read the list of values it was unsure about.
+
+#### Check the result
+
+1. **Rows.** Six rows, one per study. The supplement is not a seventh study; it belongs to `06_Quint-2020`.
+2. **Hand check three rows** before you look at the key. Ask: "Pick 3 random rows with a fixed seed, and tell me the seed." For each row, open the PDF at the named page and check: is the value there, is it the right number (group, column, mean not median), is the unit right? Write the result in `notes/hand-checks.md`.
+3. **Now compare with the answer key** below. Ask the agent nothing yet; compare yourself, row by row.
+
+::: {.callout-note collapse="true" title="Answer key for the practice papers (open only now)"}
+| Study | n analysed | Mean (nmol/L) | As printed | Page, table | The trap |
+|---|---|---|---|---|---|
+| `01_Aldersen-2021.pdf` | 212 | 58.4 | 58.4 nmol/L | p. 2, Table 1 | none: the baseline |
+| `02_Moreau-2019.pdf` | 140 | 53.9 | 21.6 ng/mL | p. 2, Table 1 | unit in the row label; 21.6 × 2.496 = 53.9. Also: 152 invited, 140 analysed |
+| `03_Nyberg-2022.pdf` | 416 | 48.2 | 48,2 nmol/L | p. 2, Table 1, last row | table starts on p. 1, continues on p. 2 without a header; decimal commas |
+| `04_Okonkwo-2018.pdf` | 96 | 66.0 | 66.0 nmol/L | p. 2, Table 1 | scanned: no text layer. With OCR, watch for 25.1 read as "25,1" in the SD column |
+| `05_Petrova-2023.pdf` | 229 | 44.8 | 44.8 nmol/L | p. 2, Table 2 (n in Methods, p. 1) | 260 recruited; abstract gives the median 42.5; the introduction quotes another survey's mean of 71 |
+| `06_Quint-2020.pdf` | 158 | 39.5 | 39.5 nmol/L | `06_Quint-2020_supplement.pdf`, p. 1, Table S1 | main paper has no numbers; subgroups 42.0 and 31.3 are not the answer |
+
+The same key as a file: [answer-key.csv](data/answer-key.csv). The papers were made by [make-data.py](data/make-data.py).
+:::
+
+4. **For every difference**, decide which trap caused it, and whether the agent had listed that value as uncertain. Write both down. An error the agent was sure about is the important kind.
+5. **Correct the agent** by pointing to the page, for example:
+
+```text
+05_Petrova-2023: 42.5 is the median from the abstract. The definition
+asks for the mean: Table 2 on page 2 gives 44.8, and the Methods on
+page 1 say 229 were analysed, not 260. Fix the row, and tell me what
+you will do differently for the other papers.
+```
+
+Commit: "Commit extraction_A.csv and my hand checks."
+
+### Step 4: second extraction (agent B) and comparison
+
+Agent B must work **independently**: it must not see `extraction_A.csv`.
+
+| If you have both agents | If you have only one |
+|---|---|
+| Start the **other** agent (Codex if you used Claude Code, or the other way round) in the same folder. | Close the session, start a **new** one, and tell it to use a different method: "Use only scripts to extract text; do not read the pages directly" (or the opposite of what agent A did). |
+
+```text
+Do not open anything in results/. Follow extraction-definition.md for
+the PDFs in papers/ and write results/extraction_B.csv, with the same
+columns. Tell me before you choose how to read a PDF without text.
+Never compute or estimate a value; write "not reported" instead.
+List every value you were unsure about.
+```
+
+Then, in either agent:
+
+```text
+Write scripts/compare.py that compares results/extraction_A.csv and
+results/extraction_B.csv row by row (matched on the study file) for
+n_analysed, mean_nmol_per_L, page and table, and writes
+results/comparison.csv with one line per difference: study, field,
+value A, value B. Print how many cells were compared and how many
+differ.
+```
+
+#### Check the result
+
+- For **each difference**, open the PDF at the page and decide who is right. Add a column `right_value` and a short reason in `comparison.csv` (by hand in Excel or LibreOffice, or tell the agent your decision).
+- **Agreement is not proof.** Check one row where both agents agree but your earlier hand check or the key says otherwise, if there is one. If both agents made the same mistake, is the definition unclear? Fix the definition.
+- Write three lines in `notes/hand-checks.md`: what kind of error agent A made, what kind agent B made, and which method you trust more for which kind of PDF.
+- Commit everything.
+
+### Step 5: real open-access papers from your literature table
+
+Start the agent in `~/agentic-course/pdf-extraction` again.
+
+```text
+Read ../literature-review/results/literature_table.csv. For each PMID
+(or DOI), ask the Europe PMC REST API (resultType=core) whether the
+paper is open access, its licence and its PMCID. Write
+results/oa_candidates.csv: pmid, doi, pmcid, licence, title,
+evidence_type, and the Europe PMC article link.
+Then suggest five papers with licence CC BY that report data from
+people (patients, tissue samples or cohorts; for teaching methods:
+students). Do not download anything.
+```
+
+1. **Download the five PDFs by hand.** Open each Europe PMC link in your browser and use the PDF download on the article page. Save them into a new folder `real-papers/`. Note: do not ask the agent to write a script that downloads PDFs from the website; PubMed Central's terms do not allow bulk downloading from its main site.
+2. **Write a definition for real papers.** Ask the agent to draft `extraction-definition-real.md` for: the number of patients or samples (or students) analysed, as reported; one main result as the authors state it (an effect size, a hazard ratio, a percentage, with its unit); file, page, table, quote, method. Read it and make it stricter where it is vague.
+3. **Extract twice and compare**, as in Steps 3 and 4, into `results/real_A.csv` and `results/real_B.csv`.
+4. **Hand-check every row** (there are only five). Expect "not reported" for some, and analysed numbers that differ between the methods and a table. Decide what goes in the final table, and why.
+5. **Optional, a third source:** ask the agent to get the full-text XML of the same papers from Europe PMC's API and look up the same values there. Do they match what came out of the PDFs?
+6. **Publish.** In your project folder, add the final five-row table to your page (as you did with the literature table): columns paper, n, main result, page, and a link to the paper. Add one line on method and AI use. **Do not publish the PDFs themselves**, even CC BY ones, unless you add the attribution and licence for each; the table with links is enough. Commit and push.
+
+## On your own project
+
+Choose 5-10 documents from your own project that each report a number you need: papers in your field, technical reports, old lab protocols, theses, annual reports.
+
+::: {.callout-warning}
+**Privacy and copyright reminder.** Whatever the agent reads is sent to the provider. Use only documents that are public, or internal documents whose data class allows it (*Privacy, ethics and safety*). No documents with personal data (patient details, student results, names in HR documents). Check your library's licence before giving subscription PDFs to a cloud agent, and never publish PDFs you do not have the right to share.
+:::
+
+1. **Put the documents** in a `papers/` (or `documents/`) folder inside your project folder, read-only, with a short list of where each came from and its licence.
+2. **Inventory** (Step 1): which have text, which are scans?
+3. **Write the definition** for your quantity: which number, which group, which unit, what if it is missing.
+4. **Extract twice and compare** (Steps 3 and 4).
+5. **Hand-check** a random sample of at least five values, plus every value that came from OCR or a page image.
+6. **Keep** the definition, the scripts, both extractions, the comparison and your hand checks in the project, add a line to the README's **Log of AI use**, commit, and publish the final table (not the PDFs) on your page.
+
+**Check the result:** every row has a file, page and table; every converted value has its printed value and unit beside it; every difference between the two agents is settled and written down; and you can name one kind of error each agent made.
+
+## What you should have now
+
+- In `~/agentic-course/pdf-extraction/`: `notes/inventory.md`, `extraction-definition.md`, `results/extraction_A.csv`, `results/extraction_B.csv`, `results/comparison.csv` with your decisions, `notes/hand-checks.md`, and the scripts, all committed.
+- A note on which kinds of PDF and which traps each agent handled well and badly.
+- A five-row table of values from **real open-access papers**, checked by hand and published on your page with links.
+- The same workflow applied to **your own documents**.
+- In the next unit, *Collecting and analysing grant results*, the data comes from web databases instead of PDFs, with the same habits: raw downloads kept apart, every value traceable, totals checked against an independent source.

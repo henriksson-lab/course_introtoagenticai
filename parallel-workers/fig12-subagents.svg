@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="1000" height="480" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <rect width="1000" height="480" fill="#fff"/>
+  <!-- you -->
+  <rect x="30" y="185" width="110" height="70" rx="10" fill="#f6f1e3" stroke="#8a6a12" stroke-width="2"/>
+  <text x="85" y="227" font-size="20" fill="#8a6a12" text-anchor="middle" font-weight="bold">you</text>
+  <!-- main agent -->
+  <rect x="200" y="140" width="230" height="160" rx="12" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2.5"/>
+  <text x="315" y="175" font-size="20" fill="#6b4fa0" text-anchor="middle" font-weight="bold">main session</text>
+  <text x="315" y="202" font-size="16" fill="#333" text-anchor="middle">plans, hands out work,</text>
+  <text x="315" y="224" font-size="16" fill="#333" text-anchor="middle">combines the answers</text>
+  <rect x="235" y="250" width="160" height="22" fill="#fff" stroke="#6b4fa0"/>
+  <rect x="235" y="250" width="70" height="22" fill="#6b4fa0" fill-opacity="0.6"/>
+  <text x="315" y="292" font-size="14" fill="#555" text-anchor="middle">its context stays small</text>
+  <!-- subagents -->
+  <g font-size="17" fill="#333">
+    <rect x="530" y="30" width="430" height="110" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="548" y="60" fill="#2a7f8f" font-weight="bold">helper 1 (own context)</text>
+    <text x="548" y="86">recompute the summary from lakes.csv,</text>
+    <text x="548" y="110">without reading either script</text>
+    <rect x="530" y="170" width="430" height="110" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="548" y="200" fill="#2a7f8f" font-weight="bold">helper 2 (own context)</text>
+    <text x="548" y="226">review claude/summarise.py</text>
+    <rect x="530" y="310" width="430" height="110" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="548" y="340" fill="#2a7f8f" font-weight="bold">helper 3 (own context)</text>
+    <text x="548" y="366">review codex/summary.R</text>
+  </g>
+  <g stroke="#555" stroke-width="2.5" fill="none" marker-end="url(#ar)">
+    <line x1="140" y1="220" x2="192" y2="220"/>
+    <path d="M430,180 C 480,150 490,95 522,88"/>
+    <line x1="430" y1="220" x2="522" y2="222"/>
+    <path d="M430,260 C 480,290 490,355 522,362"/>
+  </g>
+  <g font-size="15" fill="#555" text-anchor="end">
+    <text x="950" y="128">returns a short report</text>
+    <text x="950" y="268">returns a short report</text>
+    <text x="950" y="408">returns a short report</text>
+  </g>
+  <text x="500" y="465" font-size="17" text-anchor="middle" fill="#333">The helpers work at the same time. Each one uses tokens of its own, from the same plan limits.</text>
+</svg>

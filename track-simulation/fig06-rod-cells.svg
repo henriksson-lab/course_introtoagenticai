@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="1000" height="450" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="450" fill="#fff"/>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker>
+  </defs>
+  <text x="500" y="34" font-size="22" font-weight="bold" fill="#333" text-anchor="middle">A metal rod, 1 m long, cut into 10 pieces</text>
+  <!-- end blocks -->
+  <rect x="40" y="60" width="90" height="80" fill="#a8324a"/>
+  <text x="85" y="108" font-size="22" font-weight="bold" fill="#fff" text-anchor="middle">100 °C</text>
+  <rect x="870" y="60" width="90" height="80" fill="#2a7f8f"/>
+  <text x="915" y="108" font-size="22" font-weight="bold" fill="#fff" text-anchor="middle">20 °C</text>
+  <!-- cells -->
+  <g stroke="#555" stroke-width="2">
+    <rect x="130" y="75" width="74" height="50" fill="#c96a7b"/>
+    <rect x="204" y="75" width="74" height="50" fill="#cf8291"/>
+    <rect x="278" y="75" width="74" height="50" fill="#d69aa6"/>
+    <rect x="352" y="75" width="74" height="50" fill="#ddb2bb"/>
+    <rect x="426" y="75" width="74" height="50" fill="#e3c9cf"/>
+    <rect x="500" y="75" width="74" height="50" fill="#d0dfe2"/>
+    <rect x="574" y="75" width="74" height="50" fill="#b3cfd4"/>
+    <rect x="648" y="75" width="74" height="50" fill="#95bec5"/>
+    <rect x="722" y="75" width="74" height="50" fill="#78adb6"/>
+    <rect x="796" y="75" width="74" height="50" fill="#5a9ca6"/>
+  </g>
+  <text x="85" y="165" font-size="17" fill="#333" text-anchor="middle">held fixed</text>
+  <text x="915" y="165" font-size="17" fill="#333" text-anchor="middle">held fixed</text>
+  <text x="500" y="165" font-size="17" fill="#666" text-anchor="middle">"boundary conditions": what happens at the edges</text>
+  <!-- rule zoom -->
+  <rect x="40" y="195" width="430" height="230" rx="10" fill="#f4f4f4" stroke="#bbb"/>
+  <text x="255" y="228" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">The rule for each piece</text>
+  <rect x="80" y="250" width="100" height="56" fill="#ddb2bb" stroke="#555" stroke-width="2"/>
+  <text x="130" y="286" font-size="20" text-anchor="middle">70</text>
+  <rect x="205" y="250" width="100" height="56" fill="#fff" stroke="#a8324a" stroke-width="3"/>
+  <text x="255" y="286" font-size="20" text-anchor="middle">50</text>
+  <rect x="330" y="250" width="100" height="56" fill="#d0dfe2" stroke="#555" stroke-width="2"/>
+  <text x="380" y="286" font-size="20" text-anchor="middle">40</text>
+  <text x="255" y="345" font-size="18" fill="#333" text-anchor="middle">neighbours average 55, so the middle</text>
+  <text x="255" y="370" font-size="18" fill="#333" text-anchor="middle">piece warms a little towards 55</text>
+  <text x="255" y="405" font-size="17" fill="#a8324a" text-anchor="middle">small steps only: too big a step overshoots</text>
+  <!-- steady state -->
+  <rect x="510" y="195" width="450" height="230" rx="10" fill="#fff" stroke="#bbb"/>
+  <text x="735" y="228" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">After a long time</text>
+  <line x1="560" y1="390" x2="920" y2="390" stroke="#555" stroke-width="2"/>
+  <line x1="560" y1="390" x2="560" y2="250" stroke="#555" stroke-width="2"/>
+  <line x1="560" y1="262" x2="920" y2="362" stroke="#2a7f8f" stroke-width="5"/>
+  <text x="570" y="255" font-size="16" fill="#a8324a">100</text>
+  <text x="890" y="355" font-size="16" fill="#2a7f8f">20</text>
+  <text x="740" y="415" font-size="17" fill="#333" text-anchor="middle">a straight line: a known answer</text>
+</svg>

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <rect x="20" y="15" width="960" height="400" rx="10" fill="#1e1e1e"/>
+  <circle cx="45" cy="38" r="7" fill="#e06c5a"/><circle cx="67" cy="38" r="7" fill="#e5b84f"/><circle cx="89" cy="38" r="7" fill="#6cbf6a"/>
+  <text x="500" y="43" font-size="15" fill="#aaa" text-anchor="middle">~/agentic-course/track-simulation</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="17">
+    <text x="45" y="85" fill="#9ad">&gt; Set up scikit-fem for this project only, not for the</text>
+    <text x="45" y="110" fill="#9ad">  whole computer, and record the versions.</text>
+    <text x="45" y="148" fill="#ddd">● I'll create a project environment in .venv and install</text>
+    <text x="45" y="173" fill="#ddd">  scikit-fem and matplotlib into it.</text>
+    <rect x="40" y="192" width="920" height="120" rx="6" fill="#2a2a2a" stroke="#e5b84f" stroke-width="2"/>
+    <text x="60" y="222" fill="#e5b84f">Bash command</text>
+    <text x="60" y="252" fill="#ddd">.venv/bin/pip install scikit-fem matplotlib</text>
+    <text x="60" y="290" fill="#ddd">Do you want to proceed?   &gt; 1. Yes   2. Yes, and don't ask again   3. No</text>
+    <text x="45" y="350" fill="#ddd">● Installed scikit-fem 12.0.2. Wrote requirements.txt and</text>
+    <text x="45" y="375" fill="#ddd">  noted the setup in README.md.</text>
+  </g>
+  <text x="975" y="432" font-size="13" fill="#999" text-anchor="end">illustrative</text>
+</svg>

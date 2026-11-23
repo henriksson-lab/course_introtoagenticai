@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#fff"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#555"/></marker></defs>
+  <text x="20" y="34" font-size="20" font-weight="bold" fill="#a8324a">Port and fix at once</text>
+  <rect x="20" y="50" width="200" height="70" rx="10" fill="#f6e4e8" stroke="#a8324a"/>
+  <text x="120" y="92" font-size="18" text-anchor="middle" fill="#333">old: WT 0.572</text>
+  <rect x="320" y="50" width="250" height="70" rx="10" fill="#f6e4e8" stroke="#a8324a"/>
+  <text x="445" y="80" font-size="18" text-anchor="middle" fill="#333">port + "fixes"</text>
+  <text x="445" y="104" font-size="18" text-anchor="middle" fill="#333">new: WT differs</text>
+  <line x1="222" y1="85" x2="316" y2="85" stroke="#555" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="600" y="80" font-size="18" fill="#a8324a">The fix? A porting error? Both?</text>
+  <text x="600" y="104" font-size="18" fill="#a8324a">One comparison cannot tell.</text>
+  <text x="20" y="180" font-size="20" font-weight="bold" fill="#2a7f8f">Faithful port first, then each fix on its own</text>
+  <g font-size="18" text-anchor="middle">
+    <rect x="20" y="200" width="200" height="70" rx="10" fill="#e3f1f3" stroke="#2a7f8f"/>
+    <text x="120" y="242" fill="#333">old: WT 0.5724</text>
+    <rect x="270" y="200" width="210" height="70" rx="10" fill="#e3f1f3" stroke="#2a7f8f"/>
+    <text x="375" y="230" fill="#333">faithful port</text>
+    <text x="375" y="254" fill="#333">WT 0.5724</text>
+    <rect x="530" y="200" width="210" height="70" rx="10" fill="#f5efdd" stroke="#8a6a12"/>
+    <text x="635" y="230" fill="#333">fix 1: 4 blanks</text>
+    <text x="635" y="254" fill="#333">WT 0.5991</text>
+    <rect x="790" y="200" width="190" height="70" rx="10" fill="#f5efdd" stroke="#8a6a12"/>
+    <text x="885" y="230" fill="#333">fix 2: real time</text>
+    <text x="885" y="254" fill="#333">same on this plate</text>
+  </g>
+  <g stroke="#555" stroke-width="2.5" marker-end="url(#a)">
+    <line x1="222" y1="235" x2="266" y2="235"/><line x1="482" y1="235" x2="526" y2="235"/><line x1="742" y1="235" x2="786" y2="235"/>
+  </g>
+  <g font-size="17" text-anchor="middle">
+    <text x="375" y="300" fill="#2a7f8f">matches: the port is right</text>
+    <text x="635" y="300" fill="#8a6a12">+4.7 %: the effect of fix 1</text>
+    <text x="885" y="300" fill="#8a6a12">0 % here (15-min plate)</text>
+  </g>
+  <text x="500" y="360" font-size="19" text-anchor="middle" fill="#333">Every difference has exactly one cause, and you can name its size.</text>
+  <text x="980" y="392" font-size="14" fill="#999" text-anchor="end">numbers from the exercise plate (synthetic data)</text>
+</svg>

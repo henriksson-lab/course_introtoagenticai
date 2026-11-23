@@ -1,0 +1,265 @@
+---
+title: "Exercise: a figure you can remake"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- a **figure script** in R (ggplot2) that turns a CSV file into a journal-ready figure, written by the agent from your description,
+- the figure as **PDF, SVG and PNG** at a journal column width, plus a small table of n, mean and SD per group,
+- **checked the figure against the data**: rows in and out, n per group, one mean by hand, labels and units,
+- **changed the style** with one sentence, and checked that the numbers did not change,
+- **rerun the script on a new batch** of data, caught the problem in it, and made the script refuse such surprises,
+- **pinned the package versions** with renv, and **committed** script, figure and versions together,
+- optionally, the same in **Python** (matplotlib) for a time series, and
+- **a first figure for your own project**, committed with its script.
+
+All example data is **synthetic**. Your session will look different from anyone else's. Compare **numbers**, not pictures.
+
+## Before you start
+
+- You have done *Git as undo button and lab notebook*: git works, and your own project folder is a repository.
+- Download [figures-data.zip](data/figures-data.zip) and unzip it. It holds three files:
+
+| File | What is in it |
+|---|---|
+| `plant-biomass.csv` | 48 seedlings: fertiliser (none, low, high) × watering (well-watered, drought), 8 plants each, dry biomass in mg. One plant died. |
+| `plant-biomass-batch2.csv` | the same experiment repeated: the "new batch" |
+| `lake-temperature.csv` | daily water temperature (°C) at 1, 5 and 15 m depth in 2024, one row per day and depth |
+
+- Make a folder `~/agentic-course/reproducible-figures/` (Windows: `C:\Users\<you>\agentic-course\reproducible-figures\`) and put a subfolder `data/` in it with the three CSV files.
+- Open `plant-biomass.csv` in Excel or LibreOffice and look at it for a minute. Keep it open: you will check the figure against it.
+
+### Starting the agent
+
+::: {.panel-tabset}
+## Claude Code
+```bash
+cd ~/agentic-course/reproducible-figures
+claude
+```
+Manual mode or accept-edits mode are both fine here; you will commit before each step.
+
+## Codex
+```bash
+cd ~/agentic-course/reproducible-figures
+codex
+```
+The folder is not a repository yet, so Codex will suggest Read Only. After step 1, start a new session: it will suggest Auto. Check with `/status`.
+:::
+
+## Worked example
+
+### Step 1: Make the folder a repository
+
+You know this from the last unit:
+
+```text
+Make this folder a git repository with a .gitignore suitable for an R
+and Python project, and commit the data with a message saying what it is.
+```
+
+### Step 2: Check R and ggplot2, install what is missing
+
+```text
+Check whether R and the R packages ggplot2 and svglite are installed.
+Only check. If something is missing, tell me how you would install it
+and whether it needs administrator rights.
+```
+
+**What to look for.** If **R** is missing, the agent should suggest the official installer from [cran.r-project.org](https://cran.r-project.org) (or Homebrew on a Mac, `winget` on Windows, or your university's software centre). Installing R itself may open a system dialog. **Packages** such as ggplot2 and svglite come from CRAN into your personal R library and do not need administrator rights. Approve the installation once you have read the plan. It may take a few minutes.
+
+### Step 3: The worked figure
+
+```text
+data/plant-biomass.csv holds dry biomass (mg) of 48 seedlings:
+fertiliser (none, low, high) x watering (well-watered, drought),
+8 plants each. Write an R script with ggplot2, scripts/plot_biomass.R,
+that makes a figure for a journal:
+
+- x axis: fertiliser, in the order none, low, high; colour: watering
+- show every plant as a point, plus the mean and standard deviation
+- show n per group on the figure
+- y axis "Dry biomass (mg)", starting at zero
+- colours that work for colour-blind readers
+- 85 mm wide, text about 7-8 pt; save as PDF, SVG and PNG (300 dpi)
+  in results/figures/
+- leave out plants with no biomass, and print which ones and why
+- also write results/figures/biomass_summary.csv with n, mean and SD
+  per group
+
+Run it and tell me what you did and any choices you made.
+```
+
+**What to look for.** The agent writes the script, runs it, and may fix an error or two on the way. That is normal. When it is done, read its account of the choices it made. Did it leave out exactly one plant? Did it say which?
+
+Open `results/figures/` in your file browser and open the **PDF**. Look at it at 100 % zoom, which is roughly its printed size.
+
+#### Check the result
+
+1. **Rows.** The agent's output (or ask: "How many rows were read, plotted and left out?") should say **48 read, 47 plotted, 1 left out: B1-44** (high fertiliser, drought, "died in week 2").
+2. **n per group.** The figure shows **8** in five groups and **7** for high fertiliser under drought.
+3. **One mean by hand.** Roll a die (or pick at random) for one of the six groups. In your spreadsheet, filter `plant-biomass.csv` to that group, count the rows with a biomass, and compute the mean (`=AVERAGE(...)`). Compare with `biomass_summary.csv` and with the mean marker on the figure.
+4. **Labels and units.** The y axis says mg, not g. The order is none, low, high. The legend names the two watering treatments.
+5. **Error bars.** Ask: "What exactly do the error bars show?" The answer must be one standard deviation, as you asked.
+6. **Grey test.** Print the PNG in black and white, or look at it with your screen in greyscale. Can you still tell the two treatments apart?
+
+::: {.callout-note collapse="true" title="Expected numbers for batch 1"}
+| fertiliser | watering | n | mean (mg) | SD (mg) |
+|---|---|---|---|---|
+| none | well-watered | 8 | 117.0 | 13.4 |
+| low | well-watered | 8 | 164.0 | 16.6 |
+| high | well-watered | 8 | 219.0 | 13.0 |
+| none | drought | 8 | 94.9 | 10.1 |
+| low | drought | 8 | 117.4 | 14.9 |
+| high | drought | 7 | 124.8 | 22.3 |
+
+48 rows read, 47 plotted, B1-44 left out. Your figure may look different; these numbers must match.
+:::
+
+When everything checks out, commit:
+
+```text
+Commit the script, the figure files and the summary table. Message:
+what the figure shows, which data it was made from, and n.
+```
+
+### Step 4: Change the style
+
+```text
+Change the style: grey bars for the means with standard error bars, the
+points on top in black, one panel per watering treatment, 180 mm wide.
+Keep everything else. Save it as a second figure, biomass_bars, so I can
+compare.
+```
+
+#### Check the result
+
+- The means and the n are **unchanged** (compare with the table above). Only the look and the error bars changed.
+- The error bars are now **smaller**: standard error is SD divided by the square root of n, about a third of the SD here. Ask the agent where in the script that is decided, and make sure the figure says SE, not SD, wherever it will be described.
+- Which version would you submit? There is no single right answer; the point is that switching cost one sentence.
+
+Commit with a message that mentions SE.
+
+### Step 5: Rerun on the new batch
+
+```text
+Run the figure script on data/plant-biomass-batch2.csv and save the
+result as biomass_batch2 (all three formats and the summary table).
+Do not change the data file.
+```
+
+#### Check the result
+
+Do the same checks as in step 3: rows, n per group, one group by hand. Something is off. Look closely at the n per group and the group names before you read on.
+
+::: {.callout-tip collapse="true" title="What you should find"}
+Three plants in batch 2 have fertiliser **"High"** with a capital H. Depending on how your script was written, they turn up as an extra group, a group called **NA**, or disappear without a word. The n per group shows it: high fertiliser has 7 and 6 plants instead of 8 and 8. If your agent noticed and handled it on its own, good, but check that it **told you**.
+:::
+
+Now make the script refuse surprises, and decide the fix yourself:
+
+```text
+Make the script stricter, so a rerun on new data cannot go wrong quietly:
+- stop with a clear message if fertiliser or watering has a value other
+  than the ones we know
+- print the number of rows read, plotted and left out, and n per group
+Then: in batch 2, "High" means "high". Handle that in the script, with a
+comment saying why, and rerun both batches. Do not edit the data file.
+```
+
+#### Check the result
+
+- Before the fix, the strict script **stops** on batch 2 with a message naming "High". (Ask the agent to show you that run if it went straight to the fix.)
+- After the fix: batch 2 has **48 rows read, 48 plotted, n = 8 in every group**.
+- Batch 1 still gives exactly the numbers in the table above.
+- `git diff data/` shows **no changes** to the data files.
+
+::: {.callout-note collapse="true" title="Expected numbers for batch 2 (after the fix)"}
+| fertiliser | watering | n | mean (mg) |
+|---|---|---|---|
+| none | well-watered | 8 | 119.8 |
+| low | well-watered | 8 | 168.1 |
+| high | well-watered | 8 | 225.9 |
+| none | drought | 8 | 113.4 |
+| low | drought | 8 | 130.7 |
+| high | drought | 8 | 124.5 |
+:::
+
+Commit, with a message that mentions the "High" fix.
+
+### Step 6: Pin the versions
+
+```text
+Set up renv for this project and record the exact versions of R and the
+packages the script uses. Make sure the installed package library is
+not committed. Add a short "How to rerun the figures" section to a
+README.md: which command makes which figure, and how to restore the
+package versions. Then commit.
+```
+
+**What to look for.** renv may need to be installed first (from CRAN, as before). It creates `renv.lock`, a folder `renv/` and a file `.Rprofile`. It keeps the package library out of git by itself; ask the agent to confirm with "Is any installed package library going to be committed?"
+
+#### Check the result
+
+- Open `renv.lock` in a text editor. Find `"ggplot2"` and its `"Version"`. It should match what R reports (ask: "Which version of ggplot2 is installed?").
+- Ask for the history as a short table. You should see your commits for the data, the first figure, the style change, batch 2 with the fix, and the versions.
+- **The real test:** ask the agent to delete everything in `results/figures/`, then follow the README to remake the figures. The numbers in the summary tables must be identical to before (`git diff` on the summary files shows nothing). Then restore or recommit as needed.
+
+### Step 7 (optional): The Python variant
+
+```text
+data/lake-temperature.csv holds daily water temperature (degrees C) at
+1, 5 and 15 m depth in 2024, one row per day and depth. Write a Python
+script with matplotlib, scripts/plot_lake.py: one line per depth,
+months on the x axis, y axis "Water temperature (°C)", colour-blind-safe
+colours, 180 mm wide, 7-8 pt text; PDF, SVG and PNG in results/figures/.
+Leave gaps in the data as gaps. Print the number of days with data per
+depth and the highest temperature at each depth with its date.
+Then record the package versions in requirements.txt and commit.
+```
+
+If Python or matplotlib is missing, the agent will propose installing it; read the plan first, as in step 2. It may suggest a separate environment for the project (a "virtual environment"); that is a good idea.
+
+#### Check the result
+
+- **366 days** per depth in the file (2024 is a leap year). At 5 m, **351** have a value: the sensor has a gap from **10 to 24 July**, which must show as a **break** in the 5 m line, not a straight line across.
+- The warmest day at 1 m is **2024-07-12, 20.86 °C**. Check it in the CSV (filter depth 1, sort by temperature).
+- The 15 m line stays below about **8 °C** all year.
+- `requirements.txt` lists matplotlib with an exact version (`==`).
+
+## On your own project
+
+Now make one figure for your own project, the same way. **Privacy first:** check your README's data class. If your data must not go to a cloud service, work on a synthetic stand-in with the same columns (ask the agent to make one from a description of the columns, not from the data), or on a public data set related to your topic.
+
+1. Start the agent in your **own project folder**. Check that everything is committed ("Is anything not committed?").
+2. If you have no data in the folder yet, decide what the first figure could be made from: a small public data set, your own non-sensitive data copied into `data/raw/`, or a synthetic stand-in. Commit the data (unless `.gitignore` says it must stay out; then describe in the README where it lives).
+3. Write a figure prompt in the shape of step 3. Before you send it, check it answers:
+   - What is in the file? (columns, units, how many rows or groups you expect)
+   - What goes on each axis, in which order? What do colours or panels mean?
+   - Points, summaries, n: what should be visible?
+   - Size and formats: which journal, report or slide? (Ask the agent to look up your journal's figure guidelines if it matters.)
+   - Odd cases: missing values, outliers, rows to leave out, and "print which ones and why".
+   - A summary table with the numbers behind the figure.
+4. Put the script in the folder layout you chose in *Organising a project for an agent* (for example `scripts/` and `results/figures/`).
+5. **Check** with the checklist from the lecture: rows in = plotted + left out; n per group as expected; one value by hand; labels and units; error bars named.
+6. **Pin** the versions (renv or `requirements.txt`), add "How to rerun the figure" to the README, and add a line to the **Log of AI use**: date, tool, "figure script for <figure>, checked by hand against <what>".
+7. **Commit** script, figure, summary table, versions and README together, with a message saying what the figure shows and from which data.
+
+### Check the result
+
+- Ask the agent: "**Delete the figure files and remake them from the README instructions.**" The figure comes back, and `git diff` on the summary table shows no change.
+- Show the PDF to a colleague without explanation. Can they say what is plotted, in which unit, and how many observations each group has?
+- Ask: "**List the files in the last commit.**" Script, figure files, summary table, lock or requirements file, README. No installed packages, nothing personal.
+
+## What you should have now
+
+- In `~/agentic-course/reproducible-figures/`: `scripts/plot_biomass.R` (and optionally `scripts/plot_lake.py`), the figures for batch 1 and batch 2 in PDF, SVG and PNG with their summary tables, `renv.lock` (and `requirements.txt`), a README on how to rerun, and a git history that tells the story.
+- In **your own project**: a first figure, its script, its numbers, its pinned versions and a README section on how to remake it, all committed. This figure is the first content of your page in *A course or project page*.

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#fff"/>
+  <rect x="20" y="10" width="960" height="430" rx="10" fill="#1e1e1e"/>
+  <g xml:space="preserve" style="white-space:pre" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17">
+    <text x="40" y="44" fill="#9a9a9a">$ python3 compare_outputs.py reference/gr_out_0312.txt port/gr_out_0312.txt</text>
+    <text x="40" y="78" fill="#e6e6e6">tolerance: mu, r2 0.0001 | td 0.01 | first, last, names exact</text>
+    <text x="40" y="114" fill="#9fe0ea">well   column    reference   port       diff      result</text>
+    <text x="40" y="142" fill="#e6e6e6">A2     mu_per_h  0.5723      0.5723     0.00000   <tspan fill="#98c379">PASS</tspan></text>
+    <text x="40" y="168" fill="#e6e6e6">A2     first     11          11         0         <tspan fill="#98c379">PASS</tspan></text>
+    <text x="40" y="194" fill="#e6e6e6">...    (all 20 wells x 5 columns)               <tspan fill="#98c379">100/100 PASS</tspan></text>
+    <text x="40" y="220" fill="#e6e6e6">D1     all       NaN         NaN        -         <tspan fill="#98c379">PASS</tspan></text>
+    <text x="40" y="256" fill="#9fe0ea">strain column    reference   port       diff      result</text>
+    <text x="40" y="284" fill="#e6e6e6">WT     mean_mu   0.5724      0.5724     0.00000   <tspan fill="#98c379">PASS</tspan></text>
+    <text x="40" y="310" fill="#e6e6e6">WT     sd_mu     0.0152      0.0132     0.00200   <tspan fill="#e06c75">FAIL</tspan></text>
+    <text x="40" y="336" fill="#e6e6e6">dA     sd_mu     0.0172      0.0149     0.00230   <tspan fill="#e06c75">FAIL</tspan></text>
+    <text x="40" y="362" fill="#e6e6e6">...    (5 strains; all sd_mu FAIL)</text>
+    <text x="40" y="398" fill="#e6e6e6">rows: reference 26, port 26, same names    <tspan fill="#98c379">PASS</tspan></text>
+    <text x="40" y="426" fill="#e5c07b">SUMMARY: 116 PASS, 5 FAIL (sd_mu, all strains)</text>
+  </g>
+  <text x="980" y="462" font-size="14" fill="#999" text-anchor="end">illustrative output; a first Python port with the n vs n−1 trap</text>
+</svg>

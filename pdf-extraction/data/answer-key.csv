@@ -1,0 +1,7 @@
+file,n_analysed,mean_25ohd_nmol_per_L,value_as_printed,unit_as_printed,page,table,difficulty
+01_Aldersen-2021.pdf,212,58.4,58.4,nmol/L,2,Table 1,easy case; abstract and table agree
+02_Moreau-2019.pdf,140,53.9,21.6,ng/mL,2,Table 1,"table is in ng/mL; 21.6 x 2.496 = 53.9 nmol/L; 152 invited, 140 analysed"
+03_Nyberg-2022.pdf,416,48.2,"48,2",nmol/L,2,Table 1 (last row),table starts on p. 1 and runs over the page break without a repeated header; decimal commas; the total row 'All districts' is on the last page
+04_Okonkwo-2018.pdf,96,66.0,66.0,nmol/L,2,Table 1,"image-only PDF (looks scanned): no text layer, needs OCR or reading the page image"
+05_Petrova-2023.pdf,229,44.8,44.8,nmol/L,2,Table 2,"260 recruited but 229 analysed; abstract gives the median (42.5), not the mean; 71 nmol/L in the introduction is another survey"
+06_Quint-2020.pdf,158,39.5,39.5,nmol/L,1 (supplement),Table S1 in 06_Quint-2020_supplement.pdf,the main paper has no numbers; they are in the supplement

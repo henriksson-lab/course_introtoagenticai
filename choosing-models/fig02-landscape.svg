@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="450" fill="#fff"/>
+  <text x="20" y="30" font-size="19" font-weight="bold" fill="#333">Closed models: used through the provider's service</text>
+  <g font-size="17">
+    <rect x="20" y="45" width="310" height="190" rx="10" fill="#f5efdd" stroke="#8a6a12" stroke-width="2"/>
+    <text x="38" y="75" font-weight="bold" fill="#8a6a12">Anthropic: Claude</text>
+    <text x="38" y="100" fill="#666">used by Claude Code</text>
+    <text x="38" y="132" fill="#333">Fable 5.2   (largest)</text>
+    <text x="38" y="158" fill="#333">Opus 5.5</text>
+    <text x="38" y="184" fill="#333">Sonnet 5.5</text>
+    <text x="38" y="210" fill="#333">Haiku 5.5   (smallest)</text>
+    <rect x="345" y="45" width="310" height="190" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="363" y="75" font-weight="bold" fill="#2a7f8f">OpenAI: GPT</text>
+    <text x="363" y="100" fill="#666">used by Codex and ChatGPT</text>
+    <text x="363" y="132" fill="#333">GPT-6.2 Astra   (frontier)</text>
+    <text x="363" y="158" fill="#333">GPT-6.2 Sol   (faster)</text>
+    <text x="363" y="184" fill="#333">GPT-6.1 Terra</text>
+    <text x="363" y="210" fill="#333">GPT-6 Luna</text>
+    <rect x="670" y="45" width="310" height="190" rx="10" fill="#eeeaf5" stroke="#6b4fa0" stroke-width="2"/>
+    <text x="688" y="75" font-weight="bold" fill="#6b4fa0">Google: Gemini</text>
+    <text x="688" y="100" fill="#666">used by Gemini apps and tools</text>
+    <text x="688" y="132" fill="#333">Gemini 4 Carbon, Argon</text>
+    <text x="688" y="158" fill="#333">Gemini 4 Hydrogen, Neon</text>
+    <text x="688" y="184" fill="#333">Gemini 3.8 Flash</text>
+    <text x="688" y="210" fill="#333">Gemini 3.5 Flash-Lite</text>
+  </g>
+  <text x="20" y="275" font-size="19" font-weight="bold" fill="#333">Open-weights families: the model file can be downloaded</text>
+  <g font-size="17" text-anchor="middle">
+    <rect x="20" y="290" width="180" height="80" rx="10" fill="#f5f5f5" stroke="#888"/>
+    <text x="110" y="322" font-weight="bold" fill="#333">Llama</text><text x="110" y="348" fill="#666">Meta · Llama 4</text>
+    <rect x="215" y="290" width="180" height="80" rx="10" fill="#f5f5f5" stroke="#888"/>
+    <text x="305" y="322" font-weight="bold" fill="#333">Qwen</text><text x="305" y="348" fill="#666">Alibaba · Qwen3.8</text>
+    <rect x="410" y="290" width="180" height="80" rx="10" fill="#f5f5f5" stroke="#888"/>
+    <text x="500" y="322" font-weight="bold" fill="#333">DeepSeek</text><text x="500" y="348" fill="#666">DeepSeek · V4.1</text>
+    <rect x="605" y="290" width="180" height="80" rx="10" fill="#f5f5f5" stroke="#888"/>
+    <text x="695" y="322" font-weight="bold" fill="#333">Mistral</text><text x="695" y="348" fill="#666">Mistral · Large 4</text>
+    <rect x="800" y="290" width="180" height="80" rx="10" fill="#f5f5f5" stroke="#888"/>
+    <text x="890" y="322" font-weight="bold" fill="#333">gpt-oss</text><text x="890" y="348" fill="#666">OpenAI · 120b, 20b</text>
+  </g>
+  <text x="20" y="410" font-size="17" fill="#333">… and more (Kimi, GLM, Gemma, …). A new generation in each family every few months.</text>
+  <text x="980" y="440" font-size="14" fill="#999" text-anchor="end">examples as listed on the providers' model pages, November 2026; this list will be out of date</text>
+</svg>

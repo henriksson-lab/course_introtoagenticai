@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <rect width="1000" height="400" fill="#fff"/>
+  <text x="40" y="95" font-size="19" font-weight="bold" fill="#2a7f8f">main</text>
+  <line x1="130" y1="90" x2="900" y2="90" stroke="#2a7f8f" stroke-width="4"/>
+  <g stroke="#2a7f8f" stroke-width="3" fill="#e3f0f2"><circle cx="160" cy="90" r="15"/><circle cx="280" cy="90" r="15"/><circle cx="820" cy="90" r="18" fill="#2a7f8f"/></g>
+  <text x="40" y="255" font-size="19" font-weight="bold" fill="#6b4fa0">fix-licence</text>
+  <path d="M280,105 C 320,240 340,250 420,250" stroke="#6b4fa0" stroke-width="4" fill="none"/>
+  <line x1="420" y1="250" x2="620" y2="250" stroke="#6b4fa0" stroke-width="4"/>
+  <path d="M620,250 C 720,250 780,180 815,110" stroke="#6b4fa0" stroke-width="4" fill="none" marker-end="url(#ar)"/>
+  <g stroke="#6b4fa0" stroke-width="3" fill="#f1edf7"><circle cx="430" cy="250" r="15"/><circle cx="560" cy="250" r="15"/></g>
+  <g font-size="17" fill="#333">
+    <text x="380" y="300">a colleague (or their agent) commits</text>
+    <text x="380" y="324">on a separate branch</text>
+    <rect x="620" y="150" width="200" height="56" rx="8" fill="#f6f1e3" stroke="#8a6a12" stroke-width="2"/>
+    <text x="720" y="174" text-anchor="middle" fill="#8a6a12" font-weight="bold">pull request</text>
+    <text x="720" y="196" text-anchor="middle" font-size="15" fill="#333">you read, comment, merge</text>
+    <text x="820" y="55" text-anchor="middle">merged into main</text>
+  </g>
+  <text x="500" y="380" font-size="18" fill="#555" text-anchor="middle">Nothing reaches main until the owner has looked at it.</text>
+</svg>

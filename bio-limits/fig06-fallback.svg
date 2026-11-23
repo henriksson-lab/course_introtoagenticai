@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="1000" height="480" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="480" fill="#ffffff"/>
+  <text x="245" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="#1b2a3a">A. Switched to another model</text>
+  <text x="755" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="#1b2a3a">B. A system message</text>
+  <rect x="20" y="52" width="450" height="360" rx="10" fill="#f4f7fa" stroke="#c9d3dc" stroke-width="2"/>
+  <rect x="40" y="72" width="410" height="84" rx="8" fill="#fbf6ea" stroke="#8a6a12" stroke-width="2"/>
+  <text x="58" y="102" font-size="17" fill="#8a6a12" font-weight="bold">This reply comes from a different</text>
+  <text x="58" y="126" font-size="17" fill="#8a6a12" font-weight="bold">model. Your request touched a</text>
+  <text x="58" y="150" font-size="17" fill="#8a6a12" font-weight="bold">safeguarded topic.</text>
+  <g fill="#9fb0bf">
+    <rect x="45" y="182" width="380" height="14" rx="4"/>
+    <rect x="45" y="208" width="330" height="14" rx="4"/>
+    <rect x="45" y="234" width="360" height="14" rx="4"/>
+    <rect x="45" y="260" width="250" height="14" rx="4"/>
+  </g>
+  <text x="45" y="320" font-size="17" fill="#3a4a5a">You still get an answer, from a less</text>
+  <text x="45" y="344" font-size="17" fill="#3a4a5a">capable model. The notice may be small</text>
+  <text x="45" y="368" font-size="17" fill="#3a4a5a">or easy to overlook.</text>
+  <rect x="530" y="52" width="450" height="360" rx="10" fill="#f4f7fa" stroke="#c9d3dc" stroke-width="2"/>
+  <g fill="#9fb0bf">
+    <rect x="555" y="80" width="380" height="14" rx="4"/>
+    <rect x="555" y="106" width="200" height="14" rx="4"/>
+  </g>
+  <rect x="550" y="136" width="410" height="110" rx="8" fill="#f8eef0" stroke="#a8324a" stroke-width="2"/>
+  <text x="568" y="168" font-size="17" fill="#a8324a" font-weight="bold">This response was stopped</text>
+  <text x="568" y="192" font-size="17" fill="#a8324a" font-weight="bold">because it may violate our</text>
+  <text x="568" y="216" font-size="17" fill="#a8324a" font-weight="bold">usage policy.</text>
+  <text x="555" y="300" font-size="17" fill="#3a4a5a">Not written by the model: shown by the</text>
+  <text x="555" y="324" font-size="17" fill="#3a4a5a">app. The answer can break off midway,</text>
+  <text x="555" y="348" font-size="17" fill="#3a4a5a">or never start.</text>
+  <text x="980" y="450" text-anchor="end" font-size="14" fill="#8a97a5">illustrative; generic wording</text>
+</svg>

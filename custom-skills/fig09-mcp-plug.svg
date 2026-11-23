@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+  <rect width="1000" height="470" fill="#fff"/>
+  <!-- agent -->
+  <rect x="20" y="120" width="250" height="220" rx="12" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="145" y="160" font-size="21" font-weight="bold" fill="#2a7f8f" text-anchor="middle">The agent</text>
+  <text x="145" y="186" font-size="16" fill="#333" text-anchor="middle">Claude Code or Codex</text>
+  <text x="40" y="225" font-size="16" fill="#555">built-in tools:</text>
+  <text x="40" y="250" font-size="16" fill="#555">read files, run commands,</text>
+  <text x="40" y="274" font-size="16" fill="#555">search the web</text>
+  <text x="40" y="310" font-size="16" fill="#6b4fa0" font-weight="bold">+ tools from connectors</text>
+  <!-- plug -->
+  <rect x="330" y="195" width="120" height="70" rx="8" fill="#6b4fa0"/>
+  <text x="390" y="237" font-size="22" font-weight="bold" fill="#fff" text-anchor="middle">MCP</text>
+  <text x="390" y="290" font-size="15" fill="#6b4fa0" text-anchor="middle">one standard plug</text>
+  <line x1="275" y1="230" x2="325" y2="230" stroke="#555" stroke-width="2.5" marker-end="url(#ar)" marker-start="url(#ar)"/>
+  <!-- servers -->
+  <g font-size="17">
+    <rect x="520" y="30" width="460" height="120" rx="10" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+    <text x="540" y="62" font-size="20" font-weight="bold" fill="#6b4fa0">PubMed connector</text>
+    <text x="540" y="90" fill="#333" font-family="Menlo, Consolas, monospace" font-size="15">search_articles(query, years)</text>
+    <text x="540" y="114" fill="#333" font-family="Menlo, Consolas, monospace" font-size="15">get_article(pmid)</text>
+    <text x="965" y="62" fill="#888" text-anchor="end" font-size="15">remote</text>
+    <rect x="520" y="170" width="460" height="120" rx="10" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+    <text x="540" y="202" font-size="20" font-weight="bold" fill="#6b4fa0">Zotero connector</text>
+    <text x="540" y="230" fill="#333" font-family="Menlo, Consolas, monospace" font-size="15">search_library(query)</text>
+    <text x="540" y="254" fill="#333" font-family="Menlo, Consolas, monospace" font-size="15">get_collection_items(name)</text>
+    <text x="965" y="202" fill="#888" text-anchor="end" font-size="15">local</text>
+    <rect x="520" y="310" width="460" height="100" rx="10" fill="#fff" stroke="#bbb" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="540" y="345" font-size="20" font-weight="bold" fill="#888">... other connectors</text>
+    <text x="540" y="375" fill="#888">databases, calendars, lab systems</text>
+  </g>
+  <g stroke="#555" stroke-width="2.5" fill="none" marker-end="url(#ar)">
+    <path d="M455,215 C 485,180 490,100 512,92"/>
+    <line x1="455" y1="230" x2="512" y2="230"/>
+    <path d="M455,245 C 485,280 490,350 512,360"/>
+  </g>
+  <text x="980" y="455" font-size="14" fill="#999" text-anchor="end">tool names illustrative; each connector defines its own</text>
+</svg>

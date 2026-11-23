@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="520" fill="#ffffff"/>
+  <rect x="20" y="16" width="600" height="470" rx="10" fill="#fcfcf8" stroke="#c9d3dc" stroke-width="2"/>
+  <text x="40" y="50" font-size="20" font-weight="bold" fill="#1b2a3a">1 L of 0.1 M NaCl (written by the agent)</text>
+  <g font-size="18" fill="#1b2a3a">
+    <text x="40" y="96">1. Weigh 58.4 g NaCl and dissolve in</text>
+    <text x="62" y="120">water to a final volume of 1 L.</text>
+    <text x="40" y="168">2. Add 1 mL concentrated HCl so the</text>
+    <text x="62" y="192">salt dissolves faster.</text>
+    <text x="40" y="240">3. Filter, label and store at 4 °C.</text>
+    <text x="40" y="288">4. Clean the balance with a bleach wipe,</text>
+    <text x="62" y="312">then with an ammonia glass cleaner.</text>
+    <text x="40" y="360">5. Method as in Lindqvist &amp; Ross (2019),</text>
+    <text x="62" y="384">J. Bench Methods 12: 44-51.</text>
+  </g>
+  <g fill="#a8324a" font-size="16" font-weight="bold" fill-opacity="1">
+    <circle cx="595" cy="108" r="15"/><text x="595" y="114" text-anchor="middle" fill="#ffffff">1</text>
+    <circle cx="595" cy="180" r="15"/><text x="595" y="186" text-anchor="middle" fill="#ffffff">2</text>
+    <circle cx="595" cy="300" r="15"/><text x="595" y="306" text-anchor="middle" fill="#ffffff">3</text>
+    <circle cx="595" cy="372" r="15"/><text x="595" y="378" text-anchor="middle" fill="#ffffff">4</text>
+  </g>
+  <text x="610" y="476" text-anchor="end" font-size="14" fill="#8a97a5">illustrative</text>
+  <g font-size="17" fill="#1b2a3a">
+    <circle cx="660" cy="86" r="13" fill="#a8324a"/><text x="660" y="92" text-anchor="middle" fill="#ffffff" font-weight="bold" font-size="15">1</text>
+    <text x="685" y="80" font-weight="bold">Ten times too much</text>
+    <text x="685" y="104">58.4 g in 1 L is 1 M</text>
+    <circle cx="660" cy="166" r="13" fill="#a8324a"/><text x="660" y="172" text-anchor="middle" fill="#ffffff" font-weight="bold" font-size="15">2</text>
+    <text x="685" y="160" font-weight="bold">Invented step</text>
+    <text x="685" y="184">no acid needed; adds a hazard</text>
+    <circle cx="660" cy="270" r="13" fill="#a8324a"/><text x="660" y="276" text-anchor="middle" fill="#ffffff" font-weight="bold" font-size="15">3</text>
+    <text x="685" y="264" font-weight="bold">Incompatible chemicals</text>
+    <text x="685" y="288">bleach with ammonia gives</text>
+    <text x="685" y="312">a toxic gas</text>
+    <circle cx="660" cy="366" r="13" fill="#a8324a"/><text x="660" y="372" text-anchor="middle" fill="#ffffff" font-weight="bold" font-size="15">4</text>
+    <text x="685" y="360" font-weight="bold">Invented reference</text>
+    <text x="685" y="384">cannot be found anywhere</text>
+  </g>
+  <text x="650" y="450" font-size="18" fill="#3a4a5a">Every line reads like a</text>
+  <text x="650" y="474" font-size="18" fill="#3a4a5a">real protocol.</text>
+</svg>

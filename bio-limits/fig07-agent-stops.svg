@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="500" fill="#ffffff"/>
+  <rect x="20" y="16" width="700" height="440" rx="10" fill="#1f2933"/>
+  <circle cx="44" cy="38" r="7" fill="#a8324a"/><circle cx="66" cy="38" r="7" fill="#8a6a12"/><circle cx="88" cy="38" r="7" fill="#2a7f8f"/>
+  <g font-family="Courier New, monospace" font-size="17">
+    <text x="40" y="84" fill="#e0c27a">&gt; Build the induction handout from</text>
+    <text x="40" y="106" fill="#e0c27a">  notes/ as five files in handout/</text>
+    <text x="40" y="146" fill="#8fd1c4">● Read notes/induction-2025.md</text>
+    <text x="40" y="174" fill="#8fd1c4">● Wrote handout/01-ppe.md</text>
+    <text x="40" y="202" fill="#8fd1c4">● Wrote handout/02-waste.md</text>
+    <text x="40" y="230" fill="#cfd6dc">● Writing handout/03-spills.md ...</text>
+    <rect x="34" y="256" width="672" height="84" rx="4" fill="#3a2a30" stroke="#a8324a" stroke-width="2"/>
+    <text x="48" y="286" fill="#f0a3b0">Error: this request was stopped by a</text>
+    <text x="48" y="310" fill="#f0a3b0">safety system. Start a new session to</text>
+    <text x="48" y="334" fill="#f0a3b0">continue.</text>
+    <text x="40" y="384" fill="#cfd6dc">&gt; _</text>
+  </g>
+  <text x="710" y="446" text-anchor="end" font-size="14" fill="#8a97a5">illustrative; generic wording</text>
+  <g font-size="18" fill="#1b2a3a">
+    <text x="745" y="160" font-weight="bold" fill="#2a7f8f">Two files done</text>
+    <text x="745" y="184">check they are</text>
+    <text x="745" y="208">complete</text>
+    <text x="745" y="262" font-weight="bold" fill="#a8324a">Third file</text>
+    <text x="745" y="286">may be half-written</text>
+    <text x="745" y="340" font-weight="bold" fill="#1b2a3a">Session over</text>
+    <text x="745" y="364">the agent forgets</text>
+    <text x="745" y="388">what it was doing</text>
+  </g>
+</svg>

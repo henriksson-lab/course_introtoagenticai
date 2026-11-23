@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 540" width="1000" height="540" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="540" fill="#fff"/>
+  <rect x="20" y="20" width="560" height="490" rx="8" fill="#fafafa" stroke="#bbb" stroke-width="2"/>
+  <g font-size="17" fill="#333">
+    <text x="40" y="55" font-weight="bold">1. Purpose and aims</text>
+    <text x="40" y="82">... We will carry out <tspan fill="#a8324a" font-weight="bold">the first study of</tspan></text>
+    <text x="40" y="106"><tspan fill="#a8324a" font-weight="bold">drought legacies in soil microbes</tspan>, and test ...</text>
+    <text x="40" y="150" font-weight="bold">5. Project description</text>
+    <text x="40" y="177">... <tspan fill="#a8324a" font-weight="bold">three rainfall-exclusion roofs</tspan> and three</text>
+    <text x="40" y="201">control plots ... 20 soil cores per plot ...</text>
+    <text x="40" y="236"><tspan fill="#a8324a" font-weight="bold">Soil moisture is measured gravimetrically</tspan></text>
+    <text x="40" y="260"><tspan fill="#a8324a" font-weight="bold">on each core at sampling.</tspan></text>
+    <text x="40" y="295">... <tspan fill="#a8324a" font-weight="bold">Carbon use efficiency (CUE)</tspan> in laboratory</text>
+    <text x="40" y="319">incubations ...</text>
+    <text x="40" y="354">Statistics: ... <tspan fill="#a8324a" font-weight="bold">using all 120 cores per</tspan></text>
+    <text x="40" y="378"><tspan fill="#a8324a" font-weight="bold">occasion as independent samples</tspan>, which</text>
+    <text x="40" y="402">gives high statistical power.</text>
+    <text x="40" y="440">Risks: ... <tspan fill="#a8324a" font-weight="bold">We do not foresee major risks.</tspan></text>
+  </g>
+  <g font-size="16">
+    <rect x="600" y="40" width="380" height="74" rx="6" fill="#ece6f5" stroke="#6b4fa0"/>
+    <text x="612" y="64" fill="#6b4fa0" font-weight="bold">soil carbon expert (chair)</text>
+    <text x="612" y="86" fill="#333">Not the first: there are reviews on</text><text x="612" y="106" fill="#333">exactly this. Cite them; say what is new.</text>
+    <rect x="600" y="160" width="380" height="74" rx="6" fill="#f6f1e3" stroke="#8a6a12"/>
+    <text x="612" y="184" fill="#8a6a12" font-weight="bold">soil hydrologist</text>
+    <text x="612" y="206" fill="#333">How dry did the roofed plots get?</text><text x="612" y="226" fill="#333">No continuous moisture sensors.</text>
+    <rect x="600" y="276" width="380" height="54" rx="6" fill="#ece6f5" stroke="#6b4fa0"/>
+    <text x="612" y="300" fill="#6b4fa0" font-weight="bold">soil carbon expert (chair)</text>
+    <text x="612" y="320" fill="#333">CUE by which method? 18O-water?</text>
+    <rect x="600" y="345" width="380" height="94" rx="6" fill="#f8e9ec" stroke="#a8324a"/>
+    <text x="612" y="369" fill="#a8324a" font-weight="bold">statistician</text>
+    <text x="612" y="391" fill="#333">Pseudoreplication: the treatment was</text><text x="612" y="411" fill="#333">applied to 3 roofs, so n = 3 vs 3, not 120.</text><text x="612" y="431" fill="#333">No power analysis.</text>
+    <rect x="600" y="450" width="380" height="54" rx="6" fill="#e3f0f2" stroke="#2a7f8f"/>
+    <text x="612" y="474" fill="#2a7f8f" font-weight="bold">forest ecologist</text>
+    <text x="612" y="494" fill="#333">One site, no backup. Roofs fail.</text>
+  </g>
+  <text x="40" y="495" font-size="13" fill="#999">synthetic draft; illustrative comments</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" width="1000" height="430" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="430" fill="#fff"/>
+  <text x="500" y="38" font-size="23" font-weight="bold" fill="#333" text-anchor="middle">"Anonymous" survey, but three ways to find the person</text>
+  <rect x="20" y="70" width="300" height="270" rx="12" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+  <text x="170" y="108" font-size="21" font-weight="bold" fill="#a8324a" text-anchor="middle">Free text</text>
+  <text x="170" y="150" font-size="17" fill="#333" text-anchor="middle">"As the only wheelchair</text>
+  <text x="170" y="174" font-size="17" fill="#333" text-anchor="middle">user in the group…"</text>
+  <text x="170" y="220" font-size="17" fill="#333" text-anchor="middle">"Erik in the lab was</text>
+  <text x="170" y="244" font-size="17" fill="#333" text-anchor="middle">always willing to explain"</text>
+  <text x="170" y="300" font-size="16" fill="#666" text-anchor="middle">names, health, events</text>
+  <rect x="350" y="70" width="300" height="270" rx="12" fill="#f6f1e3" stroke="#8a6a12" stroke-width="2"/>
+  <text x="500" y="108" font-size="21" font-weight="bold" fill="#8a6a12" text-anchor="middle">Small groups</text>
+  <text x="500" y="160" font-size="17" fill="#333" text-anchor="middle">Exchange students: 4</text>
+  <text x="500" y="190" font-size="17" fill="#333" text-anchor="middle">Non-binary: 3</text>
+  <text x="500" y="230" font-size="17" fill="#333" text-anchor="middle">"Exchange students were</text>
+  <text x="500" y="254" font-size="17" fill="#333" text-anchor="middle">unhappy" is about 4 people</text>
+  <text x="500" y="300" font-size="16" fill="#666" text-anchor="middle">a group the class can name</text>
+  <rect x="680" y="70" width="300" height="270" rx="12" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="830" y="108" font-size="21" font-weight="bold" fill="#6b4fa0" text-anchor="middle">Combinations</text>
+  <text x="830" y="160" font-size="17" fill="#333" text-anchor="middle">Biotechnology + distance</text>
+  <text x="830" y="186" font-size="17" fill="#333" text-anchor="middle">+ 26-30 + woman</text>
+  <text x="830" y="232" font-size="30" font-weight="bold" fill="#6b4fa0" text-anchor="middle">= 1 person</text>
+  <text x="830" y="300" font-size="16" fill="#666" text-anchor="middle">each fact harmless alone</text>
+  <text x="500" y="385" font-size="19" fill="#333" text-anchor="middle">If one student or teacher can be recognised, the answers are personal data,</text>
+  <text x="500" y="413" font-size="19" fill="#333" text-anchor="middle">whatever the survey tool calls itself.</text>
+</svg>

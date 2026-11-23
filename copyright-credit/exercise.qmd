@@ -1,0 +1,190 @@
+---
+title: "Exercise: check before you publish"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- **seen memorisation for yourself** with public-domain and licence texts, and compared the agent's output with the original,
+- **run a pre-publication check** on an example course page with the agent: a table of every file, its source, its licence and what to do,
+- **compared that table with the key** and found what the agent missed,
+- **read the sources on the Navier–Stokes case** and answered four questions about credit and unpublished ideas,
+- **run the same check on your own project**, added a licence, and updated your Log of AI use.
+
+This is not legal advice. If a real case is unclear, ask your university's library or legal office.
+
+## Before you start
+
+- You have Claude Code or Codex working, and your course folder `~/agentic-course` (Windows: `C:\Users\<you>\agentic-course`).
+- Download [pre-publication.zip](data/pre-publication.zip) and unzip it into your course folder. You should get a folder `pre-publication` with `page.md`, `fit_mm.py`, `rates.csv`, `README.md`, `NOTES.md` and a `figures` folder with three images. Everything is made up, apart from two sentences that come from Wikipedia (which is part of the exercise).
+- Open `page.md`, `README.md` and `NOTES.md` in a text editor and the three images in your file browser. Read them for two minutes as if you were the teacher about to publish this page. Write down anything that worries you.
+
+| | Claude Code | Codex |
+|---|---|---|
+| Start in the example folder | `cd ~/agentic-course/pre-publication` then `claude` | `cd ~/agentic-course/pre-publication` then `codex` |
+| Allow one new file to be written | approve the edit when asked (manual mode is fine) | the folder is not a git repo, so Codex may start read-only: type `/permissions` and choose the level that allows edits in the workspace |
+| Web search | built in; approve the search when asked | built in; if it says it cannot search, do the searches yourself (see Part 2) |
+
+## Worked example
+
+### Part 1: See memorisation for yourself (10 minutes)
+
+Start the agent in any folder of example data (the `pre-publication` folder is fine). Ask it to answer **from memory**:
+
+```text
+Without searching the web and without reading any files, answer
+from memory only:
+1. Continue this text for two sentences, exactly as the original:
+   "It is a truth universally acknowledged,"
+2. Write out the full text of the MIT License.
+Then tell me, for each one, whether you think you reproduced an
+existing text word for word, and which one.
+```
+
+**What to look for.** For both, you will probably get text that is identical, or nearly identical, to the original. Check it yourself:
+
+- The opening of *Pride and Prejudice* (1813, public domain): [Project Gutenberg](https://www.gutenberg.org/ebooks/1342) or [Wikisource](https://en.wikisource.org/wiki/Pride_and_Prejudice).
+- The MIT License: [opensource.org/license/mit](https://opensource.org/license/mit).
+
+Both texts appear thousands of times online, which is why they are memorised. Both are harmless to reproduce. The point is that the same mechanism works for text that is *not* free to reproduce, and that the output looks like any other answer. Notice whether the agent recognised that it was quoting. Here it knows because you asked for a famous text. When a memorised paragraph turns up inside an ordinary answer, nobody asked.
+
+::: {.callout-note}
+Do not try to extract copyrighted material, such as song lyrics or book chapters, to see what happens. Providers block much of it, as you saw in *Guardrails and safety levels*, and pushing past a guardrail breaks the usage policy.
+:::
+
+### Part 2: The pre-publication check
+
+The folder `pre-publication` is a teacher's draft course page on enzyme kinetics, to be published under CC BY 4.0 with the code under MIT. Start the agent **in the `pre-publication` folder** and type:
+
+```text
+Before I publish this folder, do a copyright and credit check.
+For every file (text, code, figures, images), make a table in
+PUBLISHING-CHECK.md with these columns: file, what it is, where it
+came from as far as you can tell (my notes in NOTES.md, the AI-use
+log in README.md, the file itself), any licence or copyright notice
+inside it, problem, and what I should do.
+
+Also:
+- Search the web for exact matches of two or three distinctive
+  sentences from page.md, in quotation marks. Report the URL of any
+  match and the licence of that page.
+- Look for copyright and licence headers in code, and say whether
+  they fit the licences I plan to use (see README.md).
+- Check every reference to other people's work in page.md: is there
+  a full reference I can check?
+- Flag anything whose source is unknown instead of guessing.
+Do not change any file except PUBLISHING-CHECK.md.
+```
+
+Approve the web searches when asked, and the creation of `PUBLISHING-CHECK.md`. If the agent proposes to edit `page.md` or another file, say no: this step is a report.
+
+**If the agent cannot search the web**, ask it: *"Give me three distinctive sentences from page.md to search for."* Then paste each into a search engine **with quotation marks** around it.
+
+#### Check the result
+
+Open `PUBLISHING-CHECK.md`. Compare it with the key below **before** you look at the answers: for each row of the key, did the agent find it? Did it find something the key does not have? Is it right?
+
+1. **The copied paragraph.** Did the agent find the matching page and name its licence? Open the page yourself and compare.
+2. **The licence header.** Did it notice that `fit_mm.py` carries another lab's GPL notice, although `README.md` says the agent wrote the script, and that this clashes with the planned MIT licence?
+3. **The reference.** Did it notice that "Michaelis and Menten (1913)" has no reference? If it proposed a full reference, **check it** in a library catalogue or Google Scholar. An invented reference is exactly the failure from *How LLMs and agents work*.
+4. **Unknown sources.** Did it flag `enzyme-cartoon.png` as unknown, rather than guess where it came from?
+5. **Disclosure.** Did it compare `NOTES.md` with the Log of AI use in `README.md`, and notice what is missing?
+
+::: {.callout-note collapse="true" title="Key: what a complete check finds"}
+
+| File | Problem | What to do |
+|---|---|---|
+| `page.md`, section "The model", first paragraph | The two sentences are copied word for word from the English Wikipedia article [Michaelis–Menten kinetics](https://en.wikipedia.org/wiki/Michaelis%E2%80%93Menten_kinetics), licensed **CC BY-SA 4.0**. `NOTES.md` says the agent drafted this section, so it came from memory or from a fetched page; nobody credited it. | Best: rewrite in your own words and cite your sources. Or: keep it as a marked quotation with a link to the article and its licence (CC BY-SA terms then apply to that part). |
+| `page.md`, "Michaelis and Menten (1913)" | A citation with no reference. | Add the reference and check it yourself: Michaelis L, Menten ML (1913). Die Kinetik der Invertinwirkung. *Biochemische Zeitschrift* 49: 333–369. |
+| `fit_mm.py` | Carries a GPL-3.0 copyright notice from "Example Enzyme Lab" (invented for this exercise), although the AI-use log says the agent wrote it. Planned licence for code: MIT. GPL code cannot be released under MIT. | Do **not** just delete the header. Either find the original project and follow its licence (GPL for your code too), or have the agent write the function again without looking at it, document that in the log, and compare. A short, standard curve fit is easy to write fresh. |
+| `figures/fig2-redrawn.png` | `NOTES.md` says it was redrawn from Fig. 3 of a paywalled paper, but the page gives no credit. The image tag also has no caption or alt text. | If the plot uses the paper's numbers or design: "Redrawn from Lindqvist et al. 2019, Fig. 3" with a full reference (the paper is invented for this exercise). Better: draw it from your own data (`rates.csv`), as it is a standard plot type. Add alt text. |
+| `figures/enzyme-cartoon.png` | Source unknown ("found it online"). | Do not publish. Replace it with your own drawing or an openly licensed image with its credit. |
+| `figures/fig1-rates.png`, `rates.csv` | Made by the script from synthetic data. | Fine. Say on the page that the data is synthetic (it does). |
+| `README.md`, Log of AI use | Missing: the agent drafted the section "The model". | Add the entry. Add a short disclosure on the page, for example: "Text and code were drafted with the help of an AI coding agent and checked by the teacher." |
+| No `LICENSE` file | Licences are planned but not stated where readers look. | Add a `LICENSE` file for the code (MIT, or GPL if you keep GPL code) and a licence line at the bottom of the page (CC BY 4.0 for text and figures, except marked parts). |
+
+A typical agent finds the Wikipedia match, the GPL header and the missing reference. It often misses the gap in the AI-use log, and it sometimes "helpfully" suggests a source for the cartoon. A suggested source is a guess unless you can open the page and see the same image.
+:::
+
+**Correct the agent where it was wrong or incomplete**, as in *First delegations*: point to the row, say what is wrong, ask it to update `PUBLISHING-CHECK.md`. Then, if you like, let it fix the problems (rewrite the paragraph, add the reference, add `LICENSE`) and check each fix.
+
+### Part 3: The Navier–Stokes case (20 minutes, no agent needed)
+
+Read at least two of these sources. Note who says what.
+
+- Scientific American, 21 September 2026: [Did OpenAI solve the wrong Navier–Stokes problem?](https://www.scientificamerican.com/article/did-openai-solve-the-wrong-navier-stokes-problem)
+- MIT Technology Review, 8 September 2026: [What OpenAI's latest controversy tells us about the future of math](https://www.technologyreview.com/2026/09/08/1143747/what-openais-latest-controversy-tells-us-about-the-future-of-math)
+- Axios, 8 September 2026: [on the credit dispute](https://www.axios.com/2026/09/08/openai-math-solution-navier-stokes-credit)
+- OpenAI's announcement, with its update of 10 September 2026: [openai.com/index/navier-stokes-solution](https://openai.com/index/navier-stokes-solution/)
+- Tristan Buckmaster's public statement: [cims.nyu.edu/~tristanb/statement.pdf](https://cims.nyu.edu/~tristanb/statement.pdf)
+
+Answer in a few sentences each:
+
+1. What exactly did OpenAI claim to have proved, and why do some mathematicians say it is not the problem they care about?
+2. Whose earlier work did both teams build on? Where is that credit given, and where is it missing?
+3. What did Buckmaster ask about the drafts in his Codex sessions, and what did OpenAI answer, first and later? What does Buckmaster himself say he is *not* claiming?
+4. Suppose you had a draft proof, a grant idea or unpublished data you thought was a breakthrough. What would you put into a cloud agent, under which plan and settings, and what would you keep out? Write two or three rules for yourself.
+
+::: {.callout-note collapse="true" title="Notes for answers"}
+1. A proof that a smooth fluid can develop a singularity in finite time **when a suitable smooth external force acts on it**, which the official problem statement (Fefferman, 2000) allows as one option. Many experts mean the problem without an outside force: can a fluid left alone break down? A preprint later argued that the method cannot reach that case, and another that the Lean formalisation did not faithfully match the written proof. As of November 2026 the proof is not peer reviewed.
+2. A programme by Diego Córdoba and Luis Martínez-Zoroa on forced blow-up. Buckmaster's statement credits them at length. OpenAI's announcement recognises Buckmaster and Alpöge's priority on a related result but does not discuss the earlier programme. A good answer notes that credit was argued over in public statements, not settled by a journal.
+3. Whether OpenAI's model had access to, or was trained on, the drafts he and Alpöge had put into Codex. He reports being told that the model did not look up user data, and getting no answer on training. OpenAI said no one and no agent saw their work before it was public; at first it said it could not rule out that de-identified usage data helped improve its models in general; after an investigation it said his Codex prompts could not have influenced the system. Buckmaster writes that he does not know whether their data was used and is not accusing anyone.
+4. There is no single right answer. Reasonable rules: training off or an institutional plan with a contract that excludes training; keep the key idea in your own notes and give the agent only the routine parts; commit your work to git as you go so you have a dated record; post a preprint before you discuss it widely; never put other people's unpublished work into the agent (*Privacy, ethics and safety*).
+:::
+
+## On your own project
+
+Run the same check on your own project folder before anything from it goes public (on your page, in a paper, in slides).
+
+1. Start the agent in **your project folder** (for example `~/agentic-course/soil-funding-map`). It is a git repository since *Git as undo button and lab notebook*, so any change can be undone.
+2. Use the prompt from Part 2, with two changes: replace "my notes in NOTES.md" with the name of your notes or plan file (from *Organising a project for an agent*), and add your planned licences if `README.md` does not state them yet.
+3. Go through `PUBLISHING-CHECK.md` row by row. For every row marked "unknown", find the source yourself or take the file out of what you publish.
+4. Ask the agent to add a `LICENSE` file that fits what you publish (for example MIT for code, and a line in `README.md` saying text and figures are CC BY 4.0). If any part comes from a source with another licence, say so in `README.md`.
+5. Ask the agent to update the **Log of AI use** in `README.md`: what the agent wrote or drafted so far in the project, by date, as far as your git history and notes show. Read it and correct it.
+6. Add a section **"Unpublished ideas"** to `README.md` with your answer to question 4 of Part 3: what you will and will not put into a cloud agent for this project.
+7. Ask the agent to commit the changes with a message like "Publishing check, licence, AI-use log", and push if your project is on GitHub.
+
+### Check the result
+
+- Open `PUBLISHING-CHECK.md`. Every file in your project that will be published has a row. No row says "probably" without a reason.
+- Pick two distinctive sentences from your own published text (the course page, the README) and search for them in quotation marks yourself. No matches, or matches you can explain.
+- Open `LICENSE`. It names the right licence and the right copyright holder (you, or your university if that is its rule).
+- Read the Log of AI use. Would a reader of your paper or page know what the agent did?
+- In your git history (ask the agent "show me the last commit"), the commit is there.
+
+## What you should have now
+
+- Your own comparison of memorised text with its original (Part 1).
+- `PUBLISHING-CHECK.md` for the example page, corrected against the key.
+- Four short answers about the Navier–Stokes case, including your own rules for unpublished ideas.
+- In your own project: `PUBLISHING-CHECK.md`, a `LICENSE` file, an updated Log of AI use, an "Unpublished ideas" section, all committed.
+
+## Sources
+
+Court cases (status checked November 2026; check again before you rely on it):
+
+- *GEMA v OpenAI*, Regional Court Munich I, judgment of 11 November 2025 (42 O 14139/24); appeal pending at the Higher Regional Court Munich.
+- *Bartz v Anthropic*, US District Court, Northern District of California: fair use order of June 2025; class settlement finally approved July 2026. Settlement information: [Authors Guild](https://authorsguild.org/advocacy/artificial-intelligence/what-authors-need-to-know-about-the-anthropic-settlement/).
+- *The New York Times v Microsoft and OpenAI*, US District Court, Southern District of New York (1:23-cv-11195), part of the consolidated OpenAI copyright litigation; no ruling on fair use as of November 2026.
+- *Getty Images v Stability AI*, High Court of England and Wales, judgment of 4 November 2025; appeal heard in the Court of Appeal on 11 and 12 November 2026, judgment pending.
+
+Memorisation research:
+
+- Carlini N et al. (2021). [Extracting Training Data from Large Language Models](https://arxiv.org/abs/2012.07805). USENIX Security.
+- Kandpal N, Wallace E, Raffel C (2022). [Deduplicating Training Data Mitigates Privacy Risks in Language Models](https://arxiv.org/abs/2202.06539). ICML.
+- Carlini N et al. (2023). [Quantifying Memorization Across Neural Language Models](https://arxiv.org/abs/2202.07646). ICLR.
+- Carlini N et al. (2023). [Extracting Training Data from Diffusion Models](https://arxiv.org/abs/2301.13188). USENIX Security.
+- Nasr M et al. (2023). [Scalable Extraction of Training Data from (Production) Language Models](https://arxiv.org/abs/2311.17035).
+- Cooper AF et al. (2025). [Extracting memorized pieces of (copyrighted) books from open-weight language models](https://arxiv.org/abs/2505.12546).
+- Ahmed A, Cooper AF, Koyejo S, Liang P (2026). [Extracting books from production language models](https://arxiv.org/abs/2601.02671).
+
+EU AI Act: obligations for providers of general-purpose AI models (Article 53), applicable since 2 August 2025; the [General-Purpose AI Code of Practice](https://digital-strategy.ec.europa.eu/en/policies/contents-code-gpai) (July 2025).
+
+The Navier–Stokes case: the sources listed in Part 3, and the preprint by Bastounis, Circelli and Hansen, [Navier–Stokes lost in translation](https://arxiv.org/abs/2610.08144) (October 2026).

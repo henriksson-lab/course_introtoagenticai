@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <rect width="1000" height="440" fill="#fff"/>
+  <text x="20" y="32" font-size="19" font-weight="bold" fill="#333">What you see</text>
+  <rect x="20" y="48" width="400" height="250" fill="#fff" stroke="#999"/>
+  <g font-size="16" fill="#333">
+    <text x="40" y="80" font-weight="bold">Table 1. Serum 25(OH)D by sex.</text>
+    <text x="40" y="112" font-weight="bold">Group</text><text x="140" y="112" font-weight="bold">n</text><text x="200" y="104" font-weight="bold">Mean 25(OH)D</text><text x="200" y="124" font-weight="bold">(nmol/L)</text><text x="330" y="112" font-weight="bold">SD</text>
+    <line x1="40" y1="134" x2="400" y2="134" stroke="#999"/>
+    <text x="40" y="160">Women</text><text x="140" y="160">118</text><text x="200" y="160">60.1</text><text x="330" y="160">19.8</text>
+    <text x="40" y="190">Men</text><text x="140" y="190">94</text><text x="200" y="190">56.3</text><text x="330" y="190">20.5</text>
+    <text x="40" y="220">All</text><text x="140" y="220">212</text><text x="200" y="220">58.4</text><text x="330" y="220">20.2</text>
+  </g>
+  <text x="20" y="330" font-size="17" fill="#555">rows and columns: obvious to you</text>
+  <line x1="435" y1="170" x2="495" y2="170" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="520" y="32" font-size="19" font-weight="bold" fill="#333">What the file stores</text>
+  <rect x="520" y="48" width="460" height="250" fill="#1f2430"/>
+  <g font-family="Courier New, monospace" font-size="15" fill="#e8e8e8" xml:space="preserve">
+    <text x="535" y="76">at (72,410)  "Group"</text>
+    <text x="535" y="100">at (170,410) "n"</text>
+    <text x="535" y="124">at (230,416) "Mean 25(OH)D"</text>
+    <text x="535" y="148">at (230,404) "(nmol/L)"</text>
+    <text x="535" y="172">at (72,388)  "Women"</text>
+    <text x="535" y="196">at (170,388) "118"</text>
+    <text x="535" y="220">at (230,388) "60.1"</text>
+    <text x="535" y="244">…</text>
+  </g>
+  <text x="520" y="330" font-size="17" fill="#555">pieces of text with positions; no rows, no cells</text>
+  <text x="20" y="390" font-size="18" fill="#333">A program that extracts a table has to guess the rows and columns from the positions.</text>
+  <text x="20" y="418" font-size="18" fill="#333">Usually it guesses right. Sometimes a column shifts, and nothing warns you.</text>
+  <text x="985" y="436" font-size="13" fill="#999" text-anchor="end">simplified</text>
+</svg>

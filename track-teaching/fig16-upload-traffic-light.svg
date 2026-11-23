@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="1000" height="450" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="450" fill="#fff"/>
+  <g font-size="19">
+    <rect x="20" y="20" width="305" height="400" rx="12" fill="#e8f3f5" stroke="#2a7f8f" stroke-width="2.5"/>
+    <circle cx="60" cy="60" r="16" fill="#2a7f8f"/>
+    <text x="88" y="67" font-size="23" font-weight="bold" fill="#2a7f8f">Fine</text>
+    <text x="40" y="115" fill="#333">• your published course</text>
+    <text x="58" y="140" fill="#333">material and slides</text>
+    <text x="40" y="175" fill="#333">• learning goals</text>
+    <text x="40" y="210" fill="#333">• your own model answers</text>
+    <text x="40" y="245" fill="#333">• practice questions</text>
+    <text x="40" y="280" fill="#333">• open textbooks and</text>
+    <text x="58" y="305" fill="#333">CC BY material, credited</text>
+    <rect x="347" y="20" width="305" height="400" rx="12" fill="#fdf8e8" stroke="#8a6a12" stroke-width="2.5"/>
+    <circle cx="387" cy="60" r="16" fill="#8a6a12"/>
+    <text x="415" y="67" font-size="23" font-weight="bold" fill="#8a6a12">With care</text>
+    <text x="367" y="115" fill="#333">• exam questions before</text>
+    <text x="385" y="140" fill="#333">the exam:</text>
+    <text x="385" y="170" fill="#52606d" font-size="17">training off or an</text>
+    <text x="385" y="194" fill="#52606d" font-size="17">institutional plan; private</text>
+    <text x="385" y="218" fill="#52606d" font-size="17">folder; never a public repo;</text>
+    <text x="385" y="242" fill="#52606d" font-size="17">check your university's rules</text>
+    <text x="367" y="285" fill="#333">• a publisher's question</text>
+    <text x="385" y="310" fill="#333">bank: check its licence</text>
+    <rect x="674" y="20" width="305" height="400" rx="12" fill="#f9ecef" stroke="#a8324a" stroke-width="2.5"/>
+    <circle cx="714" cy="60" r="16" fill="#a8324a"/>
+    <text x="742" y="67" font-size="23" font-weight="bold" fill="#a8324a">Never</text>
+    <text x="694" y="115" fill="#333">• student work</text>
+    <text x="694" y="150" fill="#333">• grades and results</text>
+    <text x="694" y="185" fill="#333">• names, e-mails, IDs</text>
+    <text x="694" y="220" fill="#333">• accommodations</text>
+    <text x="712" y="245" fill="#333">(extra time, illness)</text>
+    <text x="694" y="280" fill="#333">• free-text course</text>
+    <text x="712" y="305" fill="#333">evaluations</text>
+    <text x="694" y="380" fill="#a8324a" font-size="17">see Privacy, ethics and safety</text>
+  </g>
+</svg>

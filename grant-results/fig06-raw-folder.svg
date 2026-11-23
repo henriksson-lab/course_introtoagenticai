@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+  <rect width="1000" height="560" fill="#fff"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="19" fill="#333" xml:space="preserve">
+    <text x="30" y="45" font-weight="bold">soil-funding/</text>
+    <text x="50" y="82" fill="#a8324a">├─ .env</text>
+    <text x="50" y="112">├─ .gitignore</text>
+    <text x="50" y="142">├─ CLAUDE.md  or  AGENTS.md</text>
+    <text x="50" y="172">├─ README.md</text>
+    <text x="50" y="210" font-weight="bold">├─ data/</text>
+    <text x="50" y="242" font-weight="bold" fill="#2a7f8f">│  ├─ raw/swecris/</text>
+    <text x="50" y="272" fill="#2a7f8f">│  │    soil_page001.json ... page011.json</text>
+    <text x="50" y="302" fill="#2a7f8f">│  │    download-log.csv</text>
+    <text x="50" y="340" font-weight="bold" fill="#6b4fa0">│  └─ clean/projects.csv</text>
+    <text x="50" y="378" font-weight="bold">├─ scripts/</text>
+    <text x="50" y="408">│    download_swecris.py clean.py analyse.py</text>
+    <text x="50" y="446" font-weight="bold" fill="#8a6a12">└─ results/</text>
+    <text x="50" y="476" fill="#8a6a12">     money_per_year.png  top_universities.csv</text>
+  </g>
+  <g font-size="18">
+    <rect x="640" y="60" width="340" height="50" rx="6" fill="#f8e9ec" stroke="#a8324a"/>
+    <text x="655" y="91" fill="#a8324a">the key: ignored by git, never opened</text>
+    <rect x="640" y="225" width="340" height="88" rx="6" fill="#e3f0f2" stroke="#2a7f8f"/>
+    <text x="655" y="254" fill="#2a7f8f" font-weight="bold">exactly as downloaded</text>
+    <text x="655" y="279" fill="#2a7f8f">never edited, never fetched again</text>
+    <text x="655" y="302" fill="#2a7f8f">+ what, when and how many</text>
+    <rect x="640" y="322" width="340" height="40" rx="6" fill="#ece6f5" stroke="#6b4fa0"/>
+    <text x="655" y="348" fill="#6b4fa0">made by clean.py, can be remade</text>
+    <rect x="640" y="430" width="340" height="40" rx="6" fill="#f6f1e3" stroke="#8a6a12"/>
+    <text x="655" y="456" fill="#8a6a12">made by analyse.py, can be remade</text>
+  </g>
+  <text x="500" y="530" font-size="20" fill="#333" text-anchor="middle">raw  →  clean  →  results: each step is a script, so each step can be rerun</text>
+</svg>

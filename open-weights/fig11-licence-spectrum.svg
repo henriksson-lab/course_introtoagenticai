@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#5a6a7a"/></marker></defs>
+  <rect width="1000" height="400" fill="#ffffff"/>
+  <line x1="30" y1="60" x2="965" y2="60" stroke="#5a6a7a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="30" y="40" font-size="16" fill="#5a6a7a">less you may see and do</text>
+  <text x="965" y="40" font-size="16" fill="#5a6a7a" text-anchor="end">more you may see and do</text>
+  <g font-size="16">
+    <rect x="30" y="84" width="220" height="250" rx="10" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+    <text x="140" y="114" text-anchor="middle" font-weight="bold" fill="#6b4fa0">Closed</text>
+    <text x="44" y="148" fill="#1b2a3a">use as a service</text><text x="44" y="172" fill="#1b2a3a">under terms of use</text>
+    <text x="44" y="210" fill="#3a4a5a">Claude, GPT,</text><text x="44" y="232" fill="#3a4a5a">Gemini</text>
+
+    <rect x="268" y="84" width="220" height="250" rx="10" fill="#faf5e8" stroke="#8a6a12" stroke-width="2"/>
+    <text x="378" y="114" text-anchor="middle" font-weight="bold" fill="#8a6a12">Open weights,</text>
+    <text x="378" y="134" text-anchor="middle" font-weight="bold" fill="#8a6a12">custom licence</text>
+    <text x="282" y="168" fill="#1b2a3a">download and run, but</text><text x="282" y="190" fill="#1b2a3a">with use restrictions</text>
+    <text x="282" y="228" fill="#3a4a5a">Llama (community</text><text x="282" y="250" fill="#3a4a5a">licence); earlier</text><text x="282" y="272" fill="#3a4a5a">Gemma versions</text>
+
+    <rect x="506" y="84" width="220" height="250" rx="10" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="616" y="114" text-anchor="middle" font-weight="bold" fill="#2a7f8f">Open weights,</text>
+    <text x="616" y="134" text-anchor="middle" font-weight="bold" fill="#2a7f8f">permissive licence</text>
+    <text x="520" y="168" fill="#1b2a3a">Apache 2.0 or MIT:</text><text x="520" y="190" fill="#1b2a3a">few conditions</text>
+    <text x="520" y="228" fill="#3a4a5a">most Qwen, many</text><text x="520" y="250" fill="#3a4a5a">Mistral, gpt-oss,</text><text x="520" y="272" fill="#3a4a5a">DeepSeek, Gemma 4</text>
+
+    <rect x="744" y="84" width="220" height="250" rx="10" fill="#e3f1e5" stroke="#2e7d32" stroke-width="2"/>
+    <text x="854" y="114" text-anchor="middle" font-weight="bold" fill="#2e7d32">Fully open</text>
+    <text x="758" y="148" fill="#1b2a3a">weights, training</text><text x="758" y="170" fill="#1b2a3a">code and training</text><text x="758" y="192" fill="#1b2a3a">data described or</text><text x="758" y="214" fill="#1b2a3a">released</text>
+    <text x="758" y="250" fill="#3a4a5a">OLMo (Ai2),</text><text x="758" y="272" fill="#3a4a5a">Apertus (Swiss AI)</text>
+  </g>
+  <text x="30" y="372" font-size="16" fill="#1b2a3a">"Open" on a model page can mean any of the last three. Read the licence on the model card for the exact version.</text>
+</svg>

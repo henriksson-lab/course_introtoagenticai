@@ -1,0 +1,362 @@
+---
+title: "Collecting and analysing grant results"
+subtitle: "Part 4: Literature, documents and the web"
+author: "Introduction to agentic AI"
+format:
+  revealjs:
+    theme: [simple, ../theme.scss]
+    slide-number: c/t
+    width: 1280
+    height: 720
+    transition: none
+    history: false
+    highlight-style: github
+    code-overflow: wrap
+    code-line-numbers: false
+    incremental: false
+    chalkboard: false
+    menu: true
+---
+
+## About this lecture
+
+Funders publish what they have funded: titles, abstracts, amounts, universities, years. With an agent you can collect thousands of these records and ask real questions of them: **who funds work like mine, how much, and is it growing?** Doing it well means collecting politely, keeping the raw data, keeping keys secret and checking the totals.
+
+- **Use the API if there is one.** Scraping web pages is the last resort, and it has rules.
+- **Read the terms first:** terms of use, licence, `robots.txt`, rate limits.
+- **Download once, keep it raw.** Raw files go in `data/raw` and are never downloaded again or edited.
+- **API keys are passwords.** They live in a `.env` file that git ignores and the agent does not read.
+- **Check the totals** against the funder's own published statistics.
+
+A **hands-on** unit, with a worked example on Swecris (Swedish funders) and alternatives for the US and the EU. The next unit, *Likely reviewers for an upcoming grant, and mock reviews*, uses the same sources to prepare your own application.
+
+::: notes
+In this unit we turn the agent to the web, not to read a page but to collect structured data from a public database. The example is grant data: what funders have paid for, when and to whom. This is useful to almost everyone in the room. You can write the background of a grant application with real numbers, see which funders support your kind of work, or show a programme board how your field has developed. The skills carry over to any public database: how to get the data in a way the provider accepts, how to keep the raw download separate from the analysis, how to keep an access key out of your files and out of the chat, and how to check the result against numbers someone else published. In Privacy, ethics and safety we promised a safe way to handle keys; this is where it comes.
+:::
+
+## The background section needs numbers, and nobody has them ready
+
+![](fig01-funding-question.svg){width="82%" fig-align="center"}
+
+::: notes
+Here is the concrete problem. You are writing the background of an application, or a strategy note for your department, and you want to say something like: Swedish funders have put this much into soil research over the last fifteen years; it has grown or shrunk; these universities hold most of it; these topics are rising. Today most people write "research in this area is increasing" without a number, or they spend a day clicking through a search page and copying rows into Excel. The data exist and are public. What is missing is an afternoon to collect them carefully. That afternoon is exactly what an agent can give you, if you tell it how to collect and how to check.
+:::
+
+## Funders publish their grants in public databases
+
+| Database | Covers | Access |
+|---|---|---|
+| [Swecris](https://www.vr.se/english/swecris.html) | Swedish funders, governmental and private, from 2008 | search page, export, API with a token |
+| [NIH RePORTER](https://reporter.nih.gov) | US National Institutes of Health | search page, open API, no key |
+| [CORDIS](https://cordis.europa.eu) | EU framework programmes, incl. Horizon Europe | search page, bulk files on [data.europa.eu](https://data.europa.eu), SPARQL |
+| [ERC funded projects](https://erc.europa.eu/projects-statistics/funded-projects) | European Research Council grants | search page; the projects are also in CORDIS |
+
+All of them list **granted** projects only. Applications that were turned down are not in them.
+
+::: notes
+These are the main sources. Swecris is run by the Swedish Research Council on behalf of the government, and it collects projects from many Swedish funders, both governmental and private, from 2008 onwards. NIH RePORTER is the American equivalent for the National Institutes of Health and has one of the best open APIs of any funder. CORDIS covers the EU framework programmes, and offers complete bulk downloads. ERC projects are on the ERC's own site and also in CORDIS. Notice the last line, because it matters for every analysis we do: these databases show what was funded. They say nothing about how many applied, so you cannot compute success rates from them. Success rates come from the funders' own statistics, which we use for checking later.
+:::
+
+## There are three ways to get the data, and one is better than the others
+
+![](fig02-three-routes.svg){width="90%" fig-align="center"}
+
+::: notes
+There are three routes. The first is the export button on the search page: you search, click export, get a spreadsheet. That is fine for a few hundred records and a one-off question. The second is an API, an application programming interface. It is a web address made for programs: you ask a question in the address and get data back, not a web page. The third is scraping: a program opens the web pages made for people and picks out the text. Scraping breaks when the page layout changes, it puts more load on the site, and it is more often against the terms of use. So the order of preference is clear: a bulk file or an API first, the export button for small jobs, and scraping only when nothing else exists and the terms allow it.
+:::
+
+## An API is a web address that answers with data instead of a page
+
+![](fig03-page-vs-api.svg){width="86%" fig-align="center"}
+
+::: notes
+This is the same grant twice. On the left it is the page a person sees in the browser: a heading, a few lines of text, menus and buttons. On the right is what the API returns for the same project: plain structured text in a format called JSON, with a name for every field. You do not need to read JSON fluently. You need to recognise it, and to know that every value is labelled, so a program can pick out the amount or the year without guessing. That is why an API is so much more reliable than scraping: nothing depends on where on the page a number happens to be printed. The agent knows how to call an API and read JSON; your part is to say what you want and to check what comes back.
+:::
+
+## Before you collect anything, read the rules of the site
+
+![](fig04-robots-txt.svg){width="86%" fig-align="center"}
+
+::: notes
+Every site has rules, and an agent will not always look for them unless you ask. There are three places to look. The terms of use or licence say what you may do with the data: Swecris welcomes analysis and asks that you mention Swecris as the source; CORDIS content is under a Creative Commons attribution licence. The API documentation says how you should call it: NIH asks for no more than one request per second and for large jobs at night or at weekends, and may block you otherwise. And robots.txt is a small file at the root of every website that tells automated programs which parts they may not visit. It is a convention, not a law, but respecting it is basic good manners and sometimes part of the legal picture. Some sites now also publish an llms.txt file with guidance for AI agents. Ask the agent to fetch and summarise all of these before it writes a single download script.
+:::
+
+## Polite collection: slow, identified, once
+
+![](fig05-polite-loop.svg){width="84%" fig-align="center"}
+
+- One request per second unless the documentation says otherwise. Large jobs in the evening.
+- Ask for big pages (100 to 500 records), not one record at a time.
+- Before each request, check whether the file is already on disk. If it is, skip it.
+
+::: notes
+Polite collection comes down to three habits. Go slowly: a pause of a second between requests costs you a few minutes on a thousand records and keeps you from being blocked. Ask for as much as each request allows, so you need fewer requests. And never download the same thing twice: the script should look in the raw folder first and skip anything it already has. That last habit also makes your work faster and repeatable: when you rerun the analysis next week, nothing is fetched again unless you ask for it. An agent left to itself often writes a script that fetches everything on every run. Say explicitly that you want a pause and a skip.
+:::
+
+## Raw downloads go in data/raw and are never touched again
+
+![](fig06-raw-folder.svg){width="72%" fig-align="center"}
+
+::: notes
+This is the project layout from Organising a project for an agent, applied to web data. Everything that came from the web goes into data/raw, exactly as it arrived, one file per request. Nobody edits those files, not you and not the agent. A cleaning script reads them and writes a tidy table into data/clean. Analysis scripts read the clean table and write plots and tables into results. Why so strict? Because databases change. Projects are added, amounts are corrected, sometimes a whole field is renamed. If you keep the raw files, you can always show what the database said on the day you downloaded it, and you can redo the cleaning if you find a mistake. If you only keep a cleaned spreadsheet, neither is possible.
+:::
+
+## A download log says what you asked for, when, and what came back
+
+![](fig07-download-log.svg){width="88%" fig-align="center"}
+
+::: notes
+Next to the raw files, ask for a download log: one row per request, with the date and time, the address that was called, the file it was saved to, how many records came back and what the database said the total was. Two details matter. First, the address is logged without the key, otherwise your key ends up in a file you might share or commit. Second, the total is recorded, because it gives you a free check: the number of records in all your files must add up to the total the database reported. When you cite these numbers later, the log is your methods section: "Swecris, searched for soil, downloaded on this date".
+:::
+
+## Some APIs need a key, and a key is a password {.smaller}
+
+- A **key** or **token** is a string that identifies you to the service, like `ab12-...-9f`.
+- **Swecris** asks for a token. A public one is on the API page and changes regularly; for repeated use you register for your own.
+- **OpenAlex**, used in the next unit, works without a key on a small shared daily budget; a free key gives you your own.
+- **NIH RePORTER** needs no key.
+
+Anyone who has your key can use the service as you. Treat it like a password: not in the chat, not in a script, not in git.
+
+::: notes
+Some services want to know who is calling. They give you a key, also called a token: a long string that you send with each request. Swecris publishes a public token on its API page that anyone can use to try things out; it is changed on a regular basis, so look it up on the day. If you use the API repeatedly, Swecris asks you to register for your own token, which takes up to a week to arrive, and they will then tell you about changes. OpenAlex, which we use in the next unit to look up publications, works without a key but shares a small free daily budget with everyone on your network; a free personal key gives you your own budget. A personal key is a password. If it ends up in a public GitHub repository, automated programs will find it within minutes.
+:::
+
+## The key lives in .env, git ignores it, and the agent does not open it
+
+![](fig08-key-flow.svg){width="84%" fig-align="center"}
+
+::: notes
+Here is the safe pattern we promised in Privacy, ethics and safety. The key lives in one small text file called dot env in the project folder, with a line like SWECRIS_TOKEN equals and then the key. You type or paste the key into that file yourself, in a text editor, never in the chat. The file is listed in dot gitignore, so git never records it and it never reaches GitHub. The script reads the key from the file when it runs and sends it to the API. The agent writes and runs the script, but it never needs to see the key itself: it only needs to know the name of the variable. And we tell the agent not to open the file, and, in Claude Code, back that up with a rule.
+:::
+
+## Tell the agent the rule, and back it up with a setting {.smaller}
+
+```text
+The Swecris token is in the file .env as SWECRIS_TOKEN. Never open, print or
+copy .env. Scripts read the token from .env when they run. Never write the
+token into a script, a log, an output file or this chat. Log URLs without it.
+```
+
+| | Claude Code | Codex |
+|---|---|---|
+| Put the rule where it lasts | in `CLAUDE.md` | in `AGENTS.md` |
+| Enforce it | a deny rule in `.claude/settings.json`: `"deny": ["Read(./.env)"]` | administrators can deny reading files; for you: the rule in `AGENTS.md`, and watch the approvals |
+| Keep it out of git | `.env` in `.gitignore` | `.env` in `.gitignore` |
+| Your last line of defence | say **no** to any command that shows `.env` (e.g. `cat .env`) | the same |
+
+::: notes
+An instruction is a good start, and it belongs in the project's instructions file, CLAUDE.md or AGENTS.md, so it holds in every session, not only today. In Claude Code you can go one step further with a deny rule in the project settings, which stops its file-reading tool from opening the file. The documentation shows exactly this example. Codex has similar settings, but they are aimed at administrators, so for you the rule in AGENTS.md and your own attention are the practical protection. Neither setting is a wall: a shell command could still print the file. That is why the last line matters. If a permission prompt shows a command that prints or uploads .env, say no and ask why.
+:::
+
+## If a key leaks, change it; deleting the message is not enough {.smaller}
+
+- **Pasted into the chat?** It is in the provider's logs and in your local session history. Assume it is exposed.
+- **Committed to git?** It stays in the history even after you delete the line. If the repository is public, assume it is copied.
+- **What to do:** revoke or regenerate the key on the service's page; put the new key in `.env`; ask the agent to check that `.env` is in `.gitignore` and that no file in the history contains a key.
+
+A public, shared token (like the Swecris test token) is low risk. A personal key tied to your account and quota is not.
+
+::: notes
+Mistakes happen, so plan for them. If you paste a key into the chat by accident, deleting the message does not help: it has been sent to the provider, and your agent keeps a local transcript. If a key is committed to git, deleting the line in the next commit does not help either, because git keeps every version; that is its job. The fix in all cases is the same: go to the service, revoke the key or make a new one, and put the new one in your .env file. Then ask the agent to check that .env is ignored and to search the history for anything that looks like a key. The public Swecris token is shared by everyone and changes anyway, so leaking it does little harm. Your personal key is a different matter.
+:::
+
+## Worked example: Swedish soil research funding from Swecris
+
+![](fig09-swecris-flow.svg){width="90%" fig-align="center"}
+
+::: notes
+Now the worked example. The question: what has Swedish research funding for soil research looked like since 2008? Which funders, which universities, which fields, which topics? The plan has five steps. Read the rules: the Swecris API page and its documentation. Put the token in .env. Ask the agent for a download script that searches for soil, a hundred records per request, with a pause, saving each page raw. Then a cleaning script that makes one table with one row per project. Then the analyses and plots. At every step there is a check. The exercise gives the full prompts; here we look at what to watch for.
+:::
+
+## The download prompt says how to collect, not only what
+
+```text
+Write a script scripts/download_swecris.py that searches the Swecris API
+(https://swecris-api.vr.se, documented in Swagger there) for projects matching
+"soil". Read the token from .env (SWECRIS_TOKEN); never print it.
+
+- 100 records per request, wait 1 second between requests
+- save each response unchanged as data/raw/swecris/soil_page001.json, ...
+- skip any page that is already on disk; never overwrite a raw file
+- append one row per request to data/raw/swecris/download-log.csv:
+  time, URL without the token, file, records returned, total reported
+- stop and tell me if a request fails; do not retry more than twice
+
+Before writing the script, fetch the API documentation and tell me which
+route you will use and why. Then run it on the first page only.
+```
+
+::: notes
+Here is the prompt. Read it as a description of the finished result, as we practised in Delegating well. It says where the key is and that it must not be printed. It sets the pace, one second, and the page size. It fixes where raw files go and what they are called, and forbids overwriting. It asks for the download log with the reported total. It says what to do when something fails, so the agent does not hammer the server with retries. And the last paragraph makes the agent read the documentation first and run one page before all of them. That one page is your chance to look at the data before a thousand records arrive.
+:::
+
+## The agent asks before it calls the web; read the address
+
+![](fig10-session-download.svg){width="84%" fig-align="center"}
+
+::: notes
+This is roughly what the session looks like. The agent fetches the documentation, which may need your permission because it is a web request. It picks a route, here the search route of the API, and explains why. It writes the script and asks to run it on page one. Read the command before you approve: it should call swecris-api.vr.se and nothing else, and it should not print the token. After the first page, it reports the total, in our test about a thousand projects for soil, and asks whether to continue. Your numbers will be different, because the database grows every week. The picture is illustrative.
+:::
+
+## One Swecris record holds money, time, place, field and people
+
+![](fig11-swecris-record.svg){width="80%" fig-align="center"}
+
+::: notes
+Open one of the raw files, or ask the agent to show you one record, before you analyse anything. A Swecris project has a title and abstract in Swedish and in English, a start and end date, the coordinating organisation, the funder, an amount in Swedish kronor, a field classification using the Swedish standard for research subjects, and a list of people with names, roles and sometimes ORCID identifiers. Two of these deserve attention. The amount: is it the whole grant, or one year of it? And the people list: names of researchers are personal data, even in a public database. For an analysis of money and topics you do not need them, so ask the agent to leave them out of the clean table.
+:::
+
+## Know what one row is before you add anything up
+
+![](fig12-grain.svg){width="88%" fig-align="center"}
+
+::: notes
+This is the most common mistake in grant data, and agents make it too. Some routes return one row per project with the total amount. Others return one row per project per year, or one row per funder per year. If you add up a table of yearly payments as if each row were a whole project, you count the same grant three or four times. If you count projects in a table of yearly rows, you get too many projects. So before any sum, ask the agent a plain question: in this table, what is one row? And check its answer yourself on one project you look up in the Swecris web search. Swecris also reports its own per-year totals for each search, which gives you a check you can do in a minute.
+:::
+
+## Grant data have traps that a domain expert spots and an agent may not {.smaller}
+
+| Trap | Example | What to decide |
+|---|---|---|
+| Year | start year, decision year or payment year? | pick one and say which |
+| Future years | grants decided in 2026 that pay until 2030 | stop at the last complete year, or label commitments |
+| Currency and price level | SEK, USD, EUR; 2010 kronor are not 2025 kronor | convert once, say how; consider inflation |
+| Search text | "soil" also finds "soil mechanics", not "mark" | read 20 random abstracts; try synonyms in both languages |
+| Classification | "Unclassified" field; the Swedish subject standard was revised in 2025 | keep a separate "unclassified" group |
+| Co-funding and duplicates | the same project listed by two funders | check for repeated titles |
+
+::: notes
+Each row here is a decision that changes your numbers. Agents tend to make these decisions silently and plausibly, so ask for a list of them, as in First delegations. The year question alone can move money between years by a lot. Future years are easy to miss: databases already contain grants that start next year, so the last bar of a plot looks like a drop or a jump that is not real. A search for an English word misses projects described only in Swedish, and catches projects from other fields that share the word; reading twenty random abstracts tells you more than any statistic about whether your search found what you meant. You are the one who knows which projects belong to your field. That knowledge is the check.
+:::
+
+## Analysis 1: money over time, by funder or field
+
+![](fig13-money-over-time.svg){width="86%" fig-align="center"}
+
+::: notes
+The first analysis most people want is money over time. Sum the amounts per year, split by funder or by research field, and plot it. The plot on the slide is illustrative, made from invented numbers, but it has the features you will meet: a slow growth, one funder that dominates, a dip that turns out to be a change in how a funder reports, and a final year that is incomplete. Note what is on the plot: the source, the search, the download date, and whether amounts are in current or fixed prices. A plot without that information cannot be checked by anyone else, including you in six months. Ask the agent to write this caption on every figure. In the real Swecris data for soil, one year stands out because of a single infrastructure grant of over a billion kronor for a synchrotron laboratory, whose abstract happens to mention soil. One grant can dominate a whole field, so always ask which projects make up the tallest bar.
+:::
+
+## Analysis 2: where the money goes
+
+![](fig14-by-university.svg){width="80%" fig-align="center"}
+
+::: notes
+The second classic question is where the money goes: per university, per region, or per kind of organisation. A horizontal bar chart of the top ten coordinating organisations is easy to make and easy to misread. Coordinating means the grant was administered there; the work may be spread over several sites. Universities also merge and change names, so the agent may show two bars for what is really one organisation. And a few very large grants can dominate a bar. A useful check is to show both the amount and the number of projects next to each bar, and to ask the agent which organisations it merged or renamed.
+:::
+
+## Analysis 3: topics rise and fall, and abstracts show it
+
+![](fig15-topic-clusters.svg){width="84%" fig-align="center"}
+
+::: notes
+The third analysis uses the abstracts. There are many methods: counting keywords per year, grouping abstracts by the words they share, or using a language model to put a short topic label on each abstract. The result is a map like this, with groups of similar projects, and the trend of each group over time. The method is less important than the check. A topic group is only meaningful if, when you read five abstracts from it, you agree that they belong together. So ask the agent to list five random titles per group, read them, and give the groups names yourself. If the agent names them, treat the names as suggestions.
+:::
+
+## Where does my own project sit on the map?
+
+- Give the agent **your own abstract** (a draft, a past one, or a paragraph you write now).
+- Ask which group it is closest to, and list the **ten most similar funded projects**, with funder, year and amount.
+- Read those ten. Are they really like yours? Who funded them? Where are they based?
+
+This answers "who funds work like mine?" with evidence, and gives you related work and possible collaborators.
+
+::: notes
+This is the most personal analysis, and many find it the most useful. You give the agent an abstract of your own and ask where it lands: which topic group, and which funded projects are most similar. The ten most similar projects are a short reading list. They tell you which funders have supported work like yours, how large those grants were, and who else in Sweden works on it. Your abstract is your own unpublished text, so the usual rule from Privacy, ethics and safety applies: it is your decision, and if it contains anything confidential, use a shortened version. The similar projects will not all be similar. That is fine: read them and judge.
+:::
+
+## The totals must match the funder's own published statistics
+
+![](fig16-verify-totals.svg){width="84%" fig-align="center"}
+
+::: notes
+Now the check that this unit is built around. Funders publish their own statistics: the Swedish Research Council has decision statistics per year on its website, NIH publishes funding per institute and fiscal year, the EU publishes Horizon Europe dashboards. Pick one number they publish, and compute the same number from your downloaded data. They will rarely match to the krona. Swecris may count a different year, include co-funded projects, or have been updated since. A difference of a few percent with a clear explanation is fine. A difference of half, or one you cannot explain, means something is wrong with the search, the year or the summing, and you find out before a reviewer does.
+:::
+
+## Two quick checks need no statistics at all {.smaller}
+
+1. **The reported total.** Swecris reports how many projects match and the amount per year for every search. Your raw files must contain exactly that many records, and your yearly sums must match the reported ones.
+2. **Three projects by hand.** Pick three random rows of the clean table. Find each in the [Swecris web search](https://www.vr.se/english/swecris.html). Same title, funder, amount and years?
+3. **Your field knowledge.** Do the largest grants make sense? Is a project you know about missing?
+
+"The script ran" is not a check. "The agent says the totals match" is not a check until you have seen both numbers.
+
+::: notes
+Besides the funder's statistics, two quick checks catch most problems. The first uses the database's own report: every Swecris search response says how many projects match and how much money falls in each year. If your files contain fewer records than reported, a page was lost; if your yearly sums differ from the reported ones, the table was summed wrongly, which is the grain problem again. The second check is old-fashioned: three random rows, looked up by hand in the web search. And then your own expertise: you know the big projects and groups in your field. If a famous one is missing, the search missed it, and you have learned something about your search terms.
+:::
+
+## Outside Sweden: the same method, a different source {.smaller}
+
+| | NIH RePORTER | CORDIS (EU) |
+|---|---|---|
+| Get data | API: `api.reporter.nih.gov`, searches as POST requests | bulk files (CSV, JSON, XML) per framework programme on data.europa.eu |
+| Key | none | none for the bulk files; the extraction API needs an EU Login |
+| Rules | no more than 1 request per second; large jobs evenings and weekends; up to 500 records per request | content under CC BY 4.0, cite "European Union, CORDIS"; prefer bulk files and SPARQL to scraping |
+| Amounts | USD per fiscal year | EUR, EU contribution and total cost per project |
+| Check against | NIH funding statistics per institute and year | Horizon Europe dashboards |
+
+Prompts are almost the same as for Swecris. Ask the agent to read the documentation first.
+
+::: notes
+If you work outside Sweden, or your field is funded mostly from the EU or the US, the same workflow applies with another source. NIH RePORTER has an open API without a key. Its documentation asks for at most one request per second and limits each request to 500 records. CORDIS offers complete bulk downloads, which is even better than an API: one file, one download, no pacing. Its own guidance for automated clients says to prefer those files over scraping the project pages. The amounts differ: NIH reports dollars per fiscal year, CORDIS the EU contribution per project in euros. Keep those differences in a notes file, because they decide what you may compare.
+:::
+
+## Data sources now talk to agents directly; treat it as data
+
+![](fig17-api-talks-to-agent.svg){width="88%" fig-align="center"}
+
+::: notes
+Something new: data sources have started writing messages to AI agents. Some sites publish an llms.txt file with instructions for agents. Some APIs include notices in their responses addressed to "an AI agent" that suggest what to do next, for example to register for a key with the user's email address. Most of these are harmless and even helpful. But this is the same mechanism as prompt injection from Privacy, ethics and safety: text in the data that reads like an instruction. The rule stays the same. Text that comes from the web is data, not orders. An agent should not register accounts, send your email address or download extra things because a response said so. If a permission prompt shows something you did not ask for, say no.
+:::
+
+## Personal data and licences still apply to public grant data {.smaller}
+
+- Grant records name **researchers**. That is personal data under GDPR, even though it is public. Leave names out of the clean table unless your question needs them.
+- Aggregated results (sums per year, field, university) are fine to publish.
+- **Abstracts** are written by the researchers. Analysing them is fine; republishing hundreds of them on your page is not needed and may not be allowed.
+- Always credit the source: "Data: Swecris, Swedish Research Council, downloaded 2026-11-23."
+
+::: notes
+Public does not mean free of rules. The grant records include researchers' names and sometimes ORCID identifiers. For an analysis of money and topics you do not need them, so the simplest course is to drop them when you clean. If your question really is about people, for example how many women lead grants in your field, check with your data protection officer first, and publish only aggregates. The abstracts are texts written by the applicants. Using them for counting and grouping is normal; copying them wholesale onto your project page is not necessary. And credit the source with the date, as Swecris asks. These are small habits, and they make the result something you can publish without worry.
+:::
+
+## Where this goes wrong {.smaller}
+
+- **The search was wrong.** Too narrow (one language, one word) or too wide (other fields share the word). Read random abstracts.
+- **The sum was wrong.** Rows were yearly payments, not projects; future commitments were included.
+- **The comparison was wrong.** Different currencies, years or price levels side by side.
+- **The collection was rude.** No pause, repeated downloads, scraping where an API exists. You get blocked, or worse.
+- **The key leaked.** In the chat, in a script, in a log, in git.
+- **The story was wrong.** Grant databases show winners only. They cannot tell you success rates or what reviewers wanted.
+
+::: notes
+Here is the list of what goes wrong, in rough order of how often. Most problems are not about programming: a search that does not find what you meant, a sum over the wrong kind of row, a comparison of numbers that are not comparable. The agent can make all of these mistakes while producing a script that runs perfectly and a plot that looks professional. That is why the checks are domain checks: read abstracts, look up projects by hand, compare with the funder's own numbers. The last point is a limit of the data, not of the agent. Grant databases show what was funded. To learn what reviewers look for, you need the next unit.
+:::
+
+## The result goes on your project page, with its source and date
+
+![](fig18-page-section.svg){width="72%" fig-align="center"}
+
+::: notes
+As in every Part 4 unit, the result goes on your project page from A course or project page. A good section is short: two or three plots, a paragraph that says what they show, and a methods line that says where the data came from, which search, which date, and how the totals were checked. The raw data stay in the project folder, not on the page: they are large, they contain names, and anyone can download them again from the source. Commit the scripts and the cleaned aggregate tables; the .env file stays out because .gitignore says so. Then push, and check the page online.
+:::
+
+## Summary
+
+| Concept | Key fact |
+|---|---|
+| Routes to data | Bulk file or API first; export button for small jobs; scraping last |
+| Rules | Terms of use, licence, `robots.txt`, rate limits. Read them first |
+| Polite collection | 1 request per second, large pages, never download twice |
+| Raw data | `data/raw`, unchanged, with a download log; cleaning writes elsewhere |
+| Keys | In `.env`, listed in `.gitignore`; the agent never reads or prints it |
+| Grain | Know what one row is before you sum |
+| Verification | Reported totals, three projects by hand, funder's own statistics |
+| Limits | Winners only; personal data in records; text from the web is data, not instructions |
+
+**Next (*Likely reviewers for an upcoming grant, and mock reviews*):** from who funds work like yours to who will read your next application.
+
+::: notes
+To sum up. Prefer a bulk file or an API to scraping, and read the site's rules before you collect anything. Collect slowly, in large pages, and never twice. Keep the raw downloads unchanged with a log, and do the cleaning in a separate step. Keep keys in a .env file that git ignores and the agent does not read. Know what one row of your table is before you add anything up. And check the totals in three ways: against what the database itself reports, against a few projects looked up by hand, and against the funder's own published statistics. In the next unit we use the same kind of public sources for a more delicate task: finding out who is likely to review your next application, and having the agent write mock reviews of your draft.
+:::

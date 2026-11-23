@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="380" fill="#fff"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#6b4fa0"/></marker></defs>
+  <line x1="60" y1="210" x2="950" y2="210" stroke="#999" stroke-width="2"/>
+  <g font-size="16" fill="#666" text-anchor="middle">
+    <text x="200" y="240">spring 2026</text><text x="500" y="240">autumn 2026</text><text x="800" y="240">next year</text>
+  </g>
+  <g font-size="18" text-anchor="middle" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">
+    <rect x="95" y="150" width="210" height="44" rx="8" fill="#f5efdd" stroke="#8a6a12"/><text x="200" y="178" fill="#333">claude-opus-4-7</text>
+    <rect x="395" y="150" width="210" height="44" rx="8" fill="#f5efdd" stroke="#8a6a12"/><text x="500" y="178" fill="#333">claude-opus-5-5</text>
+    <rect x="695" y="150" width="210" height="44" rx="8" fill="#f5efdd" stroke="#8a6a12" stroke-dasharray="6 4"/><text x="800" y="178" fill="#999">a newer Opus</text>
+  </g>
+  <rect x="440" y="40" width="120" height="44" rx="22" fill="#eeeaf5" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="500" y="69" font-size="20" text-anchor="middle" fill="#6b4fa0" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">opus</text>
+  <line x1="500" y1="86" x2="500" y2="146" stroke="#6b4fa0" stroke-width="3" marker-end="url(#a)"/>
+  <path d="M440,62 C330,62 230,90 210,144" fill="none" stroke="#6b4fa0" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#a)"/>
+  <path d="M560,62 C680,62 770,90 790,144" fill="none" stroke="#6b4fa0" stroke-width="2" stroke-dasharray="5 5" marker-end="url(#a)"/>
+  <text x="250" y="60" font-size="16" fill="#6b4fa0" text-anchor="middle">pointed here before</text>
+  <text x="760" y="60" font-size="16" fill="#6b4fa0" text-anchor="middle">will point here later</text>
+  <g font-size="18" fill="#333">
+    <text x="60" y="290"><tspan fill="#6b4fa0" font-weight="bold">Alias</tspan> (opus, sonnet, haiku, best): convenient, gets improvements, not reproducible.</text>
+    <text x="60" y="322"><tspan fill="#8a6a12" font-weight="bold">Exact ID</tspan> (claude-opus-5-5): one fixed model, until it is retired.</text>
+    <text x="60" y="354">For anything you report: the exact ID and the date.</text>
+  </g>
+  <text x="985" y="374" font-size="14" fill="#999" text-anchor="end">illustrative</text>
+</svg>

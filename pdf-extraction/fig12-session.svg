@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#fff"/>
+  <rect x="10" y="10" width="980" height="430" rx="10" fill="#1f2430"/>
+  <circle cx="32" cy="30" r="6" fill="#ff5f57"/><circle cx="52" cy="30" r="6" fill="#febc2e"/><circle cx="72" cy="30" r="6" fill="#28c840"/>
+  <text x="500" y="35" font-size="14" fill="#9fb3c8" text-anchor="middle">~/agentic-course/pdf-extraction/papers-work</text>
+  <g font-family="Courier New, monospace" font-size="16" xml:space="preserve">
+    <text x="30" y="72" fill="#9fb3c8">&gt; First check each PDF: pages, and whether it has a text layer.</text>
+    <text x="30" y="106" fill="#7fd3e0">  Run pdfinfo and pdftotext on each file</text>
+    <text x="30" y="134" fill="#e8e8e8">  file                          pages  text</text>
+    <text x="30" y="156" fill="#e8e8e8">  01_Aldersen-2021.pdf            2    yes</text>
+    <text x="30" y="178" fill="#e8e8e8">  02_Moreau-2019.pdf              2    yes</text>
+    <text x="30" y="200" fill="#e8e8e8">  03_Nyberg-2022.pdf              2    yes  (table spans p.1-2)</text>
+    <text x="30" y="222" fill="#f08a9c">  04_Okonkwo-2018.pdf             2    NO   (image only)</text>
+    <text x="30" y="244" fill="#e8e8e8">  05_Petrova-2023.pdf             2    yes</text>
+    <text x="30" y="266" fill="#e8e8e8">  06_Quint-2020.pdf               1    yes  (refers to Table S1)</text>
+    <text x="30" y="288" fill="#e8e8e8">  06_Quint-2020_supplement.pdf    1    yes</text>
+    <text x="30" y="324" fill="#f0c674">04_Okonkwo-2018.pdf has no text layer. I can run OCR (needs</text>
+    <text x="30" y="346" fill="#f0c674">Tesseract, which is not installed) or read the page images.</text>
+    <text x="30" y="368" fill="#f0c674">Which do you prefer? Either way I will mark the method as such.</text>
+    <text x="30" y="404" fill="#9fb3c8">&gt; Read the page images, and mark those values "page image".</text>
+  </g>
+  <text x="985" y="462" font-size="14" fill="#999" text-anchor="end">illustrative; your session will look different</text>
+</svg>

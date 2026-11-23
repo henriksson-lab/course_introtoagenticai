@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="1000" height="450" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#5a6a7a"/></marker></defs>
+  <rect width="1000" height="450" fill="#ffffff"/>
+  <line x1="50" y1="400" x2="50" y2="40" stroke="#5a6a7a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="34" y="230" font-size="16" fill="#5a6a7a" transform="rotate(-90 34 230)" text-anchor="middle">more capable, especially as an agent</text>
+  <g font-size="17">
+    <rect x="80" y="40" width="380" height="72" rx="10" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+    <text x="96" y="70" font-weight="bold" fill="#6b4fa0">Frontier closed models</text>
+    <text x="96" y="96" font-size="15" fill="#1b2a3a">provider's cloud only</text>
+    <text x="490" y="70" fill="#1b2a3a">long agent tasks, many files, hard analysis</text>
+    <rect x="80" y="130" width="380" height="72" rx="10" fill="#faf5e8" stroke="#8a6a12" stroke-width="2"/>
+    <text x="96" y="160" font-weight="bold" fill="#8a6a12">Largest open-weights models</text>
+    <text x="96" y="186" font-size="15" fill="#1b2a3a">hundreds of billions; hosted service</text>
+    <text x="490" y="160" fill="#1b2a3a">good chat and coding; agent work with more</text>
+    <text x="490" y="184" fill="#1b2a3a">supervision; months behind the frontier</text>
+    <rect x="80" y="220" width="380" height="72" rx="10" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="96" y="250" font-weight="bold" fill="#2a7f8f">Medium open models (20 to 30B)</text>
+    <text x="96" y="276" font-size="15" fill="#1b2a3a">a strong desktop or a 32 GB Mac</text>
+    <text x="490" y="250" fill="#1b2a3a">summaries, extraction, short scripts;</text>
+    <text x="490" y="274" fill="#1b2a3a">short agent tasks, with frequent slips</text>
+    <rect x="80" y="310" width="380" height="72" rx="10" fill="#f4f7fa" stroke="#9aa8b5" stroke-width="2"/>
+    <text x="96" y="340" font-weight="bold" fill="#3a4a5a">Small open models (1 to 8B)</text>
+    <text x="96" y="366" font-size="15" fill="#1b2a3a">an ordinary laptop</text>
+    <text x="490" y="340" fill="#1b2a3a">rewording, simple classification, drafts;</text>
+    <text x="490" y="364" fill="#1b2a3a">miscounts, invents, loses the thread</text>
+  </g>
+  <text x="80" y="428" font-size="15" fill="#5a6a7a">A rough guide, not a measurement. Compare models on a sample of your own task (see Choosing a model).</text>
+</svg>

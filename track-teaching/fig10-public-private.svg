@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <text x="500" y="35" font-size="22" font-weight="bold" fill="#1f2933" text-anchor="middle">~/agentic-course/describing-data/  (a public GitHub repository)</text>
+  <rect x="20" y="60" width="470" height="300" rx="12" fill="#e8f3f5" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="255" y="98" font-size="22" font-weight="bold" fill="#2a7f8f" text-anchor="middle">Pushed to GitHub</text>
+  <g font-size="19" fill="#333" font-family="Courier New, monospace">
+    <text x="45" y="145">bank2qti.py</text>
+    <text x="45" y="180">quiz/week2.qmd</text>
+    <text x="45" y="215">lec.qmd, figures</text>
+    <text x="45" y="250">.gitignore</text>
+  </g>
+  <text x="45" y="320" font-size="18" fill="#52606d">scripts and questions-only pages</text>
+  <rect x="510" y="60" width="470" height="300" rx="12" fill="#f9ecef" stroke="#a8324a" stroke-width="2.5"/>
+  <text x="745" y="98" font-size="22" font-weight="bold" fill="#a8324a" text-anchor="middle">private/  (in .gitignore)</text>
+  <g font-size="19" fill="#333" font-family="Courier New, monospace">
+    <text x="535" y="145">week2-bank.md</text>
+    <text x="535" y="180">week2-bank-key.md</text>
+    <text x="535" y="215">week2-bank-qti.zip</text>
+    <text x="535" y="250">exam-draft.md</text>
+  </g>
+  <text x="535" y="320" font-size="18" fill="#52606d">anything with answers stays here</text>
+  <text x="500" y="400" font-size="19" fill="#1f2933" text-anchor="middle">Ask "which files would be pushed?" A pushed answer stays in the history.</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#fff"/>
+  <text x="500" y="38" font-size="22" font-weight="bold" fill="#333" text-anchor="middle">20 comparisons where nothing is really different</text>
+  <g>
+    <!-- 20 dice-like boxes, one red -->
+    <g fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2">
+      <rect x="60" y="70" width="70" height="70" rx="10"/><rect x="150" y="70" width="70" height="70" rx="10"/><rect x="240" y="70" width="70" height="70" rx="10"/><rect x="330" y="70" width="70" height="70" rx="10"/><rect x="420" y="70" width="70" height="70" rx="10"/>
+      <rect x="510" y="70" width="70" height="70" rx="10"/><rect x="600" y="70" width="70" height="70" rx="10"/><rect x="690" y="70" width="70" height="70" rx="10"/><rect x="780" y="70" width="70" height="70" rx="10"/><rect x="870" y="70" width="70" height="70" rx="10"/>
+      <rect x="60" y="160" width="70" height="70" rx="10"/><rect x="150" y="160" width="70" height="70" rx="10"/><rect x="240" y="160" width="70" height="70" rx="10"/><rect x="330" y="160" width="70" height="70" rx="10"/><rect x="420" y="160" width="70" height="70" rx="10"/>
+      <rect x="600" y="160" width="70" height="70" rx="10"/><rect x="690" y="160" width="70" height="70" rx="10"/><rect x="780" y="160" width="70" height="70" rx="10"/><rect x="870" y="160" width="70" height="70" rx="10"/>
+    </g>
+    <rect x="510" y="160" width="70" height="70" rx="10" fill="#f8e9ec" stroke="#a8324a" stroke-width="3"/>
+    <g font-size="16" fill="#2a7f8f" text-anchor="middle">
+      <text x="95" y="111">p 0.41</text><text x="185" y="111">p 0.77</text><text x="275" y="111">p 0.12</text><text x="365" y="111">p 0.58</text><text x="455" y="111">p 0.93</text>
+      <text x="545" y="111">p 0.30</text><text x="635" y="111">p 0.66</text><text x="725" y="111">p 0.21</text><text x="815" y="111">p 0.85</text><text x="905" y="111">p 0.49</text>
+      <text x="95" y="201">p 0.37</text><text x="185" y="201">p 0.09</text><text x="275" y="201">p 0.72</text><text x="365" y="201">p 0.54</text><text x="455" y="201">p 0.18</text>
+      <text x="635" y="201">p 0.81</text><text x="725" y="201">p 0.27</text><text x="815" y="201">p 0.62</text><text x="905" y="201">p 0.44</text>
+    </g>
+    <text x="545" y="201" font-size="16" font-weight="bold" fill="#a8324a" text-anchor="middle">p 0.03</text>
+  </g>
+  <text x="545" y="262" font-size="17" fill="#a8324a" text-anchor="middle">"significant!"</text>
+  <g font-size="19" fill="#333">
+    <text x="60" y="310">• A p-value below 0.05 happens about 1 time in 20 by chance alone.</text>
+    <text x="60" y="345">• 12 items × 2 groups, or 12 items × 5 programmes: some will "differ" by luck.</text>
+    <text x="60" y="380">• Decide the comparisons that matter <tspan font-weight="bold">before</tspan> you look; report the rest as exploratory.</text>
+  </g>
+  <text x="985" y="412" font-size="13" fill="#999" text-anchor="end">illustrative numbers</text>
+</svg>

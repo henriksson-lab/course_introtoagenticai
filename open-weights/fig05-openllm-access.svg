@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" width="1000" height="380" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker></defs>
+  <rect width="1000" height="380" fill="#ffffff"/>
+  <g font-size="16" fill="#1b2a3a" text-anchor="middle">
+    <rect x="20" y="40" width="210" height="150" rx="10" fill="#f4f7fa" stroke="#9aa8b5" stroke-width="2"/>
+    <text x="125" y="72" font-size="18" font-weight="bold" fill="#2a7f8f">1. Register</text>
+    <text x="125" y="102">form on the site,</text><text x="125" y="124">with your official</text><text x="125" y="146">work email</text>
+    <rect x="270" y="40" width="210" height="150" rx="10" fill="#f4f7fa" stroke="#9aa8b5" stroke-width="2"/>
+    <text x="375" y="72" font-size="18" font-weight="bold" fill="#2a7f8f">2. Verify email</text>
+    <text x="375" y="102">click the link in</text><text x="375" y="124">the confirmation</text><text x="375" y="146">message</text>
+    <rect x="520" y="40" width="210" height="150" rx="10" fill="#faf5e8" stroke="#8a6a12" stroke-width="2"/>
+    <text x="625" y="72" font-size="18" font-weight="bold" fill="#8a6a12">3. Manual approval</text>
+    <text x="625" y="102">the team checks</text><text x="625" y="124">eligibility and</text><text x="625" y="146">whether there is room</text>
+    <rect x="770" y="40" width="210" height="150" rx="10" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="875" y="72" font-size="18" font-weight="bold" fill="#2a7f8f">4. Log in</text>
+    <text x="875" y="102">web chat, or</text><text x="875" y="124">create an API key</text><text x="875" y="146">(expires after 4 weeks)</text>
+  </g>
+  <line x1="232" y1="115" x2="264" y2="115" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="482" y1="115" x2="514" y2="115" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="732" y1="115" x2="764" y2="115" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="20" y="230" width="960" height="120" rx="10" fill="#ffffff" stroke="#c5cfd8"/>
+  <text x="40" y="262" font-size="17" font-weight="bold" fill="#1b2a3a">Who can register (pilot, November 2026)</text>
+  <text x="40" y="292" font-size="16" fill="#1b2a3a">Staff at SciLifeLab infrastructure units; members of SciLifeLab-affiliated research groups (e.g. SciLifeLab</text>
+  <text x="40" y="316" font-size="16" fill="#1b2a3a">and DDLS fellows and their groups, group leaders, PULSE postdocs); their collaborators on joint projects.</text>
+  <text x="40" y="340" font-size="15" fill="#5a6a7a">Source: openllm.scilifelab.se, "Creating an account". Rules may change; read the page.</text>
+</svg>

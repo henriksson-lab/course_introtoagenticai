@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker></defs>
+  <rect width="1000" height="440" fill="#ffffff"/>
+  <!-- folder -->
+  <rect x="30" y="40" width="300" height="300" rx="12" fill="#f8eef0" stroke="#a8324a" stroke-width="2"/>
+  <text x="180" y="74" text-anchor="middle" font-size="20" font-weight="bold" fill="#a8324a">interviews/</text>
+  <g font-size="17" fill="#1b2a3a">
+    <text x="56" y="114">nurse-01.docx</text><text x="56" y="144">nurse-02.docx</text>
+    <text x="56" y="174">nurse-03.docx</text><text x="56" y="204">... 40 transcripts</text>
+  </g>
+  <rect x="50" y="228" width="260" height="92" rx="8" fill="#ffffff" stroke="#a8324a"/>
+  <text x="180" y="256" text-anchor="middle" font-size="16" fill="#a8324a" font-weight="bold">Ethics approval says:</text>
+  <text x="180" y="280" text-anchor="middle" font-size="16" fill="#1b2a3a">"data stay on university</text>
+  <text x="180" y="302" text-anchor="middle" font-size="16" fill="#1b2a3a">servers in Sweden"</text>
+  <!-- task -->
+  <rect x="370" y="120" width="260" height="130" rx="10" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="500" y="152" text-anchor="middle" font-size="18" font-weight="bold" fill="#2a7f8f">The task</text>
+  <text x="500" y="182" text-anchor="middle" font-size="16" fill="#1b2a3a">tag each answer with</text>
+  <text x="500" y="204" text-anchor="middle" font-size="16" fill="#1b2a3a">a theme from our</text>
+  <text x="500" y="226" text-anchor="middle" font-size="16" fill="#1b2a3a">codebook</text>
+  <line x1="332" y1="185" x2="364" y2="185" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <!-- cloud -->
+  <rect x="690" y="40" width="280" height="150" rx="12" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="830" y="74" text-anchor="middle" font-size="18" font-weight="bold" fill="#6b4fa0">Cloud agent</text>
+  <text x="830" y="102" text-anchor="middle" font-size="16" fill="#1b2a3a">Claude Code, Codex</text>
+  <text x="830" y="150" text-anchor="middle" font-size="40" font-weight="bold" fill="#a8324a">&#215;</text>
+  <text x="830" y="178" text-anchor="middle" font-size="15" fill="#a8324a">not allowed by the approval</text>
+  <line x1="632" y1="160" x2="684" y2="120" stroke="#a8324a" stroke-width="2" stroke-dasharray="6 5"/>
+  <rect x="690" y="230" width="280" height="110" rx="12" fill="#ffffff" stroke="#2a7f8f" stroke-width="2" stroke-dasharray="7 5"/>
+  <text x="830" y="270" text-anchor="middle" font-size="18" font-weight="bold" fill="#2a7f8f">?</text>
+  <text x="830" y="298" text-anchor="middle" font-size="16" fill="#1b2a3a">a model that runs where</text>
+  <text x="830" y="320" text-anchor="middle" font-size="16" fill="#1b2a3a">the data may go</text>
+  <line x1="632" y1="215" x2="684" y2="270" stroke="#2a7f8f" stroke-width="2" marker-end="url(#a)"/>
+  <text x="500" y="410" text-anchor="middle" font-size="19" fill="#1b2a3a">The task suits an AI model. The question is where that model runs.</text>
+</svg>

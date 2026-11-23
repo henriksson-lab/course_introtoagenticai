@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#fff"/>
+  <rect x="20" y="15" width="960" height="300" rx="10" fill="#1f2933"/>
+  <g font-family="Courier New, monospace" font-size="18">
+    <text x="45" y="55" fill="#7fd1de">&gt; Continue this text for two sentences:</text>
+    <text x="45" y="82" fill="#7fd1de">  "It is a truth universally acknowledged,"</text>
+    <text x="45" y="130" fill="#cfd6dc">● that a single man in possession of a good fortune,</text>
+    <text x="45" y="157" fill="#cfd6dc">  must be in want of a wife. However little known the</text>
+    <text x="45" y="184" fill="#cfd6dc">  feelings or views of such a man may be on his first</text>
+    <text x="45" y="211" fill="#cfd6dc">  entering a neighbourhood, this truth is so well fixed</text>
+    <text x="45" y="238" fill="#cfd6dc">  in the minds of the surrounding families, that he is</text>
+    <text x="45" y="265" fill="#cfd6dc">  considered the rightful property of some one or other</text>
+    <text x="45" y="292" fill="#cfd6dc">  of their daughters.</text>
+  </g>
+  <rect x="36" y="110" width="930" height="190" rx="6" fill="none" stroke="#e0c27a" stroke-width="2.5"/>
+  <text x="975" y="308" font-size="14" fill="#8a97a5" text-anchor="end">illustrative</text>
+  <g font-size="19">
+    <rect x="20" y="335" width="470" height="115" rx="10" fill="#fdf8e8" stroke="#8a6a12" stroke-width="2"/>
+    <text x="40" y="370" font-weight="bold" fill="#8a6a12">Word for word as in the novel</text>
+    <text x="40" y="400" fill="#333">Jane Austen, Pride and Prejudice, 1813.</text>
+    <text x="40" y="430" fill="#333">Public domain, so harmless here.</text>
+    <rect x="510" y="335" width="470" height="115" rx="10" fill="#f9ecef" stroke="#a8324a" stroke-width="2"/>
+    <text x="530" y="370" font-weight="bold" fill="#a8324a">No quotation marks, no source</text>
+    <text x="530" y="400" fill="#333">Memorised text looks like any other</text>
+    <text x="530" y="430" fill="#333">answer. The same works for lyrics.</text>
+  </g>
+</svg>

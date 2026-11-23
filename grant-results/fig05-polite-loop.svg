@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+  <rect width="1000" height="400" fill="#fff"/>
+  <g text-anchor="middle" font-size="19">
+    <rect x="20" y="140" width="170" height="90" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="105" y="178" fill="#333" font-weight="bold">next page</text><text x="105" y="205" fill="#333">(1, 2, 3 ...)</text>
+    <polygon points="330,105 440,185 330,265 220,185" fill="#f6f1e3" stroke="#8a6a12" stroke-width="2"/>
+    <text x="330" y="180" fill="#333" font-weight="bold">already</text><text x="330" y="204" fill="#333" font-weight="bold">on disk?</text>
+    <rect x="490" y="140" width="170" height="90" rx="10" fill="#ece6f5" stroke="#6b4fa0" stroke-width="2"/>
+    <text x="575" y="178" fill="#333" font-weight="bold">request</text><text x="575" y="205" fill="#333">100 records</text>
+    <rect x="700" y="140" width="130" height="90" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="765" y="178" fill="#333" font-weight="bold">save raw</text><text x="765" y="205" fill="#333">+ log row</text>
+    <rect x="860" y="140" width="120" height="90" rx="10" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+    <text x="920" y="178" fill="#333" font-weight="bold">wait</text><text x="920" y="205" fill="#333">1 second</text>
+  </g>
+  <line x1="190" y1="185" x2="218" y2="185" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="442" y1="185" x2="487" y2="185" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="465" y="172" font-size="17" fill="#555" text-anchor="middle">no</text>
+  <line x1="660" y1="185" x2="697" y2="185" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="830" y1="185" x2="857" y2="185" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <path d="M920,232 L920,320 L105,320 L105,234" fill="none" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <path d="M330,105 L330,60 L105,60 L105,136" fill="none" stroke="#2a7f8f" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="220" y="50" font-size="17" fill="#2a7f8f" text-anchor="middle">yes: skip it, no request</text>
+  <text x="510" y="355" font-size="18" fill="#333" text-anchor="middle">until the reported total is reached; stop and report if a request fails</text>
+</svg>

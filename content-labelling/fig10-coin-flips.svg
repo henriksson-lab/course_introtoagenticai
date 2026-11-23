@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#ffffff"/>
+  <text x="500" y="36" text-anchor="middle" font-size="19" fill="#1b2a3a">Is this coin a little biased? It lands heads 60% of the time, a fair coin 50%.</text>
+  <g font-size="16" fill="#1b2a3a" text-anchor="middle">
+    <rect x="30" y="60" width="300" height="280" rx="12" fill="#f4f7fa" stroke="#9aa8b5" stroke-width="2"/>
+    <text x="180" y="96" font-size="20" font-weight="bold">10 flips</text>
+    <text x="180" y="138" font-size="30" font-weight="bold" fill="#2a7f8f">6 heads</text>
+    <text x="180" y="176">a fair coin does at least</text><text x="180" y="198">this well 38% of the time</text>
+    <rect x="60" y="250" width="240" height="52" rx="8" fill="#e8eef3"/><text x="180" y="282" font-weight="bold" fill="#5a6a7a">cannot tell</text>
+
+    <rect x="350" y="60" width="300" height="280" rx="12" fill="#faf5e8" stroke="#8a6a12" stroke-width="2"/>
+    <text x="500" y="96" font-size="20" font-weight="bold">100 flips</text>
+    <text x="500" y="138" font-size="30" font-weight="bold" fill="#2a7f8f">60 heads</text>
+    <text x="500" y="176">a fair coin does at least</text><text x="500" y="198">this well 1 time in 35</text>
+    <rect x="380" y="250" width="240" height="52" rx="8" fill="#fbf2dc"/><text x="500" y="282" font-weight="bold" fill="#8a6a12">suspicious</text>
+
+    <rect x="670" y="60" width="300" height="280" rx="12" fill="#e3f1e5" stroke="#2e7d32" stroke-width="2"/>
+    <text x="820" y="96" font-size="20" font-weight="bold">400 flips</text>
+    <text x="820" y="138" font-size="30" font-weight="bold" fill="#2a7f8f">240 heads</text>
+    <text x="820" y="176">a fair coin does at least</text><text x="820" y="198">this well 1 time in 27,000</text>
+    <rect x="700" y="250" width="240" height="52" rx="8" fill="#cfe7d2"/><text x="820" y="282" font-weight="bold" fill="#2e7d32">convincing</text>
+  </g>
+  <text x="500" y="382" text-anchor="middle" font-size="18" fill="#1b2a3a">Words are the flips, green is heads. The same small bias becomes clear only with enough text.</text>
+</svg>

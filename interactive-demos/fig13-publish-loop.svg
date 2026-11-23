@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 350" width="1000" height="350" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="350" fill="#ffffff"/>
+  <rect x="12" y="60" width="145" height="100" rx="10" fill="#eee9f6" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="84.5" y="104.6" font-size="18" fill="#6b4fa0" text-anchor="middle" font-weight="bold" xml:space="preserve">Agent edits</text>
+  <text x="84.5" y="128.0" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">the demo</text>
+  <line x1="158" y1="110" x2="174" y2="110" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <rect x="175" y="60" width="145" height="100" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="247.5" y="104.6" font-size="18" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">Render</text>
+  <text x="247.5" y="128.0" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">site into docs/</text>
+  <line x1="321" y1="110" x2="337" y2="110" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <rect x="338" y="60" width="145" height="100" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="410.5" y="104.6" font-size="18" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">Look</text>
+  <text x="410.5" y="128.0" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">try it locally</text>
+  <line x1="484" y1="110" x2="500" y2="110" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <rect x="501" y="60" width="145" height="100" rx="10" fill="#f5efdf" stroke="#8a6a12" stroke-width="2"/>
+  <text x="573.5" y="104.6" font-size="18" fill="#8a6a12" text-anchor="middle" font-weight="bold" xml:space="preserve">Commit</text>
+  <text x="573.5" y="128.0" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">incl. docs/</text>
+  <line x1="647" y1="110" x2="663" y2="110" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <rect x="664" y="60" width="145" height="100" rx="10" fill="#f5efdf" stroke="#8a6a12" stroke-width="2"/>
+  <text x="736.5" y="104.6" font-size="18" fill="#8a6a12" text-anchor="middle" font-weight="bold" xml:space="preserve">Push</text>
+  <text x="736.5" y="128.0" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">to GitHub</text>
+  <line x1="810" y1="110" x2="826" y2="110" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <rect x="827" y="60" width="145" height="100" rx="10" fill="#f7e6ea" stroke="#a8324a" stroke-width="2"/>
+  <text x="899.5" y="104.6" font-size="18" fill="#a8324a" text-anchor="middle" font-weight="bold" xml:space="preserve">Check live</text>
+  <text x="899.5" y="128.0" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">laptop + phone</text>
+  <path d="M899.5,162 C 800,260 200,260 84.5,162" stroke="#5a6670" stroke-width="2.5" fill="none" stroke-dasharray="7 5"/>
+  <path d="M77.5,176 L84.5,162 L93.5,174" fill="none" stroke="#5a6670" stroke-width="2.5"/>
+  <text x="500" y="275" font-size="18" fill="#5a6670" text-anchor="middle" font-weight="normal" font-style="italic" xml:space="preserve">something to fix? round again</text>
+  <text x="500" y="330" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">The same loop as for your page: edit, render, look, commit, push, check live.</text>
+</svg>

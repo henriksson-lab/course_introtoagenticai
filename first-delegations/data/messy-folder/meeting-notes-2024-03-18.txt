@@ -1,3 +1,0 @@
-Group meeting 2024-03-18
-- growth curves look noisy
-- check shaker

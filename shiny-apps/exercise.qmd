@@ -1,0 +1,232 @@
+---
+title: "Exercise: an app for your data"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+resources:
+  - data/water-quality.csv
+  - example-app/app.R
+  - example-app/water-quality.csv
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- **built a Shiny app** with the agent that lets someone filter, plot and summarise a dataset,
+- **run it on your own computer** and **checked its numbers** against a spreadsheet,
+- **tried to break it** (nothing selected, no matching rows, missing values) and made it fail politely,
+- **exported it with Shinylive** and previewed the static version, after reading exactly which files it contains, and
+- **published an app for your own project** next to your page, with a written decision about what data may be public.
+
+Your session will look different from anyone else's, and so will your app. Compare **the numbers it shows**, not its looks.
+
+## Before you start
+
+- You have R installed (*Terminal survival kit*, *Reproducible figures*). If your figures script from *Reproducible figures* is in Python, you can do the whole exercise with Shiny for Python instead; the notes below say where it differs.
+- You have a page for your project in its own page folder, published on GitHub Pages from `docs/` (*A course or project page*). You need it only for the last part.
+- Make the folder `~/agentic-course/shiny-apps/water-app` (Windows: `C:\Users\<you>\agentic-course\shiny-apps\water-app`) and download the example data into it:
+
+| Download | What it is |
+|---|---|
+| [water-quality.csv](data/water-quality.csv) | 288 invented water samples from four invented sites, 2022–2024: `site`, `date`, `temperature_c`, `ph`, `nitrate_mg_l`, `oxygen_mg_l`. Six values are missing on purpose. |
+
+- Open the CSV once in Excel or LibreOffice and look at it for a minute. (If the numbers look wrong, for example 72 instead of 7.18, it is your spreadsheet's regional setting: import it with **Data → From Text/CSV**, comma as separator and point as decimal.)
+
+::: {.callout-note}
+**Privacy.** The example data is synthetic and may be published. Your own data in the last part may not be. Read the privacy step there **before** you give the agent your data.
+:::
+
+## Worked example
+
+### Step 1: Ask for the app
+
+Start the agent in the `water-app` folder:
+
+::: {.panel-tabset}
+## Claude Code
+```bash
+cd ~/agentic-course/shiny-apps/water-app
+claude
+```
+Manual mode is fine: you approve each file and command.
+
+## Codex
+```bash
+cd ~/agentic-course/shiny-apps/water-app
+codex
+```
+The folder is not a git repository, so Codex may start read-only. Type `/permissions` and choose the mode that lets Codex edit files in this folder (not full access).
+:::
+
+Type this prompt:
+
+```text
+water-quality.csv has water samples from four sites (one row per sample:
+site, date, temperature_c, ph, nitrate_mg_l, oxygen_mg_l). Some values are NA.
+
+Make a Shiny app in app.R so that colleagues can answer questions like
+"how did nitrate at Mill Creek change in 2023?" without asking me.
+
+Inputs: tick boxes for the sites (all ticked at start), a date range, a menu
+for the measurement (with readable names and units), an option for a trend line.
+Outputs: a plot of the measurement over time, one colour per site; a table
+per site with the number of samples, the number missing, mean, min and max;
+the first 20 selected rows; a button to download the selected rows as CSV.
+
+If no site is ticked or no rows match, say so in plain words. Count missing
+values; never drop them silently. Use only shiny and ggplot2.
+Tell me how to start the app, and one number I can check by hand.
+```
+
+For **Shiny for Python**, replace `app.R` with `app.py` and the last packages sentence with "Use only shiny, pandas and matplotlib."
+
+**What to look for.** The agent writes one file, `app.R`. If the R package `shiny` is not installed, it asks to install it: read the command and approve. If it wants other packages, ask why, and whether it can do without. At the end it should tell you how to start the app.
+
+### Step 2: Run the app on your computer
+
+The simplest way is to ask:
+
+```text
+Start the app and tell me the address to open in my browser.
+```
+
+Open the address (it starts with `http://127.0.0.1:`). If the agent cannot keep the app running while you use it, ask it for the exact command and run that yourself in a **second** terminal window, in the same folder:
+
+| | R | Python |
+|---|---|---|
+| Start | `Rscript -e "shiny::runApp()"` | `shiny run app.py` |
+| Stop | Ctrl+C in that terminal | Ctrl+C in that terminal |
+
+If you use RStudio, you can instead open `app.R` and press **Run App**.
+
+`127.0.0.1` means "this computer": nobody else can open the app. After every change to `app.R`, stop the app and start it again (or reload the browser, if the app restarts by itself).
+
+### Check the result
+
+1. **One number by hand.** In the app, tick only **Mill Creek**, set the dates to **2023-01-01** to **2023-12-31**, and choose **nitrate**. Write down the number of samples and the mean. Then, in the spreadsheet, turn on the filter (Data → Filter), filter `site` to Mill Creek and `date` to 2023, and select the `nitrate_mg_l` cells: the status bar shows the count and the average. Both must say **24 samples, mean 2.66**.
+2. **A second number.** Do the same for **Alder Lake**, 2023, nitrate: **24 samples, mean 0.60**. An app that is right for one setting can be wrong for another.
+3. **Missing values.** Choose **oxygen**, **North Pond**, 2023. The table should say **24 samples, 4 missing, mean 11.78**. If it says 20 samples and nothing missing, the app drops missing values silently. If it says `NA`, it does not handle them. Both need fixing.
+4. **Break it.** Untick every site. Then tick one again and set the dates from **2022-01-06** to **2022-01-18** (between two sampling days). In both cases the app should show a short message in plain words, not a red error and not an empty plot without explanation.
+5. **The download.** Choose a setting, press the download button, and open the file. Does it have the same number of rows as the app reports?
+6. **The edges of the dates.** Set the dates from **2024-12-19** to **2024-12-19**, the last sampling day. The app should show 4 rows (one per site). If it shows 0, the date filter leaves out the end date.
+
+If a check fails, say exactly what you saw and what you expected:
+
+```text
+For oxygen at North Pond in 2023 the table says 20 samples and 0 missing.
+The data has 24 samples there, 4 of them NA. Count the NA values in the
+"missing" column and compute the mean from the rest.
+```
+
+::: {.callout-note collapse="true" title="Expected outcome"}
+- One file `app.R` of roughly 60–150 lines, using `shiny` and `ggplot2`.
+- Mill Creek, 2023, nitrate: 24 samples, 0 missing, mean 2.66, min 1.49, max 3.65.
+- Alder Lake, 2023, nitrate: 24 samples, 0 missing, mean 0.60, min 0.32, max 0.89.
+- North Pond, 2023, oxygen: 24 samples, 4 missing, mean 11.78.
+- All four sites, all dates: 288 rows. Missing values in the whole file: 4 oxygen (North Pond, June–July 2023) and 2 pH (Stone River).
+- A reference version of the app is [example-app/app.R](example-app/app.R). Yours does not have to look like it, but it must give the same numbers.
+:::
+
+### Step 3: Export it with Shinylive and preview it
+
+Now turn the app into a static site that runs in the browser. Stop the running app first (Ctrl+C). Start the agent in the **parent** folder `~/agentic-course/shiny-apps`, so that the export can go next to the app, and type:
+
+```text
+Export the Shiny app in water-app/ as a static Shinylive site into the
+folder water-app-site/. Install the shinylive package if needed (ask me
+first). Then list every file from water-app/ that ended up in the export,
+start a local preview server, and tell me the address.
+```
+
+**What to look for.** For R, the agent uses the R package `shinylive` (`shinylive::export(...)`) and previews with `httpuv::runStaticServer(...)`. For Python, it uses the Python package `shinylive` (`shinylive export ...`) and `python3 -m http.server`. The first export downloads the Shinylive files once, which can take a minute.
+
+Check:
+
+1. **The file list.** It should contain only `app.R` and `water-quality.csv`. Everything on that list is published if you publish the export.
+2. **It runs in the browser.** Open the preview address. The first load is slow (R is downloading into the browser). Then the app should look like the one you ran before.
+3. **Same numbers.** Repeat check 1 (Mill Creek, 2023, nitrate: 24 samples, mean 2.66) in the static version.
+4. **It needs a server.** Close the preview, then double-click `water-app-site/index.html` in your file browser. You get a blank page or an error. That is expected: unlike the demo in *Interactive demos*, a Shinylive export must be served by a web server, such as the preview command or GitHub Pages.
+5. **The data is in the browser.** In the preview, open the browser's developer tools (F12, or Cmd+Option+I on a Mac), go to the **Network** tab and reload. Look through the files the page downloads, for example `app.json`. Can you find the rows of `water-quality.csv`? Every visitor can do the same.
+
+::: {.callout-tip}
+If the export fails because a package is not available in the browser, ask the agent to replace it with one that is, or to remove the feature. Keeping to `shiny` and `ggplot2` (or `shiny`, `pandas` and `matplotlib` in Python) avoids most problems.
+:::
+
+## On your own project
+
+Now build an app for data from your own project and publish it next to your page, **if** the data may be published. If it may not, you build the app for local use, and publish a version with aggregated or synthetic data, or nothing at all.
+
+::: {.callout-warning}
+**Privacy reminder.** A Shinylive app publishes its whole data file to every visitor. Personal data, sensitive data, data given in confidence and unpublished data that is not yours to release must **never** go into a Shinylive app. Also remember that the agent reads the data while it builds the app, which sends it to the provider: follow the precautions in your README for your data class.
+:::
+
+### Step 1: Decide what may be public
+
+Open your project's README and look at the data class you wrote in *Privacy, ethics and safety*. Then decide, using the table from the lecture:
+
+| Your data | What you do |
+|---|---|
+| Public or synthetic | build the app on it and publish with Shinylive |
+| Internal (no people), owner agrees to publish | as above; write down who agreed and when |
+| Internal, owner does not agree, or you have not asked | app for local use only; publish nothing, or ask about a university server |
+| Personal or sensitive | no public app; build the app on a synthetic or aggregated stand-in, and check that no small groups remain |
+
+Ask the agent to record the decision:
+
+```text
+Add a section "Data app" to README.md with: the questions the app should
+answer, the data file it uses, the data class, whether the app may be
+published (and who decided), and how I will check its numbers. Use my
+answers below and do not invent anything.
+
+My answers: <write your answers here>
+```
+
+If you need a stand-in, ask for one: "Make a synthetic dataset with the same columns, ranges and number of rows as `<file>`, and a script that generates it. Do not copy any real values." Then check that it really contains no real rows.
+
+### Step 2: Build and check the app
+
+Start the agent in your **project folder** and ask for the app in a subfolder, for example `apps/<name>/`, containing **only** `app.R` (or `app.py`) and the data file it needs. The app's source stays in the project; only its export will go to the public page folder. Adapt the prompt from the worked example: start from the questions in your README, list the inputs and outputs, and keep the sentences about empty selections and missing values.
+
+Then do the same checks as in the worked example:
+
+1. **Two numbers by hand** in a spreadsheet, for two different filter settings.
+2. **Missing values** are counted, not dropped.
+3. **Break it:** nothing selected, no matching rows, the first and last date.
+4. **The download** has as many rows as the app says.
+
+Write the two hand-checked numbers into the README section. Commit.
+
+### Step 3: Publish it next to your page
+
+Only if Step 1 said the data may be public. Exit the agent, go to your **page folder** and start the agent there:
+
+```text
+Export the Shiny app in ../<my-project>/apps/<name>/ with Shinylive into
+the folder <name>-site/ in this website. Add a page explorer.qmd,
+"Data explorer", that says in two sentences what the data is, where it
+comes from and its licence, that the first load takes a few seconds,
+and links to <name>-site/ (or embeds it with an iframe). Add the page
+to the sidebar. List <name>-site under resources in _quarto.yml, next
+to .nojekyll, so that rendering copies it into docs/. Render the site.
+Then list every data file that is now in docs/, with its size.
+```
+
+1. **Read the list of data files.** Is every file on it one you are allowed to publish? If not, stop and fix it before you commit.
+2. Preview the site (ask the agent to start a local preview server for `docs/`; double-clicking does not work for the app), open the app and repeat one hand-checked number.
+3. Commit (including `docs/`) and push. Wait a minute or two for GitHub Pages.
+4. Open the **published** page on your laptop and on your phone. Wait for the first load. Repeat one hand-checked number on the published version.
+5. Add a line to the **Log of AI use** section of your README: what the agent built, which checks you did, and the publishing decision.
+
+If the data may **not** be public, skip the export. Keep the app in your project for local use, and write in the README how to start it. If you think a university server would help, ask your IT department whether one exists, and add their answer to the README.
+
+## What you should have now
+
+- `~/agentic-course/shiny-apps/water-app/app.R`: a checked app for the example data, and `water-app-site/`, its Shinylive export, previewed locally.
+- In your project folder: `apps/<name>/` with an app for your own data (or a stand-in), and a README section with its questions, data class, publishing decision and two hand-checked numbers.
+- If your data may be public: the export in your page folder and a "Data explorer" page on your published site, checked on a laptop and a phone.
+- A new line in the Log of AI use.

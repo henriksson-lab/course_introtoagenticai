@@ -1,0 +1,9 @@
+id,organism_or_material,sample_size,temperature_C,duration_days,note
+S1,Arabidopsis thaliana,43,22,10,"3 x 15 = 45 seedlings, minus 2 excluded = 43"
+S2,first-year engineering students,287,not stated,21,"287 analysed, not 412 invited; three weeks = 21 days; no temperature"
+S3,Danio rerio (zebrafish),96,28.5,3,exposed from day 2 to day 5 = 3 days
+S4,steel coupons,24,35,42,six weeks = 42 days; the 12 reference coupons are not part of this study
+S5,soil,9,not stated,3,72 hours = 3 days; temperature 'constant' but no value given
+S6,Escherichia coli K-12,12,37,not stated,triplicate x 4 conditions = 12; 'overnight + 3 hours' is not a stated number of days
+S7,hospital pharmacists,18,not stated,not stated,"March to May is the data collection period, not a study duration in days"
+S8,Daphnia magna,180,20,21,10 animals x 6 beakers x 3 treatments = 180; use the Celsius value

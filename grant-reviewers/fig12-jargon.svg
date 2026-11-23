@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="1000" height="480" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="480" fill="#fff"/>
+  <rect x="20" y="20" width="580" height="420" rx="8" fill="#fafafa" stroke="#bbb" stroke-width="2"/>
+  <g font-size="18" fill="#333">
+    <text x="40" y="60">Drought affects soil microbes directly through</text>
+    <text x="40" y="88">water stress and indirectly through reduced</text>
+    <text x="40" y="116"><tspan fill="#8a6a12" font-weight="bold">rhizodeposition</tspan>. On rewetting, a pulse of CO2</text>
+    <text x="40" y="144">is released (the <tspan fill="#8a6a12" font-weight="bold">Birch effect</tspan>). Studies in</text>
+    <text x="40" y="172">grasslands have shown shifts in <tspan fill="#8a6a12" font-weight="bold">PLFA</tspan> profiles</text>
+    <text x="40" y="200">after drought ...</text>
+    <text x="40" y="244">2. To test whether this microbial memory</text>
+    <text x="40" y="272">changes <tspan fill="#8a6a12" font-weight="bold">CUE</tspan> and CO2 release ...</text>
+    <text x="40" y="300">3. To link community composition (<tspan fill="#8a6a12" font-weight="bold">ASVs</tspan>,</text>
+    <text x="40" y="328"><tspan fill="#8a6a12" font-weight="bold">beta diversity</tspan>) to carbon fluxes.</text>
+    <text x="40" y="372">... whether a summer drought leaves a</text>
+    <text x="40" y="400"><tspan fill="#8a6a12" font-weight="bold">legacy effect</tspan> in the community ...</text>
+  </g>
+  <rect x="630" y="20" width="350" height="420" rx="8" fill="#f6f1e3" stroke="#8a6a12" stroke-width="2"/>
+  <text x="805" y="56" font-size="19" fill="#8a6a12" font-weight="bold" text-anchor="middle">For the outsider</text>
+  <g font-size="16" fill="#333">
+    <text x="648" y="94"><tspan font-weight="bold">CUE</tspan>: share of carbon microbes</text><text x="660" y="114">turn into biomass, not CO2</text>
+    <text x="648" y="148"><tspan font-weight="bold">ASV</tspan>: one exact DNA sequence</text><text x="660" y="168">type, a proxy for a taxon</text>
+    <text x="648" y="202"><tspan font-weight="bold">PLFA</tspan>: membrane fats that</text><text x="660" y="222">measure living microbial biomass</text>
+    <text x="648" y="256"><tspan font-weight="bold">Birch effect</tspan>: CO2 burst when</text><text x="660" y="276">dry soil is rewetted</text>
+    <text x="648" y="310"><tspan font-weight="bold">rhizodeposition</tspan>: carbon that</text><text x="660" y="330">roots release into soil</text>
+    <text x="648" y="364"><tspan font-weight="bold">legacy effect</tspan>, <tspan font-weight="bold">beta</tspan></text><text x="660" y="384"><tspan font-weight="bold">diversity</tspan>: define once, or drop</text>
+  </g>
+  <text x="500" y="470" font-size="18" fill="#333" text-anchor="middle">Seven terms in two paragraphs. Each costs a busy reader a little attention.</text>
+</svg>

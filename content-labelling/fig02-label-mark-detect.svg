@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#ffffff"/>
+  <g font-size="16" fill="#1b2a3a">
+    <rect x="20" y="30" width="300" height="300" rx="12" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="170" y="66" text-anchor="middle" font-size="21" font-weight="bold" fill="#2a7f8f">Label</text>
+    <text x="170" y="94" text-anchor="middle" fill="#3a4a5a">for people to see</text>
+    <rect x="60" y="120" width="220" height="44" rx="8" fill="#ffffff" stroke="#2a7f8f"/>
+    <text x="170" y="148" text-anchor="middle" font-size="15">"Image generated with AI"</text>
+    <text x="40" y="206">a caption, an icon, a line</text><text x="40" y="230">in the credits</text>
+    <text x="40" y="272" font-weight="bold">Who: the person who</text><text x="40" y="296" font-weight="bold">publishes it</text>
+
+    <rect x="350" y="30" width="300" height="300" rx="12" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+    <text x="500" y="66" text-anchor="middle" font-size="21" font-weight="bold" fill="#6b4fa0">Mark</text>
+    <text x="500" y="94" text-anchor="middle" fill="#3a4a5a">for machines to read</text>
+    <rect x="390" y="120" width="220" height="44" rx="8" fill="#ffffff" stroke="#6b4fa0"/>
+    <text x="500" y="148" text-anchor="middle" font-size="15">metadata + watermark</text>
+    <text x="370" y="206">built in when the content</text><text x="370" y="230">is generated</text>
+    <text x="370" y="272" font-weight="bold">Who: the provider of</text><text x="370" y="296" font-weight="bold">the AI system</text>
+
+    <rect x="680" y="30" width="300" height="300" rx="12" fill="#f8eef0" stroke="#a8324a" stroke-width="2"/>
+    <text x="830" y="66" text-anchor="middle" font-size="21" font-weight="bold" fill="#a8324a">Detect</text>
+    <text x="830" y="94" text-anchor="middle" fill="#3a4a5a">checking afterwards</text>
+    <rect x="720" y="120" width="220" height="44" rx="8" fill="#ffffff" stroke="#a8324a"/>
+    <text x="830" y="148" text-anchor="middle" font-size="15">"was this made by AI?"</text>
+    <text x="700" y="206">reliable only if a mark</text><text x="700" y="230">exists; otherwise a guess</text>
+    <text x="700" y="272" font-weight="bold">Who: anyone with a</text><text x="700" y="296" font-weight="bold">checking tool</text>
+  </g>
+  <text x="500" y="376" text-anchor="middle" font-size="18" fill="#1b2a3a">The EU rules require the first two. The third is what most people mean by "AI detection".</text>
+</svg>

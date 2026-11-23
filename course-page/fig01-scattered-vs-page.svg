@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="1000" height="460" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <rect width="1000" height="460" fill="#fff"/>
+  <text x="200" y="40" font-size="21" font-weight="bold" fill="#a8324a" text-anchor="middle">Now: in five places</text>
+  <g font-size="17">
+    <rect x="40" y="65" width="320" height="58" rx="8" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+    <text x="58" y="92" fill="#333" font-weight="bold">Canvas</text><text x="58" y="113" fill="#555" font-size="15">course info, only for enrolled students</text>
+    <rect x="40" y="135" width="320" height="58" rx="8" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+    <text x="58" y="162" fill="#333" font-weight="bold">E-mail attachments</text><text x="58" y="183" fill="#555" font-size="15">slides_v2.pptx, figure_final.png</text>
+    <rect x="40" y="205" width="320" height="58" rx="8" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+    <text x="58" y="232" fill="#333" font-weight="bold">A shared drive</text><text x="58" y="253" fill="#555" font-size="15">needs a login; links break</text>
+    <rect x="40" y="275" width="320" height="58" rx="8" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+    <text x="58" y="302" fill="#333" font-weight="bold">A paper's supplement</text><text x="58" y="323" fill="#555" font-size="15">a PDF, frozen in 2024</text>
+    <rect x="40" y="345" width="320" height="58" rx="8" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+    <text x="58" y="372" fill="#333" font-weight="bold">Your laptop</text><text x="58" y="393" fill="#555" font-size="15">the newest figure, nowhere else</text>
+  </g>
+  <line x1="380" y1="235" x2="500" y2="235" stroke="#555" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="750" y="40" font-size="21" font-weight="bold" fill="#2a7f8f" text-anchor="middle">After: one address</text>
+  <rect x="520" y="65" width="450" height="340" rx="8" fill="#fff" stroke="#bbb" stroke-width="2"/>
+  <rect x="520" y="65" width="450" height="36" rx="8" fill="#eee"/>
+  <rect x="535" y="72" width="420" height="22" rx="11" fill="#fff" stroke="#ccc"/>
+  <text x="550" y="89" font-size="15" fill="#555">your-username.github.io/plant-growth-page</text>
+  <rect x="520" y="101" width="130" height="304" fill="#f4f8f9"/>
+  <g font-size="15" fill="#2a7f8f"><text x="535" y="130">Home</text><text x="535" y="158" font-weight="bold">Results</text><text x="535" y="186">Slides</text><text x="535" y="214">About</text></g>
+  <text x="670" y="135" font-size="20" font-weight="bold" fill="#333">Results</text>
+  <rect x="670" y="150" width="280" height="170" fill="#f7f7f7" stroke="#ccc"/>
+  <polyline points="690,300 750,270 810,240 870,200 930,170" fill="none" stroke="#6b4fa0" stroke-width="3"/>
+  <polyline points="690,300 750,285 810,268 870,250 930,232" fill="none" stroke="#2a7f8f" stroke-width="3"/>
+  <polyline points="690,300 750,293 810,286 870,279 930,272" fill="none" stroke="#888" stroke-width="3"/>
+  <text x="670" y="350" font-size="15" fill="#333">Figure 1. Mean height by treatment.</text>
+  <text x="670" y="378" font-size="15" fill="#333">Made by scripts/plot_growth.py.</text>
+  <text x="745" y="440" font-size="17" fill="#2a7f8f" text-anchor="middle">open to anyone, always the newest version</text>
+</svg>

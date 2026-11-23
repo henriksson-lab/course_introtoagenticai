@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="500" fill="#fff"/>
+  <rect x="20" y="15" width="960" height="450" rx="10" fill="#1f2430"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="16" xml:space="preserve">
+    <text x="45" y="52" fill="#f2a0b0">&gt; Find everything you can about these eight people.</text>
+    <text x="45" y="84" fill="#e8e8e8">I'd rather not compile broad profiles of named individuals.</text>
+    <text x="45" y="108" fill="#e8e8e8">If you tell me what this is for, I can help with the part</text>
+    <text x="45" y="132" fill="#e8e8e8">that is relevant, using public professional information.</text>
+    <line x1="40" y1="160" x2="960" y2="160" stroke="#555"/>
+    <text x="45" y="196" fill="#8fd3df">&gt; I am preparing my own grant application. The funder has</text>
+    <text x="45" y="220" fill="#8fd3df">  published this review panel. From their public publication</text>
+    <text x="45" y="244" fill="#8fd3df">  lists only, summarise each member's research topics and</text>
+    <text x="45" y="268" fill="#8fd3df">  methods, in the format in profile-template.md. Nothing</text>
+    <text x="45" y="292" fill="#8fd3df">  about private life. Refer to them by expertise in reviews.</text>
+    <text x="45" y="330" fill="#e8e8e8">Understood. I will use ORCID and OpenAlex records only and</text>
+    <text x="45" y="354" fill="#e8e8e8">fill in topics, methods and recent publications for each.</text>
+    <text x="45" y="378" fill="#e8e8e8">Two members share a name with other researchers; I will</text>
+    <text x="45" y="402" fill="#e8e8e8">match by identifier and affiliation and list what I excluded.</text>
+  </g>
+  <text x="975" y="455" font-size="13" fill="#9a9aa8" text-anchor="end">illustrative; real replies differ between models and runs</text>
+  <text x="500" y="490" font-size="18" fill="#333" text-anchor="middle">Say the purpose, limit the scope. If it still refuses, do not try to trick it (see Guardrails and safety levels).</text>
+</svg>

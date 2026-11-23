@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+  <rect width="1000" height="440" fill="#fff"/>
+  <g font-size="20" font-weight="bold" text-anchor="middle">
+    <text x="190" y="40" fill="#2a7f8f">You say</text>
+    <text x="520" y="40" fill="#6b4fa0">The agent runs</text>
+    <text x="840" y="40" fill="#8a6a12">You check</text>
+  </g>
+  <g font-size="17">
+    <!-- row 1 -->
+    <rect x="30" y="65" width="320" height="70" rx="8" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="1.5"/>
+    <text x="45" y="95" fill="#333">"Commit this with a message</text><text x="45" y="120" fill="#333">describing what we did."</text>
+    <rect x="390" y="65" width="260" height="70" rx="8" fill="#1f2430"/>
+    <text x="405" y="95" fill="#e8e8e8" font-family="Menlo, Consolas, monospace" font-size="16">git add clean.py</text><text x="405" y="120" fill="#e8e8e8" font-family="Menlo, Consolas, monospace" font-size="16">git commit -m "..."</text>
+    <text x="690" y="95" fill="#333">the message says what</text><text x="690" y="120" fill="#333">and why, correctly</text>
+    <!-- row 2 -->
+    <rect x="30" y="160" width="320" height="70" rx="8" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="1.5"/>
+    <text x="45" y="190" fill="#333">"Show me what changed</text><text x="45" y="215" fill="#333">since yesterday."</text>
+    <rect x="390" y="160" width="260" height="70" rx="8" fill="#1f2430"/>
+    <text x="405" y="190" fill="#e8e8e8" font-family="Menlo, Consolas, monospace" font-size="16">git log --since=...</text><text x="405" y="215" fill="#e8e8e8" font-family="Menlo, Consolas, monospace" font-size="16">git diff 3f9c2a1</text>
+    <text x="690" y="190" fill="#333">only the files you</text><text x="690" y="215" fill="#333">expected were touched</text>
+    <!-- row 3 -->
+    <rect x="30" y="255" width="320" height="70" rx="8" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="1.5"/>
+    <text x="45" y="285" fill="#333">"Undo your last change</text><text x="45" y="310" fill="#333">to clean.py."</text>
+    <rect x="390" y="255" width="260" height="70" rx="8" fill="#1f2430"/>
+    <text x="405" y="298" fill="#e8e8e8" font-family="Menlo, Consolas, monospace" font-size="16">git restore clean.py</text>
+    <text x="690" y="285" fill="#333">the file is back; nothing</text><text x="690" y="310" fill="#333">else was thrown away</text>
+    <!-- row 4 -->
+    <rect x="30" y="350" width="320" height="70" rx="8" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="1.5"/>
+    <text x="45" y="380" fill="#333">"What did plot.R look like</text><text x="45" y="405" fill="#333">when we made Figure 2?"</text>
+    <rect x="390" y="350" width="260" height="70" rx="8" fill="#1f2430"/>
+    <text x="405" y="393" fill="#e8e8e8" font-family="Menlo, Consolas, monospace" font-size="16">git show 3f9c2a1:plot.R</text>
+    <text x="690" y="380" fill="#333">it is the right commit</text><text x="690" y="405" fill="#333">(date, message)</text>
+  </g>
+  <g stroke="#555" stroke-width="2" marker-end="url(#ar)">
+    <line x1="352" y1="100" x2="385" y2="100"/><line x1="352" y1="195" x2="385" y2="195"/><line x1="352" y1="290" x2="385" y2="290"/><line x1="352" y1="385" x2="385" y2="385"/>
+    <line x1="652" y1="100" x2="682" y2="100"/><line x1="652" y1="195" x2="682" y2="195"/><line x1="652" y1="290" x2="682" y2="290"/><line x1="652" y1="385" x2="682" y2="385"/>
+  </g>
+</svg>

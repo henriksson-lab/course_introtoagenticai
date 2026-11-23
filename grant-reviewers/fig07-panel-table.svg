@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#fff"/>
+  <text x="20" y="28" font-size="18" fill="#555">panel.csv   (copied from the funder's page)</text>
+  <g font-size="16">
+    <rect x="20" y="40" width="960" height="36" fill="#2a7f8f"/>
+    <g fill="#fff" font-weight="bold"><text x="30" y="64">name</text><text x="230" y="64">role</text><text x="310" y="64">affiliation</text><text x="600" y="64">source</text><text x="870" y="64">collected</text></g>
+    <g fill="#333">
+      <text x="30" y="100">Maren Holmqvist</text><text x="230" y="100">chair</text><text x="310" y="100">Tallmark University</text><text x="600" y="100">example.org/.../e-soil</text><text x="870" y="100">2026-11-23</text>
+      <rect x="20" y="110" width="960" height="34" fill="#f4f4f4"/>
+      <text x="30" y="133">Jonas Ekbacka</text><text x="230" y="133">member</text><text x="310" y="133">Kustby University</text><text x="600" y="133">example.org/.../e-soil</text><text x="870" y="133">2026-11-23</text>
+      <text x="30" y="166">Liv Sandström-Okafor</text><text x="230" y="166">member</text><text x="310" y="166">Fjällby Agricultural Univ.</text><text x="600" y="166">example.org/.../e-soil</text><text x="870" y="166">2026-11-23</text>
+      <rect x="20" y="176" width="960" height="34" fill="#f4f4f4"/>
+      <text x="30" y="199">Piet van Ommeren</text><text x="230" y="199">member</text><text x="310" y="199">University of Aldenburg</text><text x="600" y="199">example.org/.../e-soil</text><text x="870" y="199">2026-11-23</text>
+      <text x="30" y="232">Aiko Brandt</text><text x="230" y="232">member</text><text x="310" y="232">Vester Polytechnic</text><text x="600" y="232">example.org/.../e-soil</text><text x="870" y="232">2026-11-23</text>
+      <rect x="20" y="242" width="960" height="34" fill="#f4f4f4"/>
+      <text x="30" y="265">...</text><text x="230" y="265">...</text><text x="310" y="265">... (8 rows)</text>
+    </g>
+  </g>
+  <rect x="20" y="300" width="460" height="130" rx="8" fill="#e3f0f2" stroke="#2a7f8f"/>
+  <text x="40" y="333" font-size="19" fill="#2a7f8f" font-weight="bold">Check</text>
+  <text x="40" y="363" font-size="18" fill="#333">row by row against the funder's page;</text>
+  <text x="40" y="389" font-size="18" fill="#333">same number of names; same spelling;</text>
+  <text x="40" y="415" font-size="18" fill="#333">which year the page says it shows</text>
+  <rect x="520" y="300" width="460" height="130" rx="8" fill="#f8e9ec" stroke="#a8324a"/>
+  <text x="540" y="333" font-size="19" fill="#a8324a" font-weight="bold">Never</text>
+  <text x="540" y="363" font-size="18" fill="#333">let the agent fill in members from memory;</text>
+  <text x="540" y="389" font-size="18" fill="#333">a model can produce plausible names of</text>
+  <text x="540" y="415" font-size="18" fill="#333">people who were never on the panel</text>
+  <text x="980" y="460" font-size="13" fill="#999" text-anchor="end">FICTIONAL people and organisations</text>
+</svg>

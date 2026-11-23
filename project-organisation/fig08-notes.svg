@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#ffffff"/>
+  <g>
+    <rect x="20" y="30" width="300" height="380" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2.5"/>
+    <text x="170" y="68" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="21" font-weight="bold" fill="#2a7f8f">plan.md</text>
+    <text x="170" y="98" text-anchor="middle" font-size="17" fill="#333">where are we?</text>
+    <g font-size="16" fill="#555">
+      <text x="40" y="145">Done</text>
+      <text x="40" y="170">✓ cleaned data (160 rows)</text>
+      <text x="40" y="195">✓ bar chart per site</text>
+      <text x="40" y="235">Next</text>
+      <text x="40" y="260">☐ species per habitat</text>
+      <text x="40" y="285">☐ spring vs autumn</text>
+      <text x="40" y="325">Open</text>
+      <text x="40" y="350">? how many volunteers?</text>
+    </g>
+    <text x="170" y="395" text-anchor="middle" font-size="15" fill="#2a7f8f">read first, update last</text>
+  </g>
+  <g>
+    <rect x="350" y="30" width="300" height="380" rx="10" fill="#f0ecf7" stroke="#6b4fa0" stroke-width="2.5"/>
+    <text x="500" y="68" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="21" font-weight="bold" fill="#6b4fa0">decisions.md</text>
+    <text x="500" y="98" text-anchor="middle" font-size="17" fill="#333">what, and why?</text>
+    <g font-size="16" fill="#555">
+      <text x="370" y="145">2025-10-02</text>
+      <text x="370" y="170">Site F out in autumn:</text>
+      <text x="370" y="195">flooded, not comparable.</text>
+      <text x="370" y="235">2025-11-20</text>
+      <text x="370" y="260">Blank = not visited,</text>
+      <text x="370" y="285">never zero.</text>
+    </g>
+    <text x="500" y="395" text-anchor="middle" font-size="15" fill="#6b4fa0">one entry per decision</text>
+  </g>
+  <g>
+    <rect x="680" y="30" width="300" height="380" rx="10" fill="#f6efdc" stroke="#8a6a12" stroke-width="2.5"/>
+    <text x="830" y="68" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="21" font-weight="bold" fill="#8a6a12">ai-log.md</text>
+    <text x="830" y="98" text-anchor="middle" font-size="17" fill="#333">which tool, for what?</text>
+    <g font-size="16" fill="#555">
+      <text x="700" y="145">2026-11-23  Codex</text>
+      <text x="700" y="170">restructured folder;</text>
+      <text x="700" y="195">checked: scripts rerun,</text>
+      <text x="700" y="220">same 160 rows</text>
+      <text x="700" y="260">2026-11-23  Claude Code</text>
+      <text x="700" y="285">fresh-session test:</text>
+      <text x="700" y="310">5 of 5 correct</text>
+    </g>
+    <text x="830" y="395" text-anchor="middle" font-size="15" fill="#8a6a12">for disclosure later</text>
+  </g>
+</svg>

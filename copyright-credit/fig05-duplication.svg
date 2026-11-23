@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 485" width="1000" height="485" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="480" fill="#fff"/>
+  <!-- axes -->
+  <line x1="110" y1="380" x2="620" y2="380" stroke="#333" stroke-width="2"/>
+  <line x1="110" y1="380" x2="110" y2="50" stroke="#333" stroke-width="2"/>
+  <text x="365" y="436" font-size="19" text-anchor="middle" fill="#333">How many times the text appears in training data</text>
+  <text x="140" y="404" font-size="17" fill="#52606d">once</text>
+  <text x="590" y="404" font-size="17" fill="#52606d" text-anchor="end">thousands</text>
+  <text x="60" y="215" font-size="19" text-anchor="middle" fill="#333" transform="rotate(-90 60 215)">Chance of word-for-word recall</text>
+  <path d="M120,372 C260,368 340,340 420,260 C480,195 540,110 610,75" fill="none" stroke="#a8324a" stroke-width="4"/>
+  <text x="440" y="468" font-size="15" fill="#7b8794" text-anchor="middle">schematic; trend reported by Kandpal et al. 2022 and Carlini et al. 2023</text>
+  <!-- examples -->
+  <g font-size="19">
+    <rect x="660" y="40" width="320" height="200" rx="10" fill="#f9ecef" stroke="#a8324a" stroke-width="2"/>
+    <text x="680" y="75" font-weight="bold" fill="#a8324a">Copied all over the web</text>
+    <text x="680" y="107" fill="#333">• famous opening lines</text>
+    <text x="680" y="137" fill="#333">• song lyrics</text>
+    <text x="680" y="167" fill="#333">• licence texts, popular code</text>
+    <text x="680" y="197" fill="#333">• textbook definitions,</text>
+    <text x="700" y="224" fill="#333">Wikipedia paragraphs</text>
+    <rect x="660" y="265" width="320" height="120" rx="10" fill="#e8f3f5" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="680" y="300" font-weight="bold" fill="#2a7f8f">Seen once or twice</text>
+    <text x="680" y="332" fill="#333">• your niche topic</text>
+    <text x="680" y="362" fill="#333">• most single papers</text>
+  </g>
+  <text x="820" y="420" font-size="18" fill="#1f2933" text-anchor="middle">Bigger models memorise more.</text>
+</svg>

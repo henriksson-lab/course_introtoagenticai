@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#fff"/>
+  <rect x="150" y="15" width="700" height="440" rx="14" fill="#fdf8e6" stroke="#8a6a12" stroke-width="2"/>
+  <text x="500" y="60" font-size="24" font-weight="bold" fill="#8a6a12" text-anchor="middle">Working with two agents</text>
+  <g font-size="20" fill="#333">
+    <rect x="190" y="90" width="24" height="24" rx="4" fill="none" stroke="#2a7f8f" stroke-width="2.5"/>
+    <text x="230" y="110"><tspan font-weight="bold">Separate places:</tspan> one folder (or copy) per agent</text>
+    <rect x="190" y="145" width="24" height="24" rx="4" fill="none" stroke="#2a7f8f" stroke-width="2.5"/>
+    <text x="230" y="165"><tspan font-weight="bold">Same prompt, same data</tspan> when you compare</text>
+    <rect x="190" y="200" width="24" height="24" rx="4" fill="none" stroke="#2a7f8f" stroke-width="2.5"/>
+    <text x="230" y="220"><tspan font-weight="bold">Compare results,</tspan> not sessions: cell by cell</text>
+    <rect x="190" y="255" width="24" height="24" rx="4" fill="none" stroke="#2a7f8f" stroke-width="2.5"/>
+    <text x="230" y="275"><tspan font-weight="bold">Errors:</tspan> fix. <tspan font-weight="bold">Choices:</tspan> decide, write it down</text>
+    <rect x="190" y="310" width="24" height="24" rx="4" fill="none" stroke="#2a7f8f" stroke-width="2.5"/>
+    <text x="230" y="330"><tspan font-weight="bold">Reviews are claims:</tspan> check each one</text>
+    <rect x="190" y="365" width="24" height="24" rx="4" fill="none" stroke="#2a7f8f" stroke-width="2.5"/>
+    <text x="230" y="385"><tspan font-weight="bold">Agreement is not proof:</tspan> still spot-check</text>
+    <rect x="190" y="410" width="24" height="24" rx="4" fill="none" stroke="#2a7f8f" stroke-width="2.5"/>
+    <text x="230" y="430"><tspan font-weight="bold">Watch usage:</tspan> every agent and helper counts</text>
+  </g>
+</svg>

@@ -1,0 +1,283 @@
+---
+title: "Exercise: same task, two agents"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- run **two agents at the same time**, each in its own folder, on the same task,
+- **compared the two results** cell by cell and traced every difference back to a decision,
+- sorted the differences into **errors** (fix them) and **choices** (decide, and write the decision down),
+- had **each tool review the other's script**, and checked every finding against the data,
+- optionally, used **subagents** for an independent recomputation, and
+- applied the same-task-twice check to **one step of your own project**.
+
+The example data is **synthetic**: four invented lakes, two years of samples. Your sessions will look different from anyone else's, and the two agents will differ in different places for you than in the lecture. That is the point of the exercise. Compare **results**, not sessions.
+
+## Before you start
+
+- You have **Claude Code and Codex** installed and signed in (*Accounts and installation*). If you have only one of them, do everything below with two **separate sessions of the same tool**. It still works, but two sessions of one tool share more blind spots, so expect fewer differences.
+- Check your **plan usage** before you start, so you do not run out halfway. This exercise uses one session of each tool plus a few short ones.
+
+| | Claude Code | Codex |
+|---|---|---|
+| See plan usage | type `/usage` in a session | type `/status` in a session |
+
+- Download the data: [lakes.csv](data/lakes.csv) (51 rows; right-click and "Save link as" if your browser opens it as text).
+- You can open two terminal windows (or two tabs) at once. On a Mac: Terminal → Shell → New Window (Cmd+N). On Windows: in Windows Terminal, Ctrl+Shift+T opens a new tab, or open PowerShell a second time.
+
+### Set up the folders
+
+Make the folders by hand in your file browser. The layout is the one from the lecture:
+
+```text
+agentic-course/
+└── parallel-workers/
+    ├── lakes.csv          the original, no agent changes it
+    ├── claude/
+    │   └── lakes.csv      a copy
+    └── codex/
+        └── lakes.csv      a copy
+```
+
+1. In your course folder, make a folder `parallel-workers` and put `lakes.csv` in it.
+2. Inside it, make two folders, `claude` and `codex` (with one tool only: `session1` and `session2`).
+3. Copy `lakes.csv` into each of them.
+
+Open `lakes.csv` in Excel or LibreOffice and look at it for two minutes. Do you see anything you would have to decide about? Write it down before the agents tell you.
+
+## Worked example
+
+### Step 1: Start both agents, one per folder
+
+Open two terminal windows. In the first, start Claude Code in `claude/`; in the second, start Codex in `codex/`.
+
+::: {.panel-tabset}
+## Claude Code (window 1)
+```bash
+cd ~/agentic-course/parallel-workers/claude
+claude
+```
+Windows: `cd $HOME\agentic-course\parallel-workers\claude`. Manual mode is fine: you approve each step.
+
+## Codex (window 2)
+```bash
+cd ~/agentic-course/parallel-workers/codex
+codex
+```
+Windows: `cd $HOME\agentic-course\parallel-workers\codex`. This folder is not a git repository, so Codex probably starts **read-only**. Type `/permissions` and choose the mode that lets it edit files in this folder (not full access).
+:::
+
+### Step 2: Give both exactly the same prompt
+
+Paste this prompt into **both** windows, word for word. Do not add hints about the data: we want to see what each agent decides by itself.
+
+```text
+lakes.csv holds two years of water samples from four lakes.
+Make lake_summary.csv with one row per lake and year: the number of
+samples and the mean temperature, nitrate (mg/L) and total phosphorus.
+Also make a figure, nitrate.png, of nitrate over time for each lake.
+Save the script you use, so I can rerun it, and write decisions.md:
+every decision you made about the data, one line each.
+Do not change lakes.csv.
+```
+
+**What to look for.** Switch between the windows to answer questions and approve steps. Read each permission request before you approve it: is it in the right folder? One agent may finish much earlier than the other. Use the time to start reading its `decisions.md`.
+
+If an agent asks you a question about the data (for example "how should I treat '<5'?"), answer: "Decide yourself and write the decision in decisions.md." For this exercise we want each agent's own choices.
+
+When both are done, each folder should hold a script, `lake_summary.csv`, `nitrate.png` and `decisions.md`. Close neither window yet.
+
+### Step 3: Look at the two results yourself first
+
+Before any agent compares anything, spend three minutes:
+
+1. Open both `lake_summary.csv` files side by side. How many rows does each have? There should be **8**: four lakes, two years.
+2. Open both `nitrate.png` files. Do the four lakes look similar in both? Does any line jump to hundreds?
+3. Read both `decisions.md` files. Which traps did each agent mention? Tick them off against your own list from "Before you start".
+
+### Step 4: Let one agent compare the two results
+
+Open a **third** window (or quit one of the two sessions) and start an agent in the **top folder** `parallel-workers/`, so that it can read both subfolders. Either tool will do.
+
+```text
+claude/ and codex/ each hold a lake_summary.csv made from the same
+lakes.csv. Do not change any file except the one you create.
+Compare the two tables cell by cell. Write comparison.md with a table
+of every cell that differs, and for each one: the value in each
+version, and the reason, found by reading each folder's script and
+decisions.md. Then list any decision that only one of the two
+decisions.md files mentions.
+```
+
+**What to look for.** The agent should ask to create one file, `comparison.md`, and nothing else. If it wants to edit a script or a summary in a subfolder, say no.
+
+### Step 5: Sort each difference into error or choice
+
+Open `comparison.md`. For each difference, decide which kind it is. Ask the comparing agent for evidence wherever you are unsure:
+
+```text
+For the row Tallträsk 2023, show me the rows of lakes.csv that each
+version used, and the value each version used for every "<5".
+```
+
+Write a short list in `comparison.md` yourself (or on paper): for each difference, **error** (which version is wrong, and why) or **choice** (what the options are).
+
+#### Check the result
+
+1. **Rows.** A correct summary has **8 rows** and every `n` (number of samples) is **6**. More rows mean that the four spellings of Lilla Sjön were not merged. An `n` of 7 means the duplicates were kept.
+2. **Errors you can see at a glance.** No mean temperature below 0 °C (that would be -999 averaged in). No mean nitrate above 2 mg/L (that would be µg/L not converted).
+3. **The known values.** Compare both tables with the answer table below. The first three columns must match to the last digit (rounding aside). For phosphorus, find the column that matches each version: that tells you which convention it chose for "<5".
+4. **Spot check by hand.** Pick one lake-year where the two versions differ. In Excel or LibreOffice, filter `lakes.csv` to that lake and year, and count the rows yourself. Are there duplicates? Which spellings are there?
+5. **The comparison itself.** Does `comparison.md` list every difference you saw in step 3? If it missed one, tell it so. The comparing agent can make mistakes too.
+
+::: {.callout-note collapse="true" title="Expected outcome: the answer table"}
+Duplicates removed, four spellings merged into one lake, -999 treated as missing, µg/L divided by 1000. For the four "<5" values (all in Tallträsk) there is no single right answer, so the table has three phosphorus columns, one per convention. Also as a file: [lake-summary-answer.csv](data/lake-summary-answer.csv).
+
+| lake | year | n | mean temp (°C) | mean nitrate (mg/L) | tot P, "<5" = 2.5 | tot P, "<5" left out | tot P, "<5" = 5 |
+|---|---|---|---|---|---|---|---|
+| Björksjön | 2023 | 6 | 14.55 | 0.943 | 28.00 | 28.00 | 28.00 |
+| Björksjön | 2024 | 6 | 15.04 | 1.030 | 30.00 | 30.00 | 30.00 |
+| Lilla Sjön | 2023 | 6 | 15.13 | 1.615 | 45.00 | 45.00 | 45.00 |
+| Lilla Sjön | 2024 | 6 | 15.33 | 1.735 | 45.83 | 45.83 | 45.83 |
+| Mörtsjön | 2023 | 6 | 14.42 | 0.547 | 14.33 | 14.33 | 14.33 |
+| Mörtsjön | 2024 | 6 | 13.15 | 0.592 | 16.50 | 16.50 | 16.50 |
+| Tallträsk | 2023 | 6 | 11.92 | 0.210 | 5.33 | 6.75 | 6.17 |
+| Tallträsk | 2024 | 6 | 11.95 | 0.238 | 5.67 | 7.25 | 6.50 |
+
+The temperature means for Mörtsjön 2023 and Björksjön 2024 are over 5 values (one reading was -999). With "<5" set to 0, Tallträsk phosphorus is 4.50 (2023) and 4.83 (2024).
+
+What the common mistakes look like:
+
+| Mistake | What you see |
+|---|---|
+| duplicates kept | `n = 7` for Björksjön 2023, Mörtsjön 2024 and Tallträsk 2023; Mörtsjön 2024 mean temperature 13.99 instead of 13.15 |
+| spellings not merged | 9 to 12 rows; Lilla Sjön split into two or more "lakes" |
+| -999 used as a number | Mörtsjön 2023 mean temperature about -154 |
+| µg/L not converted | Björksjön 2023 mean nitrate in the hundreds; a spike in the figure |
+| rows with "<5" dropped entirely | `n = 4` for Tallträsk; its temperature and nitrate means change too |
+
+The last mistake is subtle: leaving out the phosphorus value is a choice, but dropping the whole sample also throws away a good temperature and nitrate reading.
+:::
+
+### Step 6: Cross-review: each tool reviews the other's script
+
+Now use each tool as a reviewer of the other. Start the reviewer in the **top folder**, so it can read both subfolders, and tell it not to change anything.
+
+In a **Claude Code** session in `parallel-workers/`:
+
+```text
+Review the script in codex/ that made lake_summary.csv.
+Do not change any file. List:
+1. every decision the script makes about the data,
+2. anything that would give a wrong number, most serious first,
+   each with the line and the rows of lakes.csv that show the problem,
+3. what you checked and found to be fine.
+```
+
+In a **Codex** session in `parallel-workers/`, the same prompt with `claude/` instead of `codex/`.
+
+(With one tool only: use a **fresh** session for each review, never the session that wrote the script.)
+
+#### Check the result
+
+- For **each** finding, look at the line and the rows it names. Is the problem real? Mark each finding **real**, **not real** or **a choice**.
+- Did either review find something the comparison in step 4 did not? That is a mistake both versions share, or one that happened not to change a number.
+- Did either review miss something you know is there (from the answer table)? Write it down: that is a blind spot.
+
+It is normal that at least one finding turns out to be wrong or exaggerated. Reviewers asked to find problems tend to find some.
+
+### Step 7 (optional): An independent recomputation with subagents
+
+In a Claude Code or Codex session in the top folder:
+
+```text
+Use three subagents in parallel. One recomputes, straight from
+lakes.csv and without reading any script, the number of samples and
+the mean nitrate per lake and year, after removing exact duplicate
+rows, merging spellings of the same lake and converting ug/L to mg/L.
+The other two review claude/ and codex/ for the same three points.
+Do not change any file. Give me one table that puts the recomputed
+values next to both versions.
+```
+
+**What to look for.** In Claude Code you see the helpers start and report back. In Codex they appear as separate agent threads. Then check: do the recomputed `n` and nitrate values match the answer table? The recomputation was told about the traps, so it is not a blind test; it is a quick, independent check of the arithmetic.
+
+### Step 8: Settle the choice and rerun
+
+You have now seen that "<5" is a choice. Make it. If you have no field convention, use half the detection limit (2.5), which is common in environmental monitoring, and say so.
+
+Give **both** agents, in their own windows, the same correction:
+
+```text
+Treat exact duplicate rows as one sample. Lake names that differ only
+in upper/lower case, spaces or ö/o are the same lake. -999 means missing. Convert
+ug/L to mg/L. Replace "<5" by 2.5 (half the detection limit) and keep
+the rest of that sample. Update the script, rerun it, and update
+decisions.md.
+```
+
+Then ask the comparing agent in the top folder to compare again, or open the two tables side by side. They should now **agree**, and match the "2.5" column of the answer table.
+
+That correction is a piece of the project's knowledge. In your own project it would go into `CLAUDE.md`/`AGENTS.md`, so that every later session starts with it. In *Making the agent yours* you will see how to turn such rules into a reusable skill.
+
+## On your own project
+
+Choose **one step** of your own project where a wrong number would matter: the script behind the figure from *Reproducible figures*, a summary table, the cleaning of your data, or the extraction table from *Extracting data from PDFs*.
+
+::: {.callout-warning}
+**Privacy reminder.** Running two tools sends your data to **two** providers. Use only data whose class allows both, under your university's policy (see your README, "Data class and precautions"). If one of the tools is not approved for your data, use two sessions of the approved one, or a synthetic stand-in.
+:::
+
+### Part A: the same task twice
+
+1. Make a **comparison folder outside your project repository**, for example `~/agentic-course/<your-project>-compare/`, with two subfolders `claude/` and `codex/`. Copy into each only the input files the step needs. Your project folder itself stays untouched: no agent writes in it during this part.
+2. Write one prompt for the step, in the style of step 2: the result you want, a script, and a `decisions.md`. Do not add the decisions you already know; the point is to see what the agents decide.
+3. Start one agent in each subfolder, give both the same prompt, and let them work.
+4. Compare the results with a third session in the comparison folder, using the step 4 prompt with your own file names.
+5. Sort every difference into **error** or **choice**. Check at least two of them by hand against the raw data.
+
+### Part B: cross-review of your own script
+
+Start the **other** tool (the one that did not write your project's script) in your project folder, and give it the review prompt from step 6 with your own script's name. It only reads; nothing else runs in the folder at the same time.
+
+Check every finding: real, not real, or a choice.
+
+### Part C: write down what you learned
+
+Ask the agent in your project folder (one agent, nothing else running) to:
+
+```text
+Add a section "Data decisions" to CLAUDE.md (or AGENTS.md) with these
+decisions, one line each, and the reason: <paste your settled choices>.
+Add a line to the "Log of AI use" in README.md: today's date, "compared
+<step> between Claude Code and Codex; cross-review", and what changed.
+Show me the diff, then commit with a message that says what changed
+and why.
+```
+
+If a choice changed a number in your results, rerun the step and commit the new result too.
+
+### Check the result
+
+- Your comparison folder holds both results and a `comparison.md` with every difference and its cause.
+- Each difference is marked error or choice, and you checked at least two by hand.
+- The review findings are marked real, not real or choice.
+- `CLAUDE.md`/`AGENTS.md` has a "Data decisions" section, the README log has a new line, and `git log` shows the commit.
+
+## What you should have now
+
+- `parallel-workers/` with two complete results, `comparison.md`, and your list of errors and choices.
+- Two **cross-reviews**, each finding marked real, not real or a choice.
+- Two results that **agree** after you settled the choices, matching the answer table.
+- For your own project: a comparison of one important step, a cross-review of its script, a **"Data decisions"** section in the instruction file, a log line and a commit.
+- A sense of the cost: look at `/usage` (Claude Code) or `/status` (Codex) again and see how much this exercise used.
+
+Next, in *Making the agent yours*, you turn the decisions and the style you keep repeating into skills and slash commands, and connect the agent to PubMed or Zotero.

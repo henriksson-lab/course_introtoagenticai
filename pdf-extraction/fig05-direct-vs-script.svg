@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <rect x="15" y="15" width="475" height="410" rx="10" fill="#efeaf6" stroke="#6b4fa0"/>
+  <text x="252" y="50" font-size="21" font-weight="bold" fill="#6b4fa0" text-anchor="middle">The model reads the page</text>
+  <text x="252" y="76" font-size="15" fill="#555" text-anchor="middle">e.g. Claude Code opening the PDF</text>
+  <g font-size="17" fill="#333">
+    <text x="35" y="118" fill="#2a7f8f" font-weight="bold">+ sees the layout, as you do</text>
+    <text x="35" y="146" fill="#2a7f8f" font-weight="bold">+ copes with odd tables, scans</text>
+    <text x="35" y="174" fill="#2a7f8f" font-weight="bold">+ understands "Table S1"</text>
+    <text x="35" y="222" fill="#a8324a" font-weight="bold">− may misread or invent a digit</text>
+    <text x="35" y="250" fill="#a8324a" font-weight="bold">− a different answer next time</text>
+    <text x="35" y="278" fill="#a8324a" font-weight="bold">− no record of how it read</text>
+    <text x="35" y="306" fill="#a8324a" font-weight="bold">− long PDFs fill the context</text>
+    <text x="35" y="360">Good for: a few papers, odd layouts,</text>
+    <text x="35" y="384">scanned pages, finding where it is.</text>
+  </g>
+  <rect x="510" y="15" width="475" height="410" rx="10" fill="#e3f1f3" stroke="#2a7f8f"/>
+  <text x="747" y="50" font-size="21" font-weight="bold" fill="#2a7f8f" text-anchor="middle">A script reads the file</text>
+  <text x="747" y="76" font-size="15" fill="#555" text-anchor="middle">pdftotext, pdfplumber, PyMuPDF, OCR</text>
+  <g font-size="17" fill="#333">
+    <text x="530" y="118" fill="#2a7f8f" font-weight="bold">+ copies characters exactly</text>
+    <text x="530" y="146" fill="#2a7f8f" font-weight="bold">+ the same answer every time</text>
+    <text x="530" y="174" fill="#2a7f8f" font-weight="bold">+ the script is the record</text>
+    <text x="530" y="202" fill="#2a7f8f" font-weight="bold">+ 500 PDFs cost the same effort</text>
+    <text x="530" y="250" fill="#a8324a" font-weight="bold">− tables come apart</text>
+    <text x="530" y="278" fill="#a8324a" font-weight="bold">− scans give nothing without OCR</text>
+    <text x="530" y="306" fill="#a8324a" font-weight="bold">− finds the wrong number happily</text>
+    <text x="530" y="360">Good for: many papers, the same</text>
+    <text x="530" y="384">layout, rerunning later.</text>
+  </g>
+</svg>

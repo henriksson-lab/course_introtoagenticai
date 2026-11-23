@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Text watermark demo</title>
+<!--
+  Toy simulation of a text watermark ("green list" watermark), for the unit
+  "Labelling AI-generated content" of the course Introduction to agentic AI.
+  Self-contained: no network access, no libraries.
+
+  How the toy works:
+  - A toy "model" writes sentences from a fixed pattern (the, adjective, noun,
+    verb, ...). For every word it has a short list of candidate words that fit.
+  - A secret key and the previous word split the candidates into "green" and
+    "red" (about half each). Without the key you cannot tell which is which.
+  - With the watermark on, the model gives green candidates extra weight.
+  - The detector knows the key, re-colours every word and counts green words.
+    Ordinary text is green about half the time, like a fair coin.
+  - "Paraphrase" replaces a share of the words with other words of the same
+    kind; each replaced word is green or red by chance, and it also changes the
+    colouring of the word after it.
+-->
+<style>
+  :root {
+    --teal: #2a7f8f; --purple: #6b4fa0; --crimson: #a8324a; --ochre: #8a6a12;
+    --ink: #1b2a3a; --grey: #5a6a7a; --light: #eef2f5; --green: #2e7d32;
+    --red: #b23a3a; --bg: #ffffff;
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: Helvetica, Arial, sans-serif; font-size: 15px; line-height: 1.35; }
+  .wrap { max-width: 1180px; margin: 0 auto; padding: 10px 14px; }
+  h1 { font-size: 19px; margin: 0 0 6px 0; color: var(--teal); }
+  .grid { display: grid; grid-template-columns: 340px 1fr; gap: 14px; }
+  @media (max-width: 760px) { .grid { grid-template-columns: 1fr; } }
+  .panel { background: var(--light); border-radius: 8px; padding: 10px 12px; }
+  label { display: block; font-weight: bold; margin-top: 6px; }
+  .val { font-weight: normal; color: var(--purple); }
+  input[type=range] { width: 100%; }
+  .buttons { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+  button { font: inherit; font-size: 14px; padding: 5px 9px; border-radius: 6px;
+    border: 1px solid var(--teal); background: #fff; color: var(--teal); cursor: pointer; }
+  button:hover { background: var(--teal); color: #fff; }
+  button.warn { border-color: var(--crimson); color: var(--crimson); }
+  button.warn:hover { background: var(--crimson); color: #fff; }
+  .small { font-size: 13px; color: var(--grey); }
+  .stats { margin-top: 8px; }
+  .stats div { margin: 2px 0; }
+  .verdict { margin-top: 8px; padding: 8px 10px; border-radius: 6px; font-weight: bold;
+    font-size: 16px; }
+  .v0 { background: #e8eef3; color: var(--grey); }
+  .v1 { background: #fbf2dc; color: var(--ochre); }
+  .v2 { background: #e3f1e5; color: var(--green); }
+  canvas { width: 100%; height: 210px; background: #fff; border: 1px solid #d5dde3;
+    border-radius: 6px; display: block; }
+  .text { margin-top: 8px; background: #fff; border: 1px solid #d5dde3; border-radius: 6px;
+    padding: 8px 10px; height: 120px; overflow-y: auto; font-size: 14px; }
+  .g { color: var(--green); font-weight: bold; }
+  .r { color: var(--red); }
+  .p { text-decoration: underline wavy #888; text-underline-offset: 3px; }
+  .row { display: flex; align-items: center; gap: 8px; margin-top: 6px; flex-wrap: wrap; }
+  .legend span { margin-right: 10px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Text watermark: a toy model, a hidden preference, and a detector that counts</h1>
+  <div class="grid">
+    <div class="panel">
+      <label for="len">Text length: <span class="val" id="lenVal"></span></label>
+      <input type="range" id="len" min="10" max="800" step="10" value="100">
+
+      <label for="str">Watermark strength: <span class="val" id="strVal"></span></label>
+      <input type="range" id="str" min="0" max="5" step="1" value="2">
+      <div class="small" id="strHelp"></div>
+
+      <div class="buttons">
+        <button id="para" class="warn" title="Replace about 10% of the words with other words of the same kind">Paraphrase: replace 10% of words</button>
+        <button id="reset" title="Undo all paraphrasing">Undo paraphrasing</button>
+        <button id="regen" title="Let the model write a new text">New text</button>
+      </div>
+      <div class="small" id="paraInfo"></div>
+
+      <div class="stats" id="stats"></div>
+      <div class="verdict" id="verdict"></div>
+    </div>
+
+    <div>
+      <canvas id="chart" width="800" height="210" aria-label="Share of green words as the text gets longer"></canvas>
+      <div class="small legend" style="margin-top:4px">
+        <span><b style="color:#2a7f8f">&#9472;&#9472;</b> share of green words so far</span>
+        <span><b style="color:#9aa8b5">&#9608;</b> range ordinary text falls in, almost always</span>
+        <span><b style="color:#6b4fa0">- -</b> what the watermark aims for</span>
+      </div>
+      <div class="row">
+        <label style="margin:0;font-weight:normal"><input type="checkbox" id="reveal"> Show the detector's view (green and red words; only someone with the key can do this)</label>
+      </div>
+      <div class="text" id="text"></div>
+    </div>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  // ---------- word lists: the toy model's "vocabulary" by word kind ----------
+  var W = {
+    det:  ["the", "a", "one", "each", "this", "that", "every", "some", "our", "their", "another", "no"],
+    adj:  ["small", "bright", "quiet", "warm", "young", "careful", "large", "slow", "green", "rare",
+           "fresh", "simple", "noisy", "clever", "pale", "steady"],
+    noun: ["cell", "student", "sample", "river", "teacher", "plant", "model", "village", "robot", "letter",
+           "garden", "signal", "colony", "engine", "forest", "report", "crystal", "bird"],
+    verb: ["grows", "moves", "waits", "changes", "listens", "shines", "travels", "rests", "returns", "turns",
+           "learns", "drifts", "settles", "breaks", "glows", "spreads"],
+    prep: ["near", "under", "beside", "behind", "inside", "above", "across", "beyond", "towards", "around"],
+    adv:  ["slowly", "quickly", "today", "again", "quietly", "rarely", "often", "together", "safely", "early"]
+  };
+  // sentence patterns (sequences of word kinds); "." ends a sentence
+  var PATTERNS = [
+    ["det", "adj", "noun", "verb", "prep", "det", "noun"],
+    ["det", "noun", "verb", "adv"],
+    ["det", "adj", "noun", "verb", "adv", "prep", "det", "adj", "noun"],
+    ["det", "noun", "prep", "det", "noun", "verb"],
+    ["det", "adj", "adj", "noun", "verb", "prep", "det", "noun"]
+  ];
+  var CANDIDATES = 8;   // how many fitting words the toy model considers at each step
+  var MAXLEN = 800;
+  var KEY = "secret-key-2026";
+  var MULT = [1, 1.25, 1.5, 2, 3, 5];
+  var STRNAME = ["off (ordinary text)", "very weak", "weak", "medium", "strong", "very strong"];
+
+  // ---------- small deterministic random numbers ----------
+  function rng(seed) {             // mulberry32
+    var a = seed >>> 0;
+    return function () {
+      a = (a + 0x6D2B79F5) >>> 0;
+      var t = a;
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+  function hash(s) {               // FNV-1a, 32 bit
+    var h = 2166136261;
+    for (var i = 0; i < s.length; i++) { h ^= s.charCodeAt(i); h = Math.imul(h, 16777619); }
+    return h >>> 0;
+  }
+  // The secret rule: is word w "green" when it follows word prev?
+  function isGreen(prev, w) { return (hash(KEY + "|" + prev + "|" + w) % 2) === 0; }
+
+  function pickDistinct(list, k, r) {
+    var a = list.slice();
+    for (var i = a.length - 1; i > 0; i--) { var j = Math.floor(r() * (i + 1)); var t = a[i]; a[i] = a[j]; a[j] = t; }
+    return a.slice(0, Math.min(k, a.length));
+  }
+
+  // ---------- the toy model: generate MAXLEN words ----------
+  // returns {words: [...], kinds: [...], ends: [bool: sentence ends after this word]}
+  function generate(seed, mult) {
+    var r = rng(seed);
+    var words = [], kinds = [], ends = [];
+    var prev = ".";
+    while (words.length < MAXLEN) {
+      var pat = PATTERNS[Math.floor(r() * PATTERNS.length)];
+      for (var i = 0; i < pat.length && words.length < MAXLEN; i++) {
+        var kind = pat[i];
+        var cands = pickDistinct(W[kind], CANDIDATES, r);
+        // base preference: a few candidates are more "likely" than others
+        var weights = cands.map(function (_, idx) { return 1 / (1 + 0.35 * idx); });
+        // the watermark: green candidates get extra weight
+        for (var c = 0; c < cands.length; c++) if (isGreen(prev, cands[c])) weights[c] *= mult;
+        var sum = weights.reduce(function (s, x) { return s + x; }, 0);
+        var u = r() * sum, chosen = cands[cands.length - 1];
+        for (var c2 = 0; c2 < cands.length; c2++) { u -= weights[c2]; if (u <= 0) { chosen = cands[c2]; break; } }
+        words.push(chosen); kinds.push(kind); ends.push(i === pat.length - 1);
+        prev = chosen;
+      }
+      prev = ".";
+    }
+    return { words: words, kinds: kinds, ends: ends };
+  }
+
+  // ---------- paraphrasing: replace a share of the words ----------
+  function paraphrase(text, rounds, seed) {
+    var words = text.words.slice(), changed = new Array(words.length).fill(false);
+    var r = rng(seed * 7919 + 17);
+    for (var k = 0; k < rounds; k++) {
+      for (var i = 0; i < words.length; i++) {
+        if (r() < 0.1) {
+          var opts = W[text.kinds[i]], nw = words[i];
+          while (nw === words[i]) nw = opts[Math.floor(r() * opts.length)];
+          words[i] = nw; changed[i] = true;
+        }
+      }
+    }
+    return { words: words, kinds: text.kinds, ends: text.ends, changed: changed };
+  }
+
+  // ---------- the detector ----------
+  function colours(t) {
+    var g = [], prev = ".";
+    for (var i = 0; i < t.words.length; i++) {
+      g.push(isGreen(prev, t.words[i]));
+      prev = t.ends[i] ? "." : t.words[i];
+    }
+    return g;
+  }
+  // chance that ordinary text (fair coin) gets at least `green` green words out of n
+  // (normal approximation; good enough for a demo)
+  function erfc(x) {
+    var z = Math.abs(x), t = 1 / (1 + 0.5 * z);
+    var r = t * Math.exp(-z * z - 1.26551223 + t * (1.00002368 + t * (0.37409196 + t * (0.09678418 +
+      t * (-0.18628806 + t * (0.27886807 + t * (-1.13520398 + t * (1.48851587 +
+      t * (-0.82215223 + t * 0.17087277)))))))));
+    return x >= 0 ? r : 2 - r;
+  }
+  function score(green, n) { return (green - n / 2) / (Math.sqrt(n) / 2); }
+  function chance(z) { return 0.5 * erfc(z / Math.SQRT2); }
+  function oneIn(p) {
+    if (p >= 0.2) return "very likely (" + Math.round(p * 100) + "%)";
+    var x = 1 / p;
+    if (x > 1e12) return "less than 1 in a million million";
+    var s;
+    if (x >= 1e9) s = Number((x / 1e9).toPrecision(2)).toLocaleString("en-GB") + " billion";
+    else if (x >= 1e6) s = Number((x / 1e6).toPrecision(2)).toLocaleString("en-GB") + " million";
+    else if (x >= 1000) s = Math.round(x / 100) * 100;
+    else s = Math.round(x);
+    return "about 1 in " + s.toLocaleString("en-GB");
+  }
+
+  // ---------- state and drawing ----------
+  var el = function (id) { return document.getElementById(id); };
+  var seed = 1, rounds = 0, base = null, baseKey = "";
+
+  function current() {
+    var s = +el("str").value, key = seed + ":" + s;
+    if (key !== baseKey) { base = generate(seed, MULT[s]); baseKey = key; }
+    return rounds > 0 ? paraphrase(base, rounds, seed) : { words: base.words, kinds: base.kinds, ends: base.ends, changed: null };
+  }
+
+  function expectedShare(m) {     // rough expected green share for multiplier m
+    return m / (m + 1);
+  }
+
+  function update() {
+    var n = +el("len").value, s = +el("str").value;
+    el("lenVal").textContent = n + " words";
+    el("strVal").textContent = STRNAME[s];
+    el("strHelp").textContent = s === 0
+      ? "No watermark: the model picks words without looking at their colour."
+      : "Green words get " + MULT[s] + "× the weight of red ones, so the model aims for roughly " +
+        Math.round(expectedShare(MULT[s]) * 100) + "% green words instead of 50%.";
+    el("paraInfo").textContent = rounds === 0 ? "" :
+      "Paraphrased " + rounds + " time" + (rounds > 1 ? "s" : "") + " (about " +
+      Math.round((1 - Math.pow(0.9, rounds)) * 100) + "% of words replaced; underlined below).";
+
+    var t = current(), col = colours(t);
+    var green = 0, cum = [];
+    for (var i = 0; i < n; i++) { if (col[i]) green++; cum.push(green); }
+    var z = score(green, n), p = chance(z);
+
+    // first length from which the detector stays confident (score >= 4)
+    var confidentFrom = null;
+    for (var k = n; k >= 10; k--) {
+      if (score(cum[k - 1], k) >= 4) confidentFrom = k; else break;
+    }
+
+    el("stats").innerHTML =
+      "<div>Green words: <b>" + green + "</b> of " + n + " (<b>" + Math.round(100 * green / n) + "%</b>)</div>" +
+      "<div>Ordinary text: about <b>" + Math.round(n / 2) + "</b> green (50%), like heads on a fair coin</div>" +
+      "<div>Chance that ordinary text scores this high: <b>" + oneIn(p) + "</b></div>" +
+      (confidentFrom ? "<div>Detector confident from about <b>" + confidentFrom + "</b> words on</div>" : "");
+
+    var v = el("verdict");
+    if (z >= 4) { v.className = "verdict v2"; v.textContent = "Watermark detected: this is very unlikely to be chance."; }
+    else if (z >= 2) { v.className = "verdict v1"; v.textContent = "Suspicious, but not convincing: could still be chance."; }
+    else { v.className = "verdict v0"; v.textContent = "No evidence of a watermark."; }
+
+    drawChart(cum, n, s);
+    drawText(t, col, n);
+  }
+
+  function drawChart(cum, n, s) {
+    var c = el("chart"), dpr = window.devicePixelRatio || 1;
+    var Wd = c.clientWidth || 800, Ht = c.clientHeight || 210;
+    c.width = Wd * dpr; c.height = Ht * dpr;
+    var g = c.getContext("2d"); g.setTransform(dpr, 0, 0, dpr, 0, 0);
+    g.clearRect(0, 0, Wd, Ht);
+    var L = 46, R = 12, T = 10, B = 28, w = Wd - L - R, h = Ht - T - B;
+    var ymin = 0.2, ymax = 1.0;
+    var X = function (k) { return L + w * (k - 1) / Math.max(1, n - 1); };
+    var Y = function (v) { return T + h * (1 - (Math.min(ymax, Math.max(ymin, v)) - ymin) / (ymax - ymin)); };
+
+    // chance band: 50% +/- 3 standard deviations (narrows as the text grows)
+    g.fillStyle = "#e2e8ee"; g.beginPath();
+    for (var k = 1; k <= n; k++) g.lineTo(X(k), Y(0.5 + 1.5 / Math.sqrt(k)));
+    for (var k2 = n; k2 >= 1; k2--) g.lineTo(X(k2), Y(0.5 - 1.5 / Math.sqrt(k2)));
+    g.closePath(); g.fill();
+
+    // axes and grid
+    g.strokeStyle = "#c5cfd8"; g.lineWidth = 1; g.fillStyle = "#5a6a7a";
+    g.font = "12px Helvetica, Arial, sans-serif"; g.textAlign = "right"; g.textBaseline = "middle";
+    [0.25, 0.5, 0.75, 1.0].forEach(function (v) {
+      g.beginPath(); g.moveTo(L, Y(v)); g.lineTo(L + w, Y(v)); g.stroke();
+      g.fillText(Math.round(v * 100) + "%", L - 6, Y(v));
+    });
+    g.textAlign = "center"; g.textBaseline = "top";
+    var step = n <= 100 ? 20 : n <= 300 ? 50 : 100;
+    for (var t = step; t <= n; t += step) g.fillText(t, X(t), T + h + 6);
+    g.textAlign = "left"; g.fillText("words", L + 2, T + h + 6);
+
+    // 50% line and target line
+    g.strokeStyle = "#9aa8b5"; g.setLineDash([]); g.beginPath(); g.moveTo(L, Y(0.5)); g.lineTo(L + w, Y(0.5)); g.stroke();
+    if (s > 0) {
+      g.strokeStyle = "#6b4fa0"; g.setLineDash([6, 5]); g.lineWidth = 1.5;
+      var tv = expectedShare(MULT[s]);
+      g.beginPath(); g.moveTo(L, Y(tv)); g.lineTo(L + w, Y(tv)); g.stroke(); g.setLineDash([]);
+    }
+
+    // running share of green words
+    g.strokeStyle = "#2a7f8f"; g.lineWidth = 2.2; g.beginPath();
+    for (var k3 = 1; k3 <= n; k3++) { var y = Y(cum[k3 - 1] / k3); if (k3 === 1) g.moveTo(X(k3), y); else g.lineTo(X(k3), y); }
+    g.stroke();
+  }
+
+  function drawText(t, col, n) {
+    var reveal = el("reveal").checked, out = [];
+    for (var i = 0; i < n; i++) {
+      var w = t.words[i];
+      if (i === 0 || t.ends[i - 1]) w = w.charAt(0).toUpperCase() + w.slice(1);
+      var cls = [];
+      if (reveal) cls.push(col[i] ? "g" : "r");
+      if (t.changed && t.changed[i]) cls.push("p");
+      out.push((cls.length ? '<span class="' + cls.join(" ") + '">' + w + "</span>" : w) + (t.ends[i] ? "." : ""));
+    }
+    el("text").innerHTML = out.join(" ");
+  }
+
+  el("len").addEventListener("input", update);
+  el("str").addEventListener("input", function () { rounds = 0; update(); });
+  el("reveal").addEventListener("change", update);
+  el("para").addEventListener("click", function () { rounds++; update(); });
+  el("reset").addEventListener("click", function () { rounds = 0; update(); });
+  el("regen").addEventListener("click", function () { seed++; rounds = 0; update(); });
+  window.addEventListener("resize", update);
+  update();
+})();
+</script>
+</body>
+</html>

@@ -23,7 +23,7 @@ The first half (worked example) uses only made-up scenarios and public web pages
 
 - You have Claude Code or Codex installed and working (*Accounts and installation*), and you can start it in a folder from the terminal (*Terminal survival kit*).
 - You know which **plan** you use: a personal plan (Claude Pro or Max; ChatGPT Free, Go, Plus or Pro) or an institutional one (Claude Team, Enterprise or Education; ChatGPT Business, Enterprise or Edu). If unsure, look at your account page.
-- You have the course folder you used in *First delegations*. If not, create an empty folder such as `agentic-course` in your Documents folder. Do **not** use your home folder or Desktop.
+- You have the course folder you used in *First delegations*. If not, create the folder `agentic-course` inside your home folder, as in *Terminal survival kit*. Do **not** start the agent in the home folder itself or on the Desktop.
 - Have the **decision flowchart** from the lecture open (slide "One flowchart answers most 'May I give this to the agent?' questions").
 
 Check the two settings below once, now. Menus move between versions; if you cannot find them, search the provider's help pages for the words in quotes.

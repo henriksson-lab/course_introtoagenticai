@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+  <rect width="1000" height="400" fill="#fff"/>
+  <rect x="380" y="20" width="240" height="70" rx="12" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="500" y="52" font-size="20" font-weight="bold" fill="#6b4fa0" text-anchor="middle">codex starts</text>
+  <text x="500" y="77" font-size="16" fill="#333" text-anchor="middle">is this folder under git?</text>
+  <line x1="440" y1="92" x2="250" y2="150" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <line x1="560" y1="92" x2="750" y2="150" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="300" y="115" font-size="17" fill="#555">no</text><text x="680" y="115" font-size="17" fill="#555">yes</text>
+  <rect x="60" y="155" width="380" height="200" rx="12" fill="#f4f4f4" stroke="#888" stroke-width="2"/>
+  <text x="250" y="192" font-size="21" font-weight="bold" fill="#555" text-anchor="middle">suggests Read Only</text>
+  <text x="250" y="230" font-size="17" fill="#333" text-anchor="middle">asks before every change</text>
+  <text x="250" y="265" font-size="17" fill="#333" text-anchor="middle">no undo button underneath,</text>
+  <text x="250" y="290" font-size="17" fill="#333" text-anchor="middle">so it starts careful</text>
+  <rect x="560" y="155" width="380" height="200" rx="12" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="750" y="192" font-size="21" font-weight="bold" fill="#2a7f8f" text-anchor="middle">suggests Auto</text>
+  <text x="750" y="230" font-size="17" fill="#333" text-anchor="middle">edits and runs commands</text>
+  <text x="750" y="255" font-size="17" fill="#333" text-anchor="middle">inside the folder without asking</text>
+  <text x="750" y="290" font-size="17" fill="#333" text-anchor="middle">asks to go outside, use the</text>
+  <text x="750" y="315" font-size="17" fill="#333" text-anchor="middle">network, or rewrite git history</text>
+  <text x="500" y="388" font-size="16" fill="#777" text-anchor="middle">Check with /status, change with /permissions. Names may differ between versions.</text>
+</svg>

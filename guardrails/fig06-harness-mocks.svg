@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="500" fill="#ffffff"/>
+  <!-- left: permission prompt -->
+  <text x="20" y="30" font-size="19" font-weight="bold" fill="#2a7f8f">A permission prompt</text>
+  <rect x="20" y="42" width="470" height="300" rx="10" fill="#1f2430"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="16">
+    <rect x="38" y="60" width="434" height="264" rx="8" fill="#26333f" stroke="#e0c27a" stroke-width="2"/>
+    <text x="56" y="92" fill="#e0c27a" font-weight="bold">Fetch</text>
+    <text x="56" y="122" fill="#ffffff">https://example-journal.org/...</text>
+    <text x="56" y="160" fill="#ffffff">Do you want to allow this?</text>
+    <text x="56" y="196" fill="#ffffff">&#x276F; 1. Yes</text>
+    <text x="76" y="228" fill="#cfd6dc">2. Yes, and don't ask again</text>
+    <text x="76" y="260" fill="#cfd6dc">3. No, and tell the agent</text>
+    <text x="76" y="284" fill="#cfd6dc">   what to do instead</text>
+  </g>
+  <!-- right: sandbox network -->
+  <text x="520" y="30" font-size="19" font-weight="bold" fill="#2a7f8f">A sandbox without network</text>
+  <rect x="520" y="42" width="460" height="300" rx="10" fill="#1f2430"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="16">
+    <text x="540" y="78" fill="#9a9aa8">• Running: download_data.sh</text>
+    <text x="540" y="112" fill="#e07a8a">curl: (6) Could not resolve</text>
+    <text x="540" y="134" fill="#e07a8a">host: ftp.example.org</text>
+    <text x="540" y="176" fill="#e8e8e8">The download failed because</text>
+    <text x="540" y="198" fill="#e8e8e8">network access is turned off</text>
+    <text x="540" y="220" fill="#e8e8e8">in this session. You can turn</text>
+    <text x="540" y="242" fill="#e8e8e8">it on, or download the file</text>
+    <text x="540" y="264" fill="#e8e8e8">yourself and put it in data/.</text>
+  </g>
+  <g font-size="18" fill="#1b2a3a">
+    <text x="20" y="384" font-weight="bold">Signs of a harness guardrail:</text>
+    <text x="40" y="414">• it happens on your computer, before anything is refused by the provider</text>
+    <text x="40" y="442">• it asks <tspan font-weight="bold">you</tspan>, or reports a blocked command, folder or network call</text>
+    <text x="40" y="470">• you can change it: <tspan font-family="Menlo, Consolas, monospace">/permissions</tspan>, the permission mode, the sandbox setting</text>
+  </g>
+  <text x="980" y="492" text-anchor="end" font-size="14" fill="#8a97a5">illustrative; wording varies by tool and version</text>
+</svg>

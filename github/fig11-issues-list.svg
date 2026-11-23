@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#fff"/>
+  <rect x="20" y="10" width="960" height="430" rx="8" fill="#fff" stroke="#bbb" stroke-width="2"/>
+  <text x="45" y="52" font-size="22" fill="#2a7f8f">your-username / <tspan font-weight="bold">plant-growth</tspan></text>
+  <g font-size="16" fill="#333"><text x="45" y="90">&lt;&gt; Code</text><text x="145" y="90" font-weight="bold">Issues 4</text><text x="250" y="90">Pull requests</text></g>
+  <line x1="40" y1="100" x2="960" y2="100" stroke="#ddd" stroke-width="2"/>
+  <line x1="140" y1="100" x2="225" y2="100" stroke="#a8324a" stroke-width="3"/>
+  <rect x="45" y="120" width="910" height="300" rx="6" fill="#fff" stroke="#ccc"/>
+  <rect x="45" y="120" width="910" height="40" rx="6" fill="#f4f4f4"/>
+  <text x="65" y="146" font-size="16" fill="#333"><tspan font-weight="bold">3 Open</tspan>    1 Closed</text>
+  <g font-size="18" fill="#333">
+    <circle cx="72" cy="190" r="9" fill="none" stroke="#2a7f8f" stroke-width="2.5"/>
+    <text x="95" y="196" font-weight="bold">README names a script that does not exist</text>
+    <text x="95" y="220" font-size="14" fill="#777">#1 opened by your-username</text>
+    <rect x="560" y="178" width="70" height="24" rx="12" fill="#f8e9ec"/><text x="595" y="195" font-size="14" fill="#a8324a" text-anchor="middle">bug</text>
+    <line x1="45" y1="235" x2="955" y2="235" stroke="#eee"/>
+    <circle cx="72" cy="265" r="9" fill="none" stroke="#2a7f8f" stroke-width="2.5"/>
+    <text x="95" y="271" font-weight="bold">Script reads data from a path on Anna's laptop</text>
+    <text x="95" y="295" font-size="14" fill="#777">#2 opened by your-username</text>
+    <rect x="560" y="253" width="70" height="24" rx="12" fill="#f8e9ec"/><text x="595" y="270" font-size="14" fill="#a8324a" text-anchor="middle">bug</text>
+    <line x1="45" y1="310" x2="955" y2="310" stroke="#eee"/>
+    <circle cx="72" cy="340" r="9" fill="none" stroke="#2a7f8f" stroke-width="2.5"/>
+    <text x="95" y="346" font-weight="bold">Add a licence (MIT for code, CC BY for figures)</text>
+    <text x="95" y="370" font-size="14" fill="#777">#4 opened by a-colleague</text>
+    <rect x="560" y="328" width="110" height="24" rx="12" fill="#f1edf7"/><text x="615" y="345" font-size="14" fill="#6b4fa0" text-anchor="middle">to do</text>
+  </g>
+  <g font-size="16" fill="#a8324a">
+    <text x="720" y="200">one problem</text><text x="720" y="222">per issue</text>
+    <text x="720" y="350">a colleague can</text><text x="720" y="372">file one too</text>
+  </g>
+  <text x="975" y="462" font-size="14" fill="#999" text-anchor="end">illustrative</text>
+</svg>

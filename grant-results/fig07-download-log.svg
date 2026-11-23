@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#fff"/>
+  <text x="20" y="30" font-size="18" fill="#555">data/raw/swecris/download-log.csv</text>
+  <g font-size="17">
+    <rect x="20" y="45" width="960" height="36" fill="#2a7f8f"/>
+    <g fill="#fff" font-weight="bold">
+      <text x="30" y="69">time</text><text x="200" y="69">URL (without the token)</text><text x="610" y="69">file</text><text x="800" y="69">records</text><text x="890" y="69">total</text>
+    </g>
+    <g fill="#333">
+      <rect x="20" y="81" width="960" height="34" fill="#f4f4f4"/>
+      <text x="30" y="104">2026-11-23 14:02:11</text><text x="200" y="104">.../scp/search?searchText=soil&amp;page=1</text><text x="610" y="104">soil_page001.json</text><text x="830" y="104">100</text><text x="890" y="104">1031</text>
+      <text x="30" y="138">2026-11-23 14:02:13</text><text x="200" y="138">.../scp/search?searchText=soil&amp;page=2</text><text x="610" y="138">soil_page002.json</text><text x="830" y="138">100</text><text x="890" y="138">1031</text>
+      <rect x="20" y="149" width="960" height="34" fill="#f4f4f4"/>
+      <text x="30" y="172">...</text><text x="200" y="172">...</text><text x="610" y="172">...</text>
+      <text x="30" y="206">2026-11-23 14:02:32</text><text x="200" y="206">.../scp/search?searchText=soil&amp;page=11</text><text x="610" y="206">soil_page011.json</text><text x="840" y="206">31</text><text x="890" y="206">1031</text>
+    </g>
+  </g>
+  <line x1="20" y1="222" x2="980" y2="222" stroke="#999"/>
+  <rect x="545" y="240" width="435" height="56" rx="6" fill="#e3f0f2" stroke="#2a7f8f"/>
+  <text x="560" y="275" font-size="18" fill="#2a7f8f" font-weight="bold">check: 10 × 100 + 31 = 1031 = reported ✓</text>
+  <rect x="20" y="240" width="510" height="56" rx="6" fill="#f8e9ec" stroke="#a8324a"/>
+  <text x="35" y="275" font-size="19" fill="#a8324a" font-weight="bold">no token in the URL column, ever</text>
+  <text x="20" y="345" font-size="19" fill="#333">The log is your methods line: source, search, date, number of records.</text>
+  <text x="20" y="375" font-size="19" fill="#333">A rerun adds no rows: every page is already on disk.</text>
+  <text x="980" y="410" font-size="13" fill="#999" text-anchor="end">illustrative numbers</text>
+</svg>

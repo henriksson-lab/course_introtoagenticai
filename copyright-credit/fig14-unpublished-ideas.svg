@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="1000" height="450" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="450" fill="#fff"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker></defs>
+  <rect x="20" y="130" width="230" height="150" rx="12" fill="#f1ecf8" stroke="#6b4fa0" stroke-width="2.5"/>
+  <text x="135" y="180" font-size="21" font-weight="bold" fill="#6b4fa0" text-anchor="middle">Your drafts</text>
+  <text x="135" y="210" font-size="18" fill="#333" text-anchor="middle">proof, grant idea,</text>
+  <text x="135" y="234" font-size="18" fill="#333" text-anchor="middle">unpublished data</text>
+  <line x1="252" y1="205" x2="350" y2="205" stroke="#52606d" stroke-width="3" marker-end="url(#a)"/>
+  <text x="300" y="190" font-size="16" fill="#52606d" text-anchor="middle">session</text>
+  <rect x="355" y="130" width="200" height="150" rx="12" fill="#f0f4f8" stroke="#52606d" stroke-width="2.5"/>
+  <text x="455" y="195" font-size="21" font-weight="bold" fill="#1f2933" text-anchor="middle">Provider</text>
+  <text x="455" y="224" font-size="18" fill="#52606d" text-anchor="middle">cloud</text>
+  <g font-size="18">
+    <line x1="557" y1="160" x2="640" y2="70" stroke="#52606d" stroke-width="2" marker-end="url(#a)"/>
+    <line x1="557" y1="190" x2="640" y2="165" stroke="#52606d" stroke-width="2" marker-end="url(#a)"/>
+    <line x1="557" y1="220" x2="640" y2="260" stroke="#52606d" stroke-width="2" marker-end="url(#a)"/>
+    <line x1="557" y1="250" x2="640" y2="355" stroke="#52606d" stroke-width="2" marker-end="url(#a)"/>
+    <text x="650" y="62" font-weight="bold" fill="#1f2933">Kept for a while</text>
+    <text x="650" y="86" fill="#52606d">retention period of your plan</text>
+    <text x="650" y="157" font-weight="bold" fill="#1f2933">Used for training?</text>
+    <text x="650" y="181" fill="#52606d">a setting on personal plans</text>
+    <text x="650" y="252" font-weight="bold" fill="#1f2933">Seen by staff?</text>
+    <text x="650" y="276" fill="#52606d">for safety reviews, by policy</text>
+    <text x="650" y="347" font-weight="bold" fill="#1f2933">Requested in a lawsuit?</text>
+    <text x="650" y="371" fill="#52606d">it has happened (NYT case)</text>
+  </g>
+  <rect x="20" y="320" width="535" height="105" rx="10" fill="#e8f3f5" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="40" y="355" font-size="19" font-weight="bold" fill="#2a7f8f">Your controls</text>
+  <text x="40" y="383" font-size="18" fill="#333">training off · institutional plan · what goes in</text>
+  <text x="40" y="408" font-size="18" fill="#333">· dated record of your own work (git, preprint)</text>
+</svg>

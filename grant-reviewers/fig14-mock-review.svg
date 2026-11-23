@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="560" fill="#fff"/>
+  <rect x="20" y="15" width="960" height="510" rx="10" fill="#fafafa" stroke="#999" stroke-width="2"/>
+  <text x="40" y="52" font-size="21" font-weight="bold" fill="#333">Mock review 2 of 3: expertise in statistics and experimental design</text>
+  <line x1="40" y1="66" x2="960" y2="66" stroke="#ccc"/>
+  <g font-size="17" fill="#333">
+    <text x="40" y="100" font-weight="bold">Scientific quality</text><text x="300" y="100" fill="#a8324a" font-weight="bold">3 (Good)</text>
+    <text x="60" y="126">Weakness: "using all 120 cores per occasion as independent samples". The</text>
+    <text x="60" y="150">treatment is applied to plots: n = 3 roofs vs 3 controls. Pseudoreplication.</text>
+    <text x="60" y="174">Strength: two droughts with a legacy year between them is a good idea.</text>
+    <text x="40" y="214" font-weight="bold">Novelty and originality</text><text x="300" y="214" fill="#8a6a12" font-weight="bold">4 (Very good)</text>
+    <text x="60" y="240">Repeated field droughts in boreal soils are less common than lab studies.</text>
+    <text x="40" y="280" font-weight="bold">Merits of the applicant</text><text x="300" y="280" fill="#555" font-weight="bold">not assessed</text>
+    <text x="60" y="306">The draft contains no CV or publication list; merits cannot be judged.</text>
+    <text x="40" y="346" font-weight="bold">Feasibility</text><text x="300" y="346" fill="#a8324a" font-weight="bold">2 (Partly feasible)</text>
+    <text x="60" y="372">No power analysis; "we do not foresee major risks" with one site and one</text>
+    <text x="60" y="396">season per drought. All sequencing in year 4 leaves no time to recover.</text>
+    <text x="40" y="436" font-weight="bold">Overall</text><text x="300" y="436" fill="#a8324a" font-weight="bold">3 (Good)</text>
+    <text x="60" y="462">A worthwhile question; the design must be fixed before it can be funded.</text>
+  </g>
+  <text x="40" y="508" font-size="14" fill="#999">synthetic draft; written by an agent; grades are not a prediction</text>
+  <rect x="680" y="195" width="280" height="110" rx="8" fill="#e3f0f2" stroke="#2a7f8f"/>
+  <text x="695" y="223" font-size="16" fill="#2a7f8f" font-weight="bold">Good signs</text>
+  <text x="695" y="247" font-size="16" fill="#333">quotes from the draft;</text>
+  <text x="695" y="269" font-size="16" fill="#333">funder's criteria and scale;</text>
+  <text x="695" y="291" font-size="16" fill="#333">refuses to judge merits</text>
+</svg>

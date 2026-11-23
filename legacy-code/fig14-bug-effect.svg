@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <line x1="110" y1="340.0" x2="760" y2="340.0" stroke="#e6e6e6"/><text x="100" y="345.0" font-size="16" text-anchor="end" fill="#333">0.0</text>
+  <line x1="110" y1="298.6" x2="760" y2="298.6" stroke="#e6e6e6"/><text x="100" y="303.6" font-size="16" text-anchor="end" fill="#333">0.1</text>
+  <line x1="110" y1="257.1" x2="760" y2="257.1" stroke="#e6e6e6"/><text x="100" y="262.1" font-size="16" text-anchor="end" fill="#333">0.2</text>
+  <line x1="110" y1="215.7" x2="760" y2="215.7" stroke="#e6e6e6"/><text x="100" y="220.7" font-size="16" text-anchor="end" fill="#333">0.3</text>
+  <line x1="110" y1="174.3" x2="760" y2="174.3" stroke="#e6e6e6"/><text x="100" y="179.3" font-size="16" text-anchor="end" fill="#333">0.4</text>
+  <line x1="110" y1="132.9" x2="760" y2="132.9" stroke="#e6e6e6"/><text x="100" y="137.9" font-size="16" text-anchor="end" fill="#333">0.5</text>
+  <line x1="110" y1="91.4" x2="760" y2="91.4" stroke="#e6e6e6"/><text x="100" y="96.4" font-size="16" text-anchor="end" fill="#333">0.6</text>
+  <line x1="110" y1="50.0" x2="760" y2="50.0" stroke="#e6e6e6"/><text x="100" y="55.0" font-size="16" text-anchor="end" fill="#333">0.7</text>
+  <text x="35" y="195.0" font-size="18" text-anchor="middle" fill="#333" transform="rotate(-90 35 195.0)">growth rate (per hour)</text>
+  <rect x="135" y="102.9" width="48" height="237.1" fill="#a8324a"/>
+  <rect x="187" y="91.8" width="48" height="248.2" fill="#2a7f8f"/>
+  <text x="185" y="366" font-size="18" text-anchor="middle" fill="#333">WT</text>
+  <text x="185" y="81.8" font-size="16" text-anchor="middle" fill="#2a7f8f">+4.7 %</text>
+  <rect x="263" y="132.4" width="48" height="207.6" fill="#a8324a"/>
+  <rect x="315" y="120.8" width="48" height="219.2" fill="#2a7f8f"/>
+  <text x="313" y="366" font-size="18" text-anchor="middle" fill="#333">dA</text>
+  <text x="313" y="110.8" font-size="16" text-anchor="middle" fill="#2a7f8f">+5.6 %</text>
+  <rect x="391" y="99.2" width="48" height="240.8" fill="#a8324a"/>
+  <rect x="443" y="84.1" width="48" height="255.9" fill="#2a7f8f"/>
+  <text x="441" y="366" font-size="18" text-anchor="middle" fill="#333">dB</text>
+  <text x="441" y="74.1" font-size="16" text-anchor="middle" fill="#2a7f8f">+6.3 %</text>
+  <rect x="519" y="185.8" width="48" height="154.2" fill="#a8324a"/>
+  <rect x="571" y="177.3" width="48" height="162.7" fill="#2a7f8f"/>
+  <text x="569" y="366" font-size="18" text-anchor="middle" fill="#333">dC</text>
+  <text x="569" y="167.3" font-size="16" text-anchor="middle" fill="#2a7f8f">+5.5 %</text>
+  <rect x="647" y="210.9" width="48" height="129.1" fill="#a8324a"/>
+  <rect x="699" y="204.4" width="48" height="135.6" fill="#2a7f8f"/>
+  <text x="697" y="366" font-size="18" text-anchor="middle" fill="#333">dAB</text>
+  <text x="697" y="194.4" font-size="16" text-anchor="middle" fill="#2a7f8f">+5.1 %</text>
+  <line x1="110" y1="340" x2="760" y2="340" stroke="#333" stroke-width="1.5"/>
+  <g font-size="18">
+    <rect x="790" y="80" width="22" height="22" fill="#a8324a"/><text x="822" y="98" fill="#333">original and</text>
+    <text x="822" y="122" fill="#333">faithful port</text><text x="822" y="146" fill="#333">(3 blanks)</text>
+    <rect x="790" y="180" width="22" height="22" fill="#2a7f8f"/><text x="822" y="198" fill="#333">after fix 1</text>
+    <text x="822" y="222" fill="#333">(all 4 blanks)</text>
+  </g>
+  <text x="500" y="405" font-size="18" text-anchor="middle" fill="#333">Mean of 4 replicate wells per strain, plate_0312.csv</text>
+  <text x="980" y="432" font-size="14" fill="#999" text-anchor="end">synthetic exercise data; computed by running the original and the fixed script</text>
+</svg>

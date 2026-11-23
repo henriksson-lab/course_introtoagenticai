@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#ffffff"/>
+  <text x="30" y="36" font-size="19" font-weight="bold" fill="#1b2a3a">Rough guide: a 4-bit model needs a bit more than half a GB of memory per billion parameters</text>
+  <g font-size="16" fill="#1b2a3a">
+    <text x="30" y="80" font-weight="bold" fill="#5a6a7a">Your hardware</text>
+    <text x="470" y="80" font-weight="bold" fill="#5a6a7a">Model size it can run comfortably</text>
+  </g>
+  <!-- rows -->
+  <g font-size="17">
+    <rect x="30" y="96" width="400" height="62" rx="8" fill="#f4f7fa" stroke="#9aa8b5"/>
+    <text x="46" y="122" fill="#1b2a3a" font-weight="bold">Laptop, 8 GB memory</text><text x="46" y="146" font-size="15" fill="#5a6a7a">most office laptops</text>
+    <rect x="470" y="104" width="90" height="46" rx="6" fill="#2a7f8f"/>
+    <text x="574" y="133" fill="#1b2a3a">1 to 4 billion parameters: simple text tasks</text>
+
+    <rect x="30" y="172" width="400" height="62" rx="8" fill="#f4f7fa" stroke="#9aa8b5"/>
+    <text x="46" y="198" fill="#1b2a3a" font-weight="bold">Laptop, 16 GB memory</text><text x="46" y="222" font-size="15" fill="#5a6a7a">many recent laptops</text>
+    <rect x="470" y="180" width="160" height="46" rx="6" fill="#2a7f8f"/>
+    <text x="644" y="209" fill="#1b2a3a">7 to 14 billion; gpt-oss-20b just fits</text>
+
+    <rect x="30" y="248" width="400" height="62" rx="8" fill="#f4f7fa" stroke="#9aa8b5"/>
+    <text x="46" y="274" fill="#1b2a3a" font-weight="bold">32 to 64 GB (e.g. a recent Mac)</text><text x="46" y="298" font-size="15" fill="#5a6a7a">or a desktop with a gaming GPU</text>
+    <rect x="470" y="256" width="220" height="46" rx="6" fill="#6b4fa0"/>
+    <text x="704" y="285" fill="#1b2a3a">around 30 billion; 70 billion is slow</text>
+
+    <rect x="30" y="324" width="400" height="62" rx="8" fill="#f4f7fa" stroke="#9aa8b5"/>
+    <text x="46" y="350" fill="#1b2a3a" font-weight="bold">Server with data-centre GPUs</text><text x="46" y="374" font-size="15" fill="#5a6a7a">a university or national service</text>
+    <rect x="470" y="332" width="480" height="46" rx="6" fill="#a8324a"/>
+    <text x="490" y="361" fill="#ffffff" font-weight="bold">200 to 700 billion: the large open models</text>
+  </g>
+  <text x="30" y="424" font-size="16" fill="#1b2a3a">More memory also buys a longer context (more text at once). Speed depends on the GPU, not just memory.</text>
+  <text x="30" y="450" font-size="15" fill="#5a6a7a">Orders of magnitude only. Check the size of the actual download in the app before you start.</text>
+</svg>

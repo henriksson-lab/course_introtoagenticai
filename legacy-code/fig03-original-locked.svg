@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="380" fill="#fff"/>
+  <rect x="20" y="15" width="960" height="350" rx="10" fill="#fafafa" stroke="#bbb"/>
+  <text x="45" y="52" font-size="21" font-weight="bold" fill="#333">growth-port/</text>
+  <text x="200" y="52" font-size="17" fill="#666">a git repository</text>
+  <g font-size="19">
+    <rect x="45" y="75" width="420" height="270" rx="10" fill="#f6e4e8" stroke="#a8324a" stroke-width="2"/>
+    <text x="65" y="108" font-weight="bold" fill="#a8324a">original/   read only</text>
+    <rect x="410" y="86" width="26" height="22" rx="3" fill="#a8324a"/>
+    <path d="M415,86 v-7 a8,8 0 0 1 16,0 v7" fill="none" stroke="#a8324a" stroke-width="3"/>
+    <g fill="#333" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17">
+      <text x="75" y="145">gr_calc.m  blcorr.m</text>
+      <text x="75" y="172">mvavg.m    fitwin.m</text>
+      <text x="75" y="199">README.txt</text>
+      <text x="75" y="226">plate_0312.csv</text>
+      <text x="75" y="253">gr_out_0312.txt</text>
+    </g>
+    <text x="65" y="300" font-size="17" fill="#a8324a">committed first, exactly as received;</text>
+    <text x="65" y="324" font-size="17" fill="#a8324a">the evidence behind published numbers</text>
+    <rect x="510" y="75" width="445" height="270" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="530" y="108" font-weight="bold" fill="#2a7f8f">the work, beside it</text>
+    <g fill="#333" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="17">
+      <text x="540" y="145">CODE_MAP.md   README.md</text>
+      <text x="540" y="172">docs/annotated/</text>
+      <text x="540" y="199">reference/</text>
+      <text x="540" y="226">port/</text>
+      <text x="540" y="253">compare_outputs.py</text>
+      <text x="540" y="280">ASSUMPTIONS.md</text>
+    </g>
+    <text x="530" y="324" font-size="17" fill="#2a7f8f">the agent may write here</text>
+  </g>
+</svg>

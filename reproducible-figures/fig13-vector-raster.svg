@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#fff"/>
+  <text x="250" y="35" font-size="21" font-weight="bold" fill="#2a7f8f" text-anchor="middle">Vector: PDF, SVG</text>
+  <text x="750" y="35" font-size="21" font-weight="bold" fill="#a8324a" text-anchor="middle">Raster: PNG, JPG, TIFF</text>
+  <!-- vector zoom: smooth circle and letter -->
+  <rect x="60" y="60" width="380" height="240" rx="8" fill="#fafafa" stroke="#ddd"/>
+  <circle cx="170" cy="180" r="70" fill="#0072B2" opacity="0.8"/>
+  <text x="330" y="220" font-size="130" fill="#333" text-anchor="middle">a</text>
+  <!-- raster zoom: pixel blocks -->
+  <rect x="560" y="60" width="380" height="240" rx="8" fill="#fafafa" stroke="#ddd"/>
+  <g fill="#0072B2" opacity="0.8">
+    <rect x="630" y="110" width="40" height="20"/><rect x="610" y="130" width="80" height="20"/><rect x="600" y="150" width="100" height="20"/>
+    <rect x="600" y="170" width="100" height="20"/><rect x="600" y="190" width="100" height="20"/><rect x="610" y="210" width="80" height="20"/><rect x="630" y="230" width="40" height="20"/>
+  </g>
+  <g fill="#333">
+    <rect x="790" y="140" width="20" height="20"/><rect x="810" y="130" width="40" height="20"/><rect x="850" y="140" width="20" height="40"/>
+    <rect x="810" y="170" width="40" height="20"/><rect x="790" y="190" width="20" height="20"/><rect x="810" y="210" width="40" height="20"/><rect x="850" y="180" width="20" height="50"/>
+  </g>
+  <g font-size="17" fill="#333" text-anchor="middle">
+    <text x="250" y="330">zoomed in: still sharp</text>
+    <text x="250" y="360">text stays editable (Illustrator, Inkscape)</text>
+    <text x="250" y="390">for journals, posters, editing</text>
+    <text x="750" y="330">zoomed in: pixels</text>
+    <text x="750" y="360">size fixed when saved (mm × dpi)</text>
+    <text x="750" y="390">for slides, web, Word</text>
+  </g>
+</svg>

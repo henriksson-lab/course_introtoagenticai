@@ -1,0 +1,13 @@
+id,n_analysed,unit,test
+1,42,participants,Welch t-test
+2,24,mice,Mann-Whitney U test
+3,45,cores (from 15 sites),linear mixed model
+4,312,students,chi-squared test
+5,8,"donors (1,204 images)",nested ANOVA
+6,81,plants,one-way ANOVA with Tukey's HSD
+7,64,volunteers,paired t-test
+8,3,biological replicates per condition,unpaired t-test
+9,150,patient records,Cox proportional hazards model
+10,17,classrooms,none
+11,90,participants,Kruskal-Wallis test
+12,not stated,samples,Fisher's exact test

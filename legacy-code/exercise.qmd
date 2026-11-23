@@ -1,0 +1,314 @@
+---
+title: "Exercise: port an inherited script"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- a **map**, a **README** and **commented copies** of a small inherited MATLAB analysis, with the original files untouched,
+- **reference outputs** from the original code, committed before any porting,
+- a **faithful port** to R or Python that reproduces the reference outputs, checked by a **comparison script** with a tolerance you chose in advance,
+- an **assumptions list** that says which of the code's hidden assumptions hold for a new data file,
+- **one bug fix** as a separate, recorded change, with its effect on the results measured, and
+- the same steps started on **old code from your own project**.
+
+All data in this exercise is **synthetic**. The "former PhD student" and the experiment are made up.
+
+Your session will look different from anyone else's. Agents differ each run. Compare **results** (the numbers and the checks), not sessions.
+
+## Before you start
+
+- You have done *Git as undo button and lab notebook* (the agent can make commits for you) and *Reproducible figures* (R or Python is installed and the agent has run scripts in it).
+- You do **not** need MATLAB. GNU Octave, a free program that runs most MATLAB code, is optional (see step 3).
+- Download [growth-legacy.zip](data/growth-legacy.zip) and unzip it into a new folder `legacy-code` inside your course folder, so that you have `~/agentic-course/legacy-code/growth-legacy/` (Windows: `C:\Users\<you>\agentic-course\legacy-code\growth-legacy\`). On Windows, check that the files are directly inside `growth-legacy`, not in a second folder of the same name.
+
+The zip holds what the student left behind:
+
+| File | What it is |
+|---|---|
+| `README.txt` | four lines: "run gr_calc in matlab (change fname first) …" |
+| `gr_calc.m` | the main script: growth rates from plate-reader curves |
+| `blcorr.m`, `mvavg.m`, `fitwin.m` | three helper functions |
+| `plate_0312.csv` | example data: optical density (OD) of 24 wells over 14 hours |
+| `gr_out_0312.txt` | the output the student saved from `plate_0312.csv` |
+| `plate_0409.csv` | a newer plate from the new student, never analysed |
+
+The supervisor's request: *"Port this to R or Python so the new student can use it on the April plate. The strain means went into our 2019 paper."*
+
+Open `README.txt` and `gr_calc.m` in a text editor for a minute. You do not need to understand the code. Just notice how little it tells you.
+
+## Worked example
+
+### Step 1: set up the folder, with the original locked
+
+Open a terminal in `~/agentic-course/legacy-code` (with `cd`, as in *Terminal survival kit*) and start the agent there.
+
+```text
+Set up a project folder for porting old code:
+1. Create a folder growth-port/ here, and inside it a folder original/.
+2. Copy every file from growth-legacy/ into growth-port/original/,
+   unchanged.
+3. Make growth-port/ a git repository and commit the original files
+   with the message "Original code and data as received".
+4. In growth-port/, create a notes file for agents (CLAUDE.md if you
+   are Claude Code, AGENTS.md if you are Codex) with this rule:
+   "Never change, rename or delete anything in original/. Read only."
+   Commit it.
+Do not change anything in growth-legacy/.
+```
+
+When it is done, close the agent (`/exit` or Ctrl+C twice), go into the new folder and start it again there, so that it works inside the project:
+
+::: {.panel-tabset}
+## Claude Code
+```bash
+cd growth-port
+claude
+```
+## Codex
+```bash
+cd growth-port
+codex
+```
+:::
+
+**Check:** in your file browser, `growth-port/original/` holds the same 8 files as `growth-legacy/`. Ask the agent "show me the git log": there should be one or two commits.
+
+### Step 2: ask for a map, a README and comments
+
+For this step the agent only needs to read. In Claude Code you can switch to **plan mode** (Shift+Tab until the status line says plan mode); in Codex, a **read-only** session (`/permissions`). Switch back to a mode that allows edits when it asks to write the files.
+
+```text
+original/ holds MATLAB code written by a former PhD student. Do not
+change anything in original/. Read all of it and write CODE_MAP.md with:
+- the entry point and what each file does, in plain words
+- what calls what, in order
+- inputs (files, columns, units) and outputs (files, columns, units)
+- every hard-coded setting: numbers, file names, well positions
+- code that is commented out or never used
+- anything that looks inconsistent, for example a comment that
+  disagrees with the code
+- your questions for me: things you could not tell from the code
+For each claim, say whether you read it in the code or inferred it.
+```
+
+Read `CODE_MAP.md` (ask the agent to show it, or open it in a text editor). Then:
+
+```text
+Now write README.md for a new student: what the code is for, how to
+run it, what it needs, what it produces, and the open questions from
+CODE_MAP.md. Then make commented copies of the four .m files in
+docs/annotated/: add comments that explain each block in plain words,
+with units and the meaning of every hard-coded number. Change nothing
+but comments. Then compare each annotated file with the original,
+ignoring comment lines, and confirm they are identical.
+Commit when done.
+```
+
+#### Check the result
+
+1. **Original untouched.** Ask: "Has anything in original/ changed since the first commit? Check with git." The answer must be no.
+2. **The map.** Compare `CODE_MAP.md` with the expected map below. Did it find the entry point, the three helpers, and the hard-coded settings?
+3. **The inconsistencies.** Did the agent notice that the comment says the blanks are A1, B1, C1, **D1**, but the list `bl = [1 7 13]` has only three wells? Did it notice that the time column of the CSV is never read? If not, ask it directly: "Look again at the blank wells and at how time is computed."
+4. **Read versus inferred.** Pick two claims marked "inferred". Would you have to ask the student or the lab notebook to confirm them?
+
+::: {.callout-note collapse="true" title="Expected map"}
+- **Entry point:** `gr_calc.m`. It reads `plate_0312.csv` (file name typed into the script), skipping the header line.
+- **Time:** computed as `(0:n-1) * 15/60` hours, i.e. it **assumes** one reading every 15 minutes. The first column of the file (time in minutes) is **never used**.
+- **Wells:** columns 2 to 25 are wells A1 to D6, row by row (A1..A6, B1..B6, …).
+- **`blcorr.m`:** subtracts the mean of the blank wells at each time point; values below 0.001 are set to 0.001 (so the log works).
+- **Blank wells:** `bl = [1 7 13]`, i.e. A1, B1, C1. The comment says column 1 (A1, B1, C1, **D1**). D1 is well 19 and is **not** in the list. It is therefore analysed as a sample; its row in the output is all NaN.
+- **`mvavg.m`:** 3-point centred moving average over time (2 points at the ends).
+- **`fitwin.m`:** for each well, fits a straight line to log(OD) between the first point above 0.02 and the first point above 0.2. The slope is the growth rate per hour. R² of the fit. Returns NaN if the window has fewer than 4 points. Window positions are counted from 1.
+- **Doubling time:** `0.6931 / mu * 60`, in minutes (0.6931 is ln 2).
+- **Output** `gr_out_0312.txt` (the 4 digits after `plate_` in the file name): one row per non-blank well (well, rate, doubling time, R², first, last), then mean, standard deviation and count of the rate per strain. Strains `WT, dA, dB, dC, dAB` are columns 2 to 6, with rows A to D as replicates.
+- **Commented out:** old thresholds 0.05 and 0.3; a plot.
+- **Questions worth asking:** why three blanks? Why 0.02 and 0.2 ("notebook 3 p. 41")? Is the reading interval always 15 minutes?
+:::
+
+### Step 3: pin down the reference outputs
+
+The student's saved output is your answer key. Make it official before any porting:
+
+```text
+Create a folder reference/ and copy original/gr_out_0312.txt into it.
+Commit it with the message "Reference output from the original code".
+From now on, never change anything in reference/ either. Add that rule
+to the notes file.
+```
+
+**Optional: rerun the original with Octave.** If you want to confirm that the saved output really comes from this code, ask:
+
+```text
+Is GNU Octave installed? If not, tell me how you would install it on
+this computer and wait for my approval. Then run original/gr_calc.m
+on original/plate_0312.csv from a temporary copy of original/ (not
+inside original/), and compare its output with reference/gr_out_0312.txt.
+```
+
+Octave is a large install; skip it if it takes long. The output should be identical. Octave may print a few warnings; note them.
+
+### Step 4: port it, faithfully
+
+Choose the language you used in *Reproducible figures*.
+
+```text
+Port the MATLAB code in original/ to Python (or: R), in port/.
+Rules:
+- A FAITHFUL port: reproduce exactly what the old code does, including
+  anything that looks like a bug or a strange choice. Do not fix
+  anything yet. List everything you were tempted to fix in
+  port/TEMPTED_TO_FIX.md instead.
+- One function per MATLAB function, with the same names.
+- The same output file format as gr_out_0312.txt, column by column,
+  written to port/gr_out_0312.txt.
+- Before you start, list the differences between MATLAB and
+  Python (or R) that could change the numbers here, and say how you
+  will handle each one.
+Run the port on original/plate_0312.csv. Do not compare yet.
+```
+
+**What to look for.** The list of differences should mention at least: counting from 1 versus 0 (the `first` and `last` columns), and, for Python, that numpy's standard deviation divides by *n* unless told otherwise, while MATLAB divides by *n* − 1. If the agent does not mention them, do not tell it yet. The comparison will show whether it handled them.
+
+### Step 5: compare with a tolerance set in advance
+
+The reference has 4 decimals for rates and R², and 2 for doubling times. Set the tolerance before you see any result:
+
+```text
+Write compare_outputs.py (or .R) that reads reference/gr_out_0312.txt
+and port/gr_out_0312.txt and compares them:
+- rows matched by well name and by strain name; the same rows must be
+  present in both files, in the same order
+- mu_per_h, r2, mean_mu, sd_mu: difference at most 0.0001
+- td_min: difference at most 0.01
+- first, last, n, and NaN entries: must match exactly
+Print one line per value that fails, and a summary: number of checks,
+passed, failed. Do not change the tolerances, and do not change
+anything in reference/ or original/. Run it and show me the summary.
+```
+
+#### Check the result
+
+1. **Read the summary yourself.** How many checks? How many failed? Which columns?
+2. **If something fails**, ask the agent where the difference starts and why, then let it fix the **port** (not the test) and rerun. The usual suspects are `sd_mu` (*n* versus *n* − 1) and `first`/`last` (off by one).
+3. **The cheating check.** Once everything passes, ask:
+
+```text
+Did you change the tolerances, anything in reference/, or type in any
+expected values to make the comparison pass? Show me with git which
+files changed since the reference commit.
+```
+
+The only files that should have changed are in `port/` and the comparison script.
+
+4. **The D1 row.** The faithful port must still have a `D1` row with NaN values. If it is missing, the agent "fixed" the blank wells during the port. Ask it to put the faithful behaviour back.
+5. **Commit:** "Faithful port matches reference within tolerance".
+
+::: {.callout-note collapse="true" title="Expected result of the comparison"}
+- 21 well rows (20 sample wells plus `D1` with NaN) and 5 strain rows, identical names and order.
+- All rates, R² values and strain means match to within 0.0001; doubling times to within 0.01; `first`, `last` and `n` exactly. For example `A2  0.5723  72.67  0.9994  11  27` and `WT  mean 0.5724  sd 0.0152  n 4`.
+- A typical first Python port fails only on `sd_mu` (it gives 0.0132 instead of 0.0152 for WT: 0.0152 × √(3/4)), or is off by one in `first` and `last`. The fix is one argument in the port (`ddof=1`) or adding one to the window positions in the output. The tolerance does not change.
+- An R port often passes at once, because R, like MATLAB, counts from 1 and divides by *n* − 1.
+:::
+
+### Step 6: list the assumptions, and test them on the new plate
+
+```text
+Write ASSUMPTIONS.md: a table with one row for every assumption the
+code makes about its input data or the experiment (reading interval,
+which wells are blanks, plate layout, strain names, thresholds, file
+naming, ...). Columns: assumption, where in the code, holds for
+plate_0312.csv?, holds for plate_0409.csv?, how you checked.
+Check the two data files themselves, do not guess. Do not change code.
+```
+
+#### Check the result
+
+- Open both CSV files in Excel or LibreOffice and look at the first column (`Time [min]`). What is the step between rows in each file?
+- The table must say that the **15-minute assumption fails for `plate_0409.csv`**, which is read every 10 minutes. If the original or the faithful port were run on the April plate, every growth rate would come out about a third too low, with no warning.
+- The blank-well row should say that the code uses three blanks but the plate layout (and the comment) has four. That is a question for the supervisor, not something the agent can decide.
+
+### Step 7: fix, one change at a time
+
+Assume you asked the supervisor, who says: "D1 is a normal blank; all four column-1 wells are blanks. And the new reader is set to 10 minutes." Now fix, in two separate steps:
+
+```text
+Fix 1: use all four blank wells A1, B1, C1, D1 in the port.
+Rerun on plate_0312.csv, save the result as port/gr_out_0312_fix1.txt,
+and give me a table of the strain means before and after, with the
+change in percent. Do not change reference/. Commit with a message
+that states the change and its effect.
+```
+
+```text
+Fix 2: compute time from the Time [min] column of the file instead of
+assuming 15 minutes, and stop with a clear error if the time steps are
+not all equal. Rerun on plate_0312.csv: the results must be identical
+to fix 1, because that plate was read every 15 minutes. Then run on
+plate_0409.csv and save port/gr_out_0409.txt. Commit each step.
+```
+
+Finally, ask for the record:
+
+```text
+Add a section "Changes from the original" to README.md: each fix, why,
+who decided, and its effect on the 0312 strain means. Also log this
+session in the README's "Log of AI use" style: date, tool, what the
+agent did, how it was checked.
+```
+
+#### Check the result
+
+1. Fix 1 changes the strain means of `plate_0312.csv` by about **+5 %** (table below). The `D1` row disappears from the output.
+2. Fix 2 leaves the 0312 results **exactly** as after fix 1. If anything changed, something else was changed too; ask what.
+3. On `plate_0409.csv`, WT should come out close to WT on the March plate after fix 1 (about 0.59 per hour), not around 0.37.
+4. `git log` shows the reference commit, the faithful port, fix 1 and fix 2 as separate commits.
+
+::: {.callout-note collapse="true" title="Expected numbers after the fixes"}
+Strain means (growth rate per hour), `plate_0312.csv`:
+
+| Strain | Original and faithful port | After fix 1 (4 blanks) | Change |
+|---|---|---|---|
+| WT | 0.5724 | 0.5991 | +4.7 % |
+| dA | 0.5012 | 0.5292 | +5.6 % |
+| dB | 0.5812 | 0.6178 | +6.3 % |
+| dC | 0.3723 | 0.3928 | +5.5 % |
+| dAB | 0.3115 | 0.3274 | +5.1 % |
+
+`plate_0409.csv` after both fixes: WT 0.5894, dA 0.5233, dB 0.5973, dC 0.3962, dAB 0.3188. (The unfixed original on this plate would give WT 0.3720 instead.)
+
+These numbers come from running the original MATLAB code and the fixed code in Octave. A port in R or Python should agree to the fourth decimal.
+:::
+
+**A thought for the discussion.** The 2019 paper used the strain means from the unfixed code. The fix moves every strain by about the same few per cent, so comparisons **between** strains hardly change. Would that be enough to leave the paper as it is? Who should decide? (Lecture slide: "When published numbers came from buggy code, talk before you change anything".)
+
+## On your own project
+
+Find a piece of **old code** that your own project depends on, or could reuse: a script from a former group member, an analysis from your own thesis, an Excel workbook with macros, a colleague's R script that "just works". Small is fine: one script and its example data.
+
+::: {.callout-warning}
+**Privacy and ownership first.** Before the agent reads any of it, search the code yourself (with your editor's search, without the agent) for **personal data** (names, patient or student IDs, e-mail addresses), **passwords and server addresses**, and **data pasted into the code**. Remove them in a copy, or choose other code. Make sure you may use the code: ask its author or your supervisor, and do not publish a port without permission.
+:::
+
+1. **Set up** a subfolder of your project, for example `legacy/`, with the code in `legacy/original/`, committed before anything else. Add the read-only rule to your project's `CLAUDE.md` / `AGENTS.md`.
+2. **Map and README.** Use the step 2 prompts. Then read the map with your domain knowledge: which hard-coded numbers are scientific choices, and do you know the reasons? Write the reasons you know into the README; list the ones you do not know as questions for the author.
+3. **Reference outputs.** Run the original on its example data (in the original program, in Octave, or by a colleague), or find saved outputs. Commit them in `legacy/reference/`. If you cannot get any reference output at all, write that down: it means you cannot check a port yet.
+4. **Decide: port or not?** Using the lecture's decision figure, write two sentences in the README on what this code must do in two years, and whether you will keep it, port one path, or port it all.
+5. If you port: **faithful port, comparison with a tolerance set in advance, assumptions list**, as in steps 4 to 6. Stop at a passing comparison; fixes can wait.
+6. Add a line to your project README's **Log of AI use**: date, tool, what the agent did with the old code, and how you checked it.
+
+If your project has no old code, take the script you made in *Reproducible figures*, start a **fresh session** that has never seen it, and ask for `CODE_MAP.md` and a README as if it were inherited. Does the map describe what you meant? Every place where it guesses wrong is a comment your script needs.
+
+## What you should have now
+
+- `growth-port/` with `original/` (untouched, first commit), `reference/`, `CODE_MAP.md`, `README.md`, `docs/annotated/`, `port/`, a comparison script, `ASSUMPTIONS.md`, and a git history in which the faithful port and each fix are separate commits.
+- A comparison you can rerun in seconds, and the numbers for how much each fix moved the results.
+- In your own project: a `legacy/` folder with the original, a map and README, reference outputs (or a note on why there are none), a decision on porting, and a new line in the **Log of AI use**.
+- Two habits for any code you inherit: **reference outputs before changes**, and **faithful first, fixes later**.

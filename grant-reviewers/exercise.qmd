@@ -1,0 +1,206 @@
+---
+title: "Exercise: profile a panel and review your draft"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- turned a published review panel into a **table with source and date**, and seen why the agent must not fill it in from memory,
+- built **expertise profiles** in a fixed format from publication records, and caught a **namesake** that does not belong,
+- matched the profiles against a draft: **gaps** an expert will see and **jargon** a non-expert will not know,
+- written **mock reviews** with the funder's own criteria, from kinds of expertise rather than named people,
+- **triaged** every point into fix, explain or ignore, and compared your list with the known weaknesses of the draft.
+
+The worked example uses a **synthetic draft and a fictional panel**: the people, universities and papers do not exist. You apply the method to a real call in the last part, on your own computer, for your own preparation only.
+
+Your session will look different from anyone else's. Compare **findings**, not wording.
+
+::: {.callout-important}
+**Ethics, in four lines.** A real panel list with profiles is personal data, even though it is public. Collect only professional facts, keep the files private, and delete them after the decision. **Never contact or lobby a panel member.** Never write a mock review "as" a named person.
+:::
+
+## Before you start
+
+- You have done *Literature review* (looking up papers and identifiers) and *Collecting and analysing grant results* (keys in `.env`).
+- Make a folder `grant-reviewers` inside your course folder (`~/agentic-course`, on Windows `C:\Users\<you>\agentic-course`).
+- Download [reviewer-prep.zip](data/reviewer-prep.zip) and unzip it into that folder. You get a subfolder `reviewer-prep` with three files:
+  - `proposal-draft.md`: a synthetic draft research plan, "Drought legacies in boreal forest soils"
+  - `panel-fictional.csv`: a fictional review panel of eight people
+  - `publications-fictional.csv`: invented publication records for them, shaped like what ORCID or OpenAlex return
+- Read `proposal-draft.md` yourself first (five minutes). Note two things you would criticise.
+- Do **not** put anything else from this course in the folder. The script that made the files lists the weaknesses of the draft, and the agent would read it.
+- Start the agent in `grant-reviewers` (`claude` or `codex`). Manual mode or Codex's default mode is fine: the agent only needs to read and write files in this folder.
+
+## Worked example
+
+### Step 1: the panel list, and what the agent must not add
+
+```text
+Read reviewer-prep/panel-fictional.csv. How many members are there, who
+is the chair, and what is the source and date of the list?
+Then: who else was on this panel in earlier years?
+```
+
+**What to look for.** The first answer should be eight members, chair Maren Holmqvist, source an `example.org` address, collected 2026-11-23. The second question is a test. The right answer is that the agent does not know and cannot know from this file. If it names people, it has invented them: write that in your failure log from *How LLMs and agents work*. On a real call, this is exactly how plausible but wrong panel members get into a table.
+
+### Step 2: expertise profiles in a fixed format
+
+First give the agent a template, so the profiles stay professional and comparable:
+
+```text
+Create profile-template.md with exactly these headings:
+Name and identifier; Affiliation; Main topics; Main methods; Study systems;
+Recent work (3 to 5, each with year and title); Likely to look for in a
+proposal like the one in reviewer-prep/proposal-draft.md; Sources;
+Excluded records (with reason).
+Add one line at the top: "Professional information only. No private life,
+opinions, photos or social media."
+```
+
+Then:
+
+```text
+Using only reviewer-prep/publications-fictional.csv, write one profile per
+panel member in profiles/, following profile-template.md. Match records to
+panel members by identifier and affiliation, not by name alone. List every
+record you excluded and why. Do not use any other source and do not add
+anything that is not in the records.
+```
+
+#### Check the result
+
+1. **Eight profiles**, one per panel member, all with the same headings.
+2. **The namesake.** Open the profile of Jonas Ekbacka. It must contain only the microbial ecology papers (identifier `fictional-id-0002`). The two history papers by another Jonas Ekbacka (`fictional-id-0901`, Department of History) must be listed under "Excluded records". If they were merged in, tell the agent what is wrong and ask it to redo that profile.
+3. **Nothing invented.** Pick two profiles and compare every recent-work line with `publications-fictional.csv`. Any title not in the file is invented.
+4. **Professional only.** No profile says anything about personality, opinions or private life. If one does, delete the line and tell the agent.
+5. **"Likely to look for".** Does it make sense? The statistician should be expected to look at replication and power; the hydrologist at how soil moisture is measured.
+
+::: {.callout-tip}
+**Practise a real lookup on yourself.** The fictional people have no real records, so practise the lookup on the one person you may profile freely and can check completely: yourself. Ask: "Find my works in OpenAlex using my ORCID <your ORCID> and fill in profile-template.md for me. Show me the API addresses you used." Without a key, OpenAlex works on a small shared daily budget; if you make a free key, put it in `.env` as in the previous unit. In Codex, approve the network request after reading the address. Check: are these your papers? Did it miss or add any? Does "Main topics" describe your work?
+:::
+
+### Step 3: gaps for experts, jargon for outsiders
+
+```text
+Here is my draft (reviewer-prep/proposal-draft.md) and the profiles in
+profiles/. For each profile, write a short note in matching/:
+1. Which sections of my draft will this person read as an expert?
+2. What would this expert find thin, missing or overclaimed? Quote the
+   sentence from my draft each time.
+3. Which terms in my draft would this person NOT know if they are not an
+   expert in it? List them with the section where they first appear.
+Then make matching/matrix.md: draft sections x reviewers, each cell
+"expert" or "outsider".
+Do not invent anything about the reviewers beyond their profiles.
+Refer to them by expertise ("the statistician"), not by name.
+```
+
+#### Check the result
+
+- Every gap comes with a **quote** that you can find in the draft (use your text editor's search).
+- The notes refer to people by expertise, not by name.
+- Compare with the two criticisms you noted before you started. Did the agent find them? Did it find things you missed?
+- The jargon lists are not identical for everyone: the animal ecologist should have a long list, the microbial ecologist a short one.
+
+### Step 4: mock reviews with the funder's criteria
+
+First get the criteria from the funder, not from the model's memory:
+
+```text
+Fetch https://www.vr.se/english/applying-for-funding/how-applications-are-assessed/criteria-and-grading-scales.html
+and write criteria.md with the basic criteria for research grants and
+their grading scales, quoted exactly, with the URL and today's date.
+```
+
+**Check.** Open the page yourself and compare. For research grants you should find four criteria: *Scientific quality of the proposed research*, *Novelty and originality*, *Merits of the applicant(s)* (each 1 to 7) and *Feasibility* (1 to 3), plus an overall grade (1 to 7). If the page has changed since this exercise was written, trust the page.
+
+Then:
+
+```text
+Write three mock reviews of reviewer-prep/proposal-draft.md, using the
+criteria and grading scales in criteria.md. One review each from:
+- a reviewer whose expertise is soil biogeochemistry and carbon cycling
+- a reviewer whose expertise is statistics and experimental design
+- a reviewer from a neighbouring field (animal ecology) who is not an expert
+For each criterion: a grade, the main strengths and weaknesses, and a quote
+from the draft for every weakness. Be as critical as a strict panel member.
+Do not comment on the applicant's merits: there is no CV in the draft; say so.
+Save them as mock-reviews/review-1.md, review-2.md, review-3.md, and then
+write mock-reviews/summary.md: a table of the points raised, which reviewer
+raised each, and the grades side by side.
+```
+
+#### Check the result
+
+1. **Criteria.** Each review uses the four criteria and the scales from `criteria.md`, not invented ones.
+2. **Merits.** No review praises or criticises the applicant's track record. If one does ("the applicant has an excellent publication record"), it invented it: strike it and note it in your failure log.
+3. **Quotes.** Every weakness has a quote you can find in the draft.
+4. **Literature claims.** If a review says "this was shown by X et al.", check that the paper exists (as in *Literature review*). The draft's own reference "Example et al. 2019" is invented on purpose.
+5. **Different voices.** The three reviews should not say the same thing. The outsider should comment on clarity and significance more than on methods.
+
+**Optional: run it again.** Start a fresh session (`/clear` in Claude Code, `/new` in Codex) and run the mock-review prompt once more. Which points come back in both runs? Points that appear every time are more likely to be real.
+
+### Step 5: triage, and compare with the key
+
+```text
+Collect every point from matching/ and mock-reviews/ into
+revision-plan.md: a table with the columns point, raised by, decision
+(fix / explain / ignore), and what I will do or why not.
+Leave the decision column empty: I will fill it in.
+```
+
+Now fill in the decision column **yourself**. Take each point seriously, but decide as the author: some points are wrong, some are right but not worth the space. Write a reason for every "ignore".
+
+Then compare your list with the known weaknesses of the draft:
+
+::: {.callout-note collapse="true" title="Expected outcome: the deliberate weaknesses in the draft"}
+The draft was written with these weaknesses. A good run finds most of them; few runs find all.
+
+1. **Pseudoreplication.** The drought is applied to three roofs; three plots are controls. Analysing 120 cores per occasion as independent samples inflates the sample size; the unit of replication is the plot (n = 3 vs 3). The statistician should find this. It is the most serious problem.
+2. **No power analysis** or justification of the number of plots.
+3. **Overstated novelty.** "The first study of drought legacies in soil microbes" is not true, and the fictional panel chair has published a review on drought legacies; another member has a paper on "microbial community memory". An expert sees this at once.
+4. **CUE method not stated.** Carbon use efficiency can be measured in several ways (for example with 18O-labelled water); the chair's own work uses one.
+5. **Drought not verified.** Soil moisture is measured only at sampling; no continuous sensors. The hydrologist (and the forest ecologist, who has a paper on edge effects under roofs) should ask how dry the plots really were.
+6. **One site, no backup.**
+7. **Time plan.** All sequencing and analysis in year 4; no slack if a season fails; "we do not foresee major risks".
+8. **"Microbial memory" is not defined** as something measurable; no hypothesis that could be rejected.
+9. **Data management:** "available on request" only; no repository for sequence data.
+10. **Jargon:** CUE, ASV, PLFA, Birch effect, rhizodeposition, legacy effect, beta diversity.
+11. **Merits** cannot be assessed: there is no CV. A review that grades merits invented them.
+
+Things a run should **not** contain: names of panel members in the reviews; anything about the people beyond their (fictional) publications; references to papers that do not exist presented as real.
+:::
+
+Count how many of the eleven your run found, and how many points the agent raised that are not on the list. Are those extra points reasonable? Some will be; a real panel would raise points we did not plan either.
+
+## On your own project
+
+Now apply the method to a **real** call that you plan to apply to, or one you applied to before. Work on **your own computer**, in a **private** folder, for your **own preparation**.
+
+1. **Make a private folder** outside your published project, for example `~/agentic-course/private/grant-2027-call/`. If it has to be inside a git repository, add it to `.gitignore` first and check with `git status` that it is not listed. It never goes to GitHub or your project page.
+2. **Find the published panel.** For the Swedish Research Council: [Review panels](https://www.vr.se/english/applying-for-funding/how-applications-are-assessed/review-panels.html) (*beredningsgrupper*); choose your subject area and panel, and note which year the page says it shows. For the ERC: [Panel members](https://erc.europa.eu/apply-grant/panel-members), filtered by scheme, panel code and the most recent year. For other funders, look in the call text and the pages on assessment. If no panel is published, skip to step 4 and use typical kinds of expertise for your field.
+3. **Make the table** (`panel.csv`): name, role, affiliation, panel, source URL, date. Copy it from the page yourself, or save the page and let the agent read the saved file. Check it row by row against the page.
+4. **Profiles.** Ask for profiles in the fixed template from step 2, from ORCID, OpenAlex or PubMed, **matched by identifier**, with excluded records listed. State the purpose in the prompt ("to prepare my own application; public professional information only"). If the agent declines, do not try to trick it; narrow the request, or write the profiles by hand from the people's university pages. Check each profile against the person's own university page.
+5. **Your draft.** Use your own current draft, a past application, or the abstract you placed on the topic map in *Collecting and analysing grant results*. Remove unpublished results you would not share and anything written by co-applicants who have not agreed.
+6. **Criteria.** Copy the assessment criteria from the **current call text** into `criteria.md`.
+7. **Match, mock reviews and triage** as in steps 3 to 5, with reviewers by expertise, never by name. Fill in the decision column yourself.
+8. **A human check.** Give your revised draft to a colleague from a neighbouring field and ask where they stumbled. Compare with the outsider's mock review.
+9. **Log and clean up.** Add a line to the **Log of AI use** in your project README (without names: "mock reviews of my draft for <call>; checked by ..."). When the decision has come, **delete `panel.csv` and `profiles/`**. Keep `revision-plan.md`.
+
+::: {.callout-warning}
+**Never in this folder:** a proposal or manuscript you are reviewing for someone else (funders forbid putting it into AI tools); co-applicants' text without their consent; anything about panel members beyond their professional work. If you are unsure whether your university needs to know about this processing of personal data, ask your data protection officer before you start.
+:::
+
+## What you should have now
+
+- From the worked example: eight profiles in a fixed format (with the namesake excluded), a matching matrix, three mock reviews with the funder's criteria, a `revision-plan.md` with your own decisions, and a count of how many known weaknesses the run found.
+- A profile of **yourself** from a real database, checked by the one person who knows the right answer.
+- For a real call: a private folder with the panel table, profiles, criteria and a revision plan for your own application, a date on which you will delete the personal data, and one more line in your AI-use log.
+- A clear sense of what a mock review is good for (a strict, structured first reading) and what it is not (a prediction, or a substitute for a colleague).

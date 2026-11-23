@@ -1,0 +1,18 @@
+Eight short methods paragraphs (synthetic, for teaching)
+
+[S1] Seedlings of Arabidopsis thaliana (Col-0) were grown on agar plates at 22 °C under long-day conditions. Three plates of 15 seedlings each were used per treatment, and root length was measured after 10 days. Two seedlings were lost to contamination and excluded.
+
+[S2] We surveyed 412 first-year engineering students at two campuses about study habits. The questionnaire was open for three weeks in October. Of the 412 invited, 287 completed it; only complete responses were analysed. Room temperature was not relevant to this study.
+
+[S3] Zebrafish larvae (Danio rerio, AB strain) were kept at 28.5 °C and exposed to the compound from 2 to 5 days post-fertilisation. In total 96 larvae were imaged (48 treated, 48 controls).
+
+[S4] Steel coupons (n = 24) were cycled in a salt-spray chamber held at 35 °C for a period of six weeks, after which mass loss was recorded. A second batch of 12 coupons, kept dry, served as a reference and is reported elsewhere.
+
+[S5] Soil cores were collected from 9 sites along a 40 km transect and incubated in the dark for 72 hours before respiration was measured. Incubation temperature was kept constant.
+
+[S6] Escherichia coli K-12 cultures were grown overnight in LB medium at 37 °C, diluted 1:100 and grown for a further 3 hours. Each condition was run in biological triplicate across four conditions.
+
+[S7] Interviews were held with 18 hospital pharmacists between March and May; each lasted 40 to 60 minutes. Transcripts were coded by two researchers.
+
+[S8] Daphnia magna were cultured at 20 °C (68 °F) in groups of 10 animals per beaker, with 6 beakers per treatment and 3 treatments. Survival was recorded daily for 21 days.
+

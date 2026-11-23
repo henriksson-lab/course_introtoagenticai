@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <g font-size="21" font-weight="bold" text-anchor="middle">
+    <text x="450" y="40" fill="#333">Claude Code</text>
+    <text x="780" y="40" fill="#333">Codex</text>
+  </g>
+  <!-- row labels -->
+  <rect x="20" y="65" width="250" height="160" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="40" y="105" font-size="21" font-weight="bold" fill="#2a7f8f">Project skill</text>
+  <text x="40" y="140" font-size="17" fill="#333">inside the project folder</text>
+  <text x="40" y="166" font-size="17" fill="#333">in git: colleagues get it</text>
+  <text x="40" y="192" font-size="17" fill="#333">when they clone</text>
+  <rect x="20" y="245" width="250" height="160" rx="10" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="40" y="285" font-size="21" font-weight="bold" fill="#6b4fa0">Personal skill</text>
+  <text x="40" y="320" font-size="17" fill="#333">in your home folder</text>
+  <text x="40" y="346" font-size="17" fill="#333">every project, but only</text>
+  <text x="40" y="372" font-size="17" fill="#333">on your computer</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="17" fill="#333">
+    <rect x="290" y="65" width="320" height="160" rx="10" fill="#fafafa" stroke="#bbb"/>
+    <text x="305" y="130">my-project/</text>
+    <text x="320" y="158">.claude/skills/</text>
+    <text x="335" y="186" fill="#2a7f8f">figure-style/SKILL.md</text>
+    <rect x="630" y="65" width="350" height="160" rx="10" fill="#fafafa" stroke="#bbb"/>
+    <text x="645" y="130">my-project/</text>
+    <text x="660" y="158">.agents/skills/</text>
+    <text x="675" y="186" fill="#2a7f8f">figure-style/SKILL.md</text>
+    <rect x="290" y="245" width="320" height="160" rx="10" fill="#fafafa" stroke="#bbb"/>
+    <text x="305" y="310">~/.claude/skills/</text>
+    <text x="320" y="338" fill="#6b4fa0">figure-style/SKILL.md</text>
+    <rect x="630" y="245" width="350" height="160" rx="10" fill="#fafafa" stroke="#bbb"/>
+    <text x="645" y="310">~/.agents/skills/</text>
+    <text x="660" y="338" fill="#6b4fa0">figure-style/SKILL.md</text>
+  </g>
+  <text x="980" y="432" font-size="15" fill="#888" text-anchor="end">~ = your home folder · folders starting with a dot are hidden in Finder/Explorer</text>
+</svg>

@@ -1,0 +1,126 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 486" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="486" fill="#ffffff"/>
+  <rect x="120" y="40" width="820" height="42.2" fill="#f3f3f3"/>
+  <text x="128.0" y="60.0" font-size="14" fill="#666666" text-anchor="start">above 16 hours: METR says its measurements are unreliable</text>
+  <line x1="120" y1="390.0" x2="940" y2="390.0" stroke="#e6e6e6"/>
+  <text x="112.0" y="395.0" font-size="15" fill="#666666" text-anchor="end">1 sec</text>
+  <line x1="120" y1="275.0" x2="940" y2="275.0" stroke="#e6e6e6"/>
+  <text x="112.0" y="280.0" font-size="15" fill="#666666" text-anchor="end">1 min</text>
+  <line x1="120" y1="210.4" x2="940" y2="210.4" stroke="#e6e6e6"/>
+  <text x="112.0" y="215.4" font-size="15" fill="#666666" text-anchor="end">10 min</text>
+  <line x1="120" y1="160.1" x2="940" y2="160.1" stroke="#e6e6e6"/>
+  <text x="112.0" y="165.1" font-size="15" fill="#666666" text-anchor="end">1 hour</text>
+  <line x1="120" y1="121.2" x2="940" y2="121.2" stroke="#e6e6e6"/>
+  <text x="112.0" y="126.2" font-size="15" fill="#666666" text-anchor="end">4 hours</text>
+  <line x1="120" y1="82.2" x2="940" y2="82.2" stroke="#e6e6e6"/>
+  <text x="112.0" y="87.2" font-size="15" fill="#666666" text-anchor="end">16 hours</text>
+  <line x1="120" y1="40.0" x2="940" y2="40.0" stroke="#e6e6e6"/>
+  <text x="112.0" y="45.0" font-size="15" fill="#666666" text-anchor="end">3 days</text>
+  <text x="120.0" y="414.0" font-size="15" fill="#666666" text-anchor="middle">2019</text>
+  <line x1="120.0" y1="390" x2="120.0" y2="396" stroke="#333"/>
+  <text x="225.8" y="414.0" font-size="15" fill="#666666" text-anchor="middle">2020</text>
+  <line x1="225.8" y1="390" x2="225.8" y2="396" stroke="#333"/>
+  <text x="331.6" y="414.0" font-size="15" fill="#666666" text-anchor="middle">2021</text>
+  <line x1="331.6" y1="390" x2="331.6" y2="396" stroke="#333"/>
+  <text x="437.4" y="414.0" font-size="15" fill="#666666" text-anchor="middle">2022</text>
+  <line x1="437.4" y1="390" x2="437.4" y2="396" stroke="#333"/>
+  <text x="543.2" y="414.0" font-size="15" fill="#666666" text-anchor="middle">2023</text>
+  <line x1="543.2" y1="390" x2="543.2" y2="396" stroke="#333"/>
+  <text x="649.0" y="414.0" font-size="15" fill="#666666" text-anchor="middle">2024</text>
+  <line x1="649.0" y1="390" x2="649.0" y2="396" stroke="#333"/>
+  <text x="754.8" y="414.0" font-size="15" fill="#666666" text-anchor="middle">2025</text>
+  <line x1="754.8" y1="390" x2="754.8" y2="396" stroke="#333"/>
+  <text x="860.6" y="414.0" font-size="15" fill="#666666" text-anchor="middle">2026</text>
+  <line x1="860.6" y1="390" x2="860.6" y2="396" stroke="#333"/>
+  <line x1="120" y1="390" x2="940" y2="390" stroke="#333" stroke-width="1.5"/>
+  <text x="30.0" y="215.0" font-size="16" fill="#333" text-anchor="middle" transform="rotate(-90 30 215.0)">length of task (human expert time)</text>
+  <line x1="132.7" y1="390.0" x2="132.7" y2="329.9" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="128.7" y="386.0" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 132.7 390.0)"/>
+  <circle cx="132.7" cy="357.1" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="142.7" y="347.1" font-size="14" fill="#333" text-anchor="start">GPT-2</text>
+  <line x1="268.7" y1="341.6" x2="268.7" y2="317.4" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="264.7" y="351.9" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 268.7 355.9)"/>
+  <circle cx="268.7" cy="329.4" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="458.6" y1="313.4" x2="458.6" y2="272.0" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="454.6" y="309.4" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 458.6 313.4)"/>
+  <circle cx="458.6" cy="289.4" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="564.1" y1="256.5" x2="564.1" y2="216.7" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="560.1" y="274.3" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 564.1 278.3)"/>
+  <circle cx="564.1" cy="236.2" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="556.1" y="222.2" font-size="14" fill="#333" text-anchor="end">GPT-4</text>
+  <line x1="632.7" y1="257.5" x2="632.7" y2="215.1" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="628.7" y="277.9" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 632.7 281.9)"/>
+  <circle cx="632.7" cy="235.8" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="667.3" y1="260.0" x2="667.3" y2="214.1" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="663.3" y="283.6" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 667.3 287.6)"/>
+  <circle cx="667.3" cy="236.5" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="677.7" y1="255.9" x2="677.7" y2="221.5" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="673.7" y="273.1" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 677.7 277.1)"/>
+  <circle cx="677.7" cy="238.1" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="687.6" y1="236.1" x2="687.6" y2="203.2" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="683.6" y="264.4" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 687.6 268.4)"/>
+  <circle cx="687.6" cy="220.4" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="698.6" y1="227.2" x2="698.6" y2="187.8" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="694.6" y="256.6" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 698.6 260.6)"/>
+  <circle cx="698.6" cy="206.7" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="722.9" y1="205.9" x2="722.9" y2="176.5" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="718.9" y="229.3" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 722.9 233.3)"/>
+  <circle cx="722.9" cy="190.5" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="734.5" y1="210.0" x2="734.5" y2="170.9" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="730.5" y="244.3" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 734.5 248.3)"/>
+  <circle cx="734.5" cy="190.2" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="747.2" y1="189.3" x2="747.2" y2="157.9" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="743.2" y="216.0" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 747.2 220.0)"/>
+  <circle cx="747.2" cy="172.3" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="770.5" y1="176.9" x2="770.5" y2="144.6" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="766.5" y="201.1" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 770.5 205.1)"/>
+  <circle cx="770.5" cy="159.9" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="760.5" y="145.9" font-size="14" fill="#333" text-anchor="end">Claude 3.7 Sonnet</text>
+  <line x1="785.3" y1="154.0" x2="785.3" y2="127.6" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="781.3" y="175.6" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 785.3 179.6)"/>
+  <circle cx="785.3" cy="140.7" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="795.7" y1="160.1" x2="795.7" y2="131.9" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="791.7" y="186.3" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 795.7 190.3)"/>
+  <circle cx="795.7" cy="145.6" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="817.4" y1="160.4" x2="817.4" y2="132.6" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="813.4" y="182.5" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 817.4 186.5)"/>
+  <circle cx="817.4" cy="145.6" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="818.0" y1="142.4" x2="818.0" y2="106.4" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="814.0" y="168.7" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 818.0 172.7)"/>
+  <circle cx="818.0" cy="125.9" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="847.8" y1="136.4" x2="847.8" y2="108.3" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="843.8" y="159.0" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 847.8 163.0)"/>
+  <circle cx="847.8" cy="123.1" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="848.1" y1="137.5" x2="848.1" y2="107.1" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="844.1" y="160.8" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 848.1 164.8)"/>
+  <circle cx="848.1" cy="123.1" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="849.6" y1="132.2" x2="849.6" y2="94.3" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="845.6" y="161.5" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 849.6 165.5)"/>
+  <circle cx="849.6" cy="115.6" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="854.5" y1="126.5" x2="854.5" y2="86.8" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="850.5" y="153.4" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 854.5 157.4)"/>
+  <circle cx="854.5" cy="110.4" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="870.8" y1="113.4" x2="870.8" y2="44.9" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="866.8" y="151.8" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 870.8 155.8)"/>
+  <circle cx="870.8" cy="90.4" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="856.8" y="88.4" font-size="14" fill="#333" text-anchor="end">Claude Opus 4.6</text>
+  <line x1="870.8" y1="127.0" x2="870.8" y2="86.8" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="866.8" y="158.7" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 870.8 162.7)"/>
+  <circle cx="870.8" cy="110.6" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="874.8" y1="121.9" x2="874.8" y2="91.3" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="870.8" y="144.8" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 874.8 148.8)"/>
+  <circle cx="874.8" cy="107.9" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="878.9" y1="128.2" x2="878.9" y2="88.5" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="874.9" y="159.1" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 878.9 163.1)"/>
+  <circle cx="878.9" cy="111.2" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <line x1="888.5" y1="100.1" x2="888.5" y2="47.5" stroke="#2a7f8f" stroke-opacity="0.35" stroke-width="2"/>
+  <rect x="884.5" y="124.3" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 888.5 128.3)"/>
+  <circle cx="888.5" cy="79.9" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="874.5" y="69.9" font-size="14" fill="#333" text-anchor="end">Claude Mythos Preview</text>
+  <circle cx="691.4" cy="334.6" r="5" fill="#2a7f8f"/>
+  <text x="703.4" y="339.6" font-size="15" fill="#333" text-anchor="start">50 % success (line: 95 % CI)</text>
+  <rect x="687.4" y="355.6" width="8" height="8" fill="#fff" stroke="#6b4fa0" stroke-width="2" transform="rotate(45 691.4 359.6)"/>
+  <text x="703.4" y="364.6" font-size="15" fill="#333" text-anchor="start">80 % success</text>
+  <text x="980.0" y="462.0" font-size="13" fill="#999" text-anchor="end">Data: METR, Task-Completion Time Horizons of Frontier AI Models, Time Horizon 1.1 (metr.org/time-horizons), CC BY 4.0;</text>
+  <text x="980.0" y="478.0" font-size="13" fill="#999" text-anchor="end">page last updated 2026-09-08, downloaded 2026-11-23. Method: Kwa et al. 2025.</text>
+</svg>

@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="1000" height="460" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="460" fill="#fff"/>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker>
+  </defs>
+  <!-- column 1: compartments -->
+  <text x="170" y="40" font-size="22" font-weight="bold" fill="#2a7f8f" text-anchor="middle">Boxes and arrows</text>
+  <rect x="40" y="90" width="70" height="60" rx="8" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="75" y="128" font-size="22" text-anchor="middle" fill="#2a7f8f">S</text>
+  <rect x="135" y="90" width="70" height="60" rx="8" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+  <text x="170" y="128" font-size="22" text-anchor="middle" fill="#a8324a">I</text>
+  <rect x="230" y="90" width="70" height="60" rx="8" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="265" y="128" font-size="22" text-anchor="middle" fill="#6b4fa0">R</text>
+  <line x1="110" y1="120" x2="133" y2="120" stroke="#333" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="205" y1="120" x2="228" y2="120" stroke="#333" stroke-width="2" marker-end="url(#a)"/>
+  <text x="170" y="210" font-size="18" fill="#333" text-anchor="middle">Amounts move between</text>
+  <text x="170" y="234" font-size="18" fill="#333" text-anchor="middle">a few well-mixed boxes</text>
+  <text x="170" y="290" font-size="17" fill="#666" text-anchor="middle">drug in the blood,</text>
+  <text x="170" y="314" font-size="17" fill="#666" text-anchor="middle">an epidemic, a population,</text>
+  <text x="170" y="338" font-size="17" fill="#666" text-anchor="middle">a chemical reaction</text>
+  <text x="170" y="400" font-size="17" fill="#2a7f8f" text-anchor="middle">"ODE model"</text>
+  <!-- column 2: field / mesh -->
+  <text x="500" y="40" font-size="22" font-weight="bold" fill="#6b4fa0" text-anchor="middle">A shape cut into pieces</text>
+  <g stroke="#6b4fa0" stroke-width="1.5" fill="#f1edf7">
+    <rect x="410" y="70" width="180" height="110"/>
+  </g>
+  <g stroke="#6b4fa0" stroke-width="1.2">
+    <line x1="455" y1="70" x2="455" y2="180"/><line x1="500" y1="70" x2="500" y2="180"/><line x1="545" y1="70" x2="545" y2="180"/>
+    <line x1="410" y1="125" x2="590" y2="125"/>
+    <line x1="410" y1="70" x2="455" y2="125"/><line x1="455" y1="70" x2="500" y2="125"/><line x1="500" y1="70" x2="545" y2="125"/><line x1="545" y1="70" x2="590" y2="125"/>
+    <line x1="410" y1="125" x2="455" y2="180"/><line x1="455" y1="125" x2="500" y2="180"/><line x1="500" y1="125" x2="545" y2="180"/><line x1="545" y1="125" x2="590" y2="180"/>
+  </g>
+  <text x="500" y="210" font-size="18" fill="#333" text-anchor="middle">Each small piece talks</text>
+  <text x="500" y="234" font-size="18" fill="#333" text-anchor="middle">to its neighbours</text>
+  <text x="500" y="290" font-size="17" fill="#666" text-anchor="middle">heat in a plate, stress</text>
+  <text x="500" y="314" font-size="17" fill="#666" text-anchor="middle">in a beam, a drug spreading</text>
+  <text x="500" y="338" font-size="17" fill="#666" text-anchor="middle">through tissue, groundwater</text>
+  <text x="500" y="400" font-size="17" fill="#6b4fa0" text-anchor="middle">"finite differences / FEM"</text>
+  <!-- column 3: agents -->
+  <text x="830" y="40" font-size="22" font-weight="bold" fill="#a8324a" text-anchor="middle">Many individuals</text>
+  <g fill="#a8324a">
+    <circle cx="760" cy="90" r="7"/><circle cx="800" cy="120" r="7"/><circle cx="850" cy="85" r="7"/><circle cx="900" cy="110" r="7"/>
+    <circle cx="780" cy="160" r="7"/><circle cx="830" cy="150" r="7"/><circle cx="880" cy="170" r="7"/><circle cx="910" cy="150" r="7"/>
+  </g>
+  <g stroke="#a8324a" stroke-width="2" fill="none">
+    <path d="M760,90 l-18,-10"/><path d="M800,120 l14,16"/><path d="M850,85 l18,-8"/><path d="M900,110 l-6,20"/>
+    <path d="M780,160 l-18,10"/><path d="M830,150 l10,-20"/><path d="M880,170 l20,4"/><path d="M910,150 l14,-14"/>
+  </g>
+  <text x="830" y="210" font-size="18" fill="#333" text-anchor="middle">Each one follows simple</text>
+  <text x="830" y="234" font-size="18" fill="#333" text-anchor="middle">rules, with some chance</text>
+  <text x="830" y="290" font-size="17" fill="#666" text-anchor="middle">cells moving, animals</text>
+  <text x="830" y="314" font-size="17" fill="#666" text-anchor="middle">foraging, a forest fire,</text>
+  <text x="830" y="338" font-size="17" fill="#666" text-anchor="middle">people in a building</text>
+  <text x="830" y="400" font-size="17" fill="#a8324a" text-anchor="middle">"agent-based model"</text>
+  <line x1="335" y1="30" x2="335" y2="420" stroke="#ddd" stroke-width="2"/>
+  <line x1="665" y1="30" x2="665" y2="420" stroke="#ddd" stroke-width="2"/>
+  <text x="500" y="448" font-size="17" fill="#666" text-anchor="middle">The names in quotes are what to ask the agent for. You do not need the equations.</text>
+</svg>

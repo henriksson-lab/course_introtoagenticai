@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="500" fill="#ffffff"/>
+  <text x="245" y="36" font-size="22" fill="#a8324a" text-anchor="middle" font-weight="bold" xml:space="preserve">Everything adjustable</text>
+  <rect x="20" y="55" width="450" height="360" rx="8" fill="#ffffff" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="40" y="85" font-size="13" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">r</text>
+  <line x1="40" y1="101" x2="130" y2="101" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="40" y1="101" x2="67.0" y2="101" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="67.0" cy="101" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="160" y="85" font-size="13" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">K</text>
+  <line x1="160" y1="101" x2="250" y2="101" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="160" y1="101" x2="223.0" y2="101" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="223.0" cy="101" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="40" y="127" font-size="13" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">N0</text>
+  <line x1="40" y1="143" x2="130" y2="143" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="40" y1="143" x2="49.0" y2="143" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="49.0" cy="143" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="160" y="127" font-size="13" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">t max</text>
+  <line x1="160" y1="143" x2="250" y2="143" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="160" y1="143" x2="205.0" y2="143" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="205.0" cy="143" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="40" y="169" font-size="13" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">step dt</text>
+  <line x1="40" y1="185" x2="130" y2="185" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="40" y1="185" x2="58.0" y2="185" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="58.0" cy="185" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="160" y="169" font-size="13" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">noise</text>
+  <line x1="160" y1="185" x2="250" y2="185" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="160" y1="185" x2="214.0" y2="185" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="214.0" cy="185" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="40" y="211" font-size="13" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">seed</text>
+  <line x1="40" y1="227" x2="130" y2="227" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="40" y1="227" x2="76.0" y2="227" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="76.0" cy="227" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="160" y="211" font-size="13" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">line width</text>
+  <line x1="160" y1="227" x2="250" y2="227" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="160" y1="227" x2="187.0" y2="227" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="187.0" cy="227" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="40" y="253" font-size="13" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">colour</text>
+  <line x1="40" y1="269" x2="130" y2="269" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="40" y1="269" x2="112.0" y2="269" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="112.0" cy="269" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="160" y="253" font-size="13" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">log axis</text>
+  <line x1="160" y1="269" x2="250" y2="269" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="160" y1="269" x2="160.0" y2="269" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="160.0" cy="269" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <line x1="290" y1="250" x2="450" y2="250" stroke="#9aa4ad" stroke-width="2"/>
+  <line x1="290" y1="80" x2="290" y2="250" stroke="#9aa4ad" stroke-width="2"/>
+  <path d="M290.0,248.3 L292.0,247.7 L294.0,246.9 L296.0,245.9 L298.0,244.5 L300.0,242.7 L302.0,240.3 L304.0,237.3 L306.0,233.3 L308.0,228.4 L310.0,222.4 L312.0,215.3 L314.0,206.9 L316.0,197.7 L318.0,187.7 L320.0,177.6 L322.0,167.6 L324.0,158.2 L326.0,149.8 L328.0,142.4 L330.0,136.3 L332.0,131.2 L334.0,127.2 L336.0,124.0 L338.0,121.6 L340.0,119.7 L342.0,118.3 L344.0,117.2 L346.0,116.4 L348.0,115.8 L350.0,115.3 L352.0,115.0 L354.0,114.7 L356.0,114.5 L358.0,114.4 L360.0,114.3 L362.0,114.2 L364.0,114.2 L366.0,114.1 L368.0,114.1 L370.0,114.1 L372.0,114.0 L374.0,114.0 L376.0,114.0 L378.0,114.0 L380.0,114.0 L382.0,114.0 L384.0,114.0 L386.0,114.0 L388.0,114.0 L390.0,114.0 L392.0,114.0 L394.0,114.0 L396.0,114.0 L398.0,114.0 L400.0,114.0 L402.0,114.0 L404.0,114.0 L406.0,114.0 L408.0,114.0 L410.0,114.0 L412.0,114.0 L414.0,114.0 L416.0,114.0 L418.0,114.0 L420.0,114.0 L422.0,114.0 L424.0,114.0 L426.0,114.0 L428.0,114.0 L430.0,114.0 L432.0,114.0 L434.0,114.0 L436.0,114.0 L438.0,114.0 L440.0,114.0 L442.0,114.0 L444.0,114.0 L446.0,114.0 L448.0,114.0 L450.0,114.0" stroke="#2a7f8f" stroke-width="2" fill="none"/>
+  <text x="40" y="330.0" font-size="18" fill="#a8324a" text-anchor="start" font-weight="normal" xml:space="preserve">Students fiddle with ten things</text>
+  <text x="40" y="353.4" font-size="18" fill="#a8324a" text-anchor="start" font-weight="normal" xml:space="preserve">and learn none of them.</text>
+  <text x="755" y="36" font-size="22" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">One question</text>
+  <rect x="530" y="55" width="450" height="360" rx="8" fill="#ffffff" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="555" y="95" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">growth rate r</text>
+  <line x1="555" y1="111" x2="725" y2="111" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="555" y1="111" x2="614.5" y2="111" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="614.5" cy="111" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="555" y="165" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">capacity K</text>
+  <line x1="555" y1="181" x2="725" y2="181" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="555" y1="181" x2="682.5" y2="181" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="682.5" cy="181" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <rect x="555" y="215" width="80" height="30" rx="6" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <text x="595.0" y="235.25" font-size="15" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">Reset</text>
+  <rect x="645" y="215" width="80" height="30" rx="6" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <text x="685.0" y="235.25" font-size="15" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">Deer</text>
+  <line x1="760" y1="280" x2="960" y2="280" stroke="#9aa4ad" stroke-width="2"/>
+  <line x1="760" y1="80" x2="760" y2="280" stroke="#9aa4ad" stroke-width="2"/>
+  <path d="M760.0,278.0 L762.5,277.4 L765.0,276.7 L767.5,275.8 L770.0,274.7 L772.5,273.2 L775.0,271.4 L777.5,269.2 L780.0,266.4 L782.5,263.0 L785.0,258.8 L787.5,253.8 L790.0,248.0 L792.5,241.2 L795.0,233.6 L797.5,225.3 L800.0,216.3 L802.5,207.0 L805.0,197.7 L807.5,188.5 L810.0,179.9 L812.5,172.0 L815.0,164.8 L817.5,158.6 L820.0,153.2 L822.5,148.7 L825.0,145.0 L827.5,142.0 L830.0,139.5 L832.5,137.5 L835.0,135.9 L837.5,134.6 L840.0,133.6 L842.5,132.8 L845.0,132.2 L847.5,131.7 L850.0,131.4 L852.5,131.1 L855.0,130.8 L857.5,130.6 L860.0,130.5 L862.5,130.4 L865.0,130.3 L867.5,130.2 L870.0,130.2 L872.5,130.1 L875.0,130.1 L877.5,130.1 L880.0,130.1 L882.5,130.1 L885.0,130.0 L887.5,130.0 L890.0,130.0 L892.5,130.0 L895.0,130.0 L897.5,130.0 L900.0,130.0 L902.5,130.0 L905.0,130.0 L907.5,130.0 L910.0,130.0 L912.5,130.0 L915.0,130.0 L917.5,130.0 L920.0,130.0 L922.5,130.0 L925.0,130.0 L927.5,130.0 L930.0,130.0 L932.5,130.0 L935.0,130.0 L937.5,130.0 L940.0,130.0 L942.5,130.0 L945.0,130.0 L947.5,130.0 L950.0,130.0 L952.5,130.0 L955.0,130.0 L957.5,130.0 L960.0,130.0" stroke="#2a7f8f" stroke-width="4" fill="none"/>
+  <line x1="760" y1="130" x2="960" y2="130" stroke="#a8324a" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="555" y="330.0" font-size="18" fill="#2a7f8f" text-anchor="start" font-weight="normal" xml:space="preserve">Two sliders, a reset and a preset:</text>
+  <text x="555" y="353.4" font-size="18" fill="#2a7f8f" text-anchor="start" font-weight="normal" xml:space="preserve">students see what K does.</text>
+  <text x="500" y="465" font-size="18" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">Fix everything the learning goal does not need. Add presets for interesting cases.</text>
+  <text x="990" y="490" font-size="14" fill="#9aa4ad" text-anchor="end" font-weight="normal" font-style="italic" xml:space="preserve">illustrative</text>
+</svg>

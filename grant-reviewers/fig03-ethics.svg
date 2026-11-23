@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="1000" height="480" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="480" fill="#fff"/>
+  <rect x="30" y="20" width="450" height="56" rx="8" fill="#2a7f8f"/><text x="255" y="57" font-size="24" fill="#fff" font-weight="bold" text-anchor="middle">Do</text>
+  <rect x="520" y="20" width="450" height="56" rx="8" fill="#a8324a"/><text x="745" y="57" font-size="24" fill="#fff" font-weight="bold" text-anchor="middle">Never</text>
+  <g font-size="19" fill="#333">
+    <text x="45" y="120">✓ use the panel list the funder published</text>
+    <text x="45" y="160">✓ only professional facts: topics, methods,</text>
+    <text x="70" y="186">publications, affiliation</text>
+    <text x="45" y="226">✓ from professional sources: ORCID,</text>
+    <text x="70" y="252">OpenAlex, PubMed, university pages</text>
+    <text x="45" y="292">✓ think in kinds of expertise</text>
+    <text x="45" y="332">✓ keep it in a private folder</text>
+    <text x="45" y="372">✓ delete lists and profiles after the decision</text>
+    <text x="535" y="120">✗ contact or lobby a panel member</text>
+    <text x="535" y="160">✗ private life, social media, opinions,</text>
+    <text x="560" y="186">photos, family, personality</text>
+    <text x="535" y="226">✗ write reviews "as" a named person</text>
+    <text x="535" y="266">✗ publish profiles, or push them to GitHub</text>
+    <text x="535" y="306">✗ use it for anything but your own</text>
+    <text x="560" y="332">preparation</text>
+    <text x="535" y="372">✗ try to trick a guardrail into profiling</text>
+  </g>
+  <rect x="30" y="405" width="940" height="56" rx="8" fill="#f4f4f4"/>
+  <text x="500" y="440" font-size="20" fill="#333" text-anchor="middle">Public does not mean free: names with expertise are personal data under GDPR.</text>
+</svg>

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 540" width="1000" height="540" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="540" fill="#ffffff"/>
+  <rect x="20" y="16" width="960" height="500" rx="10" fill="#1f2933"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="16">
+    <text x="40" y="50" fill="#cfd6dc">&gt; I want a weekly overview of the lab's freezer temperature logs,</text>
+    <text x="40" y="74" fill="#cfd6dc">  but I have not thought it through. Interview me, one question</text>
+    <text x="40" y="98" fill="#cfd6dc">  at a time, then write brief.md and stop.</text>
+    <text x="40" y="140" fill="#7fd1de">Who reads the overview, and what should they do with it?</text>
+    <text x="60" y="166" fill="#ffffff">1. Only you, to spot problems early</text>
+    <text x="60" y="190" fill="#ffffff">2. The whole lab, as a Monday e-mail</text>
+    <text x="60" y="214" fill="#ffffff">3. Something else</text>
+    <text x="40" y="248" fill="#e0c27a">&gt; 2, and the lab manager acts on alarms.</text>
+    <text x="40" y="290" fill="#7fd1de">What counts as a problem? A single reading above -70 °C,</text>
+    <text x="40" y="314" fill="#7fd1de">or a period above it, and for how long?</text>
+    <text x="40" y="348" fill="#e0c27a">&gt; Above -70 °C for more than 30 minutes.</text>
+    <text x="40" y="390" fill="#7fd1de">How will you know the overview is right? For example,</text>
+    <text x="40" y="414" fill="#7fd1de">compare one week with the alarms the freezer itself logged?</text>
+    <text x="40" y="448" fill="#e0c27a">&gt; Yes, the alarm log is in alarms.csv.</text>
+    <text x="40" y="490" fill="#8fb3bd">... 4 more questions ... Wrote brief.md. Stopping here.</text>
+  </g>
+  <text x="972" y="532" text-anchor="end" font-size="14" fill="#8a97a5">illustrative; your session will differ</text>
+</svg>

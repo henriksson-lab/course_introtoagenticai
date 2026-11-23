@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#ffffff"/>
+  <!-- person -->
+  <circle cx="120" cy="120" r="44" fill="#f0ecf7" stroke="#6b4fa0" stroke-width="3"/>
+  <path d="M50,260 C50,190 190,190 190,260 Z" fill="#f0ecf7" stroke="#6b4fa0" stroke-width="3"/>
+  <text x="120" y="300" text-anchor="middle" font-size="18" fill="#333">a colleague,</text>
+  <text x="120" y="324" text-anchor="middle" font-size="18" fill="#333">only the folder,</text>
+  <text x="120" y="348" text-anchor="middle" font-size="18" fill="#333">10 minutes</text>
+  <g font-size="19">
+    <rect x="260" y="40" width="720" height="68" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="280" y="82" fill="#333"><tspan font-weight="bold">What is this project?</tspan><tspan fill="#555">   README: goal, who it is for</tspan></text>
+    <rect x="260" y="124" width="720" height="68" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="280" y="166" fill="#333"><tspan font-weight="bold">Where did the data come from?</tspan><tspan fill="#555">   source, date, licence</tspan></text>
+    <rect x="260" y="208" width="720" height="68" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="280" y="250" fill="#333"><tspan font-weight="bold">How do I rerun it?</tspan><tspan fill="#555">   scripts in order, expected numbers</tspan></text>
+    <rect x="260" y="292" width="720" height="68" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="280" y="334" fill="#333"><tspan font-weight="bold">Who do I ask?</tspan><tspan fill="#555">   a name or role, not "ask Kim"</tspan></text>
+  </g>
+  <text x="620" y="410" text-anchor="middle" font-size="18" fill="#333">Four yes answers: shareable. You will test this on each other in GitHub (Part 3).</text>
+</svg>

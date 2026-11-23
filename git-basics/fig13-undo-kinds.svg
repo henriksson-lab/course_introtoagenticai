@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="1000" height="460" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  <marker id="arc" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a8324a"/></marker></defs>
+  <rect width="1000" height="460" fill="#fff"/>
+  <!-- row 1 -->
+  <text x="30" y="40" font-size="20" font-weight="bold" fill="#2a7f8f">1. Throw away changes not yet committed</text>
+  <circle cx="120" cy="90" r="13" fill="#2a7f8f"/><text x="120" y="130" font-size="16" fill="#555" text-anchor="middle">last commit</text>
+  <rect x="230" y="70" width="150" height="40" rx="6" fill="#f8e9ec" stroke="#a8324a" stroke-dasharray="5 4" stroke-width="2"/>
+  <text x="305" y="96" font-size="16" fill="#a8324a" text-anchor="middle">bad edit</text>
+  <path d="M230,90 L140,90" stroke="#a8324a" stroke-width="2.5" marker-end="url(#arc)"/>
+  <text x="430" y="85" font-size="17" fill="#333">"Undo your last change to clean.py."</text>
+  <text x="430" y="112" font-size="16" fill="#777" font-family="Menlo, Consolas, monospace">git restore clean.py</text>
+  <!-- row 2 -->
+  <text x="30" y="172" font-size="20" font-weight="bold" fill="#6b4fa0">2. Bring back an old version of one file</text>
+  <g><line x1="80" y1="240" x2="330" y2="240" stroke="#2a7f8f" stroke-width="3"/>
+  <circle cx="100" cy="240" r="13" fill="#2a7f8f"/><circle cx="200" cy="240" r="13" fill="#2a7f8f"/><circle cx="300" cy="240" r="13" fill="#2a7f8f"/></g>
+  <text x="100" y="280" font-size="16" fill="#555" text-anchor="middle">Monday</text><text x="300" y="280" font-size="16" fill="#555" text-anchor="middle">today</text>
+  <path d="M100,224 C130,198 270,198 296,224" stroke="#6b4fa0" stroke-width="2.5" fill="none" marker-end="url(#ar)"/>
+  <text x="430" y="235" font-size="17" fill="#333">"Put plot.R back as it was on Monday,</text>
+  <text x="430" y="258" font-size="17" fill="#333">and leave everything else as it is."</text>
+  <text x="430" y="285" font-size="16" fill="#777" font-family="Menlo, Consolas, monospace">git restore --source=3f9c2a1 plot.R</text>
+  <!-- row 3 -->
+  <text x="30" y="345" font-size="20" font-weight="bold" fill="#8a6a12">3. Undo a whole commit, keeping the record</text>
+  <line x1="80" y1="400" x2="330" y2="400" stroke="#2a7f8f" stroke-width="3"/>
+  <circle cx="100" cy="400" r="13" fill="#2a7f8f"/><circle cx="200" cy="400" r="13" fill="#a8324a"/><circle cx="300" cy="400" r="13" fill="#8a6a12"/>
+  <text x="200" y="440" font-size="16" fill="#a8324a" text-anchor="middle">bad commit</text><text x="300" y="440" font-size="16" fill="#8a6a12" text-anchor="middle">"Revert ..."</text>
+  <text x="430" y="395" font-size="17" fill="#333">"Undo the commit 'Clean: drop outliers'</text>
+  <text x="430" y="418" font-size="17" fill="#333">with a new commit that reverses it."</text>
+  <text x="430" y="445" font-size="16" fill="#777" font-family="Menlo, Consolas, monospace">git revert 77e1d90</text>
+</svg>

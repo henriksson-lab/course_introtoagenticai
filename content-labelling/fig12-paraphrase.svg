@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" width="1000" height="380" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker></defs>
+  <rect width="1000" height="380" fill="#ffffff"/>
+  <g font-size="16">
+    <rect x="20" y="40" width="290" height="200" rx="10" fill="#e3f1e5" stroke="#2e7d32" stroke-width="2"/>
+    <text x="165" y="72" text-anchor="middle" font-weight="bold" fill="#1b2a3a">Watermarked text</text>
+    <text x="40" y="112"><tspan fill="#2e7d32" font-weight="bold">samples</tspan> <tspan fill="#b23a3a">were</tspan> <tspan fill="#2e7d32" font-weight="bold">stored</tspan> <tspan fill="#2e7d32" font-weight="bold">at</tspan></text>
+    <text x="40" y="138"><tspan fill="#2e7d32" font-weight="bold">room</tspan> <tspan fill="#2e7d32" font-weight="bold">temperature</tspan> <tspan fill="#b23a3a">for</tspan></text>
+    <text x="40" y="164"><tspan fill="#2e7d32" font-weight="bold">two</tspan> <tspan fill="#2e7d32" font-weight="bold">weeks</tspan> ...</text>
+    <text x="165" y="216" text-anchor="middle" font-size="22" font-weight="bold" fill="#2e7d32">67% green</text>
+
+    <rect x="355" y="40" width="290" height="200" rx="10" fill="#fbf2dc" stroke="#8a6a12" stroke-width="2"/>
+    <text x="500" y="72" text-anchor="middle" font-weight="bold" fill="#1b2a3a">Paraphrased by a person</text>
+    <text x="375" y="112"><tspan fill="#b23a3a">specimens</tspan> <tspan fill="#b23a3a">were</tspan> <tspan fill="#2e7d32" font-weight="bold">kept</tspan> <tspan fill="#2e7d32" font-weight="bold">at</tspan></text>
+    <text x="375" y="138"><tspan fill="#2e7d32" font-weight="bold">room</tspan> <tspan fill="#2e7d32" font-weight="bold">temperature</tspan> <tspan fill="#b23a3a">for</tspan></text>
+    <text x="375" y="164"><tspan fill="#b23a3a">14</tspan> <tspan fill="#2e7d32" font-weight="bold">days</tspan> ...</text>
+    <text x="500" y="216" text-anchor="middle" font-size="22" font-weight="bold" fill="#8a6a12">closer to 50%</text>
+
+    <rect x="690" y="40" width="290" height="200" rx="10" fill="#f4f7fa" stroke="#9aa8b5" stroke-width="2"/>
+    <text x="835" y="72" text-anchor="middle" font-weight="bold" fill="#1b2a3a">Translated</text>
+    <text x="710" y="112"><tspan fill="#b23a3a">proverna</tspan> <tspan fill="#2e7d32" font-weight="bold">förvarades</tspan> <tspan fill="#b23a3a">i</tspan></text>
+    <text x="710" y="138"><tspan fill="#2e7d32" font-weight="bold">rumstemperatur</tspan> <tspan fill="#b23a3a">i</tspan></text>
+    <text x="710" y="164"><tspan fill="#b23a3a">två</tspan> <tspan fill="#2e7d32" font-weight="bold">veckor</tspan> ...</text>
+    <text x="835" y="216" text-anchor="middle" font-size="22" font-weight="bold" fill="#5a6a7a">about 50%</text>
+  </g>
+  <line x1="312" y1="140" x2="350" y2="140" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="647" y1="140" x2="685" y2="140" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="500" y="290" text-anchor="middle" font-size="18" fill="#1b2a3a">Every changed word is green or red by chance, and also re-colours the word after it.</text>
+  <text x="500" y="318" text-anchor="middle" font-size="18" fill="#1b2a3a">Rewriting dilutes the signal; translating by another tool removes most of it.</text>
+  <text x="980" y="370" text-anchor="end" font-size="13" fill="#9aa8b5">illustrative</text>
+</svg>

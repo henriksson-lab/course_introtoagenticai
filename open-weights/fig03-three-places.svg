@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="1000" height="450" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker></defs>
+  <rect width="1000" height="450" fill="#ffffff"/>
+  <rect x="380" y="20" width="240" height="70" rx="10" fill="#f4f7fa" stroke="#9aa8b5" stroke-width="2"/>
+  <text x="500" y="50" text-anchor="middle" font-size="18" font-weight="bold" fill="#1b2a3a">Your prompt and files</text>
+  <text x="500" y="74" text-anchor="middle" font-size="15" fill="#3a4a5a">go to wherever the model runs</text>
+  <line x1="440" y1="92" x2="180" y2="140" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="500" y1="92" x2="500" y2="140" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="560" y1="92" x2="820" y2="140" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <!-- three boxes -->
+  <rect x="30" y="146" width="300" height="270" rx="12" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="180" y="178" text-anchor="middle" font-size="19" font-weight="bold" fill="#6b4fa0">1. Provider's cloud</text>
+  <g font-size="16" fill="#1b2a3a"><text x="50" y="214">Anthropic, OpenAI, Google</text><text x="50" y="240">Runs: closed models (and</text><text x="50" y="262">some open ones)</text><text x="50" y="296">Who sees data: the company</text><text x="50" y="320">Rules: your plan's terms or</text><text x="50" y="342">the university's contract</text></g>
+  <text x="180" y="392" text-anchor="middle" font-size="16" font-weight="bold" fill="#6b4fa0">best models</text>
+  <rect x="350" y="146" width="300" height="270" rx="12" fill="#faf5e8" stroke="#8a6a12" stroke-width="2"/>
+  <text x="500" y="178" text-anchor="middle" font-size="19" font-weight="bold" fill="#8a6a12">2. Hosted service</text>
+  <g font-size="16" fill="#1b2a3a"><text x="370" y="214">run by a university or a</text><text x="370" y="238">national infrastructure</text><text x="370" y="262">e.g. SciLifeLab OpenLLM</text><text x="370" y="296">Who sees data: that service</text><text x="370" y="320">Rules: the service's own use</text><text x="370" y="342">policy and agreements</text></g>
+  <text x="500" y="392" text-anchor="middle" font-size="16" font-weight="bold" fill="#8a6a12">good open models, shared GPUs</text>
+  <rect x="670" y="146" width="300" height="270" rx="12" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="820" y="178" text-anchor="middle" font-size="19" font-weight="bold" fill="#2a7f8f">3. Your own computer</text>
+  <g font-size="16" fill="#1b2a3a"><text x="690" y="214">LM Studio, Ollama,</text><text x="690" y="238">llama.cpp</text><text x="690" y="262">Runs: open-weights models</text><text x="690" y="296">Who sees data: nobody else</text><text x="690" y="320">Rules: as for any file on</text><text x="690" y="342">your computer</text></g>
+  <text x="820" y="392" text-anchor="middle" font-size="16" font-weight="bold" fill="#2a7f8f">smaller models, your hardware</text>
+</svg>

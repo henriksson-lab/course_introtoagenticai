@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <rect x="30" y="30" width="400" height="380" rx="10" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+  <text x="230" y="68" font-size="21" font-weight="bold" fill="#a8324a" text-anchor="middle">A diary nobody can use</text>
+  <g font-size="18" fill="#333" font-family="Menlo, Consolas, monospace">
+    <text x="55" y="120">update</text>
+    <text x="55" y="165">fix</text>
+    <text x="55" y="210">changes</text>
+    <text x="55" y="255">asdf</text>
+    <text x="55" y="300">more fixes</text>
+    <text x="55" y="345">final version</text>
+  </g>
+  <rect x="470" y="30" width="500" height="380" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="720" y="68" font-size="21" font-weight="bold" fill="#2a7f8f" text-anchor="middle">A lab notebook</text>
+  <g font-size="17" fill="#333">
+    <text x="495" y="115">Add raw grant data from Swecris (2008-2024)</text>
+    <text x="495" y="160">Clean: merge 3 spellings of "KTH"</text>
+    <text x="495" y="205">Exclude 12 grants with no amount (list in notes)</text>
+    <text x="495" y="250">Figure 1: funding per year, in MSEK</text>
+    <text x="495" y="295">Fix: amounts were in SEK, not kSEK</text>
+    <text x="495" y="340">Figure 1 redone after the SEK fix</text>
+  </g>
+  <text x="720" y="390" font-size="16" fill="#555" text-anchor="middle">what was done, why, and what it affects</text>
+</svg>

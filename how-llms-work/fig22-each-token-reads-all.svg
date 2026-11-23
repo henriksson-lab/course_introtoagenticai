@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#ffffff"/>
+  <text x="20" y="32" font-size="19" fill="#666">To produce each new token, the model takes in the whole context window again</text>
+  <g font-size="17">
+    <!-- row 1 -->
+    <rect x="20" y="55" width="250" height="44" rx="6" fill="#f5f5f5" stroke="#bbb"/>
+    <text x="34" y="83" fill="#333">instructions, files, chat</text>
+    <rect x="276" y="55" width="80" height="44" rx="6" fill="#e3f1f3" stroke="#2a7f8f"/><text x="316" y="83" text-anchor="middle" fill="#333">The</text>
+    <rect x="362" y="55" width="80" height="44" rx="6" fill="#e3f1f3" stroke="#2a7f8f"/><text x="402" y="83" text-anchor="middle" fill="#333">mean</text>
+    <rect x="448" y="55" width="80" height="44" rx="6" fill="#fff" stroke="#6b4fa0" stroke-width="2" stroke-dasharray="5 4"/><text x="488" y="83" text-anchor="middle" fill="#6b4fa0">?</text>
+    <path d="M20,108 H442" stroke="#2a7f8f" stroke-width="5" opacity="0.35"/>
+    <text x="560" y="83" fill="#333">step 1: reads all of this, picks "height"</text>
+    <!-- row 2 -->
+    <rect x="20" y="140" width="250" height="44" rx="6" fill="#f5f5f5" stroke="#bbb"/>
+    <text x="34" y="168" fill="#333">instructions, files, chat</text>
+    <rect x="276" y="140" width="80" height="44" rx="6" fill="#e3f1f3" stroke="#2a7f8f"/><text x="316" y="168" text-anchor="middle" fill="#333">The</text>
+    <rect x="362" y="140" width="80" height="44" rx="6" fill="#e3f1f3" stroke="#2a7f8f"/><text x="402" y="168" text-anchor="middle" fill="#333">mean</text>
+    <rect x="448" y="140" width="80" height="44" rx="6" fill="#eeeaf5" stroke="#6b4fa0"/><text x="488" y="168" text-anchor="middle" fill="#333">height</text>
+    <rect x="534" y="140" width="80" height="44" rx="6" fill="#fff" stroke="#6b4fa0" stroke-width="2" stroke-dasharray="5 4"/><text x="574" y="168" text-anchor="middle" fill="#6b4fa0">?</text>
+    <path d="M20,193 H528" stroke="#2a7f8f" stroke-width="5" opacity="0.35"/>
+    <text x="640" y="168" fill="#333">step 2: all of it again, plus "height"</text>
+    <!-- row 3 -->
+    <rect x="20" y="225" width="250" height="44" rx="6" fill="#f5f5f5" stroke="#bbb"/>
+    <text x="34" y="253" fill="#333">instructions, files, chat</text>
+    <rect x="276" y="225" width="80" height="44" rx="6" fill="#e3f1f3" stroke="#2a7f8f"/><text x="316" y="253" text-anchor="middle" fill="#333">The</text>
+    <rect x="362" y="225" width="80" height="44" rx="6" fill="#e3f1f3" stroke="#2a7f8f"/><text x="402" y="253" text-anchor="middle" fill="#333">mean</text>
+    <rect x="448" y="225" width="80" height="44" rx="6" fill="#eeeaf5" stroke="#6b4fa0"/><text x="488" y="253" text-anchor="middle" fill="#333">height</text>
+    <rect x="534" y="225" width="80" height="44" rx="6" fill="#eeeaf5" stroke="#6b4fa0"/><text x="574" y="253" text-anchor="middle" fill="#333">is</text>
+    <rect x="620" y="225" width="80" height="44" rx="6" fill="#fff" stroke="#6b4fa0" stroke-width="2" stroke-dasharray="5 4"/><text x="660" y="253" text-anchor="middle" fill="#6b4fa0">?</text>
+    <path d="M20,278 H614" stroke="#2a7f8f" stroke-width="5" opacity="0.35"/>
+    <text x="725" y="253" fill="#333">step 3: … and so on</text>
+  </g>
+  <g font-size="18">
+    <rect x="20" y="310" width="300" height="110" rx="10" fill="#e3f1f3" stroke="#2a7f8f"/>
+    <text x="38" y="342" font-weight="bold" fill="#2a7f8f">Everything counts</text>
+    <text x="38" y="370" fill="#333">a file it read, your rules, its</text>
+    <text x="38" y="394" fill="#333">own earlier words</text>
+    <rect x="350" y="310" width="300" height="110" rx="10" fill="#eeeaf5" stroke="#6b4fa0"/>
+    <text x="368" y="342" font-weight="bold" fill="#6b4fa0">Early tokens steer late ones</text>
+    <text x="368" y="370" fill="#333">a wrong start is built on,</text>
+    <text x="368" y="394" fill="#333">not revised</text>
+    <rect x="680" y="310" width="300" height="110" rx="10" fill="#f5efdd" stroke="#8a6a12"/>
+    <text x="698" y="342" font-weight="bold" fill="#8a6a12">The window has an end</text>
+    <text x="698" y="370" fill="#333">what fell out or was never</text>
+    <text x="698" y="394" fill="#333">put in cannot count</text>
+  </g>
+</svg>

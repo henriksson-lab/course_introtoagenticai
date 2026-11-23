@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="470" fill="#ffffff"/>
+  <rect x="20" y="30" width="305" height="170" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="40" y="72" font-size="22" fill="#2a7f8f" text-anchor="start" font-weight="bold" xml:space="preserve">Visible labels</text>
+  <text x="40" y="115" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">every slider says what it is</text>
+  <text x="40" y="141" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">and shows its value</text>
+  <rect x="345" y="30" width="305" height="170" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="365" y="72" font-size="22" fill="#2a7f8f" text-anchor="start" font-weight="bold" xml:space="preserve">Keyboard works</text>
+  <text x="365" y="115" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Tab to reach a control,</text>
+  <text x="365" y="141" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">arrow keys to change it</text>
+  <rect x="670" y="30" width="305" height="170" rx="10" fill="#eee9f6" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="690" y="72" font-size="22" fill="#6b4fa0" text-anchor="start" font-weight="bold" xml:space="preserve">Not colour alone</text>
+  <text x="690" y="115" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">a miss is red and dashed,</text>
+  <text x="690" y="141" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">not only red</text>
+  <rect x="20" y="230" width="305" height="170" rx="10" fill="#eee9f6" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="40" y="272" font-size="22" fill="#6b4fa0" text-anchor="start" font-weight="bold" xml:space="preserve">Big enough</text>
+  <text x="40" y="315" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">text 16 px or more; it must</text>
+  <text x="40" y="341" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">work on a projector</text>
+  <rect x="345" y="230" width="305" height="170" rx="10" fill="#f5efdf" stroke="#8a6a12" stroke-width="2"/>
+  <text x="365" y="272" font-size="22" fill="#8a6a12" text-anchor="start" font-weight="bold" xml:space="preserve">Numbers as text</text>
+  <text x="365" y="315" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">key values in words too,</text>
+  <text x="365" y="341" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">for screen readers</text>
+  <rect x="670" y="230" width="305" height="170" rx="10" fill="#f5efdf" stroke="#8a6a12" stroke-width="2"/>
+  <text x="690" y="272" font-size="22" fill="#8a6a12" text-anchor="start" font-weight="bold" xml:space="preserve">Calm</text>
+  <text x="690" y="315" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">no flashing, no autoplay,</text>
+  <text x="690" y="341" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">nothing only on hover</text>
+  <text x="500" y="450" font-size="18" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">Ask the agent for these in the first prompt; then check them yourself with the keyboard.</text>
+</svg>

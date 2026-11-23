@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <text x="500" y="35" font-size="21" font-weight="bold" fill="#333" text-anchor="middle">A free account publishes Pages only from a public repository</text>
+  <rect x="60" y="60" width="880" height="330" rx="16" fill="#f6f1e3" stroke="#8a6a12" stroke-width="2.5"/>
+  <text x="85" y="95" font-size="20" font-weight="bold" fill="#8a6a12">3. The history: every file in every old commit</text>
+  <text x="85" y="122" font-size="16" fill="#333">a deleted contacts list, an early draft with real names, an old exam</text>
+  <rect x="130" y="145" width="740" height="225" rx="14" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2.5"/>
+  <text x="155" y="180" font-size="20" font-weight="bold" fill="#6b4fa0">2. The repository: every file on main, rendered or not</text>
+  <text x="155" y="207" font-size="16" fill="#333">notes, plans, CLAUDE.md, data files, scripts, the agent's logs</text>
+  <rect x="200" y="230" width="600" height="120" rx="12" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="225" y="266" font-size="20" font-weight="bold" fill="#2a7f8f">1. The site: docs/</text>
+  <text x="225" y="294" font-size="16" fill="#333">what you meant to publish: the pages, figures, slides</text>
+  <text x="225" y="320" font-size="16" fill="#333">and any file Quarto copied in because a page links to it</text>
+  <text x="500" y="420" font-size="18" fill="#a8324a" text-anchor="middle">All three rings are public. Check all three before you switch Pages on.</text>
+</svg>

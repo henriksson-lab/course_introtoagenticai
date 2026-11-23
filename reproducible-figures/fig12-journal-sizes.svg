@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <!-- page -->
+  <rect x="40" y="30" width="420" height="380" fill="#fafafa" stroke="#999" stroke-width="2"/>
+  <g fill="#ddd"><rect x="65" y="55" width="180" height="8"/><rect x="65" y="72" width="180" height="8"/><rect x="65" y="89" width="180" height="8"/><rect x="255" y="55" width="180" height="8"/><rect x="255" y="72" width="180" height="8"/><rect x="255" y="89" width="180" height="8"/></g>
+  <rect x="65" y="110" width="180" height="120" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="155" y="168" font-size="17" font-weight="bold" fill="#2a7f8f" text-anchor="middle">single</text>
+  <text x="155" y="192" font-size="16" fill="#333" text-anchor="middle">column</text>
+  <g fill="#ddd"><rect x="255" y="110" width="180" height="8"/><rect x="255" y="127" width="180" height="8"/><rect x="255" y="144" width="180" height="8"/><rect x="255" y="161" width="180" height="8"/><rect x="255" y="178" width="180" height="8"/><rect x="255" y="195" width="180" height="8"/><rect x="255" y="212" width="180" height="8"/></g>
+  <rect x="65" y="250" width="370" height="140" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="250" y="315" font-size="17" font-weight="bold" fill="#6b4fa0" text-anchor="middle">double column (full width)</text>
+  <!-- table -->
+  <g font-size="18" fill="#333">
+    <text x="510" y="70" font-weight="bold">Typical widths (check your journal)</text>
+    <text x="510" y="115" fill="#2a7f8f" font-weight="bold">single column</text><text x="760" y="115">about 85-90 mm</text>
+    <text x="510" y="155" fill="#8a6a12" font-weight="bold">1.5 columns</text><text x="760" y="155">about 110-140 mm</text>
+    <text x="510" y="195" fill="#6b4fa0" font-weight="bold">double column</text><text x="760" y="195">about 170-185 mm</text>
+    <line x1="510" y1="220" x2="970" y2="220" stroke="#ddd" stroke-width="1.5"/>
+    <text x="510" y="260">text at final size</text><text x="760" y="260">often 5-8 pt minimum</text>
+    <text x="510" y="300">raster images (PNG, TIFF)</text><text x="760" y="300">often 300 dpi or more</text>
+    <text x="510" y="340">line art, plots</text><text x="760" y="340">vector (PDF, EPS, SVG)</text>
+    <text x="510" y="395" font-size="16" fill="#777">Ask the agent to read the author guidelines</text>
+    <text x="510" y="418" font-size="16" fill="#777">of your journal and use its numbers.</text>
+  </g>
+</svg>

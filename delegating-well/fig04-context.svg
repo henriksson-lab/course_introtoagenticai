@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 520" width="560" height="520" font-family="Helvetica, Arial, sans-serif">
+  <rect width="560" height="520" fill="#ffffff"/>
+  <!-- folder -->
+  <rect x="30" y="22" width="200" height="44" rx="6" fill="#2a7f8f"/>
+  <rect x="30" y="60" width="500" height="150" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="45" y="51" font-size="18" font-weight="bold" fill="#ffffff">In the files</text>
+  <g font-size="18" fill="#333">
+    <text x="50" y="105">column names, values, notes</text>
+    <text x="50" y="135">what the agent can open and read</text>
+    <text x="50" y="165" fill="#2a7f8f">→ the agent finds this itself</text>
+  </g>
+  <!-- head -->
+  <rect x="30" y="240" width="500" height="250" rx="10" fill="#f0ecf7" stroke="#6b4fa0" stroke-width="2.5"/>
+  <text x="50" y="278" font-size="19" font-weight="bold" fill="#6b4fa0">Only in your head</text>
+  <g font-size="18" fill="#333">
+    <text x="50" y="315">how the data was collected</text>
+    <text x="50" y="345">what values are normal in your field</text>
+    <text x="50" y="375">known problems and their history</text>
+    <text x="50" y="405">your group's habits and rules</text>
+    <text x="50" y="435">who the result is for</text>
+    <text x="50" y="470" fill="#6b4fa0">→ write one line each in the brief</text>
+  </g>
+</svg>

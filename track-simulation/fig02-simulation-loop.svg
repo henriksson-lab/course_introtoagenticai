@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <!-- inputs -->
+  <rect x="20" y="30" width="270" height="80" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="155" y="64" font-size="20" font-weight="bold" fill="#2a7f8f" text-anchor="middle">The rules (the model)</text>
+  <text x="155" y="92" font-size="17" fill="#333" text-anchor="middle">"half the drug goes every 6 h"</text>
+  <rect x="20" y="130" width="270" height="80" rx="10" fill="#f6f1e3" stroke="#8a6a12" stroke-width="2"/>
+  <text x="155" y="164" font-size="20" font-weight="bold" fill="#8a6a12" text-anchor="middle">The numbers</text>
+  <text x="155" y="192" font-size="17" fill="#333" text-anchor="middle">every one with its unit</text>
+  <rect x="20" y="230" width="270" height="80" rx="10" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="155" y="264" font-size="20" font-weight="bold" fill="#6b4fa0" text-anchor="middle">Start and edges</text>
+  <text x="155" y="292" font-size="17" fill="#333" text-anchor="middle">where it starts, what is fixed</text>
+  <line x1="290" y1="70" x2="390" y2="160" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="290" y1="170" x2="390" y2="170" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="290" y1="270" x2="390" y2="180" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+  <!-- loop -->
+  <rect x="395" y="110" width="250" height="120" rx="60" fill="#fff" stroke="#333" stroke-width="2"/>
+  <text x="520" y="155" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">The computer takes</text>
+  <text x="520" y="182" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">a small step forward,</text>
+  <text x="520" y="209" font-size="20" font-weight="bold" fill="#333" text-anchor="middle">again and again</text>
+  <path d="M470,232 C470,290 570,290 570,232" fill="none" stroke="#a8324a" stroke-width="3" marker-end="url(#a)"/>
+  <text x="520" y="310" font-size="17" fill="#a8324a" text-anchor="middle">thousands of steps</text>
+  <line x1="645" y1="170" x2="720" y2="170" stroke="#555" stroke-width="2" marker-end="url(#a)"/>
+  <!-- result -->
+  <rect x="725" y="60" width="255" height="220" rx="10" fill="#fff" stroke="#999"/>
+  <line x1="755" y1="250" x2="960" y2="250" stroke="#555" stroke-width="2"/>
+  <line x1="755" y1="250" x2="755" y2="90" stroke="#555" stroke-width="2"/>
+  <path d="M755,100 C800,160 850,215 960,240" fill="none" stroke="#2a7f8f" stroke-width="4"/>
+  <text x="852" y="85" font-size="18" fill="#333" text-anchor="middle">a plot or a table</text>
+  <!-- bottom -->
+  <text x="500" y="370" font-size="20" fill="#333" text-anchor="middle">You describe the three boxes on the left. The agent writes the loop.</text>
+  <text x="500" y="404" font-size="20" fill="#333" text-anchor="middle">You check the box on the right against answers you already know.</text>
+</svg>

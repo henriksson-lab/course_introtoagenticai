@@ -1,0 +1,21 @@
+year,question,mean_score,n_responses
+2021,Q1 clear goals,3.41,61
+2022,Q1 clear goals,3.76,46
+2023,Q1 clear goals,3.93,54
+2024,Q1 clear goals,3.88,41
+2025,Q1 clear goals,4.05,58
+2021,Q2 useful exercises,3.85,54
+2022,Q2 useful exercises,3.94,62
+2023,Q2 useful exercises,4.03,43
+2024,Q2 useful exercises,4.01,54
+2025,Q2 useful exercises,4.19,38
+2021,Q3 reasonable workload,2.82,41
+2022,Q3 reasonable workload,3.0,49
+2023,Q3 reasonable workload,3.31,47
+2024,Q3 reasonable workload,3.25,45
+2025,Q3 reasonable workload,3.65,40
+2021,Q4 overall,3.76,40
+2022,Q4 overall,3.77,62
+2023,Q4 overall,3.73,55
+2024,Q4 overall,3.97,53
+2025,Q4 overall,4.02,55

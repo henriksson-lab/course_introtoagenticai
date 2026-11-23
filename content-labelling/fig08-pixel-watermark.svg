@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" width="1000" height="380" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <pattern id="p" width="14" height="14" patternUnits="userSpaceOnUse"><rect width="7" height="7" fill="#6b4fa0" opacity="0.55"/><rect x="7" y="7" width="7" height="7" fill="#2a7f8f" opacity="0.55"/></pattern>
+  </defs>
+  <rect width="1000" height="380" fill="#ffffff"/>
+  <rect x="30" y="40" width="260" height="190" rx="10" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+  <ellipse cx="160" cy="135" rx="90" ry="60" fill="#ffffff" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="160" y="262" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2a3a">What you see</text>
+  <text x="160" y="286" text-anchor="middle" font-size="15" fill="#3a4a5a">an ordinary picture</text>
+  <rect x="370" y="40" width="260" height="190" rx="10" fill="url(#p)" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="500" y="262" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2a3a">What is hidden</text>
+  <text x="500" y="286" text-anchor="middle" font-size="15" fill="#3a4a5a">tiny changes to many pixels,</text>
+  <text x="500" y="306" text-anchor="middle" font-size="15" fill="#3a4a5a">too small for the eye (exaggerated here)</text>
+  <line x1="640" y1="135" x2="700" y2="135" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="710" y="70" width="260" height="130" rx="10" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="840" y="104" text-anchor="middle" font-size="17" font-weight="bold" fill="#6b4fa0">Detector with the key</text>
+  <text x="840" y="138" text-anchor="middle" font-size="16" fill="#1b2a3a">"watermark found"</text>
+  <text x="840" y="168" text-anchor="middle" font-size="15" fill="#3a4a5a">e.g. Google's SynthID</text>
+  <text x="500" y="350" text-anchor="middle" font-size="17" fill="#1b2a3a">Survives screenshots, cropping and compression, within limits. Heavy editing can remove it.</text>
+</svg>

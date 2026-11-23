@@ -1,0 +1,355 @@
+---
+title: "Exercise: a verified literature table"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- a **search plan** you wrote (or corrected) yourself, with the exact query for each item,
+- a **script** that searched a literature database through its API, and the **raw records** it saved, dated and untouched,
+- a **literature table** with one claim per row, each with an identifier, an evidence type and a word-for-word **quote** from the abstract,
+- a **verification report** from a second script, and **your own notes** on a random sample of rows,
+- a **BibTeX file** and the references in **Zotero** (if you use it),
+- the table **published on your page**,
+- the same workflow applied to **a set of items from your own project**.
+
+The worked example uses ten genes of the Hedgehog signalling pathway. If you are not in the life sciences, use the **teaching-methods** version: every prompt below has a tab for it. Choose one and stay with it.
+
+Your session will look different from anyone else's, and the databases grow every day, so your numbers will differ from the examples. Compare **checks**, not screens.
+
+## Before you start
+
+- You have done *Git as undo button and lab notebook*, *GitHub* and *A course or project page*: your project has a page that rebuilds when you push.
+- An e-mail address to give the databases as a contact (your work address is fine). **No API key is needed** for this exercise.
+- Optional: [Zotero](https://www.zotero.org) installed, if you want the references in a reference manager.
+- Make a folder for the worked example in your course folder and start the agent there:
+
+::: {.panel-tabset}
+## Mac / Linux
+```bash
+mkdir -p ~/agentic-course/literature-review
+cd ~/agentic-course/literature-review
+claude        # or: codex
+```
+## Windows (PowerShell)
+```powershell
+mkdir $HOME\agentic-course\literature-review
+cd $HOME\agentic-course\literature-review
+claude        # or: codex
+```
+:::
+
+- First prompt, to set the folder up:
+
+```text
+Make this folder a git repository. Create README.md (title: Literature
+review worked example; one line on the goal), a .gitignore that lists
+.env, and the empty folders scripts, raw, results and notes.
+Then create .env with one line: CONTACT_EMAIL=
+and stop. I will type my e-mail address into .env myself.
+```
+
+- Open `.env` in a text editor, type your e-mail after `CONTACT_EMAIL=`, save. Ask the agent: "Is .env listed in .gitignore, and is it untracked by git?" The answer must be yes to both.
+
+| | Claude Code | Codex |
+|---|---|---|
+| Network | the scripts contact the databases; approve the commands that run them | in Auto mode, commands that need the network ask for approval: approve them for this folder |
+| Mode | manual approval is fine for this exercise | Auto (the folder is a git repo), or `/permissions` |
+
+## Worked example
+
+### Step 1: the search plan
+
+Ask the agent to draft the plan, then correct it. You decide what counts.
+
+::: {.panel-tabset}
+## Hedgehog genes
+```text
+Draft search-plan.md for a literature table on ten human genes of the
+Hedgehog signalling pathway: SHH, IHH, DHH, PTCH1, PTCH2, SMO, SUFU,
+GLI1, GLI2, GLI3.
+
+Question: for each gene, the main findings on its role in human
+development and disease.
+Database: PubMed via the NCBI E-utilities API.
+For each gene, write the exact PubMed query. Use the symbol AND the full
+gene name (for example SMO OR smoothened), restricted to title/abstract,
+AND hedgehog. Limits: 2010 onwards, English.
+Keep the top 20 records per gene by relevance; the table will use at
+most 4 papers per gene, at most 1 of them a review.
+Exclude papers where the gene is only mentioned in passing.
+Do not search yet. Show me the plan and point out any gene whose symbol
+could mean something else.
+```
+## Teaching methods
+```text
+Draft search-plan.md for a literature table on eight teaching methods:
+flipped classroom, peer instruction, retrieval practice, spaced
+practice, worked examples, problem-based learning, team-based learning,
+think-pair-share.
+
+Question: what evidence is there that each method improves learning in
+higher education?
+Database: OpenAlex (works search); DOIs checked at Crossref.
+For each method, write the exact query, with common synonyms (for
+example "flipped classroom" OR "inverted classroom"), restricted to
+higher education. Limits: 2010 onwards, English.
+Keep the top 20 records per method by relevance; the table will use at
+most 4 papers per method, at most 1 of them a review or meta-analysis.
+Do not search yet. Show me the plan and point out any method name that
+is also an everyday phrase.
+```
+:::
+
+**What to look for.** Read every query. Does each gene have both the symbol and the full name? (Hedgehog: SMO must include *smoothened*; SUFU *suppressor of fused*; PTCH1 *patched 1*.) Does each teaching method have its synonyms? Change what you disagree with by telling the agent, for example "add 'inverted classroom' to the flipped classroom query". Then add the line `Date run: <today>` and commit: "Commit search-plan.md with the message 'Search plan'."
+
+### Step 2: the search
+
+::: {.panel-tabset}
+## Hedgehog genes
+```text
+Read search-plan.md. Write a Python script scripts/search.py that runs
+the PubMed query in the plan for each of the ten genes, using the NCBI
+E-utilities API. Check the current E-utilities documentation first.
+
+- stay under 3 requests per second; set the tool and email parameters
+  (read the e-mail from .env; never print it or write it anywhere else)
+- save every raw response under raw/pubmed/<today's date>/, one file per
+  gene, plus the abstracts of the top 20 records per gene
+- write raw/pubmed/<today's date>/log.txt: the query, the number of
+  hits and the number saved for each gene
+- never edit files in raw/ after they are written
+
+Do not add any paper from memory. Every record must come from the API.
+Run the script and show me the log.
+```
+## Teaching methods
+```text
+Read search-plan.md. Write a Python script scripts/search.py that runs
+the OpenAlex query in the plan for each of the eight methods. Check the
+current OpenAlex documentation first (access rules changed in 2026):
+use no key unless the documentation says one is required, and tell me
+if it is.
+
+- keep well under the documented rate limit
+- save every raw response under raw/openalex/<today's date>/, one file
+  per method, including the abstracts where OpenAlex has them
+- write raw/openalex/<today's date>/log.txt: the query, the number of
+  hits, the number saved and the number with an abstract, per method
+- never edit files in raw/ after they are written
+
+Do not add any paper from memory. Every record must come from the API.
+Run the script and show me the log.
+```
+:::
+
+**What to look for.** The agent should read the documentation, write the script, and ask before running it. Then read the log.
+
+#### Check the result
+
+1. **Every item has hits.** Ten genes (or eight methods) in the log, none with 0 hits. Zero means a typo or a too-narrow query.
+2. **The numbers are plausible.** For the genes, SHH and GLI1 should have far more hits than DHH and PTCH2. If one gene has many thousands, the query is probably too broad (did SMO lose the word *hedgehog*?).
+3. **Raw files exist.** Open the `raw/.../<date>/` folder in your file browser. One file per item plus the log.
+4. **Spot-check one count yourself.** Copy one query from the log into the search box at [pubmed.ncbi.nlm.nih.gov](https://pubmed.ncbi.nlm.nih.gov) (or [openalex.org](https://openalex.org) for the methods). The number of results should be close to the log (a few more if records were added since).
+5. Commit: "Commit the script and the raw downloads, message 'Search run <date>'."
+
+### Step 3: the table
+
+::: {.panel-tabset}
+## Hedgehog genes
+```text
+Build results/literature_table.csv from the saved records in raw/ only.
+Columns: gene, claim, pmid, doi, year, title, journal, evidence_type, quote.
+
+- at most 4 papers per gene, following the rules in search-plan.md
+- claim: one sentence, no stronger than the abstract (keep "associated",
+  "may", "in mice")
+- quote: the sentence(s) from the abstract that support the claim,
+  copied exactly, character for character
+- evidence_type: one of review, human genetics, human tissue or cohort,
+  animal model, cell experiment, computational
+- pmid, doi, year, title, journal: copied from the record by a script,
+  never typed
+If no abstract supports a useful claim, give the gene fewer rows and say
+so. At the end, list every row you were unsure about, and give the
+number of rows per gene.
+```
+## Teaching methods
+```text
+Build results/literature_table.csv from the saved records in raw/ only.
+Columns: method, claim, doi, openalex_id, year, title, journal,
+evidence_type, quote.
+
+- at most 4 papers per method, following the rules in search-plan.md
+- only papers with an abstract; papers without one are left out and
+  counted
+- claim: one sentence, no stronger than the abstract (keep "in one
+  course", "students reported", "may")
+- quote: the sentence(s) from the abstract that support the claim,
+  copied exactly, character for character
+- evidence_type: one of meta-analysis or review, randomised trial,
+  quasi-experiment, survey, single-course report
+- doi, openalex_id, year, title, journal: copied from the record by a
+  script, never typed
+At the end, list every row you were unsure about, and give the number of
+rows per method.
+```
+:::
+
+**What to look for.** Open the CSV in Excel or LibreOffice. Read five claims next to their quotes. Is each claim a fair one-sentence summary of its quote? Is anything stronger in the claim than in the quote?
+
+### Step 4: verification by script
+
+```text
+Write a separate script scripts/verify.py that checks
+results/literature_table.csv against the databases again, not against
+the files in raw/:
+
+- each PMID exists in PubMed (E-utilities esummary) and each DOI
+  resolves (doi.org or Crossref)
+- the title at that identifier matches the title in the table (ignore
+  case, punctuation and spacing; report the two titles if they differ)
+- the quote appears in the abstract (ignore differences in spacing only)
+- any record with publication type "Retracted Publication" is flagged
+- the number of rows per item
+
+Write results/verification_report.md with the totals and a list of
+every problem row. Run it and show me the report. Do not fix anything
+yet.
+```
+
+For the teaching methods, replace the PMID line with "each DOI resolves at Crossref, and the OpenAlex record for that DOI has the same title"; leave out the retraction line or ask the agent to check retraction notices at Crossref.
+
+**What to look for.** Read the report. Then, for each problem row, ask the agent to fix it **from the raw records**, for example:
+
+```text
+Row 5: the quote is paraphrased. Replace it with the exact sentence from
+the abstract, or drop the row if no sentence supports the claim. Then
+rerun verify.py.
+```
+
+Repeat until the report has no problems, or until every remaining problem is explained in a line at the end of the report.
+
+#### Check the verifier: plant three errors
+
+A checker that never fails might not be checking. Test it:
+
+```text
+Make a copy of the table, results/test_table.csv. In the copy only:
+change the PMID (or DOI) of row 1 to one that does not exist
+(for example 99999999, or 10.1000/does-not-exist), swap the titles of
+rows 2 and 3, and change one word in the quote of row 4.
+Run verify.py on the copy. Then delete the copy.
+```
+
+The report must flag **all four** rows (1, 2, 3 and 4). If it misses one, the verifier has a gap: ask the agent to fix the verifier, not the test.
+
+### Step 5: verification by you
+
+```text
+Write scripts/sample.py that picks 5 random rows from the table, with a
+fixed random seed that it prints. Run it, and create notes/hand-checks.md
+with the seed and one heading per chosen row (row number, item, PMID or
+DOI, claim, quote).
+```
+
+For each of the five rows, **without the agent**:
+
+1. Open the paper's page: `https://pubmed.ncbi.nlm.nih.gov/<PMID>/` or `https://doi.org/<DOI>`.
+2. **Title:** the same as in the table?
+3. **Quote:** press Ctrl+F (Cmd+F on a Mac) and find it in the abstract.
+4. **Claim:** a fair summary of the quote? Nothing stronger, nothing lost ("in mice", "associated", "in one course")?
+5. **Evidence type:** right, from what the abstract says was done?
+6. If the full text is open, skim the results: does the paper support the claim?
+
+Write *ok* or what was wrong under each heading. If **any** row was wrong, tell the agent what kind of mistake it was, ask it to recheck every row for that kind of mistake, rerun `verify.py`, and draw five new rows (new seed).
+
+#### Check the result
+
+- **An independent look-up.** Ask the agent for the list of all PMIDs separated by spaces (or all DOIs, one per line). For PMIDs: paste the list into the PubMed search box; the number of results must equal the number of rows. For DOIs: paste them into Zotero's *Add Item by Identifier* (next step); every one must be found. This check uses a different tool from the agent's own scripts.
+- **Rows per item.** The count in the report matches the rules in your plan (at most 4 per item, at most 1 review). Any item with fewer rows has a reason written down.
+- **No memory papers.** Ask: "Is every PMID or DOI in the table present in the files in raw/? List any that are not." The answer must be: none.
+- Commit: "Commit the table, the scripts, the verification report and my hand checks, message 'Verified literature table'."
+
+::: {.callout-note collapse="true" title="What a good result looks like"}
+There is no answer key: the databases change and the agent's choice among relevant papers varies. A good result has:
+
+- 25-40 rows (Hedgehog) or 20-32 rows (teaching methods), with every item present or its gap explained;
+- a verification report where every identifier resolves, every title matches and every quote is found, or each exception is explained;
+- the planted-errors test flagging all four rows;
+- five hand-checked rows, with the seed written down, and a note on what you did about any that failed;
+- for Hedgehog, no row about spermine oxidase, and DHH rows that may be about testis or nerve sheaths (that is real DHH biology);
+- for teaching methods, single-course reports labelled as such, not as trials.
+:::
+
+### Step 6: BibTeX and Zotero
+
+```text
+Write scripts/export_bibtex.py that makes results/references.bib from
+the DOIs in the verified table, by asking doi.org for BibTeX (content
+negotiation, header Accept: application/x-bibtex). Use citation keys of
+the form FirstAuthorYear (add a, b if needed) and add the PMID as a
+field where there is one. Rows without a DOI: build the entry from the
+PubMed record. Never write an entry by hand. Report how many entries
+were written and which rows failed.
+```
+
+**Check:** the number of entries equals the number of rows (minus any failures listed). Open `references.bib` in a text editor and compare three entries with the table: title, year, first author.
+
+**Zotero (optional).** In Zotero, make a new collection "Hedgehog genes" (or "Teaching methods"). Then either:
+
+- **File → Import…**, choose *A file*, select `references.bib`; or
+- click **Add Item by Identifier** (the wand button in the toolbar) and paste the list of DOIs or PMIDs, one per line. Zotero fetches the metadata itself, which is a second, independent check that each identifier is real.
+
+### Step 7: publish the table on your page
+
+Start the agent in the folder of **your page** from *A course or project page* (your own project's page, or the worked-example site `plant-growth-page` if your own page is not ready yet), not in the literature-review folder.
+
+```text
+Add a page "Literature: worked example" to my site. Copy
+../literature-review/results/literature_table.csv and references.bib
+into a folder downloads/ here. On the page, show the table with
+the columns gene (or method), claim, evidence type, year and a link
+"PubMed" or "DOI" for each row. Generate the table as plain Markdown
+with a small script, so the page does not need R or Python to render.
+Above the table, write two lines: where the papers come from, the date
+of the search, how the table was checked (script plus 5 rows by hand),
+and that an AI agent helped build it. Add download links for the CSV and
+the BibTeX file. Add the page to the site navigation, render the site,
+and show me the result before committing.
+```
+
+Open the rendered page locally. Click three links: each must open the right paper. Then the usual loop: commit, push, and check the live page ("Commit and push with the message 'Add literature table'"). Add a line to the **Log of AI use** in your README.
+
+## On your own project
+
+Now do the same for a set of items from **your own project**: 5-15 genes, proteins, materials, species, methods, policies, whatever your project is about.
+
+::: {.callout-warning}
+**Privacy reminder.** The search terms go to the databases and the abstracts go to the AI provider. Both are public information, which is fine. Do **not** put unpublished results, confidential project names, or names of students or patients into the search plan or the prompts.
+:::
+
+1. **Choose the set and the question.** Write two sentences: what the items are, and what you want to know about each. Keep the set small the first time (5-10 items).
+2. **Choose the database.** Biomedicine: PubMed. Other fields: OpenAlex, possibly Semantic Scholar. Ask the agent to check the current access rules.
+3. **Write the plan with the agent** (Step 1 prompt, with your items). Read every query. Which of your terms are ambiguous? Which have synonyms or older names?
+4. **Search, build the table, verify** (Steps 2-5, with your items and your own fixed list of evidence types). Keep the "no papers from memory" rule and the planted-errors test.
+5. **Read five random rows yourself.** In your own field you will spot overstated claims faster than anyone.
+6. **Export** to BibTeX (and Zotero), and **publish** the table on your project page (Step 7), with the method lines.
+7. **Update your project files:** add the plan, the scripts, the raw folder and the results to the project's folder structure from *Organising a project for an agent*, a line to the README's **Log of AI use**, and commit and push.
+
+**Check the result:** every identifier resolves, the planted-errors test flags all four rows, five random rows are read by you and written up, and a colleague in your field could look at the page and say where each claim comes from.
+
+## What you should have now
+
+- In `~/agentic-course/literature-review/`: `search-plan.md`, `scripts/` (search, verify, sample, export), a dated `raw/` folder, `results/literature_table.csv`, `results/verification_report.md`, `results/references.bib` and `notes/hand-checks.md`, all committed.
+- The same for **your own set of items** in your project folder.
+- The references in **Zotero**, if you use it.
+- A **literature page** on your public site, with a link per row and a method note.
+- Tables to take into the next unit, *Extracting data from PDFs*, where we open the open-access papers in your table and pull one number out of each.

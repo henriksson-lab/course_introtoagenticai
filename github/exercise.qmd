@@ -1,0 +1,316 @@
+---
+title: "Exercise: push, review, swap"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- the **GitHub CLI (`gh`)** installed and **logged in**, so the agent can push for you,
+- an example project on GitHub as a **private repository**, pushed by the agent,
+- an **agent review** of that repository, checked against a list of known problems,
+- **issues** filed on the website and by the agent, and one closed by a commit,
+- your **own project** on GitHub as a private repository, with a licence,
+- a **peer review**: your partner's repository read by your agent, and **one issue** filed on it, and
+- one issue from your partner on **your** repository, to act on.
+
+The example project is **synthetic**: the plants, measurements, names and e-mail addresses are made up.
+
+Your session will look different from anyone else's. Compare **results**, not sessions.
+
+## Before you start
+
+- You can log in at [github.com](https://github.com) with the free account you made in *Accounts and installation*. Know your **username**.
+- Your own project folder (for example `~/agentic-course/soil-funding-map/`) is a **git repository** with at least one commit (*Git as undo button and lab notebook*), and git knows your name and e-mail.
+- **Find a partner** for the swap (step 9 onwards). Exchange GitHub usernames. If you work alone, ask a colleague, or do the swap with a second repository of your own and skip the collaborator step.
+- Download [plant-growth.zip](data/plant-growth.zip) and unzip it into your course folder, so that you have `~/agentic-course/plant-growth/` (Windows: `C:\Users\<you>\agentic-course\plant-growth\`) with the files `README.md`, `AGENTS.md` and the folders `data`, `notes`, `results`, `scripts` directly inside.
+
+## Worked example
+
+### Step 1: Install the GitHub CLI
+
+Start the agent in your **course folder** (not in a project) and type:
+
+```text
+Is the GitHub command-line tool gh installed? If not, install it with the
+official method for my operating system. Explain each command before you
+run it. Then run gh --version.
+```
+
+**What to look for.** The agent first checks (`gh --version`). If `gh` is missing, it proposes an install command: on a Mac often `brew install gh`, on Windows often `winget install --id GitHub.cli`. Approve it if it matches what it explained. On Windows, the installer may ask for permission in a separate window. If the agent says it cannot install `gh`, follow the instructions at [cli.github.com](https://cli.github.com) yourself.
+
+When it is done, `gh --version` prints a version number. If the terminal says "command not found" afterwards, close and reopen it (as in *Accounts and installation*).
+
+### Step 2: Log in, yourself, in a second terminal
+
+This step is yours, not the agent's. It involves your password and creates a key for your computer.
+
+1. Open a **new terminal window** (leave the agent running in the first).
+2. Type `gh auth login` and press Enter.
+3. Answer: **GitHub.com**, **HTTPS**, **Yes** (authenticate Git with your GitHub credentials), **Login with a web browser**. The wording may differ slightly; choose the same meaning.
+4. gh shows a one-time code like `4F2A-91C7`. Press Enter: the browser opens `github.com/login/device`. Sign in if asked, type the code and authorise.
+5. Back in the terminal, it says you are logged in.
+
+#### Check the result
+
+In the same second terminal, type:
+
+```bash
+gh auth status
+```
+
+It should say **Logged in to github.com account** followed by your username. If you see another account, run `gh auth logout` and log in again.
+
+Never paste the code, a token or your password into the agent.
+
+### Step 3: Put the example project on GitHub
+
+In the agent's terminal, exit the agent (`/exit`), go into the example project and start the agent there:
+
+::: {.panel-tabset}
+## Claude Code
+```bash
+cd ~/agentic-course/plant-growth
+claude
+```
+Make sure you are in a mode that asks before commands (Shift+Tab until the status line shows the mode you want; Manual is fine).
+
+## Codex
+```bash
+cd ~/agentic-course/plant-growth
+codex
+```
+The folder is not a git repository yet, so Codex may start read-only. Type `/permissions` and choose the level that lets it edit files in the workspace (not full access).
+:::
+
+```text
+This folder is a small example project. Make it a git repository with
+the branch name main, and commit all files with the message
+"Add example project".
+Then put it on GitHub as a PRIVATE repository called plant-growth,
+under my account, and push the commit.
+Before each command, tell me what it does. At the end, give me the
+address of the repository.
+```
+
+**What to look for.** The agent runs `git init`, `git add`, `git commit`, then usually one command such as:
+
+```bash
+gh repo create plant-growth --private --source=. --push
+```
+
+Before you approve that command, check two things: the word **private**, and the **name**. If you already have a repository called `plant-growth`, tell the agent to use another name.
+
+#### Check the result
+
+1. Open the address in your browser (`https://github.com/<your-username>/plant-growth`).
+2. Next to the name it says **Private**.
+3. The page lists the folders `data`, `notes`, `results`, `scripts` and the files `AGENTS.md` and `README.md`. That is the same as your folder.
+4. Below the file list, the README is shown as a formatted page with a heading and a table.
+5. Click **1 commit** (or the clock icon): there is exactly one commit, "Add example project", with your name.
+6. Click into `results/` and then `growth_plot.png`. You see the figure in the browser.
+
+### Step 4: Let the agent review the repository
+
+This project has some problems, as most real projects do. Before we fix anything, ask the agent to find them, **without changing anything**. Switch to a read-only mode:
+
+| | Claude Code | Codex |
+|---|---|---|
+| Read-only | Shift+Tab until the status line shows **plan mode** | `/permissions` → **Read Only** |
+
+```text
+Review this repository as if you were a new colleague who has to take it
+over. Do not change or run anything.
+1. In three sentences: what is this project?
+2. Do the README, AGENTS.md, the script and the data agree with each other?
+   List every mismatch, with file names and line numbers.
+3. What would I run to reproduce results/growth_plot.png? Would it work
+   on my computer? Explain why or why not.
+4. Is there anything in here that should not be in a shared repository?
+5. What is missing that a shared repository should have?
+Give me a numbered list of problems, most important first.
+```
+
+#### Check the result
+
+Compare the agent's list with the known problems below. Do not open the answer until you have the agent's list.
+
+::: {.callout-note collapse="true" title="Expected outcome: the six planted problems"}
+| # | Problem | Where |
+|---|---|---|
+| 1 | The README says to run `scripts/make_figure.py`; the script is called `scripts/plot_growth.py`. | `README.md`, "How to make the figure" |
+| 2 | The script reads `C:/Users/anna.k/Desktop/greenhouse/growth.csv`, a path on someone's laptop, instead of `data/raw/growth.csv`. It will not run anywhere else. | `scripts/plot_growth.py`, line 8 |
+| 3 | The README's data table calls the height column `height_cm`; the CSV and the script call it `ht`. | `README.md` and `data/raw/growth.csv` |
+| 4 | `AGENTS.md` says figures go in `output/`; the folder and the script use `results/`. | `AGENTS.md` |
+| 5 | There is no licence. | (missing `LICENSE`) |
+| 6 | `notes/contacts.txt` holds names, e-mail addresses and phone numbers of field assistants. Personal data does not belong in a shared repository, and it is now in the history. | `notes/contacts.txt` |
+
+Other reasonable findings: there is no `CLAUDE.md` (Claude Code reads `CLAUDE.md`; Codex reads `AGENTS.md`); no list of software and versions; the script does not create `results/` if it is missing; the README does not say the data is synthetic. An agent that finds 4 or more of the six has done a good job. Number 6 is the one that matters most and is the one most often missed: if your agent did not mention it, ask "Is there any personal data in this repository?"
+:::
+
+Pick one finding and **check it yourself**: open the file the agent names, at the line it gives. Is it really there?
+
+### Step 5: File two issues
+
+**On the website.** Open your repository, click **Issues**, then **New issue**. Title: `README names a script that does not exist`. In the description, say what is wrong, where, and what you expected (see the lecture for examples). Click **Create**. It becomes issue **#1**.
+
+**With the agent.** Switch back to a mode that asks before commands (Claude Code: Shift+Tab to Manual; Codex: `/permissions`, the level that edits in the workspace). Then:
+
+```text
+File an issue on this repository about the hard-coded data path in
+scripts/plot_growth.py. Say which line, what it reads now, and what it
+should read. Show me the title and text first; create it only after I
+say yes.
+```
+
+Read the text, correct it if needed, then approve the `gh issue create` command.
+
+#### Check the result
+
+On the **Issues** tab you see two open issues, #1 and #2, both opened by you. Open #2: is the text what you approved?
+
+### Step 6: Fix an issue and let the commit close it
+
+```text
+Fix issue #1: correct the script name in the README. Change nothing else.
+Show me the change, then commit it with a message that ends with
+"(fixes #1)" and push.
+```
+
+#### Check the result
+
+1. Refresh the **Issues** tab. Issue #1 is **closed**, and it shows the commit that closed it.
+2. The README on the repository page now names `scripts/plot_growth.py`.
+3. The history shows **2 commits**.
+
+### Step 7: Remove the personal data, and see why that is not enough
+
+```text
+notes/contacts.txt contains personal data and should not be in this
+repository. Remove it from the repository, add it to .gitignore so it is
+never committed again, commit and push. Do NOT rewrite the history.
+Then tell me: is the file still visible on GitHub anywhere?
+```
+
+#### Check the result
+
+1. The file is gone from the `notes` folder on the repository page.
+2. Now click the history (the commit count) and open the **first** commit, "Add example project", then **Browse files**. Click into `notes`: `contacts.txt` is still there.
+
+This is why the repository stays **private**. A good answer from the agent says the file is still in the first commit. Removing it from the history is possible but fiddly, and pointless if someone already has a copy. In *A course or project page* this repository's history is the reason we publish the page from a separate repository.
+
+### Step 8: Add a licence (optional)
+
+```text
+Add a licence: MIT for the code in scripts/, CC BY 4.0 for everything
+else (text, data, figures). Put the MIT licence text in LICENSE with me
+as copyright holder, and add a short "Licence" section to the README that
+explains the split. Commit and push.
+```
+
+Check that the repository page now shows the licence in the **About** box (it may take a refresh), and that the README section names both licences.
+
+## On your own project
+
+### Step 9: Your project on GitHub, private
+
+First check what would go up. Start the agent in **your project folder** and ask (read-only mode is enough):
+
+```text
+I am about to push this repository to GitHub as a private repository.
+List every file that is tracked by git now, and every file that has ever
+been committed in the history. Flag anything that looks personal,
+confidential, or that README.md says must never be in this folder.
+Do not change anything.
+```
+
+Compare the answer with the **Data class and precautions** section of your README. If something should not be there:
+
+- **Not yet committed?** Ask the agent to add it to `.gitignore` and show you with `git status` that it is no longer tracked.
+- **Already in the history?** Stop. Do not push. Ask your course teacher before you go on; a private repository is still a copy on another server.
+
+Then switch to a mode that asks before commands, and:
+
+```text
+Put this project on GitHub as a PRIVATE repository with the same name as
+this folder, and push all commits. Then add a licence that fits: MIT for
+code, CC BY 4.0 for text and figures, unless README.md says otherwise.
+Commit and push the licence. Give me the address at the end.
+```
+
+Check on github.com: the label says **Private**, the files match your folder, the README renders, and nothing from your "never put in this folder" list is there.
+
+Finally, add a line to the **Log of AI use** in your README, for example: "2026-11-25, Claude Code (Pro): created the private GitHub repository and added a licence."
+
+### Step 10: Add your partner as a collaborator
+
+On your repository page: **Settings** → **Collaborators** → **Add people**, type your partner's GitHub username, and choose them. They get an invitation by e-mail and on GitHub. Your partner accepts it (the e-mail link, or `https://github.com/<your-username>/<repo>/invitations`).
+
+Remember: on a personal account a collaborator **can push**. You will remove your partner again in step 13.
+
+### Step 11: Review your partner's repository with your agent
+
+Make a separate folder for reviews and clone your partner's repository into it **yourself**:
+
+```bash
+mkdir ~/agentic-course/peer-review
+cd ~/agentic-course/peer-review
+gh repo clone <partner-username>/<their-repo>
+cd <their-repo>
+```
+
+(Windows PowerShell: the same commands work; `~` means your home folder.)
+
+Start your agent in the cloned folder and switch to **read-only** (Claude Code: plan mode; Codex: `/permissions` → Read Only). Do not run any of their scripts.
+
+```text
+This is a colleague's project. I am reviewing it. Do not change or run
+anything; only read.
+1. In three sentences: what is this project, and what is its state?
+2. Which files are raw data, which are results, which are scripts,
+   which are notes or plans?
+3. What would I run to reproduce the main result? Is everything needed
+   in the repository? Do not run it.
+4. Do README.md, CLAUDE.md or AGENTS.md, and the files agree?
+5. Is there anything here that should not be in a shared repository?
+6. What is the single most useful thing to fix? Draft a GitHub issue for
+   it: a title, and a description that says what, where, and why.
+```
+
+While the agent works, read the README yourself for five minutes. Then compare: did the agent understand the project the way you did?
+
+#### Check the result
+
+- Open at least **two** files the agent points to and confirm what it says.
+- If the agent's summary of the project is wrong, that is a finding too: the README did not explain it well enough. That can be the issue you file.
+
+### Step 12: File one issue on your partner's repository
+
+Edit the agent's draft until you would sign it: polite, specific, one problem. Then file it on **your partner's** repository page: **Issues** → **New issue**. (Or switch the agent to a mode that asks before commands and ask it to file the issue; check the `--repo` in the command names your partner's repository.)
+
+Do **not** push anything to your partner's repository.
+
+### Step 13: Act on the issue you received, and clean up
+
+1. Read the issue your partner filed on your repository. Reply with a comment: do you agree, and what will you do?
+2. If it is a quick fix, ask your agent to fix it, commit with `(fixes #N)` and push. Otherwise leave it open as a to-do.
+3. **Remove your partner as a collaborator**: Settings → Collaborators → Remove. (Leave them in if you will keep working together.)
+4. You may delete your clone of their repository: `~/agentic-course/peer-review/<their-repo>`.
+
+Talk to your partner for five minutes: what did their agent misunderstand about your project? That is what to improve in your README and `CLAUDE.md`/`AGENTS.md`.
+
+## What you should have now
+
+- `gh` installed, and `gh auth status` showing your account.
+- `plant-growth` on GitHub, **private**, with 3 or more commits, issue #1 closed by a commit, issue #2 open, and the lesson of step 7: deleted files stay in the history.
+- **Your own project** on GitHub as a **private** repository, with a licence, checked against your "never put in this folder" list, and a line in your **Log of AI use**.
+- One issue **filed** on your partner's repository, and one **received** on yours, with your reply.
+- A short list of what your partner's agent misunderstood about your project. Fix the documentation in your next session.
+
+In *A course or project page* you publish a web page from a repository, with the figures from *Reproducible figures*. That page will be **public**, so the check from step 9 comes back in a stricter form.

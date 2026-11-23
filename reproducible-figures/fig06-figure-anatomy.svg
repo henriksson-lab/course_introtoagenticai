@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="1000" height="480" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="480" fill="#fff"/>
+  <!-- schematic plot -->
+  <line x1="120" y1="390" x2="520" y2="390" stroke="#333" stroke-width="2"/>
+  <line x1="120" y1="80" x2="120" y2="390" stroke="#333" stroke-width="2"/>
+  <g font-size="15" fill="#333" text-anchor="end"><text x="110" y="395">0</text><text x="110" y="295">100</text><text x="110" y="195">200</text></g>
+  <g stroke="#333" stroke-width="1.5"><line x1="114" y1="290" x2="120" y2="290"/><line x1="114" y1="190" x2="120" y2="190"/></g>
+  <text x="60" y="240" font-size="17" fill="#333" text-anchor="middle" transform="rotate(-90 60 240)">Dry biomass (mg)</text>
+  <text x="320" y="440" font-size="17" fill="#333" text-anchor="middle">Fertiliser</text>
+  <g font-size="15" fill="#333" text-anchor="middle"><text x="190" y="412">none</text><text x="320" y="412">low</text><text x="450" y="412">high</text></g>
+  <g fill="#0072B2" opacity="0.75">
+    <circle cx="180" cy="270" r="5"/><circle cx="186" cy="262" r="5"/><circle cx="176" cy="282" r="5"/><circle cx="183" cy="292" r="5"/>
+    <circle cx="310" cy="225" r="5"/><circle cx="316" cy="235" r="5"/><circle cx="306" cy="210" r="5"/><circle cx="313" cy="245" r="5"/>
+    <circle cx="440" cy="170" r="5"/><circle cx="446" cy="160" r="5"/><circle cx="436" cy="182" r="5"/><circle cx="443" cy="175" r="5"/>
+  </g>
+  <g fill="#E69F00" opacity="0.85">
+    <circle cx="205" cy="300" r="5"/><circle cx="211" cy="292" r="5"/><circle cx="201" cy="310" r="5"/><circle cx="208" cy="318" r="5"/>
+    <circle cx="335" cy="275" r="5"/><circle cx="341" cy="285" r="5"/><circle cx="331" cy="268" r="5"/><circle cx="338" cy="292" r="5"/>
+    <circle cx="465" cy="265" r="5"/><circle cx="471" cy="255" r="5"/><circle cx="461" cy="280" r="5"/><circle cx="468" cy="290" r="5"/>
+  </g>
+  <g font-size="13" fill="#555" text-anchor="middle"><text x="193" y="383">n=8 n=8</text><text x="323" y="383">n=8 n=8</text><text x="453" y="383">n=8 n=7</text></g>
+  <g font-size="15"><circle cx="160" cy="70" r="5" fill="#0072B2"/><text x="172" y="75" fill="#333">well-watered</text><circle cx="290" cy="70" r="5" fill="#E69F00"/><text x="302" y="75" fill="#333">drought</text></g>
+  <!-- callouts -->
+  <g font-size="17" fill="#333">
+    <rect x="580" y="40" width="400" height="400" rx="10" fill="#fafafa" stroke="#ddd"/>
+    <text x="600" y="78" font-weight="bold" fill="#2a7f8f">1  Axis labels with units</text>
+    <text x="600" y="113" font-weight="bold" fill="#2a7f8f">2  Every data point visible</text>
+    <text x="600" y="148" font-weight="bold" fill="#2a7f8f">3  n per group, on the figure</text>
+    <text x="600" y="183" font-weight="bold" fill="#2a7f8f">4  Summary stated: mean ± SD?</text>
+    <text x="635" y="205" font-size="15" fill="#555">(in the legend or caption)</text>
+    <text x="600" y="240" font-weight="bold" fill="#2a7f8f">5  Colours safe for colour blindness</text>
+    <text x="600" y="275" font-weight="bold" fill="#2a7f8f">6  Axis from zero for amounts</text>
+    <text x="600" y="310" font-weight="bold" fill="#2a7f8f">7  Text readable at final size</text>
+    <text x="635" y="332" font-size="15" fill="#555">(about 6-8 pt in print)</text>
+    <text x="600" y="367" font-weight="bold" fill="#2a7f8f">8  Groups in a meaningful order</text>
+    <text x="600" y="402" font-weight="bold" fill="#2a7f8f">9  No chart junk: no 3D, no shading</text>
+  </g>
+</svg>

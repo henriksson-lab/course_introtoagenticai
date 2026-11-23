@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="440" fill="#ffffff"/>
+  <text x="230" y="36" font-size="22" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">In the app</text>
+  <rect x="20" y="55" width="420" height="270" rx="8" fill="#ffffff" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="40" y="90" font-size="16" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">Sites: Mill Creek</text>
+  <text x="40" y="114" font-size="16" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">Dates: 2023-01-01 to 2023-12-31</text>
+  <text x="40" y="138" font-size="16" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">Measurement: Nitrate (mg/L)</text>
+  <text x="40" y="190" font-size="16" fill="#5a6670" text-anchor="start" font-weight="bold" xml:space="preserve">site</text>
+  <text x="140" y="190" font-size="16" fill="#5a6670" text-anchor="start" font-weight="bold" xml:space="preserve">samples</text>
+  <text x="240" y="190" font-size="16" fill="#5a6670" text-anchor="start" font-weight="bold" xml:space="preserve">missing</text>
+  <text x="340" y="190" font-size="16" fill="#5a6670" text-anchor="start" font-weight="bold" xml:space="preserve">mean</text>
+  <text x="40" y="222" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Mill Creek</text>
+  <text x="140" y="222" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">24</text>
+  <text x="240" y="222" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">0</text>
+  <text x="340" y="222" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">2.66</text>
+  <rect x="330" y="200" width="70" height="32" rx="6" fill="none" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="770" y="36" font-size="22" fill="#8a6a12" text-anchor="middle" font-weight="bold" xml:space="preserve">In the spreadsheet</text>
+  <rect x="560" y="55" width="420" height="270" rx="8" fill="#ffffff" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="580" y="90" font-size="16" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">Filter: site = Mill Creek</text>
+  <text x="580" y="114" font-size="16" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">Filter: date begins with 2023</text>
+  <text x="580" y="138" font-size="16" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">Select the nitrate column:</text>
+  <rect x="580" y="175" width="380" height="36" rx="4" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="592" y="199" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">Count: 24    Average: 2.66</text>
+  <rect x="700" y="175" width="120" height="36" rx="6" fill="none" stroke="#8a6a12" stroke-width="3"/>
+  <text x="500" y="200" font-size="40" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">=</text>
+  <text x="500" y="370" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">Pick one filter setting, compute the same number by hand,</text>
+  <text x="500" y="398" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">and compare. Then change the filter and do it once more.</text>
+  <text x="990" y="430" font-size="14" fill="#9aa4ad" text-anchor="end" font-weight="normal" font-style="italic" xml:space="preserve">illustrative</text>
+</svg>

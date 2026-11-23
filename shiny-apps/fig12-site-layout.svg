@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="500" fill="#ffffff"/>
+  <text x="20" y="32" font-size="19" fill="#6b4fa0" text-anchor="start" font-weight="bold" xml:space="preserve">Project folder (private)</text>
+  <rect x="20" y="45" width="330" height="220" rx="8" fill="#eee9f6" stroke="#6b4fa0" stroke-width="1.5"/>
+  <text x="35" y="78" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="bold" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">my-project/</text>
+  <text x="35" y="110" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  README.md</text>
+  <text x="35" y="142" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="bold" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  apps/</text>
+  <text x="35" y="174" font-size="17" fill="#6b4fa0" text-anchor="start" font-weight="bold" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">    water-app/</text>
+  <text x="35" y="206" font-size="17" fill="#6b4fa0" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">      app.R</text>
+  <text x="35" y="238" font-size="17" fill="#6b4fa0" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">      water-quality.csv</text>
+  <text x="35" y="290" font-size="15" fill="#6b4fa0" text-anchor="start" font-weight="bold" xml:space="preserve">source: you edit and check it here</text>
+  <line x1="355" y1="190" x2="420" y2="190" stroke="#2a7f8f" stroke-width="3" marker-end="url(#arwt)"/>
+  <text x="388" y="160" font-size="14" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">shinylive</text>
+  <text x="388" y="177" font-size="14" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">export</text>
+  <text x="430" y="32" font-size="19" fill="#2a7f8f" text-anchor="start" font-weight="bold" xml:space="preserve">Page folder (public)</text>
+  <rect x="430" y="45" width="330" height="290" rx="8" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <text x="445" y="78" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="bold" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">my-project-page/</text>
+  <text x="445" y="110" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  _quarto.yml</text>
+  <text x="445" y="142" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  index.qmd</text>
+  <text x="445" y="174" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  explorer.qmd</text>
+  <text x="445" y="206" font-size="17" fill="#2a7f8f" text-anchor="start" font-weight="bold" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  water-app-site/</text>
+  <text x="445" y="238" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="bold" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  docs/</text>
+  <text x="445" y="270" font-size="17" fill="#2a7f8f" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">    water-app-site/</text>
+  <text x="445" y="302" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">    explorer.html ...</text>
+  <line x1="765" y1="270" x2="830" y2="270" stroke="#1b2a3a" stroke-width="3" marker-end="url(#arw)"/>
+  <text x="797" y="240.0" font-size="14" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">push</text>
+  <rect x="835" y="45" width="150" height="290" rx="10" fill="#ffffff" stroke="#9aa4ad" stroke-width="1.5"/>
+  <rect x="835" y="45" width="150" height="40" rx="10" fill="#e9edf1"/>
+  <rect x="835" y="75" width="150" height="10" fill="#e9edf1"/>
+  <circle cx="853" cy="65" r="6" fill="#e0605a"/>
+  <circle cx="873" cy="65" r="6" fill="#e6b84f"/>
+  <circle cx="893" cy="65" r="6" fill="#5fbf6a"/>
+  <rect x="915" y="53" width="55" height="24" rx="12" fill="#ffffff" stroke="#c9d3dd" stroke-width="1"/>
+  <text x="929" y="70" font-size="12" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">github.io</text>
+  <text x="910" y="120" font-size="15" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">Data</text>
+  <text x="910" y="140" font-size="15" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">explorer</text>
+  <rect x="850" y="170" width="120" height="120" rx="6" fill="#ffffff" stroke="#2a7f8f" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="910" y="220" font-size="14" fill="#2a7f8f" text-anchor="middle" font-weight="normal" xml:space="preserve">the app</text>
+  <text x="910" y="238" font-size="14" fill="#2a7f8f" text-anchor="middle" font-weight="normal" xml:space="preserve">runs here</text>
+  <text x="500" y="390" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">Only the export goes into the public page folder: it holds app.R and the data file.</text>
+  <text x="500" y="416" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">_quarto.yml lists water-app-site under resources, so rendering copies it into docs/.</text>
+  <text x="500" y="442" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">Re-export after every change to the app; never edit the export by hand.</text>
+  <text x="990" y="490" font-size="14" fill="#9aa4ad" text-anchor="end" font-weight="normal" font-style="italic" xml:space="preserve">illustrative: folder names are examples</text>
+</svg>

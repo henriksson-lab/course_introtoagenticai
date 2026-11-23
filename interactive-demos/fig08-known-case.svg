@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="500" fill="#ffffff"/>
+  <line x1="80" y1="400" x2="560" y2="400" stroke="#9aa4ad" stroke-width="2"/>
+  <line x1="80" y1="40" x2="80" y2="400" stroke="#9aa4ad" stroke-width="2"/>
+  <text x="80.0" y="424" font-size="15" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">0</text>
+  <text x="200.0" y="424" font-size="15" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">10</text>
+  <text x="320.0" y="424" font-size="15" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">20</text>
+  <text x="440.0" y="424" font-size="15" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">30</text>
+  <text x="560.0" y="424" font-size="15" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">40</text>
+  <text x="72" y="405.0" font-size="15" fill="#5a6670" text-anchor="end" font-weight="normal" xml:space="preserve">0</text>
+  <text x="72" y="333.0" font-size="15" fill="#5a6670" text-anchor="end" font-weight="normal" xml:space="preserve">200</text>
+  <text x="72" y="261.0" font-size="15" fill="#5a6670" text-anchor="end" font-weight="normal" xml:space="preserve">400</text>
+  <text x="72" y="189.0" font-size="15" fill="#5a6670" text-anchor="end" font-weight="normal" xml:space="preserve">600</text>
+  <text x="72" y="117.0" font-size="15" fill="#5a6670" text-anchor="end" font-weight="normal" xml:space="preserve">800</text>
+  <text x="72" y="45.0" font-size="15" fill="#5a6670" text-anchor="end" font-weight="normal" xml:space="preserve">1000</text>
+  <text x="320.0" y="450" font-size="16" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">time (days)</text>
+  <path d="M80.0,396.4 L86.0,395.4 L92.0,394.1 L98.0,392.5 L104.0,390.4 L110.0,387.8 L116.0,384.5 L122.0,380.4 L128.0,375.4 L134.0,369.1 L140.0,361.5 L146.0,352.4 L152.0,341.6 L158.0,329.1 L164.0,314.9 L170.0,299.2 L176.0,282.3 L182.0,264.6 L188.0,246.6 L194.0,228.9 L200.0,212.0 L206.0,196.4 L212.0,182.3 L218.0,169.9 L224.0,159.2 L230.0,150.1 L236.0,142.6 L242.0,136.4 L248.0,131.4 L254.0,127.3 L260.0,124.1 L266.0,121.5 L272.0,119.4 L278.0,117.8 L284.0,116.6 L290.0,115.6 L296.0,114.8 L302.0,114.2 L308.0,113.7 L314.0,113.3 L320.0,113.0 L326.0,112.8 L332.0,112.6 L338.0,112.5 L344.0,112.4 L350.0,112.3 L356.0,112.2 L362.0,112.2 L368.0,112.1 L374.0,112.1 L380.0,112.1 L386.0,112.1 L392.0,112.1 L398.0,112.0 L404.0,112.0 L410.0,112.0 L416.0,112.0 L422.0,112.0 L428.0,112.0 L434.0,112.0 L440.0,112.0 L446.0,112.0 L452.0,112.0 L458.0,112.0 L464.0,112.0 L470.0,112.0 L476.0,112.0 L482.0,112.0 L488.0,112.0 L494.0,112.0 L500.0,112.0 L506.0,112.0 L512.0,112.0 L518.0,112.0 L524.0,112.0 L530.0,112.0 L536.0,112.0 L542.0,112.0 L548.0,112.0 L554.0,112.0 L560.0,112.0" stroke="#2a7f8f" stroke-width="4" fill="none"/>
+  <line x1="80" y1="112.0" x2="560" y2="112.0" stroke="#a8324a" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="555" y="104.0" font-size="16" fill="#a8324a" text-anchor="end" font-weight="bold" xml:space="preserve">K = 800</text>
+  <line x1="184.8667484592085" y1="400" x2="184.8667484592085" y2="256.0" stroke="#8a6a12" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="80" y1="256.0" x2="184.8667484592085" y2="256.0" stroke="#8a6a12" stroke-width="2" stroke-dasharray="4 4"/>
+  <line x1="148.8667484592085" y1="364.0" x2="220.8667484592085" y2="148.0" stroke="#6b4fa0" stroke-width="3"/>
+  <circle cx="184.8667484592085" cy="256.0" r="8" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <text x="196.8667484592085" y="284.0" font-size="16" fill="#8a6a12" text-anchor="start" font-weight="bold" xml:space="preserve">t = 8.74, N = 400</text>
+  <text x="196.8667484592085" y="308.0" font-size="16" fill="#6b4fa0" text-anchor="start" font-weight="bold" xml:space="preserve">slope = 100 per day</text>
+  <rect x="610" y="30" width="370" height="420" rx="10" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="630" y="75" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">Known cases (r = 0.5, K = 800, N0 = 10)</text>
+  <circle cx="640" cy="114" r="11" fill="#2a7f8f" stroke="none" stroke-width="0"/>
+  <text x="640" y="120" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold" xml:space="preserve">✓</text>
+  <text x="662" y="120" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Half of K at t = ln(79)/0.5</text>
+  <text x="662" y="144" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">= 8.74 days: N = 400</text>
+  <circle cx="640" cy="184" r="11" fill="#6b4fa0" stroke="none" stroke-width="0"/>
+  <text x="640" y="190" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold" xml:space="preserve">✓</text>
+  <text x="662" y="190" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Steepest slope r·K/4</text>
+  <text x="662" y="214" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">= 100 per day</text>
+  <circle cx="640" cy="254" r="11" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <text x="640" y="260" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold" xml:space="preserve">✓</text>
+  <text x="662" y="260" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Early doubling time ln 2 / r</text>
+  <text x="662" y="284" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">= 1.39 days</text>
+  <circle cx="640" cy="324" r="11" fill="#2a7f8f" stroke="none" stroke-width="0"/>
+  <text x="640" y="330" font-size="16" fill="#ffffff" text-anchor="middle" font-weight="bold" xml:space="preserve">✓</text>
+  <text x="662" y="330" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Step-by-step solution of</text>
+  <text x="662" y="354" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">dN/dt = rN(1 - N/K) matches</text>
+  <text x="630" y="410" font-size="15" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">Compute these by hand or in Excel,</text>
+  <text x="630" y="430" font-size="15" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">then compare with the demo's readout.</text>
+</svg>

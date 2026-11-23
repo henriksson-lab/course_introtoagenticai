@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <rect width="1000" height="440" fill="#fff"/>
+  <rect x="20" y="150" width="190" height="110" rx="8" fill="#efeaf6" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="115" y="190" font-size="17" font-weight="bold" fill="#6b4fa0" text-anchor="middle">literature_</text>
+  <text x="115" y="212" font-size="17" font-weight="bold" fill="#6b4fa0" text-anchor="middle">table.csv</text>
+  <text x="115" y="240" font-size="15" fill="#555" text-anchor="middle">verified DOIs, PMIDs</text>
+  <!-- path 1 -->
+  <line x1="215" y1="180" x2="300" y2="110" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="305" y="40" width="330" height="150" rx="8" fill="#1f2430"/>
+  <g font-family="Courier New, monospace" font-size="15" fill="#e8e8e8" xml:space="preserve">
+    <text x="320" y="68" fill="#9fb3c8">references.bib</text>
+    <text x="320" y="96">@article{Smith2022,</text>
+    <text x="320" y="118">  title = {…},</text>
+    <text x="320" y="140">  doi = {10.1000/…},</text>
+    <text x="320" y="162">  pmid = {12345678} }</text>
+  </g>
+  <text x="470" y="215" font-size="15" fill="#555" text-anchor="middle">from doi.org or PubMed, by script</text>
+  <line x1="640" y1="115" x2="700" y2="115" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="705" y="60" width="275" height="110" rx="8" fill="#fff" stroke="#555"/>
+  <text x="842" y="95" font-size="17" font-weight="bold" fill="#333" text-anchor="middle">LaTeX, Quarto,</text>
+  <text x="842" y="118" font-size="17" font-weight="bold" fill="#333" text-anchor="middle">Overleaf</text>
+  <text x="842" y="146" font-size="15" fill="#555" text-anchor="middle">cite while you write</text>
+  <!-- path 2 -->
+  <line x1="215" y1="230" x2="300" y2="300" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="305" y="250" width="330" height="150" rx="8" fill="#fbf3f5" stroke="#a8324a" stroke-width="2"/>
+  <text x="470" y="282" font-size="18" font-weight="bold" fill="#a8324a" text-anchor="middle">Zotero</text>
+  <text x="320" y="312" font-size="16" fill="#333">File → Import… → references.bib</text>
+  <text x="320" y="340" font-size="16" fill="#333">or: Add Item by Identifier,</text>
+  <text x="320" y="364" font-size="16" fill="#333">paste a list of DOIs or PMIDs</text>
+  <line x1="640" y1="325" x2="700" y2="325" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <rect x="705" y="270" width="275" height="110" rx="8" fill="#fff" stroke="#555"/>
+  <text x="842" y="305" font-size="17" font-weight="bold" fill="#333" text-anchor="middle">Word / LibreOffice</text>
+  <text x="842" y="330" font-size="15" fill="#555" text-anchor="middle">plug-in, shared group</text>
+  <text x="842" y="352" font-size="15" fill="#555" text-anchor="middle">library, PDFs, notes</text>
+  <text x="20" y="430" font-size="17" fill="#333">Make the BibTeX only from verified rows. Metadata from the database, not from the model.</text>
+</svg>

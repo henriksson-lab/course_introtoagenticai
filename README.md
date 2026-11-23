@@ -21,5 +21,13 @@ make preview   # live-reload preview
 make clean     # delete docs/ and the Quarto cache
 ```
 
-Needs [Quarto](https://quarto.org/docs/get-started/). The site is served by
-GitHub Pages from `docs/` on `main`.
+Needs [Quarto](https://quarto.org/docs/get-started/) (1.7.30, same as CI).
+
+**Publishing:** every push to `main` triggers `.github/workflows/publish.yml`,
+which renders the site and deploys it to GitHub Pages
+(<https://henriksson-lab.github.io/course_introtoagenticai/>). `docs/` is
+gitignored: render locally only to check slides (`make preview`, or
+`quarto render <unit>/lec.qmd` and open `docs/<unit>/lec.html`).
+
+Note: the *A course or project page* unit teaches participants the simpler
+"commit `docs/`" approach on purpose; this repo uses Actions to keep history small.

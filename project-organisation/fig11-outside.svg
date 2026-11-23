@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker>
+  </defs>
+  <rect x="20" y="30" width="500" height="380" rx="12" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="40" y="66" font-size="20" font-weight="bold" fill="#2a7f8f">Project folder (the agent works here)</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="17" fill="#333">
+    <text x="45" y="110">AGENTS.md</text>
+    <text x="45" y="140">scripts/01_analysis.R</text>
+    <text x="45" y="170">data/raw/synthetic-stand-in.csv</text>
+    <text x="45" y="200">notes/decisions.md</text>
+  </g>
+  <rect x="40" y="230" width="460" height="110" rx="8" fill="#ffffff" stroke="#2a7f8f" stroke-width="1.5"/>
+  <g font-size="16" fill="#555" font-style="italic">
+    <text x="55" y="260">AGENTS.md: "The real data is on the</text>
+    <text x="55" y="284">university's secure drive. Never open it.</text>
+    <text x="55" y="308">Build and test on the synthetic stand-in;</text>
+    <text x="55" y="332">same columns, made-up values."</text>
+  </g>
+  <rect x="620" y="60" width="360" height="160" rx="12" fill="#f8e9ec" stroke="#a8324a" stroke-width="2.5"/>
+  <text x="640" y="96" font-size="20" font-weight="bold" fill="#a8324a">Approved storage</text>
+  <text x="640" y="130" font-size="17" fill="#333">the real, sensitive data</text>
+  <text x="640" y="160" font-size="17" fill="#333">never in the project folder,</text>
+  <text x="640" y="190" font-size="17" fill="#333">never opened by the agent</text>
+  <rect x="620" y="270" width="360" height="110" rx="12" fill="#f0ecf7" stroke="#6b4fa0" stroke-width="2.5"/>
+  <text x="640" y="306" font-size="20" font-weight="bold" fill="#6b4fa0">You, agent closed</text>
+  <text x="640" y="340" font-size="17" fill="#333">run the finished script</text>
+  <text x="640" y="364" font-size="17" fill="#333">on the real data</text>
+  <line x1="520" y1="140" x2="616" y2="300" stroke="#6b4fa0" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="535" y="250" font-size="15" fill="#6b4fa0">script</text>
+  <line x1="800" y1="220" x2="800" y2="266" stroke="#a8324a" stroke-width="2.5" marker-end="url(#a)"/>
+  <text x="812" y="250" font-size="15" fill="#a8324a">data</text>
+</svg>

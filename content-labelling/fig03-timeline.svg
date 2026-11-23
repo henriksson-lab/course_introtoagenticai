@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="1000" height="360" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="360" fill="#ffffff"/>
+  <line x1="40" y1="170" x2="960" y2="170" stroke="#5a6a7a" stroke-width="3"/>
+  <g font-size="15" fill="#1b2a3a" text-anchor="middle">
+    <circle cx="80" cy="170" r="9" fill="#5a6a7a"/>
+    <text x="80" y="130" font-weight="bold">Aug 2024</text><text x="80" y="208">AI Act</text><text x="80" y="228">in force</text>
+    <circle cx="260" cy="170" r="9" fill="#6b4fa0"/>
+    <text x="260" y="130" font-weight="bold">Dec 2025</text><text x="260" y="208">code of practice:</text><text x="260" y="228">first draft</text>
+    <circle cx="400" cy="170" r="9" fill="#6b4fa0"/>
+    <text x="400" y="110" font-weight="bold">Mar 2026</text><text x="400" y="130">second draft</text>
+    <circle cx="530" cy="170" r="9" fill="#6b4fa0"/>
+    <text x="530" y="208" font-weight="bold">10 Jun 2026</text><text x="530" y="228">final code</text><text x="530" y="248">published</text>
+    <circle cx="650" cy="170" r="9" fill="#6b4fa0"/>
+    <text x="650" y="110" font-weight="bold">Jul 2026</text><text x="650" y="130">Commission's</text><text x="650" y="150" fill="#1b2a3a">guidelines</text>
+    <circle cx="770" cy="170" r="12" fill="#a8324a"/>
+    <text x="770" y="208" font-weight="bold" fill="#a8324a">2 Aug 2026</text><text x="770" y="228">Article 50</text><text x="770" y="248">applies</text>
+    <circle cx="900" cy="170" r="12" fill="#a8324a"/>
+    <text x="900" y="104" font-weight="bold" fill="#a8324a">2 Dec 2026</text><text x="900" y="124">marking also for</text><text x="900" y="144">older systems</text>
+  </g>
+  <rect x="40" y="280" width="920" height="60" rx="8" fill="#f4f7fa"/>
+  <text x="56" y="306" font-size="15" fill="#1b2a3a">Generative AI systems already on the market before 2 August 2026 got until 2 December 2026 for machine-readable</text>
+  <text x="56" y="328" font-size="15" fill="#1b2a3a">marking (an amendment adopted in 2026). Content made before 2 August 2026 need not be marked afterwards.</text>
+</svg>

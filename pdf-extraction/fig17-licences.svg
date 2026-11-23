@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <text x="20" y="32" font-size="18" fill="#555">licence of the paper</text>
+  <text x="420" y="32" font-size="18" fill="#555">share the PDF itself?</text>
+  <text x="720" y="32" font-size="18" fill="#555">publish your extracted table?</text>
+  <g font-size="17">
+    <rect x="20" y="48" width="380" height="80" rx="6" fill="#eef6f7" stroke="#2a7f8f"/>
+    <text x="35" y="80" font-weight="bold" fill="#2a7f8f">CC BY, CC0</text>
+    <text x="35" y="106" fill="#333" font-size="15">most of the open-access subset</text>
+    <text x="420" y="80" fill="#333">yes, with attribution and</text>
+    <text x="420" y="104" fill="#333">the licence named</text>
+    <text x="720" y="80" fill="#333">yes, cite each paper</text>
+    <rect x="20" y="140" width="380" height="80" rx="6" fill="#f5efdd" stroke="#8a6a12"/>
+    <text x="35" y="172" font-weight="bold" fill="#8a6a12">CC BY-NC, CC BY-ND, …</text>
+    <text x="35" y="198" fill="#333" font-size="15">also in the open-access subset</text>
+    <text x="420" y="172" fill="#333">usually yes, within the terms</text>
+    <text x="420" y="196" fill="#333">(no changes, or non-commercial)</text>
+    <text x="720" y="172" fill="#333">yes, cite each paper</text>
+    <rect x="20" y="232" width="380" height="80" rx="6" fill="#fbf3f5" stroke="#a8324a"/>
+    <text x="35" y="264" font-weight="bold" fill="#a8324a">No open licence</text>
+    <text x="35" y="290" fill="#333" font-size="15">subscription papers, "free to read"</text>
+    <text x="420" y="264" fill="#a8324a" font-weight="bold">no: keep it on your</text>
+    <text x="420" y="288" fill="#a8324a" font-weight="bold">computer, for your own use</text>
+    <text x="720" y="264" fill="#333">yes: facts and numbers,</text>
+    <text x="720" y="288" fill="#333">not copied text or figures</text>
+  </g>
+  <g font-size="17" fill="#333">
+    <text x="20" y="360">Figures and tables inside an open paper can carry their own rights: check before reusing them.</text>
+    <text x="20" y="390">Uploading a PDF to the agent sends it to the provider: check your library's licence terms.</text>
+  </g>
+  <text x="985" y="430" font-size="14" fill="#999" text-anchor="end">general guidance, not legal advice</text>
+</svg>

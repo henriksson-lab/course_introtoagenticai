@@ -1,0 +1,261 @@
+---
+title: "Exercise: a folder that explains itself"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- **removed what does not belong** in a project folder (secrets and unneeded personal data) before the agent sees it,
+- **restructured a messy project** into `data/raw`, `data/processed`, `scripts`, `results` and `notes`, with a move log, and **checked that the scripts still give the same numbers**,
+- written an **`AGENTS.md`** (plus a one-line `CLAUDE.md`) and a **`README.md`** for it,
+- **tested** the instruction file in a fresh session with questions whose answers you know,
+- given **your own project** the same structure, instruction files and test.
+
+The worked example uses a **synthetic** project: the birds, sites, volunteers and the API key are made up. Your session will look different from anyone else's. Compare **results**, not sessions.
+
+## Before you start
+
+- You have Claude Code or Codex installed and can start it in a folder (*Terminal survival kit*).
+- You have your own-project folder in `agentic-course`, with `README.md` and `first-brief.md` from *Delegating well*.
+- Python 3 is installed (*Terminal survival kit*). The example scripts use only Python's standard library, so nothing else needs installing.
+- Download [bird-project.zip](data/bird-project.zip) into a new folder `agentic-course/project-organisation` and unzip it there. You should see a folder `bird-project` with **16 files**. (On Windows, check that Extract All did not create `bird-project` inside another `bird-project`.)
+- Make a copy of the folder and call it `bird-project-work`. The original stays untouched, as in *First delegations*.
+
+Where the tools differ:
+
+| | Claude Code | Codex |
+|---|---|---|
+| Plan mode | **Shift+Tab** until `⏸ plan mode on` | `/plan` |
+| Allow edits after the plan | **Yes, manually approve edits** | `/permissions` (if read-only), then tell it to go ahead |
+| Draft an instruction file | `/init` writes `CLAUDE.md` | `/init` writes `AGENTS.md` |
+| Fresh session | `/clear`, or quit and start again | `/new`, or quit and start again |
+| Its own memory | auto memory, on by default; `/memory` | memories, off by default; `/memories` |
+
+**Always start the agent inside the project folder** (here `bird-project-work`), not in the course folder above it. Both tools read the instruction files of the folder you start in; Codex, in a folder that is not yet a git repository, reads only that folder.
+
+## Worked example
+
+### Step 1: Look before the agent does
+
+Open `bird-project-work` in your file browser and look through the 16 files for two minutes, without the agent. Open `README.txt`, `notes.txt` and `TODO.txt`.
+
+**Two files must not be in a project folder at all.** Find them, and move them **by hand** out of `bird-project-work` into a separate folder outside the course folder (for example `Documents/keep-out`). Do not ask the agent to do it: the point is that the agent never reads them.
+
+::: {.callout-note collapse="true" title="Which two?"}
+- `api_key.txt`: a key for an online service. Keys and passwords never go in a project folder: the agent may read them into its context, and in Part 3 the folder goes to GitHub. (This key is fake.)
+- `volunteer_contacts.csv`: names, phone numbers and e-mail addresses. The analysis only needs the volunteer codes (V01 to V05), which are already in the count files. Personal data the analysis does not need stays out. (These people are made up.)
+:::
+
+The folder now has **14 files**.
+
+### Step 2: Restructure, in plan mode
+
+Start the agent in `bird-project-work` and switch to plan mode. Type:
+
+```text
+This folder is a small research project: volunteer bird counts at six
+sites in 2025. Reorganise it into this layout:
+
+data/raw/        original data, never to be edited
+data/processed/  data made by scripts
+scripts/         scripts, numbered in the order they run (01_, 02_)
+results/         figures and tables made by scripts
+notes/           plan.md, decisions.md, and other notes
+archive/         old versions and copies, kept for now
+
+- Read notes.txt and TODO.txt first: they explain which files are old.
+- Turn notes.txt into notes/decisions.md (one dated entry per decision,
+  with the reason) and TODO.txt into notes/plan.md (done / next / open).
+  Keep the wording; do not invent decisions.
+- Update the file paths inside the scripts so that they run from the
+  project folder (for example: python scripts/01_clean.py).
+- Do not delete anything. Do not edit the raw data files.
+- Write move-log.csv with one row per file: old path, new path, reason.
+
+Done when: every one of the 14 files appears in move-log.csv; nothing
+is loose at the top except move-log.csv and README.txt; both scripts
+run from the project folder and the cleaning script prints the same
+as before the move: 160 rows, 750 birds.
+
+Show me your plan before you change anything.
+```
+
+The numbers in the last line are a reference we give you: before any move, `clean.py` prints `160 rows, 750 birds`. With them, the agent can check its own work after the move, and so can you.
+
+**Read the plan.** Check in particular:
+
+- `counts_clean_OLD.csv`, `fig_sites_v2.svg` and `Copy of clean.py` go to `archive/`, not to `data/` or `scripts/`. (`notes.txt` says the OLD file is not to be used.)
+- `site_coordinates.csv` goes to `data/raw/`: it is original information, not made by a script.
+- `methods draft.md` goes to `notes/` (with a name without spaces, for example `methods-draft.md`).
+- The plan says how it will change the paths inside the scripts.
+
+Then approve, and approve each edit as it comes (Claude Code: **Yes, manually approve edits**; Codex: allow edits with `/permissions` if needed, then go ahead).
+
+#### Check the result
+
+1. **Before and after.** Before the move, `clean.py` printed **160 rows, 750 birds**. After the move, ask the agent to run both scripts again (or run them yourself: `python scripts/01_clean.py`, then `python scripts/02_plot_sites.py`, from the project folder; on some computers the command is `python3`). The cleaning script must again print **160 rows, 750 birds**.
+2. **The figure.** Open `results/fig_sites.svg` in your browser (drag the file into a browser window). Six bars, A to F, with totals **A 150, B 91, C 150, D 108, E 144, F 107**.
+3. **The move log.** `move-log.csv` has **14 rows**. Pick three at random and find each file in its new place.
+4. **Raw data unchanged.** `data/raw/` holds exactly `counts_raw_spring.csv`, `counts_raw_autumn.csv` and `site_coordinates.csv`. Open one and compare it with the same file in your original `bird-project` folder: identical.
+5. **Nothing lost.** Every one of the 14 files is either in its new place or, for `notes.txt` and `TODO.txt`, turned into `notes/decisions.md` and `notes/plan.md` with the original kept (in `notes/` or `archive/`; the move log should say which). Nothing is deleted.
+6. **Decisions kept, not invented.** `notes/decisions.md` contains the site F decision, the meaning of blanks and the species-name rule from `notes.txt`, and nothing the notes did not say.
+
+::: {.callout-note collapse="true" title="Expected outcome"}
+- `counts_clean.csv` in `data/processed/`: 160 rows, 750 birds (the raw files have 96 rows each; 16 blank rows for two unvisited site-days and 16 rows for site F in autumn are dropped).
+- `counts_clean_OLD.csv` has 176 rows: it still contains site F in autumn. It belongs in `archive/`. If any script now reads it, something went wrong.
+- Totals per site in the new figure: A 150, B 91, C 150, D 108, E 144, F 107. The archived `fig_sites_v2.svg` shows a higher total for F, because it was made before the site F decision.
+- If the agent left `notes.txt` and `TODO.txt` in place next to the new `notes/` files, that is acceptable, but ask it to move the originals to `archive/` so there is one current version of each.
+:::
+
+### Step 3: Write AGENTS.md, CLAUDE.md and README.md
+
+If the agent is still in plan mode, switch it off (Claude Code: Shift+Tab until the status line shows manual mode). Then type:
+
+```text
+Write three files for this project.
+
+1. AGENTS.md, for coding agents. At most one screen (about 40 lines):
+   - what the project is and who it is for, in two sentences
+   - where things are: one line per folder, and which files are current
+   - what the data means: blank vs 0, the site F exclusion (refer to
+     notes/decisions.md)
+   - how to check work: the commands to run the scripts and the numbers
+     the cleaning script must print
+   - rules: data/raw is read-only; volunteer contact details and API
+     keys are kept outside this folder and must never be added; start
+     each session by reading notes/plan.md and update it before
+     stopping; log new decisions in notes/decisions.md; if something is
+     unclear, list it and ask
+   Do not list every file; I can see them myself.
+
+2. CLAUDE.md containing exactly one line: @AGENTS.md
+
+3. README.md for people, replacing README.txt (move README.txt to
+   archive/): what the project is, where the data came from, how to
+   rerun the analysis, and who to ask (write "the project lead" for now).
+```
+
+**Alternative for Codex users:** type `/init` instead. It writes an `AGENTS.md` draft from what it sees. Then ask: "Edit AGENTS.md to add the meaning of the data, the checks and the rules below, and remove anything I could see by opening a file: …" with the bullet list above. Claude Code's `/init` writes a `CLAUDE.md` instead, so the prompt above is simpler there.
+
+Read `AGENTS.md` yourself. Delete any line that just repeats what a file listing shows. Is every number in it correct (160 rows, 750 birds)?
+
+Then add the AI-use log: ask the agent to create `notes/ai-log.md` with a table (date, tool and plan, what for, checked how) and two rows for today: the restructuring (checked: scripts rerun, same 160 rows and 750 birds) and the instruction files.
+
+### Step 4: Test AGENTS.md in a fresh session
+
+Quit the agent and start it again in `bird-project-work` (or use `/clear` or `/new`). Type:
+
+```text
+Using only the instruction files you read at the start, and opening no
+other file, answer briefly:
+1. What is this project, and who is it for?
+2. Where is the current cleaned data?
+3. Which script makes the figure of birds per site, and how do I run it?
+4. What does a blank count mean?
+5. Why is there no autumn data for site F?
+6. May I put the volunteer contact list in this folder?
+If an answer is not in the instruction files, say so.
+```
+
+#### Check the result
+
+| Question | Expected answer |
+|---|---|
+| 1 | Volunteer bird counts at six sites, spring and autumn 2025, for a report to the municipality |
+| 2 | `data/processed/counts_clean.csv` |
+| 3 | `scripts/02_plot_sites.py`, run from the project folder after `01_clean.py` |
+| 4 | The site was not visited that day; it is not a zero |
+| 5 | The meadow was flooded; see `notes/decisions.md` (it may say only that it was excluded, which is fine) |
+| 6 | No: contact details are kept outside the folder |
+
+Every wrong or "not in the instruction files" answer is a missing or unclear line in `AGENTS.md`. Fix it, start another fresh session, and ask again.
+
+**Did it really read the file?** Ask: "Which instruction files did you load at the start of this session?" Claude Code should name `CLAUDE.md` and, through the import, `AGENTS.md`; Codex should name `AGENTS.md`. In Claude Code, `/context all` lists the loaded instruction files under **Memory files**.
+
+**The read-only rule (optional).** In the same session, type: "There is a typo in data/raw/counts_raw_spring.csv: 'great tit' should be 'Great tit'. Fix it." A well-instructed agent should point out that `data/raw` is read-only and suggest handling it in the cleaning script, which already lower-cases the names. If it starts editing the raw file, refuse the permission prompt, and note what that tells you: the rule is advice, not a lock. Agents differ from run to run, so you may see either behaviour.
+
+## On your own project
+
+Now give your own project the same structure. It probably holds only `README.md` and `first-brief.md`, so this is quick; the point is to set it up right before the project grows.
+
+::: {.callout-warning}
+**Privacy reminder.** Only data your project's "Never put in this folder" list allows goes into `data/raw`, and only as a copy. Data that may not go to the agent stays outside the folder; `AGENTS.md` then says where it lives and that the agent must never open it. No keys, passwords or contact lists in the folder.
+:::
+
+### Step 1: Create the structure
+
+Start the agent **in your own-project folder** (manual mode in Claude Code; Codex with edits allowed in the folder). Type:
+
+```text
+Read README.md and first-brief.md. Set up this project with this layout:
+data/raw/, data/processed/, scripts/, results/, notes/.
+- Move first-brief.md to notes/.
+- Create notes/plan.md (done / next / open) from README.md and
+  notes/first-brief.md. The first "next" item is the first step in
+  the brief.
+- Create notes/decisions.md with any decisions already stated in
+  README.md (with today's date), or an empty heading if there are none.
+- Move the "Log of AI use" section from README.md into notes/ai-log.md
+  as a table (date, tool and plan, what for, checked how). In README.md,
+  leave one line pointing to notes/ai-log.md.
+- Do not add data. Do not invent anything I have not written.
+Show me the plan first.
+```
+
+Then, **by hand** in your file browser, copy into `data/raw/` the data files your README says are safe to use (if you have any yet), and mark them read-only (Mac: Get Info › **Locked**; Windows: Properties › **Read-only**). If your data must stay outside, leave `data/raw/` empty or put a synthetic stand-in there later.
+
+### Step 2: Write AGENTS.md and CLAUDE.md
+
+Use the same prompt as in Step 3 of the worked example, adapted to your project, or run `/init` (Codex) and edit the draft. Make sure `AGENTS.md` has:
+
+- [ ] what the project is and who it is for, in two sentences
+- [ ] a one-line map per folder
+- [ ] what your data means: codes, units, blanks, exclusions (as far as you know them now)
+- [ ] how to check work (for now: the "done when" of your first brief)
+- [ ] the rules: `data/raw` read-only; your "Never put in this folder" list; where sensitive data lives, if anywhere, and that the agent must never open it; read `notes/plan.md` first and update it before stopping; in doubt, list it and ask
+- [ ] no more than one screen
+
+And a `CLAUDE.md` with the single line `@AGENTS.md`, even if you only use Codex: it costs nothing, and a colleague may use the other tool.
+
+### Step 3: Test it in a fresh session
+
+Start a fresh session in the project folder and ask five questions whose answers you know, for example:
+
+```text
+Using only the instruction files you read at the start, answer briefly:
+1. What is this project, and who is it for?
+2. What is the next step, and where is it described?
+3. Where would raw data go, and may you edit it?
+4. What must never be put in this folder?
+5. How will I check the result of the first step?
+If an answer is not in the instruction files, say so.
+```
+
+Fix `AGENTS.md` until all five answers are right, testing each change in another fresh session.
+
+### Step 4: The colleague test (optional, recommended)
+
+Send your `README.md` (only that file) to a colleague, or read it aloud to the person next to you. Can they say what the project is, where the data will come from, how it will be checked, and who to ask? Every "I don't know" is a line for the README.
+
+Finally, add a row to `notes/ai-log.md`: today's date, the tool, "project structure, AGENTS.md, fresh-session test", and how you checked it.
+
+### Check the result
+
+- Your project folder has `README.md`, `AGENTS.md`, `CLAUDE.md` and the folders `data/raw`, `data/processed`, `scripts`, `results`, `notes`, and nothing else loose at the top.
+- `notes/` holds `first-brief.md`, `plan.md`, `decisions.md` and `ai-log.md`.
+- A fresh session answers your five questions correctly from the instruction files alone.
+- Nothing in the folder is on your "Never put in this folder" list.
+
+## What you should have now
+
+- `bird-project-work`, restructured, with a move log, scripts that give the same 160 rows and 750 birds as before, and an `AGENTS.md` that passed the six-question test.
+- **Your own project folder with its full structure**: `README.md` for people, `AGENTS.md` (and the one-line `CLAUDE.md`) for agents, and `notes/` with the plan, the decision log, the AI-use log and your first brief.
+
+In *Git as undo button and lab notebook*, this folder becomes a git repository, so that every change from now on is recorded and can be undone. After that, the `archive/` folder in the bird project is no longer needed: git keeps the old versions.

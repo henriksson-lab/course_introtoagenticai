@@ -1,0 +1,115 @@
+respondent,question,theme,text
+2,worked_well,recordings,The recordings were well structured.
+4,worked_well,recordings,The recorded lectures were essential as a distance student.
+5,worked_well,quizzes,The quizzes made me study every week instead of at the end.
+8,worked_well,labs,Labbarna var bäst!
+10,worked_well,labs,The labs were the best part of the course.
+16,worked_well,approachable teachers,I felt I could ask anything.
+17,worked_well,other,Everything.
+18,worked_well,quizzes,The weekly quizzes kept me on track.
+20,worked_well,other,The study guide for each week.
+24,worked_well,recordings,Having recorded lectures made it possible for me to work alongside studying.
+27,worked_well,labs,The labs made the course worth it.
+28,worked_well,recordings,I could study in the evenings thanks to the recordings.
+29,worked_well,approachable teachers,Teachers answered questions on the forum quickly.
+30,worked_well,quizzes,Quizzes were a good way to check my understanding.
+31,worked_well,approachable teachers,The teachers were friendly and easy to ask.
+33,worked_well,labs,Seeing the cells under the microscope myself.
+34,worked_well,approachable teachers,The TA Erik was very helpful.
+36,worked_well,labs,The microscopy lab was great.
+37,worked_well,labs,Labs were fun and useful.
+40,worked_well,labs,I learned most from the labs.
+44,worked_well,approachable teachers,Easy to get help during the labs.
+46,worked_well,labs,The lab supervisors explained things well during the labs.
+48,worked_well,recordings,The recordings saved me when I was ill.
+51,worked_well,approachable teachers,The teaching team clearly cared about us.
+52,worked_well,labs,"The labs, especially the western blot."
+53,worked_well,quizzes,The quiz questions were good preparation.
+54,worked_well,approachable teachers,Erik's extra help session before the exam.
+56,worked_well,recordings,Recordings meant I could rewatch the hard parts.
+62,worked_well,labs,The lab where we designed our own experiment.
+63,worked_well,other,Interesting topic.
+64,worked_well,labs,Lab work was well organised.
+68,worked_well,quizzes,I liked the short quizzes after each lecture.
+72,worked_well,quizzes,Quizzes helped me see what was important.
+77,worked_well,quizzes,The online quizzes helped me revise.
+80,worked_well,quizzes,Quizzes with instant feedback.
+81,worked_well,labs,The lab sessions connected well to the lectures.
+82,worked_well,other,Good course overall.
+86,worked_well,labs,I liked the cell culture lab a lot.
+88,worked_well,approachable teachers,Friendly and engaged teachers.
+89,worked_well,other,The seminars with case discussions.
+91,worked_well,recordings,Recorded lectures.
+93,worked_well,approachable teachers,Erik in the lab was always willing to explain again.
+94,worked_well,approachable teachers,Approachable teachers.
+95,worked_well,recordings,Being able to pause and rewatch the lectures.
+97,worked_well,labs,Working in the lab in small groups.
+98,worked_well,labs,Good labs with clear instructions.
+100,worked_well,labs,Hands-on lab work made the theory click.
+101,worked_well,other,The study guide made it clear what to read.
+102,worked_well,other,Group work in the seminars.
+103,worked_well,labs,Practical work in the lab.
+paper-01,worked_well,quizzes,The practice quizzes before the exam.
+paper-06,worked_well,labs,Labs! Finally doing real experiments.
+paper-08,worked_well,other,Working with other students in the group project.
+paper-13,worked_well,quizzes,"Weekly quizzes, please keep them."
+paper-15,worked_well,quizzes,Good quizzes.
+2,improve,other,Rooms changed twice without warning.
+6,improve,recordings,The sound in the recorded lectures was often bad.
+7,improve,workload,Two reports due on the same day should not happen.
+11,improve,late feedback,Lab report feedback should come before the next report.
+16,improve,other,Schedule changes were announced at very short notice.
+17,improve,late feedback,"The comments on my report were useful, but I got them after the exam."
+24,improve,exam alignment,The exam questions were worded differently from anything we had seen.
+25,improve,late feedback,Feedbacken på labbrapporterna kom alldeles för sent.
+26,improve,late feedback,"Some kind of feedback during the lab, not only weeks afterwards."
+28,improve,complaint about a named lecturer,Lecturer Anna Berg was dismissive when I asked a question in the seminar in week 5.
+30,improve,workload,The schedule in the middle of the course left no time to read.
+31,improve,exam alignment,The exam had calculation questions we never practised.
+32,improve,late feedback,"Feedback on lab report 1 came after report 2 was due, so I could not use it."
+35,improve,workload,"Heavy workload, I worked every weekend."
+37,improve,late feedback,The feedback was good but came too late to help.
+39,improve,late feedback,It would help to get comments on the first report earlier.
+40,improve,other,Longer breaks in the three-hour lectures.
+41,improve,other,More worked examples in the lectures.
+42,improve,other,Organise Canvas by week.
+44,improve,late feedback,Quicker turnaround on lab reports.
+45,improve,lab accessibility,"As the only wheelchair user in the group, the lab benches in room B214 were too high for me."
+47,improve,recordings,The microphone did not pick up the students' questions.
+48,improve,exam alignment,Make the exam more like the quizzes.
+49,improve,distance lab week,Distance students should get the lab instructions earlier so we can prepare.
+50,improve,recordings,Lecture 7 was never recorded.
+51,improve,workload,The middle weeks were stressful because everything was due at once.
+58,improve,exam alignment,The exam focused on details from the literature that were not in the lectures.
+59,improve,distance lab week,Spread the campus labs over two visits for distance students.
+61,improve,late feedback,Feedback was slow.
+64,improve,other,The lecture hall was cold.
+67,improve,workload,It felt like 20 credits of work for a 15 credit course.
+68,improve,other,"The textbook is expensive, a library copy would help."
+69,improve,late feedback,I never knew if I was on the right track because feedback took so long.
+70,improve,distance lab week,The compressed lab week meant I did not understand what we were doing.
+72,improve,workload,Fewer hand-ins in week 3-4 would help a lot.
+80,improve,workload,Spread out the deadlines. Week 4 was a nightmare.
+83,improve,workload,"Weeks 3 and 4 were far too heavy, two lab reports and a quiz in the same week."
+84,improve,recordings,Recordings should be split into shorter parts.
+85,improve,workload,Reduce the number of quizzes when lab reports are due.
+87,improve,late feedback,Return the graded reports sooner.
+89,improve,other,"The Canvas page was confusing, hard to find the lab instructions."
+91,improve,recordings,Better audio in the recordings.
+92,improve,distance lab week,As a distance student the lab week on campus was too compressed.
+94,improve,recordings,"Upload the recordings the same day, not a week later."
+95,improve,distance lab week,Five lab days in a row on campus was exhausting for those of us travelling.
+99,improve,exam alignment,More old exams to practise on.
+101,improve,recordings,Some recordings were missing the slides.
+102,improve,late feedback,We got our reports back three weeks later.
+103,improve,workload,I liked the content but the pace in weeks 3 and 4 was too fast.
+104,improve,workload,"Less reading in the first half, it piled up."
+105,improve,late feedback,Faster feedback on the lab reports please.
+106,improve,workload,Too much at once in the middle of the course.
+paper-02,improve,workload,Please move one of the lab reports to a later week.
+paper-03,improve,workload,The workload in week 3 was not realistic next to the other course.
+paper-04,improve,workload,Workload. Too many small assignments.
+paper-06,improve,other,More practice problems with solutions.
+paper-07,improve,other,Nothing really.
+paper-08,improve,exam alignment,The exam did not match the seminars.
+paper-14,improve,workload,För mycket på en gång under vecka 3 och 4.

@@ -1,0 +1,36 @@
+model,model_version,organisation,release_date,score,stderr,accessibility,open_weights
+GPT-4o (Nov 2024),gpt-4o-2024-11-20,OpenAI,2024-11-20,0.30991735537190085,0.021042625979133336,API access,False
+Claude 3.7 Sonnet,claude-3-7-sonnet-20250219,Anthropic,2025-02-24,0.609504132231405,0.022198466971122266,API access,False
+GPT-4.1,gpt-4.1-2025-04-14,OpenAI,2025-04-14,0.48541666666666666,0.022835863746433965,API access,False
+o3 (medium),o3-2025-04-16_medium,OpenAI,2025-04-16,0.6231884057971014,0.022072335658124498,API access,False
+Claude Opus 4,claude-opus-4-20250514,Anthropic,2025-05-22,0.7066115702479339,0.02071754535128056,API access,False
+Gemini 2.5 Pro (Jun 2025),gemini-2.5-pro,Google DeepMind,2025-06-17,0.5755693581780539,0.02251275673889269,API access,False
+Claude Opus 4.1,claude-opus-4-1-20250805,Anthropic,2025-08-05,0.7334710743801653,0.020118245554677085,API access,False
+GPT-5 (high),gpt-5-2025-08-07_high,OpenAI,2025-08-07,0.7355371900826446,0.02006832181710289,API access,False
+GPT-5 (medium),gpt-5-2025-08-07_medium,OpenAI,2025-08-07,0.7148760330578512,0.020542754003902382,API access,False
+GPT-5 mini (medium),gpt-5-mini-2025-08-07_medium,OpenAI,2025-08-07,0.6466942148760331,0.021749601139671306,API access,False
+Claude Sonnet 4.5 (no thinking),claude-sonnet-4-5-20250929,Anthropic,2025-09-29,0.7128099173553719,0.020587234937983246,API access,False
+GPT-5.1 (high),gpt-5.1-2025-11-13_high,OpenAI,2025-11-13,0.6797520661157025,0.02122974956319103,API access,False
+GPT-5.1 (high),gpt-5.1-2025-11-13_high,OpenAI,2025-11-13,0.6590909090909091,0.021568422716496703,API access,False
+Gemini 3 Pro Preview,gemini-3-pro-preview,Google DeepMind,2025-11-18,0.7293388429752066,0.02021641171153417,API access,False
+Claude Opus 4.5 (no thinking),claude-opus-4-5-20251101,Anthropic,2025-11-24,0.7665289256198347,0.01924895909142592,API access,False
+GPT-5.2 (high),gpt-5.2-2025-12-11_high,OpenAI,2025-12-11,0.737603305785124,0.020017832064928277,API access,False
+Gemini 3 Flash Preview,gemini-3-flash-preview,Google DeepMind,2025-12-17,0.7541322314049587,0.019593002139508684,API access,False
+Kimi K2.5,kimi-k2.5,Moonshot,2026-01-27,0.737603305785124,0.020017832064928274,Open weights (unrestricted),True
+Claude Opus 4.6 (no thinking),claude-opus-4-6,Anthropic,2026-02-05,0.7871900826446281,0.01862353730305288,API access,False
+Claude Opus 4.6 (no thinking),claude-opus-4-6,Anthropic,2026-02-05,0.756198347107438,0.019537213360116365,API access,False
+GPT-5.3 Codex (high),gpt-5.3-codex_high,OpenAI,2026-02-05,0.7479338842975206,0.019756739501473306,API access,False
+GLM-5,glm-5,Z.ai (Zhipu AI),2026-02-11,0.7207792207792207,0.020894141602415234,Open weights (unrestricted),True
+Claude Sonnet 4.6 (no thinking),claude-sonnet-4-6,Anthropic,2026-02-17,0.7520661157024794,0.01964818270139032,API access,False
+Gemini 3.1 Pro Preview,gemini-3.1-pro-preview-customtools,Google DeepMind,2026-02-19,0.756198347107438,0.019537213360116365,API access,False
+GPT-5.4 (high),gpt-5.4-2026-03-05_high,OpenAI,2026-03-05,0.768595041322314,0.019189407003691976,API access,False
+Qwen 3.6 Plus (2026-04-02),qwen3.6-plus,Alibaba,2026-03-31,0.5785123966942148,0.02246855652298021,API access,False
+GLM-5.1,glm-5.1,Z.ai (Zhipu AI),2026-04-07,0.7417,0.0199,Open weights (unrestricted),True
+Claude Opus 4.7 (max),claude-opus-4-7_max,Anthropic,2026-04-16,0.8347107438016529,0.016901169179529604,API access,False
+Kimi K2.6,kimi-k2.6,Moonshot,2026-04-20,0.7665289256198347,0.01924895909142592,Open weights (unrestricted),True
+Qwen 3.6 Max (Preview),qwen3.6-max-preview,Alibaba,2026-04-20,0.7665289256198347,0.01924895909142592,,
+GPT-5.5 (xhigh),gpt-5.5-pre-release_xhigh,OpenAI,2026-04-23,0.8057851239669421,0.018000198869416815,API access,False
+DeepSeek v4 Pro (max),deepseek-v4-pro_max,DeepSeek,2026-04-24,0.7763975155279503,0.01897828052158487,Open weights (unrestricted),True
+Gemini 3.5 Flash,gemini-3.5-flash_high,Google DeepMind,2026-05-19,0.7933884297520661,0.018422420250424888,API access,False
+Qwen3.7 Max,qwen3.7-max,Alibaba,2026-05-19,0.7727272727272727,0.01906835447169652,API access,False
+GLM-5.2,glm-5.2_max,Z.ai (Zhipu AI),2026-06-16,0.787,0.018656911901656907,Open weights (unrestricted),True

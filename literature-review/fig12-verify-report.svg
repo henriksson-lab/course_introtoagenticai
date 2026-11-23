@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="450" fill="#fff"/>
+  <rect x="10" y="10" width="980" height="410" rx="10" fill="#fafafa" stroke="#bbb"/>
+  <text x="30" y="44" font-size="20" font-weight="bold" fill="#333">verification_report.md</text>
+  <g font-family="Courier New, monospace" font-size="17" fill="#333" xml:space="preserve">
+    <text x="30" y="84">Rows in table:                 40</text>
+    <text x="30" y="112">PMID found in PubMed:          40 / 40</text>
+    <text x="30" y="140">DOI resolves (doi.org):        38 / 38   (2 rows have no DOI)</text>
+    <text x="30" y="168">Title matches PubMed:          39 / 40</text>
+    <text x="30" y="196">Quote found in abstract:       37 / 40</text>
+    <text x="30" y="224">Retracted publications:         0</text>
+    <text x="30" y="270" font-weight="bold">Problems</text>
+    <text x="30" y="298" fill="#a8324a">row 17  SUFU  title differs: table has a review, PMID is</text>
+    <text x="30" y="320" fill="#a8324a">                a different paper by the same group</text>
+    <text x="30" y="348" fill="#8a6a12">row 5   SHH   quote not found (paraphrased)</text>
+    <text x="30" y="376" fill="#8a6a12">row 22  GLI2  quote not found (two sentences joined)</text>
+    <text x="30" y="404" fill="#8a6a12">row 31  PTCH2 quote not found (Greek letter written out)</text>
+  </g>
+  <text x="985" y="442" font-size="14" fill="#999" text-anchor="end">illustrative; your numbers will differ</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <g id="pdf">
+      <path d="M0,0 L50,0 L64,14 L64,80 L0,80 Z" fill="#fff" stroke="#555" stroke-width="2"/>
+      <path d="M50,0 L50,14 L64,14" fill="none" stroke="#555" stroke-width="2"/>
+    </g>
+  </defs>
+  <rect width="1000" height="440" fill="#fff"/>
+  <g font-size="16">
+    <use href="#pdf" x="30" y="30"/>
+    <text x="110" y="52" font-weight="bold" fill="#333">01 Aldersen 2021</text>
+    <text x="110" y="76" fill="#2a7f8f">the easy one: text, one table</text>
+    <use href="#pdf" x="520" y="30"/>
+    <text x="600" y="52" font-weight="bold" fill="#333">02 Moreau 2019</text>
+    <text x="600" y="76" fill="#a8324a">value in ng/mL, not nmol/L</text>
+    <use href="#pdf" x="30" y="160"/>
+    <text x="110" y="182" font-weight="bold" fill="#333">03 Nyberg 2022</text>
+    <text x="110" y="206" fill="#a8324a">long table over a page break,</text>
+    <text x="110" y="228" fill="#a8324a">decimal commas, total in last row</text>
+    <use href="#pdf" x="520" y="160"/>
+    <rect x="522" y="162" width="60" height="76" fill="#ddd"/>
+    <text x="600" y="182" font-weight="bold" fill="#333">04 Okonkwo 2018</text>
+    <text x="600" y="206" fill="#a8324a">scanned: no text at all</text>
+    <use href="#pdf" x="30" y="290"/>
+    <text x="110" y="312" font-weight="bold" fill="#333">05 Petrova 2023</text>
+    <text x="110" y="336" fill="#a8324a">recruited vs analysed; median vs</text>
+    <text x="110" y="358" fill="#a8324a">mean; another study's mean</text>
+    <use href="#pdf" x="520" y="290"/><use href="#pdf" x="535" y="302"/>
+    <text x="620" y="312" font-weight="bold" fill="#333">06 Quint 2020 + supplement</text>
+    <text x="620" y="336" fill="#a8324a">numbers only in the supplement</text>
+  </g>
+  <text x="20" y="420" font-size="18" fill="#333">Synthetic, with an answer key. Each paper hides one problem you will meet in real papers.</text>
+</svg>

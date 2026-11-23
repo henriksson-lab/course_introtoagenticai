@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="430" fill="#fff"/>
+  <g font-size="30" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">
+    <text x="40" y="70"><tspan fill="#2a7f8f">claude</tspan><tspan fill="#999">-</tspan><tspan fill="#6b4fa0">opus</tspan><tspan fill="#999">-</tspan><tspan fill="#8a6a12">5-5</tspan></text>
+    <text x="40" y="190"><tspan fill="#2a7f8f">gpt</tspan><tspan fill="#999">-</tspan><tspan fill="#8a6a12">6.2</tspan><tspan fill="#999">-</tspan><tspan fill="#6b4fa0">sol</tspan></text>
+    <text x="40" y="310"><tspan fill="#2a7f8f">Qwen</tspan><tspan fill="#8a6a12">3.8</tspan><tspan fill="#999">-</tspan><tspan fill="#a8324a">27B</tspan></text>
+  </g>
+  <g font-size="17" fill="#333">
+    <text x="40" y="102">Anthropic's ID for Claude Opus 5.5</text>
+    <text x="40" y="222">OpenAI's ID for GPT-6.2 Sol</text>
+    <text x="40" y="342">an open-weights model from Alibaba</text>
+  </g>
+  <g font-size="19">
+    <rect x="560" y="40" width="20" height="20" fill="#2a7f8f"/><text x="592" y="57" fill="#333"><tspan font-weight="bold">family</tspan>: who made it</text>
+    <rect x="560" y="85" width="20" height="20" fill="#6b4fa0"/><text x="592" y="102" fill="#333"><tspan font-weight="bold">tier or member</tspan>: size or role</text>
+    <rect x="560" y="130" width="20" height="20" fill="#8a6a12"/><text x="592" y="147" fill="#333"><tspan font-weight="bold">version</tspan>: higher is newer</text>
+    <rect x="560" y="175" width="20" height="20" fill="#a8324a"/><text x="592" y="192" fill="#333"><tspan font-weight="bold">size</tspan>: 27B = 27 billion</text>
+    <text x="592" y="216" fill="#333">parameters (open models)</text>
+  </g>
+  <rect x="560" y="250" width="420" height="105" rx="10" fill="#f5f5f5" stroke="#bbb"/>
+  <text x="578" y="280" font-size="17" fill="#333">In benchmark tables, an extra part:</text>
+  <text x="578" y="312" font-size="20" fill="#333" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace">GPT-6.2 Astra (max)</text>
+  <text x="578" y="340" font-size="17" fill="#333">= the thinking setting used for that score</text>
+  <text x="980" y="420" font-size="14" fill="#999" text-anchor="end">examples from November 2026; check each provider's model overview page</text>
+</svg>

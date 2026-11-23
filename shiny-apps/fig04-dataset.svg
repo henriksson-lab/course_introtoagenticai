@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="470" fill="#ffffff"/>
+  <rect x="10" y="10" width="880" height="360" rx="6" fill="#ffffff" stroke="#c9d3dd" stroke-width="1.5"/>
+  <rect x="40" y="40" width="850" height="32" fill="#e3f1f3"/>
+  <text x="48" y="62" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">site</text>
+  <text x="198" y="62" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">date</text>
+  <text x="328" y="62" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">temperature_c</text>
+  <text x="488" y="62" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">ph</text>
+  <text x="578" y="62" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">nitrate_mg_l</text>
+  <text x="738" y="62" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">oxygen_mg_l</text>
+  <line x1="40" y1="72" x2="890" y2="72" stroke="#e3e7eb" stroke-width="1"/>
+  <text x="48" y="95" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Alder Lake</text>
+  <text x="198" y="95" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">2022-01-05</text>
+  <text x="328" y="95" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">3.5</text>
+  <text x="488" y="95" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">7.18</text>
+  <text x="578" y="95" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">0.72</text>
+  <text x="738" y="95" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">14.1</text>
+  <line x1="40" y1="106" x2="890" y2="106" stroke="#e3e7eb" stroke-width="1"/>
+  <text x="48" y="129" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Mill Creek</text>
+  <text x="198" y="129" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">2022-01-05</text>
+  <text x="328" y="129" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">3.7</text>
+  <text x="488" y="129" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">6.88</text>
+  <text x="578" y="129" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">3.5</text>
+  <text x="738" y="129" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">13.9</text>
+  <line x1="40" y1="140" x2="890" y2="140" stroke="#e3e7eb" stroke-width="1"/>
+  <text x="48" y="163" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">North Pond</text>
+  <text x="198" y="163" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">2022-01-05</text>
+  <text x="328" y="163" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">3.4</text>
+  <text x="488" y="163" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">7.86</text>
+  <text x="578" y="163" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">1.55</text>
+  <text x="738" y="163" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">13.4</text>
+  <line x1="40" y1="174" x2="890" y2="174" stroke="#e3e7eb" stroke-width="1"/>
+  <text x="48" y="197" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Stone River</text>
+  <text x="198" y="197" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">2022-01-05</text>
+  <text x="328" y="197" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">4.3</text>
+  <text x="488" y="197" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">7.06</text>
+  <text x="578" y="197" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">1.62</text>
+  <text x="738" y="197" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">13.6</text>
+  <line x1="40" y1="208" x2="890" y2="208" stroke="#e3e7eb" stroke-width="1"/>
+  <text x="48" y="231" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Alder Lake</text>
+  <text x="198" y="231" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">2022-01-19</text>
+  <text x="328" y="231" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">3</text>
+  <text x="488" y="231" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">7.34</text>
+  <text x="578" y="231" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">0.79</text>
+  <text x="738" y="231" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">13.4</text>
+  <line x1="40" y1="242" x2="890" y2="242" stroke="#e3e7eb" stroke-width="1"/>
+  <text x="48" y="265" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Mill Creek</text>
+  <text x="198" y="265" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">2022-01-19</text>
+  <text x="328" y="265" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">3.2</text>
+  <text x="488" y="265" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">6.73</text>
+  <text x="578" y="265" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">3.23</text>
+  <text x="738" y="265" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">13.3</text>
+  <line x1="40" y1="276" x2="890" y2="276" stroke="#e3e7eb" stroke-width="1"/>
+  <text x="48" y="299" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">North Pond</text>
+  <text x="198" y="299" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">2023-06-05</text>
+  <text x="328" y="299" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">20.1</text>
+  <text x="488" y="299" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">7.98</text>
+  <text x="578" y="299" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">0.77</text>
+  <text x="738" y="299" font-size="16" fill="#a8324a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">NA</text>
+  <text x="48" y="334" font-size="18" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">...</text>
+  <line x1="40" y1="40" x2="40" y2="310" stroke="#e3e7eb" stroke-width="1"/>
+  <line x1="190" y1="40" x2="190" y2="310" stroke="#e3e7eb" stroke-width="1"/>
+  <line x1="320" y1="40" x2="320" y2="310" stroke="#e3e7eb" stroke-width="1"/>
+  <line x1="480" y1="40" x2="480" y2="310" stroke="#e3e7eb" stroke-width="1"/>
+  <line x1="570" y1="40" x2="570" y2="310" stroke="#e3e7eb" stroke-width="1"/>
+  <line x1="730" y1="40" x2="730" y2="310" stroke="#e3e7eb" stroke-width="1"/>
+  <line x1="890" y1="40" x2="890" y2="310" stroke="#e3e7eb" stroke-width="1"/>
+  <text x="40" y="390" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">288 rows: 4 sites, sampled twice a month from 2022 to 2024.</text>
+  <text x="40" y="416" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Invented numbers. Six values are missing on purpose: a broken oxygen probe, two lost pH readings.</text>
+  <text x="990" y="460" font-size="14" fill="#9aa4ad" text-anchor="end" font-weight="normal" font-style="italic" xml:space="preserve">water-quality.csv, first rows and one missing value</text>
+</svg>

@@ -1,0 +1,121 @@
+respondent,source,programme,mode,age_group,gender,q01,q02,q03,q04,q05,q06,q07,q08,q09,q10,q11,q12
+2,online,Biotechnology,Distance,22-25,Man,5,4,4,3,1,4,4,3,2,4,5,5
+3,online,Medicine,Distance,22-25,Man,5,5,5,2,3,3,4,4,2,4,5,5
+4,online,Biomedicine,Distance,18-21,Woman,4,2,5,4,3,4,2,3,1,3,4,5
+5,online,Biotechnology,Distance,22-25,Man,4,4,4,2,3,3,3,3,4,3,4,3
+6,online,Biotechnology,Distance,22-25,Woman,3,3,,2,4,3,3,2,2,3,4,2
+7,online,Medicine,Distance,26-30,Man,3,4,3,3,5,3,4,3,1,4,4,4
+8,online,Exchange student,Campus,22-25,Woman,3,3,3,4,4,4,3,2,3,3,3,4
+9,online,Other / single-subject course,Campus,22-25,Woman,2,3,3,4,3,3,2,2,3,3,4,5
+10,online,Medicine,Campus,26-30,Woman,4,4,,5,3,3,4,3,2,3,5,3
+11,online,Biotechnology,Campus,18-21,Man,4,2,3,3,4,3,2,1,5,2,2,3
+12,online,Other / single-subject course,Campus,18-21,Man,4,3,4,3,3,3,4,2,4,3,4,3
+13,online,Biomedicine,Distance,22-25,Woman,4,3,5,4,3,4,3,2,,3,4,4
+14,online,Medicine,Campus,22-25,Man,4,4,4,4,3,4,3,4,2,3,4,4
+15,online,Medicine,Campus,22-25,Man,4,4,3,3,4,5,4,3,2,3,4,5
+16,online,Biomedicine,Campus,18-21,Woman,4,4,4,4,4,4,3,3,2,4,5,4
+17,online,Biotechnology,Distance,18-21,Man,3,3,3,2,5,2,2,1,4,2,4,4
+18,online,Biotechnology,Campus,18-21,Prefer not to say,3,3,4,3,2,3,2,3,3,3,3,3
+19,online,Biotechnology,Campus,26-30,Non-binary,5,5,5,5,5,5,5,5,5,5,5,5
+20,online,Biomedicine,Distance,22-25,Man,3,3,3,3,4,2,2,1,3,3,3,3
+21,online,Biomedicine,Campus,22-25,Man,4,5,4,4,,,5,3,2,2,5,4
+22,online,Biotechnology,Campus,18-21,Woman,4,4,3,4,4,3,3,2,2,2,4,3
+23,online,Biomedicine,Campus,31 or older,Woman,5,3,NA,3,3,2,3,2,3,2,4,1
+24,online,Biomedicine,Distance,18-21,Woman,5,4,5,2,3,4,4,3,2,2,4,5
+25,online,Biotechnology,Campus,31 or older,Woman,4,,2,3,4,2,3,2,4,3,4,
+26,online,Biomedicine,Campus,18-21,Woman,4,3,NA,4,3,2,3,2,2,3,5,3
+27,online,Biotechnology,Campus,18-21,Man,5,4,4,5,2,3,3,3,1,4,4,5
+28,online,Other / single-subject course,Distance,31 or older,Woman,4,2,5,4,4,3,3,3,2,4,4,4
+29,online,Biotechnology,Campus,26-30,Woman,3,3,3,4,3,3,4,2,2,3,5,4
+30,online,Biomedicine,Distance,18-21,Woman,,4,5,3,4,5,3,3,3,,5,4
+31,online,Other / single-subject course,Distance,22-25,Woman,4,4,5,4,3,4,3,4,1,1,5,4
+32,online,Medicine,Campus,22-25,Man,2,1,2,3,3,2,1,1,5,2,3,2
+33,online,Biotechnology,Campus,18-21,Man,2,4,NA,4,2,3,2,3,3,,3,3
+34,online,Biotechnology,Campus,31 or older,Man,4,3,,5,3,3,4,4,2,2,5,5
+35,online,Biomedicine,Campus,22-25,Woman,2,3,2,4,5,4,3,2,4,3,3,1
+36,online,Biotechnology,Campus,22-25,Woman,5,3,5,5,4,3,5,3,2,3,5,5
+37,online,Biomedicine,Campus,18-21,Woman,4,4,3,5,3,2,3,2,2,3,4,4
+38,online,Biotechnology,Campus,22-25,Man,3,4,4,3,4,3,4,3,2,4,4,4
+39,online,Biomedicine,Distance,31 or older,Man,3,3,4,3,4,3,3,1,3,3,4,4
+40,online,Biotechnology,Campus,18-21,Man,4,4,4,5,4,4,4,,1,3,5,5
+41,online,Biomedicine,Campus,22-25,Man,4,5,3,4,3,3,4,1,2,4,5,3
+42,online,Biotechnology,Distance,22-25,Woman,4,4,4,3,4,2,2,3,3,3,4,3
+44,online,Biomedicine,Campus,22-25,Woman,2,3,4,3,5,3,3,1,4,2,5,3
+45,online,Biomedicine,Campus,26-30,Man,4,3,4,4,3,4,3,2,2,2,4,5
+46,online,Biotechnology,Campus,22-25,Woman,,3,4,5,3,3,3,2,2,4,5,4
+47,online,Biomedicine,Distance,22-25,Man,5,,4,4,3,3,4,3,1,4,5,5
+48,online,Biotechnology,Distance,31 or older,Woman,3,3,5,4,4,3,3,3,3,2,4,3
+49,online,Biotechnology,Distance,22-25,Woman,4,3,4,2,3,4,2,2,3,3,4,3
+50,online,Biomedicine,Campus,26-30,Woman,5,4,2,3,4,3,4,3,3,3,,4
+51,online,Biotechnology,Distance,22-25,Woman,4,3,3,3,5,3,3,3,3,3,5,4
+52,online,Biomedicine,Campus,22-25,Woman,5,5,4,5,2,3,4,4,2,4,4,5
+53,online,Biomedicine,Campus,22-25,Man,3,3,2,4,4,2,2,2,3,3,3,4
+54,online,Biomedicine,Campus,18-21,Woman,4,3,3,5,3,3,3,3,2,5,4,4
+55,online,Biotechnology,Campus,18-21,Man,2,4,4,3,4,3,3,2,3,3,4,4
+56,online,Medicine,Distance,22-25,Man,5,4,5,3,3,4,4,3,2,4,4,4
+57,online,Biomedicine,Campus,22-25,Man,3,3,3,4,4,3,3,2,3,3,4,2
+58,online,Medicine,Distance,22-25,Man,3,2,5,2,5,3,4,2,3,2,4,3
+59,online,Biotechnology,Distance,18-21,Man,5,3,4,3,2,2,4,3,1,3,4,5
+60,online,Biotechnology,Distance,26-30,Woman,3,3,4,2,3,2,3,2,5,2,4,4
+61,online,Biotechnology,Campus,31 or older,Woman,2,3,NA,2,4,2,1,1,4,2,3,3
+62,online,Other / single-subject course,Campus,22-25,Man,4,5,4,5,4,4,4,3,1,4,5,4
+63,online,Biomedicine,Distance,18-21,Prefer not to say,3,4,4,4,3,2,3,4,4,3,4,3
+64,online,Biomedicine,Campus,26-30,Woman,5,4,5,5,3,3,4,2,1,4,4,4
+65,online,Biomedicine,Campus,18-21,Woman,3,3,4,3,4,3,3,,4,2,5,
+66,online,Biomedicine,Campus,18-21,Woman,5,4,5,4,2,5,,,,,,
+67,online,Other / single-subject course,Campus,26-30,Woman,4,3,3,4,4,3,3,4,3,3,4,4
+68,online,Biomedicine,Distance,18-21,Woman,4,5,5,3,3,3,5,2,2,3,4,5
+69,online,Biotechnology,Distance,18-21,Man,2,2,4,1,3,2,2,1,3,2,,2
+70,online,Biotechnology,Distance,31 or older,Woman,5,4,5,4,3,4,5,4,1,4,5,5
+71,online,Other / single-subject course,Campus,22-25,Woman,4,4,3,5,4,3,2,2,3,4,4,2
+72,online,Other / single-subject course,Campus,22-25,Woman,4,4,4,4,4,2,3,3,3,2,3,4
+73,online,Biomedicine,Campus,22-25,Woman,4,3,2,4,4,3,3,2,3,,3,2
+74,online,Other / single-subject course,Campus,18-21,Woman,3,2,3,4,4,3,3,1,4,3,4,3
+75,online,Biotechnology,Campus,26-30,Man,5,3,3,4,3,4,4,2,3,3,4,4
+76,online,Biomedicine,Campus,22-25,Non-binary,3,3,5,3,3,3,4,3,4,3,4,4
+77,online,Biomedicine,Campus,18-21,Man,2,2,3,3,4,3,4,1,3,2,3,2
+78,online,Medicine,Campus,22-25,Man,5,4,4,5,4,4,4,3,2,5,4,4
+79,online,Biomedicine,Campus,31 or older,Man,5,5,4,4,4,4,4,3,3,,4,5
+80,online,Biomedicine,Campus,18-21,Man,4,3,2,3,5,3,3,1,4,2,4,2
+81,online,Biotechnology,Campus,22-25,Woman,5,,NA,5,4,3,4,2,3,2,5,4
+82,online,Biomedicine,Campus,18-21,Woman,4,4,2,4,3,3,4,2,2,3,3,4
+83,online,Biomedicine,Campus,18-21,Woman,4,4,NA,4,5,4,4,3,2,3,4,5
+84,online,Biotechnology,Distance,22-25,Woman,5,5,4,4,3,2,3,3,2,4,5,4
+85,online,Biotechnology,Campus,26-30,Non-binary,3,2,2,3,4,2,2,1,3,2,4,3
+86,online,Exchange student,Campus,26-30,Woman,4,,3,5,2,3,3,3,2,3,5,3
+87,online,Biomedicine,Distance,18-21,Woman,3,3,4,3,2,4,4,1,,3,4,4
+88,online,Medicine,Campus,18-21,Woman,4,5,3,4,4,3,4,2,2,3,5,3
+89,online,Medicine,Campus,22-25,Woman,2,4,NA,4,3,2,2,2,2,3,4,3
+90,online,Biomedicine,Distance,26-30,Man,4,4,4,3,4,5,4,2,3,3,4,4
+91,online,Medicine,Distance,22-25,Man,3,3,5,3,3,4,3,2,3,3,5,3
+92,online,Medicine,Distance,18-21,Woman,2,5,4,4,3,2,4,2,1,3,5,3
+93,online,Biomedicine,Campus,18-21,Woman,5,4,4,5,,4,4,2,2,,5,4
+94,online,Biomedicine,Distance,26-30,Woman,3,2,4,2,5,,2,2,2,3,5,3
+95,online,Biomedicine,Distance,18-21,Woman,4,5,5,4,3,5,3,3,2,,4,5
+96,online,Medicine,Campus,31 or older,Woman,4,2,2,4,4,2,3,2,4,3,3,3
+97,online,Exchange student,Campus,22-25,Woman,5,4,3,5,4,3,4,3,2,4,4,4
+98,online,Biomedicine,Campus,22-25,Woman,3,4,5,5,3,3,4,2,3,3,3,3
+99,online,Biotechnology,Campus,22-25,Man,4,3,3,3,4,2,4,4,3,1,4,2
+100,online,Biomedicine,Campus,22-25,Man,4,4,4,5,3,,4,3,1,3,5,5
+101,online,Biomedicine,Distance,18-21,Man,4,4,3,2,3,3,2,2,3,4,3,3
+102,online,Biomedicine,Campus,22-25,Woman,3,5,3,4,3,2,4,2,4,2,4,3
+103,online,Biotechnology,Campus,18-21,Woman,5,3,4,5,4,4,,3,4,2,4,4
+104,online,Medicine,Campus,22-25,Woman,3,1,1,2,5,,1,1,5,,4,2
+105,online,Biotechnology,Campus,18-21,Man,3,5,NA,,3,3,2,1,4,2,3,2
+106,online,Biotechnology,Campus,18-21,Woman,3,3,4,5,5,3,4,3,4,3,4,3
+107,online,Biomedicine,Distance,18-21,Woman,4,4,4,3,4,4,5,3,3,2,4,4
+paper-01,paper,Biomedicine,Campus,18-21,Woman,5,4,3,4,3,3,3,3,3,4,4,3
+paper-02,paper,Biomedicine,Campus,18-21,Man,4,4,3,4,4,5,4,2,4,3,4,4
+paper-03,paper,Biomedicine,Campus,26-30,Man,2,2,2,3,5,2,1,1,4,2,3,1
+paper-04,paper,Other / single-subject course,Campus,22-25,Woman,5,4,4,5,4,4,3,3,2,4,5,4
+paper-05,paper,Biotechnology,Campus,31 or older,Woman,3,4,4,4,4,4,3,3,3,3,4,4
+paper-06,paper,Biomedicine,Campus,18-21,Man,4,5,3,5,4,3,4,3,3,4,5,4
+paper-07,paper,Biomedicine,Campus,26-30,Man,3,3,3,4,3,3,3,3,2,2,4,4
+paper-08,paper,Biotechnology,Campus,22-25,Woman,4,2,3,5,5,1,1,1,4,1,,3
+paper-09,paper,Biotechnology,Campus,22-25,Woman,3,2,4,3,4,4,2,1,4,2,4,3
+paper-10,paper,Biomedicine,Campus,18-21,Man,3,3,NA,5,3,4,4,3,3,3,3,3
+paper-11,paper,Medicine,Campus,31 or older,Woman,5,4,3,4,4,4,3,3,3,3,5,4
+paper-12,paper,Biomedicine,Campus,26-30,Woman,3,3,3,2,4,2,3,2,3,3,4,2
+paper-13,paper,Exchange student,Campus,22-25,Woman,5,4,3,5,3,3,3,,2,,5,4
+paper-14,paper,Biomedicine,Campus,26-30,Woman,2,3,3,3,5,4,3,3,3,3,,3
+paper-15,paper,Biomedicine,Campus,22-25,Woman,,4,4,3,3,4,3,2,2,3,4,5

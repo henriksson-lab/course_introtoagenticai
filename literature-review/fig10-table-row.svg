@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <text x="20" y="34" font-size="20" fill="#333" font-weight="bold">One row of literature_table.csv, and where each cell comes from</text>
+  <g font-size="16">
+    <!-- field boxes -->
+    <rect x="20" y="60" width="300" height="44" rx="5" fill="#e3f1f3" stroke="#2a7f8f"/>
+    <text x="30" y="88" fill="#333"><tspan font-weight="bold">gene</tspan>  GLI1</text>
+    <rect x="20" y="112" width="300" height="44" rx="5" fill="#e3f1f3" stroke="#2a7f8f"/>
+    <text x="30" y="140" fill="#333"><tspan font-weight="bold">pmid</tspan>  12345678</text>
+    <rect x="20" y="164" width="300" height="44" rx="5" fill="#e3f1f3" stroke="#2a7f8f"/>
+    <text x="30" y="192" fill="#333"><tspan font-weight="bold">doi</tspan>  10.1000/example.4711</text>
+    <rect x="20" y="216" width="300" height="44" rx="5" fill="#e3f1f3" stroke="#2a7f8f"/>
+    <text x="30" y="244" fill="#333"><tspan font-weight="bold">year, title, journal</tspan>  2022, …</text>
+    <rect x="20" y="268" width="300" height="44" rx="5" fill="#efeaf6" stroke="#6b4fa0"/>
+    <text x="30" y="296" fill="#333"><tspan font-weight="bold">evidence_type</tspan>  human tissue</text>
+    <rect x="20" y="320" width="960" height="44" rx="5" fill="#efeaf6" stroke="#6b4fa0"/>
+    <text x="30" y="348" fill="#333"><tspan font-weight="bold">claim</tspan>  High GLI1 expression in tumour samples was associated with shorter survival.</text>
+    <rect x="20" y="372" width="960" height="44" rx="5" fill="#f5efdd" stroke="#8a6a12"/>
+    <text x="30" y="400" fill="#333"><tspan font-weight="bold">quote</tspan>  "patients with high GLI1 expression had significantly shorter overall survival"</text>
+  </g>
+  <g font-size="17">
+    <text x="345" y="110" fill="#2a7f8f" font-weight="bold">copied by the script</text>
+    <text x="345" y="134" fill="#2a7f8f" font-weight="bold">from the database</text>
+    <text x="345" y="160" fill="#555" font-size="16">never typed by the model</text>
+    <text x="345" y="290" fill="#6b4fa0" font-weight="bold">written by the agent: check these</text>
+    <text x="660" y="226" fill="#8a6a12" font-weight="bold">copied word for word</text>
+    <text x="660" y="250" fill="#8a6a12" font-weight="bold">from the abstract,</text>
+    <text x="660" y="274" fill="#8a6a12" font-weight="bold">so a script can find it ↓</text>
+  </g>
+  <text x="985" y="434" font-size="14" fill="#999" text-anchor="end">illustrative; made-up identifiers and text</text>
+</svg>

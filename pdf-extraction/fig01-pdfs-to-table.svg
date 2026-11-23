@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+    <g id="pdf">
+      <path d="M0,0 L50,0 L64,14 L64,80 L0,80 Z" fill="#fff" stroke="#a8324a" stroke-width="2"/>
+      <path d="M50,0 L50,14 L64,14" fill="none" stroke="#a8324a" stroke-width="2"/>
+      <text x="32" y="52" font-size="15" font-weight="bold" fill="#a8324a" text-anchor="middle">PDF</text>
+    </g>
+  </defs>
+  <rect width="1000" height="430" fill="#fff"/>
+  <use href="#pdf" x="20" y="40"/><use href="#pdf" x="100" y="40"/><use href="#pdf" x="180" y="40"/>
+  <use href="#pdf" x="20" y="140"/><use href="#pdf" x="100" y="140"/><use href="#pdf" x="180" y="140"/>
+  <use href="#pdf" x="20" y="240"/><use href="#pdf" x="100" y="240"/><use href="#pdf" x="180" y="240"/>
+  <text x="130" y="350" font-size="17" fill="#555" text-anchor="middle">one number in each,</text>
+  <text x="130" y="372" font-size="17" fill="#555" text-anchor="middle">somewhere</text>
+  <line x1="262" y1="190" x2="305" y2="190" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <g font-size="16" fill="#333">
+    <rect x="315" y="40" width="670" height="300" fill="#fff" stroke="#999"/>
+    <rect x="315" y="40" width="670" height="38" fill="#e3f1f3"/>
+    <g font-weight="bold" fill="#2a7f8f">
+      <text x="325" y="65">paper</text><text x="455" y="65">n</text><text x="510" y="65">value</text><text x="590" y="65">unit</text>
+      <text x="670" y="65">page</text><text x="730" y="65">table</text><text x="805" y="65">how read</text>
+    </g>
+    <g stroke="#ddd">
+      <line x1="315" y1="78" x2="985" y2="78"/><line x1="315" y1="122" x2="985" y2="122"/><line x1="315" y1="166" x2="985" y2="166"/>
+      <line x1="315" y1="210" x2="985" y2="210"/><line x1="315" y1="254" x2="985" y2="254"/><line x1="315" y1="298" x2="985" y2="298"/>
+      <line x1="448" y1="40" x2="448" y2="340"/><line x1="503" y1="40" x2="503" y2="340"/><line x1="583" y1="40" x2="583" y2="340"/>
+      <line x1="663" y1="40" x2="663" y2="340"/><line x1="723" y1="40" x2="723" y2="340"/><line x1="798" y1="40" x2="798" y2="340"/>
+    </g>
+    <text x="325" y="106">Aldersen 2021</text><text x="455" y="106">212</text><text x="510" y="106">58.4</text><text x="590" y="106">nmol/L</text><text x="670" y="106">2</text><text x="730" y="106">1</text><text x="805" y="106">text</text>
+    <text x="325" y="150">Moreau 2019</text><text x="455" y="150">140</text><text x="510" y="150">21.6</text><text x="590" y="150">ng/mL</text><text x="670" y="150">2</text><text x="730" y="150">1</text><text x="805" y="150">text</text>
+    <text x="325" y="194">Okonkwo 2018</text><text x="455" y="194">96</text><text x="510" y="194">66.0</text><text x="590" y="194">nmol/L</text><text x="670" y="194">2</text><text x="730" y="194">1</text><text x="805" y="194">OCR</text>
+    <text x="325" y="238">Quint 2020</text><text x="455" y="238">158</text><text x="510" y="238">39.5</text><text x="590" y="238">nmol/L</text><text x="670" y="238">S1</text><text x="730" y="238">S1</text><text x="805" y="238">supplement</text>
+    <text x="325" y="282">…</text>
+  </g>
+  <rect x="663" y="40" width="135" height="300" fill="none" stroke="#8a6a12" stroke-width="3"/>
+  <text x="730" y="368" font-size="17" fill="#8a6a12" font-weight="bold" text-anchor="middle">where it came from:</text>
+  <text x="730" y="390" font-size="17" fill="#8a6a12" font-weight="bold" text-anchor="middle">check any row in a minute</text>
+  <text x="985" y="422" font-size="14" fill="#999" text-anchor="end">synthetic papers from the exercise</text>
+</svg>

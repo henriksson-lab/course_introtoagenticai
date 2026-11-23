@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <rect width="1000" height="440" fill="#fff"/>
+  <text x="20" y="32" font-size="19" font-weight="bold" fill="#333">The scanned page (an image)</text>
+  <g transform="rotate(-0.7 230 150)">
+    <rect x="20" y="48" width="430" height="190" fill="#efefef" stroke="#999"/>
+    <g font-size="16" fill="#444" font-family="Times New Roman, serif">
+      <text x="36" y="80" font-weight="bold">Group</text><text x="150" y="80" font-weight="bold">n</text><text x="190" y="80" font-weight="bold">Mean 25(OH)D (nmol/L)</text><text x="380" y="80" font-weight="bold">SD</text>
+      <text x="36" y="118">No supplement</text><text x="150" y="118">61</text><text x="190" y="118">57.2</text><text x="380" y="118">21.0</text>
+      <text x="36" y="152">Supplement</text><text x="150" y="152">35</text><text x="190" y="152">81.3</text><text x="380" y="152">24.4</text>
+      <text x="36" y="186">All patients</text><text x="150" y="186">96</text><text x="190" y="186">66.0</text><text x="380" y="186">25.1</text>
+    </g>
+    <g fill="#aaa"><circle cx="300" cy="200" r="1.6"/><circle cx="120" cy="140" r="1.3"/><circle cx="420" cy="60" r="1.4"/><circle cx="260" cy="100" r="1.2"/></g>
+  </g>
+  <line x1="465" y1="140" x2="525" y2="140" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="540" y="32" font-size="19" font-weight="bold" fill="#333">What OCR (Tesseract) read</text>
+  <rect x="540" y="48" width="440" height="190" fill="#1f2430"/>
+  <g font-family="Courier New, monospace" font-size="16" fill="#e8e8e8" xml:space="preserve">
+    <text x="555" y="82">Group <tspan fill="#f08a9c" font-weight="bold">mn</tspan> Mean 25(OH)D (nmol/L) SD</text>
+    <text x="555" y="116">No supplement 61 57.2 21.0</text>
+    <text x="555" y="150">Supplement 35 81.3 24.4</text>
+    <text x="555" y="184"></text>
+    <text x="555" y="218">All patients 96 66.0 <tspan fill="#f08a9c" font-weight="bold">25,1</tspan></text>
+  </g>
+  <g font-size="18" fill="#333">
+    <text x="20" y="290">Most of it is right. Two small errors: "n" became "mn", and a full stop became a comma.</text>
+    <text x="20" y="320">On another page it could be 66.0 read as 56.0, and nothing would look wrong.</text>
+  </g>
+  <text x="20" y="372" font-size="18" fill="#8a6a12" font-weight="bold">Mark every value that came from OCR, and check those first.</text>
+  <text x="20" y="400" font-size="18" fill="#8a6a12" font-weight="bold">A model reading the page image makes different errors, not none.</text>
+  <text x="985" y="432" font-size="14" fill="#999" text-anchor="end">real Tesseract output for 04_Okonkwo-2018.pdf, page 2, at 300 dpi</text>
+</svg>

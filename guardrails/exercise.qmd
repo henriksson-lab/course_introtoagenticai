@@ -1,0 +1,246 @@
+---
+title: "Exercise: which guardrail did I hit?"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- say, for a message or a stopped task, **which kind of guardrail** caused it (model, classifier, harness, account) or whether it was **not a guardrail** at all (usage limit, context, network),
+- say **what to do** in each case, and what **not** to do,
+- find the **current** usage policy and safety framework pages of the provider you use, and check what they say instead of relying on the slides,
+- see which **harness guardrails** are active in your own sessions and where to change them,
+- write a short **"Guardrails and limits"** section for your own project's README.
+
+Most of this exercise needs no agent. Where the agent is used, it only searches the web or reads its own settings. Nothing in this exercise asks you to provoke a real block, and you should not try to.
+
+## Before you start
+
+- You have Claude Code or Codex working, and you can start it in your course folder (`~/agentic-course`, on Windows `C:\Users\<you>\agentic-course`).
+- You have your own project folder from *Privacy, ethics and safety*, with its `README.md` (now under git, since *Git as undo button*).
+- Have the lecture's flowchart open (slide "Which guardrail did I hit? Ask four questions in order") or the table after it.
+
+Where to look, for both tools:
+
+| | Claude Code | Codex |
+|---|---|---|
+| Permission mode | Status line under the prompt; **Shift+Tab** cycles | `/permissions` |
+| Saved permission rules | `/permissions` | `/permissions` |
+| Sandbox | `/sandbox` (on supported systems) | Part of the permission mode; network off by default for commands in the Auto preset |
+| Usage limits | `/usage` | `/status` (shows rate limits); `/usage` opens usage settings |
+| Usage policy | [anthropic.com/legal/aup](https://www.anthropic.com/legal/aup) | [openai.com/policies/usage-policies](https://openai.com/policies/usage-policies/) |
+| Safety framework | [Responsible Scaling Policy](https://www.anthropic.com/responsible-scaling-policy) | [Preparedness Framework](https://openai.com/index/updating-our-preparedness-framework/) |
+
+Menus and commands change between versions. If one is missing, type `/` in the session to see the list, or check the docs ([code.claude.com/docs](https://code.claude.com/docs), [learn.chatgpt.com](https://learn.chatgpt.com)).
+
+## Worked example
+
+### Part 1: Sort twelve situations
+
+No agent needed. For each situation, decide:
+
+1. **Which kind** it is: *model refusal or caution*, *safety classifier*, *harness guardrail*, *account enforcement*, or *not a guardrail* (usage limit, context, network).
+2. **What you would do next**, in one sentence.
+
+The wording in each situation is illustrative and generic; real messages vary between tools and versions.
+
+**A.** You ask for a reading list on the history of a pandemic for a course. The agent writes eight entries, then the session ends with a short red line: "API Error: the model can't help with this request. Start a new session to continue."
+
+**B.** You ask Claude Code to download a public dataset. A box appears: "Fetch https://... Do you want to allow this? 1. Yes 2. Yes, and don't ask again 3. No".
+
+**C.** Halfway through fitting twenty models, the agent prints: "You've hit your usage limit. Resets at 15:00."
+
+**D.** You ask for "a realistic phishing e-mail" for a staff awareness training. The reply: "I can't write a ready-to-send phishing e-mail, but I can write a training example with the warning signs marked, plus a checklist for staff."
+
+**E.** You ask Codex to install an R package. The command fails with "Could not resolve host", and Codex explains that network access is turned off in this session.
+
+**F.** You ask the chat app a question about how a class of toxins acts on nerve cells for a pharmacology lecture. A small banner above the answer says it was answered by a different model; the answer is shorter and more general than you expected.
+
+**G.** You ask for the home address and phone number of a researcher whose paper you want to criticise. The model declines, and offers to find their institutional contact page instead.
+
+**H.** You receive an e-mail from the provider saying that activity on your account may violate the usage policy, with a link to the policy.
+
+**I.** After a three-hour session, the agent prints "Context low. Compacting conversation ..." and afterwards seems to have forgotten a decision you made early on.
+
+**J.** You ask for the dose of a medicine for your own child. The answer gives general information and strongly recommends asking a pharmacist or doctor.
+
+**K.** You ask for a script that tries a list of passwords against a login page. The model asks whether the system is yours and whether you are authorised, and offers to explain how to run an approved password audit instead.
+
+**L.** The agent prints "API Error: 529 Overloaded. Retrying in 8 s (attempt 2/10)".
+
+::: {.callout-note collapse="true" title="Answers and reasons"}
+
+**A. Safety classifier.** System text, no reason, session ended partway. Pandemic history is legitimate, but one of the entries probably came too close to a blocked area. Do not reword the request to get past it. Start a new session and ask for the parts that are clearly fine (for example the social and policy history), and complete the list yourself from the library catalogue. Note in your log what happened.
+
+**B. Harness guardrail.** A permission prompt from the agent on your computer. Read the address: is it the source you expected? Then choose 1 (yes, once). Do not choose "don't ask again" for web access in general.
+
+**C. Not a guardrail: usage limit.** Nothing about content. Wait for the reset, check `/usage` (Claude Code) or `/status` (Codex), and next time use a smaller model for bulk work or split the job across days.
+
+**D. Model refusal, partial.** In the model's own voice, with a reason and a safe offer. The offer is usually what a training needs. If you need something closer to a real example, add honest context (who runs the training, that the IT security office has approved it) and ask what it can do; otherwise take the offer.
+
+**E. Harness guardrail: sandbox without network.** Your setting. Either allow network access for this one step (change the permission mode with `/permissions`, then switch back afterwards) or install the package yourself.
+
+**F. Safety classifier (rerouted to another model).** A banner from the system, not the model's voice, and a less detailed answer. Toxin biology is a typical false alarm. For a lecture, the textbook and review articles are better sources anyway; you can let the model help with structure and the parts that are clearly general. More in *Limits of AI for biological research*.
+
+**G. Model refusal: personal data.** A private home address is not public professional information. Use the institutional contact, or better: criticise the paper in print, through the journal.
+
+**H. Account enforcement.** Stop and read the policy section it links to. Think about what pattern might have triggered it (many retries of a blocked request, a shared account). If you think it is a mistake, contact the provider through the route the e-mail gives.
+
+**I. Not a guardrail: context.** The conversation outgrew the context window. Start a fresh session and keep important decisions in a file the agent reads (your project's notes, *Organising a project for an agent*).
+
+**J. Model caution: medical.** Not a refusal. The advice to ask a pharmacist is good advice. Use the model for background, not for the dose.
+
+**K. Model caution: dual-use security.** The model asks for context it cannot check. If this is your system and you are authorised, say so honestly, and say who approved it. If it is not your system, the answer is no for good reason.
+
+**L. Not a guardrail: server overloaded.** Wait; the agent retries by itself. If it keeps failing, check the provider's status page.
+:::
+
+### Part 2: Look up the current policies with the agent
+
+The slides were checked in November 2026. Policies change several times a year. Here the agent searches the web and you check the answer.
+
+1. Start the agent in your course folder (`claude` or `codex`). This part needs no file edits; read-only is fine.
+2. Type this prompt (use the provider of the tool you are using, or both):
+
+```text
+Search the web and find the CURRENT versions of these pages. Only use
+the providers' own websites (anthropic.com, claude.com, openai.com,
+deepmind.google) and, for the EU, the European Commission's own sites.
+For each, give the exact link, the version number or "effective" date
+printed on the page, and the one or two sentences I ask for.
+
+1. Anthropic Usage Policy: what it says about intentionally getting
+   around safeguards or guardrails, and whether a single blocked
+   output counts as a violation.
+2. OpenAI Usage Policies: what it says about circumventing safeguards.
+3. Anthropic Responsible Scaling Policy: current version number, and
+   which AI Safety Level protections current Claude models are
+   deployed with (Anthropic's model report or transparency page).
+4. OpenAI Preparedness Framework: current version, its tracked
+   categories, and the meaning of "High" and "Critical".
+5. Google DeepMind Frontier Safety Framework: current version.
+6. EU AI Act: what providers of general-purpose AI models with
+   systemic risk must do, in one sentence.
+
+If a page does not say something, write "not stated" instead of
+guessing. Do not create or change any files.
+```
+
+3. Approve the web searches and page fetches. Say no to anything else.
+
+### Check the result
+
+- **Open every link yourself.** Is it on the provider's own domain? Does the page say what the agent claims? Agents sometimes summarise the wrong version, or quote a news article as if it were the policy.
+- **Compare the dates and version numbers** with the slides (Anthropic Usage Policy effective 12 November 2026; RSP 3.4 of July 2026; OpenAI Preparedness Framework version 2 of April 2025; DeepMind FSF 3.1 of April 2026). If something is newer, note what changed. That is a good result, not a mistake.
+- **Find the sentence on circumventing safeguards** in at least one usage policy yourself, by searching the page (Ctrl+F or Cmd+F, "circumvent" or "bypass").
+- **"Not stated"** is an acceptable answer. An answer that sounds certain but which you cannot find on the page is not.
+
+### Part 3: See your own harness guardrails
+
+These are the guardrails you control. Look at them once, so that you recognise them when they appear.
+
+1. In the session from Part 2, check the permission mode: in Claude Code, the status line under the prompt (Shift+Tab cycles); in Codex, type `/permissions`.
+2. Type `/permissions` and look at the saved rules. Is there any "always allow" rule you do not remember making? Remove rules for deleting files or for "all commands", if any.
+3. Check your usage: `/usage` in Claude Code, `/status` in Codex. Note how close you are to the limit and when it resets.
+4. Ask the agent:
+
+```text
+Without changing anything, explain in plain words which safety
+settings are active in this session: the permission mode, whether
+commands run in a sandbox, whether commands have network access,
+and which folders you may read and write. Tell me which command or
+key I would use to change each one, and say if you are not sure.
+```
+
+### Check the result
+
+- The permission mode the agent reports matches what the status line or `/permissions` shows. If they disagree, trust the tool's own display, not the agent's explanation.
+- The commands it suggests exist: type `/` and check the list.
+- Nothing was changed. In Claude Code, no new rules in `/permissions`; in Codex, the mode is as before.
+
+### Part 4: Give honest context to a cautious request
+
+This part practises the right response to a model's own caution, on a harmless task. The model may well answer the first version without hesitation; models differ and change. The point is to write the second version, not to provoke a refusal.
+
+1. Ask, in a new session:
+
+```text
+List the eight members of the review panel for the funder's
+"Ecology and Evolution" call this year, with their contact details.
+```
+
+2. Read the answer. Did it decline, hedge, ask what you need, or give private details (it should not)?
+3. Now ask the same thing with honest context and a clear boundary:
+
+```text
+I am preparing a grant application to <funder>'s <call name>.
+The funder publishes its review panel on its own website. Please find
+that official panel list and, for each member, give only public
+professional information: name, institution, research area, and a
+link to their institutional web page or ORCID. No private contact
+details, no home addresses, no social media. Give the source link for
+every entry, and say if the panel list is not published.
+```
+
+### Check the result
+
+- The second answer names its **source** (the funder's own page) and stays within public professional information.
+- Open the funder's panel page yourself and compare three names. Are they all on it? Did the agent add anyone?
+- Write one sentence: what did the context change? (Often: the model knew what was acceptable and what you needed, so it could help fully and stay inside the limits.)
+
+## On your own project
+
+::: {.callout-warning}
+**Privacy reminder.** Describe your project in general terms. Do not paste personal data, confidential material or anything you would not want in a provider's logs.
+:::
+
+Your project may never meet a guardrail. Some will: a literature map in virology, a security audit of a lab server, reviewer profiles, a course on drugs and toxicology. Knowing in advance saves a frustrating afternoon.
+
+1. Start the agent in your **own project folder**.
+2. Type:
+
+```text
+Read README.md. Based on the project's goal and data, list which
+kinds of AI guardrail I might meet in this project, using these
+categories: model refusals or caution (and on which topics), safety
+classifiers (only if the project touches biology or chemistry of
+pathogens or toxins, or computer security), harness guardrails
+(downloads, network, installing software), personal data limits,
+copyright limits, and usage limits. For each, say how likely it is
+(unlikely / possible / likely) and why, in one sentence.
+Then add a section "## Guardrails and limits" to README.md with:
+- the likely guardrails and what I will do if I meet them
+  (honest context, splitting the task, normal channels),
+- the line "If a request is blocked by a safety system, I will not
+  reword it to get past the block.",
+- my institution's contact for questions (leave a placeholder
+  <contact> if you do not know it).
+Add one line to "Log of AI use" with today's date and
+"added Guardrails and limits section".
+Change nothing else. Show me the diff.
+```
+
+3. Read the diff before you approve the edit.
+
+### Check the result
+
+- The likelihoods make sense **to you**, as the expert on your project. Most projects should be "unlikely" for classifiers. If the agent says "likely" for a topic you know is ordinary, ask why, and correct it.
+- The section names concrete actions, not vague advice.
+- Fill in the `<contact>` yourself: your biosafety officer, IT security office, data protection officer or research office, whichever fits.
+- Only `README.md` changed. Commit the change with a short message (as in *Git as undo button*).
+
+## What you should have now
+
+- Your twelve classifications, with reasons, compared with the answers.
+- The links and dates of the **current** usage policy and safety framework pages for the tool you use, checked by you.
+- A look at your own **harness settings**: permission mode, saved rules, usage.
+- A worked example of turning a bare request into one with **honest context and clear limits**.
+- A **"Guardrails and limits"** section in your project's README, committed to git.
+
+In *Limits of AI for biological research*, we look closely at the biology guardrails and at the limits that are not guardrails at all.

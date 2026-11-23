@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="1000" height="640" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+  </defs>
+  <rect width="1000" height="640" fill="#ffffff"/>
+  <rect x="60" y="12" width="380" height="46" rx="23" fill="#1b2a3a"/>
+  <text x="250" y="42" text-anchor="middle" font-size="18" font-weight="bold" fill="#ffffff">The agent stopped or said no</text>
+  <line x1="250" y1="58" x2="250" y2="78" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <!-- Q1 -->
+  <rect x="40" y="84" width="420" height="70" rx="8" fill="#f4f7fa" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="250" y="114" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2a3a">Is it asking you to approve</text>
+  <text x="250" y="138" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2a3a">a command, file or web access?</text>
+  <line x1="460" y1="119" x2="560" y2="119" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="508" y="109" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2a3a">yes</text>
+  <rect x="566" y="89" width="414" height="60" rx="8" fill="#2a7f8f"/>
+  <text x="773" y="115" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">Harness guardrail.</text>
+  <text x="773" y="138" text-anchor="middle" font-size="16" fill="#fff">Read it, then decide. Your setting.</text>
+  <line x1="250" y1="154" x2="250" y2="180" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="264" y="174" font-size="16" fill="#3a4a5a">no</text>
+  <!-- Q2 -->
+  <rect x="40" y="186" width="420" height="70" rx="8" fill="#f4f7fa" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="250" y="216" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2a3a">Does it mention a limit, a reset</text>
+  <text x="250" y="240" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2a3a">time, context, or a network error?</text>
+  <line x1="460" y1="221" x2="560" y2="221" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="508" y="211" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2a3a">yes</text>
+  <rect x="566" y="191" width="414" height="60" rx="8" fill="#9aa5b1"/>
+  <text x="773" y="217" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">Not a guardrail.</text>
+  <text x="773" y="240" text-anchor="middle" font-size="16" fill="#fff">Wait, retry, or start a fresh session.</text>
+  <line x1="250" y1="256" x2="250" y2="282" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="264" y="276" font-size="16" fill="#3a4a5a">no</text>
+  <!-- Q3 -->
+  <rect x="40" y="288" width="420" height="70" rx="8" fill="#f4f7fa" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="250" y="318" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2a3a">Is the "no" in the model's own</text>
+  <text x="250" y="342" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2a3a">reply, with a reason or an offer?</text>
+  <line x1="460" y1="323" x2="560" y2="323" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="508" y="313" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2a3a">yes</text>
+  <rect x="566" y="293" width="414" height="60" rx="8" fill="#8a6a12"/>
+  <text x="773" y="319" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">Model refusal or caution.</text>
+  <text x="773" y="342" text-anchor="middle" font-size="16" fill="#fff">Add honest context; take the safe part.</text>
+  <line x1="250" y1="358" x2="250" y2="384" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="264" y="378" font-size="16" fill="#3a4a5a">no</text>
+  <!-- Q4 -->
+  <rect x="40" y="390" width="420" height="96" rx="8" fill="#f4f7fa" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="250" y="420" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2a3a">A system error or banner, an answer</text>
+  <text x="250" y="444" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2a3a">cut off, a session ended, or</text>
+  <text x="250" y="468" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2a3a">"answered by a different model"?</text>
+  <line x1="460" y1="438" x2="560" y2="438" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="508" y="428" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2a3a">yes</text>
+  <rect x="566" y="398" width="414" height="80" rx="8" fill="#a8324a"/>
+  <text x="773" y="426" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">Safety classifier.</text>
+  <text x="773" y="450" text-anchor="middle" font-size="16" fill="#fff">Do not reword to get past it. Use</text>
+  <text x="773" y="470" text-anchor="middle" font-size="16" fill="#fff">normal channels for the restricted part.</text>
+  <line x1="250" y1="486" x2="250" y2="512" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="264" y="506" font-size="16" fill="#3a4a5a">no</text>
+  <!-- Q5 -->
+  <rect x="40" y="518" width="420" height="70" rx="8" fill="#f4f7fa" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="250" y="548" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2a3a">An e-mail or account notice</text>
+  <text x="250" y="572" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2a3a">about policy violations?</text>
+  <line x1="460" y1="553" x2="560" y2="553" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="508" y="543" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2a3a">yes</text>
+  <rect x="566" y="523" width="414" height="60" rx="8" fill="#6b4fa0"/>
+  <text x="773" y="549" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">Account enforcement.</text>
+  <text x="773" y="572" text-anchor="middle" font-size="16" fill="#fff">Read it; stop; appeal if it is wrong.</text>
+  <text x="250" y="620" text-anchor="middle" font-size="16" fill="#3a4a5a">none of these: ask the agent "why did you stop?"</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="360" fill="#fff"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#555"/></marker></defs>
+  <g font-size="21" text-anchor="middle">
+    <rect x="15" y="60" width="170" height="150" rx="12" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="100" y="98" font-weight="bold" fill="#2a7f8f">1. Map</text>
+    <text x="100" y="135" font-size="17" fill="#333">what calls what,</text>
+    <text x="100" y="158" font-size="17" fill="#333">inputs, outputs,</text>
+    <text x="100" y="181" font-size="17" fill="#333">README, comments</text>
+    <rect x="215" y="60" width="170" height="150" rx="12" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="300" y="98" font-weight="bold" fill="#2a7f8f">2. Reference</text>
+    <text x="300" y="135" font-size="17" fill="#333">run the original</text>
+    <text x="300" y="158" font-size="17" fill="#333">on its example</text>
+    <text x="300" y="181" font-size="17" fill="#333">data; save output</text>
+    <rect x="415" y="60" width="170" height="150" rx="12" fill="#eeeaf5" stroke="#6b4fa0" stroke-width="2"/>
+    <text x="500" y="98" font-weight="bold" fill="#6b4fa0">3. Port</text>
+    <text x="500" y="135" font-size="17" fill="#333">faithfully, bugs</text>
+    <text x="500" y="158" font-size="17" fill="#333">included, piece</text>
+    <text x="500" y="181" font-size="17" fill="#333">by piece</text>
+    <rect x="615" y="60" width="170" height="150" rx="12" fill="#eeeaf5" stroke="#6b4fa0" stroke-width="2"/>
+    <text x="700" y="98" font-weight="bold" fill="#6b4fa0">4. Compare</text>
+    <text x="700" y="135" font-size="17" fill="#333">every number,</text>
+    <text x="700" y="158" font-size="17" fill="#333">with a tolerance</text>
+    <text x="700" y="181" font-size="17" fill="#333">set in advance</text>
+    <rect x="815" y="60" width="170" height="150" rx="12" fill="#f5efdd" stroke="#8a6a12" stroke-width="2"/>
+    <text x="900" y="98" font-weight="bold" fill="#8a6a12">5. Document</text>
+    <text x="900" y="135" font-size="17" fill="#333">assumptions,</text>
+    <text x="900" y="158" font-size="17" fill="#333">bugs; then fixes,</text>
+    <text x="900" y="181" font-size="17" fill="#333">one at a time</text>
+  </g>
+  <g stroke="#555" stroke-width="2.5" marker-end="url(#a)">
+    <line x1="187" y1="135" x2="211" y2="135"/><line x1="387" y1="135" x2="411" y2="135"/>
+    <line x1="587" y1="135" x2="611" y2="135"/><line x1="787" y1="135" x2="811" y2="135"/>
+  </g>
+  <path d="M700,214 C700,275 500,275 500,218" fill="none" stroke="#a8324a" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#a)"/>
+  <text x="600" y="295" font-size="18" text-anchor="middle" fill="#a8324a">no match? find where it starts to differ, fix the port</text>
+  <text x="200" y="40" font-size="18" text-anchor="middle" fill="#2a7f8f">nothing in the code changes</text>
+  <text x="600" y="40" font-size="18" text-anchor="middle" fill="#6b4fa0">a new version beside the old one</text>
+  <text x="500" y="340" font-size="18" text-anchor="middle" fill="#555">each step ends with a commit (git as lab notebook)</text>
+</svg>

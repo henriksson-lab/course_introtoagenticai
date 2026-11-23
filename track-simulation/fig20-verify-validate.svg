@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#fff"/>
+  <rect x="30" y="30" width="440" height="300" rx="14" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="250" y="75" font-size="26" font-weight="bold" fill="#2a7f8f" text-anchor="middle">Verification</text>
+  <text x="250" y="115" font-size="21" fill="#333" text-anchor="middle">"Did we solve the model right?"</text>
+  <g font-size="18" fill="#333">
+    <text x="60" y="165">• known exact answers</text>
+    <text x="60" y="198">• nothing appears from nowhere</text>
+    <text x="60" y="231">• extreme cases</text>
+    <text x="60" y="264">• refine until it stops changing</text>
+  </g>
+  <text x="250" y="310" font-size="18" font-weight="bold" fill="#2a7f8f" text-anchor="middle">the agent can do most of this work</text>
+  <rect x="530" y="30" width="440" height="300" rx="14" fill="#f8e9ec" stroke="#a8324a" stroke-width="3"/>
+  <text x="750" y="75" font-size="26" font-weight="bold" fill="#a8324a" text-anchor="middle">Validation</text>
+  <text x="750" y="115" font-size="21" fill="#333" text-anchor="middle">"Did we pick the right model?"</text>
+  <g font-size="18" fill="#333">
+    <text x="560" y="165">• is one compartment enough?</text>
+    <text x="560" y="198">• do people really mix at random?</text>
+    <text x="560" y="231">• does it match measurements?</text>
+    <text x="560" y="264">• what does a colleague say?</text>
+  </g>
+  <text x="750" y="310" font-size="18" font-weight="bold" fill="#a8324a" text-anchor="middle">this needs you and your field</text>
+  <text x="500" y="380" font-size="20" fill="#333" text-anchor="middle">A perfectly verified model can still be the wrong model for your question.</text>
+</svg>

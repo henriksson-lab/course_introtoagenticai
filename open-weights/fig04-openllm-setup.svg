@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker></defs>
+  <rect width="1000" height="440" fill="#ffffff"/>
+  <!-- you -->
+  <rect x="20" y="90" width="200" height="80" rx="10" fill="#f4f7fa" stroke="#9aa8b5" stroke-width="2"/>
+  <text x="120" y="124" text-anchor="middle" font-size="18" font-weight="bold" fill="#1b2a3a">Web browser</text>
+  <text x="120" y="150" text-anchor="middle" font-size="15" fill="#3a4a5a">chat interface</text>
+  <rect x="20" y="200" width="200" height="80" rx="10" fill="#f4f7fa" stroke="#9aa8b5" stroke-width="2"/>
+  <text x="120" y="234" text-anchor="middle" font-size="18" font-weight="bold" fill="#1b2a3a">API key</text>
+  <text x="120" y="260" text-anchor="middle" font-size="15" fill="#3a4a5a">scripts, agent tools</text>
+  <!-- Sweden box -->
+  <rect x="270" y="30" width="710" height="340" rx="14" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="290" y="60" font-size="18" font-weight="bold" fill="#2a7f8f">Sweden, SciLifeLab-controlled infrastructure</text>
+  <rect x="300" y="110" width="260" height="140" rx="10" fill="#ffffff" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="430" y="142" text-anchor="middle" font-size="18" font-weight="bold" fill="#1b2a3a">openllm.scilifelab.se</text>
+  <text x="430" y="170" text-anchor="middle" font-size="15" fill="#3a4a5a">Open WebUI, at KTH</text>
+  <text x="430" y="196" text-anchor="middle" font-size="15" fill="#3a4a5a">login, chat history,</text>
+  <text x="430" y="218" text-anchor="middle" font-size="15" fill="#3a4a5a">API keys, rate limits</text>
+  <line x1="222" y1="130" x2="294" y2="160" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="222" y1="240" x2="294" y2="205" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <g font-size="16" text-anchor="middle">
+    <rect x="640" y="84" width="300" height="62" rx="8" fill="#ffffff" stroke="#9aa8b5"/><text x="790" y="110" fill="#1b2a3a" font-weight="bold">GPUs at KTH</text><text x="790" y="132" fill="#3a4a5a" font-size="14">Stockholm</text>
+    <rect x="640" y="160" width="300" height="62" rx="8" fill="#ffffff" stroke="#9aa8b5"/><text x="790" y="186" fill="#1b2a3a" font-weight="bold">GPUs at Chalmers (C3SE)</text><text x="790" y="208" fill="#3a4a5a" font-size="14">Gothenburg</text>
+    <rect x="640" y="236" width="300" height="62" rx="8" fill="#ffffff" stroke="#9aa8b5"/><text x="790" y="262" fill="#1b2a3a" font-weight="bold">GPUs at Safespring</text><text x="790" y="284" fill="#3a4a5a" font-size="14">Stockholm</text>
+  </g>
+  <line x1="562" y1="160" x2="634" y2="118" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="562" y1="180" x2="634" y2="190" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="562" y1="200" x2="634" y2="262" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="625" y="340" text-anchor="middle" font-size="16" fill="#2a7f8f">open-weights models served with vLLM</text>
+  <text x="500" y="408" text-anchor="middle" font-size="18" fill="#1b2a3a">No commercial AI provider in the chain; no training on your data (pilot, Nov 2026).</text>
+</svg>

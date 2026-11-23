@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#fff"/>
+  <rect x="20" y="15" width="960" height="430" rx="10" fill="#1e1e1e"/>
+  <circle cx="45" cy="38" r="7" fill="#e06c5a"/><circle cx="67" cy="38" r="7" fill="#e5b84f"/><circle cx="89" cy="38" r="7" fill="#6cbf6a"/>
+  <text x="500" y="43" font-size="15" fill="#aaa" text-anchor="middle">~/agentic-course/track-simulation</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="17">
+    <text x="45" y="85" fill="#9ad">&gt; Run the checks and give me the check table.</text>
+    <text x="45" y="120" fill="#ddd">● Ran python pk_model.py --check</text>
+    <text x="65" y="155" fill="#ddd" font-weight="bold">Check</text><text x="470" y="155" fill="#ddd" font-weight="bold">Expected</text><text x="660" y="155" fill="#ddd" font-weight="bold">Got</text><text x="820" y="155" fill="#ddd" font-weight="bold">OK</text>
+    <line x1="65" y1="175" x2="900" y2="175" stroke="#888" stroke-width="1"/>
+    <text x="65" y="195" fill="#ddd">C after one half-life (6 h)</text><text x="470" y="195" fill="#ddd">5.000 mg/L</text><text x="660" y="195" fill="#ddd">5.000</text><text x="820" y="195" fill="#6cbf6a">yes</text>
+    <text x="65" y="225" fill="#ddd">C at 24 h</text><text x="470" y="225" fill="#ddd">0.625 mg/L</text><text x="660" y="225" fill="#ddd">0.625</text><text x="820" y="225" fill="#6cbf6a">yes</text>
+    <text x="65" y="255" fill="#ddd">Twice the dose: twice C</text><text x="470" y="255" fill="#ddd">20.00 mg/L</text><text x="660" y="255" fill="#ddd">20.00</text><text x="820" y="255" fill="#6cbf6a">yes</text>
+    <text x="65" y="285" fill="#ddd">Steady-state peak, every 8 h</text><text x="470" y="285" fill="#ddd">16.58 mg/L</text><text x="660" y="285" fill="#ddd">16.58</text><text x="820" y="285" fill="#6cbf6a">yes</text>
+    <text x="65" y="315" fill="#ddd">Halve tolerance: change</text><text x="470" y="315" fill="#ddd">&lt; 0.1 %</text><text x="660" y="315" fill="#ddd">0.00 %</text><text x="820" y="315" fill="#6cbf6a">yes</text>
+    <text x="45" y="368" fill="#ddd">● All five checks pass. Time above 2 mg/L after one</text>
+    <text x="45" y="394" fill="#ddd">  dose: 13.9 h. Parameters read from parameters.csv.</text>
+  </g>
+  <rect x="455" y="168" width="170" height="160" rx="6" fill="none" stroke="#e5b84f" stroke-width="3"/>
+  <text x="540" y="432" font-size="16" fill="#e5b84f" text-anchor="middle">you supplied these known answers</text>
+  <line x1="540" y1="328" x2="540" y2="414" stroke="#e5b84f" stroke-width="2"/>
+  <text x="975" y="462" font-size="13" fill="#999" text-anchor="end">illustrative</text>
+</svg>

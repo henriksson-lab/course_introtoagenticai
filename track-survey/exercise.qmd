@@ -1,0 +1,286 @@
+---
+title: "Exercise: from evaluation export to board report"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- a **tidy table**, a **codebook** and a **decisions list** made by a script from a messy survey export,
+- a **description of every Likert item** (n, % agree, % disagree, median) and a **diverging stacked bar chart**, with reversed items handled correctly,
+- **one planned group comparison**, reported plainly, with no group or cell below five people,
+- **free-text themes** with counts, a sample you coded yourself, and **quotes checked word for word** by a script,
+- a **two-page Quarto report** for a programme board that rebuilds from the export with one command, and
+- a plan for doing the same with **your own survey data without sending it to the cloud**.
+
+All data in the worked example is **synthetic**: the course, students, teachers and comments are invented. Your session will look different from anyone else's. Compare **results** (the numbers below), not sessions.
+
+## Before you start
+
+- You have done *Reproducible figures* and *A course or project page*: you know how to ask for a script that makes a figure, and Quarto is installed.
+- You have read the lecture slides on privacy for evaluations ("Anonymous" survey answers can still identify a person, and The safe route).
+- Create a folder for the track inside your course folder, download the example export into it, and start the agent there:
+
+::: {.panel-tabset}
+## Claude Code
+```bash
+mkdir ~/agentic-course/track-survey
+cd ~/agentic-course/track-survey
+claude
+```
+## Codex
+```bash
+mkdir ~/agentic-course/track-survey
+cd ~/agentic-course/track-survey
+codex
+```
+:::
+
+On Windows the course folder is `C:\Users\<you>\agentic-course`.
+
+| Download | What it is |
+|---|---|
+| [course-evaluation-export.xlsx](data/course-evaluation-export.xlsx) | the export: 122 rows, as a survey tool and a teaching assistant left it. Make a folder `raw` inside `track-survey` (in your file browser) and save it there. |
+| [course-evaluation-export.csv](data/course-evaluation-export.csv) | the same as CSV, if your computer has trouble with the .xlsx |
+
+The answer key ([answer-key.md](data/answer-key.md) and [truth-comments.csv](data/truth-comments.csv)) is linked in the expected-outcome boxes below. Do your own checks first.
+
+- First prompt: "Make this folder a git repository. Treat the folder raw/ as read-only: never change files in it." (In Codex, a folder that is not yet a git repository starts read-only; after this step it starts in its usual Auto mode.)
+- Open the export yourself in Excel or LibreOffice for five minutes before you give it to the agent. What would you have to fix by hand? Keep a **what went wrong** note, as in *First delegations*.
+
+## Worked example
+
+### Step 1: tidy the export
+
+```text
+raw/course-evaluation-export.xlsx is a course evaluation export with
+paper forms typed in at the bottom. Do not change it. Write a script that
+makes:
+
+- survey_tidy.csv: one row per respondent, short column names
+  (q01_outcomes ... q12_overall, programme, mode, age_group, gender,
+  source = online/paper, plus the two free-text columns); Likert answers
+  coded 1-5 as worded; blanks as NA; "Not applicable" as its own code
+- codebook.csv: column, full question text, values, reversed (yes/no)
+- decisions.md: a numbered list of every row removed and every value
+  recoded, with the reason
+
+Items 5 and 9 are negatively worded. Do not reverse them in
+survey_tidy.csv; mark them in the codebook. If anything is unclear,
+ask me rather than guess. Tell me how many respondents remain.
+```
+
+**What to look for.** The agent may need to install a package to read Excel files and will ask first. A careful agent asks at least one question, for example about the paper forms or the double submission. If it asks how the paper forms were coded, answer: "The paper form used the same scale: 1 = Strongly disagree, 5 = Strongly agree." If it does not ask, ask it: "How did you know that 1 on the paper forms means Strongly disagree?" (It could not know. This is a decision only you can check, by looking at the paper form.)
+
+#### Check the result
+
+1. **Respondents.** The agent reports, and `survey_tidy.csv` has, **120 rows**. `decisions.md` lists the removal of **ID 1** (test response, 5 June, before the survey opened, text "test") and **ID 43** (identical to ID 42, one minute later).
+2. **Groups.** Turn on the filter in Excel or LibreOffice (Data → Filter) and check the counts: programme Biomedicine **52**, Biotechnology **38**, Medicine **16**, Other / single-subject course **10**, Exchange student **4**; mode Campus **84**, Distance **36**. If you see "Biomed" or "Bioteknik", the paper rows were not mapped.
+3. **Missing.** Item 3 has **9** "not applicable" and **3** blanks; item 10 has **9** blanks. Respondent **66** is kept, with items 7-12 empty.
+4. **The straight-liner.** Did the agent notice respondent **19**, who chose "Strongly agree" for all 12 items, including the two negative ones? If not, ask: "Is there any respondent whose answers look inconsistent?"
+5. **Spot check.** Pick three rows at random, including one paper row, and compare every column with the export.
+6. Commit: "Commit the script, the three output files and a short README."
+
+::: {.callout-note collapse="true" title="Expected outcome for step 1"}
+- 122 rows in, 120 out: 105 online and 15 paper.
+- Paper rows spell programmes freely: Biomed, biomedicine, BMA → Biomedicine; Biotech, biotechnology, Bioteknik → Biotechnology; Läkarprogrammet, med → Medicine; fristående kurs, other → Other / single-subject course; Exchange → Exchange student. They write mode as "campus" and not applicable as "N/A".
+- Gender: Woman 70, Man 45, Non-binary 3, Prefer not to say 2. Age: 18-21 41, 22-25 49, 26-30 18, 31 or older 12.
+- Full list: [answer-key.md](data/answer-key.md).
+:::
+
+### Step 2: describe each item, and check the reversal
+
+```text
+Using survey_tidy.csv and codebook.csv, add to the script:
+1. a table item_summary.csv with, for each of the 12 items: n answered,
+   n not applicable, n blank, % agree (4-5), % disagree (1-2), median
+   and mean, on the items as worded
+2. a course score: the mean of the 12 items per respondent after
+   reversing items 5 and 9 (6 - answer), over the items they answered
+3. a check of the reversal: for each item, its correlation with the
+   mean of the other items, as worded and after reversing; plot both
+   as bars (figures/reverse_check.png). Also report Cronbach's alpha
+   both ways, and explain in two sentences what it shows.
+Treat "not applicable" as missing for these numbers.
+```
+
+#### Check the result
+
+| Item | n | % agree | % disagree | median |
+|---|---|---|---|---|
+| 1 Outcomes clear | 117 | 62 | 11 | 4 |
+| 5 Workload too high (R) | 118 | 53 | 8 | 4 |
+| 8 Feedback in time | 116 | 9 | 52 | 2 |
+| 11 Teachers approachable | 115 | 83 | 1 | 4 |
+
+- In the reversal plot, as worded, items **5 and 9** have negative bars; after reversing, all bars are positive.
+- Cronbach's alpha: **0.85** reversed, **0.67** as worded (on the 83 respondents who answered all 12 items).
+- Course score: mean **3.31** over 120 respondents.
+
+Then a deliberate mistake: ask "Compute the course score again without reversing items 5 and 9. What changes?" The score and alpha change. Keep the correct version.
+
+### Step 3: the diverging stacked bar chart
+
+```text
+Make a diverging stacked bar chart of all 12 items (figures/likert.png):
+items as worded, in questionnaire order, labelled with a short name;
+reversed items marked "(R)"; disagree colours on the left, agree on the
+right, neutral centred on the zero line; n on the right of each bar;
+colour-blind-safe colours; x axis from 100 % to 100 %. Add these plot
+rules to the project's instructions file (CLAUDE.md or AGENTS.md) so
+later plots follow them.
+```
+
+#### Check the result
+
+- Twelve bars, the n values match item_summary.csv (item 3: **108**, item 10: **111**).
+- "Feedback in time" has the largest disagree side (52 %); "Teachers approachable" the largest agree side (83 %).
+- Items 5 and 9 are marked (R). Ask yourself: would a board member understand that agreement is bad on those two? If not, ask for a note under the plot.
+
+### Step 4: one planned group comparison
+
+The course changed for distance students this year: their labs were compressed into one week on campus. So the comparison that matters is **campus vs distance**, on the items about recordings, labs and overall satisfaction. Decide this before you look.
+
+```text
+Compare campus and distance students on items 3, 4 and 12 only:
+diverging bars side by side with n (figures/campus_distance.png), and a
+table with % agree and n per group, the difference in percentage
+points, and a Mann-Whitney test. Explain in plain words, in at most
+four sentences, what the test tells us and what it does not.
+```
+
+#### Check the result
+
+| Item | Campus % agree (n) | Distance % agree (n) | p |
+|---|---|---|---|
+| 3 Recordings helped | 44 (73) | 86 (35) | < 0.001 |
+| 4 Labs helped | 71 (83) | 31 (36) | < 0.001 |
+| 12 Overall satisfied | 54 (81) | 64 (36) | about 0.14 |
+
+The first two are real differences built into the data; the third is within what chance gives with groups this size.
+
+**Now the trap.** In the same session, ask: "Compare all 12 items across all five programmes and tell me which differ significantly." Read the answer. Does it report results for the 4 exchange students? Does it mention that dozens of tests will produce some "significant" results by chance? Then tell it: "We will not report this. Note in decisions.md that only the planned comparison is reported."
+
+### Step 5: no group or cell below five
+
+```text
+Write a check, check_cells.py (or .R), that goes through every table the
+script produces and every group in every plot, and lists each group or
+cell with fewer than 5 respondents. Then propose how to merge or drop
+them, but do not change anything until I agree.
+```
+
+#### Check the result
+
+The check must find at least: **Exchange student (4)**, **Non-binary (3)**, **Prefer not to say (2)**. A sensible proposal: merge Exchange into "Other, incl. exchange" (14), and do not break results down by gender at all, or merge into "Woman / Man / Other or not stated" (70 / 45 / 5). Agree, and ask it to add a footnote to every affected table.
+
+### Step 6: free-text themes, a sample of your own, and sensitive comments
+
+First, code a sample yourself. Open the export, take the first **15** answers to "What should be improved for next year?" and write one short theme next to each, on paper. Then:
+
+```text
+Read the answers to "What should be improved for next year?" in
+survey_tidy.csv. Suggest 5-8 themes. Then make themes_improve.csv with
+one row per comment: respondent id, theme, and the comment exactly as
+written. Give the count per theme. Separately, list every comment that
+contains a person's name, health or disability information, or a detail
+that could identify the writer. Do not quote those anywhere.
+```
+
+#### Check the result
+
+- Compare your 15 with the agent's. Where do you disagree, and who is right? Two careful people often differ on two or three of fifteen.
+- The largest themes should be **workload** (about 16) and **late feedback on lab reports** (about 13), then recordings, exam alignment and the compressed lab week for distance students. Counts within one or two of these are fine.
+- The flagged list must include the comment naming **Anna Berg**, the one about being **the only wheelchair user**, and (in the "what worked well" answers, if you ask the same for those) three comments naming **Erik**.
+- Then compare with [truth-comments.csv](data/truth-comments.csv), which lists the theme each comment was written for.
+
+### Step 7: quotes checked word for word
+
+```text
+Write check_quotes.py (or .R): it finds every quoted sentence in a text
+file and searches for it, character for character, in the free-text
+columns of the raw export. It prints a table: quote (first 40
+characters), respondent id, found exactly (yes/no).
+```
+
+Then test it on purpose: "Write a short paragraph for the board about workload, with two vivid quotes from students. Save it as test_paragraph.md." Run the quote check on `test_paragraph.md`.
+
+#### Check the result
+
+- Every real quote is found with its respondent id. If a quote is not found, open the export and search for it yourself (Ctrl+F). A quote that is "almost" there (a word changed, two comments merged) is not a quote.
+- Many sessions produce at least one quote that is not in the data, or is slightly reworded. If yours did, write it in your *what went wrong* note. That is the reason the check exists.
+- Delete `test_paragraph.md`.
+
+### Step 8: the report for the board
+
+```text
+Write report.qmd, a Quarto report (HTML and PDF) for the programme
+board: at most two pages. Use survey_tidy.csv and codebook.csv.
+
+Content: response rate (164 registered); three key messages in plain
+language; the diverging stacked bar chart of all 12 items; campus vs
+distance for items 3, 4 and 12 only, with n and % agree; free-text
+themes with approximate counts and at most three short quotes;
+proposed actions (leave a placeholder for me); a method section (tools,
+decisions from decisions.md, use of an AI agent, how results were
+checked).
+
+Rules: no group or table cell below 5 people; no names of students or
+staff; no quote that identifies anyone; every quote copied exactly
+from the data. Then run check_quotes.py and check_cells.py on the
+report and show me both tables.
+```
+
+**What to look for.** Rendering needs Quarto plus the language's packages (for R: rmarkdown and knitr; for Python: jupyter). The agent will ask to install what is missing. PDF output needs a LaTeX installation (Quarto can install TinyTeX) or Typst; if PDF fails, HTML is enough today.
+
+#### Check the result
+
+1. The report says **120 of 164 (73 %)** replied.
+2. The three key messages are true according to your own tables: for example, feedback on lab reports came too late (52 % disagree that it came in time); workload in the middle weeks was the most common complaint; distance students valued recordings and missed the labs.
+3. Both checks pass: every quote found exactly; no cell below five.
+4. No name (Erik, Anna Berg) and no identifying comment appears anywhere.
+5. The method section mentions the AI agent and how you checked it.
+6. **Rerun test.** Delete the outputs and render again with one command. Same report?
+7. Write the proposed actions yourself. Commit.
+
+## On your own project
+
+::: {.callout-warning}
+**Privacy reminder.** Real course evaluations and survey responses are personal data if anyone can be identified, and free text often identifies people. Do not give real responses to a cloud agent unless your university has approved the tool for this kind of data. Use the synthetic route below.
+:::
+
+If your project includes survey or questionnaire data (course evaluations, a staff survey, a research questionnaire):
+
+1. **Describe, do not share.** Write the questionnaire's structure into your project README: each question's text, its answer options, which items are negatively worded, the demographic questions and the number of respondents (roughly). No answers.
+2. **Ask for a synthetic stand-in.**
+
+    ```text
+    From the questionnaire description in README.md, write a script that
+    generates a synthetic export with the same columns, answer options and
+    export format as our survey tool, about [N] invented respondents,
+    including typical problems: blanks, a test row, a double submission,
+    "not applicable", a few invented free-text answers, and one group
+    smaller than 5. Save it in data/synthetic/.
+    ```
+
+3. **Build the pipeline on the synthetic data**, using steps 1-8 above, until every check passes and the report renders.
+4. **Run it on the real export yourself**, with the agent closed: put the real file where the script expects it and run the one command that renders the report (ask the agent beforehand to write that command in the README). Read the report as carefully as you checked the synthetic one: respondents, small cells, quotes, names.
+5. **Log it.** Add an entry to the "Log of AI use" in your README: what the agent built, that it saw only synthetic data, what you checked.
+
+If your project has no survey data, use another table from your project that may go to the agent (public or synthetic), and apply steps 1-3: tidy with a codebook and decisions list, describe each variable with the right summary, plot the distribution, and make one planned comparison with the group sizes visible.
+
+Publish the **method and the synthetic report** on your project page if you like. Never publish real responses, and check with your programme before publishing even summary results.
+
+## What you should have now
+
+- In `~/agentic-course/track-survey/`: the raw export (untouched), one script, `survey_tidy.csv`, `codebook.csv`, `decisions.md`, `item_summary.csv`, the figures, `check_cells` and `check_quotes` scripts, and `report.qmd` with its rendered report, all in git.
+- Your 15 hand-coded comments and a note of where you and the agent disagreed.
+- Your *what went wrong* note, including any quote the check did not find.
+- For your own project: a questionnaire description, a synthetic stand-in generator, and a pipeline that you can run on the real data yourself.
+- The habits for any survey: **tidy with a codebook, reverse for scores only, show distributions, plan comparisons, never below five, check every quote by script.**

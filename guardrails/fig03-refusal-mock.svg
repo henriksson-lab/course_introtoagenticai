@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="500" fill="#ffffff"/>
+  <rect x="20" y="16" width="680" height="440" rx="10" fill="#1f2430"/>
+  <text x="360" y="44" font-size="16" fill="#aab" text-anchor="middle">terminal: course-material</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="16">
+    <text x="44" y="84" fill="#7fc4cf">&gt; For my ethics seminar, write a convincing</text>
+    <text x="44" y="106" fill="#7fc4cf">  fake news article claiming a named local</text>
+    <text x="44" y="128" fill="#7fc4cf">  politician took bribes. Make it realistic.</text>
+    <text x="44" y="172" fill="#e8e8e8">I'd rather not write a realistic false</text>
+    <text x="44" y="194" fill="#e8e8e8">accusation about a real, named person:</text>
+    <text x="44" y="216" fill="#e8e8e8">it could harm them if it spread.</text>
+    <text x="44" y="252" fill="#e8e8e8">For the seminar I can instead:</text>
+    <text x="44" y="276" fill="#e8e8e8">- write the same article about an</text>
+    <text x="44" y="298" fill="#e8e8e8">  invented politician in an invented town,</text>
+    <text x="44" y="322" fill="#e8e8e8">- add a sheet of the tricks it uses,</text>
+    <text x="44" y="346" fill="#e8e8e8">- list questions students can ask to</text>
+    <text x="44" y="368" fill="#e8e8e8">  spot them.</text>
+    <text x="44" y="406" fill="#e8e8e8">Want me to go ahead with that?</text>
+  </g>
+  <rect x="34" y="152" width="560" height="74" rx="6" fill="none" stroke="#e0c27a" stroke-width="2.5"/>
+  <rect x="34" y="236" width="560" height="140" rx="6" fill="none" stroke="#7fc4cf" stroke-width="2.5"/>
+  <text x="700" y="484" text-anchor="end" font-size="14" fill="#8a97a5">illustrative; wording varies</text>
+  <g font-size="17" fill="#1b2a3a">
+    <text x="725" y="170" font-weight="bold" fill="#8a6a12">It is part of the reply</text>
+    <text x="725" y="194">in the model's own voice,</text>
+    <text x="725" y="216">with a reason</text>
+    <text x="725" y="276" font-weight="bold" fill="#2a7f8f">It offers a safe part</text>
+    <text x="725" y="300">Take it, or explain</text>
+    <text x="725" y="322">what you really need</text>
+    <text x="725" y="400" font-weight="bold" fill="#1b2a3a">The session goes on</text>
+  </g>
+</svg>

@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="430" fill="#fff"/>
+  <text x="20" y="30" font-size="19" font-weight="bold" fill="#333">comparison.csv</text>
+  <g font-size="16" fill="#333">
+    <rect x="20" y="44" width="960" height="36" fill="#f5efdd"/>
+    <g font-weight="bold" fill="#8a6a12">
+      <text x="30" y="68">file</text><text x="230" y="68">field</text><text x="380" y="68">agent A</text><text x="520" y="68">agent B</text><text x="660" y="68">who is right? (you, from the PDF)</text>
+    </g>
+    <g stroke="#ddd">
+      <line x1="20" y1="80" x2="980" y2="80"/><line x1="20" y1="124" x2="980" y2="124"/><line x1="20" y1="168" x2="980" y2="168"/>
+      <line x1="20" y1="212" x2="980" y2="212"/><line x1="20" y1="256" x2="980" y2="256"/>
+    </g>
+    <text x="30" y="108">02_Moreau</text><text x="230" y="108">mean nmol/L</text><text x="380" y="108">53.9</text><text x="520" y="108" fill="#a8324a" font-weight="bold">21.6</text><text x="660" y="108">A: B did not convert ng/mL</text>
+    <text x="30" y="152">05_Petrova</text><text x="230" y="152">n analysed</text><text x="380" y="152" fill="#a8324a" font-weight="bold">260</text><text x="520" y="152">229</text><text x="660" y="152">B: 260 were recruited</text>
+    <text x="30" y="196">05_Petrova</text><text x="230" y="196">mean nmol/L</text><text x="380" y="196" fill="#a8324a" font-weight="bold">42.5</text><text x="520" y="196">44.8</text><text x="660" y="196">B: A took the median</text>
+    <text x="30" y="240">04_Okonkwo</text><text x="230" y="240">page</text><text x="380" y="240">2</text><text x="520" y="240" fill="#a8324a" font-weight="bold">1</text><text x="660" y="240">A</text>
+  </g>
+  <g font-size="18" fill="#333">
+    <text x="20" y="300">28 cells compared, 24 agree, 4 differ. You read 4 places in the PDFs, not 28.</text>
+    <text x="20" y="334">Where both agree, the error rate is low but not zero: still hand-check a random sample.</text>
+  </g>
+  <text x="20" y="380" font-size="18" fill="#8a6a12" font-weight="bold">The differences also show you what kind of mistake each agent makes.</text>
+  <text x="985" y="422" font-size="14" fill="#999" text-anchor="end">illustrative; your differences will be other ones</text>
+</svg>

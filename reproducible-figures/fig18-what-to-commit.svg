@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="1000" height="460" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="460" fill="#fff"/>
+  <text x="40" y="38" font-size="21" font-weight="bold" fill="#333">soil-funding-map/</text>
+  <g font-size="18" font-family="Menlo, Consolas, monospace">
+    <text x="60" y="80" fill="#999">data/raw/grants.csv  (already committed)</text>
+    <text x="60" y="115" fill="#2a7f8f">scripts/plot_funding.R</text>
+    <text x="60" y="150" fill="#2a7f8f">results/figures/funding.pdf</text>
+    <text x="60" y="185" fill="#2a7f8f">results/figures/funding.svg</text>
+    <text x="60" y="220" fill="#2a7f8f">results/figures/funding.png</text>
+    <text x="60" y="255" fill="#2a7f8f">results/figures/funding_summary.csv</text>
+    <text x="60" y="290" fill="#2a7f8f">renv.lock</text>
+    <text x="60" y="325" fill="#2a7f8f">README.md  (how to rerun)</text>
+    <text x="60" y="375" fill="#a8324a">renv/library/</text>
+    <text x="60" y="410" fill="#a8324a">.Rhistory, .RData</text>
+  </g>
+  <rect x="610" y="95" width="360" height="245" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="630" y="130" font-size="19" font-weight="bold" fill="#2a7f8f">commit together</text>
+  <g font-size="17" fill="#333">
+    <text x="630" y="165">the script that made it</text>
+    <text x="630" y="193">the figure in every format</text>
+    <text x="630" y="221">the numbers behind it</text>
+    <text x="630" y="249">the package versions</text>
+    <text x="630" y="277">how to rerun it</text>
+    <text x="630" y="315" fill="#555">one commit, one message</text>
+  </g>
+  <rect x="610" y="355" width="360" height="80" rx="10" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+  <text x="630" y="388" font-size="19" font-weight="bold" fill="#a8324a">.gitignore</text>
+  <text x="630" y="417" font-size="17" fill="#333">installed packages, R session files</text>
+</svg>

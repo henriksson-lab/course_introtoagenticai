@@ -1,0 +1,185 @@
+---
+title: "Exercise: test two models on your own task"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- find out **which exact model** and **effort setting** your agent is using, and switch them,
+- read a model's **release note or overview page** for the points that matter,
+- read a **benchmark graph** by asking what was measured, how it was normalised, when, and by whom,
+- run a **small model test** on a task with known answers, comparing two models or settings, and
+- decide which model to use for a task in **your own project**, and record why.
+
+The test set in the worked example is **synthetic**: 12 made-up methods paragraphs. Your sessions will look different from anyone else's, and two runs of the same model can differ. That is part of what you measure.
+
+## Before you start
+
+- Claude Code or Codex works in your course folder, and you know how to switch permission modes (*Terminal survival kit*).
+- Download [model-test.zip](data/model-test.zip) and unzip it into `~/agentic-course/choosing-models/` (Windows: `C:\Users\<you>\agentic-course\choosing-models\`). You get two folders:
+
+| Folder | What is inside | Who may see it |
+|---|---|---|
+| `model-test/snippets/` | `methods-snippets.txt`: 12 short methods paragraphs | the agent |
+| `model-test/key/` | `answers.csv`: the correct answers | **only you**, until step 4 |
+
+- Have the commands for your tool at hand. They were checked against the official documentation in November 2026; if your screen differs, type `/help`, or see [Claude Code model configuration](https://code.claude.com/docs/en/model-config) and [Codex models](https://learn.chatgpt.com/codex/models).
+
+| | Claude Code | Codex |
+|---|---|---|
+| Show and pick the model | `/model` (a picker); `/model sonnet` | `/model` (model and reasoning effort) |
+| Set thinking effort | `/effort low`, `/effort high`, ... | in the `/model` picker |
+| Start with a given model | `claude --model haiku` | `codex -m <model name>` |
+| See the active model | shown in the session; `/status` | `/status` |
+| Usage so far | `/usage` | `/status` (on most plans) |
+
+Switching to a larger model or a higher effort uses up your plan's limits faster. The whole exercise is designed to fit comfortably in a normal plan.
+
+## Worked example
+
+### Step 1: which model are you using?
+
+Start the agent in `~/agentic-course/choosing-models/` and type:
+
+```text
+Which exact model are you, with the full model ID, and which thinking
+or reasoning effort is this session using? Say how you know: from
+your own knowledge, or from something the tool tells you.
+```
+
+Then check it yourself: open the model picker (`/model`) or the status (`/status`) and read what the **tool** says. Close the picker without changing anything (Esc).
+
+**What to look for.** The tool's display is the authority. The model's own answer comes from its training data, which was collected before the model was released, so it may give an older name or say it does not know. Note any difference in your **failure log** from *How LLMs and agents work*.
+
+Write the exact model ID and effort level down. You will need them in step 4.
+
+### Step 2: read the release note, not the headline
+
+```text
+Fetch the official model overview page and the release note for the
+model you are running now, from the provider's own website. Summarise
+in a short table, with a link for each row:
+- full model ID and any alias that points to it
+- context window and maximum output length
+- knowledge cut-off (training data up to when)
+- effort or reasoning levels it supports
+- when it is expected to be retired, or the retirement policy
+- which benchmarks the release note reports, and at which effort setting
+Only use the provider's own pages. If something is not stated, say so.
+```
+
+#### Check the result
+
+- **Open every link.** Is it on the provider's own website (for example `anthropic.com`, `claude.com`, `openai.com`, `chatgpt.com`)? Does the page say what the table claims?
+- **Effort setting of the benchmarks.** Are the reported scores at the highest setting? Is that the setting you use day to day?
+- **Retirement.** Find the provider's deprecation page yourself ([Anthropic](https://platform.claude.com/docs/en/about-claude/model-deprecations), [OpenAI](https://developers.openai.com/api/docs/deprecations)). Is your model listed?
+
+### Step 3: read two benchmark graphs
+
+No agent needed. Open [METR's time horizons page](https://metr.org/time-horizons/) and the lecture slide "The length of task models can do has doubled every few months since 2019". Answer:
+
+1. What is on the vertical axis? Why is it logarithmic?
+2. What does "50 % time horizon" mean, in one sentence a colleague would understand?
+3. For **Claude Opus 4.6**, what are the 50 % and the 80 % time horizons? What does the difference mean for a task you need done right?
+4. When was the page last updated? What does it say about measurements above 16 hours?
+5. Under which licence are the data published, and how should they be credited?
+
+Then open the slide "Preference votes reward style; controlling for it reorders the list" (LMArena data):
+
+6. Which of the top 12 models drop five places or more when style is controlled for?
+7. In one sentence: what does a preference vote reward that a fixed test does not?
+
+::: {.callout-note collapse="true" title="Answers"}
+1. The length of a task, measured as the time it takes a skilled human. Logarithmic because the values run from seconds to many hours: each step up is a multiplication.
+2. The length of task (in human working time) that the model completes successfully half of the time.
+3. About 12 hours (719 minutes) at 50 %, and about 70 minutes at 80 % (METR Time Horizon 1.1). A task the model completes reliably is many times shorter than one it completes half the time; for tasks that must be right, use the 80 % value, and still check.
+4. Last updated 8 September 2026; the page says it is no longer actively updated, and that measurements above 16 hours are unreliable with the current task suite.
+5. CC BY 4.0; "Please attribute to METR".
+6. Claude Opus 5 (Max), Claude Opus 5 (High) and Gemini 4 Hydrogen (High) (snapshot of 22 November 2026). Claude Fable 5.1 (Max) drops four places.
+7. How an answer looks and reads (length, formatting, tone), as well as whether people find it helpful; a fixed test only checks the answer against a key.
+:::
+
+### Step 4: a small model test
+
+You will give the **same prompt** to two models (or two effort settings) in two **fresh sessions**, and compare both with the answer key.
+
+1. In your file browser, make two copies of the `snippets` folder inside `model-test`, called `run-a` and `run-b`. Do not copy the `key` folder.
+2. Choose your two settings. Suggested:
+
+| | Run A | Run B |
+|---|---|---|
+| Claude Code | `/model haiku` and `/effort low` | the default model and effort |
+| Codex | the smallest or fastest model in `/model`, low effort | the default model and effort |
+
+3. Start the agent in `run-a`, set run A's model and effort, and paste this prompt. (Codex starts read-only in a folder that is not a git repository; use `/permissions` to allow edits in the workspace, so that it can write `results.csv`.)
+
+```text
+methods-snippets.txt holds 12 numbered methods excerpts. For each,
+extract:
+- n_analysed: the number of independent units actually analysed
+  (after exclusions; biological, not technical, replicates)
+- unit: what was counted
+- test: the statistical test or model used, or "none"
+Write results.csv with columns id, n_analysed, unit, test. If a value
+is not stated, write "not stated". Do not guess. Use only this file.
+```
+
+4. When it is done, note the time it took (roughly) and close the session. Start a **new** session in `run-b`, set run B's model and effort, and paste **exactly the same prompt**.
+5. Now compare. Start a fresh session in `model-test` (the parent folder, which can see `key/`):
+
+```text
+Compare run-a/results.csv and run-b/results.csv with key/answers.csv,
+item by item. For each item and each run, mark n_analysed and test as
+correct, wrong or missing. Treat wording differences that mean the
+same test as correct (e.g. "Mann-Whitney" and "Wilcoxon rank-sum").
+Show one table with both runs side by side, and the number of errors
+per run. Do not change any of the files.
+```
+
+#### Check the result
+
+1. **Check the comparison itself.** Pick three items and compare the two results with `answers.csv` yourself. Did the comparing agent judge them the way you would?
+2. **Where are the errors?** Look at the trap items: 1, 6 and 9 (exclusions), 7 (pilot numbers), 8 (technical replicates), 5 (images from donors), 11 (a total to compute), 12 (no sample size). Do both runs fail on the same items, or on different ones?
+3. **Rerun one.** If you have time, run A again in a fresh copy. Does it make the same mistakes? A difference of one or two items between runs of the same model is normal on a test this small.
+4. **Record** the result in a small table, as on the lecture slide "A small model test: what to record": exact model IDs, effort, date, errors per run, time, and a decision.
+
+::: {.callout-note collapse="true" title="About the expected result"}
+There is no single expected result: models change, and a 12-item test is small. What people typically see:
+
+- Both settings get the easy items right (2, 4, 6, 10, 11).
+- Differences, if any, show up on the traps: technical replicates (8: the answer is 3, not 9), donors versus images (5: the answer is 8 donors; 1,204 images is the wrong unit for the test described), a pilot number taken instead of the study's (7: 64, not 10), and an invented sample size for item 12.
+- For item 3, both 45 (cores) and 15 (sites) are defensible, as long as the unit says which; the mixed model uses all 45 cores with site as a random effect.
+- On a test this small, **a difference of one item is not evidence** that one model is better. Two or three errors on the trap items, repeated in a rerun, is.
+
+If the smaller setting made no more errors than the default, that is a useful result too: for this kind of extraction, the cheaper, faster setting may be enough, with a spot check.
+:::
+
+## On your own project
+
+::: {.callout-warning}
+**Privacy reminder.** A model test sends the same material to the provider twice or more, and possibly to two providers. Use only material your project's data class allows (see your README's "Data class and precautions"). For sensitive data, build the test set from a synthetic stand-in.
+:::
+
+1. **Pick a task** your project repeats: extracting values from papers, classifying free-text answers, renaming files from a sheet, checking a figure against a table. Choose one where you can say what the right answer is.
+2. **Build a test set** of 10 to 20 real items with the correct answers, written by you, in a `key/` folder the agent does not see during the runs. Include at least two items you know are tricky.
+3. **Save the prompt** in a file (for example `notes/model-test-prompt.md`), so both runs get exactly the same words.
+4. **Run two settings** in fresh sessions, as in step 4: for example the default against a smaller model, or the default at low and at high effort. If you use both Claude Code and Codex, compare one model from each (*Parallel workers*).
+5. **Compare** against your key, check three items yourself, and record the table (models, effort, date, errors, time, decision) in your project README under a heading such as "Model choice".
+6. Add a line to your **Log of AI use** with the exact model IDs you used for the project from now on.
+
+If your project has no repetitive task, take the most important single task instead (for example an analysis plan) and give it to two models. Compare the answers side by side: which points does each raise that the other misses? Your judgement as the expert is the key here.
+
+## What you should have now
+
+- The **exact model ID and effort setting** you use, written in your project's Log of AI use.
+- A short summary of your model's **release note**, with links you have opened.
+- Your answers to the **benchmark graph questions**, and a sense of what each kind of graph can and cannot tell you.
+- A **small model test** on the worked example: two runs, compared with the answer key, recorded in a table.
+- In your own project: a **test set with a key**, a saved prompt, a comparison of two settings, and a recorded decision on which model to use for that task. When the next model comes out, rerun it.

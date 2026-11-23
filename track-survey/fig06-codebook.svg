@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#fff"/>
+  <rect x="10" y="10" width="980" height="380" fill="#fff" stroke="#999"/>
+  <rect x="10" y="10" width="980" height="34" fill="#eee"/>
+  <text x="24" y="33" font-size="16" fill="#333">codebook.csv</text>
+  <g font-size="16">
+    <rect x="10" y="44" width="980" height="40" fill="#e3f0f2"/>
+    <g font-weight="bold" fill="#2a7f8f">
+      <text x="22" y="70">column</text><text x="190" y="70">question as asked</text><text x="560" y="70">values</text><text x="760" y="70">reversed</text><text x="860" y="70">notes</text>
+    </g>
+    <g fill="#333">
+      <text x="22" y="114">q01_outcomes</text><text x="190" y="114">The learning outcomes … clear to me.</text><text x="560" y="114">1-5, NA</text><text x="760" y="114">no</text>
+      <text x="22" y="154">q03_recordings</text><text x="190" y="154">The recorded lectures helped me learn.</text><text x="560" y="154">1-5, NA, n/a</text><text x="760" y="154">no</text><text x="860" y="154">"Not applicable"</text>
+      <text x="22" y="194" fill="#a8324a">q05_workload</text><text x="190" y="194">The workload was unreasonably high.</text><text x="560" y="194">1-5, NA</text><text x="760" y="194" font-weight="bold" fill="#a8324a">yes</text>
+      <text x="22" y="234" fill="#a8324a">q09_unsure</text><text x="190" y="234">I often felt unsure about what was…</text><text x="560" y="234">1-5, NA</text><text x="760" y="234" font-weight="bold" fill="#a8324a">yes</text>
+      <text x="22" y="274">programme</text><text x="190" y="274">Which programme are you enrolled in?</text><text x="560" y="274">5 groups</text><text x="760" y="274">–</text><text x="860" y="274">paper: free text</text>
+      <text x="22" y="314">source</text><text x="190" y="314">(added) online form or paper</text><text x="560" y="314">online, paper</text><text x="760" y="314">–</text>
+    </g>
+    <g stroke="#ddd"><line x1="10" y1="126" x2="990" y2="126"/><line x1="10" y1="166" x2="990" y2="166"/><line x1="10" y1="206" x2="990" y2="206"/><line x1="10" y1="246" x2="990" y2="246"/><line x1="10" y1="286" x2="990" y2="286"/></g>
+  </g>
+  <text x="500" y="360" font-size="18" fill="#555" text-anchor="middle">Short names for the analysis, full wording for the report, and every decision about coding in one place.</text>
+  <text x="985" y="412" font-size="13" fill="#999" text-anchor="end">illustrative</text>
+</svg>

@@ -4,3 +4,16 @@
 .Rhistory
 .RData
 __pycache__/
+
+# Rendered site: built by GitHub Actions (.github/workflows/publish.yml), not committed.
+/docs/
+
+# Unzipped copies of example data: the zips are published; make-data scripts recreate these.
+/content-labelling/data/course-materials/
+/git-basics/data/plate-growth/
+/project-organisation/data/bird-project/
+/pdf-extraction/data/papers/
+/legacy-code/data/growth-legacy/
+/copyright-credit/data/pre-publication/
+/first-delegations/data/reports/
+/first-delegations/data/messy-folder/

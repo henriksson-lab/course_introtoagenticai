@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker></defs>
+  <rect width="1000" height="400" fill="#ffffff"/>
+  <rect x="30" y="40" width="280" height="200" rx="10" fill="#f4f7fa" stroke="#9aa8b5" stroke-width="2"/>
+  <text x="170" y="74" text-anchor="middle" font-size="18" font-weight="bold" fill="#1b2a3a">Any text</text>
+  <text x="170" y="110" text-anchor="middle" font-size="15" fill="#3a4a5a">no watermark, no key:</text>
+  <text x="170" y="132" text-anchor="middle" font-size="15" fill="#3a4a5a">the detector has nothing</text>
+  <text x="170" y="154" text-anchor="middle" font-size="15" fill="#3a4a5a">to count</text>
+  <line x1="312" y1="140" x2="364" y2="140" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="370" y="40" width="280" height="200" rx="10" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="510" y="74" text-anchor="middle" font-size="18" font-weight="bold" fill="#6b4fa0">"AI detector"</text>
+  <text x="510" y="110" text-anchor="middle" font-size="15" fill="#1b2a3a">asks a language model: how</text>
+  <text x="510" y="132" text-anchor="middle" font-size="15" fill="#1b2a3a">predictable is each word?</text>
+  <text x="510" y="166" text-anchor="middle" font-size="15" fill="#1b2a3a">very predictable, very even</text>
+  <text x="510" y="188" text-anchor="middle" font-size="15" fill="#1b2a3a">text = "probably AI"</text>
+  <line x1="652" y1="140" x2="704" y2="140" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="710" y="40" width="260" height="200" rx="10" fill="#f8eef0" stroke="#a8324a" stroke-width="2"/>
+  <text x="840" y="74" text-anchor="middle" font-size="18" font-weight="bold" fill="#a8324a">A guess, as a %</text>
+  <text x="840" y="140" text-anchor="middle" font-size="34" font-weight="bold" fill="#a8324a">87%</text>
+  <text x="840" y="184" text-anchor="middle" font-size="15" fill="#1b2a3a">looks precise; is not</text>
+  <text x="840" y="206" text-anchor="middle" font-size="15" fill="#1b2a3a">a probability you can trust</text>
+  <rect x="30" y="270" width="940" height="100" rx="10" fill="#ffffff" stroke="#c5cfd8"/>
+  <text x="50" y="300" font-size="17" font-weight="bold" fill="#1b2a3a">Human texts that look "predictable":</text>
+  <text x="50" y="328" font-size="16" fill="#1b2a3a">writers with a smaller vocabulary in that language (often non-native), formulaic genres such as</text>
+  <text x="50" y="352" font-size="16" fill="#1b2a3a">methods sections and lab reports, short and simple answers.</text>
+</svg>

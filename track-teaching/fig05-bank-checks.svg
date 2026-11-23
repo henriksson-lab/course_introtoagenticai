@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="800" height="520" font-family="Helvetica, Arial, sans-serif">
+  <rect width="800" height="520" fill="#fff"/>
+  <rect x="30" y="15" width="740" height="490" rx="14" fill="#e8f3f5" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="400" y="60" font-size="27" font-weight="bold" fill="#2a7f8f" text-anchor="middle">Checking 10 questions: 15 minutes</text>
+  <g font-size="22" fill="#333">
+    <rect x="70" y="100" width="30" height="30" rx="4" fill="#fff" stroke="#a8324a" stroke-width="2.5"/>
+    <text x="120" y="124"><tspan font-weight="bold" fill="#a8324a">Solve 3 at random</tspan> without the key</text>
+    <text x="120" y="152" font-size="18" fill="#52606d">one disagreement: check them all</text>
+    <rect x="70" y="190" width="30" height="30" rx="4" fill="#fff" stroke="#8a6a12" stroke-width="2.5"/>
+    <text x="120" y="214"><tspan font-weight="bold" fill="#8a6a12">Key positions:</tspan> not all B</text>
+    <text x="120" y="242" font-size="18" fill="#52606d">Canvas can shuffle; paper cannot</text>
+    <rect x="70" y="280" width="30" height="30" rx="4" fill="#fff" stroke="#6b4fa0" stroke-width="2.5"/>
+    <text x="120" y="304"><tspan font-weight="bold" fill="#6b4fa0">Read every reason</tspan></text>
+    <text x="120" y="332" font-size="18" fill="#52606d">is any "wrong" choice defensible?</text>
+    <rect x="70" y="370" width="30" height="30" rx="4" fill="#fff" stroke="#2a7f8f" stroke-width="2.5"/>
+    <text x="120" y="394"><tspan font-weight="bold" fill="#2a7f8f">One goal per question</tspan></text>
+    <text x="120" y="422" font-size="18" fill="#52606d">no goal: the question goes</text>
+  </g>
+  <text x="400" y="478" font-size="19" fill="#666" text-anchor="middle">"The agent solved them all" is not a check.</text>
+</svg>

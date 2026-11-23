@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="1000" height="460" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="460" fill="#ffffff"/>
+  <rect x="30" y="30" width="400" height="105" rx="8" fill="#ffffff" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="50" y="60" font-size="15" fill="#5a6670" text-anchor="start" font-weight="bold" xml:space="preserve">From: a colleague</text>
+  <text x="50" y="90" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Could you send me the nitrate plot</text>
+  <text x="50" y="116" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">for Mill Creek only?</text>
+  <line x1="435" y1="82" x2="555" y2="175" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <rect x="30" y="155" width="400" height="105" rx="8" fill="#ffffff" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="50" y="185" font-size="15" fill="#5a6670" text-anchor="start" font-weight="bold" xml:space="preserve">From: a student</text>
+  <text x="50" y="215" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">What was the mean temperature</text>
+  <text x="50" y="241" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">at North Pond in 2023?</text>
+  <line x1="435" y1="207" x2="555" y2="200" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <rect x="30" y="280" width="400" height="105" rx="8" fill="#ffffff" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="50" y="310" font-size="15" fill="#5a6670" text-anchor="start" font-weight="bold" xml:space="preserve">From: the project leader</text>
+  <text x="50" y="340" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Can I have the numbers behind</text>
+  <text x="50" y="366" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">figure 2, but for 2024?</text>
+  <line x1="435" y1="332" x2="555" y2="225" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <circle cx="615" cy="200" r="55" fill="#eee9f6" stroke="#6b4fa0" stroke-width="2.5"/>
+  <text x="615" y="207" font-size="22" fill="#6b4fa0" text-anchor="middle" font-weight="bold" xml:space="preserve">you</text>
+  <text x="690" y="170" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">open the data,</text>
+  <text x="690" y="197" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">filter, plot, export,</text>
+  <text x="690" y="224" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">reply ... every week</text>
+  <text x="500" y="435" font-size="19" fill="#a8324a" text-anchor="middle" font-weight="bold" xml:space="preserve">Same data, different small questions. Each one costs you half an hour.</text>
+</svg>

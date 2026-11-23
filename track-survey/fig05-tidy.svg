@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#fff"/>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <text x="230" y="36" font-size="21" font-weight="bold" fill="#a8324a" text-anchor="middle">Export: built for reading</text>
+  <g font-size="15" fill="#333">
+    <rect x="20" y="55" width="420" height="50" fill="#f4f4f4" stroke="#ccc"/>
+    <text x="30" y="75">5. The workload was</text><text x="30" y="95">unreasonably high.</text>
+    <text x="240" y="75">Which programme are</text><text x="240" y="95">you enrolled in?</text>
+    <rect x="20" y="105" width="420" height="36" fill="#fff" stroke="#ccc"/>
+    <text x="30" y="129">Strongly agree</text><text x="240" y="129">Biomedicine</text>
+    <rect x="20" y="141" width="420" height="36" fill="#fff" stroke="#ccc"/>
+    <text x="30" y="165">4</text><text x="240" y="165">Biomed</text>
+    <rect x="20" y="177" width="420" height="36" fill="#fff" stroke="#ccc"/>
+    <text x="30" y="201">Neither agree nor disagree</text><text x="240" y="201">BMA</text>
+    <rect x="20" y="213" width="420" height="36" fill="#fff" stroke="#ccc"/>
+    <text x="30" y="237"></text><text x="240" y="237">Bioteknik</text>
+  </g>
+  <line x1="460" y1="150" x2="530" y2="150" stroke="#555" stroke-width="3" marker-end="url(#a)"/>
+  <text x="770" y="36" font-size="21" font-weight="bold" fill="#2a7f8f" text-anchor="middle">Tidy: built for counting</text>
+  <g font-size="16" fill="#333" font-family="Menlo, Consolas, monospace">
+    <rect x="550" y="55" width="440" height="40" fill="#e3f0f2" stroke="#2a7f8f"/>
+    <text x="562" y="81">id</text><text x="660" y="81">q05_workload</text><text x="830" y="81">programme</text>
+    <rect x="550" y="95" width="440" height="36" fill="#fff" stroke="#ccc"/>
+    <text x="562" y="119">2</text><text x="660" y="119">5</text><text x="830" y="119">Biomedicine</text>
+    <rect x="550" y="131" width="440" height="36" fill="#fff" stroke="#ccc"/>
+    <text x="562" y="155">paper-02</text><text x="660" y="155">4</text><text x="830" y="155">Biomedicine</text>
+    <rect x="550" y="167" width="440" height="36" fill="#fff" stroke="#ccc"/>
+    <text x="562" y="191">7</text><text x="660" y="191">3</text><text x="830" y="191">Biomedicine</text>
+    <rect x="550" y="203" width="440" height="36" fill="#fff" stroke="#ccc"/>
+    <text x="562" y="227">8</text><text x="660" y="227">NA</text><text x="830" y="227">Biotechnology</text>
+  </g>
+  <g font-size="18" fill="#333">
+    <text x="30" y="300">• one row per respondent, one column per question</text>
+    <text x="30" y="332">• short column names; the full wording lives in a codebook</text>
+    <text x="30" y="364">• one coding for each answer: 1-5, and NA for "no answer"</text>
+    <text x="30" y="396">• one spelling for each group</text>
+  </g>
+  <text x="985" y="412" font-size="13" fill="#999" text-anchor="end">illustrative</text>
+</svg>

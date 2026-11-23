@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker>
+  </defs>
+  <rect x="20" y="40" width="330" height="200" rx="10" fill="#1f2933"/>
+  <text x="38" y="72" font-size="17" fill="#8fb3bd">Session 1, end of the day</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="16" fill="#ffffff">
+    <text x="38" y="110">&gt; Update notes/plan.md:</text>
+    <text x="38" y="134">  what we did, what is</text>
+    <text x="38" y="158">  next, what is open.</text>
+    <text x="38" y="196" fill="#7fd1de">● Updated notes/plan.md</text>
+  </g>
+  <rect x="400" y="70" width="200" height="140" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="500" y="110" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="19" font-weight="bold" fill="#2a7f8f">plan.md</text>
+  <text x="500" y="145" text-anchor="middle" font-size="16" fill="#555">in the folder,</text>
+  <text x="500" y="168" text-anchor="middle" font-size="16" fill="#555">not in a chat</text>
+  <rect x="650" y="40" width="330" height="214" rx="10" fill="#1f2933"/>
+  <text x="668" y="72" font-size="17" fill="#8fb3bd">Session 2, next week</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="16" fill="#ffffff">
+    <text x="668" y="110">&gt; Let's continue.</text>
+    <text x="668" y="148" fill="#7fd1de">● Read AGENTS.md</text>
+    <text x="668" y="172" fill="#7fd1de">● Read notes/plan.md</text>
+    <text x="668" y="210" fill="#cfd6dc">Next is "species per</text>
+    <text x="668" y="232" fill="#cfd6dc">habitat". Start there?</text>
+  </g>
+  <line x1="350" y1="140" x2="396" y2="140" stroke="#666" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="600" y1="140" x2="646" y2="140" stroke="#666" stroke-width="3" marker-end="url(#a)"/>
+  <text x="972" y="272" text-anchor="end" font-size="14" fill="#8a97a5">illustrative</text>
+  <text x="500" y="310" text-anchor="middle" font-size="19" fill="#333">AGENTS.md says: "Start each session by reading notes/plan.md;</text>
+  <text x="500" y="338" text-anchor="middle" font-size="19" fill="#333">update it before you stop."</text>
+  <text x="500" y="390" text-anchor="middle" font-size="17" fill="#555">Also works after a holiday, and for a colleague.</text>
+</svg>

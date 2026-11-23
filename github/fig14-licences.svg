@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#fff"/>
+  <rect x="30" y="30" width="290" height="360" rx="14" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+  <text x="175" y="75" font-size="22" font-weight="bold" fill="#555" text-anchor="middle">No licence</text>
+  <g font-size="17" fill="#333">
+    <text x="50" y="125">Others may look,</text>
+    <text x="50" y="150">but not reuse, change</text>
+    <text x="50" y="175">or share it.</text>
+    <text x="50" y="225">"All rights reserved"</text>
+    <text x="50" y="250">is the legal default.</text>
+  </g>
+  <rect x="355" y="30" width="290" height="360" rx="14" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="500" y="75" font-size="22" font-weight="bold" fill="#2a7f8f" text-anchor="middle">CC BY 4.0</text>
+  <text x="500" y="102" font-size="16" fill="#2a7f8f" text-anchor="middle">text, slides, figures, data</text>
+  <g font-size="17" fill="#333">
+    <text x="375" y="150">Anyone may reuse and</text>
+    <text x="375" y="175">adapt it, also in their</text>
+    <text x="375" y="200">own course,</text>
+    <text x="375" y="250" font-weight="bold">if they credit you.</text>
+    <text x="375" y="310" font-size="15" fill="#555">creativecommons.org</text>
+  </g>
+  <rect x="680" y="30" width="290" height="360" rx="14" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="825" y="75" font-size="22" font-weight="bold" fill="#6b4fa0" text-anchor="middle">MIT</text>
+  <text x="825" y="102" font-size="16" fill="#6b4fa0" text-anchor="middle">scripts and code</text>
+  <g font-size="17" fill="#333">
+    <text x="700" y="150">Anyone may use, change</text>
+    <text x="700" y="175">and share the code,</text>
+    <text x="700" y="225" font-weight="bold">if they keep the licence</text>
+    <text x="700" y="250" font-weight="bold">text; no warranty.</text>
+    <text x="700" y="310" font-size="15" fill="#555">choosealicense.com</text>
+  </g>
+  <text x="500" y="412" font-size="15" fill="#a8324a" text-anchor="middle">Check first: your university may own or have rules for what you create at work.</text>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#fff"/>
+  <text x="20" y="34" font-size="20" font-weight="bold" fill="#333">Test 1: try to select a word in your PDF viewer</text>
+  <rect x="20" y="52" width="460" height="140" rx="6" fill="#fff" stroke="#999"/>
+  <text x="40" y="86" font-size="16" fill="#333">212 of the 240 invited adults took part</text>
+  <rect x="38" y="70" width="176" height="22" fill="#2a7f8f" opacity="0.3"/>
+  <text x="40" y="160" font-size="16" fill="#2a7f8f" font-weight="bold">words highlight: there is text</text>
+  <rect x="520" y="52" width="460" height="140" rx="6" fill="#f2f2f2" stroke="#999"/>
+  <text x="540" y="86" font-size="16" fill="#666" font-family="Times New Roman, serif">Ninety-six patients were included.</text>
+  <rect x="530" y="62" width="300" height="80" fill="none" stroke="#a8324a" stroke-width="2" stroke-dasharray="6,4"/>
+  <text x="540" y="172" font-size="16" fill="#a8324a" font-weight="bold">a box over the whole page: an image</text>
+  <text x="20" y="240" font-size="20" font-weight="bold" fill="#333">Test 2: ask the agent to count the characters of text per file</text>
+  <rect x="20" y="256" width="960" height="130" rx="8" fill="#1f2430"/>
+  <g font-family="Courier New, monospace" font-size="16" fill="#e8e8e8" xml:space="preserve">
+    <text x="40" y="286">01_Aldersen-2021.pdf           2 pages   1535 characters</text>
+    <text x="40" y="310">02_Moreau-2019.pdf             2 pages   1221 characters</text>
+    <text x="40" y="334" fill="#f08a9c">04_Okonkwo-2018.pdf            2 pages      0 characters  &lt;- scanned</text>
+    <text x="40" y="358">06_Quint-2020_supplement.pdf   1 page     685 characters</text>
+  </g>
+  <text x="985" y="412" font-size="14" fill="#999" text-anchor="end">illustrative; numbers from the exercise files</text>
+</svg>

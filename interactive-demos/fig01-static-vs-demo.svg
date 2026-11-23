@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="500" fill="#ffffff"/>
+  <text x="255" y="40" font-size="22" fill="#5a6670" text-anchor="middle" font-weight="bold" xml:space="preserve">A figure in the textbook</text>
+  <rect x="40" y="60" width="430" height="330" rx="8" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <line x1="90" y1="320" x2="430" y2="320" stroke="#9aa4ad" stroke-width="2"/>
+  <line x1="90" y1="90" x2="90" y2="320" stroke="#9aa4ad" stroke-width="2"/>
+  <path d="M90.0,317.7 L94.2,317.1 L98.5,316.2 L102.8,315.2 L107.0,313.9 L111.2,312.2 L115.5,310.1 L119.8,307.5 L124.0,304.3 L128.2,300.3 L132.5,295.4 L136.8,289.6 L141.0,282.7 L145.2,274.7 L149.5,265.7 L153.8,255.6 L158.0,244.8 L162.2,233.5 L166.5,222.0 L170.8,210.7 L175.0,199.9 L179.2,189.9 L183.5,180.9 L187.8,173.0 L192.0,166.1 L196.2,160.3 L200.5,155.5 L204.8,151.6 L209.0,148.4 L213.2,145.8 L217.5,143.7 L221.8,142.1 L226.0,140.8 L230.2,139.7 L234.5,138.9 L238.8,138.3 L243.0,137.8 L247.2,137.4 L251.5,137.1 L255.8,136.8 L260.0,136.7 L264.2,136.5 L268.5,136.4 L272.8,136.3 L277.0,136.2 L281.2,136.2 L285.5,136.1 L289.8,136.1 L294.0,136.1 L298.2,136.1 L302.5,136.1 L306.8,136.0 L311.0,136.0 L315.2,136.0 L319.5,136.0 L323.8,136.0 L328.0,136.0 L332.2,136.0 L336.5,136.0 L340.8,136.0 L345.0,136.0 L349.2,136.0 L353.5,136.0 L357.8,136.0 L362.0,136.0 L366.2,136.0 L370.5,136.0 L374.8,136.0 L379.0,136.0 L383.2,136.0 L387.5,136.0 L391.8,136.0 L396.0,136.0 L400.2,136.0 L404.5,136.0 L408.8,136.0 L413.0,136.0 L417.2,136.0 L421.5,136.0 L425.8,136.0 L430.0,136.0" stroke="#2a7f8f" stroke-width="4" fill="none"/>
+  <line x1="90" y1="136.0" x2="430" y2="136.0" stroke="#a8324a" stroke-width="2" stroke-dasharray="8 6"/>
+  <text x="425" y="128.0" font-size="18" fill="#a8324a" text-anchor="end" font-weight="bold" xml:space="preserve">K</text>
+  <text x="260" y="350" font-size="16" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">time</text>
+  <text x="65" y="205" font-size="16" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">N</text>
+  <text x="60" y="378" font-size="16" fill="#5a6670" text-anchor="start" font-weight="normal" font-style="italic" xml:space="preserve">Fig. 3. Logistic growth, r = 0.5, K = 800.</text>
+  <text x="255" y="430.0" font-size="18" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">One set of numbers. Students read it once</text>
+  <text x="255" y="453.4" font-size="18" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">and may not see why it bends.</text>
+  <text x="745" y="40" font-size="22" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">A demo</text>
+  <rect x="530" y="60" width="430" height="330" rx="10" fill="#ffffff" stroke="#9aa4ad" stroke-width="1.5"/>
+  <rect x="530" y="60" width="430" height="40" rx="10" fill="#e9edf1"/>
+  <rect x="530" y="90" width="430" height="10" fill="#e9edf1"/>
+  <circle cx="548" cy="80" r="6" fill="#e0605a"/>
+  <circle cx="568" cy="80" r="6" fill="#e6b84f"/>
+  <circle cx="588" cy="80" r="6" fill="#5fbf6a"/>
+  <rect x="610" y="68" width="335" height="24" rx="12" fill="#ffffff" stroke="#c9d3dd" stroke-width="1"/>
+  <text x="624" y="85" font-size="14" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">logistic-growth.html</text>
+  <text x="555" y="125" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">r</text>
+  <line x1="555" y1="141" x2="705" y2="141" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="555" y1="141" x2="607.5" y2="141" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="607.5" cy="141" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="555" y="185" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">K</text>
+  <line x1="555" y1="201" x2="705" y2="201" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="555" y1="201" x2="667.5" y2="201" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="667.5" cy="201" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <rect x="555" y="235" width="80" height="30" rx="6" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <text x="595.0" y="254.9" font-size="14" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">Reset</text>
+  <line x1="735" y1="315" x2="935" y2="315" stroke="#9aa4ad" stroke-width="2"/>
+  <line x1="735" y1="115" x2="735" y2="315" stroke="#9aa4ad" stroke-width="2"/>
+  <path d="M735.0,313.0 L737.5,312.4 L740.0,311.7 L742.5,310.8 L745.0,309.7 L747.5,308.2 L750.0,306.4 L752.5,304.2 L755.0,301.4 L757.5,298.0 L760.0,293.8 L762.5,288.8 L765.0,283.0 L767.5,276.2 L770.0,268.6 L772.5,260.3 L775.0,251.3 L777.5,242.0 L780.0,232.7 L782.5,223.5 L785.0,214.9 L787.5,207.0 L790.0,199.8 L792.5,193.6 L795.0,188.2 L797.5,183.7 L800.0,180.0 L802.5,177.0 L805.0,174.5 L807.5,172.5 L810.0,170.9 L812.5,169.6 L815.0,168.6 L817.5,167.8 L820.0,167.2 L822.5,166.7 L825.0,166.4 L827.5,166.1 L830.0,165.8 L832.5,165.6 L835.0,165.5 L837.5,165.4 L840.0,165.3 L842.5,165.2 L845.0,165.2 L847.5,165.1 L850.0,165.1 L852.5,165.1 L855.0,165.1 L857.5,165.1 L860.0,165.0 L862.5,165.0 L865.0,165.0 L867.5,165.0 L870.0,165.0 L872.5,165.0 L875.0,165.0 L877.5,165.0 L880.0,165.0 L882.5,165.0 L885.0,165.0 L887.5,165.0 L890.0,165.0 L892.5,165.0 L895.0,165.0 L897.5,165.0 L900.0,165.0 L902.5,165.0 L905.0,165.0 L907.5,165.0 L910.0,165.0 L912.5,165.0 L915.0,165.0 L917.5,165.0 L920.0,165.0 L922.5,165.0 L925.0,165.0 L927.5,165.0 L930.0,165.0 L932.5,165.0 L935.0,165.0" stroke="#2a7f8f" stroke-width="3.5" fill="none"/>
+  <path d="M735.0,313.0 L737.5,312.4 L740.0,311.7 L742.5,310.9 L745.0,309.8 L747.5,308.4 L750.0,306.7 L752.5,304.6 L755.0,302.1 L757.5,299.0 L760.0,295.5 L762.5,291.4 L765.0,286.8 L767.5,281.7 L770.0,276.4 L772.5,270.8 L775.0,265.2 L777.5,259.7 L780.0,254.5 L782.5,249.8 L785.0,245.6 L787.5,241.9 L790.0,238.7 L792.5,236.1 L795.0,233.9 L797.5,232.0 L800.0,230.6 L802.5,229.4 L805.0,228.5 L807.5,227.7 L810.0,227.1 L812.5,226.7 L815.0,226.3 L817.5,226.0 L820.0,225.8 L822.5,225.6 L825.0,225.5 L827.5,225.4 L830.0,225.3 L832.5,225.2 L835.0,225.2 L837.5,225.1 L840.0,225.1 L842.5,225.1 L845.0,225.1 L847.5,225.1 L850.0,225.0 L852.5,225.0 L855.0,225.0 L857.5,225.0 L860.0,225.0 L862.5,225.0 L865.0,225.0 L867.5,225.0 L870.0,225.0 L872.5,225.0 L875.0,225.0 L877.5,225.0 L880.0,225.0 L882.5,225.0 L885.0,225.0 L887.5,225.0 L890.0,225.0 L892.5,225.0 L895.0,225.0 L897.5,225.0 L900.0,225.0 L902.5,225.0 L905.0,225.0 L907.5,225.0 L910.0,225.0 L912.5,225.0 L915.0,225.0 L917.5,225.0 L920.0,225.0 L922.5,225.0 L925.0,225.0 L927.5,225.0 L930.0,225.0 L932.5,225.0 L935.0,225.0" stroke="#2a7f8f" stroke-width="2" fill="none" stroke-dasharray="5 5"/>
+  <line x1="735" y1="165.0" x2="935" y2="165.0" stroke="#a8324a" stroke-width="2" stroke-dasharray="8 6"/>
+  <circle cx="925" cy="165.0" r="8" fill="#a8324a" stroke="none" stroke-width="0"/>
+  <line x1="925" y1="135" x2="925" y2="155" stroke="#a8324a" stroke-width="2.5" marker-end="url(#arwc)"/>
+  <text x="912" y="133" font-size="15" fill="#a8324a" text-anchor="end" font-weight="bold" xml:space="preserve">drag</text>
+  <text x="560" y="350" font-size="16" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">Students change r and K and</text>
+  <text x="560" y="372" font-size="16" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">watch where the curve bends.</text>
+  <text x="745" y="430.0" font-size="18" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">Same model. Now the student asks</text>
+  <text x="745" y="453.4" font-size="18" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">the questions and sees the answers.</text>
+  <text x="990" y="490" font-size="14" fill="#9aa4ad" text-anchor="end" font-weight="normal" font-style="italic" xml:space="preserve">illustrative</text>
+</svg>

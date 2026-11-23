@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="1000" height="460" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="460" fill="#fff"/>
+  <g font-size="19">
+    <rect x="20" y="20" width="305" height="290" rx="12" fill="#e8f3f5" stroke="#2a7f8f" stroke-width="2.5"/>
+    <text x="172" y="60" text-anchor="middle" font-size="23" font-weight="bold" fill="#2a7f8f">Text and figures</text>
+    <text x="40" y="105" font-weight="bold" fill="#1f2933">CC BY 4.0</text>
+    <text x="40" y="132" fill="#333">reuse with credit</text>
+    <text x="40" y="178" font-weight="bold" fill="#1f2933">CC BY-SA 4.0</text>
+    <text x="40" y="205" fill="#333">credit, and share alike</text>
+    <text x="40" y="230" fill="#333">(Wikipedia uses it)</text>
+    <rect x="347" y="20" width="305" height="290" rx="12" fill="#f1ecf8" stroke="#6b4fa0" stroke-width="2.5"/>
+    <text x="500" y="60" text-anchor="middle" font-size="23" font-weight="bold" fill="#6b4fa0">Code</text>
+    <text x="367" y="105" font-weight="bold" fill="#1f2933">MIT</text>
+    <text x="367" y="132" fill="#333">almost anything; keep</text>
+    <text x="367" y="157" fill="#333">the notice</text>
+    <text x="367" y="203" font-weight="bold" fill="#1f2933">GPL-3.0</text>
+    <text x="367" y="230" fill="#333">shared programs that</text>
+    <text x="367" y="255" fill="#333">use it must stay GPL</text>
+    <rect x="674" y="20" width="305" height="290" rx="12" fill="#fdf8e8" stroke="#8a6a12" stroke-width="2.5"/>
+    <text x="826" y="60" text-anchor="middle" font-size="23" font-weight="bold" fill="#8a6a12">Data</text>
+    <text x="694" y="105" font-weight="bold" fill="#1f2933">CC0</text>
+    <text x="694" y="132" fill="#333">no conditions</text>
+    <text x="694" y="178" font-weight="bold" fill="#1f2933">CC BY 4.0</text>
+    <text x="694" y="205" fill="#333">reuse with credit</text>
+  </g>
+  <rect x="20" y="335" width="959" height="105" rx="12" fill="#f9ecef" stroke="#a8324a" stroke-width="2"/>
+  <text x="40" y="373" font-size="20" font-weight="bold" fill="#a8324a">Your licence must fit what you used.</text>
+  <text x="40" y="408" font-size="19" fill="#333">A Wikipedia paragraph keeps its CC BY-SA terms; GPL code cannot be released as MIT.</text>
+</svg>

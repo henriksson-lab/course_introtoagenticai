@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="1000" height="460" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="460" fill="#ffffff"/>
+  <rect x="30" y="20" width="940" height="400" rx="10" fill="#f4f7fa" stroke="#9aa8b5" stroke-width="2"/>
+  <rect x="30" y="20" width="940" height="40" rx="10" fill="#dfe6ec"/>
+  <circle cx="56" cy="40" r="7" fill="#a8324a"/><circle cx="78" cy="40" r="7" fill="#8a6a12"/><circle cx="100" cy="40" r="7" fill="#2a7f8f"/>
+  <text x="500" y="46" text-anchor="middle" font-size="17" fill="#1b2a3a">Local model app (LM Studio, Ollama's app, ...)</text>
+  <!-- sidebar -->
+  <rect x="44" y="74" width="250" height="330" rx="8" fill="#ffffff" stroke="#c5cfd8"/>
+  <text x="60" y="102" font-size="16" font-weight="bold" fill="#1b2a3a">Downloaded models</text>
+  <g font-size="15" fill="#1b2a3a">
+    <rect x="54" y="116" width="230" height="52" rx="6" fill="#eef6f7" stroke="#2a7f8f"/>
+    <text x="66" y="138" font-weight="bold">qwen3 8B</text><text x="66" y="158" fill="#5a6a7a">5 GB, 4-bit</text>
+    <text x="66" y="194" font-weight="bold">llama 3.2 3B</text><text x="66" y="214" fill="#5a6a7a">2 GB, 4-bit</text>
+    <text x="66" y="250" font-weight="bold">gpt-oss 20b</text><text x="66" y="270" fill="#5a6a7a">about 14 GB</text>
+  </g>
+  <text x="60" y="320" font-size="15" fill="#2a7f8f">+ search and download</text>
+  <text x="60" y="380" font-size="14" fill="#5a6a7a">memory in use: 6.1 of 16 GB</text>
+  <!-- chat -->
+  <rect x="310" y="74" width="646" height="330" rx="8" fill="#ffffff" stroke="#c5cfd8"/>
+  <rect x="520" y="92" width="420" height="56" rx="8" fill="#f3f0f8"/>
+  <text x="536" y="116" font-size="15" fill="#1b2a3a">Extract organism, sample size, temperature and</text>
+  <text x="536" y="136" font-size="15" fill="#1b2a3a">duration from these eight paragraphs as a table.</text>
+  <rect x="326" y="164" width="470" height="150" rx="8" fill="#f4f7fa"/>
+  <g font-size="15" fill="#1b2a3a">
+    <text x="340" y="190" font-weight="bold">id</text>
+    <text x="400" y="190" font-weight="bold">organism</text>
+    <text x="560" y="190" font-weight="bold">n</text>
+    <text x="630" y="190" font-weight="bold">temp</text>
+    <text x="710" y="190" font-weight="bold">days</text>
+    <text x="340" y="212">S1</text>
+    <text x="400" y="212">Arabidopsis</text>
+    <text x="560" y="212">45</text>
+    <text x="630" y="212">22</text>
+    <text x="710" y="212">10</text>
+    <text x="340" y="234">S2</text>
+    <text x="400" y="234">students</text>
+    <text x="560" y="234">412</text>
+    <text x="630" y="234">-</text>
+    <text x="710" y="234">21</text>
+    <text x="340" y="256">S3</text>
+    <text x="400" y="256">zebrafish</text>
+    <text x="560" y="256">96</text>
+    <text x="630" y="256">28.5</text>
+    <text x="710" y="256">3</text>
+    <text x="340" y="278">...</text>
+  </g>
+  <text x="340" y="304" font-size="14" fill="#5a6a7a">14 tokens/s</text>
+  <rect x="326" y="340" width="614" height="46" rx="8" fill="#ffffff" stroke="#9aa8b5"/>
+  <text x="342" y="369" font-size="15" fill="#9aa8b5">Type a message ...</text>
+  <text x="928" y="369" text-anchor="end" font-size="15" font-weight="bold" fill="#2a7f8f">no network needed</text>
+  <text x="960" y="446" text-anchor="end" font-size="13" fill="#9aa8b5">illustrative</text>
+</svg>

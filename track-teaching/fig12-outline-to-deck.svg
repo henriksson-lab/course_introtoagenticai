@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#52606d"/></marker></defs>
+  <!-- outline -->
+  <rect x="20" y="40" width="260" height="330" rx="8" fill="#fdf8e8" stroke="#8a6a12" stroke-width="2.5"/>
+  <text x="40" y="75" font-size="20" font-weight="bold" fill="#8a6a12">outline.md</text>
+  <g font-size="17" fill="#333">
+    <text x="40" y="112">1. Problem: bars hide data</text>
+    <text x="40" y="140">2. Mean and median</text>
+    <text x="40" y="168">3. SD vs SE</text>
+    <text x="40" y="196">4. Show the data</text>
+    <text x="40" y="224">5. Log axes</text>
+    <text x="40" y="252">6. Correlation</text>
+    <text x="40" y="280">7. Figure checklist</text>
+    <text x="40" y="308">8. Summary</text>
+    <text x="40" y="346" fill="#52606d">+ figures, audience</text>
+  </g>
+  <line x1="282" y1="205" x2="335" y2="205" stroke="#52606d" stroke-width="3" marker-end="url(#a)"/>
+  <text x="308" y="190" font-size="15" fill="#52606d" text-anchor="middle">agent</text>
+  <!-- qmd -->
+  <rect x="340" y="40" width="300" height="330" rx="8" fill="#1f2933"/>
+  <text x="360" y="75" font-size="20" font-weight="bold" fill="#e0c27a">lec.qmd</text>
+  <g font-family="Courier New, monospace" font-size="15" fill="#cfd6dc" xml:space="preserve">
+    <text x="360" y="110">---</text>
+    <text x="360" y="132">format: revealjs</text>
+    <text x="360" y="154">---</text>
+    <text x="360" y="190" fill="#7fd1de">## A bar of means can</text>
+    <text x="360" y="212" fill="#7fd1de">## hide the data</text>
+    <text x="360" y="240">![](fig01.svg){fig-alt=...}</text>
+    <text x="360" y="276" fill="#e0c27a">::: notes</text>
+    <text x="360" y="298">Both groups have ...</text>
+    <text x="360" y="320" fill="#e0c27a">:::</text>
+  </g>
+  <line x1="642" y1="205" x2="695" y2="205" stroke="#52606d" stroke-width="3" marker-end="url(#a)"/>
+  <text x="668" y="190" font-size="15" fill="#52606d" text-anchor="middle">Quarto</text>
+  <!-- slide -->
+  <rect x="700" y="95" width="280" height="190" rx="6" fill="#fff" stroke="#52606d" stroke-width="2.5"/>
+  <text x="715" y="130" font-size="17" font-weight="bold" fill="#1f2933">A bar of means can hide</text>
+  <text x="715" y="152" font-size="17" font-weight="bold" fill="#1f2933">the data</text>
+  <rect x="740" y="190" width="40" height="70" fill="#2a7f8f"/>
+  <rect x="820" y="190" width="40" height="70" fill="#2a7f8f"/>
+  <circle cx="905" cy="200" r="5" fill="#a8324a"/><circle cx="915" cy="215" r="5" fill="#a8324a"/><circle cx="905" cy="250" r="5" fill="#a8324a"/><circle cx="925" cy="255" r="5" fill="#a8324a"/>
+  <text x="970" y="276" font-size="13" fill="#7b8794" text-anchor="end">3 / 24</text>
+  <text x="840" y="320" font-size="17" fill="#52606d" text-anchor="middle">HTML slides in a browser</text>
+  <text x="500" y="420" font-size="19" fill="#1f2933" text-anchor="middle">Plain text in, slides out. Next year's update is a diff in git.</text>
+</svg>

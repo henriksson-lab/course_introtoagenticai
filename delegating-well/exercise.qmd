@@ -1,0 +1,282 @@
+---
+title: "Exercise: from weak prompt to brief"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- **rewritten three weak prompts** as briefs with a goal, context, constraints and acceptance criteria, and compared them with model answers,
+- **seen the difference** between a weak prompt and a strong brief on the same data, using **plan mode**,
+- **checked** the result against the acceptance criteria and against known answers,
+- **corrected the agent once** with a specific correction that says what to keep,
+- written **the first real brief for your own project**, with the help of an interview, and tested it in plan mode.
+
+The worked example uses **synthetic** data: the students, codes and reaction times are invented. Your session will look different from anyone else's, including the examples below. Compare **results**, not sessions.
+
+## Before you start
+
+- You have Claude Code or Codex installed and can start it in a folder (*Terminal survival kit*).
+- You have your course folder `agentic-course` and your own-project folder inside it, with its `README.md` (*Privacy, ethics and safety*).
+- In the course folder, make a new folder `delegating-well`, and inside it two folders: `weak` and `strong`.
+- Download [reaction-times.csv](data/reaction-times.csv) and put **one copy in each** of `weak` and `strong`. Keep the downloaded file as your original.
+- Open the CSV in Excel or LibreOffice for a minute. It has 180 rows: 12 students (P01 to P12), 3 conditions (quiet, music, notification), 5 trials each, and a `note` column. Do not look for problems yet; that is the agent's job, and yours afterwards.
+- Have the brief template from the lecture at hand (slide "A brief template that fits on one screen").
+
+Plan mode in each tool:
+
+| | Claude Code | Codex |
+|---|---|---|
+| Switch on | **Shift+Tab** until the status line shows `⏸ plan mode on` | Type `/plan` and press Enter |
+| Approve a plan | Choose **Yes, manually approve edits** | Tell it to go ahead |
+| Reject a plan | **No, keep planning**, then say what to change | Reply with what to change |
+| Interrupt | **Esc** | **Esc** |
+| Fresh session | `/clear` | `/new` |
+
+In Codex, a folder that is not a git repository usually starts **read-only**. When you want it to write files, type `/permissions` and choose the mode that allows edits in the folder (not full access). Menu wording changes between versions; look for these words.
+
+## Worked example
+
+### Part 1: Rewrite three weak prompts (no agent needed)
+
+Rewrite each prompt as a brief, with the four headings **Goal**, **Context**, **Constraints** and **Done when**. Invent plausible details where you need them; the point is which kinds of information you add. Take about five minutes per prompt. Then open the model answer and compare: which of your lines would have prevented the most trouble? What did you add that the model answer lacks?
+
+**Prompt A (teaching).**
+
+```text
+Write a summary of these three papers for my students.
+```
+
+**Prompt B (research or administration).**
+
+```text
+Clean up the course evaluation data.
+```
+
+**Prompt C (the worked example below).**
+
+```text
+Make a figure of the reaction times.
+```
+
+::: {.callout-note collapse="true" title="Model answer A"}
+```text
+Goal: a one-page reading guide for second-year nursing students before
+Thursday's seminar, so that they know what each of the three papers
+(in papers/) found and why it matters for practice.
+
+Context: the students have had one course in statistics; explain any
+method beyond a t-test in one plain sentence. The seminar question is
+"does early mobilisation shorten hospital stays?".
+
+Constraints: about 150 words per paper. Use only what the papers say;
+write "not stated" rather than fill in. No direct quotes longer than
+one sentence. Write reading-guide.md only.
+
+Done when: each summary names the study design, the number of patients
+and the main result with its number, and gives the page where each
+appears; I will check every number against the page. A last section
+lists two questions for the seminar.
+```
+The weak prompt leaves open: who the students are, their level, the length, what the summary is for, and how you would know it is right. The page references make the summary checkable in minutes.
+:::
+
+::: {.callout-note collapse="true" title="Model answer B"}
+```text
+Goal: a tidy table of last year's course evaluation for the programme
+board: one row per question, with the number of answers and the mean
+score.
+
+Context: evaluation-2025.xlsx is the export from the survey tool. Scores
+are 1 (disagree) to 5 (agree). Questions 7 and 12 are worded negatively;
+the board wants them reported as they are, not reversed. The free-text
+column contains comments that may identify students.
+
+Constraints: do not change the .xlsx; write new files only. Drop the
+free-text column entirely: do not read it, summarise it or copy it.
+If a value is outside 1 to 5, leave it out and list it.
+
+Done when: evaluation-summary.csv has 15 rows (one per question); the
+number of answers per question is at most 64 (the number of students who
+answered); a script makes the table from the .xlsx so I can rerun it next
+year; changes.md lists every value left out. I will recompute two means
+by hand.
+```
+"Clean up" means nothing until you say what clean is for. Note the privacy line: free-text answers often identify students and should not go to the agent at all. If the export contains names or student IDs, remove those columns yourself before the agent sees the file (*Privacy, ethics and safety*).
+:::
+
+::: {.callout-note collapse="true" title="Model answer C"}
+This is the brief used in Part 2 below. Compare your version with it before you go on.
+:::
+
+### Part 2: The weak prompt
+
+Go into the `weak` folder and start the agent there. Make sure it may create files (Claude Code: manual mode is fine, you approve each step; Codex: `/permissions` if it is read-only). Type:
+
+```text
+Make a nice plot of this data.
+```
+
+Approve what it asks for, as long as it stays in the folder. When it is done, open the figure. Do not correct anything. Write down:
+
+- What kind of plot did you get? Bars, points, lines?
+- What are the three means, if it shows or prints them?
+- Did it mention **P07**, the **false start** or the **missing value**? If it did, did it tell you what it did about them, or only that it did something?
+
+Then quit the agent.
+
+### Part 3: The strong brief, in plan mode
+
+Go into the `strong` folder and start the agent there. Switch to **plan mode** (Shift+Tab in Claude Code; `/plan` in Codex). Then type this brief (or your own version of it from Part 1):
+
+```text
+Goal: a figure for tomorrow's lab session that shows students, in one
+glance, how a phone notification changes reaction time compared with
+quiet and music.
+
+Context: reaction-times.csv has 12 students (P01-P12) x 3 conditions x
+5 trials. Students timed themselves with a web tool. Plausible reaction
+times are 150 to 1000 ms. We exclude false starts (see the note column).
+Some students may have typed seconds instead of milliseconds.
+
+Constraints: do not change reaction-times.csv; write new files only.
+Use Python (or R if you cannot run Python). Only the figure and the
+files below, no report. If a value looks wrong, do not fix or drop it
+on your own: list it and ask me.
+
+Done when:
+- one script makes all the files below from the CSV
+- rt-means.csv: one row per student and condition, with the mean of
+  the kept trials and the number of trials kept
+- rt-plot.png: one line per student across the three conditions, the
+  group mean drawn on top, axis label "Reaction time (ms)", readable
+  at 16 cm wide
+- changes.md: every row you excluded or changed, and why
+- the script prints these checks at the end: number of students,
+  number of conditions, smallest and largest value after cleaning
+
+Show me your plan and your questions before you change anything.
+```
+
+**Read the plan** with the five questions from the lecture: did it understand the goal; which files will it create; what did it find; which decisions has it already made; what does it ask?
+
+A good plan notices that **P07's values are between 0.24 and 0.34**, which must be seconds, and asks what to do. It may also ask about the empty value for P10. Answer its questions, for example:
+
+```text
+P07: yes, those are seconds. Multiply by 1000 and record it in
+changes.md. P10's missing trial: leave it out and use the mean of the
+other four. Otherwise the plan is fine.
+```
+
+If the plan did **not** mention P07, do not approve it. Ask: "Look at the range of values per student. Anything odd?" That is what a reader of plans learns to do.
+
+Then approve. In Claude Code, choose **Yes, manually approve edits** and approve each file as it is written. In Codex, tell it to go ahead (and use `/permissions` first if it is read-only).
+
+#### Check the result
+
+1. **Files.** The `strong` folder now holds the original CSV, one script, `rt-means.csv`, `rt-plot.png` and `changes.md`. Nothing else. Open `reaction-times.csv` and check that it is unchanged (P07's values still read 0.277 and so on).
+2. **Counts.** `rt-means.csv` has **36 rows** (12 students × 3 conditions). The trials-kept column sums to **178** (180, minus the false start, minus the missing value).
+3. **The traps.** `changes.md` mentions all three: P07 converted from seconds (15 values), P03's false start in the notification condition excluded, P10's missing music trial left out.
+4. **The checks the script prints.** 12 students, 3 conditions, smallest value at least 150, largest at most 1000.
+5. **Spot check by hand.** Pick one student other than P07. In Excel, compute the mean of their five quiet trials and compare with `rt-means.csv`.
+6. **The figure.** One line per student, the group mean visible, the label "Reaction time (ms)". Can you see at a glance that every line goes up towards notification?
+
+::: {.callout-note collapse="true" title="Expected outcome"}
+- 178 trials kept: 180, minus P03 notification trial 2 (92 ms, "pressed before signal"), minus P10 music trial 4 (empty, "equipment glitch").
+- P07's 15 values multiplied by 1000. P07's means are then about **256, 291 and 326 ms** for quiet, music and notification.
+- Group means (the mean of the 12 student means): **quiet 304.6 ms, music 324.3 ms, notification 365.7 ms**. Small differences in the last digit can come from rounding or from averaging all trials instead of student means; ask the agent which it did.
+- **All 12** students are slower with a notification than in quiet.
+- If P07 is left in seconds and the false start is kept, the plain means of all rows come out at about **283, 300 and 334 ms**: every bar too low. If your weak-prompt plot shows numbers like these, you have seen the problem from the lecture.
+:::
+
+**Compare with Part 2.** Put the two figures side by side. Which one would you show to students? Which one could you defend if a student asked "what did you do with P07?"
+
+### Part 4: One specific correction
+
+Pick one thing you would like to be different in the figure, and correct it **specifically**, saying what to keep. For example:
+
+```text
+Keep everything as it is, but make the group mean a thick black line
+with points, and make the student lines light grey. Change only the
+script and rerun it.
+```
+
+Check that only that changed: `rt-means.csv` and `changes.md` should be identical to before (the agent should say so; open them to see).
+
+## On your own project
+
+Now write the first real brief for your own project. You will not carry it out yet: the folder gets its structure in *Organising a project for an agent* and its safety net in *Git as undo button and lab notebook*. Today you write the brief and check that an agent understands it.
+
+::: {.callout-warning}
+**Privacy reminder.** The interview and the brief go to the provider. Describe your data; do not paste it. No names of students, patients or colleagues, no confidential details. Check your project's "Never put in this folder" list in `README.md`.
+:::
+
+### Step 1: Let the agent interview you
+
+1. Start the agent in your **own-project folder** (for example `agentic-course/soil-funding-map`).
+2. It must be allowed to write one file. Claude Code: stay in manual mode (not plan mode, which cannot write files). Codex: `/permissions` and allow edits in the folder.
+3. Choose the **first step** of your project: the first result you could check, not the whole project. If you are unsure, the interview will help.
+4. Type:
+
+```text
+Read README.md. It describes my project. I want to write a brief for
+the first step: <one sentence about the first step>.
+Interview me, one question at a time, until you could write a brief
+with four parts: goal, context, constraints, and "done when" (how I
+will check the result). Challenge my assumptions where they seem weak,
+and ask what should happen in case of doubt.
+Then write the brief to first-brief.md and stop. Do not start the work
+and do not create any other files.
+```
+
+5. Answer in your own words. If you do not know an answer, say so: "I don't know yet; put it under open questions." Those open questions are useful.
+
+### Step 2: Make the brief your own
+
+Open `first-brief.md` in a text editor and read it as if someone else wrote it. Edit until each of these is true:
+
+- [ ] The **goal** says what the result is *for*, not only what it is.
+- [ ] The **context** contains at least one thing the agent could not have found in the files.
+- [ ] The **constraints** say what must not be changed, and what to do in case of doubt.
+- [ ] Every line under **done when** can be checked by counting, looking or running something.
+- [ ] It is short: about 5 to 20 lines, plus open questions if any.
+- [ ] Nothing in it is personal or confidential.
+
+### Step 3: Test the brief in a fresh session, in plan mode
+
+1. Start a fresh session: `/clear` (Claude Code) or `/new` (Codex), or quit and start the agent again.
+2. Switch to plan mode and type:
+
+```text
+Read first-brief.md and README.md. Make a plan for carrying out the
+brief. List your assumptions and your questions. Do not change any files.
+```
+
+3. Read the plan with the five questions from the lecture. Every place where the plan misunderstood the brief, or where it had to guess, is a missing line in the brief. Add those lines to `first-brief.md` yourself.
+4. **Do not approve the plan.** Choose **No, keep planning** (Claude Code) or simply do not tell Codex to go ahead, then quit the agent.
+
+If the second plan (after your edits) matches what you had in mind, the brief is ready.
+
+### Step 4: Log it
+
+Add one line to the **Log of AI use** section of your `README.md` (by hand, or ask the agent): today's date, the tool, and "interview and first brief for step 1; plan tested, not carried out".
+
+### Check the result
+
+- Your project folder holds `README.md` and `first-brief.md`, nothing else.
+- A colleague who reads only `first-brief.md` could say what the result will be and how you will check it.
+- The plan from the fresh session restated your goal correctly and found no gap you have not since filled or listed as an open question.
+
+## What you should have now
+
+- Three rewritten prompts and a sense of which lines matter most.
+- The `delegating-well/strong` folder: a script, `rt-means.csv`, `rt-plot.png` and `changes.md`, checked against the expected outcome; and the weak-prompt figure for comparison.
+- In your own-project folder: **`first-brief.md`**, tested in plan mode in a fresh session, and a new line in the AI-use log.
+
+In *Organising a project for an agent*, the brief moves into a `notes/` folder, and the project gets an `AGENTS.md` file so that every session starts knowing what the project is.

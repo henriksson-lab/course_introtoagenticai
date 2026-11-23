@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="1000" height="460" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="460" fill="#fff"/>
+  <text x="250" y="40" font-size="22" font-weight="bold" fill="#a8324a" text-anchor="middle">Copies with names</text>
+  <rect x="40" y="60" width="420" height="320" rx="8" fill="#fafafa" stroke="#bbb" stroke-width="1.5"/>
+  <g font-size="18" fill="#333" font-family="Menlo, Consolas, monospace">
+    <text x="60" y="100">analysis.R</text>
+    <text x="60" y="135">analysis_v2.R</text>
+    <text x="60" y="170">analysis_v2_JH.R</text>
+    <text x="60" y="205">analysis_final.R</text>
+    <text x="60" y="240">analysis_final_fixed.R</text>
+    <text x="60" y="275">analysis_final_fixed(1).R</text>
+    <text x="60" y="310">analysis_USE_THIS.R</text>
+    <text x="60" y="345">old/analysis_backup.R</text>
+  </g>
+  <text x="250" y="420" font-size="18" fill="#555" text-anchor="middle">Which one made Figure 2? What differs?</text>
+  <text x="750" y="40" font-size="22" font-weight="bold" fill="#2a7f8f" text-anchor="middle">One file, with a history</text>
+  <rect x="540" y="60" width="420" height="70" rx="8" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="560" y="103" font-size="20" fill="#333" font-family="Menlo, Consolas, monospace">analysis.R</text>
+  <g font-size="17" fill="#333">
+    <circle cx="575" cy="170" r="9" fill="#2a7f8f"/><text x="600" y="176">12 Mar  first version of the analysis</text>
+    <circle cx="575" cy="215" r="9" fill="#2a7f8f"/><text x="600" y="221">20 Mar  drop plate 7 (contaminated)</text>
+    <circle cx="575" cy="260" r="9" fill="#2a7f8f"/><text x="600" y="266">02 Apr  use median, not mean</text>
+    <circle cx="575" cy="305" r="9" fill="#2a7f8f"/><text x="600" y="311">15 Apr  Figure 2 for the manuscript</text>
+    <circle cx="575" cy="350" r="9" fill="#2a7f8f"/><text x="600" y="356">03 May  reviewer 2: log scale</text>
+    <line x1="575" y1="180" x2="575" y2="340" stroke="#2a7f8f" stroke-width="2"/>
+  </g>
+  <text x="750" y="420" font-size="18" fill="#555" text-anchor="middle">Every version is kept, dated and explained.</text>
+</svg>

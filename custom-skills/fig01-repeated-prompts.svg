@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="500" fill="#fff"/>
+  <text x="230" y="36" font-size="22" font-weight="bold" text-anchor="middle" fill="#333">Every session, typed again</text>
+  <g font-size="16">
+    <rect x="20" y="55" width="420" height="105" rx="8" fill="#f4f4f4" stroke="#bbb"/>
+    <text x="35" y="80" fill="#666" font-weight="bold">Monday, project A</text>
+    <text x="35" y="106" fill="#333">"8.5 cm wide, no title, Okabe-Ito colours,</text>
+    <text x="35" y="128" fill="#333">control in black, PDF and PNG at 300 dpi..."</text>
+    <rect x="20" y="175" width="420" height="105" rx="8" fill="#f4f4f4" stroke="#bbb"/>
+    <text x="35" y="200" fill="#666" font-weight="bold">Wednesday, project A</text>
+    <text x="35" y="226" fill="#333">"8.5 cm wide, Okabe-Ito, PDF and PNG..."</text>
+    <text x="35" y="250" fill="#a8324a" font-style="italic">forgot: no title, control in black</text>
+    <rect x="20" y="295" width="420" height="105" rx="8" fill="#f4f4f4" stroke="#bbb"/>
+    <text x="35" y="320" fill="#666" font-weight="bold">Next month, project B</text>
+    <text x="35" y="346" fill="#333">"make a plot of this"</text>
+    <text x="35" y="370" fill="#a8324a" font-style="italic">forgot everything</text>
+    <text x="230" y="440" font-size="18" fill="#a8324a" text-anchor="middle">new session = starts from zero</text>
+  </g>
+  <line x1="470" y1="230" x2="530" y2="230" stroke="#555" stroke-width="3"/>
+  <path d="M530,222 L545,230 L530,238 z" fill="#555"/>
+  <text x="770" y="36" font-size="22" font-weight="bold" text-anchor="middle" fill="#333">Four figures, no family</text>
+  <!-- panel 1: good -->
+  <g>
+    <rect x="565" y="60" width="190" height="160" fill="#fff" stroke="#ddd"/>
+    <line x1="590" y1="200" x2="740" y2="200" stroke="#333"/><line x1="590" y1="80" x2="590" y2="200" stroke="#333"/>
+    <polyline points="595,190 640,165 690,130 735,95" fill="none" stroke="#000" stroke-width="3"/>
+    <polyline points="595,192 640,180 690,160 735,140" fill="none" stroke="#E69F00" stroke-width="3"/>
+  </g>
+  <!-- panel 2: title + grey -->
+  <g>
+    <rect x="785" y="60" width="190" height="160" fill="#e8e8e8" stroke="#ddd"/>
+    <text x="880" y="80" font-size="15" font-weight="bold" text-anchor="middle" fill="#333">Growth by treatment</text>
+    <line x1="810" y1="200" x2="960" y2="200" stroke="#fff"/><line x1="810" y1="150" x2="960" y2="150" stroke="#fff"/><line x1="810" y1="110" x2="960" y2="110" stroke="#fff"/>
+    <polyline points="815,190 860,165 910,130 955,95" fill="none" stroke="#e5534b" stroke-width="3"/>
+    <polyline points="815,192 860,180 910,160 955,140" fill="none" stroke="#20b2aa" stroke-width="3"/>
+  </g>
+  <!-- panel 3: bars, other colours -->
+  <g>
+    <rect x="565" y="245" width="190" height="160" fill="#fff" stroke="#ddd"/>
+    <line x1="590" y1="385" x2="740" y2="385" stroke="#333"/>
+    <rect x="605" y="300" width="30" height="85" fill="#1f77b4"/><rect x="645" y="320" width="30" height="65" fill="#ff7f0e"/><rect x="685" y="285" width="30" height="100" fill="#2ca02c"/>
+  </g>
+  <!-- panel 4: big fonts, box -->
+  <g>
+    <rect x="785" y="245" width="190" height="160" fill="#fff" stroke="#333" stroke-width="2"/>
+    <text x="880" y="275" font-size="20" font-weight="bold" text-anchor="middle" fill="#333">FIGURE 4</text>
+    <circle cx="830" cy="360" r="7" fill="#a8324a"/><circle cx="860" cy="340" r="7" fill="#a8324a"/><circle cx="895" cy="320" r="7" fill="#6b4fa0"/><circle cx="930" cy="300" r="7" fill="#6b4fa0"/>
+  </g>
+  <text x="770" y="440" font-size="18" fill="#a8324a" text-anchor="middle">titles, backgrounds, colours all differ</text>
+</svg>

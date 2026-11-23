@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 482" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="482" fill="#ffffff"/>
+  <line x1="360.0" y1="34" x2="360.0" y2="400" stroke="#e6e6e6"/>
+  <text x="360.0" y="422.0" font-size="15" fill="#666666" text-anchor="middle">1470</text>
+  <line x1="440.0" y1="34" x2="440.0" y2="400" stroke="#e6e6e6"/>
+  <text x="440.0" y="422.0" font-size="15" fill="#666666" text-anchor="middle">1480</text>
+  <line x1="520.0" y1="34" x2="520.0" y2="400" stroke="#e6e6e6"/>
+  <text x="520.0" y="422.0" font-size="15" fill="#666666" text-anchor="middle">1490</text>
+  <line x1="600.0" y1="34" x2="600.0" y2="400" stroke="#e6e6e6"/>
+  <text x="600.0" y="422.0" font-size="15" fill="#666666" text-anchor="middle">1500</text>
+  <line x1="680.0" y1="34" x2="680.0" y2="400" stroke="#e6e6e6"/>
+  <text x="680.0" y="422.0" font-size="15" fill="#666666" text-anchor="middle">1510</text>
+  <line x1="760.0" y1="34" x2="760.0" y2="400" stroke="#e6e6e6"/>
+  <text x="760.0" y="422.0" font-size="15" fill="#666666" text-anchor="middle">1520</text>
+  <line x1="840.0" y1="34" x2="840.0" y2="400" stroke="#e6e6e6"/>
+  <text x="840.0" y="422.0" font-size="15" fill="#666666" text-anchor="middle">1530</text>
+  <line x1="920.0" y1="34" x2="920.0" y2="400" stroke="#e6e6e6"/>
+  <text x="920.0" y="422.0" font-size="15" fill="#666666" text-anchor="middle">1540</text>
+  <rect x="735.2" y="34" width="184.8" height="366" fill="#2a7f8f" fill-opacity="0.07"/>
+  <text x="348.0" y="57.0" font-size="15" fill="#333" text-anchor="end">1. Gemini 4 Carbon (High)</text>
+  <line x1="735.2" y1="52.0" x2="889.6" y2="52.0" stroke="#2a7f8f" stroke-width="2.5"/>
+  <circle cx="812.0" cy="52.0" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="348.0" y="81.0" font-size="15" fill="#333" text-anchor="end">2. Gemini 4 Argon (High)</text>
+  <line x1="718.4" y1="76.0" x2="798.4" y2="76.0" stroke="#2a7f8f" stroke-width="2.5"/>
+  <circle cx="758.4" cy="76.0" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="348.0" y="105.0" font-size="15" fill="#333" text-anchor="end">3. Gemini 4 Neon (High)</text>
+  <line x1="630.4" y1="100.0" x2="765.6" y2="100.0" stroke="#2a7f8f" stroke-width="2.5"/>
+  <circle cx="697.6" cy="100.0" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="348.0" y="129.0" font-size="15" fill="#333" text-anchor="end">4. Muse Wonder (Max)</text>
+  <line x1="649.6" y1="124.0" x2="740.8" y2="124.0" stroke="#2a7f8f" stroke-width="2.5"/>
+  <circle cx="695.2" cy="124.0" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="348.0" y="153.0" font-size="15" fill="#333" text-anchor="end">5. Claude Opus 5.5 (High)</text>
+  <line x1="611.2" y1="148.0" x2="701.6" y2="148.0" stroke="#2a7f8f" stroke-width="2.5"/>
+  <circle cx="656.0" cy="148.0" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="348.0" y="177.0" font-size="15" fill="#333" text-anchor="end">6. Claude Fable 5 (High)</text>
+  <line x1="599.2" y1="172.0" x2="665.6" y2="172.0" stroke="#2a7f8f" stroke-width="2.5"/>
+  <circle cx="632.8" cy="172.0" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="348.0" y="201.0" font-size="15" fill="#333" text-anchor="end">7. Claude Opus 4.6 (High)</text>
+  <line x1="596.8" y1="196.0" x2="648.8" y2="196.0" stroke="#2a7f8f" stroke-width="2.5"/>
+  <circle cx="623.2" cy="196.0" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="348.0" y="225.0" font-size="15" fill="#333" text-anchor="end">8. Claude Fable 5.2 (Max)</text>
+  <line x1="550.4" y1="220.0" x2="684.8" y2="220.0" stroke="#2a7f8f" stroke-width="2.5"/>
+  <circle cx="617.6" cy="220.0" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="348.0" y="249.0" font-size="15" fill="#333" text-anchor="end">9. Claude Fable 5.1 (Max)</text>
+  <line x1="574.4" y1="244.0" x2="659.2" y2="244.0" stroke="#2a7f8f" stroke-width="2.5"/>
+  <circle cx="616.8" cy="244.0" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="348.0" y="273.0" font-size="15" fill="#333" text-anchor="end">10. Claude Opus 4.7 (High)</text>
+  <line x1="579.2" y1="268.0" x2="639.2" y2="268.0" stroke="#2a7f8f" stroke-width="2.5"/>
+  <circle cx="609.6" cy="268.0" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="348.0" y="297.0" font-size="15" fill="#333" text-anchor="end">11. Gemini 3.8 Flash (High)</text>
+  <line x1="552.0" y1="292.0" x2="616.0" y2="292.0" stroke="#2a7f8f" stroke-width="2.5"/>
+  <circle cx="584.0" cy="292.0" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="348.0" y="321.0" font-size="15" fill="#333" text-anchor="end">12. Muse Spark 1.3 (Max)</text>
+  <line x1="544.0" y1="316.0" x2="620.8" y2="316.0" stroke="#2a7f8f" stroke-width="2.5"/>
+  <circle cx="582.4" cy="316.0" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="348.0" y="345.0" font-size="15" fill="#333" text-anchor="end">13. Claude Opus 4.6</text>
+  <line x1="546.4" y1="340.0" x2="597.6" y2="340.0" stroke="#2a7f8f" stroke-width="2.5"/>
+  <circle cx="572.0" cy="340.0" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="348.0" y="369.0" font-size="15" fill="#333" text-anchor="end">14. Claude Opus 4.7</text>
+  <line x1="522.4" y1="364.0" x2="582.4" y2="364.0" stroke="#2a7f8f" stroke-width="2.5"/>
+  <circle cx="552.0" cy="364.0" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="348.0" y="393.0" font-size="15" fill="#333" text-anchor="end">15. Muse Spark 1.2 (xHigh)</text>
+  <line x1="498.4" y1="388.0" x2="585.6" y2="388.0" stroke="#2a7f8f" stroke-width="2.5"/>
+  <circle cx="542.4" cy="388.0" r="5" fill="#2a7f8f" stroke="#fff" stroke-width="1.5"/>
+  <text x="640.0" y="446.0" font-size="16" fill="#333" text-anchor="middle">rating from blind side-by-side votes (style control), with 95 % interval</text>
+  <text x="920.0" y="26.0" font-size="14" fill="#2a7f8f" text-anchor="end">shaded: overlaps the top model's interval</text>
+  <text x="980.0" y="474.0" font-size="13" fill="#999" text-anchor="end">Data: LMArena (arena.ai) text leaderboard, overall, snapshot 2026-11-22, Hugging Face lmarena-ai/leaderboard-dataset, CC BY 4.0; downloaded 2026-11-23.</text>
+</svg>

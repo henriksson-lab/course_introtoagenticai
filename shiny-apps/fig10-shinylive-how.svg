@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="500" fill="#ffffff"/>
+  <text x="170" y="36" font-size="22" fill="#5a6670" text-anchor="middle" font-weight="bold" xml:space="preserve">GitHub Pages</text>
+  <rect x="20" y="55" width="300" height="300" rx="10" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="40" y="95" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">index.html</text>
+  <text x="40" y="133" font-size="17" fill="#2a7f8f" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">app.json</text>
+  <text x="40" y="171" font-size="17" fill="#2a7f8f" text-anchor="start" font-weight="normal" xml:space="preserve">   app.R + water-quality.csv</text>
+  <text x="40" y="209" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">shinylive/</text>
+  <text x="40" y="247" font-size="17" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">   R for the browser (webR)</text>
+  <text x="40" y="285" font-size="17" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">   packages: shiny, ggplot2 ...</text>
+  <text x="170" y="385" font-size="16" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">only stores and sends files;</text>
+  <text x="170" y="407" font-size="16" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">no R runs here</text>
+  <line x1="330" y1="200" x2="520" y2="200" stroke="#1b2a3a" stroke-width="3" marker-end="url(#arw)"/>
+  <text x="425" y="170" font-size="16" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">download, once</text>
+  <text x="425" y="190" font-size="16" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">(several MB)</text>
+  <text x="750" y="36" font-size="22" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">The visitor's browser</text>
+  <rect x="530" y="55" width="450" height="300" rx="10" fill="#ffffff" stroke="#9aa4ad" stroke-width="1.5"/>
+  <rect x="530" y="55" width="450" height="40" rx="10" fill="#e9edf1"/>
+  <rect x="530" y="85" width="450" height="10" fill="#e9edf1"/>
+  <circle cx="548" cy="75" r="6" fill="#e0605a"/>
+  <circle cx="568" cy="75" r="6" fill="#e6b84f"/>
+  <circle cx="588" cy="75" r="6" fill="#5fbf6a"/>
+  <rect x="610" y="63" width="355" height="24" rx="12" fill="#ffffff" stroke="#c9d3dd" stroke-width="1"/>
+  <text x="624" y="80" font-size="13" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">you.github.io/my-project/water-app/</text>
+  <rect x="550" y="110" width="410" height="225" rx="8" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="755" y="145" font-size="18" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">R runs here, inside the browser</text>
+  <text x="755" y="175" font-size="16" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">app.R reads water-quality.csv</text>
+  <line x1="600" y1="315" x2="910" y2="315" stroke="#9aa4ad" stroke-width="2"/>
+  <line x1="600" y1="195" x2="600" y2="315" stroke="#9aa4ad" stroke-width="2"/>
+  <path d="M601.1,297.7 L605.1,296.0 L609.9,295.6 L613.9,298.2 L617.8,295.3 L621.8,298.7 L626.6,299.4 L630.6,298.4 L635.1,304.9 L639.1,301.6 L643.9,304.2 L647.8,305.2 L652.4,306.1 L656.3,305.2 L661.2,305.4 L665.1,302.5 L669.9,303.2 L673.9,304.0 L678.4,304.0 L682.4,299.2 L687.2,299.9 L691.2,299.9 L695.7,297.7 L699.7,296.5 L704.5,294.1 L708.4,293.6 L713.2,295.3 L717.2,301.1 L721.2,295.1 L725.1,300.8 L729.9,301.1 L733.9,301.3 L738.4,304.2 L742.4,303.0 L747.2,303.7 L751.2,305.2 L755.7,302.0 L759.7,305.4 L764.5,303.5 L768.4,307.3 L773.3,306.4 L777.2,301.8 L781.8,301.8 L785.7,301.1 L790.5,295.1 L794.5,297.0 L799.0,295.8 L803.0,297.5 L807.8,298.4 L811.8,296.5 L816.6,296.8 L820.5,296.8 L824.8,295.3 L828.7,294.8 L833.6,299.4 L837.5,304.0 L842.1,301.3 L846.0,303.2 L850.8,306.6 L854.8,304.0 L859.3,302.0 L863.3,306.4 L868.1,301.8 L872.1,305.4 L876.9,304.2 L880.8,301.1 L885.4,298.0 L889.3,299.4 L894.1,298.7 L898.1,296.0 L902.6,297.0 L906.6,297.0" stroke="#2a7f8f" stroke-width="1.5" fill="none"/>
+  <path d="M601.1,231.0 L605.1,237.5 L609.9,235.6 L613.9,244.0 L617.8,256.4 L621.8,260.3 L626.6,248.8 L630.6,252.4 L635.1,251.6 L639.1,263.4 L643.9,265.8 L647.8,278.8 L652.4,266.8 L656.3,268.0 L661.2,270.4 L665.1,266.5 L669.9,268.7 L673.9,265.8 L678.4,267.0 L682.4,248.8 L687.2,264.6 L691.2,244.2 L695.7,236.8 L699.7,233.2 L704.5,227.4 L708.4,256.0 L713.2,241.6 L717.2,234.1 L721.2,249.7 L725.1,237.5 L729.9,254.0 L733.9,244.0 L738.4,244.9 L742.4,264.6 L747.2,279.2 L751.2,269.4 L755.7,260.3 L759.7,273.0 L764.5,259.1 L768.4,250.0 L773.3,260.8 L777.2,269.9 L781.8,241.8 L785.7,251.6 L790.5,254.0 L794.5,233.2 L799.0,240.1 L803.0,229.8 L807.8,234.6 L811.8,228.6 L816.6,231.5 L820.5,227.4 L824.8,229.8 L828.7,244.9 L833.6,230.0 L837.5,244.0 L842.1,237.7 L846.0,256.2 L850.8,252.8 L854.8,269.6 L859.3,243.7 L863.3,264.8 L868.1,261.7 L872.1,265.3 L876.9,255.2 L880.8,254.3 L885.4,260.8 L889.3,237.5 L894.1,223.6 L898.1,229.8 L902.6,233.2 L906.6,203.4" stroke="#6b4fa0" stroke-width="1.5" fill="none"/>
+  <text x="500" y="450" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">The first visit is slow while R loads; later visits use the browser's cache.</text>
+  <text x="500" y="476" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">No server means nothing to maintain, and nothing kept secret.</text>
+</svg>

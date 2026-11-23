@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="r" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect width="1000" height="420" fill="#ffffff"/>
+  <!-- boxes -->
+  <rect x="20" y="90" width="150" height="80" rx="10" fill="#1b2a3a"/>
+  <text x="95" y="124" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">Your</text>
+  <text x="95" y="148" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">request</text>
+  <line x1="170" y1="130" x2="212" y2="130" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="218" y="80" width="170" height="100" rx="10" fill="#fbeef1" stroke="#a8324a" stroke-width="2.5"/>
+  <text x="303" y="122" text-anchor="middle" font-size="18" font-weight="bold" fill="#a8324a">Input</text>
+  <text x="303" y="146" text-anchor="middle" font-size="18" font-weight="bold" fill="#a8324a">classifier</text>
+  <line x1="388" y1="130" x2="430" y2="130" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="436" y="80" width="150" height="100" rx="10" fill="#ffffff" stroke="#6b4fa0" stroke-width="2.5"/>
+  <text x="511" y="136" text-anchor="middle" font-size="20" font-weight="bold" fill="#6b4fa0">Model</text>
+  <line x1="586" y1="130" x2="628" y2="130" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="634" y="80" width="170" height="100" rx="10" fill="#fbeef1" stroke="#a8324a" stroke-width="2.5"/>
+  <text x="719" y="122" text-anchor="middle" font-size="18" font-weight="bold" fill="#a8324a">Output</text>
+  <text x="719" y="146" text-anchor="middle" font-size="18" font-weight="bold" fill="#a8324a">classifier</text>
+  <line x1="804" y1="130" x2="846" y2="130" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="852" y="90" width="130" height="80" rx="10" fill="#2a7f8f"/>
+  <text x="917" y="136" text-anchor="middle" font-size="18" font-weight="bold" fill="#fff">Reply</text>
+  <!-- block arrows -->
+  <line x1="303" y1="180" x2="303" y2="262" stroke="#a8324a" stroke-width="2.5" marker-end="url(#r)"/>
+  <line x1="719" y1="180" x2="719" y2="262" stroke="#a8324a" stroke-width="2.5" marker-end="url(#r)"/>
+  <rect x="160" y="268" width="286" height="96" rx="10" fill="#a8324a"/>
+  <text x="303" y="302" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">Blocked before the</text>
+  <text x="303" y="326" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">model answers:</text>
+  <text x="303" y="350" text-anchor="middle" font-size="16" fill="#fff">a system message, no reply</text>
+  <rect x="576" y="268" width="286" height="96" rx="10" fill="#a8324a"/>
+  <text x="719" y="302" text-anchor="middle" font-size="17" font-weight="bold" fill="#fff">Stopped while it answers:</text>
+  <text x="719" y="326" text-anchor="middle" font-size="16" fill="#fff">answer cut off, session ended,</text>
+  <text x="719" y="350" text-anchor="middle" font-size="16" fill="#fff">or a weaker model takes over</text>
+  <text x="500" y="40" text-anchor="middle" font-size="19" font-weight="bold" fill="#1b2a3a">A classifier is a separate, smaller model that only asks: is this in a blocked area?</text>
+  <text x="500" y="404" text-anchor="middle" font-size="17" fill="#3a4a5a">Used for the highest-risk areas: biological and chemical weapons, some cyber-attack help.</text>
+</svg>

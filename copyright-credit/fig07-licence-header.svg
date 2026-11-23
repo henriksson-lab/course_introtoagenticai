@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#fff"/>
+  <rect x="20" y="15" width="640" height="420" rx="10" fill="#1f2933"/>
+  <rect x="20" y="15" width="640" height="38" rx="10" fill="#323f4b"/>
+  <text x="40" y="40" font-size="16" fill="#cfd6dc">fit_mm.py  (written by the agent)</text>
+  <g font-family="Courier New, monospace" font-size="16" xml:space="preserve">
+    <text x="40" y="85" fill="#9aa5b1"># fit_mm.py - fit the Michaelis-Menten model</text>
+    <text x="40" y="110" fill="#9aa5b1">#</text>
+    <text x="40" y="135" fill="#e0c27a"># Copyright (C) 2018 Example Enzyme Lab</text>
+    <text x="40" y="160" fill="#e0c27a"># This program is free software: you can</text>
+    <text x="40" y="185" fill="#e0c27a"># redistribute it and/or modify it under the</text>
+    <text x="40" y="210" fill="#e0c27a"># terms of the GNU General Public License ...</text>
+    <text x="40" y="250" fill="#cfd6dc">import numpy as np</text>
+    <text x="40" y="275" fill="#cfd6dc">from scipy.optimize import curve_fit</text>
+    <text x="40" y="315" fill="#cfd6dc">def michaelis_menten(s, vmax, km):</text>
+    <text x="40" y="340" fill="#cfd6dc">    return vmax * s / (km + s)</text>
+    <text x="40" y="380" fill="#cfd6dc">def fit(s, v):</text>
+    <text x="40" y="405" fill="#cfd6dc">    ...</text>
+  </g>
+  <rect x="32" y="117" width="500" height="103" rx="5" fill="none" stroke="#a8324a" stroke-width="3"/>
+  <text x="655" y="455" font-size="14" fill="#8a97a5" text-anchor="end">illustrative; the lab is invented</text>
+  <g font-size="19">
+    <text x="690" y="110" font-weight="bold" fill="#a8324a">Someone else's</text>
+    <text x="690" y="136" font-weight="bold" fill="#a8324a">copyright and licence</text>
+    <text x="690" y="176" fill="#333">GPL: if you share the</text>
+    <text x="690" y="202" fill="#333">program, it must stay GPL.</text>
+    <text x="690" y="242" fill="#333">Your README says MIT.</text>
+    <text x="690" y="300" font-weight="bold" fill="#2a7f8f">The header is a gift:</text>
+    <text x="690" y="326" fill="#333">it shows where to look.</text>
+    <text x="690" y="366" fill="#333">The same code without</text>
+    <text x="690" y="392" fill="#333">a header is harder to spot.</text>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="1000" height="450" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="450" fill="#fff"/>
+  <rect x="20" y="15" width="960" height="410" rx="10" fill="#1e1e1e"/>
+  <circle cx="45" cy="38" r="7" fill="#e06c5a"/><circle cx="67" cy="38" r="7" fill="#e5b84f"/><circle cx="89" cy="38" r="7" fill="#6cbf6a"/>
+  <text x="500" y="43" font-size="15" fill="#aaa" text-anchor="middle">~/agentic-course/track-survey</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="17">
+    <text x="45" y="85" fill="#9ad">&gt; Check every quote in report.qmd against the export.</text>
+    <text x="45" y="110" fill="#9ad">  Exact match only. Give me a table.</text>
+    <text x="45" y="148" fill="#ddd">● Ran python check_quotes.py</text>
+    <text x="65" y="186" fill="#ddd" font-weight="bold">quote (start)</text><text x="560" y="186" fill="#ddd" font-weight="bold">respondent</text><text x="760" y="186" fill="#ddd" font-weight="bold">found</text>
+    <line x1="65" y1="198" x2="900" y2="198" stroke="#888"/>
+    <text x="65" y="226" fill="#ddd">"Spread out the deadlines…"</text><text x="560" y="226" fill="#ddd">80</text><text x="760" y="226" fill="#6cbf6a">exact</text>
+    <text x="65" y="256" fill="#ddd">"Feedback was slow."</text><text x="560" y="256" fill="#ddd">61</text><text x="760" y="256" fill="#6cbf6a">exact</text>
+    <text x="65" y="286" fill="#ddd">"The labs made the course…"</text><text x="560" y="286" fill="#ddd">27</text><text x="760" y="286" fill="#6cbf6a">exact</text>
+    <text x="65" y="316" fill="#ddd">"Weeks 3 and 4 were crushing…"</text><text x="560" y="316" fill="#ddd">–</text><text x="760" y="316" fill="#e06c5a" font-weight="bold">NOT FOUND</text>
+    <text x="45" y="360" fill="#ddd">● 3 of 4 quotes found word for word. One is not in the</text>
+    <text x="45" y="385" fill="#ddd">  data; I have removed it from the report.</text>
+  </g>
+  <rect x="740" y="296" width="200" height="30" rx="4" fill="none" stroke="#e5b84f" stroke-width="2"/>
+  <text x="985" y="442" font-size="13" fill="#999" text-anchor="end">illustrative</text>
+</svg>

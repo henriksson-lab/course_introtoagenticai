@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#fff"/>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <text x="250" y="40" font-size="20" font-weight="bold" fill="#2a7f8f" text-anchor="middle">"Overall, I am satisfied."</text>
+  <text x="250" y="70" font-size="17" fill="#333" text-anchor="middle">agree = good</text>
+  <text x="750" y="40" font-size="20" font-weight="bold" fill="#a8324a" text-anchor="middle">"The workload was unreasonably high."</text>
+  <text x="750" y="70" font-size="17" fill="#333" text-anchor="middle">agree = bad</text>
+  <!-- scales -->
+  <g font-size="22" text-anchor="middle" font-weight="bold">
+    <g fill="#fff" stroke="#2a7f8f" stroke-width="2">
+      <rect x="60" y="100" width="70" height="56" rx="6"/><rect x="140" y="100" width="70" height="56" rx="6"/><rect x="220" y="100" width="70" height="56" rx="6"/><rect x="300" y="100" width="70" height="56" rx="6"/><rect x="380" y="100" width="70" height="56" rx="6" fill="#e3f0f2"/>
+    </g>
+    <g fill="#2a7f8f"><text x="95" y="136">1</text><text x="175" y="136">2</text><text x="255" y="136">3</text><text x="335" y="136">4</text><text x="415" y="136">5</text></g>
+    <g fill="#fff" stroke="#a8324a" stroke-width="2">
+      <rect x="560" y="100" width="70" height="56" rx="6"/><rect x="640" y="100" width="70" height="56" rx="6"/><rect x="720" y="100" width="70" height="56" rx="6"/><rect x="800" y="100" width="70" height="56" rx="6"/><rect x="880" y="100" width="70" height="56" rx="6" fill="#f8e9ec"/>
+    </g>
+    <g fill="#a8324a"><text x="595" y="136">1</text><text x="675" y="136">2</text><text x="755" y="136">3</text><text x="835" y="136">4</text><text x="915" y="136">5</text></g>
+  </g>
+  <!-- reversed -->
+  <text x="755" y="362" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">reversed: new = 6 − old</text>
+  <g stroke="#555" stroke-width="1.5">
+    <line x1="595" y1="160" x2="905" y2="230" marker-end="url(#a)"/><line x1="915" y1="160" x2="605" y2="230" marker-end="url(#a)"/>
+  </g>
+  <g font-size="22" text-anchor="middle" font-weight="bold">
+    <g fill="#fff" stroke="#2a7f8f" stroke-width="2">
+      <rect x="560" y="240" width="70" height="56" rx="6" fill="#e3f0f2"/><rect x="640" y="240" width="70" height="56" rx="6"/><rect x="720" y="240" width="70" height="56" rx="6"/><rect x="800" y="240" width="70" height="56" rx="6"/><rect x="880" y="240" width="70" height="56" rx="6"/>
+    </g>
+    <g fill="#2a7f8f"><text x="595" y="276">5</text><text x="675" y="276">4</text><text x="755" y="276">3</text><text x="835" y="276">2</text><text x="915" y="276">1</text></g>
+  </g>
+  <text x="755" y="330" font-size="17" fill="#333" text-anchor="middle">now 5 = good, like every other item</text>
+  <rect x="40" y="200" width="440" height="170" rx="12" fill="#f6f1e3" stroke="#8a6a12"/>
+  <text x="260" y="238" font-size="19" font-weight="bold" fill="#8a6a12" text-anchor="middle">Reverse for scores, not for plots</text>
+  <text x="260" y="275" font-size="17" fill="#333" text-anchor="middle">A scale score or a "good vs bad" summary</text>
+  <text x="260" y="300" font-size="17" fill="#333" text-anchor="middle">needs all items pointing the same way.</text>
+  <text x="260" y="335" font-size="17" fill="#333" text-anchor="middle">A plot shows each item as worded,</text>
+  <text x="260" y="360" font-size="17" fill="#333" text-anchor="middle">marked (R).</text>
+</svg>

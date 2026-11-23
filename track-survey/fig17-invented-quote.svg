@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <text x="250" y="36" font-size="21" font-weight="bold" fill="#333" text-anchor="middle">What the students wrote</text>
+  <g font-size="17" fill="#333">
+    <rect x="20" y="55" width="460" height="56" rx="8" fill="#f4f4f4" stroke="#ccc"/>
+    <text x="34" y="89">"Too much at once in the middle of the course."</text>
+    <rect x="20" y="121" width="460" height="56" rx="8" fill="#f4f4f4" stroke="#ccc"/>
+    <text x="34" y="155">"Spread out the deadlines. Week 4 was a nightmare."</text>
+    <rect x="20" y="187" width="460" height="56" rx="8" fill="#f4f4f4" stroke="#ccc"/>
+    <text x="34" y="221">"Heavy workload, I worked every weekend."</text>
+    <rect x="20" y="253" width="460" height="56" rx="8" fill="#f4f4f4" stroke="#ccc"/>
+    <text x="34" y="287">"För mycket på en gång under vecka 3 och 4."</text>
+  </g>
+  <text x="750" y="36" font-size="21" font-weight="bold" fill="#333" text-anchor="middle">What a summary may say</text>
+  <rect x="520" y="55" width="460" height="120" rx="8" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="534" y="88" font-size="17" font-weight="bold" fill="#2a7f8f">Summary: fine</text>
+  <text x="534" y="118" font-size="17" fill="#333">Workload in weeks 3-4 was the most</text>
+  <text x="534" y="143" font-size="17" fill="#333">common complaint (16 of 59 comments).</text>
+  <rect x="520" y="189" width="460" height="120" rx="8" fill="#f8e9ec" stroke="#a8324a" stroke-width="3"/>
+  <text x="534" y="222" font-size="17" font-weight="bold" fill="#a8324a">"Quote": invented</text>
+  <text x="534" y="252" font-size="17" fill="#333">As one student put it: "Weeks 3 and 4</text>
+  <text x="534" y="277" font-size="17" fill="#333">were crushing, I barely slept."</text>
+  <text x="500" y="355" font-size="19" fill="#333" text-anchor="middle">The invented quote sounds like a student and fits the theme. Nobody wrote it.</text>
+  <text x="500" y="390" font-size="19" fill="#333" text-anchor="middle">In a report to a programme board, that is a fabricated piece of evidence.</text>
+  <text x="985" y="432" font-size="13" fill="#999" text-anchor="end">illustrative</text>
+</svg>

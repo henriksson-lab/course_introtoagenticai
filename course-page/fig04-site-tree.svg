@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#fff"/>
+  <rect x="30" y="20" width="520" height="430" rx="10" fill="#f7f7f7" stroke="#bbb" stroke-width="2"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="18" fill="#333">
+    <text x="55" y="60" font-weight="bold">plant-growth-page/</text>
+    <text x="75" y="98">├── _quarto.yml</text>
+    <text x="75" y="133">├── index.qmd</text>
+    <text x="75" y="168">├── results.qmd</text>
+    <text x="75" y="203">├── slides.qmd</text>
+    <text x="75" y="238">├── about.qmd</text>
+    <text x="75" y="273">├── figures/</text>
+    <text x="75" y="308">│   └── growth_plot.png</text>
+    <text x="75" y="343">├── README.md</text>
+    <text x="75" y="378">├── .nojekyll</text>
+    <text x="75" y="413">└── docs/</text>
+  </g>
+  <g font-size="17">
+    <text x="590" y="103" fill="#8a6a12" font-weight="bold">settings: title, sidebar, output folder</text>
+    <text x="590" y="150" fill="#2a7f8f" font-weight="bold">one .qmd per page</text>
+    <text x="590" y="175" fill="#333">home, results, slides, about</text>
+    <line x1="580" y1="133" x2="580" y2="240" stroke="#2a7f8f" stroke-width="3"/>
+    <text x="590" y="295" fill="#6b4fa0" font-weight="bold">copies of the figures,</text>
+    <text x="590" y="320" fill="#333">with where they came from</text>
+    <text x="590" y="383" fill="#555">empty file, copied into docs/: "serve as is"</text>
+    <text x="590" y="418" fill="#a8324a" font-weight="bold">rendered site: made by Quarto</text>
+  </g>
+</svg>

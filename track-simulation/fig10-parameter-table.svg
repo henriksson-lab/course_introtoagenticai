@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#fff"/>
+  <rect x="20" y="20" width="960" height="370" rx="8" fill="#fff" stroke="#999"/>
+  <rect x="20" y="20" width="960" height="40" rx="8" fill="#eee"/>
+  <text x="40" y="47" font-size="18" fill="#333">parameters.csv</text>
+  <g font-size="18">
+    <rect x="20" y="60" width="960" height="44" fill="#e3f0f2"/>
+    <text x="40" y="89" font-weight="bold" fill="#2a7f8f">name</text>
+    <text x="250" y="89" font-weight="bold" fill="#2a7f8f">value</text>
+    <text x="360" y="89" font-weight="bold" fill="#2a7f8f">unit</text>
+    <text x="470" y="89" font-weight="bold" fill="#2a7f8f">meaning</text>
+    <text x="760" y="89" font-weight="bold" fill="#2a7f8f">source</text>
+    <g fill="#333">
+      <text x="40" y="136">dose</text><text x="250" y="136">500</text><text x="360" y="136">mg</text><text x="470" y="136">IV bolus at t = 0</text><text x="760" y="136">protocol</text>
+      <text x="40" y="180">volume</text><text x="250" y="180">50</text><text x="360" y="180">L</text><text x="470" y="180">volume of distribution</text><text x="760" y="180">invented</text>
+      <text x="40" y="224">half_life</text><text x="250" y="224">6</text><text x="360" y="224" font-weight="bold" fill="#a8324a">h</text><text x="470" y="224">elimination half-life</text><text x="760" y="224">invented</text>
+      <text x="40" y="268">interval</text><text x="250" y="268">8</text><text x="360" y="268">h</text><text x="470" y="268">time between doses</text><text x="760" y="268">protocol</text>
+      <text x="40" y="312">effective</text><text x="250" y="312">2</text><text x="360" y="312">mg/L</text><text x="470" y="312">lowest level that works</text><text x="760" y="312">invented</text>
+    </g>
+    <g stroke="#ddd"><line x1="20" y1="148" x2="980" y2="148"/><line x1="20" y1="192" x2="980" y2="192"/><line x1="20" y1="236" x2="980" y2="236"/><line x1="20" y1="280" x2="980" y2="280"/><line x1="20" y1="324" x2="980" y2="324"/></g>
+  </g>
+  <text x="500" y="362" font-size="18" fill="#555" text-anchor="middle">One row per number. The unit and the source column are the ones people leave out.</text>
+  <text x="975" y="412" font-size="13" fill="#999" text-anchor="end">illustrative</text>
+</svg>

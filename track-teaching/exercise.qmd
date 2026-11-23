@@ -1,0 +1,228 @@
+---
+title: "Exercise: a quiz, variants and slides"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- **converted a question bank** in a plain text file into a Canvas quiz (a QTI zip), imported it, and taken it in Student View,
+- **written a new bank of questions** with the agent, with a reason under every choice, and **checked it** by solving a sample yourself,
+- **generated exercise variants** with a script that computes the answers, and checked two by hand,
+- **turned an outline into a Quarto slide deck** with speaker notes, SVG figures and alt text,
+- applied one of these to **your own course** (or, if your project is not about teaching, made a talk about your project from an outline).
+
+All example material is invented for this course. Nothing in it is about real students.
+
+## Before you start
+
+- You have done *A course or project page*: Quarto is installed and you have rendered a page.
+- **Python 3** is installed (the agent can check: "Is Python 3 installed? Which command runs it?"). The converter script needs nothing else.
+- **For the Canvas part:** a Canvas course where you are a teacher and that students cannot see. Many universities give teachers a **sandbox course** on request; ask your Canvas support. An unpublished course of your own also works. If you have no Canvas access, do everything else and skip the import steps. Other learning platforms often import QTI too; ask your local support.
+- Download [teaching-example.zip](data/teaching-example.zip) and unzip it into your course folder, so that you have `~/agentic-course/teaching-example/` (Windows: `C:\Users\<you>\agentic-course\teaching-example\`) with three files:
+
+| File | What it is |
+|---|---|
+| `question-bank.md` | 10 questions on describing data, in a simple text format explained at the top of the file |
+| `bank2qti.py` | a converter: bank in, Canvas QTI zip and answer key out (Python standard library only) |
+| `lecture-outline.md` | an outline for one 45-minute lecture |
+
+Open `question-bank.md` in a text editor and read two questions. You should be able to see the stem, the choices, the star on the correct one and the `why:` line under each choice.
+
+Start the agent in the folder and make it a git repository first, so that every step can be undone (*Git as undo button and lab notebook*):
+
+| | Claude Code | Codex |
+|---|---|---|
+| Start | `cd ~/agentic-course/teaching-example` then `claude` | `cd ~/agentic-course/teaching-example` then `codex` |
+| First prompt | "Make this folder a git repository and commit the three files." | the same; if Codex is read-only in a new folder, use `/permissions` to allow edits in the workspace |
+
+## Worked example
+
+### Part 1: From text file to Canvas quiz
+
+Type:
+
+```text
+Run bank2qti.py on question-bank.md. Then explain in plain words what
+it wrote, what is inside the zip file, and what the line "Correct
+answer position" tells me. Do not change any files.
+```
+
+**What to look for.** The agent runs the script (approve the command; it only reads the bank and writes two files next to it). The output should be:
+
+```text
+Read 10 questions (6 multiple choice, 4 numeric).
+Correct answer position: B, A, B, B, B, B
+wrote question-bank-qti.zip
+wrote question-bank-key.md (private)
+```
+
+Five of the six correct answers are B. That is a flaw in the example bank, left in on purpose. Ask the agent to fix it:
+
+```text
+Move the correct answers in question-bank.md so that they are spread
+over A to D, without changing any wording: reorder the choices and
+keep each "why:" line with its choice. Then run bank2qti.py again and
+show me the new positions.
+```
+
+Open `question-bank.md` and check one moved question: is the star still on the right answer, and is each `why:` line still under its own choice?
+
+**Import into Canvas.**
+
+1. In your sandbox course, go to **Settings** and choose **Import Course Content** (some universities call it *Import Existing Content*).
+2. Content Type: **QTI .zip file**. Choose `question-bank-qti.zip`.
+3. If you see the option **Import existing quizzes as New Quizzes**, tick it only if your university uses New Quizzes. If you are unsure, ask your Canvas support which engine to use this term.
+4. Click **Import**. After a minute, the status says *Completed*, and the quiz "Describing data" appears under **Quizzes**, unpublished.
+
+#### Check the result
+
+1. **Open the quiz as a teacher.** It has 10 questions and 10 points. Open two questions in the editor: the multiple-choice question shows four choices with the right one marked, and the per-choice comments contain the `why:` text.
+2. **Student View** (Settings › Student View). Take the quiz:
+   - Answer question 2 (median) with `7`: full marks. Answer question 5 (standard error) with `2.0`: full marks.
+   - Answer question 1 (mean or median) **wrong** on purpose, with "The mean". After submitting, the feedback says why the mean is pulled upwards.
+   - Check that *typical* in question 1 is in italics and that the % signs in questions 4 and 8 display correctly.
+3. **Leave Student View**, and check the quiz settings: shuffle answers is on, one attempt, the quiz is not published.
+4. **Spot-check the key.** Open `question-bank-key.md` and solve questions 3, 5 and 8 yourself without looking. Compare.
+
+::: {.callout-note collapse="true" title="Expected outcome"}
+- 10 questions: 6 multiple choice, 4 numeric. Answers: q02 = 7, q03 = 7, q05 = 2 (margin 0.01), q08 = 25.
+- After the fix, the correct answers of the six multiple-choice questions are spread over A to D. The wording is unchanged; only the order of the choices.
+- The zip holds three files: `imsmanifest.xml`, and a folder with the questions and `assessment_meta.xml`.
+- In Canvas: a practice quiz with 10 points, shuffled answers, one attempt. If you imported as a New Quiz, check the per-choice feedback especially carefully: conversions are not always complete.
+- If the import fails, Canvas shows an error under *Current Jobs* on the import page. Copy the message to the agent and ask what it means; the usual cause is a malformed file, which the script's checks are designed to prevent.
+:::
+
+### Part 2: Write and check a new bank
+
+Now the agent writes questions. The topic is the next week of the same course, *Comparing two groups*. Pick it even if it is not your field; you know enough statistics to judge these questions, which is the point.
+
+```text
+Write 8 questions for week 3 of my first-year course, "Comparing two
+groups". Learning goals:
+1. the difference in means, and why it needs an uncertainty;
+2. what a p-value is and what it is not;
+3. effect size versus statistical significance;
+4. paired versus unpaired designs.
+My students often think p = 0.03 means "a 3 % chance the null hypothesis
+is true", and that a non-significant result proves there is no effect.
+
+Use exactly the format of question-bank.md: 6 multiple choice (4 choices,
+exactly one correct, a "why:" line under every choice) and 2 numeric
+(answer and margin). Spread the correct answers over A to D. Use
+realistic numbers from biology or medicine. Do not cite any studies.
+Write to week3-bank.md. Then run bank2qti.py on it. Then solve every
+question yourself as a student would and list any question where you
+are unsure about the key, or where a second choice could be defended.
+```
+
+**What to look for.** The script either writes the zip, or refuses and lists problems. If it refuses, ask the agent to fix the listed problems and run it again. Read the agent's list of doubtful questions; it is a good place to start your own check.
+
+#### Check the result
+
+Do the four checks from the lecture. Write down what you find.
+
+1. **Solve three at random without the key.** Ask the agent: "Pick three question numbers at random between 1 and 8, and show me only those stems and choices, no answers." Solve them, then compare with `week3-bank-key.md`.
+2. **Key positions.** The script prints them. Spread over A to D?
+3. **Read every reason.** Pay special attention to the p-value questions. Is every *wrong* choice actually wrong? The classic trap: "the probability of results at least this extreme, if there were no true difference" (correct) next to "the probability that the difference is due to chance" (a common misreading, but phrased so that some textbooks use it). If a distractor is defensible, ask the agent to replace it.
+4. **One learning goal per question.** Write the goal number next to each question. Any question with no goal, or all questions on one goal?
+
+**Correct the agent** for every problem, in the style of *First delegations*: question number, what is wrong, what you want. Rerun the script after each round.
+
+### Part 3: Exercise variants with a computed key
+
+Ask the agent to create a small template file and a variant script:
+
+```text
+Create variant-templates.md with two question templates in the format
+of question-bank.md, with placeholders in curly braces:
+1. numeric: the standard error of the mean from an SD and a sample size
+   n (blood pressure; SD 8-15 mmHg; n a perfect square from 16 to 100);
+2. numeric: the percentage change from one count to another (number of
+   students passing; first count 30-60, change between -20 % and +40 %,
+   whole numbers only).
+Then write make_variants.py that makes 3 variants of each template,
+using a fixed random seed, and writes them to variants-bank.md in the
+format of question-bank.md. The script must compute every answer;
+never type an answer by hand. Round answers to two decimals and use a
+margin of 0.01. Run it, run bank2qti.py on variants-bank.md, and print
+a table: variant, numbers used, answer.
+```
+
+#### Check the result
+
+1. **Solve two variants by hand** (one of each template), using the numbers in the table. Do your answers match?
+2. **Extremes.** Ask: "Which variant has the smallest and which the largest numbers? Is any variant much easier or harder than the others?" A percentage change of exactly 0 %, or a count that is not a whole number of students, means the rules need fixing.
+3. **Rerun.** Ask the agent to run `make_variants.py` again. The table must be identical (same seed, same variants). Then ask what changes if you change the seed.
+4. **Percentage direction.** For a decrease, is the answer negative, and does the question say how to enter it? If not, fix the template wording.
+5. Optional: import `variants-bank-qti.zip` into Canvas and, in Classic Quizzes, put the three variants of each template into a **question group** that picks one; in New Quizzes, into an **item bank**.
+
+::: {.callout-note collapse="true" title="What a good result looks like"}
+- `variants-bank.md` with 6 questions (3 per template), each with an `answer:` and `margin: 0.01`, and different numbers.
+- The table matches the bank, and your two hand calculations match the table to two decimals.
+- Rerunning gives the same variants. Changing the seed gives new ones.
+- Typical problems the checks catch: a percentage change that rounds to a value students cannot reproduce from the question; a template that allows 0 % change; the word "increase" in the stem when the change is negative. Fix the template, not the variants.
+:::
+
+### Part 4: Slides from an outline
+
+```text
+Turn lecture-outline.md into a Quarto reveal.js deck, describing-data.qmd,
+in this folder. One slide per outline point, plus a title slide and a
+summary slide. Slide titles are full sentences that state the point.
+Speaker notes (::: notes) on every slide: 4-6 sentences, what I would say.
+Make the four figures in the outline as simple SVG files (flat, two or
+three colours, text at least 16 px at 1000 px width), named
+fig01-....svg and so on, and give every image an fig-alt text that says
+what the figure shows. Use dark text on a white background. Render the
+deck with quarto and tell me which file to open.
+```
+
+Open the rendered HTML file in your browser (double-click it in your file browser). Press **S** for the speaker view (allow the pop-up if your browser asks). Press **Esc** for the slide overview.
+
+#### Check the result
+
+1. **Every slide fits.** Step through all slides. Nothing cut off at the bottom; no text running over a figure. If a slide is too full, tell the agent which one, and ask it to split it.
+2. **Every figure, at full size.** Text overlapping? Labels cut off? Does the bar chart that is supposed to "hide two very different datasets" actually show two different datasets underneath? Agents sometimes draw a figure that does not show what its title claims.
+3. **Alt text.** Ask: "List the fig-alt text of every image next to the file name." Read each next to its figure. Does it say what the figure shows, and is it true of the figure as drawn?
+4. **Contrast.** Ask: "List every text and background colour pair used in the deck and the SVG files, with its WCAG contrast ratio. Flag any below 4.5 to 1." Fix the flagged ones.
+5. **Notes.** Read the notes of three slides. Would you say this? Is there a claim you would not make, such as a statistic without a source? Change it.
+
+## On your own project
+
+Choose **one** of the following, depending on your project. Work in your own project folder, which is a git repository.
+
+**A. Your own course (teachers).**
+
+1. Ask the agent to create a folder `private/` in your project and add it to `.gitignore`. Then ask: "Which files would be pushed to GitHub?" and check that nothing in `private/` is listed.
+2. Copy `bank2qti.py` into your project. Give the agent the learning goals of one week of your course and a list of misconceptions you see in your students, and ask for a bank of 10 questions in `private/`, in the same format, using only your **published** course material as the basis. Never paste student answers, grades or names (*Privacy, ethics and safety*).
+3. Run the four checks: solve three blind, key positions, every reason, one goal per question.
+4. Convert, import into your sandbox course, and take the quiz in Student View.
+5. If your course page is on GitHub Pages, ask the agent to add a page with **the questions only** (no answers, no reasons) to your site, as the sister course does. Check the rendered page for any trace of answers before you push.
+
+**B. Variants or slides for your own course (teachers).** Do Part 3 for one exercise you give every year, or Part 4 for one of your own lectures, starting from an outline you write yourself. Put the deck in your project and, if you like, link it from your course page.
+
+**C. A talk about your project (everyone else).** Write an outline for a 10-minute talk about your project for colleagues: the question, the data, what the agent did, what you checked, the result, and what you would do next. Then use the Part 4 prompt with your outline. Include at least one figure from your own project (made by your scripts in *Reproducible figures*), with alt text.
+
+Whichever you choose, add a line to the **Log of AI use** in your `README.md`, and commit.
+
+### Check the result
+
+- For A: the quiz in Student View gives full marks for correct answers, shows the reason for each wrong choice, and you solved three questions yourself without the key. `git status` (or the agent: "Is anything in private/ tracked by git?") shows that the answers are not tracked.
+- For B: two variants solved by hand, or every slide and figure checked as in Part 4.
+- For C: the talk renders, every slide fits, every figure has alt text that is true, and you could give the talk from the speaker notes.
+- In all cases: nothing in the agent's context came from students.
+
+## What you should have now
+
+- `teaching-example/` as a git repository with the fixed `question-bank.md`, `week3-bank.md`, `variant-templates.md`, `make_variants.py`, `variants-bank.md`, the generated zip files and keys, and `describing-data.qmd` with its figures.
+- A quiz imported into your sandbox course, checked in Student View.
+- In your own project: a checked question bank in a private folder and a quiz in Canvas, or variants or slides for your course, or a talk about your project; and an updated Log of AI use.
+
+This is the end of the teaching track. Go back to the [course overview](../index.qmd) to choose another track.

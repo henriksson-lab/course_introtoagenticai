@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" width="1000" height="430" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="430" fill="#fff"/>
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker>
+  </defs>
+  <!-- tap -->
+  <rect x="120" y="40" width="110" height="26" rx="6" fill="#999"/>
+  <rect x="205" y="60" width="22" height="40" fill="#999"/>
+  <text x="80" y="35" font-size="18" fill="#333">dose: 500 mg at once</text>
+  <line x1="216" y1="105" x2="216" y2="150" stroke="#2a7f8f" stroke-width="6"/>
+  <!-- tank -->
+  <path d="M80,130 L80,330 L360,330 L360,130" fill="none" stroke="#333" stroke-width="4"/>
+  <rect x="82" y="200" width="276" height="128" fill="#e3f0f2"/>
+  <line x1="82" y1="200" x2="358" y2="200" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="220" y="270" font-size="19" fill="#2a7f8f" text-anchor="middle">blood plasma</text>
+  <text x="220" y="296" font-size="19" fill="#2a7f8f" text-anchor="middle">volume 50 L</text>
+  <!-- drain -->
+  <rect x="330" y="330" width="20" height="40" fill="#333"/>
+  <line x1="340" y1="372" x2="340" y2="405" stroke="#2a7f8f" stroke-width="4" marker-end="url(#a)"/>
+  <text x="325" y="395" font-size="18" fill="#333" text-anchor="end">liver and kidneys remove it</text>
+  <!-- explanation -->
+  <text x="450" y="80" font-size="22" font-weight="bold" fill="#333">The rule in words</text>
+  <text x="450" y="118" font-size="19" fill="#333">The fuller the tank, the faster it drains.</text>
+  <text x="450" y="150" font-size="19" fill="#333">So the level does not fall in a straight line:</text>
+  <text x="450" y="182" font-size="19" fill="#333">it <tspan font-weight="bold" fill="#a8324a">halves</tspan> every half-life (here 6 hours).</text>
+  <!-- half-life bars -->
+  <g font-size="17" fill="#333" text-anchor="middle">
+    <rect x="460" y="230" width="80" height="120" fill="#2a7f8f"/><text x="500" y="370">0 h</text><text x="500" y="222">10</text>
+    <rect x="560" y="290" width="80" height="60" fill="#2a7f8f"/><text x="600" y="370">6 h</text><text x="600" y="282">5</text>
+    <rect x="660" y="320" width="80" height="30" fill="#2a7f8f"/><text x="700" y="370">12 h</text><text x="700" y="312">2.5</text>
+    <rect x="760" y="335" width="80" height="15" fill="#2a7f8f"/><text x="800" y="370">18 h</text><text x="800" y="327">1.25</text>
+    <rect x="860" y="342" width="80" height="8" fill="#2a7f8f"/><text x="900" y="370">24 h</text><text x="900" y="334">0.625</text>
+  </g>
+  <text x="700" y="410" font-size="17" fill="#666" text-anchor="middle">concentration in mg/L: a known answer to check the simulation against</text>
+</svg>

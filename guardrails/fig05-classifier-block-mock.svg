@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="520" fill="#ffffff"/>
+  <!-- left: agent session cut -->
+  <text x="20" y="30" font-size="19" font-weight="bold" fill="#a8324a">In an agent: the task stops</text>
+  <rect x="20" y="42" width="560" height="300" rx="10" fill="#1f2430"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="16">
+    <text x="40" y="78" fill="#7fc4cf">&gt; Summarise the 30 papers in papers/</text>
+    <text x="40" y="100" fill="#7fc4cf">  into a table: organism, method, result.</text>
+    <text x="40" y="136" fill="#9a9aa8">• Read papers/01.pdf ... papers/17.pdf</text>
+    <text x="40" y="160" fill="#9a9aa8">• Writing table.csv (rows 1-16)</text>
+    <text x="40" y="204" fill="#e07a8a">API Error: the model can't help with</text>
+    <text x="40" y="226" fill="#e07a8a">this request. Start a new session</text>
+    <text x="40" y="248" fill="#e07a8a">to continue.</text>
+    <text x="40" y="292" fill="#e8e8e8">&gt; _</text>
+  </g>
+  <rect x="32" y="182" width="420" height="80" rx="6" fill="none" stroke="#e07a8a" stroke-width="2.5"/>
+  <!-- right: chat fallback -->
+  <text x="610" y="30" font-size="19" font-weight="bold" fill="#6b4fa0">In a chat: another model answers</text>
+  <rect x="610" y="42" width="370" height="300" rx="10" fill="#f4f7fa" stroke="#c9d2da" stroke-width="2"/>
+  <rect x="630" y="62" width="330" height="56" rx="8" fill="#ece6f5"/>
+  <text x="646" y="86" font-size="16" fill="#3a4a5a">This message was answered by</text>
+  <text x="646" y="108" font-size="16" fill="#3a4a5a">a different model. <tspan fill="#6b4fa0" text-decoration="underline">Learn more</tspan></text>
+  <text x="630" y="154" font-size="17" fill="#1b2a3a">Here is a general overview of</text>
+  <text x="630" y="178" font-size="17" fill="#1b2a3a">the topic ...</text>
+  <rect x="630" y="196" width="300" height="12" rx="4" fill="#d8dee4"/>
+  <rect x="630" y="218" width="270" height="12" rx="4" fill="#d8dee4"/>
+  <rect x="630" y="240" width="310" height="12" rx="4" fill="#d8dee4"/>
+  <text x="630" y="292" font-size="16" fill="#8a6a12">Shorter and less detailed than</text>
+  <text x="630" y="314" font-size="16" fill="#8a6a12">you are used to.</text>
+  <!-- bottom notes -->
+  <g font-size="18" fill="#1b2a3a">
+    <text x="20" y="384" font-weight="bold">Signs of a classifier, not the model:</text>
+    <text x="40" y="414">• the text comes from the <tspan font-weight="bold">system</tspan> (an error or banner), not the model's own voice</text>
+    <text x="40" y="442">• no reason, no offer of a safe part</text>
+    <text x="40" y="470">• an answer cut off midway, a session that cannot go on, or a switch of model</text>
+  </g>
+  <text x="980" y="508" text-anchor="end" font-size="14" fill="#8a97a5">illustrative; generic wording</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+  <rect width="1000" height="520" fill="#fff"/>
+  <!-- document -->
+  <rect x="30" y="30" width="560" height="450" rx="8" fill="#fafafa" stroke="#bbb" stroke-width="2"/>
+  <text x="60" y="75" font-size="24" font-weight="bold" fill="#333">2. Background</text>
+  <g font-size="20" fill="#333">
+    <text x="60" y="125">Since 2008, Swedish funders have granted</text>
+    <rect x="58" y="138" width="90" height="30" rx="4" fill="#f8e9ec" stroke="#a8324a"/><text x="103" y="160" text-anchor="middle" fill="#a8324a" font-weight="bold">? MSEK</text>
+    <text x="158" y="160">to soil research,</text>
+    <rect x="318" y="138" width="60" height="30" rx="4" fill="#f8e9ec" stroke="#a8324a"/><text x="348" y="160" text-anchor="middle" fill="#a8324a" font-weight="bold">? %</text>
+    <text x="388" y="160">of it after 2018.</text>
+    <text x="60" y="210">Most of it went to</text>
+    <rect x="238" y="188" width="170" height="30" rx="4" fill="#f8e9ec" stroke="#a8324a"/><text x="323" y="210" text-anchor="middle" fill="#a8324a" font-weight="bold">? universities</text>
+    <text x="60" y="260">and the fastest-growing topic is</text>
+    <rect x="352" y="238" width="80" height="30" rx="4" fill="#f8e9ec" stroke="#a8324a"/><text x="392" y="260" text-anchor="middle" fill="#a8324a" font-weight="bold">? </text>
+    <text x="60" y="310">Funders who support work like ours:</text>
+    <rect x="58" y="322" width="140" height="30" rx="4" fill="#f8e9ec" stroke="#a8324a"/><text x="128" y="344" text-anchor="middle" fill="#a8324a" font-weight="bold">? ? ?</text>
+  </g>
+  <text x="60" y="420" font-size="18" fill="#777" font-style="italic">Usual fallback: "research in this area</text>
+  <text x="60" y="446" font-size="18" fill="#777" font-style="italic">is increasing", without a number.</text>
+  <!-- databases -->
+  <g font-size="19" fill="#fff" font-weight="bold" text-anchor="middle">
+    <rect x="720" y="40" width="240" height="64" rx="10" fill="#2a7f8f"/><text x="840" y="80">Swecris</text>
+    <rect x="720" y="130" width="240" height="64" rx="10" fill="#6b4fa0"/><text x="840" y="170">NIH RePORTER</text>
+    <rect x="720" y="220" width="240" height="64" rx="10" fill="#8a6a12"/><text x="840" y="260">CORDIS / ERC</text>
+  </g>
+  <line x1="710" y1="170" x2="605" y2="200" stroke="#555" stroke-width="3" marker-end="url(#ar)"/>
+  <text x="840" y="335" font-size="19" fill="#333" text-anchor="middle">public, structured,</text>
+  <text x="840" y="360" font-size="19" fill="#333" text-anchor="middle">thousands of records</text>
+  <text x="840" y="420" font-size="19" fill="#a8324a" text-anchor="middle" font-weight="bold">missing: an afternoon</text>
+  <text x="840" y="445" font-size="19" fill="#a8324a" text-anchor="middle" font-weight="bold">to collect and check</text>
+</svg>

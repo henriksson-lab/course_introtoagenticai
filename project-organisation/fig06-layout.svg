@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 560" width="900" height="560" font-family="Helvetica, Arial, sans-serif">
+  <rect width="900" height="560" fill="#ffffff"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="19" fill="#333" xml:space="preserve">
+    <text x="30" y="40" font-weight="bold">bird-project/</text>
+    <text x="50" y="78">├── README.md</text>
+    <text x="50" y="110">├── AGENTS.md</text>
+    <text x="50" y="142">├── CLAUDE.md</text>
+    <text x="50" y="180">├── data/</text>
+    <text x="50" y="212">│   ├── raw/</text>
+    <text x="50" y="244">│   └── processed/</text>
+    <text x="50" y="282">├── scripts/</text>
+    <text x="50" y="320">├── results/</text>
+    <text x="50" y="358">└── notes/</text>
+    <text x="50" y="390">    ├── plan.md</text>
+    <text x="50" y="422">    ├── decisions.md</text>
+    <text x="50" y="454">    └── ai-log.md</text>
+  </g>
+  <g font-size="18">
+    <text x="360" y="78" fill="#6b4fa0">for people</text>
+    <text x="360" y="110" fill="#2a7f8f">for agents (both tools)</text>
+    <text x="360" y="142" fill="#555">one line: @AGENTS.md</text>
+    <text x="360" y="212" fill="#a8324a" font-weight="bold">originals: never edited</text>
+    <text x="360" y="244" fill="#555">made by scripts</text>
+    <text x="360" y="282" fill="#555">01_clean.py, 02_plot_sites.py</text>
+    <text x="360" y="320" fill="#555">figures and tables, made by scripts</text>
+    <text x="360" y="390" fill="#555">where we are, what is next</text>
+    <text x="360" y="422" fill="#555">what was decided, and why</text>
+    <text x="360" y="454" fill="#555">log of AI use</text>
+  </g>
+  <rect x="20" y="490" width="860" height="50" rx="8" fill="#f4f4f4"/>
+  <text x="450" y="522" text-anchor="middle" font-size="18" fill="#333">Nothing else loose at the top. Extra folders (docs/, text/) are fine: say so in AGENTS.md.</text>
+</svg>

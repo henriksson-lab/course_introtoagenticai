@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <text x="20" y="34" font-size="18" fill="#555">The quote (from the abstract) is real. Is the claim a fair summary of it?</text>
+  <g font-size="17">
+    <!-- row 1 -->
+    <rect x="20" y="52" width="470" height="100" rx="6" fill="#f5efdd" stroke="#8a6a12"/>
+    <text x="35" y="80" fill="#333">"high expression of the gene was</text>
+    <text x="35" y="104" fill="#333">associated with shorter survival"</text>
+    <rect x="510" y="52" width="470" height="100" rx="6" fill="#fbf3f5" stroke="#a8324a"/>
+    <text x="525" y="80" fill="#333">"the gene drives tumour progression"</text>
+    <text x="525" y="128" fill="#a8324a" font-weight="bold">association became cause</text>
+    <!-- row 2 -->
+    <rect x="20" y="166" width="470" height="100" rx="6" fill="#f5efdd" stroke="#8a6a12"/>
+    <text x="35" y="194" fill="#333">"knock-out mice showed shortened</text>
+    <text x="35" y="218" fill="#333">long bones"</text>
+    <rect x="510" y="166" width="470" height="100" rx="6" fill="#fbf3f5" stroke="#a8324a"/>
+    <text x="525" y="194" fill="#333">"loss of the gene shortens bones"</text>
+    <text x="525" y="242" fill="#a8324a" font-weight="bold">mouse result now reads as human</text>
+    <!-- row 3 -->
+    <rect x="20" y="280" width="470" height="100" rx="6" fill="#f5efdd" stroke="#8a6a12"/>
+    <text x="35" y="308" fill="#333">"we propose that the protein may</text>
+    <text x="35" y="332" fill="#333">act as a tumour suppressor"</text>
+    <rect x="510" y="280" width="470" height="100" rx="6" fill="#eef6f7" stroke="#2a7f8f"/>
+    <text x="525" y="308" fill="#333">"proposed (not shown) to act as a</text>
+    <text x="525" y="332" fill="#333">tumour suppressor"</text>
+    <text x="525" y="358" fill="#2a7f8f" font-weight="bold">fair: the hedge is kept</text>
+  </g>
+  <text x="20" y="418" font-size="17" fill="#333">A script can check that the quote exists. Only a reader can check that the claim matches it.</text>
+  <text x="985" y="436" font-size="13" fill="#999" text-anchor="end">illustrative, invented sentences</text>
+</svg>

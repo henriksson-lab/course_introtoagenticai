@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#fff"/>
+  <!-- page -->
+  <rect x="40" y="15" width="420" height="440" fill="#fff" stroke="#999" stroke-width="2"/>
+  <text x="60" y="52" font-size="19" font-weight="bold" fill="#333">Course evaluation: Cell Biology,</text>
+  <text x="60" y="76" font-size="19" font-weight="bold" fill="#333">spring 2026</text>
+  <text x="60" y="100" font-size="16" fill="#666">For the programme board, 2026-09</text>
+  <rect x="60" y="115" width="380" height="66" fill="#e3f0f2"/>
+  <text x="72" y="140" font-size="16" fill="#333">120 of 164 replied (73 %).</text>
+  <text x="72" y="164" font-size="16" fill="#333">Three main points, in plain words.</text>
+  <g fill="#cfcfcf"><rect x="60" y="195" width="380" height="10"/><rect x="60" y="213" width="300" height="10"/></g>
+  <!-- tiny diverging bars -->
+  <g>
+    <rect x="150" y="240" width="40" height="12" fill="#d9a0ab"/><rect x="190" y="240" width="60" height="12" fill="#cfcfcf"/><rect x="250" y="240" width="120" height="12" fill="#8fc1c9"/>
+    <rect x="130" y="258" width="60" height="12" fill="#a8324a"/><rect x="190" y="258" width="70" height="12" fill="#cfcfcf"/><rect x="260" y="258" width="60" height="12" fill="#2a7f8f"/>
+    <rect x="170" y="276" width="30" height="12" fill="#d9a0ab"/><rect x="200" y="276" width="50" height="12" fill="#cfcfcf"/><rect x="250" y="276" width="140" height="12" fill="#2a7f8f"/>
+  </g>
+  <g fill="#cfcfcf"><rect x="60" y="310" width="380" height="10"/><rect x="60" y="328" width="340" height="10"/><rect x="60" y="346" width="360" height="10"/></g>
+  <text x="60" y="385" font-size="16" fill="#6b4fa0">"Spread out the deadlines…" (80)</text>
+  <g fill="#cfcfcf"><rect x="60" y="400" width="380" height="10"/><rect x="60" y="418" width="250" height="10"/></g>
+  <!-- outline -->
+  <g font-size="18" fill="#333">
+    <text x="500" y="52" font-weight="bold" font-size="20">A two-page report for a board</text>
+    <text x="500" y="92">1. Response rate and who replied</text>
+    <text x="500" y="124">2. Three key messages, in words</text>
+    <text x="500" y="156">3. One diverging bar chart, all items</text>
+    <text x="500" y="188">4. Group differences that matter</text>
+    <text x="530" y="214" font-size="16" fill="#666">(planned ones, with n; no group under 5)</text>
+    <text x="500" y="246">5. Themes from free text, counts,</text>
+    <text x="530" y="272">2-3 verified quotes</text>
+    <text x="500" y="304">6. What we propose to change</text>
+    <text x="500" y="336">7. Method: tool, decisions, limits</text>
+  </g>
+  <rect x="500" y="370" width="470" height="70" rx="10" fill="#f6f1e3" stroke="#8a6a12"/>
+  <text x="735" y="400" font-size="17" fill="#333" text-anchor="middle">Quarto: text, numbers and plots come from</text>
+  <text x="735" y="425" font-size="17" fill="#333" text-anchor="middle">the same script, so they always agree.</text>
+  <text x="455" y="465" font-size="13" fill="#999" text-anchor="end">illustrative</text>
+</svg>

@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="1000" height="460" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="460" fill="#ffffff"/>
+  <rect x="20" y="40" width="340" height="330" rx="10" fill="#ffffff" stroke="#9aa4ad" stroke-width="1.5"/>
+  <rect x="20" y="40" width="340" height="40" rx="10" fill="#e9edf1"/>
+  <rect x="20" y="70" width="340" height="10" fill="#e9edf1"/>
+  <text x="190" y="66" font-size="16" fill="#5a6670" text-anchor="middle" font-weight="bold" xml:space="preserve">interactive-demos</text>
+  <rect x="30" y="84" width="320" height="40" rx="6" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <rect x="45" y="92" width="18" height="24" rx="2" fill="#ffffff" stroke="#5a6670" stroke-width="1.5"/>
+  <text x="75" y="110" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">logistic-growth.html</text>
+  <rect x="45" y="142" width="18" height="24" rx="2" fill="#ffffff" stroke="#5a6670" stroke-width="1.5"/>
+  <text x="75" y="160" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">prompt-notes.md</text>
+  <rect x="45" y="192" width="18" height="24" rx="2" fill="#ffffff" stroke="#5a6670" stroke-width="1.5"/>
+  <text x="75" y="210" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">screenshot-phone.png</text>
+  <text x="190" y="330" font-size="17" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">double-click the .html file</text>
+  <line x1="365" y1="160" x2="425" y2="160" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <rect x="430" y="40" width="550" height="330" rx="10" fill="#ffffff" stroke="#9aa4ad" stroke-width="1.5"/>
+  <rect x="430" y="40" width="550" height="40" rx="10" fill="#e9edf1"/>
+  <rect x="430" y="70" width="550" height="10" fill="#e9edf1"/>
+  <circle cx="448" cy="60" r="6" fill="#e0605a"/>
+  <circle cx="468" cy="60" r="6" fill="#e6b84f"/>
+  <circle cx="488" cy="60" r="6" fill="#5fbf6a"/>
+  <rect x="510" y="48" width="455" height="24" rx="12" fill="#ffffff" stroke="#c9d3dd" stroke-width="1"/>
+  <text x="524" y="65" font-size="13" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">file:///Users/you/agentic-course/interactive-demos/...</text>
+  <text x="450" y="80" font-size="14" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve"></text>
+  <text x="455" y="110" font-size="15" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">r</text>
+  <line x1="455" y1="126" x2="605" y2="126" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="455" y1="126" x2="507.5" y2="126" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="507.5" cy="126" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="455" y="170" font-size="15" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">K</text>
+  <line x1="455" y1="186" x2="605" y2="186" stroke="#c9d3dd" stroke-width="6"/>
+  <line x1="455" y1="186" x2="567.5" y2="186" stroke="#2a7f8f" stroke-width="6"/>
+  <circle cx="567.5" cy="186" r="9" fill="#ffffff" stroke="#2a7f8f" stroke-width="3"/>
+  <line x1="650" y1="315" x2="950" y2="315" stroke="#9aa4ad" stroke-width="2"/>
+  <line x1="650" y1="95" x2="650" y2="315" stroke="#9aa4ad" stroke-width="2"/>
+  <path d="M650.0,312.8 L653.8,312.2 L657.5,311.4 L661.2,310.4 L665.0,309.1 L668.8,307.6 L672.5,305.6 L676.2,303.1 L680.0,299.9 L683.8,296.1 L687.5,291.5 L691.2,285.9 L695.0,279.3 L698.8,271.7 L702.5,263.0 L706.2,253.4 L710.0,243.1 L713.8,232.2 L717.5,221.3 L721.2,210.5 L725.0,200.1 L728.8,190.6 L732.5,182.0 L736.2,174.4 L740.0,167.8 L743.8,162.3 L747.5,157.7 L751.2,153.9 L755.0,150.8 L758.8,148.3 L762.5,146.4 L766.2,144.8 L770.0,143.5 L773.8,142.6 L777.5,141.8 L781.2,141.2 L785.0,140.7 L788.8,140.3 L792.5,140.0 L796.2,139.8 L800.0,139.6 L803.8,139.5 L807.5,139.4 L811.2,139.3 L815.0,139.2 L818.8,139.2 L822.5,139.1 L826.2,139.1 L830.0,139.1 L833.8,139.1 L837.5,139.1 L841.2,139.0 L845.0,139.0 L848.8,139.0 L852.5,139.0 L856.2,139.0 L860.0,139.0 L863.8,139.0 L867.5,139.0 L871.2,139.0 L875.0,139.0 L878.8,139.0 L882.5,139.0 L886.2,139.0 L890.0,139.0 L893.8,139.0 L897.5,139.0 L901.2,139.0 L905.0,139.0 L908.8,139.0 L912.5,139.0 L916.2,139.0 L920.0,139.0 L923.8,139.0 L927.5,139.0 L931.2,139.0 L935.0,139.0 L938.8,139.0 L942.5,139.0 L946.2,139.0 L950.0,139.0" stroke="#2a7f8f" stroke-width="3.5" fill="none"/>
+  <rect x="505" y="46" width="120" height="28" rx="6" fill="none" stroke="#a8324a" stroke-width="2.5"/>
+  <text x="500" y="410" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">The address starts with file://: the demo runs from your disk.</text>
+  <text x="500" y="438" font-size="18" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">No server, no install, no internet.</text>
+  <text x="990" y="450" font-size="14" fill="#9aa4ad" text-anchor="end" font-weight="normal" font-style="italic" xml:space="preserve">illustrative</text>
+</svg>

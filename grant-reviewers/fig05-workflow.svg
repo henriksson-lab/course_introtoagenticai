@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" width="1000" height="380" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+  <rect width="1000" height="380" fill="#fff"/>
+  <g text-anchor="middle">
+    <g font-size="19" font-weight="bold" fill="#fff">
+      <rect x="15" y="40" width="175" height="100" rx="10" fill="#8a6a12"/><text x="102" y="82">1. Panel</text><text x="102" y="108">list</text>
+      <rect x="215" y="40" width="175" height="100" rx="10" fill="#2a7f8f"/><text x="302" y="82">2. Expertise</text><text x="302" y="108">profiles</text>
+      <rect x="415" y="40" width="175" height="100" rx="10" fill="#6b4fa0"/><text x="502" y="82">3. Match</text><text x="502" y="108">to the draft</text>
+      <rect x="615" y="40" width="175" height="100" rx="10" fill="#a8324a"/><text x="702" y="82">4. Mock</text><text x="702" y="108">reviews</text>
+      <rect x="815" y="40" width="175" height="100" rx="10" fill="#555"/><text x="902" y="82">5. You</text><text x="902" y="108">triage</text>
+    </g>
+    <g font-size="16" fill="#333">
+      <text x="102" y="190">funder's page,</text><text x="102" y="212">source and date</text>
+      <text x="302" y="190">ORCID, OpenAlex,</text><text x="302" y="212">PubMed</text>
+      <text x="502" y="190">gaps for experts,</text><text x="502" y="212">jargon for others</text>
+      <text x="702" y="190">funder's criteria,</text><text x="702" y="212">by expertise</text>
+      <text x="902" y="190">fix, explain</text><text x="902" y="212">or ignore</text>
+    </g>
+    <g font-size="16" fill="#2a7f8f" font-weight="bold">
+      <rect x="15" y="250" width="175" height="80" rx="8" fill="#e3f0f2"/><text x="102" y="282">check: row by</text><text x="102" y="304">row vs the page</text>
+      <rect x="215" y="250" width="175" height="80" rx="8" fill="#e3f0f2"/><text x="302" y="282">check: vs own</text><text x="302" y="304">university page</text>
+      <rect x="415" y="250" width="175" height="80" rx="8" fill="#e3f0f2"/><text x="502" y="282">check: every point</text><text x="502" y="304">quotes the draft</text>
+      <rect x="615" y="250" width="175" height="80" rx="8" fill="#e3f0f2"/><text x="702" y="282">check: claims</text><text x="702" y="304">in the literature</text>
+      <rect x="815" y="250" width="175" height="80" rx="8" fill="#e3f0f2"/><text x="902" y="282">check: a human</text><text x="902" y="304">colleague reads</text>
+    </g>
+  </g>
+  <g stroke="#555" stroke-width="2.5">
+    <line x1="190" y1="90" x2="211" y2="90" marker-end="url(#ar)"/>
+    <line x1="390" y1="90" x2="411" y2="90" marker-end="url(#ar)"/>
+    <line x1="590" y1="90" x2="611" y2="90" marker-end="url(#ar)"/>
+    <line x1="790" y1="90" x2="811" y2="90" marker-end="url(#ar)"/>
+  </g>
+</svg>

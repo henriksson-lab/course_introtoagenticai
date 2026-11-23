@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="1000" height="480" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="480" fill="#fff"/>
+  <!-- folder tree -->
+  <g font-size="19" font-family="Menlo, Consolas, monospace">
+    <text x="30" y="60" fill="#555">.claude/skills/</text>
+    <text x="60" y="100" fill="#2a7f8f" font-weight="bold">figure-style/</text>
+    <text x="100" y="145" fill="#333">SKILL.md</text>
+    <text x="100" y="190" fill="#888">example-figure.R</text>
+    <text x="100" y="235" fill="#888">palette.md</text>
+    <text x="60" y="335" fill="#555">report-style/</text>
+    <text x="100" y="375" fill="#555">SKILL.md</text>
+  </g>
+  <rect x="88" y="122" width="130" height="34" rx="5" fill="none" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="30" y="430" font-size="17" fill="#666">one folder per skill,</text>
+  <text x="30" y="454" font-size="17" fill="#666">named after the skill</text>
+  <text x="100" y="268" font-size="16" fill="#888" font-style="italic">optional extra files,</text>
+  <text x="100" y="290" font-size="16" fill="#888" font-style="italic">read only when needed</text>
+  <line x1="225" y1="140" x2="420" y2="110" stroke="#2a7f8f" stroke-width="2.5"/>
+  <!-- SKILL.md card -->
+  <rect x="420" y="30" width="555" height="410" rx="10" fill="#fafafa" stroke="#2a7f8f" stroke-width="2.5"/>
+  <rect x="420" y="30" width="555" height="40" rx="10" fill="#2a7f8f"/>
+  <rect x="420" y="55" width="555" height="15" fill="#2a7f8f"/>
+  <text x="440" y="57" font-size="18" fill="#fff" font-weight="bold">SKILL.md</text>
+  <rect x="435" y="85" width="525" height="128" rx="6" fill="#f1edf7"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="16">
+    <text x="450" y="110" fill="#6b4fa0">---</text>
+    <text x="450" y="134" fill="#6b4fa0">name: figure-style</text>
+    <text x="450" y="158" fill="#6b4fa0">description: House style for all</text>
+    <text x="450" y="182" fill="#6b4fa0">  data figures. Use whenever ...</text>
+    <text x="450" y="206" fill="#6b4fa0">---</text>
+    <text x="450" y="250" fill="#333">Make every figure in this style:</text>
+    <text x="450" y="276" fill="#333">- Size: 8.5 x 6.5 cm ...</text>
+    <text x="450" y="302" fill="#333">- Font: Arial 8 pt ...</text>
+    <text x="450" y="328" fill="#333">- Colours: Okabe-Ito ...</text>
+    <text x="450" y="364" fill="#333">When done, report: ...</text>
+  </g>
+  <text x="960" y="120" font-size="16" fill="#6b4fa0" text-anchor="end" font-weight="bold">header:</text>
+  <text x="960" y="142" font-size="16" fill="#6b4fa0" text-anchor="end">name + when to use</text>
+  <text x="960" y="410" font-size="16" fill="#333" text-anchor="end">body: plain-language instructions</text>
+</svg>

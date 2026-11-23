@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="500" fill="#ffffff"/>
+  <!-- Goal -->
+  <rect x="20" y="20" width="470" height="220" rx="12" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="40" y="58" font-size="24" font-weight="bold" fill="#2a7f8f">1. Goal</text>
+  <text x="40" y="88" font-size="18" fill="#333">What is the result, and what is it for?</text>
+  <g font-size="17" fill="#555" font-style="italic">
+    <text x="40" y="130">"A figure for tomorrow's lab session:</text>
+    <text x="40" y="154">students should see that a notification</text>
+    <text x="40" y="178">slows everyone down."</text>
+  </g>
+  <!-- Context -->
+  <rect x="510" y="20" width="470" height="220" rx="12" fill="#f0ecf7" stroke="#6b4fa0" stroke-width="2.5"/>
+  <text x="530" y="58" font-size="24" font-weight="bold" fill="#6b4fa0">2. Context</text>
+  <text x="530" y="88" font-size="18" fill="#333">What can the agent not see in the files?</text>
+  <g font-size="17" fill="#555" font-style="italic">
+    <text x="530" y="130">"Plausible reaction times are 150 to</text>
+    <text x="530" y="154">1000 ms. We exclude false starts.</text>
+    <text x="530" y="178">P07 may have typed seconds."</text>
+  </g>
+  <!-- Constraints -->
+  <rect x="20" y="260" width="470" height="220" rx="12" fill="#f6efdc" stroke="#8a6a12" stroke-width="2.5"/>
+  <text x="40" y="298" font-size="24" font-weight="bold" fill="#8a6a12">3. Constraints</text>
+  <text x="40" y="328" font-size="18" fill="#333">What must not happen? What if in doubt?</text>
+  <g font-size="17" fill="#555" font-style="italic">
+    <text x="40" y="370">"Do not change the CSV. Use R. Only the</text>
+    <text x="40" y="394">plot. If a value looks wrong, list it</text>
+    <text x="40" y="418">and ask me."</text>
+  </g>
+  <!-- Done when -->
+  <rect x="510" y="260" width="470" height="220" rx="12" fill="#f8e9ec" stroke="#a8324a" stroke-width="2.5"/>
+  <text x="530" y="298" font-size="24" font-weight="bold" fill="#a8324a">4. Done when</text>
+  <text x="530" y="328" font-size="18" fill="#333">How will you check? (acceptance criteria)</text>
+  <g font-size="17" fill="#555" font-style="italic">
+    <text x="530" y="370">"12 students x 3 conditions; all values</text>
+    <text x="530" y="394">150 to 1000 ms; removed rows listed;</text>
+    <text x="530" y="418">a table of the means I can check."</text>
+  </g>
+</svg>

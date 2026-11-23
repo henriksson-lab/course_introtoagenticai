@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="520" fill="#ffffff"/>
+  <rect x="20" y="16" width="640" height="480" rx="10" fill="#1f2933"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="16">
+    <text x="40" y="50" fill="#8fb3bd">$ cd bird-project-work</text>
+    <text x="40" y="74" fill="#8fb3bd">$ claude          (or: codex)</text>
+    <text x="40" y="112" fill="#ffffff">&gt; Without opening any file except the</text>
+    <text x="40" y="136" fill="#ffffff">  instruction files, answer briefly:</text>
+    <text x="40" y="160" fill="#ffffff">  1. What is this project?</text>
+    <text x="40" y="184" fill="#ffffff">  2. Where is the current cleaned data?</text>
+    <text x="40" y="208" fill="#ffffff">  3. Which script makes the site figure?</text>
+    <text x="40" y="232" fill="#ffffff">  4. What does a blank count mean?</text>
+    <text x="40" y="256" fill="#ffffff">  5. May I add the volunteer contact list?</text>
+    <text x="40" y="296" fill="#7fd1de">1. Volunteer bird counts, 6 sites, 2025,</text>
+    <text x="40" y="320" fill="#7fd1de">   for a report to the municipality.</text>
+    <text x="40" y="344" fill="#7fd1de">2. data/processed/counts_clean.csv</text>
+    <text x="40" y="368" fill="#7fd1de">3. scripts/02_plot_sites.py</text>
+    <text x="40" y="392" fill="#7fd1de">4. Not visited; never treat it as 0.</text>
+    <text x="40" y="416" fill="#7fd1de">5. No: contact details are kept outside</text>
+    <text x="40" y="440" fill="#7fd1de">   this folder (AGENTS.md, Rules).</text>
+  </g>
+  <text x="652" y="486" text-anchor="end" font-size="14" fill="#8a97a5">illustrative</text>
+  <g font-size="18" fill="#333">
+    <text x="685" y="130" font-weight="bold" fill="#2a7f8f">Right and quick?</text>
+    <text x="685" y="156">The file works.</text>
+    <text x="685" y="230" font-weight="bold" fill="#a8324a">Wrong, vague, or it</text>
+    <text x="685" y="256" font-weight="bold" fill="#a8324a">had to search?</text>
+    <text x="685" y="282">A line is missing.</text>
+    <text x="685" y="308">Fix AGENTS.md, then</text>
+    <text x="685" y="334">test in another</text>
+    <text x="685" y="360">fresh session.</text>
+  </g>
+</svg>

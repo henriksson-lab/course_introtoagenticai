@@ -1,0 +1,261 @@
+---
+title: "Exercise: build a demo"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+resources:
+  - examples/logistic-growth.html
+  - examples/confidence-intervals.html
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- **played with two working demos** and written down what each one teaches in one sentence,
+- **built your own logistic-growth demo** with the agent: one HTML file that works offline and on a phone,
+- **checked its model against a known case** that you computed yourself,
+- **tested it** with the keyboard only, in a phone-sized window and without internet, and
+- **built a demo for a concept from your own field** and embedded it in your project's page, published on GitHub Pages.
+
+Your session will look different from anyone else's, and your demo will look different from the examples. Compare **what the demo teaches and whether its numbers are right**, not its looks.
+
+## Before you start
+
+- You have Claude Code or Codex installed and can start it in a folder (*Terminal survival kit*).
+- You have a page for your project, published on GitHub Pages from the `docs/` folder of its repository (*A course or project page*), for example in `~/agentic-course/soil-funding-map-page/`. You need it only for the last part.
+- Make a new folder for the worked example inside your course folder: `~/agentic-course/interactive-demos` (Windows: `C:\Users\<you>\agentic-course\interactive-demos`). It starts empty.
+- Have a calculator at hand, or Excel or LibreOffice Calc. You will compute a few numbers yourself.
+
+::: {.callout-note}
+**Privacy.** A teaching demo normally contains no data at all, only a model. Keep it that way: no student names, no exam questions you have not released, no unpublished results. Anything in the demo file becomes public when you publish your page.
+:::
+
+## Worked example
+
+### Step 1: Play with a finished demo (10 minutes)
+
+Here is the example demo from the lecture. It runs inside this page; nothing is sent anywhere. Try it before you build your own.
+
+```{=html}
+<iframe src="examples/logistic-growth.html" title="Logistic growth demo" loading="lazy" style="width:100%; height:640px; border:1px solid #ddd; border-radius:8px;"></iframe>
+```
+
+[Open the demo on its own page](examples/logistic-growth.html){target="_blank"}
+
+Try these, and note what you see:
+
+1. Drag the red line (the carrying capacity *K*) up and down. Where is the brown marker each time?
+2. Tick **Compare with unlimited (exponential) growth**. Until about which day do the two curves agree?
+3. Press **Bacteria** and then **Deer**. What changes, and what stays the same?
+4. Set the start population above half of *K*. What happens to the marker, and what does the readout say?
+5. Press **Check the model**. What does it compare?
+
+Now write one sentence: *what should a student discover with this demo?* Keep it; you will need it in step 2.
+
+::: {.callout-note collapse="true" title="One possible answer"}
+"Growth looks exponential at first, then slows down as the population approaches the carrying capacity, and it is fastest when the population is at half of *K*, whatever the growth rate." Point 4 shows an edge case: if the population starts above *K*/2, the growth only slows down from the start, and there is no steepest point to mark.
+:::
+
+### Step 2: Write the prompt
+
+Start the agent in `~/agentic-course/interactive-demos`:
+
+::: {.panel-tabset}
+## Claude Code
+```bash
+cd ~/agentic-course/interactive-demos
+claude
+```
+The agent will ask before it creates the file. Manual mode is fine; you approve each step.
+
+## Codex
+```bash
+cd ~/agentic-course/interactive-demos
+codex
+```
+The folder is not a git repository, so Codex may start read-only. Type `/permissions` and choose the mode that lets Codex edit files in this folder (not full access).
+:::
+
+Type this prompt. Replace the discovery sentence with your own from step 1 if you like it better.
+
+```text
+Make a single self-contained HTML file, logistic-growth.html, that teaches
+first-year biology students about logistic population growth.
+
+What students should discover: growth looks exponential at first, then slows,
+and it is fastest when N is half of the carrying capacity K.
+
+Controls: sliders for growth rate r (0.1-1.5 per day), K (100-1000) and start
+population N0 (1-100); let students drag a horizontal line for K. A reset button
+and two presets ("bacteria in a flask", "deer on an island").
+Show: N over 40 days, a marker at the steepest point, and the key numbers as text.
+
+Rules: plain HTML, CSS and JavaScript in one file; nothing loaded from the
+internet; works on a phone; labelled controls that work with the keyboard;
+text at least 16 px. Write the model, its units and a known case in a comment
+at the top of the file. Tell me the formula you use and one known case I can
+check by hand.
+```
+
+**What to look for.** The agent may ask a question or two first; answer them. When it is done, it should say that it wrote **one** file, name the formula, and give a known case. Write the formula down. If it mentions a library, a CDN or a font from the internet, say:
+
+```text
+Do not load anything from the internet. Put everything in the one file.
+```
+
+### Step 3: Open it and improve it
+
+Open your file browser, go to the folder and double-click `logistic-growth.html`. It opens in your browser; the address starts with `file://`. Keep the browser and the terminal side by side. After each change by the agent, reload the page (F5 on Windows, Cmd+R on Mac).
+
+Use it as a student would, for five minutes. Then give feedback that describes what a student would see, one change at a time. Some examples:
+
+```text
+When I set K below the start population, the curve jumps at the start.
+The population should fall smoothly towards K. Fix the model, not only the plot.
+```
+
+```text
+The numbers under the plot are hard to read while I drag. Round them to one
+decimal and show units (days, individuals) next to every number.
+```
+
+Two or three rounds are enough. Then compare with the reference demo in step 1. Yours does not have to look the same, but it should let a student make the same discovery.
+
+### Check the result
+
+Do every check. Write down what you found.
+
+1. **A known case, by hand.** Set *r* = 0.5, *K* = 800, *N*₀ = 10 (or as close as your sliders allow). Compute with a calculator, or in a spreadsheet cell:
+    - the day when the population reaches half of *K*: ln((*K* − *N*₀)/*N*₀) / *r* = ln(79) / 0.5 = **8.74 days** (spreadsheet: `=LN(79)/0.5`);
+    - the population at that day: *K*/2 = **400**;
+    - the steepest growth: *r* · *K* / 4 = **100 per day**;
+    - the early doubling time: ln 2 / *r* = **1.39 days** (`=LN(2)/0.5`).
+
+    Does your demo show the same values, or a marker at the same place? Ask the agent to add the missing numbers to the readout if you cannot read them off. A difference of more than rounding means the model is wrong: tell the agent what you computed and what the demo shows.
+2. **Extremes.** Move every slider to its smallest and largest value. Nothing should jump, freeze, or show `NaN` or `Infinity`. Try *N*₀ larger than *K*/2, and *K* as small as it goes.
+3. **Self-contained.** Turn off wifi (or pull the cable), close the browser and open the file again. It must work. Then ask the agent: "List every web address that appears in logistic-growth.html and say what each is for." The only acceptable one is `http://www.w3.org/2000/svg`, which is a name used inside drawings, not something that is downloaded.
+4. **Keyboard only.** Put the mouse away. Press Tab to move from control to control and the arrow keys to change a slider. Can you reach and change everything? Can you see which control has the focus? (Dragging the *K* line needs a mouse or finger; the *K* slider must do the same job.)
+5. **Phone.** Make the browser window very narrow, or use the browser's phone view (in Firefox or Chrome, open the developer tools with F12 and switch on the responsive or device mode). The plot must fit, and the controls must be big enough for a finger.
+6. **A second opinion.** Start a *new* session (or the other agent) in the same folder and ask: "Is the model in logistic-growth.html correct for teaching logistic growth? Compare it with the textbook formula and test one known case." Read the answer critically; it is a second opinion, not proof.
+
+::: {.callout-note collapse="true" title="Expected outcome"}
+- One `.html` file of roughly 10–40 kB, with no web addresses except the SVG name.
+- The model is *N*(*t*) = *K* / (1 + ((*K* − *N*₀)/*N*₀) e^−*rt*^), or a step-by-step solution of d*N*/d*t* = *rN*(1 − *N*/*K*). Both are fine if they agree with the known case.
+- With *r* = 0.5, *K* = 800, *N*₀ = 10: half of *K* at day 8.74, steepest growth 100 per day, early doubling time 1.39 days, and *N* at day 40 practically equal to 800.
+- Common problems: the marker is put at the steepest point of the *plotted* line (fine) but the readout uses another formula (not fine); the start population can exceed *K* and the curve then jumps; the plot does not fit on a phone; dragging the line does not work on a touch screen.
+:::
+
+### A second example: confidence intervals
+
+This demo is the second example from the lecture. It contains a known case of a different kind: a percentage that only shows up when you repeat something many times.
+
+```{=html}
+<iframe src="examples/confidence-intervals.html" title="Confidence interval demo" loading="lazy" style="width:100%; height:640px; border:1px solid #ddd; border-radius:8px;"></iframe>
+```
+
+[Open the demo on its own page](examples/confidence-intervals.html){target="_blank"}
+
+1. Reload this page so that the demo starts fresh. Leave *n* = 10 and press **Draw 1000**. You should see exactly **940 of 1000 (94.0%)**. The demo uses fixed random numbers, so everyone gets the same result. That makes the demo checkable: a different number means a different model.
+2. Is 94.0% close enough to 95%? With 1000 intervals, chance alone gives results between about 93.6% and 96.4%. Press **Draw 1000** a few more times and watch the percentage settle.
+3. Tick **Use the shortcut 1.96**, set *n* = 3 and press **Draw 1000** a few times. What happens to the percentage? This is the mistake from the lecture: the demo still looks fine.
+4. Untick the box. Compare the average width at *n* = 10 and at *n* = 40.
+
+::: {.callout-note collapse="true" title="What you should see"}
+- With the t value, the coverage stays close to 95% at every sample size.
+- With the 1.96 shortcut at *n* = 3, it falls to about 81%; at *n* = 2 to about 70%. Over many thousands of samples, these are the values you get from the t distribution: the shortcut is too narrow for small samples.
+- Four times the sample size gives roughly half the width (about 13.8 cm at *n* = 10 and 6.4 cm at *n* = 40).
+:::
+
+**Optional.** Ask your agent to make a variant of this demo for proportions instead of means (for example, the share of students who pass), with a check mode that shows the coverage. Then check: with 1000 intervals, is it close to 95%? For small samples and proportions near 0 or 1, the simple textbook formula covers much less than 95%, and a good demo shows that.
+
+## On your own project
+
+Now build a demo for a concept from **your own field**, and put it on your project's page.
+
+::: {.callout-warning}
+**Privacy reminder.** A demo is published in full: anyone can open the file and read everything in it. Use a model and invented or public numbers, never personal data, unreleased exam material or unpublished results.
+:::
+
+### Step 1: Choose a concept and write the discovery
+
+Pick one concept that your students (or your collaborators, or the public) find hard, and that has a model you can describe with a formula or a few rules. If your project is not about teaching, pick a concept you often explain about your research: a method, a measurement, a model. The topic tables at the end of the lecture have ideas.
+
+Start the agent in your **project folder** (not the page folder) and ask it to add a section to the project README:
+
+```text
+Add a section "Interactive demo" to README.md with these headings, and
+fill in what I write below. Do not invent anything; ask me if something
+is missing.
+
+- Concept:
+- Who it is for:
+- What the learner should discover (one sentence):
+- Controls (at most three, with ranges and units):
+- What to watch:
+- Known case I can check by hand:
+
+My answers: <write your answers here>
+```
+
+If you cannot name a **known case**, choose a different concept, or ask the agent to suggest one and then look it up in a textbook yourself.
+
+### Step 2: Build the demo
+
+The demo is public material, so it is made in your **page folder**, which is the public repository. Exit the agent, go to the page folder and start the agent there. Adapt the prompt from the worked example; keep the rules paragraph as it is:
+
+```text
+Read the "Interactive demo" section in ../<my-project>/README.md. Make a single
+self-contained HTML file demos/<short-name>.html that does what it says.
+
+Rules: plain HTML, CSS and JavaScript in one file; nothing loaded from the
+internet; works on a phone; labelled controls that work with the keyboard;
+text at least 16 px; colour never the only signal. Add a reset button and
+a "Check the model" button that shows the known case next to the expected
+value. If there is randomness, use a fixed seed and a "Start again" button.
+Write the model, its units and the known case in a comment at the top of
+the file. Then tell me the formula you used.
+```
+
+Open the file, use it as a student would, and improve it in a few rounds, one change at a time. Commit each version you are happy with, for example by saying "commit this with a short message".
+
+### Step 3: Check it
+
+Do the same checks as in the worked example:
+
+1. **Known case by hand** (calculator or spreadsheet) against the demo's readout.
+2. **Extremes** of every slider: no jumps, `NaN` or frozen page.
+3. **Offline:** works with wifi off; no web addresses except the SVG name.
+4. **Keyboard only** and **phone view.**
+5. **A person:** give the demo to a colleague or a student without explaining anything. After five minutes, ask what they noticed. Did they say your discovery sentence?
+
+Write the result of each check in the project README under the demo section, one line each (start the agent in the project folder for that, or edit the README yourself).
+
+### Step 4: Put it on your page
+
+Your page from *A course or project page* gets a new page that explains the concept in two or three sentences and shows the demo. Stay in the page folder:
+
+```text
+Add the demo demos/<short-name>.html to the website: a new page
+demo.qmd with a title, two or three sentences that introduce the concept
+and say what to try, and the demo embedded with an iframe (width 100%,
+a height that fits, a title attribute that describes the demo). Add the
+page to the site navigation. Make sure the build copies the demo file
+into the published site (list it under resources in _quarto.yml, next
+to .nojekyll). Render the site into docs/ and tell me what to check.
+```
+
+1. Open `docs/demo.html` in your browser and try the demo inside the page, including in a narrow window. Check that `docs/demos/<short-name>.html` exists.
+2. Commit (including `docs/`) and push, as in *A course or project page*. Wait a minute or two for GitHub Pages.
+3. Open the **published** page on your laptop and on your phone. If the demo box is empty or says "not found", the file was not copied into the site; tell the agent what you see.
+4. Add a line to the **Log of AI use** section of your project README: what the agent built, which checks you did, and what you changed by hand.
+
+## What you should have now
+
+- `~/agentic-course/interactive-demos/logistic-growth.html`: your logistic-growth demo, checked against a known case.
+- In your page folder: `demos/<short-name>.html`, a demo of a concept from your own field, with its model and known case described at the top of the file, and in the project README.
+- A page on your published site that shows the demo, tested on a laptop and a phone.
+- A README section with the discovery sentence, the known case and the result of each check, and a new line in the Log of AI use.

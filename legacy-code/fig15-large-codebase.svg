@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="430" fill="#fff"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#2a7f8f"/></marker></defs>
+  <text x="20" y="32" font-size="19" fill="#666">63 files, 3000 lines. Grey: not on the path to figure 3.</text>
+  <g font-size="15" text-anchor="middle" fill="#888">
+    <rect x="30" y="60" width="130" height="40" rx="6" fill="#f2f2f2" stroke="#ccc"/><text x="95" y="86">stats_tmp.m</text>
+    <rect x="30" y="120" width="130" height="40" rx="6" fill="#f2f2f2" stroke="#ccc"/><text x="95" y="146">fitwin_test.m</text>
+    <rect x="30" y="180" width="130" height="40" rx="6" fill="#f2f2f2" stroke="#ccc"/><text x="95" y="206">main_old2.m</text>
+    <rect x="30" y="240" width="130" height="40" rx="6" fill="#f2f2f2" stroke="#ccc"/><text x="95" y="266">fig2_poster.m</text>
+    <rect x="30" y="300" width="130" height="40" rx="6" fill="#f2f2f2" stroke="#ccc"/><text x="95" y="326">plot_all.m</text>
+    <rect x="830" y="60" width="140" height="40" rx="6" fill="#f2f2f2" stroke="#ccc"/><text x="900" y="86">export_xls.m</text>
+    <rect x="830" y="120" width="140" height="40" rx="6" fill="#f2f2f2" stroke="#ccc"/><text x="900" y="146">fig3_paper.m</text>
+    <rect x="830" y="300" width="140" height="40" rx="6" fill="#f2f2f2" stroke="#ccc"/><text x="900" y="326">… 50 more</text>
+  </g>
+  <g font-size="17" text-anchor="middle">
+    <rect x="200" y="200" width="150" height="50" rx="8" fill="#f5f5f5" stroke="#888"/><text x="275" y="231" fill="#333">raw plate files</text>
+    <rect x="390" y="200" width="130" height="50" rx="8" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/><text x="455" y="231" fill="#333">readTecan.m</text>
+    <rect x="390" y="110" width="130" height="50" rx="8" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/><text x="455" y="141" fill="#333">gr_calc.m</text>
+    <rect x="560" y="110" width="130" height="50" rx="8" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/><text x="625" y="141" fill="#333">fitwin.m</text>
+    <rect x="560" y="200" width="130" height="50" rx="8" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/><text x="625" y="231" fill="#333">fig3_paper_v2.m</text>
+    <rect x="720" y="190" width="100" height="70" rx="8" fill="#f5efdd" stroke="#8a6a12" stroke-width="3"/><text x="770" y="221" font-weight="bold" fill="#8a6a12">Fig. 3</text><text x="770" y="245" font-size="15" fill="#8a6a12">in the paper</text>
+  </g>
+  <g stroke="#2a7f8f" stroke-width="3" marker-end="url(#a)" fill="none">
+    <line x1="352" y1="225" x2="386" y2="225"/><line x1="455" y1="198" x2="455" y2="164"/>
+    <line x1="522" y1="135" x2="556" y2="135"/><line x1="625" y1="162" x2="625" y2="196"/>
+    <line x1="692" y1="225" x2="716" y2="225"/>
+  </g>
+  <g font-size="18" fill="#333">
+    <text x="200" y="385">1. Map everything (skim).  2. Trace one published number back to the raw data.</text>
+    <text x="200" y="413">3. Port only that path, with reference outputs.  4. Then the next number.</text>
+  </g>
+  <text x="185" y="60" font-size="14" fill="#999">illustrative</text>
+</svg>

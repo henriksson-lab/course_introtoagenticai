@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" width="1000" height="430" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="430" fill="#ffffff"/>
+  <text x="30" y="36" font-size="19" font-weight="bold" fill="#1b2a3a">Same eight paragraphs, same prompt, checked against the answer key</text>
+  <g font-size="16">
+    <rect x="30" y="56" width="940" height="44" fill="#f4f7fa"/>
+    <g font-weight="bold" fill="#1b2a3a"><text x="44" y="84">Item</text><text x="420" y="84">Cloud agent</text><text x="590" y="84">Large open model</text><text x="790" y="84">Small local model</text></g>
+    <g fill="#1b2a3a">
+      <text x="44" y="130">Values correct (of 32)</text><text x="420" y="130">31</text><text x="590" y="130">29</text><text x="790" y="130">22</text>
+      <text x="44" y="170">Adds up groups (S1, S8)</text><text x="420" y="170">both</text><text x="590" y="170">both</text><text x="790" y="170">neither</text>
+      <text x="44" y="210">Writes "not stated"</text><text x="420" y="210">yes</text><text x="590" y="210">mostly</text><text x="790" y="210">invents a value</text>
+      <text x="44" y="250">Saves table as a file</text><text x="420" y="250">yes</text><text x="590" y="250">yes, 2nd try</text><text x="790" y="250">no (chat only)</text>
+      <text x="44" y="290">Time</text><text x="420" y="290">1 min</text><text x="590" y="290">2 min</text><text x="790" y="290">4 min</text>
+    </g>
+    <rect x="30" y="314" width="940" height="56" fill="#eef6f7"/>
+    <text x="44" y="348" font-weight="bold" fill="#2a7f8f">Where the data went</text>
+    <text x="420" y="338" fill="#1b2a3a">provider,</text><text x="420" y="360" fill="#1b2a3a">USA or EU</text>
+    <text x="590" y="338" fill="#1b2a3a">hosted service,</text><text x="590" y="360" fill="#1b2a3a">in Sweden</text>
+    <text x="790" y="338" fill="#1b2a3a">nowhere: stayed</text><text x="790" y="360" fill="#1b2a3a">on the laptop</text>
+  </g>
+  <line x1="400" y1="56" x2="400" y2="370" stroke="#d5dde3"/><line x1="575" y1="56" x2="575" y2="370" stroke="#d5dde3"/><line x1="775" y1="56" x2="775" y2="370" stroke="#d5dde3"/>
+  <text x="30" y="404" font-size="16" fill="#1b2a3a">The kind of table you fill in during the exercise. Your numbers will differ from run to run.</text>
+  <text x="970" y="424" text-anchor="end" font-size="13" fill="#9aa8b5">illustrative</text>
+</svg>

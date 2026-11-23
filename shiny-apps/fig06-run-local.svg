@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="500" fill="#ffffff"/>
+  <rect x="20" y="30" width="420" height="240" rx="10" fill="#1e2630" stroke="#3a4654" stroke-width="1.5"/>
+  <rect x="20" y="30" width="420" height="34" rx="10" fill="#2d3743"/>
+  <rect x="20" y="54" width="420" height="10" fill="#2d3743"/>
+  <circle cx="40" cy="47" r="6.5" fill="#e0605a"/>
+  <circle cx="62" cy="47" r="6.5" fill="#e6b84f"/>
+  <circle cx="84" cy="47" r="6.5" fill="#5fbf6a"/>
+  <text x="230.0" y="53" font-size="15" fill="#b8c2cc" text-anchor="middle" font-weight="normal" xml:space="preserve">terminal</text>
+  <text x="38" y="92" font-size="16" fill="#9fe0ea" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">$ Rscript -e 'shiny::runApp()'</text>
+  <text x="38" y="120" font-size="16" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve"></text>
+  <text x="38" y="148" font-size="16" fill="#c8e6a0" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">Listening on http://127.0.0.1:4321</text>
+  <text x="38" y="176" font-size="16" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve"></text>
+  <text x="38" y="204" font-size="16" fill="#9aa4ad" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">(runs until you press Ctrl+C)</text>
+  <line x1="445" y1="150" x2="495" y2="150" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <rect x="500" y="30" width="480" height="330" rx="10" fill="#ffffff" stroke="#9aa4ad" stroke-width="1.5"/>
+  <rect x="500" y="30" width="480" height="40" rx="10" fill="#e9edf1"/>
+  <rect x="500" y="60" width="480" height="10" fill="#e9edf1"/>
+  <circle cx="518" cy="50" r="6" fill="#e0605a"/>
+  <circle cx="538" cy="50" r="6" fill="#e6b84f"/>
+  <circle cx="558" cy="50" r="6" fill="#5fbf6a"/>
+  <rect x="580" y="38" width="385" height="24" rx="12" fill="#ffffff" stroke="#c9d3dd" stroke-width="1"/>
+  <text x="594" y="55" font-size="14" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">127.0.0.1:4321</text>
+  <text x="520" y="100" font-size="17" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">Water quality at four sites</text>
+  <rect x="520" y="120" width="130" height="210" rx="6" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <rect x="532" y="137" width="16" height="16" rx="3" fill="#2a7f8f" stroke="#2a7f8f" stroke-width="1.5"/>
+  <path d="M535,145 l4,4 l7,-8" stroke="#ffffff" stroke-width="2.2" fill="none"/>
+  <text x="556" y="150" font-size="13" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Alder Lake</text>
+  <rect x="532" y="163" width="16" height="16" rx="3" fill="#2a7f8f" stroke="#2a7f8f" stroke-width="1.5"/>
+  <path d="M535,171 l4,4 l7,-8" stroke="#ffffff" stroke-width="2.2" fill="none"/>
+  <text x="556" y="176" font-size="13" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Mill Creek</text>
+  <rect x="532" y="189" width="16" height="16" rx="3" fill="#ffffff" stroke="#5a6670" stroke-width="1.5"/>
+  <text x="556" y="202" font-size="13" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">North Pond</text>
+  <rect x="532" y="215" width="16" height="16" rx="3" fill="#ffffff" stroke="#5a6670" stroke-width="1.5"/>
+  <text x="556" y="228" font-size="13" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Stone River</text>
+  <line x1="680" y1="315" x2="960" y2="315" stroke="#9aa4ad" stroke-width="2"/>
+  <line x1="680" y1="125" x2="680" y2="315" stroke="#9aa4ad" stroke-width="2"/>
+  <path d="M681.0,287.6 L684.6,285.0 L688.9,284.2 L692.5,288.4 L696.1,283.8 L699.7,289.2 L704.0,290.3 L707.6,288.8 L711.7,299.0 L715.3,293.7 L719.6,297.9 L723.2,299.4 L727.3,300.9 L730.9,299.4 L735.2,299.8 L738.8,295.2 L743.2,296.4 L746.7,297.5 L750.8,297.5 L754.4,289.9 L758.8,291.1 L762.3,291.1 L766.4,287.6 L770.0,285.7 L774.4,281.9 L777.9,281.2 L782.3,283.8 L785.9,293.0 L789.4,283.5 L793.0,292.6 L797.4,293.0 L800.9,293.3 L805.0,297.9 L808.6,296.0 L813.0,297.1 L816.5,299.4 L820.6,294.5 L824.2,299.8 L828.6,296.8 L832.1,302.8 L836.5,301.3 L840.1,294.1 L844.2,294.1 L847.7,293.0 L852.1,283.5 L855.7,286.5 L859.8,284.6 L863.3,287.3 L867.7,288.8 L871.3,285.7 L875.6,286.1 L879.2,286.1 L883.0,283.8 L886.6,283.1 L891.0,290.3 L894.5,297.5 L898.6,293.3 L902.2,296.4 L906.6,301.7 L910.1,297.5 L914.2,294.5 L917.8,301.3 L922.2,294.1 L925.7,299.8 L930.1,297.9 L933.7,293.0 L937.8,288.0 L941.3,290.3 L945.7,289.2 L949.3,285.0 L953.4,286.5 L956.9,286.5" stroke="#2a7f8f" stroke-width="1.5" fill="none"/>
+  <path d="M681.0,182.0 L684.6,192.3 L688.9,189.2 L692.5,202.5 L696.1,222.3 L699.7,228.4 L704.0,210.1 L707.6,215.8 L711.7,214.7 L715.3,233.3 L719.6,237.1 L723.2,257.6 L727.3,238.6 L730.9,240.5 L735.2,244.3 L738.8,238.2 L743.2,241.7 L746.7,237.1 L750.8,239.0 L754.4,210.1 L758.8,235.2 L762.3,202.9 L766.4,191.1 L770.0,185.4 L774.4,176.3 L777.9,221.5 L782.3,198.7 L785.9,186.9 L789.4,211.6 L793.0,192.3 L797.4,218.5 L800.9,202.5 L805.0,204.0 L808.6,235.2 L813.0,258.4 L816.5,242.8 L820.6,228.4 L824.2,248.5 L828.6,226.5 L832.1,212.0 L836.5,229.1 L840.1,243.6 L844.2,199.1 L847.7,214.7 L852.1,218.5 L855.7,185.4 L859.8,196.4 L863.3,180.1 L867.7,187.7 L871.3,178.2 L875.6,182.8 L879.2,176.3 L883.0,180.1 L886.6,204.0 L891.0,180.5 L894.5,202.5 L898.6,192.6 L902.2,221.9 L906.6,216.6 L910.1,243.2 L914.2,202.1 L917.8,235.6 L922.2,230.6 L925.7,236.3 L930.1,220.4 L933.7,218.9 L937.8,229.1 L941.3,192.3 L945.7,170.2 L949.3,180.1 L953.4,185.4 L956.9,138.3" stroke="#6b4fa0" stroke-width="1.5" fill="none"/>
+  <rect x="584" y="36" width="112" height="28" rx="6" fill="none" stroke="#a8324a" stroke-width="2.5"/>
+  <text x="20" y="320" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">127.0.0.1 means "this computer".</text>
+  <text x="20" y="347" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">Nobody else can open this address.</text>
+  <text x="20" y="400" font-size="17" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">Stop the app: Ctrl+C in the terminal.</text>
+  <text x="20" y="424" font-size="17" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">Change app.R, then start it again</text>
+  <text x="20" y="448" font-size="17" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">(or reload, if your tool restarts it for you).</text>
+  <text x="990" y="490" font-size="14" fill="#9aa4ad" text-anchor="end" font-weight="normal" font-style="italic" xml:space="preserve">illustrative</text>
+</svg>

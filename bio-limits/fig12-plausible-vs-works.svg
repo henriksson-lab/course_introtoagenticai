@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="1000" height="480" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="480" fill="#ffffff"/>
+  <rect x="30" y="40" width="380" height="330" rx="12" fill="#efeaf6" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="220" y="78" text-anchor="middle" font-size="21" font-weight="bold" fill="#6b4fa0">What the model has</text>
+  <g font-size="18" fill="#1b2a3a">
+    <text x="55" y="124">• text that reads like many</text>
+    <text x="72" y="148">published protocols</text>
+    <text x="55" y="188">• the typical version, an</text>
+    <text x="72" y="212">average of what it has read</text>
+    <text x="55" y="252">• no bench, no reagents,</text>
+    <text x="72" y="276">no failed runs</text>
+    <text x="55" y="316">• no memory of what went</text>
+    <text x="72" y="340">wrong last time</text>
+  </g>
+  <rect x="590" y="40" width="380" height="330" rx="12" fill="#e6f2f4" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="780" y="78" text-anchor="middle" font-size="21" font-weight="bold" fill="#2a7f8f">What the bench needs</text>
+  <g font-size="18" fill="#1b2a3a">
+    <text x="615" y="124">• conditions someone tested</text>
+    <text x="615" y="164">• your reagents, lots and</text>
+    <text x="632" y="188">equipment</text>
+    <text x="615" y="228">• your lab's risk assessment</text>
+    <text x="632" y="252">and standard procedures</text>
+    <text x="615" y="292">• a pilot run, and someone</text>
+    <text x="632" y="316">who has done it before</text>
+  </g>
+  <rect x="425" y="160" width="150" height="90" rx="8" fill="#ffffff" stroke="#a8324a" stroke-width="3" stroke-dasharray="8 6"/>
+  <text x="500" y="200" text-anchor="middle" font-size="22" font-weight="bold" fill="#a8324a">the gap</text>
+  <text x="500" y="228" text-anchor="middle" font-size="17" fill="#a8324a">you close it</text>
+  <text x="500" y="430" text-anchor="middle" font-size="20" fill="#1b2a3a" font-weight="bold">Plausible is not the same as tested.</text>
+</svg>

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#ffffff"/>
+  <defs>
+    <marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#666"/></marker>
+  </defs>
+  <rect x="20" y="80" width="190" height="130" rx="10" fill="#f8e9ec" stroke="#a8324a" stroke-width="3"/>
+  <text x="115" y="118" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="19" font-weight="bold" fill="#a8324a">data/raw/</text>
+  <text x="115" y="150" text-anchor="middle" font-size="17" fill="#333">originals</text>
+  <text x="115" y="180" text-anchor="middle" font-size="17" fill="#a8324a">read-only</text>
+  <rect x="270" y="95" width="170" height="100" rx="10" fill="#f6efdc" stroke="#8a6a12" stroke-width="2"/>
+  <text x="355" y="132" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="17" fill="#333">scripts/</text>
+  <text x="355" y="162" text-anchor="middle" font-size="16" fill="#555">01_clean.py</text>
+  <rect x="500" y="80" width="210" height="130" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="605" y="118" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="18" fill="#333">data/processed/</text>
+  <text x="605" y="150" text-anchor="middle" font-size="17" fill="#555">counts_clean.csv</text>
+  <rect x="770" y="80" width="210" height="130" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="875" y="118" text-anchor="middle" font-family="Menlo, Consolas, monospace" font-size="18" fill="#333">results/</text>
+  <text x="875" y="150" text-anchor="middle" font-size="17" fill="#555">fig_sites.svg</text>
+  <line x1="210" y1="145" x2="266" y2="145" stroke="#666" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="440" y1="145" x2="496" y2="145" stroke="#666" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="710" y1="145" x2="766" y2="145" stroke="#666" stroke-width="3" marker-end="url(#a)"/>
+  <text x="738" y="132" text-anchor="middle" font-size="14" fill="#555">02_</text>
+  <!-- bracket regenerable -->
+  <path d="M500,235 L500,255 L980,255 L980,235" fill="none" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="740" y="285" text-anchor="middle" font-size="18" fill="#2a7f8f" font-weight="bold">can be deleted and remade by rerunning the scripts</text>
+  <path d="M20,235 L20,255 L440,255 L440,235" fill="none" stroke="#a8324a" stroke-width="2.5"/>
+  <text x="230" y="285" text-anchor="middle" font-size="18" fill="#a8324a" font-weight="bold">must be kept</text>
+  <text x="500" y="350" text-anchor="middle" font-size="19" fill="#333">If the cleaned data is wrong, fix the script, not the data.</text>
+</svg>

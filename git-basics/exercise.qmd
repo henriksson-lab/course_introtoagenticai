@@ -1,0 +1,263 @@
+---
+title: "Exercise: git as undo button"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- **git installed** and set up with your name and email,
+- turned a small practice project into a **git repository**, with a `.gitignore` that keeps a (fake) secret out,
+- made **commits with messages** that read like lab-notebook entries,
+- asked **"what changed?"** and read a diff, including a change you did not want,
+- **undone a bad agent edit** with git, and checked that nothing else was lost,
+- **read the history** of the project as a short table, and
+- done the same for **your own project folder**, which is from now on a git repository.
+
+You never type a git command yourself. The agent does that; you read what it proposes, approve it, and check the result.
+
+Your session will look different from anyone else's, including the examples below. Compare **results**, not sessions.
+
+## Before you start
+
+- You have done *Organising a project for an agent*: your own project folder has its structure and a `CLAUDE.md` or `AGENTS.md`.
+- You know how to start the agent in a folder and read permission requests (*Terminal survival kit*).
+- Download the practice project: [plate-growth.zip](data/plate-growth.zip). It holds a tiny synthetic experiment: optical density readings of 12 plates, a script `clean.py` that summarises them, a lab note, and a file `.env` with a **fake** secret.
+- Unzip it into your course folder, so you get `~/agentic-course/git-basics/plate-growth/` (Windows: `C:\Users\<you>\agentic-course\git-basics\plate-growth\`). On Windows, check that you did not get `plate-growth\plate-growth\`.
+- The file `.env` starts with a dot, so your file browser may hide it. That is normal. (Mac Finder: **Cmd+Shift+.** shows hidden files. Windows Explorer: **View → Show → Hidden items**.)
+
+### Starting the agent
+
+::: {.panel-tabset}
+## Claude Code
+```bash
+cd ~/agentic-course/git-basics/plate-growth
+claude
+```
+Keep **manual mode** for this exercise (the status line below the prompt box; **Shift+Tab** cycles), so you see every git command before it runs.
+
+## Codex
+```bash
+cd ~/agentic-course/git-basics/plate-growth
+codex
+```
+The folder is not yet a git repository, so Codex will probably suggest **Read Only**. To let it create the repository, type `/permissions` and choose the level that lets it edit files in the workspace (not full access). After the repository exists, a new Codex session in this folder will suggest **Auto**. Check with `/status`.
+:::
+
+## Worked example
+
+### Step 1: Check git, and install it if needed
+
+```text
+Is git installed on this computer, and which version? Only check,
+do not install anything.
+```
+
+If git is missing, ask for a plan, read it, and approve step by step:
+
+```text
+Git is missing. Suggest how to install it on this computer, using the
+official source or the usual package manager. Show me the plan first
+and tell me which steps need my password or a system window.
+```
+
+| System | What usually happens |
+|---|---|
+| Mac | A system window offers to install the Command Line Tools, which include git. Click **Install**. Or the agent uses Homebrew if you have it. |
+| Windows | Git for Windows from [git-scm.com](https://git-scm.com/downloads/win), or `winget`. Accept the default choices. Then **close and reopen the terminal**. |
+| Linux | The package manager (`apt`, `dnf`); you type your password. |
+| Managed laptop | If installing is blocked, use the software centre or ask IT. |
+
+Then let git know who you are:
+
+```text
+Check whether git knows my name and email. If not, set them for my user
+account. Ask me which name and email to use; do not guess.
+```
+
+**What to look for.** The agent runs something like `git config --global user.name` and `user.email`. These only affect git on your computer. The name and email go into every commit you make from now on (see the lecture for the privacy point).
+
+### Step 2: Make the project a repository, ignore list first
+
+Look at the folder in your file browser for a minute first (with hidden files shown). Then:
+
+```text
+Make this folder a git repository. Before the first commit:
+1. create a .gitignore that keeps out secrets (such as .env), system
+   junk files and anything large or personal you see;
+2. list every file you are about to commit and flag anything that looks
+   like a secret, personal data or a large file.
+Then commit everything else with a message saying what the project
+contains. Show me the message before you commit.
+```
+
+**What to look for.** The order: `git init`, then `.gitignore`, then the list of files, then the commit. Read the file list before you approve the commit.
+
+#### Check the result
+
+1. Ask: "**Is .env in any commit? Show me the list of files in the last commit.**" `.env` must **not** be in the list. `.gitignore` should be.
+2. The commit contains **6 files**: `.gitignore`, `README.md`, `clean.py`, `data/raw/plates.csv`, `notes/2026-11-20.md`, `results/summary.csv`. (If the agent chose to ignore `results/` because the script can remake it, you get 5. That is a defensible choice; ask it to explain.)
+3. Open `.gitignore` in a text editor. It names `.env`. It may name other things too; ask about any line you do not understand.
+4. In your file browser, a hidden folder `.git` has appeared. Do not open or change it.
+
+### Step 3: A good change, committed with a lab-notebook message
+
+```text
+Add a column with the standard deviation (sd_od600_8h) to
+results/summary.csv, by changing clean.py and rerunning it.
+Change nothing else.
+```
+
+When it is done, ask:
+
+```text
+What changed since the last commit? List the files, then explain the
+changes in plain words.
+```
+
+**What to look for.** Two files changed: `clean.py` and `results/summary.csv`. Nothing in `data/raw/`. If anything else changed, ask why.
+
+Open `results/summary.csv`. The means must be unchanged: **control 0.758, glucose 2.654, salt 0.254**, with **n_plates 4, 3, 4** (plate P07 is excluded, see the lab note). There is a new column with three standard deviations.
+
+Now commit:
+
+```text
+Commit this. First line: what we did. Then one or two lines: why, and
+which files and results it affects. Show me the message first.
+```
+
+Read the message. Is every claim in it true? If not, say what is wrong before it commits.
+
+### Step 4: A deliberately bad edit, and the undo
+
+Now we make the kind of mess an agent can make, on purpose, so you can practise getting out of it:
+
+```text
+For practice, make a deliberately bad change. Do not commit it.
+1. In clean.py, stop excluding plate P07.
+2. In data/raw/plates.csv, change plate P05's reading at hour 8 to 2.9.
+3. Rerun clean.py.
+```
+
+Look at `results/summary.csv`: the glucose mean has jumped (to about **3.2**, with n = 4). Now ask the questions you would ask after any real agent session:
+
+```text
+What changed since the last commit? List every file, and tell me if
+any raw data changed.
+```
+
+**What to look for.** Three files: `clean.py`, `data/raw/plates.csv` and `results/summary.csv`. The raw-data change should stand out. Ask the agent to show you that diff; you see the old line in red and the new line in green.
+
+Now undo it:
+
+```text
+Undo all changes since the last commit. Before you do, tell me exactly
+what will be thrown away and what will be kept.
+```
+
+**What to look for.** The command proposed should be a `git restore` of those files (or something with the same effect). If you see `git reset --hard` or `git clean`, stop and ask what it would delete: here it would be harmless, but it is a good habit.
+
+#### Check the result
+
+1. Ask: "**Is everything committed? Is anything different from the last commit?**" The answer should be that nothing has changed (a "clean working tree").
+2. Open `results/summary.csv` (if `results/` is in your `.gitignore`, git cannot restore it: ask the agent to rerun `clean.py` first): glucose is back to **2.654**, n = 3, and your standard deviation column from step 3 is still there. The good change survived; only the bad one went.
+3. Open `data/raw/plates.csv` and find `P05,glucose,8,`. The value is **2.659** again.
+
+### Step 5: Undo a commit, keeping the record
+
+Sometimes you notice a mistake only after it was committed. Make a small committed change, then reverse it:
+
+```text
+Change clean.py so it summarises hour 6 instead of hour 8, rerun it and
+commit with a message. Then undo that commit with a new commit that
+reverses it (git revert), so the history keeps both.
+```
+
+#### Check the result
+
+- The summary is back at hour 8 (glucose **2.654**).
+- Ask for the history. The last two entries are your hour-6 commit and a "Revert ..." commit. The mistake and its correction are both in the notebook.
+
+### Step 6: Read the history
+
+```text
+Show me the history of this project as a short table: date, short id,
+message. Then tell me: when did we add the standard deviation, and what
+did clean.py look like before that?
+```
+
+You should see **4 commits** (the first one, the standard deviation, the hour-6 change and its revert) and the old version of `clean.py` without the standard deviation.
+
+### Step 7 (optional): Claude Code checkpoints
+
+In Claude Code, ask for a harmless edit, for example "Add a line 'Practised git on <date>' at the end of README.md." Then type `/rewind` (or press **Esc** twice with an empty prompt), select that prompt, and choose **Restore code**. The line disappears. Ask "is anything different from the last commit?": the answer should be no.
+
+This works only for files Claude edited in this session. Git covers everything. See the [checkpointing documentation](https://code.claude.com/docs/en/checkpointing).
+
+::: {.callout-note collapse="true" title="Expected outcomes for the worked example"}
+- First commit: 6 files; `.env` not among them; `.gitignore` names `.env`.
+- `results/summary.csv` after step 3: control n = 4, mean 0.758; glucose n = 3, mean 2.654; salt n = 4, mean 0.254; plus a standard deviation column.
+- After the bad edit in step 4: glucose n = 4, mean about 3.24 (with P05 at 2.9). After the undo: back to n = 3, mean 2.654, and `P05,glucose,8,2.659` in the raw data.
+- History after step 5: 4 commits, the last one a "Revert ..." of the hour-6 commit.
+- Your messages will be worded differently. They should each say what was done, and the step-3 message should mention the new column.
+:::
+
+## On your own project
+
+Your own project folder becomes a git repository today. From now on, every agent session in it follows the routine: clean start, one task, read the diff, check, commit or undo.
+
+**Privacy first.** Look at the "Data class and precautions" and "Never put in this folder" sections of your README. Anything personal, confidential or secret that is in the folder must go in `.gitignore` **before** the first commit, or better, not be in the folder at all. Once committed, a file stays in the history.
+
+1. Start the agent in your **project folder** (for example `~/agentic-course/soil-funding-map/`), not in the course folder.
+2. Make it a repository, ignore list first:
+
+```text
+Make this folder a git repository. Before the first commit:
+1. read README.md (especially "Data class and precautions" and
+   "Never put in this folder") and CLAUDE.md / AGENTS.md;
+2. create a .gitignore that keeps out secrets, system junk, large files
+   and anything the README says must not be shared;
+3. list every file you are about to commit, with its size, and flag
+   anything that might be personal, confidential or large.
+Then commit with a message describing what the project contains so far.
+Show me the file list and the message before you commit.
+```
+
+3. Read the file list carefully. If something should not be there, say so and have it added to `.gitignore` before the commit.
+4. Add the routine to the project's instructions file, so the agent follows it in every session:
+
+```text
+Add a short section "Git routine" to CLAUDE.md (or AGENTS.md):
+- at the start of a session, check that everything is committed;
+- one task at a time; after each task, list the changed files;
+- never change files in data/raw;
+- commit only when I ask, with a message saying what, why and what it
+  affects;
+- never run git reset --hard, git clean or git push --force without
+  asking me and saying what would be lost.
+Commit this change.
+```
+
+5. **Bad-edit drill on your own project.** Ask for a small, harmless but unwanted change (for example "add a sentence to the Goal section of README.md that I did not write"). Then: "What changed since the last commit?", and "Undo it; tell me first what will be lost." Check that README.md is back as it was.
+6. Add a line to the **Log of AI use** section of your README: today's date, "made the project a git repository; added git routine", and commit it.
+
+### Check the result
+
+- Ask: "**Show me the history as a short table.**" You see at least three commits: the first snapshot, the git routine, and the log entry.
+- Ask: "**List every file git is tracking.**" Nothing on it is personal, secret or large. Nothing from your "Never put in this folder" list is on it.
+- Ask: "**Is anything not committed?**" The answer should be no.
+- If you use Codex, start a new session in the project folder and check with `/status` which level it now suggests (Auto in a git folder). Decide whether that is what you want for this project; if your data is sensitive, stay with Read Only.
+
+## What you should have now
+
+- Git installed, with your name and email set.
+- The practice project `plate-growth` with a history of 4 commits, which you have read, diffed and undone.
+- **Your own project folder as a git repository**, with a `.gitignore` that matches your data class, a "Git routine" section in `CLAUDE.md` or `AGENTS.md`, and a first few commits whose messages read like a lab notebook.
+
+In *Reproducible figures* you commit your first figure together with the script that makes it. In *GitHub* the history goes online.

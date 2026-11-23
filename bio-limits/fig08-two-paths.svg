@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+  </defs>
+  <rect width="1000" height="520" fill="#ffffff"/>
+  <rect x="30" y="20" width="440" height="70" rx="10" fill="#2a7f8f"/>
+  <text x="250" y="52" text-anchor="middle" font-size="20" fill="#ffffff" font-weight="bold">A benign request,</text>
+  <text x="250" y="76" text-anchor="middle" font-size="20" fill="#ffffff" font-weight="bold">blocked by mistake</text>
+  <rect x="530" y="20" width="440" height="70" rx="10" fill="#a8324a"/>
+  <text x="750" y="52" text-anchor="middle" font-size="20" fill="#ffffff" font-weight="bold">A request that is genuinely</text>
+  <text x="750" y="76" text-anchor="middle" font-size="20" fill="#ffffff" font-weight="bold">restricted</text>
+  <line x1="250" y1="90" x2="250" y2="122" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="750" y1="90" x2="750" y2="122" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="30" y="128" width="440" height="200" rx="10" fill="#e6f2f4" stroke="#2a7f8f" stroke-width="2"/>
+  <g font-size="18" fill="#1b2a3a">
+    <text x="50" y="160" font-weight="bold">Add honest context:</text>
+    <text x="50" y="190">• who you are, and your role</text>
+    <text x="50" y="218">• what the output is for</text>
+    <text x="50" y="246">• which level of detail you need</text>
+    <text x="50" y="274">• ask for the parts you need, and</text>
+    <text x="68" y="298">say what you do not need</text>
+  </g>
+  <rect x="530" y="128" width="440" height="200" rx="10" fill="#f8eef0" stroke="#a8324a" stroke-width="2"/>
+  <g font-size="18" fill="#1b2a3a">
+    <text x="550" y="160" font-weight="bold">Do not reword or disguise it.</text>
+    <text x="550" y="190">That breaks the usage policy and</text>
+    <text x="550" y="216">can cost you your account.</text>
+    <text x="550" y="256" font-weight="bold">Use the normal channels:</text>
+    <text x="550" y="284">biosafety officer, colleagues,</text>
+    <text x="550" y="310">literature, provider programmes</text>
+  </g>
+  <line x1="250" y1="328" x2="250" y2="362" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <line x1="750" y1="328" x2="750" y2="362" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <rect x="30" y="368" width="440" height="64" rx="10" fill="#ffffff" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="250" y="408" text-anchor="middle" font-size="19" fill="#2a7f8f" font-weight="bold">Often works, and is fine to do</text>
+  <rect x="530" y="368" width="440" height="64" rx="10" fill="#ffffff" stroke="#a8324a" stroke-width="2"/>
+  <text x="750" y="408" text-anchor="middle" font-size="19" fill="#a8324a" font-weight="bold">The agent is the wrong tool here</text>
+  <text x="500" y="484" text-anchor="middle" font-size="19" fill="#1b2a3a">The test: would you be comfortable if your biosafety officer read the exchange?</text>
+</svg>

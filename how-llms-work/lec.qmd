@@ -22,7 +22,7 @@ format:
 
 In *First delegations* the agent sorted a folder, cleaned a spreadsheet and summarised PDFs. Most of it went well, and some of it went subtly wrong. To know **when to trust the agent and how to check it**, you need a working picture of what is going on inside.
 
-- An **LLM** is a model trained to **continue text, one token at a time**. It produces plausible text, which is not the same as true text.
+- An **LLM** is a model trained to **continue text, one token at a time**. It produces plausible, typical text, which is not the same as true or new text.
 - Its **context window** is its working memory. What is not in the conversation or in the files it read does not exist for it.
 - An **agent** is an LLM with **tools in a loop**: read, write, run, search. It can check its own work by running it.
 - It fails in **recognisable ways**, and each one has a matching defence.
@@ -96,12 +96,34 @@ Training data is collected up to some date, the knowledge cut-off. Then the mode
 When the tool picks the next token it usually does not take the single most likely one every time; it samples, with a bit of randomness. That makes the text more natural, but it also means that the same prompt in two fresh sessions can give different answers. For a course title that is harmless, even useful. For a number, a list of problems in a data file, or a decision about which rows to keep, it is a signal. If two independent runs agree, that is weak evidence that the answer is stable. If they disagree, you have learnt that at least one of them is wrong, or that the question has no single answer and you need to decide. You will try this in the exercise. Note that agreement between two runs is not proof: both can be wrong in the same way, especially when both answer from memory.
 :::
 
+## By default it gives the likely answer, not the new one
+
+![](fig23-likely-not-new.svg){width="78%" fig-align="center"}
+
+- The model picks among the **most probable** next tokens, so its default answer is the **typical** one: what most texts say.
+- Good for standard analyses and conventional text; **weak at original ideas**. An idea it presents as new may already be in the literature.
+- **Push** for novelty (alternatives, unusual angles, a critique of the obvious answer) and **judge** the result yourself.
+
+::: notes
+The sampling we just saw has a second consequence, and it matters for research. The model is trained to predict likely text, and it picks among the likely next tokens. So when you ask an open question, such as a research question, a study design or a title, you get the kind of answer that appears most often in what it learnt from: sensible, conventional, typical. That is exactly what you want for a standard analysis or a well-written cover letter. It is not what you want when you are looking for an original idea. Novelty is low by default. You can push: ask for ten alternatives instead of one, for the unusual angles, for what a critic of the obvious answer would say. Then you judge, because many unusual ideas are unusual for a good reason. And be careful with ideas it presents as new: they may well be in a paper you have not read, which you should check before claiming them. The other side of the story, where agents with search, verification and a lot of computing time do produce new results, comes in Copyright, memorisation and credit, with the Navier-Stokes case.
+:::
+
 ## The context window is the model's working memory
 
 ![](fig07-context-window.svg){width="80%" fig-align="center"}
 
 ::: notes
 Everything the model "knows" about your task is in the context window: the instructions built into the tool, a project notes file if there is one, your messages, the files it has opened, the output of the commands it ran, and its own earlier replies. For every new token, the whole window is taken into account. What is not in the window does not exist for the model. It has not seen files it did not open, even if they sit in the same folder. It has no memory of yesterday's session. And it does not know what you meant but did not say: the unwritten habits of your lab, the fact that column C is in millimetres, the reason sample 17 is excluded. A very common cause of a "stupid" mistake is simply that the information was never in the window. The fix is usually to put it there: tell it, or point it at the file.
+:::
+
+## Every new token is chosen by reading everything before it
+
+![](fig22-each-token-reads-all.svg){width="80%" fig-align="center"}
+
+Tokens, next-token prediction and the context window are **one picture**: each new token depends on all the earlier ones.
+
+::: notes
+This slide ties the last few together. The model produces one token at a time. To choose each one, it takes in the whole context window again: the built-in instructions, the files it has read, your messages, and every token it has written so far in this answer. Then it adds the new token, and for the next one it reads everything again, now one token longer. We do not need the maths of how it weighs all those tokens; the high-level picture is enough. Three consequences follow. Everything in the window can influence the answer, including a file it read an hour ago and its own earlier words. Early tokens steer later ones: once it has written "the mean height is 86", the rest of the answer is built on that number, and it does not go back to revise it unless something prompts it to. And what is not in the window, because it was never put there or was compacted away, cannot influence anything. That is why the next slides about compaction and new sessions matter.
 :::
 
 ## Long sessions get compacted, and details get lost
@@ -187,6 +209,16 @@ The next slides take them one at a time: **a concrete example, why it happens, a
 
 ::: notes
 Here is the map for the second half of the lecture. These eight failure modes cover most of what you will run into in this course. They are not exotic: you will see several of them in the exercise today, and probably all of them by the end of the course. The colours group them loosely. Red: the model produces things that are not true. Purple: it tells you what you want to hear or quietly makes the job easier for itself. Ochre: it works outside the boundaries of the task, in space or in time. Teal: problems that come from the context window itself. For each one we will look at a realistic example and a defence. The defences overlap a lot, and at the end we collect them into one toolbox.
+:::
+
+## Hallucination comes from the same process as a correct answer
+
+![](fig24-plausible-not-true.svg){width="80%" fig-align="center"}
+
+The model produces what is **plausible** given the context, not what is **true**. That is why an invented reference or function sounds **just as confident** as a real one.
+
+::: notes
+Before the examples, the mechanism, because it explains why hallucination is not a rare glitch. There is no separate step inside the model that looks a fact up and checks it. There is only the process we have seen: given everything so far, produce the most plausible next token. When the model has seen a paper many times in training, the plausible details are the true ones, and you get a correct reference. When it has not, the same process still produces something plausible: an author name that fits the field, a year that fits, a journal that publishes such work, a DOI with the right shape. Nothing in the process marks the second case as different, so the wording is equally fluent and equally confident. This is also why the defence is always the same: get the claim out of the model's memory and into something checkable, a fetched page, a database lookup, a script that ran.
 :::
 
 ## Hallucination: invented references look exactly like real ones
@@ -373,11 +405,13 @@ It is important to be honest about the limits of our own understanding, not just
 | Token | a word or a piece of one; the model does not see letters, so counting by eye is unreliable |
 | Training | a lot of text, then instructions and tools; knowledge stops at a **cut-off** |
 | Sampling | the same prompt can give different answers; disagreement between runs is a warning |
+| Likely, not new | the default answer is the typical one; push for alternatives and judge novelty yourself |
 | Context window | working memory; not in the window = does not exist; long sessions are **compacted** |
+| Each token reads all | every new token depends on the whole context so far; early tokens steer later ones |
 | New session | blank slate; lasting rules go in a **file** |
 | Agent | LLM + tools + loop; the **harness** runs tools after your permission |
 | Why agents | they can **check by running**; the script stays on disk to rerun |
-| Failure modes | hallucination, wrong numbers, sycophancy, silent shortcuts, scope creep, stale knowledge, losing track, prompt injection |
+| Failure modes | hallucination (plausible, not true; same process as a correct answer), wrong numbers, sycophancy, silent shortcuts, scope creep, stale knowledge, losing track, prompt injection |
 | Trust ladder | trust what was run and can be rerun; distrust what was remembered |
 
 **Next (Privacy, ethics and safety):** what you may send to a cloud model, how to keep the agent away from data it should not see, and how to choose your own project for the rest of the course.

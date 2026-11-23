@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <rect width="1000" height="470" fill="#fff"/>
+  <text x="235" y="32" font-size="19" font-weight="bold" fill="#8a6a12" text-anchor="middle">_quarto.yml</text>
+  <rect x="20" y="45" width="440" height="400" rx="8" fill="#f7f7f7" stroke="#bbb" stroke-width="2"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="16" fill="#333" xml:space="preserve">
+    <text x="38" y="78">project:</text>
+    <text x="38" y="100">  type: website</text>
+    <text x="38" y="122" fill="#a8324a" font-weight="bold">  output-dir: docs</text>
+    <text x="38" y="158">website:</text>
+    <text x="38" y="180">  title: "Plant growth trial"</text>
+    <text x="38" y="202">  sidebar:</text>
+    <text x="38" y="224">    contents:</text>
+    <text x="38" y="248" fill="#2a7f8f">      - index.qmd</text>
+    <text x="38" y="272" fill="#2a7f8f">      - results.qmd</text>
+    <text x="38" y="296" fill="#2a7f8f">      - slides.qmd</text>
+    <text x="38" y="320" fill="#2a7f8f">      - about.qmd</text>
+    <text x="38" y="356">format:</text>
+    <text x="38" y="378">  html:</text>
+    <text x="38" y="400">    theme: cosmo</text>
+  </g>
+  <line x1="468" y1="285" x2="532" y2="285" stroke="#555" stroke-width="3" marker-end="url(#ar)"/>
+  <rect x="540" y="45" width="440" height="400" rx="8" fill="#fff" stroke="#bbb" stroke-width="2"/>
+  <rect x="540" y="45" width="170" height="400" fill="#f4f8f9"/>
+  <text x="556" y="82" font-size="17" font-weight="bold" fill="#333">Plant growth</text>
+  <text x="556" y="104" font-size="17" font-weight="bold" fill="#333">trial</text>
+  <g font-size="17" fill="#2a7f8f">
+    <text x="556" y="248">Home</text>
+    <text x="556" y="272" font-weight="bold">Results</text>
+    <text x="556" y="296">Slides</text>
+    <text x="556" y="320">About</text>
+  </g>
+  <text x="730" y="92" font-size="24" font-weight="bold" fill="#333">Results</text>
+  <g fill="#ddd"><rect x="730" y="115" width="230" height="12"/><rect x="730" y="137" width="200" height="12"/><rect x="730" y="165" width="230" height="110"/></g>
+  <text x="760" y="410" font-size="15" fill="#555">order in the file =</text>
+  <text x="760" y="430" font-size="15" fill="#555">order in the sidebar</text>
+</svg>

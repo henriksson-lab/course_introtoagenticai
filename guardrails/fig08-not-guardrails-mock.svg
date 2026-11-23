@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="520" fill="#ffffff"/>
+  <!-- 1 usage limit -->
+  <text x="20" y="30" font-size="19" font-weight="bold" fill="#8a6a12">Usage limit</text>
+  <rect x="20" y="42" width="300" height="200" rx="10" fill="#1f2430"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="16">
+    <text x="36" y="80" fill="#e0c27a">You've hit your usage</text>
+    <text x="36" y="102" fill="#e0c27a">limit. Resets 15:00.</text>
+    <text x="36" y="144" fill="#9a9aa8">See your usage, or</text>
+    <text x="36" y="166" fill="#9a9aa8">upgrade your plan.</text>
+  </g>
+  <!-- 2 context -->
+  <text x="350" y="30" font-size="19" font-weight="bold" fill="#6b4fa0">Context running out</text>
+  <rect x="350" y="42" width="300" height="200" rx="10" fill="#1f2430"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="16">
+    <text x="366" y="80" fill="#c9b8ea">Context low (6% left).</text>
+    <text x="366" y="102" fill="#c9b8ea">Compacting the</text>
+    <text x="366" y="124" fill="#c9b8ea">conversation ...</text>
+    <text x="366" y="166" fill="#9a9aa8">Earlier details may</text>
+    <text x="366" y="188" fill="#9a9aa8">be summarised.</text>
+  </g>
+  <!-- 3 network -->
+  <text x="680" y="30" font-size="19" font-weight="bold" fill="#3a4a5a">Network or server error</text>
+  <rect x="680" y="42" width="300" height="200" rx="10" fill="#1f2430"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="16">
+    <text x="696" y="80" fill="#cfd6dc">API Error: 529</text>
+    <text x="696" y="102" fill="#cfd6dc">Overloaded.</text>
+    <text x="696" y="124" fill="#cfd6dc">Retrying in 8 s</text>
+    <text x="696" y="146" fill="#cfd6dc">(attempt 2/10)</text>
+  </g>
+  <!-- what to do -->
+  <g font-size="17" fill="#1b2a3a">
+    <text x="20" y="282" font-weight="bold">What it means</text>
+    <text x="20" y="308">You used your plan's share</text>
+    <text x="20" y="330">for now. Nothing about the</text>
+    <text x="20" y="352">content of your request.</text>
+    <text x="20" y="392" font-weight="bold">What to do</text>
+    <text x="20" y="418">Wait, check <tspan font-family="Menlo, Consolas, monospace">/usage</tspan> or</text>
+    <text x="20" y="440"><tspan font-family="Menlo, Consolas, monospace">/status</tspan>, use a smaller</text>
+    <text x="20" y="462">model for chores.</text>
+    <text x="350" y="282" font-weight="bold">What it means</text>
+    <text x="350" y="308">The conversation is too long</text>
+    <text x="350" y="330">for the model's memory.</text>
+    <text x="350" y="392" font-weight="bold">What to do</text>
+    <text x="350" y="418">Start a fresh session; keep</text>
+    <text x="350" y="440">the plan in a file the agent</text>
+    <text x="350" y="462">can reread.</text>
+    <text x="680" y="282" font-weight="bold">What it means</text>
+    <text x="680" y="308">The service is busy, or your</text>
+    <text x="680" y="330">connection dropped.</text>
+    <text x="680" y="392" font-weight="bold">What to do</text>
+    <text x="680" y="418">Wait and try again; check</text>
+    <text x="680" y="440">the provider's status page.</text>
+  </g>
+  <text x="980" y="508" text-anchor="end" font-size="14" fill="#8a97a5">illustrative; wording varies by tool and version</text>
+</svg>

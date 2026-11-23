@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="500" fill="#fff"/>
+  <rect x="20" y="15" width="960" height="455" rx="10" fill="#1f2430"/>
+  <circle cx="45" cy="37" r="7" fill="#a8324a"/><circle cx="68" cy="37" r="7" fill="#8a6a12"/><circle cx="91" cy="37" r="7" fill="#2a7f8f"/>
+  <text x="500" y="43" font-size="16" fill="#aab" text-anchor="middle">terminal: soil-funding</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="16" xml:space="preserve">
+    <text x="45" y="78" fill="#9a9aa8">• Fetched https://swecris-api.vr.se (Swagger documentation)</text>
+    <text x="45" y="104" fill="#e8e8e8">I will use GET /v1/scp/search: it takes searchText, page and</text>
+    <text x="45" y="128" fill="#e8e8e8">size, and each response reports the total and per-year sums.</text>
+    <text x="45" y="152" fill="#e8e8e8">The token is sent in a header, read from .env at run time.</text>
+    <text x="45" y="184" fill="#9a9aa8">• Wrote scripts/download_swecris.py</text>
+  </g>
+  <rect x="40" y="200" width="920" height="120" rx="6" fill="none" stroke="#e0b84a" stroke-width="2"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="16" xml:space="preserve">
+    <text x="60" y="228" fill="#e0b84a">Run this command?</text>
+    <text x="60" y="256" fill="#e8e8e8">  python3 scripts/download_swecris.py --first-page-only</text>
+    <text x="60" y="286" fill="#8fd3df">  1. Yes    2. Yes, and don't ask again for this command</text>
+    <text x="60" y="308" fill="#8fd3df">  3. No, and tell the agent what to do differently</text>
+  </g>
+  <g font-family="Menlo, Consolas, monospace" font-size="16" xml:space="preserve">
+    <text x="45" y="352" fill="#9a9aa8">• Saved data/raw/swecris/soil_page001.json (100 records)</text>
+    <text x="45" y="378" fill="#e8e8e8">The search reports 1031 matching projects, 2008 to 2031.</text>
+    <text x="45" y="402" fill="#e8e8e8">That is 11 pages, about 25 seconds with the 1-second pause.</text>
+    <text x="45" y="426" fill="#e8e8e8">Shall I download the remaining 10 pages?</text>
+  </g>
+  <text x="975" y="492" font-size="14" fill="#999" text-anchor="end">illustrative; wording differs between tools, versions and runs</text>
+</svg>

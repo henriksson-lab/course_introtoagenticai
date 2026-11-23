@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="1000" height="460" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="460" fill="#fff"/>
+  <circle cx="390" cy="230" r="180" fill="#6b4fa0" fill-opacity="0.12" stroke="#6b4fa0" stroke-width="2.5"/>
+  <circle cx="610" cy="230" r="180" fill="#2a7f8f" fill-opacity="0.12" stroke="#2a7f8f" stroke-width="2.5"/>
+  <g font-size="20" font-weight="bold" text-anchor="middle">
+    <text x="300" y="40" fill="#6b4fa0">mistakes in result A</text>
+    <text x="700" y="40" fill="#2a7f8f">mistakes in result B</text>
+  </g>
+  <g font-size="17" text-anchor="middle" fill="#333">
+    <text x="300" y="200">only A:</text>
+    <text x="300" y="226">the two results</text>
+    <text x="300" y="250">differ here, so</text>
+    <text x="300" y="274" font-weight="bold" fill="#a8324a">you see it</text>
+    <text x="700" y="200">only B:</text>
+    <text x="700" y="226">the two results</text>
+    <text x="700" y="250">differ here, so</text>
+    <text x="700" y="274" font-weight="bold" fill="#a8324a">you see it</text>
+    <text x="500" y="190" font-weight="bold">both:</text>
+    <text x="500" y="216">results agree,</text>
+    <text x="500" y="240">the comparison</text>
+    <text x="500" y="264" font-weight="bold" fill="#a8324a">stays silent</text>
+  </g>
+  <text x="500" y="445" font-size="17" text-anchor="middle" fill="#555">Shared blind spots: the same habit, the same missing domain knowledge, the same vague prompt.</text>
+</svg>

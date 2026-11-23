@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#fff"/>
+  <text x="20" y="34" font-size="20" fill="#333">PubMed records with the term in title or abstract</text>
+  <g font-size="17" fill="#333">
+    <text x="330" y="92" text-anchor="end">"SMO"</text>
+    <rect x="345" y="70" width="600" height="34" fill="#6b4fa0"/>
+    <text x="935" y="93" fill="#fff" text-anchor="end" font-weight="bold">3 784</text>
+    <text x="330" y="152" text-anchor="end">"SMO" and "smoothened"</text>
+    <rect x="345" y="130" width="233" height="34" fill="#2a7f8f"/>
+    <text x="588" y="153" font-weight="bold" fill="#2a7f8f">1 467</text>
+    <text x="330" y="212" text-anchor="end">"SMO" and "spermine oxidase"</text>
+    <rect x="345" y="190" width="12" height="34" fill="#a8324a"/>
+    <text x="367" y="213" font-weight="bold" fill="#a8324a">74</text>
+    <text x="330" y="272" text-anchor="end">"smoothened" and "hedgehog",</text>
+    <text x="330" y="294" text-anchor="end">but not "SMO"</text>
+    <rect x="345" y="262" width="141" height="34" fill="#8a6a12"/>
+    <text x="496" y="285" font-weight="bold" fill="#8a6a12">891</text>
+  </g>
+  <g font-size="17" fill="#333">
+    <text x="20" y="345">Search the symbol alone and most hits are about something else.</text>
+    <text x="20" y="372">Search the symbol with the pathway and you miss papers that spell the name out.</text>
+  </g>
+  <text x="985" y="410" font-size="14" fill="#999" text-anchor="end">PubMed E-utilities counts, 23 November 2026; they grow every week</text>
+</svg>

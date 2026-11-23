@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+    <marker id="arg" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2a7f8f"/></marker>
+  </defs>
+  <rect width="1000" height="440" fill="#fff"/>
+  <text x="20" y="34" font-size="20" font-weight="bold" fill="#2a7f8f">Where the key should live</text>
+  <!-- .env -->
+  <rect x="20" y="55" width="250" height="110" rx="8" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="35" y="83" font-size="18" font-weight="bold" fill="#2a7f8f">.env</text>
+  <text x="35" y="110" font-family="Courier New, monospace" font-size="15" fill="#333">NCBI_API_KEY=…</text>
+  <text x="35" y="134" font-family="Courier New, monospace" font-size="15" fill="#333">CONTACT_EMAIL=…</text>
+  <text x="35" y="156" font-size="14" fill="#555">you type it in, once</text>
+  <line x1="275" y1="110" x2="355" y2="110" stroke="#2a7f8f" stroke-width="2.5" marker-end="url(#arg)"/>
+  <text x="315" y="98" font-size="14" fill="#2a7f8f" text-anchor="middle">reads</text>
+  <rect x="360" y="55" width="200" height="110" rx="8" fill="#fff" stroke="#555"/>
+  <text x="460" y="92" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">search.py</text>
+  <text x="460" y="120" font-size="15" fill="#555" text-anchor="middle">has the name of the</text>
+  <text x="460" y="140" font-size="15" fill="#555" text-anchor="middle">variable, not the key</text>
+  <line x1="565" y1="110" x2="645" y2="110" stroke="#2a7f8f" stroke-width="2.5" marker-end="url(#arg)"/>
+  <rect x="650" y="55" width="150" height="110" rx="8" fill="#fff" stroke="#555"/>
+  <text x="725" y="100" font-size="18" font-weight="bold" fill="#333" text-anchor="middle">the API</text>
+  <text x="725" y="128" font-size="15" fill="#555" text-anchor="middle">NCBI, OpenAlex…</text>
+  <rect x="20" y="180" width="250" height="40" rx="6" fill="#fff" stroke="#2a7f8f" stroke-dasharray="5,4"/>
+  <text x="35" y="206" font-family="Courier New, monospace" font-size="15" fill="#333">.gitignore: .env</text>
+  <text x="290" y="206" font-size="16" fill="#2a7f8f">git never stores it, so it never reaches GitHub</text>
+  <!-- bad -->
+  <text x="20" y="270" font-size="20" font-weight="bold" fill="#a8324a">Where it should not</text>
+  <g font-size="17" fill="#333">
+    <rect x="20" y="288" width="300" height="100" rx="8" fill="#fbf3f5" stroke="#a8324a"/>
+    <text x="35" y="318" font-weight="bold">pasted into the prompt</text>
+    <text x="35" y="344" font-size="15" fill="#555">sent to the provider; kept in</text>
+    <text x="35" y="364" font-size="15" fill="#555">the session history</text>
+    <rect x="345" y="288" width="300" height="100" rx="8" fill="#fbf3f5" stroke="#a8324a"/>
+    <text x="360" y="318" font-weight="bold">written into the script</text>
+    <text x="360" y="344" font-size="15" fill="#555">committed, pushed, public:</text>
+    <text x="360" y="364" font-size="15" fill="#555">anyone can use your quota</text>
+    <rect x="670" y="288" width="310" height="100" rx="8" fill="#fbf3f5" stroke="#a8324a"/>
+    <text x="685" y="318" font-weight="bold">in a shared folder or e-mail</text>
+    <text x="685" y="344" font-size="15" fill="#555">a key is a password:</text>
+    <text x="685" y="364" font-size="15" fill="#555">one per person, revoke if leaked</text>
+  </g>
+  <g stroke="#a8324a" stroke-width="3">
+    <line x1="290" y1="296" x2="312" y2="318"/><line x1="312" y1="296" x2="290" y2="318"/>
+    <line x1="615" y1="296" x2="637" y2="318"/><line x1="637" y1="296" x2="615" y2="318"/>
+    <line x1="950" y1="296" x2="972" y2="318"/><line x1="972" y1="296" x2="950" y2="318"/>
+  </g>
+  <text x="20" y="425" font-size="17" fill="#333">For a small worked example you need no key at all. Keys raise the speed limit.</text>
+</svg>

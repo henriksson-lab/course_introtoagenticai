@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="450" fill="#fff"/>
+  <text x="20" y="32" font-size="19" fill="#333">Petrova 2023: which number is "the mean 25(OH)D of the people analysed"?</text>
+  <rect x="20" y="50" width="420" height="360" fill="#fff" stroke="#999"/>
+  <g font-size="14" fill="#333">
+    <text x="36" y="76" font-weight="bold">Abstract</text>
+    <text x="36" y="98">We recruited <tspan font-weight="bold" fill="#a8324a">260</tspan> office workers … the</text>
+    <text x="36" y="118">median 25(OH)D was <tspan font-weight="bold" fill="#a8324a">42.5</tspan> nmol/L.</text>
+    <text x="36" y="150" font-weight="bold">Introduction</text>
+    <text x="36" y="172">A national survey reported a mean of</text>
+    <text x="36" y="192"><tspan font-weight="bold" fill="#a8324a">71</tspan> nmol/L in working-age adults.</text>
+    <text x="36" y="224" font-weight="bold">Methods</text>
+    <text x="36" y="246">… 18 did not attend, 9 haemolysed,</text>
+    <text x="36" y="266">4 withdrew, leaving <tspan font-weight="bold" fill="#2a7f8f">229</tspan> participants.</text>
+    <text x="36" y="298" font-weight="bold">Table 2. Serum 25(OH)D (n = 229)</text>
+    <text x="36" y="322">Mean</text><text x="200" y="322" font-weight="bold" fill="#2a7f8f">44.8</text>
+    <text x="36" y="344">SD</text><text x="200" y="344">18.3</text>
+    <text x="36" y="366">Median</text><text x="200" y="366">42.5</text>
+  </g>
+  <g font-size="17">
+    <rect x="470" y="60" width="510" height="58" rx="6" fill="#fbf3f5" stroke="#a8324a"/>
+    <text x="485" y="86" fill="#333"><tspan font-weight="bold">260</tspan>: recruited, not analysed</text>
+    <text x="485" y="108" font-size="15" fill="#555">31 dropped out before measurement</text>
+    <rect x="470" y="128" width="510" height="58" rx="6" fill="#fbf3f5" stroke="#a8324a"/>
+    <text x="485" y="154" fill="#333"><tspan font-weight="bold">42.5</tspan>: the median, not the mean</text>
+    <text x="485" y="176" font-size="15" fill="#555">the abstract only gives the median</text>
+    <rect x="470" y="196" width="510" height="58" rx="6" fill="#fbf3f5" stroke="#a8324a"/>
+    <text x="485" y="222" fill="#333"><tspan font-weight="bold">71</tspan>: another study's result</text>
+    <text x="485" y="244" font-size="15" fill="#555">quoted in the introduction</text>
+    <rect x="470" y="264" width="510" height="58" rx="6" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2.5"/>
+    <text x="485" y="292" fill="#2a7f8f" font-weight="bold">n = 229, mean = 44.8 nmol/L</text>
+    <text x="485" y="314" font-size="15" fill="#555">Methods and Table 2, page 2</text>
+  </g>
+  <text x="470" y="362" font-size="17" fill="#333">Every wrong answer is in the paper,</text>
+  <text x="470" y="386" font-size="17" fill="#333">so a quote alone does not prove it is right.</text>
+  <text x="985" y="440" font-size="14" fill="#999" text-anchor="end">synthetic paper from the exercise</text>
+</svg>

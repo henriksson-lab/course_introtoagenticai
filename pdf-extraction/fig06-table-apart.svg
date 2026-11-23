@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <rect width="1000" height="460" fill="#fff"/>
+  <text x="20" y="32" font-size="19" font-weight="bold" fill="#333">On the page</text>
+  <rect x="20" y="46" width="430" height="200" fill="#fff" stroke="#999"/>
+  <g font-size="15" fill="#333">
+    <text x="32" y="74" font-weight="bold">Group</text><text x="112" y="74" font-weight="bold">n</text><text x="152" y="74" font-weight="bold">Mean (nmol/L)</text><text x="262" y="74" font-weight="bold">SD</text><text x="312" y="74" font-weight="bold">Below 50 (%)</text>
+    <line x1="30" y1="86" x2="440" y2="86" stroke="#999"/>
+    <text x="32" y="114">Women</text><text x="112" y="114">118</text><text x="152" y="114">60.1</text><text x="262" y="114">19.8</text><text x="312" y="114">28</text>
+    <text x="32" y="148">Men</text><text x="112" y="148">94</text><text x="152" y="148">56.3</text><text x="262" y="148">20.5</text><text x="312" y="148">35</text>
+    <text x="32" y="182" font-weight="bold">All</text><text x="112" y="182" font-weight="bold">212</text><text x="152" y="182" font-weight="bold">58.4</text><text x="262" y="182">20.2</text><text x="312" y="182">31</text>
+  </g>
+  <line x1="465" y1="150" x2="525" y2="150" stroke="#555" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="540" y="32" font-size="19" font-weight="bold" fill="#333">After plain text extraction</text>
+  <rect x="540" y="46" width="440" height="330" fill="#1f2430"/>
+  <g font-family="Courier New, monospace" font-size="16" fill="#e8e8e8" xml:space="preserve">
+    <text x="555" y="72">Group n</text>
+    <text x="555" y="94">Mean 25(OH)D (nmol/L) SD (nmol/L)</text>
+    <text x="555" y="116">Below 50 nmol/L (%)</text>
+    <text x="555" y="138">Women 118 60.1</text>
+    <text x="555" y="160">19.8</text>
+    <text x="555" y="182">28</text>
+    <text x="555" y="204">Men</text>
+    <text x="555" y="226">94 56.3</text>
+    <text x="555" y="248">20.5</text>
+    <text x="555" y="270">35</text>
+    <text x="555" y="292">All</text>
+    <text x="555" y="314">212 58.4</text>
+    <text x="555" y="336">20.2</text>
+    <text x="555" y="358">31</text>
+  </g>
+  <g font-size="17" fill="#333">
+    <text x="20" y="290">The values are all there, but rows and</text>
+    <text x="20" y="314">columns are gone: "Men" and "94" are on</text>
+    <text x="20" y="338">different lines. A program, or a model,</text>
+    <text x="20" y="362">has to put the table back together.</text>
+  </g>
+  <text x="20" y="420" font-size="17" fill="#8a6a12" font-weight="bold">Layout mode (pdftotext -layout) or a table tool (pdfplumber) keeps more of the grid.</text>
+  <text x="985" y="452" font-size="14" fill="#999" text-anchor="end">real pdftotext output from 01_Aldersen-2021.pdf, page 2</text>
+</svg>

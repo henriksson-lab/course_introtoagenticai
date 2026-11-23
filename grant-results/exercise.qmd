@@ -1,0 +1,312 @@
+---
+title: "Exercise: map the funding of a field"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- **read the rules** of a public grant database (terms, API documentation, `robots.txt`) before collecting anything,
+- **kept an API token secret**: in a `.env` file that git ignores and the agent does not open,
+- **downloaded** about a thousand grant records politely, into `data/raw`, with a download log, and checked that nothing is missing,
+- **cleaned** them into one table where you know what one row is,
+- made **three plots** (money over time, where the money goes, topics) and placed one abstract on the topic map,
+- **checked the totals** against the database's own sums, three projects by hand, and the funder's published statistics.
+
+The worked example uses [Swecris](https://www.vr.se/english/swecris.html), the Swedish national database of research grants. If your field is funded mainly from the US or the EU, do the worked example anyway (it is quick), then use NIH RePORTER or CORDIS for your own project (see the box at the end of the worked example).
+
+Your session will look different from anyone else's, and the database grows every week, so your numbers will not match the numbers on this page exactly. Compare **checks**, not numbers.
+
+## Before you start
+
+- You have done *Git as undo button and lab notebook*: you can ask the agent to make commits and show what changed.
+- You know where your **course folder** is (`~/agentic-course`, on Windows `C:\Users\<you>\agentic-course`).
+- You can open a plain text file in a **text editor**: TextEdit on a Mac, Notepad on Windows, or any code editor.
+- **Get today's public Swecris token.** Open the [Swecris API page](https://www.vr.se/english/swecris/swecris-api.html) and find the line "There is a public token free for anyone to use". Keep the page open; you will copy the token in step 3. The token changes from time to time, so do not use one from an old note. If you will use Swecris often, register for your own token on the same page (it arrives by email within a week).
+- Plan for 60 to 90 minutes. Steps 1 to 5 are the core; steps 6 to 8 are the analyses.
+
+::: {.callout-warning}
+**Privacy.** Grant records are public, but they name researchers. You will leave names out of the clean table. Do not add anything to this folder that is not public.
+:::
+
+## Worked example: Swedish soil research funding
+
+### Step 1: a project folder under git
+
+Create the folder `grant-results` inside your course folder, start the agent there, and ask:
+
+```text
+Make this folder a git repository. Create README.md with one line:
+"Swedish soil research funding from Swecris (course exercise)".
+Create the folders data/raw, data/clean, scripts and results.
+Commit with the message "Start".
+```
+
+| | Claude Code | Codex |
+|---|---|---|
+| Start in the folder | `claude` | `codex` |
+| Mode for this exercise | manual or auto-accept edits; you approve each command | the default in a git folder (Auto); network commands will ask for approval |
+
+Codex runs commands without network access by default, so every download will ask for your approval. That is fine: read the address and approve.
+
+### Step 2: read the rules first
+
+```text
+Before we download anything: fetch the Swecris API page
+https://www.vr.se/english/swecris/swecris-api.html, the API documentation at
+https://swecris-api.vr.se, and https://swecris-api.vr.se/robots.txt.
+Tell me in a short list:
+- what I may do with the data and how to credit it
+- whether a token is needed and how it is sent
+- any limits on requests (speed, page size)
+- which route of the API searches projects by a word
+Quote the sentences you rely on, with their URL. Do not write any scripts yet.
+Save the answer as notes/rules.md.
+```
+
+**What to look for.** The answer should quote the API page on the public token and on registering for your own. The documentation (a "Swagger" page) lists the routes; a search route such as `/v1/scp/search` takes a search text, a page number and a page size. If the agent cannot find a rate limit, it should say so rather than invent one; then use one request per second, which is a safe default.
+
+**Check.** Open `notes/rules.md` and click two of the quoted URLs. Is the quoted sentence really on the page?
+
+### Step 3: put the token in .env, and keep it there
+
+First ask the agent to prepare the files. It writes a **placeholder**, not the token:
+
+```text
+Create a file .env with exactly one line: SWECRIS_TOKEN=paste-here
+Add .env to .gitignore (create .gitignore if needed).
+Add this rule to CLAUDE.md (Claude Code) or AGENTS.md (Codex):
+"The Swecris token is in .env as SWECRIS_TOKEN. Never open, print or copy
+.env. Scripts read the token from .env when they run. Never write the token
+into a script, a log, an output file or the chat. Log URLs without it."
+Then show me the output of git status.
+```
+
+Now **you** put the token in. Quit the agent first (`/exit`), so it does not see you working. In the terminal, in the project folder:
+
+| Mac | Windows |
+|---|---|
+| `open -e .env` (opens it in TextEdit) | `notepad .env` |
+
+Replace `paste-here` with the token from the Swecris API page, save, close the editor. Then start the agent again.
+
+**Claude Code only: add a deny rule.** Ask:
+
+```text
+Add a deny rule to .claude/settings.json so that you cannot read .env:
+"permissions": {"deny": ["Read(./.env)", "Read(./.env.*)"]}. Keep any
+existing settings. Show me the file afterwards.
+```
+
+Codex has comparable settings, but they are aimed at administrators. For you, the rule in `AGENTS.md` and your own attention at the approval prompts are the protection.
+
+#### Check the result
+
+1. `git status` (ask the agent, or look at its output above) does **not** list `.env`. It lists `.gitignore`. If `.env` appears, stop: it is not ignored.
+2. Open `.gitignore` in your text editor: it contains a line `.env`.
+3. Ask the agent: "Commit everything that is not ignored, then list the files in the last commit." `.env` must not be in the list.
+4. Your token appears nowhere in the chat. If you pasted it into the chat by mistake: it is only the public token, so no harm is done, but practise the habit: say so, and from now on use your own token only via `.env`.
+
+### Step 4: download, slowly, into data/raw
+
+```text
+Write a script scripts/download_swecris.py (Python; or R if I ask) that
+searches the Swecris API for projects matching "soil".
+Read the token from .env (SWECRIS_TOKEN); never print it.
+
+- 100 records per request, wait 1 second between requests
+- save each response unchanged as data/raw/swecris/soil_page001.json, ...
+- skip any page that is already on disk; never overwrite a raw file
+- append one row per request to data/raw/swecris/download-log.csv:
+  time, URL without the token, file, records returned, total reported
+- stop and tell me if a request fails; do not retry more than twice
+
+Run it on the first page only and tell me the total number of matching
+projects. Then wait for me.
+```
+
+**What to look for.** Before you approve the command that runs the script, read it: it should call `swecris-api.vr.se` and nothing else. If the agent wants to install a package (for example `requests`), that is fine. The agent should report a total (about 1,000 projects for "soil" in November 2026; yours will be higher) and stop. Open `soil_page001.json` in your text editor and look at one record: title, abstract, dates, organisation, funder, amount, field codes, and a list of people.
+
+Then:
+
+```text
+Download the remaining pages. When it is done, tell me how many files are
+in data/raw/swecris, and the sum of "records returned" in the log.
+Then run the script once more and show me that it downloads nothing new.
+```
+
+::: {.callout-tip collapse="true" title="If you prefer R"}
+Say "Write it in R" in the prompt. The KTH Library maintains an R package, [swecris](https://github.com/KTH-Library/swecris), that wraps the same API; you can ask the agent to use it, but still insist on the raw folder, the log and the skip rule. Check how it handles the token: it should read it from `.env` or an environment variable, not from a line in your script.
+:::
+
+#### Check the result
+
+1. **Count.** The sum of "records returned" in `download-log.csv` equals the total the API reported, and the number of files is the total divided by 100, rounded up.
+2. **No token.** Open `download-log.csv`: the URL column has no token in it. Ask the agent: "Search every file in this folder, except .env, for the token's first six characters" and type those six characters yourself in the chat. (Six characters of a public token are harmless; the point is the habit.) The answer should be: none.
+3. **Rerun.** The second run downloaded nothing and added no rows to the log (or added rows that say "skipped", if that is how the agent wrote it).
+4. **Commit.** Ask the agent to commit the script and the log. Decide with it whether to commit the raw JSON files too: they are a few megabytes and make the analysis reproducible on the day; they also contain names. For this exercise, add `data/raw/` to `.gitignore` and keep the log in git.
+
+### Step 5: one clean table, and what one row is
+
+```text
+Write scripts/clean.py that reads all raw files and writes
+data/clean/projects.csv with one row per project and these columns:
+project_id, title_en, title_sv, abstract_en, start_date, end_date,
+start_year, funder, organisation, amount_sek, field_level1, field_level5.
+Leave out all names and ORCIDs of people.
+
+Before you write it, answer:
+1. In the raw data, what is one record: a project, or a project-year?
+   Is "fundingsSek" the whole grant or one year? How do you know?
+2. Show me all records for one project id that appears more than once,
+   if there is one.
+Then write and run the script, and list every decision you made in
+notes/decisions.md.
+```
+
+**What to look for.** The answer to question 1 must be based on the data or the documentation, not on a guess. If the agent says "probably", ask it to show you evidence.
+
+#### Check the result
+
+1. **The database's own sums.** Each raw file contains a `yearlyCompilation`: the number of projects and the total amount per year, as computed by Swecris for your search. Ask:
+
+   ```text
+   From soil_page001.json, take the yearlyCompilation. Compute the same
+   numbers (projects and SEK per fundingYear) from projects.csv. Show both
+   side by side with the difference.
+   ```
+
+   They should agree exactly, or the agent must explain each difference. If your table gives larger sums, rows were counted twice.
+2. **Three projects by hand.** Ask the agent for three random rows. Look up each title in the [Swecris web search](https://www.vr.se/english/swecris.html). Same funder, same organisation, same amount, same years?
+3. **No names.** Open `projects.csv` in a spreadsheet program. There is no column with names or ORCIDs.
+4. **Decisions.** Read `notes/decisions.md`. Would you have decided the same way about years, currency and missing fields?
+
+### Step 6: did the search find what you meant?
+
+```text
+Pick 20 projects at random from projects.csv (use a fixed seed so I can
+repeat it) and show me the English title and the first two sentences of
+each abstract.
+```
+
+Read them. For each, decide: is this soil research in your sense? Typical findings: energy engineering, soil mechanics and geotechnics, contaminated land, agriculture, ecology. Whether these belong is **your** decision, and it is the most important decision in the exercise. Some projects describe soil only in Swedish ("mark", "jord"), and the Swedish word *mark* also matches English words, so a search for it brings in noise.
+
+Tell the agent what you decided, for example:
+
+```text
+Keep everything except energy engineering, geotechnics and soil mechanics. Add a column
+in_scope (yes/no) based on the field codes and the title, and list the
+rule you used in notes/decisions.md. Show me 10 random "no" rows so I
+can check the rule.
+```
+
+### Step 7: three plots and one abstract on the map
+
+```text
+Using only in_scope rows, write scripts/analyse.py that makes:
+1. results/money_per_year.png: SEK per start year, stacked by funder
+   (top 4 funders, others grouped). Stop at the last complete year.
+2. results/top_organisations.png: the 10 coordinating organisations by
+   total SEK, with the number of projects next to each bar.
+3. results/topics.png: group the English abstracts into 5 to 8 topics
+   by the words they share; show the number of projects per topic per
+   year. For each topic, write 5 random titles to results/topics.md.
+Every plot gets a caption with the source, the search, the download
+date and "current prices, SEK".
+```
+
+Then read `results/topics.md`. Give each topic a name **yourself**, based on its titles, and ask the agent to use your names in the plot.
+
+Now place an abstract on the map. Use this one (it is invented; it is also the example proposal in the next unit):
+
+```text
+Here is an abstract of a planned project. Which of the topics is it
+closest to? List the 10 most similar funded projects from projects.csv
+with title, funder, start year and amount, and explain in one line each
+why it is similar.
+
+"Drought legacies in boreal forest soils. Summer droughts are becoming
+more frequent in Scandinavian boreal forests. We will test whether soil
+microbial communities that experienced drought respond differently to the
+next drought, and whether this changes how much carbon the soil releases.
+Using rainfall-exclusion roofs in a spruce forest, we will follow microbial
+community composition, carbon use efficiency and CO2 release over three
+years."
+```
+
+#### Check the result
+
+- Open each plot. Does it have a caption with source and date? Does the money plot stop at the last complete year? Is "others" there?
+- **One huge grant?** If one year is much higher than the rest, ask: "Which three projects contribute most to that year?" A single large infrastructure grant can dominate a whole field.
+- **Organisations:** is any university listed twice under different names? Ask the agent which names it merged.
+- **Topics:** for each topic, do the five titles in `topics.md` belong together? If one topic is a mix, ask for one more or one fewer topic and compare.
+- **Similar projects:** read the ten. How many would you, as a domain expert, call similar? Write the number in `notes/checks.md`.
+
+### Step 8: check against the funder's own statistics
+
+The Swedish Research Council publishes [decision statistics](https://www.vr.se/english/analysis/swedish-research-in-figures/overall-decision-statistics.html) per year. Open the page for a recent year and note one number, for example the total amount granted.
+
+```text
+Using the Swecris API (same token, same rules), ask for projects funded by
+the Swedish Research Council (funder id 202100-5208) for funding year 2024,
+with page size 1: I only need the reported total and the yearlyCompilation,
+not the records. Save the response in data/raw/swecris/ like the others.
+Then compare with this number from the Swedish Research Council's decision
+statistics for 2024: <paste the number and what it measures>.
+Explain possible reasons for any difference, and say which you can confirm.
+```
+
+#### Check the result
+
+- Write both numbers and the difference in `notes/checks.md`.
+- A difference of a few percent is normal: the statistics may count the year of the decision, Swecris the year of funding, and the statistics may cover only some kinds of grants. The agent should name the reason and, if possible, show evidence.
+- A difference of a third or more without a clear reason means something is wrong. Stop and find out before you use any plot.
+
+Finally, ask the agent to commit everything that is not ignored, with a message that says what you checked.
+
+::: {.callout-note collapse="true" title="Expected outcome"}
+- About 1,000 projects match "soil" (1,031 when this page was written; more now), in about 11 raw files.
+- The sum of records in the log equals the reported total; a rerun downloads nothing.
+- In the search results, one record is one project, with one amount and one funding year. Some routes of the API (the `/fundings` routes) give one row per funder and year instead: if the agent used one of those, the sums are different and the per-year check in step 5 shows it.
+- When this page was written, about half of the matching projects were funded by Formas and about a quarter by the Swedish Research Council, followed by the Swedish Energy Agency and Vinnova. About one in six projects had the field "Unclassified".
+- The random sample contains projects that are not soil research in a biological sense: energy engineering (for example ground-source heat), geotechnics and soil mechanics, contaminated land, and some where "soil" appears only in passing in the abstract.
+- The data contain grants that start in the future (next year), so the last year is incomplete, and a few records have no funding year at all.
+- One year towers over the others because of a single grant: when this page was written, 2014 held 1.3 billion SEK, almost all of it one infrastructure grant for the operation of the MAX IV synchrotron laboratory, whose abstract happens to mention soil. Whether such grants are "soil research" is exactly the kind of decision step 6 is for.
+- The planned abstract lands in a topic about soil microbes, carbon or drought; expect most of the ten similar projects to be funded by Formas or the Swedish Research Council.
+- The comparison with the decision statistics differs by a few percent, for reasons of year and grant type.
+:::
+
+::: {.callout-tip collapse="true" title="Outside Sweden: NIH RePORTER or CORDIS"}
+**NIH RePORTER** (US): no key. Use the same prompts, replacing the Swecris details with: "the NIH RePORTER API, documented at https://api.reporter.nih.gov; searches are POST requests to /v2/projects/search; at most 500 records per request; the documentation asks for no more than one request per second." Amounts are in USD per fiscal year. Check against NIH's published funding statistics.
+
+**CORDIS** (EU): no API needed. The complete project lists for each framework programme (for example Horizon Europe) are on [data.europa.eu](https://data.europa.eu) as CSV and other formats. Ask the agent to download the bulk file once into `data/raw/cordis/`, then filter by keywords. CORDIS content is under CC BY 4.0; credit "European Union, CORDIS". Amounts are the EU contribution in euros per project.
+:::
+
+## On your own project
+
+Apply the same workflow to the funding of **your own** field, in your own project folder (for example `~/agentic-course/soil-funding-map/`). If your project is not about funding, do it anyway for the background of your next application or a strategy note: who funds work like yours?
+
+1. **Choose the source** that fits your field: Swecris, NIH RePORTER, CORDIS, or another funder with an API or bulk files. Ask the agent to read and summarise its rules first (step 2), and save them as `notes/rules-<source>.md`.
+2. **Choose the search** with care. Write down two or three search terms in each relevant language, and the fields or codes that are in scope. After the first download, read 20 random abstracts (step 6) and adjust. Record the final search in your README.
+3. **Keys:** if the source needs a key, use the `.env` pattern from step 3. Check `git status` before every commit until it is a habit.
+4. **Download, clean and analyse** as in steps 4, 5 and 7. Ask for the plots that answer *your* question; one of them should place your own abstract (or a short description of your project) on the topic map.
+5. **Verify** with at least the database's own totals, three records by hand, and one number from the funder's published statistics (step 8). Write the checks in `notes/checks.md`.
+6. **Publish** two or three plots and a short paragraph on your project page (from *A course or project page*), with a methods line: source, search, download date, how you checked. Push, and look at the page online. Do not publish the raw data or any names.
+7. Add a line to the **Log of AI use** in your README: date, tool, what the agent did, what you checked.
+
+::: {.callout-warning}
+**What must not go in:** your own draft abstract is your decision to share, but leave out unpublished results and anything confidential. Never put someone else's application in the folder, even to "compare". Names of researchers stay out of anything you publish.
+:::
+
+## What you should have now
+
+- A project folder with `data/raw` (unchanged downloads and a download log), `data/clean/projects.csv` (no names), `scripts/` for download, cleaning and analysis, and `results/` with three plots and a topic list.
+- A `.env` file with your token that is **not** in git, a rule about it in `CLAUDE.md` or `AGENTS.md`, and (in Claude Code) a deny rule.
+- `notes/rules.md`, `notes/decisions.md` and `notes/checks.md`: what the source allows, what you decided, and how the totals compared.
+- For your own project: a section on your project page about the funding of your field, with its source, date and checks, and one more entry in your AI-use log.

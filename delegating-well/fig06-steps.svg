@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#ffffff"/>
+  <!-- one big brief -->
+  <text x="20" y="40" font-size="20" font-weight="bold" fill="#a8324a">One brief: "Analyse the reaction-time data"</text>
+  <rect x="20" y="60" width="800" height="50" rx="8" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+  <text x="40" y="92" font-size="17" fill="#555">clean → summarise → plot → write ... dozens of silent decisions</text>
+  <polygon points="820,60 860,85 820,110" fill="#a8324a"/>
+  <text x="870" y="80" font-size="17" fill="#a8324a">check</text>
+  <text x="870" y="102" font-size="17" fill="#a8324a">only here</text>
+  <!-- staircase -->
+  <text x="20" y="170" font-size="20" font-weight="bold" fill="#2a7f8f">Four briefs, each ending in a check</text>
+  <g font-size="17">
+    <rect x="20" y="370" width="230" height="70" rx="8" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="35" y="398" font-weight="bold" fill="#333">1. Clean</text>
+    <text x="35" y="424" fill="#555">178 rows, removals listed</text>
+    <rect x="265" y="300" width="230" height="70" rx="8" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="280" y="328" font-weight="bold" fill="#333">2. Table of means</text>
+    <text x="280" y="354" fill="#555">two means by hand</text>
+    <rect x="510" y="230" width="230" height="70" rx="8" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="525" y="258" font-weight="bold" fill="#333">3. Figure</text>
+    <text x="525" y="284" fill="#555">matches the table</text>
+    <rect x="755" y="190" width="225" height="70" rx="8" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="770" y="218" font-weight="bold" fill="#333">4. Short text</text>
+    <text x="770" y="244" fill="#555">numbers = table</text>
+  </g>
+  <g fill="#2a7f8f" font-size="22" font-weight="bold">
+    <text x="225" y="365">✓</text>
+    <text x="470" y="295">✓</text>
+    <text x="715" y="225">✓</text>
+    <text x="955" y="185">✓</text>
+  </g>
+</svg>

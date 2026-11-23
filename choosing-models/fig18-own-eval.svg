@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#fff"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#555"/></marker></defs>
+  <g font-size="17">
+    <rect x="20" y="110" width="200" height="140" rx="10" fill="#f5f5f5" stroke="#888"/>
+    <text x="120" y="145" text-anchor="middle" font-weight="bold" fill="#333">10-20 real items</text>
+    <text x="120" y="175" text-anchor="middle" fill="#333">from your task,</text>
+    <text x="120" y="199" text-anchor="middle" fill="#333">answers known</text>
+    <text x="120" y="230" text-anchor="middle" fill="#666">+ one saved prompt</text>
+    <rect x="310" y="50" width="220" height="110" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="420" y="90" text-anchor="middle" font-weight="bold" fill="#2a7f8f">model or setting A</text>
+    <text x="420" y="120" text-anchor="middle" fill="#333">fresh session</text>
+    <rect x="310" y="200" width="220" height="110" rx="10" fill="#eeeaf5" stroke="#6b4fa0" stroke-width="2"/>
+    <text x="420" y="240" text-anchor="middle" font-weight="bold" fill="#6b4fa0">model or setting B</text>
+    <text x="420" y="270" text-anchor="middle" fill="#333">fresh session</text>
+    <rect x="620" y="70" width="360" height="220" rx="10" fill="#f5efdd" stroke="#8a6a12" stroke-width="2"/>
+    <text x="640" y="104" font-weight="bold" fill="#8a6a12">compare with the known answers</text>
+    <text x="640" y="136" fill="#333">item   A    B</text>
+    <text x="640" y="162" fill="#333">1      ✓    ✓</text>
+    <text x="640" y="186" fill="#333">2      ✓    ✗</text>
+    <text x="640" y="210" fill="#333">3      ✗    ✓</text>
+    <text x="640" y="234" fill="#333">…</text>
+    <text x="640" y="268" fill="#333">errors 2 / 3; time; usage</text>
+  </g>
+  <g stroke="#555" stroke-width="2.5" marker-end="url(#a)">
+    <line x1="222" y1="160" x2="306" y2="110"/><line x1="222" y1="200" x2="306" y2="250"/>
+    <line x1="532" y1="105" x2="616" y2="140"/><line x1="532" y1="255" x2="616" y2="220"/>
+  </g>
+  <text x="500" y="350" font-size="19" text-anchor="middle" fill="#333">If you can, judge without knowing which model gave which answer.</text>
+  <text x="500" y="380" font-size="17" text-anchor="middle" fill="#666">Rerun the same test when a new model comes out.</text>
+  <text x="985" y="395" font-size="14" fill="#999" text-anchor="end">illustrative</text>
+</svg>

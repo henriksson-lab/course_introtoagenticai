@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="500" fill="#fff"/>
+  <line x1="150" y1="30" x2="150" y2="440" stroke="#9aa5b1" stroke-width="3"/>
+  <g font-size="18">
+    <text x="130" y="46" text-anchor="end" fill="#52606d" font-weight="bold">15 Aug</text>
+    <circle cx="150" cy="40" r="9" fill="#6b4fa0"/>
+    <text x="175" y="46" fill="#333">Buckmaster and Alpöge get blow-up results for simpler equations, with LLMs</text>
+    <text x="130" y="91" text-anchor="end" fill="#52606d" font-weight="bold">3 Sep</text>
+    <circle cx="150" cy="85" r="9" fill="#6b4fa0"/>
+    <text x="175" y="91" fill="#333">Rumours spread; Buckmaster writes to a mathematician at OpenAI</text>
+    <text x="130" y="136" text-anchor="end" fill="#52606d" font-weight="bold">5 Sep</text>
+    <circle cx="150" cy="130" r="9" fill="#2a7f8f"/>
+    <text x="175" y="136" fill="#333">OpenAI's agents reach their result, 88 hours after launch (OpenAI's account)</text>
+    <text x="130" y="181" text-anchor="end" fill="#52606d" font-weight="bold">6 Sep</text>
+    <circle cx="150" cy="175" r="9" fill="#8a6a12"/>
+    <text x="175" y="181" fill="#333">Calls; offers about release and authorship (Buckmaster's account, disputed)</text>
+    <text x="130" y="226" text-anchor="end" fill="#52606d" font-weight="bold">7-8 Sep</text>
+    <circle cx="150" cy="220" r="9" fill="#6b4fa0"/>
+    <text x="175" y="226" fill="#333">Buckmaster and Alpöge post their results and a public statement</text>
+    <text x="130" y="271" text-anchor="end" fill="#52606d" font-weight="bold">8 Sep</text>
+    <circle cx="150" cy="265" r="9" fill="#2a7f8f"/>
+    <text x="175" y="271" fill="#333">OpenAI announces a Navier–Stokes proof, with a Lean formalisation</text>
+    <text x="130" y="316" text-anchor="end" fill="#52606d" font-weight="bold">10 Sep</text>
+    <circle cx="150" cy="310" r="9" fill="#2a7f8f"/>
+    <text x="175" y="316" fill="#333">OpenAI update: its investigation found his Codex prompts had no influence</text>
+    <text x="130" y="361" text-anchor="end" fill="#52606d" font-weight="bold">17-21 Sep</text>
+    <circle cx="150" cy="355" r="9" fill="#a8324a"/>
+    <text x="175" y="361" fill="#333">Preprint: method cannot reach the unforced case; "the wrong problem?"</text>
+    <text x="130" y="406" text-anchor="end" fill="#52606d" font-weight="bold">6 Oct</text>
+    <circle cx="150" cy="400" r="9" fill="#a8324a"/>
+    <text x="175" y="406" fill="#333">Preprint: the Lean version does not faithfully match the written proof</text>
+    <text x="130" y="446" text-anchor="end" fill="#52606d" font-weight="bold">Nov</text>
+    <circle cx="150" cy="440" r="9" fill="#9aa5b1"/>
+    <text x="175" y="446" fill="#333">Not peer reviewed; debate continues</text>
+  </g>
+  <g font-size="16">
+    <circle cx="190" cy="482" r="7" fill="#6b4fa0"/><text x="203" y="488" fill="#333">mathematicians</text>
+    <circle cx="370" cy="482" r="7" fill="#2a7f8f"/><text x="383" y="488" fill="#333">OpenAI</text>
+    <circle cx="490" cy="482" r="7" fill="#8a6a12"/><text x="503" y="488" fill="#333">disputed contact</text>
+    <circle cx="660" cy="482" r="7" fill="#a8324a"/><text x="673" y="488" fill="#333">scrutiny by other experts (2026)</text>
+  </g>
+</svg>

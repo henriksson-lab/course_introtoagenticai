@@ -1,0 +1,121 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 580" width="1000" height="580" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="580" fill="#ffffff"/>
+  <rect x="20" y="20" width="470" height="250" rx="10" fill="#ffffff" stroke="#c9d3dd" stroke-width="1.5"/>
+  <rect x="510" y="20" width="470" height="250" rx="10" fill="#ffffff" stroke="#c9d3dd" stroke-width="1.5"/>
+  <rect x="20" y="290" width="470" height="250" rx="10" fill="#ffffff" stroke="#c9d3dd" stroke-width="1.5"/>
+  <rect x="510" y="290" width="470" height="250" rx="10" fill="#ffffff" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="35" y="50" font-size="18" fill="#2a7f8f" text-anchor="start" font-weight="bold" xml:space="preserve">Dot product: drag the arrows</text>
+  <line x1="80" y1="210" x2="260" y2="210" stroke="#9aa4ad" stroke-width="2"/>
+  <line x1="80" y1="70" x2="80" y2="210" stroke="#9aa4ad" stroke-width="2"/>
+  <line x1="80" y1="210" x2="230" y2="150" stroke="#2a7f8f" stroke-width="4" marker-end="url(#arwt)"/>
+  <line x1="80" y1="210" x2="150" y2="90" stroke="#6b4fa0" stroke-width="4" marker-end="url(#arw)"/>
+  <path d="M130,190 A54,54 0 0,0 108,162" stroke="#8a6a12" stroke-width="2.5" fill="none"/>
+  <circle cx="230" cy="150" r="8" fill="#2a7f8f" stroke="none" stroke-width="0"/>
+  <circle cx="150" cy="90" r="8" fill="#6b4fa0" stroke="none" stroke-width="0"/>
+  <text x="290" y="100" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">cos θ = 0.71</text>
+  <text x="290" y="124" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">distance = 2.3</text>
+  <text x="290" y="148" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">depth × 2:</text>
+  <text x="290" y="172" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">cos θ = 0.71</text>
+  <text x="35" y="252" font-size="16" fill="#5a6670" text-anchor="start" font-weight="normal" font-style="italic" xml:space="preserve">Discover: scaling changes the distance, not the angle.</text>
+  <text x="525" y="50" font-size="18" fill="#2a7f8f" text-anchor="start" font-weight="bold" xml:space="preserve">Random walkers on a state diagram</text>
+  <circle cx="600" cy="135" r="34" fill="#eee9f6" stroke="#6b4fa0" stroke-width="2.5"/>
+  <text x="600" y="125" font-size="18" fill="#6b4fa0" text-anchor="middle" font-weight="bold" xml:space="preserve">A</text>
+  <circle cx="740" cy="100" r="34" fill="#eee9f6" stroke="#6b4fa0" stroke-width="2.5"/>
+  <text x="740" y="90" font-size="18" fill="#6b4fa0" text-anchor="middle" font-weight="bold" xml:space="preserve">B</text>
+  <circle cx="705" cy="195" r="34" fill="#eee9f6" stroke="#6b4fa0" stroke-width="2.5"/>
+  <text x="705" y="185" font-size="18" fill="#6b4fa0" text-anchor="middle" font-weight="bold" xml:space="preserve">C</text>
+  <line x1="634" y1="123" x2="704" y2="104" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <line x1="736" y1="136" x2="711" y2="159" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <line x1="671" y1="187" x2="626" y2="161" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <circle cx="609.09130384448" cy="146.56130099853485" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="605.0918428424405" cy="149.8119530653784" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="597.7926055512258" cy="141.69389443883324" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="618.3309776072053" cy="141.3494933950933" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="605.601321170237" cy="142.97959657444642" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="587.1314330900686" cy="139.15985665075166" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="589.7320909401735" cy="143.95094569001358" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="737.0970347548965" cy="107.89294525749169" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="733.3345690792074" cy="118.73855408927143" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="738.9632021826447" cy="117.82991057585778" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="737.0424209571478" cy="106.37152797731498" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="695.5825341563095" cy="207.25759064999238" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="708.1461809900563" cy="200.68348519965357" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="694.1459831138532" cy="203.1346184835258" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="694.4287076192576" cy="212.0496830219945" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="694.2831087146828" cy="212.75374356983738" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="709.974701485626" cy="213.14495172699523" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="707.9564222969999" cy="215.7599321123529" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="698.8009063809596" cy="199.32594330139605" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <circle cx="712.566850389174" cy="200.69715727947224" r="3.5" fill="#8a6a12" stroke="none" stroke-width="0"/>
+  <text x="830" y="110" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">A</text>
+  <rect x="850" y="95" width="85.55555555555556" height="20" rx="3" fill="#eee9f6" stroke="#6b4fa0" stroke-width="1.5"/>
+  <text x="830" y="150" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">B</text>
+  <rect x="850" y="135" width="48.888888888888886" height="20" rx="3" fill="#eee9f6" stroke="#6b4fa0" stroke-width="1.5"/>
+  <text x="830" y="190" font-size="16" fill="#1b2a3a" text-anchor="start" font-weight="bold" xml:space="preserve">C</text>
+  <rect x="850" y="175" width="110.0" height="20" rx="3" fill="#eee9f6" stroke="#6b4fa0" stroke-width="1.5"/>
+  <text x="525" y="252" font-size="16" fill="#5a6670" text-anchor="start" font-weight="normal" font-style="italic" xml:space="preserve">Discover: the fractions settle, the walkers never do.</text>
+  <text x="35" y="320" font-size="18" fill="#2a7f8f" text-anchor="start" font-weight="bold" xml:space="preserve">Random events along a line</text>
+  <line x1="40" y1="370" x2="470" y2="370" stroke="#9aa4ad" stroke-width="2"/>
+  <line x1="46.45031688833011" y1="356" x2="46.45031688833011" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="52.93551336665909" y1="356" x2="52.93551336665909" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="58.008544639033786" y1="356" x2="58.008544639033786" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="65.60697522260764" y1="356" x2="65.60697522260764" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="78.98833112149094" y1="356" x2="78.98833112149094" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="80.47308617856395" y1="356" x2="80.47308617856395" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="107.72246091026985" y1="356" x2="107.72246091026985" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="119.40394785759695" y1="356" x2="119.40394785759695" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="121.78955300310953" y1="356" x2="121.78955300310953" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="144.03549587604235" y1="356" x2="144.03549587604235" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="170.46254292854596" y1="356" x2="170.46254292854596" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="234.523208009222" y1="356" x2="234.523208009222" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="239.49181832601235" y1="356" x2="239.49181832601235" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="240.22953014290252" y1="356" x2="240.22953014290252" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="258.37174741677654" y1="356" x2="258.37174741677654" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="260.12071478797634" y1="356" x2="260.12071478797634" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="267.2039444533059" y1="356" x2="267.2039444533059" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="280.70212601461327" y1="356" x2="280.70212601461327" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="292.5754764054557" y1="356" x2="292.5754764054557" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="304.69196296878545" y1="356" x2="304.69196296878545" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="310.84956969322485" y1="356" x2="310.84956969322485" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="321.1866894195514" y1="356" x2="321.1866894195514" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="338.1785474927328" y1="356" x2="338.1785474927328" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="380.9800551835796" y1="356" x2="380.9800551835796" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="388.14714977788634" y1="356" x2="388.14714977788634" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="437.4105511302036" y1="356" x2="437.4105511302036" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="454.8458458839937" y1="356" x2="454.8458458839937" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <line x1="462.34317094347466" y1="356" x2="462.34317094347466" y2="384" stroke="#a8324a" stroke-width="2.5"/>
+  <rect x="80" y="482" width="40" height="13" rx="2" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <rect x="130" y="443" width="40" height="52" rx="2" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <rect x="180" y="404" width="40" height="91" rx="2" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <rect x="230" y="417" width="40" height="78" rx="2" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <rect x="280" y="443" width="40" height="52" rx="2" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <rect x="330" y="469" width="40" height="26" rx="2" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <rect x="380" y="482" width="40" height="13" rx="2" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <text x="35" y="522" font-size="16" fill="#5a6670" text-anchor="start" font-weight="normal" font-style="italic" xml:space="preserve">Discover: random events cluster more than you expect.</text>
+  <text x="525" y="320" font-size="18" fill="#2a7f8f" text-anchor="start" font-weight="bold" xml:space="preserve">Cross-validation on pure noise</text>
+  <text x="625" y="352" font-size="16" fill="#a8324a" text-anchor="middle" font-weight="bold" xml:space="preserve">leaky</text>
+  <text x="855" y="352" font-size="16" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">honest</text>
+  <rect x="580" y="472" width="20" height="13" rx="2" fill="#f7e6ea" stroke="#a8324a" stroke-width="1.5"/>
+  <rect x="602" y="446" width="20" height="39" rx="2" fill="#f7e6ea" stroke="#a8324a" stroke-width="1.5"/>
+  <rect x="624" y="407" width="20" height="78" rx="2" fill="#f7e6ea" stroke="#a8324a" stroke-width="1.5"/>
+  <rect x="646" y="381" width="20" height="104" rx="2" fill="#f7e6ea" stroke="#a8324a" stroke-width="1.5"/>
+  <rect x="668" y="420" width="20" height="65" rx="2" fill="#f7e6ea" stroke="#a8324a" stroke-width="1.5"/>
+  <rect x="690" y="459" width="20" height="26" rx="2" fill="#f7e6ea" stroke="#a8324a" stroke-width="1.5"/>
+  <line x1="605" y1="365" x2="605" y2="490" stroke="#9aa4ad" stroke-width="2" stroke-dasharray="5 4"/>
+  <rect x="770" y="459" width="20" height="26" rx="2" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <rect x="792" y="420" width="20" height="65" rx="2" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <rect x="814" y="381" width="20" height="104" rx="2" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <rect x="836" y="407" width="20" height="78" rx="2" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <rect x="858" y="446" width="20" height="39" rx="2" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <rect x="880" y="472" width="20" height="13" rx="2" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <line x1="835" y1="365" x2="835" y2="490" stroke="#9aa4ad" stroke-width="2" stroke-dasharray="5 4"/>
+  <text x="625" y="506" font-size="15" fill="#a8324a" text-anchor="middle" font-weight="normal" xml:space="preserve">~90% accuracy</text>
+  <text x="855" y="506" font-size="15" fill="#2a7f8f" text-anchor="middle" font-weight="normal" xml:space="preserve">~50% (chance)</text>
+  <text x="525" y="530" font-size="16" fill="#5a6670" text-anchor="start" font-weight="normal" font-style="italic" xml:space="preserve">Discover: selecting on all samples fakes accuracy.</text>
+  <text x="990" y="570" font-size="14" fill="#9aa4ad" text-anchor="end" font-weight="normal" font-style="italic" xml:space="preserve">illustrative sketches of demos from a sister course</text>
+</svg>

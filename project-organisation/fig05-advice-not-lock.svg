@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#ffffff"/>
+  <text x="500" y="36" text-anchor="middle" font-size="21" font-weight="bold" fill="#333">Protecting data/raw: each layer catches what the one before misses</text>
+  <g font-size="18">
+    <rect x="40" y="70" width="920" height="70" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="60" y="102" font-weight="bold" fill="#2a7f8f">1. A rule in AGENTS.md</text>
+    <text x="60" y="126" fill="#555">"data/raw is read-only." Usually followed. Advice, not a lock.</text>
+    <rect x="80" y="155" width="840" height="70" rx="10" fill="#f0ecf7" stroke="#6b4fa0" stroke-width="2"/>
+    <text x="100" y="187" font-weight="bold" fill="#6b4fa0">2. Permission prompts, read before approving</text>
+    <text x="100" y="211" fill="#555">A command that edits raw data shows up here (manual mode).</text>
+    <rect x="120" y="240" width="760" height="70" rx="10" fill="#f6efdc" stroke="#8a6a12" stroke-width="2"/>
+    <text x="140" y="272" font-weight="bold" fill="#8a6a12">3. Read-only files, and a copy elsewhere</text>
+    <text x="140" y="296" fill="#555">Locked in the file browser; the original kept outside.</text>
+    <rect x="160" y="325" width="680" height="70" rx="10" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+    <text x="180" y="357" font-weight="bold" fill="#a8324a">4. Git (next unit)</text>
+    <text x="180" y="381" fill="#555">Every change visible, every change undoable.</text>
+  </g>
+</svg>

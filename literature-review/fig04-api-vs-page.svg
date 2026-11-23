@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="450" fill="#fff"/>
+  <!-- browser -->
+  <rect x="15" y="20" width="460" height="380" rx="8" fill="#fff" stroke="#999"/>
+  <rect x="15" y="20" width="460" height="38" rx="8" fill="#eee"/>
+  <circle cx="35" cy="39" r="6" fill="#ccc"/><circle cx="55" cy="39" r="6" fill="#ccc"/><circle cx="75" cy="39" r="6" fill="#ccc"/>
+  <rect x="95" y="28" width="365" height="22" rx="4" fill="#fff" stroke="#ccc"/>
+  <text x="105" y="45" font-size="14" fill="#555">pubmed.ncbi.nlm.nih.gov/?term=…</text>
+  <text x="35" y="92" font-size="18" fill="#2a7f8f" font-weight="bold">Search results</text>
+  <g font-size="16" fill="#333">
+    <rect x="35" y="108" width="420" height="80" fill="#f8f8f8"/>
+    <text x="45" y="132" fill="#2a5aa8">A title of a paper about GLI1…</text>
+    <text x="45" y="156" fill="#555">Author A, Author B. J Example. 2021.</text>
+    <text x="45" y="178" fill="#777" font-size="14">PMID: 12345678</text>
+    <rect x="35" y="198" width="420" height="80" fill="#f8f8f8"/>
+    <text x="45" y="222" fill="#2a5aa8">Another title about SUFU…</text>
+    <text x="45" y="246" fill="#555">Author C. J Example. 2019.</text>
+    <text x="45" y="268" fill="#777" font-size="14">PMID: 23456789</text>
+  </g>
+  <text x="245" y="320" font-size="17" fill="#333" text-anchor="middle">made for people:</text>
+  <text x="245" y="345" font-size="17" fill="#333" text-anchor="middle">layout, links, buttons, 10 per page</text>
+  <!-- api -->
+  <rect x="525" y="20" width="460" height="380" rx="8" fill="#1f2430"/>
+  <text x="545" y="50" font-size="14" fill="#9fb3c8">eutils.ncbi.nlm.nih.gov/…/esummary.fcgi?…</text>
+  <g font-family="Courier New, monospace" font-size="16" fill="#e8e8e8" xml:space="preserve">
+    <text x="545" y="88">{ "uid": "12345678",</text>
+    <text x="545" y="112">  "title": "A title of a paper…",</text>
+    <text x="545" y="136">  "pubdate": "2021",</text>
+    <text x="545" y="160">  "source": "J Example",</text>
+    <text x="545" y="184">  "articleids": [</text>
+    <text x="545" y="208">    {"idtype": "doi",</text>
+    <text x="545" y="232">     "value": "10.1000/ex.123"}</text>
+    <text x="545" y="256">  ] }</text>
+  </g>
+  <text x="755" y="320" font-size="17" fill="#e8e8e8" text-anchor="middle">made for programs:</text>
+  <text x="755" y="345" font-size="17" fill="#e8e8e8" text-anchor="middle">named fields, every record, no layout</text>
+  <text x="500" y="432" font-size="18" fill="#333" text-anchor="middle">Same database, two doors. The agent should use the right-hand one.</text>
+  <text x="985" y="446" font-size="13" fill="#999" text-anchor="end">illustrative; made-up IDs</text>
+</svg>

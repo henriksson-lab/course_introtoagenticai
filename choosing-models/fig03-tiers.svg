@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#fff"/>
+  <text x="250" y="35" font-size="19" text-anchor="middle" fill="#666">one family, three tiers</text>
+  <g text-anchor="middle">
+    <circle cx="110" cy="190" r="45" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="110" y="196" font-size="18" fill="#333">small</text>
+    <circle cx="250" cy="190" r="70" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="250" y="196" font-size="18" fill="#333">medium</text>
+    <circle cx="420" cy="190" r="95" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="420" y="196" font-size="18" fill="#333">large</text>
+  </g>
+  <g font-size="18" fill="#333">
+    <text x="560" y="80" font-weight="bold">As you go up a tier:</text>
+    <text x="560" y="120" fill="#2a7f8f">▲ better at long, multi-step reasoning</text>
+    <text x="560" y="150" fill="#2a7f8f">▲ more likely to catch its own mistakes</text>
+    <text x="560" y="180" fill="#2a7f8f">▲ keeps more constraints in mind</text>
+    <text x="560" y="230" fill="#a8324a">▼ slower answers</text>
+    <text x="560" y="260" fill="#a8324a">▼ uses up plan limits faster</text>
+    <text x="560" y="290" fill="#a8324a">▼ costs more per token on API billing</text>
+  </g>
+  <line x1="60" y1="330" x2="520" y2="330" stroke="#555" stroke-width="2"/>
+  <path d="M520,322 L534,330 L520,338 Z" fill="#555"/>
+  <text x="60" y="360" font-size="17" fill="#555">chores: renaming, reformatting</text>
+  <text x="520" y="360" font-size="17" fill="#555" text-anchor="end">design, debugging, review</text>
+</svg>

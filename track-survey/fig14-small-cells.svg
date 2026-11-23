@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" width="1000" height="430" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="430" fill="#fff"/>
+  <text x="250" y="36" font-size="21" font-weight="bold" fill="#a8324a" text-anchor="middle">Before</text>
+  <text x="750" y="36" font-size="21" font-weight="bold" fill="#2a7f8f" text-anchor="middle">After: no group under 5</text>
+  <g font-size="17">
+    <rect x="20" y="55" width="460" height="40" fill="#f4f4f4" stroke="#ccc"/>
+    <text x="32" y="81" font-weight="bold" fill="#333">Programme</text><text x="270" y="81" font-weight="bold" fill="#333">n</text><text x="340" y="81" font-weight="bold" fill="#333">% satisfied</text>
+    <g fill="#333">
+      <text x="32" y="125">Biomedicine</text><text x="270" y="125">52</text><text x="340" y="125">…</text>
+      <text x="32" y="165">Biotechnology</text><text x="270" y="165">38</text><text x="340" y="165">…</text>
+      <text x="32" y="205">Medicine</text><text x="270" y="205">16</text><text x="340" y="205">…</text>
+      <text x="32" y="245">Other</text><text x="270" y="245">10</text><text x="340" y="245">…</text>
+    </g>
+    <rect x="20" y="260" width="460" height="40" fill="#f8e9ec"/>
+    <text x="32" y="286" fill="#a8324a" font-weight="bold">Exchange students</text><text x="270" y="286" fill="#a8324a" font-weight="bold">4</text><text x="340" y="286" fill="#a8324a" font-weight="bold">25 %</text>
+    <g stroke="#ddd"><line x1="20" y1="140" x2="480" y2="140"/><line x1="20" y1="180" x2="480" y2="180"/><line x1="20" y1="220" x2="480" y2="220"/><line x1="20" y1="260" x2="480" y2="260"/></g>
+    <text x="250" y="335" font-size="16" fill="#a8324a" text-anchor="middle">25 % of 4 = one person, and the class</text>
+    <text x="250" y="358" font-size="16" fill="#a8324a" text-anchor="middle">knows who the exchange students are</text>
+
+    <rect x="520" y="55" width="460" height="40" fill="#f4f4f4" stroke="#ccc"/>
+    <text x="532" y="81" font-weight="bold" fill="#333">Programme</text><text x="790" y="81" font-weight="bold" fill="#333">n</text><text x="860" y="81" font-weight="bold" fill="#333">% satisfied</text>
+    <g fill="#333">
+      <text x="532" y="125">Biomedicine</text><text x="790" y="125">52</text><text x="860" y="125">…</text>
+      <text x="532" y="165">Biotechnology</text><text x="790" y="165">38</text><text x="860" y="165">…</text>
+      <text x="532" y="205">Medicine</text><text x="790" y="205">16</text><text x="860" y="205">…</text>
+    </g>
+    <rect x="520" y="220" width="460" height="40" fill="#e3f0f2"/>
+    <text x="532" y="246" fill="#2a7f8f" font-weight="bold">Other, incl. exchange</text><text x="790" y="246" fill="#2a7f8f" font-weight="bold">14</text><text x="860" y="246" fill="#2a7f8f" font-weight="bold">…</text>
+    <g stroke="#ddd"><line x1="520" y1="140" x2="980" y2="140"/><line x1="520" y1="180" x2="980" y2="180"/><line x1="520" y1="220" x2="980" y2="220"/></g>
+    <text x="750" y="300" font-size="16" fill="#2a7f8f" text-anchor="middle">merge small groups, or leave them out</text>
+    <text x="750" y="323" font-size="16" fill="#2a7f8f" text-anchor="middle">and say so in a footnote</text>
+  </g>
+  <rect x="120" y="380" width="760" height="40" rx="10" fill="#f6f1e3" stroke="#8a6a12"/>
+  <text x="500" y="407" font-size="18" fill="#333" text-anchor="middle">Also check the cells inside every table and plot, not only the group totals.</text>
+  <text x="985" y="374" font-size="13" fill="#999" text-anchor="end">illustrative</text>
+</svg>

@@ -1,0 +1,81 @@
+model_name,organization,license,variant,rating,rating_lower,rating_upper,vote_count,rank,leaderboard_publish_date
+Gemini 4 Carbon (High),google,Proprietary,default,1538.9,1529.3,1548.4,4255,1,2026-11-22
+Gemini 4 Argon (High),google,Proprietary,default,1527.7,1522.7,1532.7,28856,2,2026-11-22
+Gemini 4 Neon (High),google,Proprietary,default,1522.9,1514.5,1531.3,5611,3,2026-11-22
+Claude Opus 5.5 (High),anthropic,Proprietary,default,1514.1,1508.5,1519.8,18959,4,2026-11-22
+Claude Fable 5.1 (Max),anthropic,Proprietary,default,1511.8,1506.5,1517.0,22920,5,2026-11-22
+Claude Opus 5 (Max),anthropic,Proprietary,default,1506.2,1501.5,1510.9,35495,6,2026-11-22
+Muse Wonder (Max),meta,Proprietary,default,1503.7,1498.0,1509.3,17102,7,2026-11-22
+Claude Opus 5 (High),anthropic,Proprietary,default,1502.2,1498.6,1505.8,73350,8,2026-11-22
+Gemini 4 Hydrogen (High),google,Proprietary,default,1502.1,1493.2,1511.1,4737,9,2026-11-22
+Claude Opus 4.6 (High),anthropic,Proprietary,default,1501.5,1498.3,1504.8,84109,10,2026-11-22
+Gemini 3.8 Flash (High),google,Proprietary,default,1500.9,1496.9,1504.9,76031,11,2026-11-22
+Claude Opus 4.6,anthropic,Proprietary,default,1496.8,1493.6,1500.0,88895,12,2026-11-22
+Muse Spark 1.3 (Max),meta,Proprietary,default,1492.9,1488.1,1497.7,31093,13,2026-11-22
+MiMo-V2.6-Pro,xiaomi,MIT,default,1492.9,1483.4,1502.3,4047,14,2026-11-22
+Claude Fable 5 (High),anthropic,Proprietary,default,1491.8,1487.6,1495.9,45277,15,2026-11-22
+Claude Opus 4.7 (High),anthropic,Proprietary,default,1489.8,1486.1,1493.6,64030,16,2026-11-22
+Gemini 3.7 Flash (High),google,Proprietary,default,1489.1,1484.5,1493.8,33059,17,2026-11-22
+Qwen3.8-Max,alibaba,Proprietary,default,1484.9,1480.5,1489.3,41147,18,2026-11-22
+Muse Spark 1.2 (xHigh),meta,Proprietary,default,1483.5,1478.1,1488.9,18973,19,2026-11-22
+Claude Opus 4.7,anthropic,Proprietary,default,1483.4,1479.6,1487.1,65114,20,2026-11-22
+Gemini 3.5 Flash (High),google,Proprietary,default,1482.8,1478.9,1486.7,47406,21,2026-11-22
+Gemini 3.1 Pro Preview,google,Proprietary,default,1480.0,1477.1,1482.9,131773,22,2026-11-22
+Gemini 3 Pro,google,Proprietary,default,1479.7,1476.0,1483.5,41794,23,2026-11-22
+Gemini 3.6 Flash (High),google,Proprietary,default,1479.3,1474.9,1483.7,35239,24,2026-11-22
+Muse Spark 1.1,meta,Proprietary,default,1479.2,1475.0,1483.3,45294,25,2026-11-22
+Gemini 3.5 Flash (Medium),google,Proprietary,default,1477.7,1473.6,1481.9,46115,26,2026-11-22
+Claude Fable 5.2 (Max),anthropic,Proprietary,default,1477.2,1468.8,1485.6,5842,27,2026-11-22
+Kimi K3 (Max),moonshot,Kimi K3 license,default,1474.8,1470.6,1478.9,45111,28,2026-11-22
+Qwen3.7-Max-Preview,alibaba,Proprietary,default,1474.8,1465.0,1484.5,3888,29,2026-11-22
+GLM-5.3 (Max),zai,MIT,default,1474.6,1470.1,1479.1,35486,30,2026-11-22
+Muse Spark,meta,Proprietary,default,1474.4,1468.7,1480.2,13959,31,2026-11-22
+GLM-5.3-Flash,zai,MIT,default,1471.7,1467.5,1476.0,57426,32,2026-11-22
+Qwen3.5-Max-Preview,alibaba,Proprietary,default,1471.0,1466.2,1475.9,22356,33,2026-11-22
+GPT-5.5 (High),openai,Proprietary,default,1471.0,1467.3,1474.7,68052,34,2026-11-22
+GLM-5.2 (Max),zai,MIT,default,1469.5,1465.5,1473.6,53923,35,2026-11-22
+Claude Sonnet 5.5 (xHigh),anthropic,Proprietary,default,1469.4,1463.7,1475.0,17616,36,2026-11-22
+GPT-5.4 (High),openai,Proprietary,default,1468.8,1465.1,1472.6,63892,37,2026-11-22
+ERNIE 5.1,baidu,Proprietary,default,1468.0,1463.5,1472.6,38911,38,2026-11-22
+GPT-5.5,openai,Proprietary,default,1466.2,1462.6,1469.9,69649,39,2026-11-22
+Gemini 3 Flash,google,Proprietary,default,1465.9,1461.6,1470.3,31096,40,2026-11-22
+Gemini 4 Carbon (High),google,Proprietary,style_control,1526.5,1516.9,1536.2,4255,1,2026-11-22
+Gemini 4 Argon (High),google,Proprietary,style_control,1519.8,1514.8,1524.8,28856,2,2026-11-22
+Gemini 4 Neon (High),google,Proprietary,style_control,1512.2,1503.8,1520.7,5611,3,2026-11-22
+Muse Wonder (Max),meta,Proprietary,style_control,1511.9,1506.2,1517.6,17102,4,2026-11-22
+Claude Opus 5.5 (High),anthropic,Proprietary,style_control,1507.0,1501.4,1512.7,18959,5,2026-11-22
+Claude Fable 5 (High),anthropic,Proprietary,style_control,1504.1,1499.9,1508.2,45277,6,2026-11-22
+Claude Opus 4.6 (High),anthropic,Proprietary,style_control,1502.9,1499.6,1506.1,84109,7,2026-11-22
+Claude Fable 5.2 (Max),anthropic,Proprietary,style_control,1502.2,1493.8,1510.6,5842,8,2026-11-22
+Claude Fable 5.1 (Max),anthropic,Proprietary,style_control,1502.1,1496.8,1507.4,22920,9,2026-11-22
+Claude Opus 4.7 (High),anthropic,Proprietary,style_control,1501.2,1497.4,1504.9,64030,10,2026-11-22
+Gemini 3.8 Flash (High),google,Proprietary,style_control,1498.0,1494.0,1502.0,76031,11,2026-11-22
+Muse Spark 1.3 (Max),meta,Proprietary,style_control,1497.8,1493.0,1502.6,31093,12,2026-11-22
+Claude Opus 4.6,anthropic,Proprietary,style_control,1496.5,1493.3,1499.7,88895,13,2026-11-22
+Claude Opus 4.7,anthropic,Proprietary,style_control,1494.0,1490.3,1497.8,65114,14,2026-11-22
+Muse Spark 1.2 (xHigh),meta,Proprietary,style_control,1492.8,1487.3,1498.2,18973,15,2026-11-22
+Muse Spark 1.1,meta,Proprietary,style_control,1491.2,1487.1,1495.4,45294,16,2026-11-22
+Gemini 4 Hydrogen (High),google,Proprietary,style_control,1490.1,1481.2,1499.1,4737,17,2026-11-22
+Gemini 3.7 Flash (High),google,Proprietary,style_control,1489.7,1485.0,1494.4,33059,18,2026-11-22
+Claude Opus 5 (High),anthropic,Proprietary,style_control,1489.7,1486.0,1493.3,73350,19,2026-11-22
+Muse Spark,meta,Proprietary,style_control,1489.4,1483.7,1495.2,13959,20,2026-11-22
+Claude Opus 5 (Max),anthropic,Proprietary,style_control,1488.6,1483.8,1493.3,35495,21,2026-11-22
+Kimi K3 (Max),moonshot,Kimi K3 license,style_control,1487.9,1483.7,1492.1,45111,22,2026-11-22
+Gemini 3.1 Pro Preview,google,Proprietary,style_control,1486.7,1483.8,1489.6,131773,23,2026-11-22
+Gemini 3 Pro,google,Proprietary,style_control,1485.8,1482.0,1489.6,41794,24,2026-11-22
+GPT-5.6 Sol (xHigh),openai,Proprietary,style_control,1485.2,1480.9,1489.4,43730,25,2026-11-22
+Qwen3.8-Max,alibaba,Proprietary,style_control,1483.5,1479.1,1487.9,41147,26,2026-11-22
+Kimi K3.1 Pro (Max),moonshot,Kimi K3.1 Pro License,style_control,1483.1,1475.2,1490.9,7378,27,2026-11-22
+Gemini 3.6 Flash (High),google,Proprietary,style_control,1482.5,1478.0,1486.9,35239,28,2026-11-22
+GPT-6.1 Sol (Max),openai,Proprietary,style_control,1481.9,1476.1,1487.7,16525,29,2026-11-22
+Claude Opus 4.8 (High),anthropic,Proprietary,style_control,1481.9,1478.0,1485.8,62886,30,2026-11-22
+MiMo-V2.6-Pro,xiaomi,MIT,style_control,1481.3,1471.8,1490.7,4047,31,2026-11-22
+GPT-5.5 (High),openai,Proprietary,style_control,1481.1,1477.4,1484.9,68052,32,2026-11-22
+GLM-5.3 (Max),zai,MIT,style_control,1481.1,1476.6,1485.7,35486,33,2026-11-22
+Gemini 3.5 Flash (High),google,Proprietary,style_control,1478.2,1474.3,1482.2,47406,34,2026-11-22
+GPT-5.5,openai,Proprietary,style_control,1476.2,1472.4,1479.9,69649,35,2026-11-22
+Gemini 3.5 Flash (Medium),google,Proprietary,style_control,1475.9,1471.8,1480.1,46115,36,2026-11-22
+GLM-5.3-Flash,zai,MIT,style_control,1475.8,1471.5,1480.1,57426,37,2026-11-22
+GPT-6 Astra (Max),openai,Proprietary,style_control,1475.4,1470.2,1480.7,21568,38,2026-11-22
+GPT-5.2 Chat (20260210),openai,Proprietary,style_control,1475.3,1471.3,1479.4,35578,39,2026-11-22
+GLM-5.2 (Max),zai,MIT,style_control,1475.2,1471.1,1479.3,53923,40,2026-11-22

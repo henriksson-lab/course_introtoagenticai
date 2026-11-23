@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Confidence intervals</title>
+<!--
+  Confidence intervals: a single self-contained demo (no libraries, no network).
+  Learning goals: (1) about 95% of 95% confidence intervals contain the true mean,
+  but any single interval either does or does not; (2) the width shrinks with the
+  square root of the sample size (4 times the sample, half the width); (3) with
+  small samples the "1.96" shortcut covers less than 95%; the t value fixes that.
+  Model: samples of n values from a normal population, mean 170, SD 10.
+  Interval: mean +/- t(0.975, n-1) * s / sqrt(n)   (or 1.96 instead of t).
+  Known case used to check it: over many samples the coverage must be close to 95%
+  (with 1000 intervals, between about 93.6% and 96.4%).
+  Random numbers are seeded, so "Start again" gives the same sequence every time.
+  Part of the course "Introduction to agentic AI", unit "Interactive demos".
+-->
+<style>
+  :root {
+    --teal: #2a7f8f; --purple: #6b4fa0; --crimson: #a8324a; --ochre: #8a6a12;
+    --ink: #222; --grey: #666; --bg: #fff;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; padding: 12px; font-family: Helvetica, Arial, sans-serif;
+         color: var(--ink); background: var(--bg); font-size: 16px; line-height: 1.3; }
+  h1 { font-size: 22px; margin: 0 0 4px 0; }
+  .lead { margin: 0 0 10px 0; color: var(--grey); }
+  .wrap { display: flex; gap: 18px; align-items: flex-start; }
+  .controls { flex: 0 0 320px; }
+  .plot { flex: 1 1 auto; min-width: 0; max-width: 740px; }
+  .ctl { margin-bottom: 10px; }
+  .ctl label { display: flex; justify-content: space-between; font-weight: bold; }
+  .ctl output { font-weight: normal; font-variant-numeric: tabular-nums; }
+  input[type=range] { width: 100%; height: 28px; accent-color: var(--teal); }
+  .row { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+  button { font: inherit; font-size: 15px; padding: 6px 10px; border-radius: 6px;
+           border: 1px solid var(--teal); background: #e3f0f2; color: var(--ink); cursor: pointer; }
+  button:hover { background: #cfe5e9; }
+  :focus-visible { outline: 3px solid var(--ochre); outline-offset: 2px; }
+  .check label { font-weight: normal; display: block; margin: 4px 0; }
+  .readout { background: #f5f5f5; border-radius: 8px; padding: 8px 10px; font-size: 15px;
+             font-variant-numeric: tabular-nums; }
+  .readout b { color: var(--teal); }
+  .readout .miss { color: var(--crimson); font-weight: bold; }
+  svg { width: 100%; height: auto; display: block; }
+  .axis text { font-size: 15px; fill: var(--grey); }
+  @media (max-width: 760px) {
+    .wrap { flex-direction: column; }
+    .controls { flex: none; width: 100%; }
+  }
+</style>
+</head>
+<body>
+<h1>What does "95% confidence" mean?</h1>
+<p class="lead">Each line is the 95% confidence interval from one sample. The true mean is 170. How many lines miss it (red, dashed)?</p>
+
+<div class="wrap">
+  <div class="controls">
+    <div class="ctl">
+      <label for="n">Sample size <i>n</i> <output id="nOut" for="n"></output></label>
+      <input type="range" id="n" min="2" max="100" step="1" value="10">
+    </div>
+    <div class="row">
+      <button id="draw1" type="button">Draw 1 sample</button>
+      <button id="draw20" type="button">Draw 20</button>
+      <button id="draw1000" type="button">Draw 1000</button>
+    </div>
+    <div class="check">
+      <label><input type="checkbox" id="useZ"> Use the shortcut 1.96 instead of the t value</label>
+    </div>
+    <div class="row">
+      <button id="restart" type="button">Start again</button>
+    </div>
+    <div class="readout" id="readout" aria-live="polite"></div>
+  </div>
+
+  <div class="plot">
+    <svg id="svg" viewBox="0 0 720 470" role="img" aria-labelledby="svgTitle svgDesc">
+      <title id="svgTitle">Confidence intervals from repeated samples</title>
+      <desc id="svgDesc"></desc>
+    </svg>
+  </div>
+</div>
+
+<script>
+(function () {
+  "use strict";
+  var NS = "http://www.w3.org/2000/svg";
+  var MU = 170, SIGMA = 10, SEED = 20261123, SHOW = 40;
+  var XMIN = 140, XMAX = 200;
+  var W = 720, H = 470, L = 30, R = 30;
+  var STRIP_TOP = 30, STRIP_Y = 70, CI_TOP = 120, CI_BOTTOM = 420;
+  var el = function (id) { return document.getElementById(id); };
+  var svg = el("svg"), sN = el("n");
+
+  // Seeded random numbers (mulberry32) and normal draws (Box-Muller).
+  var state;
+  function seed(s) { state = s >>> 0; }
+  function unif() {
+    state = (state + 0x6D2B79F5) >>> 0;
+    var t = state;
+    t = Math.imul(t ^ (t >>> 15), t | 1);
+    t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+  }
+  function normal() {
+    var u = 1 - unif(), v = unif();
+    return Math.sqrt(-2 * Math.log(u)) * Math.cos(2 * Math.PI * v);
+  }
+
+  // 97.5% quantile of the t distribution: exact table for df 1-30, then a
+  // Cornish-Fisher expansion (error below 0.001 for df > 30).
+  var T975 = [NaN, 12.706, 4.303, 3.182, 2.776, 2.571, 2.447, 2.365, 2.306, 2.262, 2.228,
+    2.201, 2.179, 2.160, 2.145, 2.131, 2.120, 2.110, 2.101, 2.093, 2.086,
+    2.080, 2.074, 2.069, 2.064, 2.060, 2.056, 2.052, 2.048, 2.045, 2.042];
+  function tq(df) {
+    if (df <= 30) return T975[df];
+    var z = 1.959964, z3 = z * z * z, z5 = z3 * z * z, z7 = z5 * z * z;
+    return z + (z3 + z) / (4 * df) + (5 * z5 + 16 * z3 + 3 * z) / (96 * df * df) +
+      (3 * z7 + 19 * z5 + 17 * z3 - 15 * z) / (384 * df * df * df);
+  }
+
+  var intervals = [], total = 0, covered = 0, widthSum = 0, lastSample = [];
+
+  function drawSample() {
+    var n = +sN.value, xs = [], sum = 0;
+    for (var i = 0; i < n; i++) { var v = MU + SIGMA * normal(); xs.push(v); sum += v; }
+    var mean = sum / n, ss = 0;
+    for (i = 0; i < n; i++) ss += (xs[i] - mean) * (xs[i] - mean);
+    var sd = Math.sqrt(ss / (n - 1));
+    var q = el("useZ").checked ? 1.96 : tq(n - 1);
+    var half = q * sd / Math.sqrt(n);
+    var lo = mean - half, hi = mean + half, hit = lo <= MU && MU <= hi;
+    total++; if (hit) covered++; widthSum += 2 * half;
+    intervals.push({ lo: lo, hi: hi, mean: mean, hit: hit });
+    if (intervals.length > SHOW) intervals.shift();
+    lastSample = xs;
+  }
+
+  function x(v) { return L + (v - XMIN) / (XMAX - XMIN) * (W - L - R); }
+  function make(tag, attrs, text) {
+    var e = document.createElementNS(NS, tag);
+    for (var k in attrs) e.setAttribute(k, attrs[k]);
+    if (text !== undefined) e.textContent = text;
+    return e;
+  }
+
+  // Static layer.
+  var axes = make("g", { "class": "axis" });
+  axes.appendChild(make("text", { x: L, y: STRIP_TOP - 8 }, "latest sample (dots) and its mean (bar)"));
+  axes.appendChild(make("line", { x1: x(XMIN), x2: x(XMAX), y1: STRIP_Y + 14, y2: STRIP_Y + 14, stroke: "#ccc" }));
+  axes.appendChild(make("text", { x: L, y: CI_TOP - 10 }, "95% intervals, newest at the bottom"));
+  for (var v = XMIN; v <= XMAX; v += 10) {
+    axes.appendChild(make("line", { x1: x(v), x2: x(v), y1: CI_TOP, y2: CI_BOTTOM, stroke: "#eee" }));
+    axes.appendChild(make("text", { x: x(v), y: CI_BOTTOM + 22, "text-anchor": "middle" }, v));
+  }
+  axes.appendChild(make("text", { x: W / 2, y: CI_BOTTOM + 44, "text-anchor": "middle" }, "height (cm)"));
+  svg.appendChild(axes);
+  svg.appendChild(make("line", { x1: x(MU), x2: x(MU), y1: STRIP_TOP, y2: CI_BOTTOM,
+    stroke: "#8a6a12", "stroke-width": 3 }));
+  svg.appendChild(make("text", { x: x(MU) + 8, y: CI_TOP - 10, "font-size": 15, fill: "#8a6a12",
+    "font-weight": "bold" }, "true mean 170"));
+  var dyn = make("g", {});
+  svg.appendChild(dyn);
+
+  function render() {
+    var n = +sN.value;
+    el("nOut").textContent = n;
+    while (dyn.firstChild) dyn.removeChild(dyn.firstChild);
+
+    lastSample.forEach(function (v) {
+      var cx = Math.max(XMIN, Math.min(XMAX, v));
+      dyn.appendChild(make("circle", { cx: x(cx), cy: STRIP_Y, r: 5, fill: "#6b4fa0", "fill-opacity": 0.55 }));
+    });
+    if (intervals.length) {
+      var m = intervals[intervals.length - 1].mean;
+      dyn.appendChild(make("line", { x1: x(m), x2: x(m), y1: STRIP_Y - 16, y2: STRIP_Y + 16,
+        stroke: "#6b4fa0", "stroke-width": 4 }));
+    }
+
+    var step = (CI_BOTTOM - CI_TOP - 10) / SHOW;
+    intervals.forEach(function (iv, i) {
+      var yy = CI_TOP + 8 + (SHOW - intervals.length + i) * step;
+      var col = iv.hit ? "#2a7f8f" : "#a8324a";
+      var lo = Math.max(XMIN, iv.lo), hi = Math.min(XMAX, iv.hi);
+      dyn.appendChild(make("line", { x1: x(lo), x2: x(hi), y1: yy, y2: yy, stroke: col,
+        "stroke-width": iv.hit ? 3 : 4, "stroke-dasharray": iv.hit ? "" : "6 3" }));
+      dyn.appendChild(make("circle", { cx: x(Math.max(XMIN, Math.min(XMAX, iv.mean))), cy: yy, r: 3, fill: col }));
+      if (iv.lo < XMIN) dyn.appendChild(make("path", { d: "M" + x(XMIN) + "," + yy + " l8,-5 v10 z", fill: col }));
+      if (iv.hi > XMAX) dyn.appendChild(make("path", { d: "M" + x(XMAX) + "," + yy + " l-8,-5 v10 z", fill: col }));
+    });
+
+    var html;
+    if (total === 0) {
+      html = "No samples yet. Press <b>Draw 1 sample</b>.";
+    } else {
+      var pct = 100 * covered / total, missed = total - covered;
+      html = "Intervals drawn: <b>" + total + "</b><br>" +
+        "Contain the true mean: <b>" + covered + " (" + pct.toFixed(1) + "%)</b><br>" +
+        "Miss it: <span class='miss'>" + missed + "</span><br>" +
+        "Average width: <b>" + (widthSum / total).toFixed(1) + " cm</b>";
+      if (total >= 1000) html += "<br>Check: with 1000 or more intervals, expect about 93.6% to 96.4% if the method is right.";
+    }
+    el("readout").innerHTML = html;
+    el("svgDesc").textContent = total + " intervals drawn with sample size " + n + "; " + covered +
+      " contain the true mean of 170.";
+  }
+
+  function restart() { seed(SEED); intervals = []; total = 0; covered = 0; widthSum = 0; lastSample = []; render(); }
+  function many(k) { for (var i = 0; i < k; i++) drawSample(); render(); }
+
+  // Changing n or the method starts a new tally, so the percentages refer to one setting.
+  sN.addEventListener("input", function () { intervals = []; total = 0; covered = 0; widthSum = 0; lastSample = []; render(); });
+  el("useZ").addEventListener("change", function () { intervals = []; total = 0; covered = 0; widthSum = 0; lastSample = []; render(); });
+  el("draw1").addEventListener("click", function () { many(1); });
+  el("draw20").addEventListener("click", function () { many(20); });
+  el("draw1000").addEventListener("click", function () { many(1000); });
+  el("restart").addEventListener("click", restart);
+
+  restart();
+})();
+</script>
+</body>
+</html>

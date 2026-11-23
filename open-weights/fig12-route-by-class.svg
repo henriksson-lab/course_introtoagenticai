@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#ffffff"/>
+  <g font-size="16" text-anchor="middle" font-weight="bold">
+    <text x="130" y="40" fill="#5a6a7a" text-anchor="start">Data class</text>
+    <rect x="330" y="16" width="200" height="40" rx="6" fill="#f3f0f8"/><text x="430" y="42" fill="#6b4fa0">Provider's cloud</text>
+    <rect x="550" y="16" width="200" height="40" rx="6" fill="#faf5e8"/><text x="650" y="42" fill="#8a6a12">Hosted service</text>
+    <rect x="770" y="16" width="200" height="40" rx="6" fill="#eef6f7"/><text x="870" y="42" fill="#2a7f8f">Own computer</text>
+  </g>
+  <g font-size="16" fill="#1b2a3a">
+    <text x="30" y="98" font-weight="bold">Public</text>
+    <text x="30" y="168" font-weight="bold">Internal, unpublished</text>
+    <text x="30" y="238" font-weight="bold">Personal data</text>
+    <text x="30" y="308" font-weight="bold">Sensitive personal data</text>
+    <text x="30" y="378" font-weight="bold">Held in confidence</text><text x="30" y="398" font-size="14" fill="#5a6a7a">(proposals you review)</text>
+  </g>
+  <g font-size="15" text-anchor="middle">
+    <!-- public -->
+    <rect x="330" y="72" width="200" height="50" rx="6" fill="#e3f1e5"/><text x="430" y="102" fill="#2e7d32">yes</text>
+    <rect x="550" y="72" width="200" height="50" rx="6" fill="#e3f1e5"/><text x="650" y="102" fill="#2e7d32">yes</text>
+    <rect x="770" y="72" width="200" height="50" rx="6" fill="#e3f1e5"/><text x="870" y="102" fill="#2e7d32">yes</text>
+    <!-- internal -->
+    <rect x="330" y="142" width="200" height="50" rx="6" fill="#fbf2dc"/><text x="430" y="164" fill="#8a6a12">training off or</text><text x="430" y="182" fill="#8a6a12">institutional plan</text>
+    <rect x="550" y="142" width="200" height="50" rx="6" fill="#fbf2dc"/><text x="650" y="164" fill="#8a6a12">only if its policy</text><text x="650" y="182" fill="#8a6a12">allows it</text>
+    <rect x="770" y="142" width="200" height="50" rx="6" fill="#e3f1e5"/><text x="870" y="172" fill="#2e7d32">yes</text>
+    <!-- personal -->
+    <rect x="330" y="212" width="200" height="50" rx="6" fill="#fbf2dc"/><text x="430" y="234" fill="#8a6a12">only an approved</text><text x="430" y="252" fill="#8a6a12">tool and contract</text>
+    <rect x="550" y="212" width="200" height="50" rx="6" fill="#fbf2dc"/><text x="650" y="234" fill="#8a6a12">only if approved</text><text x="650" y="252" fill="#8a6a12">for personal data</text>
+    <rect x="770" y="212" width="200" height="50" rx="6" fill="#fbf2dc"/><text x="870" y="234" fill="#8a6a12">where the data may</text><text x="870" y="252" fill="#8a6a12">already be stored</text>
+    <!-- sensitive -->
+    <rect x="330" y="282" width="200" height="50" rx="6" fill="#f8e3e7"/><text x="430" y="312" fill="#a8324a">no (stand-in)</text>
+    <rect x="550" y="282" width="200" height="50" rx="6" fill="#f8e3e7"/><text x="650" y="304" fill="#a8324a">no, unless explicitly</text><text x="650" y="322" fill="#a8324a">approved</text>
+    <rect x="770" y="282" width="200" height="50" rx="6" fill="#fbf2dc"/><text x="870" y="304" fill="#8a6a12">possible, if the ethics</text><text x="870" y="322" fill="#8a6a12">approval's rules hold</text>
+    <!-- confidence -->
+    <rect x="330" y="352" width="200" height="50" rx="6" fill="#f8e3e7"/><text x="430" y="382" fill="#a8324a">never</text>
+    <rect x="550" y="352" width="200" height="50" rx="6" fill="#f8e3e7"/><text x="650" y="382" fill="#a8324a">never</text>
+    <rect x="770" y="352" width="200" height="50" rx="6" fill="#f8e3e7"/><text x="870" y="374" fill="#a8324a">follow the funder or</text><text x="870" y="392" fill="#a8324a">journal: usually no AI</text>
+  </g>
+  <text x="30" y="432" font-size="14" fill="#5a6a7a">A first filter, not legal advice. Your university, data protection officer and ethics approval decide.</text>
+</svg>

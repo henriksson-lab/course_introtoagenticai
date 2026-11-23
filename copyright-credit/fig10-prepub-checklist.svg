@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 540" width="800" height="540" font-family="Helvetica, Arial, sans-serif">
+  <rect width="800" height="540" fill="#fff"/>
+  <rect x="30" y="15" width="740" height="505" rx="14" fill="#fdf8e8" stroke="#8a6a12" stroke-width="2.5"/>
+  <text x="400" y="62" font-size="27" font-weight="bold" fill="#8a6a12" text-anchor="middle">Before you publish</text>
+  <g font-size="22" fill="#333">
+    <rect x="70" y="100" width="30" height="30" rx="4" fill="#fff" stroke="#2a7f8f" stroke-width="2.5"/>
+    <text x="120" y="124"><tspan font-weight="bold" fill="#2a7f8f">Sources:</tspan> where did each file come from?</text>
+    <rect x="70" y="175" width="30" height="30" rx="4" fill="#fff" stroke="#a8324a" stroke-width="2.5"/>
+    <text x="120" y="199"><tspan font-weight="bold" fill="#a8324a">Copies:</tspan> phrase search; licence headers</text>
+    <rect x="70" y="250" width="30" height="30" rx="4" fill="#fff" stroke="#6b4fa0" stroke-width="2.5"/>
+    <text x="120" y="274"><tspan font-weight="bold" fill="#6b4fa0">Licences:</tspan> do they allow it? does yours fit?</text>
+    <rect x="70" y="325" width="30" height="30" rx="4" fill="#fff" stroke="#8a6a12" stroke-width="2.5"/>
+    <text x="120" y="349"><tspan font-weight="bold" fill="#8a6a12">Credit:</tspan> cite people; "redrawn from ..."</text>
+    <rect x="70" y="400" width="30" height="30" rx="4" fill="#fff" stroke="#52606d" stroke-width="2.5"/>
+    <text x="120" y="424"><tspan font-weight="bold" fill="#52606d">Disclosure:</tspan> AI's role; AI-use log updated</text>
+  </g>
+  <text x="400" y="490" font-size="19" fill="#666" text-anchor="middle">Unknown source? Then it does not go on the page.</text>
+</svg>

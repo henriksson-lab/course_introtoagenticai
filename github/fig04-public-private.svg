@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 460" width="1000" height="460" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="460" fill="#fff"/>
+  <!-- private -->
+  <rect x="40" y="40" width="430" height="380" rx="16" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="255" y="85" font-size="24" font-weight="bold" fill="#2a7f8f" text-anchor="middle">Private repository</text>
+  <rect x="175" y="120" width="160" height="110" rx="10" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+  <rect x="225" y="95" width="60" height="45" rx="25" fill="none" stroke="#2a7f8f" stroke-width="5"/>
+  <text x="255" y="185" font-size="18" fill="#333" text-anchor="middle">repo</text>
+  <text x="70" y="275" font-size="18" fill="#333">Who can read it:</text>
+  <text x="70" y="305" font-size="18" fill="#333">• you</text>
+  <text x="70" y="333" font-size="18" fill="#333">• collaborators you invite</text>
+  <text x="70" y="361" font-size="18" fill="#333">• GitHub itself (it stores the data)</text>
+  <text x="70" y="398" font-size="17" fill="#2a7f8f" font-style="italic">the default for your own project</text>
+  <!-- public -->
+  <rect x="530" y="40" width="430" height="380" rx="16" fill="#f6f1e3" stroke="#8a6a12" stroke-width="2.5"/>
+  <text x="745" y="85" font-size="24" font-weight="bold" fill="#8a6a12" text-anchor="middle">Public repository</text>
+  <rect x="665" y="120" width="160" height="110" rx="10" fill="#fff" stroke="#8a6a12" stroke-width="2"/>
+  <text x="745" y="185" font-size="18" fill="#333" text-anchor="middle">repo</text>
+  <g fill="#8a6a12"><circle cx="620" cy="140" r="9"/><circle cx="600" cy="185" r="9"/><circle cx="625" cy="225" r="9"/><circle cx="870" cy="140" r="9"/><circle cx="890" cy="185" r="9"/><circle cx="865" cy="225" r="9"/></g>
+  <text x="560" y="275" font-size="18" fill="#333">Who can read it:</text>
+  <text x="560" y="305" font-size="18" fill="#333">• anyone on the internet</text>
+  <text x="560" y="333" font-size="18" fill="#333">• search engines, archives, crawlers</text>
+  <text x="560" y="361" font-size="18" fill="#333">• including every old version</text>
+  <text x="560" y="398" font-size="17" fill="#8a6a12" font-style="italic">only after a check of what is in it</text>
+</svg>

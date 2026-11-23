@@ -1,0 +1,143 @@
+---
+title: "Exercise: spot what the agent got wrong"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- **check an agent-written lab protocol** the way you would check a new student's: units and concentrations, missing safety steps, dangerous combinations, invented details,
+- say which **zone** a life-science request falls in (everyday biology, the safety margin, or the core), and what that means for using an agent,
+- recognise a **false positive** on a benign request and give **honest context**, without disguising anything,
+- name the **people at your institution** who handle biosafety and research security, and record them in your project README.
+
+Nothing in this exercise asks you to provoke a real block, and you should not try. All examples stay at the level of categories and ordinary teaching-lab work.
+
+## Before you start
+
+- You have done *Guardrails and safety levels*, and have its "Guardrails and limits" section in your own project's README.
+- Download the teaching protocol: [agent-protocol.md](data/agent-protocol.md). It is **synthetic teaching material with deliberate errors. Do not use it at the bench.**
+- Work in a new folder `~/agentic-course/bio-limits/` and put the protocol there.
+
+## Worked example
+
+### Part 1: Check an agent-written protocol by hand
+
+The protocol is for a 1 % agarose gel and bench clean-up in a second-year teaching lab. It reads well. It contains **at least ten problems**: wrong numbers, a missing or wrong safety step, a dangerous combination of chemicals, and an invented source.
+
+1. Read it **without the agent** first. Mark every line you would not let a student follow. For each, write one of: *wrong number*, *safety step missing or wrong*, *dangerous combination*, *invented detail*, *check local rules*.
+2. Use the checklist from the lecture (slide "Check every agent-written protocol against the same list"): units and dilutions recomputed, every hazard has its protective step, no incompatible chemicals mixed, every cited source exists, waste handled per local rules.
+
+::: {.callout-tip collapse="true"}
+## Answer key (open after you have tried)
+
+| Step | Problem | Kind |
+|---|---|---|
+| Intro | "Nordic Bench Safety Guideline BSG-7 (2021)" does not exist. Invented citation. | invented detail |
+| 1 | 50x stock to 1x is a **1:50** dilution: 20 mL stock in 1 L, not 200 mL. | wrong number |
+| 2 | 1 % w/v in 100 mL is **1 g** agarose, not 10 g (that is 10 %). | wrong number |
+| 3 | Adding NaOH is not part of the method. Invented step that changes the buffer. | invented detail |
+| 4 | **Never heat a tightly capped bottle in a microwave**: pressure build-up, the bottle can burst. Loosen the cap; heat in short bursts; superheated agarose can boil over. | safety step wrong |
+| 4–5 | No heat-protective gloves or eye protection mentioned for handling hot agarose. No lab coat or gloves anywhere in the protocol. | safety step missing |
+| 5 | SYBR Safe 10 000x concentrate is used at **1:10 000** (10 µL in 100 mL), not 1:100. | wrong number |
+| 10 | Looking at and cutting bands on a **UV** transilluminator needs a UV face shield and minimal exposure time; on a blue-light box, the orange filter. The protocol says neither. | safety step missing |
+| 11 | Gel and stain waste go by **local waste rules**, not automatically down the sink. | check local rules |
+| 12 | **Bleach followed by hydrochloric acid releases chlorine gas.** Never combine them. Rinse with water instead. Also: "10 % bleach" is ambiguous (10 % of household bleach, or 10 % hypochlorite?). | dangerous combination |
+| 13 | Ethanol for disinfection is about **70 %**, not 7 %. | wrong number |
+
+Count how many you found in each kind. Most people find the numbers first and miss the missing safety steps: an error is visible on the page, an omission is not.
+:::
+
+### Part 2: Ask the agent to check it, then compare
+
+Start the agent in `~/agentic-course/bio-limits/` and give it this prompt:
+
+```text
+Read agent-protocol.md. It is a teaching-lab protocol written by an AI
+agent, and it may contain errors. Check it as an experienced lab manager
+would. For every problem, give the step number, what is wrong, why it
+matters, and the correction. Recompute every dilution and concentration
+and show the arithmetic. Say explicitly which safety steps are missing,
+not only which are wrong. Mark any source you cannot verify as
+unverified. Write the result to protocol-review.md. Do not change
+agent-protocol.md.
+```
+
+### Check the result
+
+- Compare `protocol-review.md` with your own list and with the answer key. Which did the agent find that you missed, and the reverse?
+- Did it **recompute** the dilutions (1:50, 1 g, 1:10 000, 70 %), or only say "check the concentration"?
+- Did it flag the **bleach and acid** combination? This is the most dangerous error in the protocol.
+- Did it call the invented guideline **unverified**, or accept it?
+- Note: the same kind of agent wrote the errors in the first place. A second agent's review is a useful extra check, not a replacement for yours.
+
+### Part 3: Which zone is the request in?
+
+For each request, decide: **everyday biology** (guardrails rarely matter), **safety margin** (legitimate, but a block or a thinner answer is possible), or **core** (blocked for everyone; the agent is the wrong tool). Write one sentence of reasoning for each.
+
+1. Reanalyse a public RNA-seq dataset of cells infected with a common respiratory virus: QC, differential expression, a volcano plot.
+2. A literature table on the history and epidemiology of a virus family: hosts, outbreaks, key reviews.
+3. Turn your notes into the spill-response section of a BSL-1/BSL-2 teaching-lab induction handout.
+4. Step-by-step methods to make a dangerous pathogen spread more easily between people.
+5. Summarise published guidance on how universities run their biosafety committees.
+6. Design changes to a toxin-related protein, with predicted effects on its activity.
+7. Statistical power for a clinical trial comparing two approved antibiotics.
+
+::: {.callout-tip collapse="true"}
+## Suggested answers
+
+1. **Everyday biology.** Data analysis of public data; very unlikely to be blocked.
+2. **Safety margin.** Legitimate; you may get a vaguer answer than for a non-pathogen topic. Treat the summary as a starting point and go to the literature databases yourself (*Literature review*).
+3. **Safety margin (false positive possible).** Benign teaching material. If blocked, give honest context (Part 4).
+4. **Core.** Blocked for everyone, and rightly. This is not a task for an AI tool, whoever asks.
+5. **Everyday.** Policy and governance text.
+6. **Safety margin, near the core.** Molecular design in toxin biology is one of the areas the providers name as still affected. Legitimate projects go through institutional routes (biosafety officer, the providers' verified-access programmes), not through rewording.
+7. **Everyday.** Clinical statistics.
+:::
+
+### Part 4: Honest context for a benign request
+
+Suppose request 3 (the spill-response handout) stopped partway. Write your own version of the "after" prompt from the lecture (slide "Example: a biosafety handout, with honest context") for **your** situation. It must:
+
+- say truthfully who you are and what the handout is for,
+- say what it should contain and, just as important, what it should **not** contain,
+- contain nothing you would not be comfortable with your biosafety officer reading.
+
+### Check the result
+
+- Read your prompt as your biosafety officer would. Is every sentence true? Is there any role or story in it that is not? If so, remove it: that is disguise, not context.
+- If the honest version is still blocked, stop. Write that section yourself or from your institution's template and let the agent do layout only.
+
+## On your own project
+
+1. Find, for your own institution: the **biosafety officer** or committee, the **research security / export control** contact, and whether your university uses or has applied to a provider's **verified-access programme** for life sciences. Ask the agent to search the web, then open every link yourself and check that it is current:
+
+   ```text
+   Search the web for my university's biosafety officer or biosafety
+   committee, its research security or export control office, and any
+   statement about access programmes for AI tools in the life sciences.
+   My university is: <name>. List each with its URL. Do not guess; if you
+   find nothing, say so.
+   ```
+
+2. Extend the **"Guardrails and limits"** section in your project README with: which zone your project's requests are in, the contacts above, and one sentence on how you check any protocol or method text the agent writes.
+3. If your project involves lab methods: run the Part 2 review prompt on one protocol of your own that is **not** restricted and contains nothing confidential. Check its review against your own knowledge.
+4. Commit the README change (*Git as undo button*).
+
+### Check the result
+
+- The README names real people or offices with working links, checked by you.
+- If your project is in everyday biology, the section says so in one line. That is a fine outcome.
+
+## What you should have now
+
+- `protocol-review.md`, compared with your own review and the answer key.
+- Your zone decisions for the seven requests, with reasons.
+- An honest-context prompt you could actually use.
+- A "Guardrails and limits" section in your project README with your institution's biosafety and research-security contacts.

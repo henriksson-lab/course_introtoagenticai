@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="560" fill="#ffffff"/>
+  <text x="250" y="34" text-anchor="middle" font-size="21" font-weight="bold" fill="#2a7f8f">Biosafety levels (labs)</text>
+  <text x="750" y="34" text-anchor="middle" font-size="21" font-weight="bold" fill="#6b4fa0">AI Safety Levels (Anthropic)</text>
+  <!-- rows: y 60, 175, 290, 405 ; height 105 -->
+  <!-- BSL-1 -->
+  <rect x="20" y="380" width="460" height="100" rx="10" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="40" y="414" font-size="19" font-weight="bold" fill="#2a7f8f">BSL-1</text>
+  <text x="120" y="414" font-size="17" fill="#1b2a3a">agents that do not cause disease</text>
+  <text x="120" y="438" font-size="17" fill="#1b2a3a">in healthy adults; open bench,</text>
+  <text x="120" y="462" font-size="17" fill="#1b2a3a">good lab practice</text>
+  <!-- BSL-2 -->
+  <rect x="20" y="270" width="460" height="100" rx="10" fill="#d6ecef" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="40" y="304" font-size="19" font-weight="bold" fill="#2a7f8f">BSL-2</text>
+  <text x="120" y="304" font-size="17" fill="#1b2a3a">moderate hazard; restricted access,</text>
+  <text x="120" y="328" font-size="17" fill="#1b2a3a">safety cabinet for some work,</text>
+  <text x="120" y="352" font-size="17" fill="#1b2a3a">training</text>
+  <!-- BSL-3 -->
+  <rect x="20" y="160" width="460" height="100" rx="10" fill="#b5dce2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="40" y="194" font-size="19" font-weight="bold" fill="#2a7f8f">BSL-3</text>
+  <text x="120" y="194" font-size="17" fill="#1b2a3a">serious disease by inhalation;</text>
+  <text x="120" y="218" font-size="17" fill="#1b2a3a">controlled airflow, all work in</text>
+  <text x="120" y="242" font-size="17" fill="#1b2a3a">cabinets, vetted staff</text>
+  <!-- BSL-4 -->
+  <rect x="20" y="50" width="460" height="100" rx="10" fill="#2a7f8f"/>
+  <text x="40" y="84" font-size="19" font-weight="bold" fill="#fff">BSL-4</text>
+  <text x="120" y="84" font-size="17" fill="#fff">dangerous, exotic agents with no</text>
+  <text x="120" y="108" font-size="17" fill="#fff">treatment; suits or class III</text>
+  <text x="120" y="132" font-size="17" fill="#fff">cabinets, separate building</text>
+  <!-- ASL-1 -->
+  <rect x="520" y="380" width="460" height="100" rx="10" fill="#f4f1f9" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="540" y="414" font-size="19" font-weight="bold" fill="#6b4fa0">ASL-1</text>
+  <text x="620" y="414" font-size="17" fill="#1b2a3a">no meaningful catastrophic risk</text>
+  <text x="620" y="438" font-size="17" fill="#1b2a3a">(e.g. a chess program, an early</text>
+  <text x="620" y="462" font-size="17" fill="#1b2a3a">language model)</text>
+  <!-- ASL-2 -->
+  <rect x="520" y="270" width="460" height="100" rx="10" fill="#e3dcf0" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="540" y="304" font-size="19" font-weight="bold" fill="#6b4fa0">ASL-2</text>
+  <text x="620" y="304" font-size="17" fill="#1b2a3a">early signs of dangerous capability,</text>
+  <text x="620" y="328" font-size="17" fill="#1b2a3a">no real help beyond a search engine;</text>
+  <text x="620" y="352" font-size="17" fill="#1b2a3a">baseline security and refusals</text>
+  <!-- ASL-3 -->
+  <rect x="520" y="160" width="460" height="100" rx="10" fill="#c7b9e3" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="540" y="194" font-size="19" font-weight="bold" fill="#6b4fa0">ASL-3</text>
+  <text x="620" y="194" font-size="17" fill="#1b2a3a">could substantially raise the risk</text>
+  <text x="620" y="218" font-size="17" fill="#1b2a3a">of misuse; classifiers, monitoring,</text>
+  <text x="620" y="242" font-size="17" fill="#1b2a3a">stronger weight security</text>
+  <!-- ASL-4 -->
+  <rect x="520" y="50" width="460" height="100" rx="10" fill="#6b4fa0"/>
+  <text x="540" y="84" font-size="19" font-weight="bold" fill="#fff">ASL-4+</text>
+  <text x="630" y="84" font-size="17" fill="#fff">higher levels: not spelled out</text>
+  <text x="630" y="108" font-size="17" fill="#fff">as a fixed list; defined by the</text>
+  <text x="630" y="132" font-size="17" fill="#fff">argument a developer must make</text>
+  <text x="500" y="514" text-anchor="middle" font-size="17" fill="#1b2a3a">Same idea: the more dangerous what you handle, the stricter the containment.</text>
+  <text x="500" y="540" text-anchor="middle" font-size="15" fill="#3a4a5a">BSL: simplified from biosafety manuals. ASL: simplified from Anthropic's RSP (2023 definitions; since 2024 an ASL names a set of protections).</text>
+</svg>

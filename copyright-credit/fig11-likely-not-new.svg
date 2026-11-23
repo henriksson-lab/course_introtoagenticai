@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="1000" height="450" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="450" fill="#fff"/>
+  <line x1="60" y1="340" x2="940" y2="340" stroke="#333" stroke-width="2"/>
+  <path d="M60,338 C220,336 300,320 380,220 C430,150 470,90 500,90 C530,90 570,150 620,220 C700,320 780,336 940,338" fill="#e8f3f5" stroke="#2a7f8f" stroke-width="3"/>
+  <text x="500" y="380" font-size="19" text-anchor="middle" fill="#333">possible answers to a research question</text>
+  <!-- labels -->
+  <line x1="500" y1="90" x2="500" y2="60" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="500" y="48" font-size="20" font-weight="bold" fill="#2a7f8f" text-anchor="middle">the typical answer: what the model gives by default</text>
+  <circle cx="860" cy="334" r="9" fill="#a8324a"/>
+  <line x1="860" y1="322" x2="840" y2="240" stroke="#a8324a" stroke-width="2"/>
+  <text x="960" y="200" font-size="19" fill="#a8324a" text-anchor="end" font-weight="bold">a new idea: rare,</text>
+  <text x="960" y="226" font-size="19" fill="#a8324a" text-anchor="end" font-weight="bold">in the tail</text>
+  <circle cx="420" cy="180" r="9" fill="#6b4fa0"/>
+  <line x1="410" y1="172" x2="230" y2="150" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="40" y="120" font-size="19" fill="#6b4fa0" font-weight="bold">"novel" to you,</text>
+  <text x="40" y="146" font-size="19" fill="#6b4fa0" font-weight="bold">already in a paper</text>
+  <text x="500" y="425" font-size="18" fill="#1f2933" text-anchor="middle">Push for alternatives, then do the literature check: who should be cited?</text>
+</svg>

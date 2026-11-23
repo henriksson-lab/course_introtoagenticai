@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" width="1000" height="560" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="560" fill="#ffffff"/>
+  <circle cx="230" cy="270" r="215" fill="#e6f2f4" stroke="#2a7f8f" stroke-width="3"/>
+  <circle cx="230" cy="270" r="140" fill="#f6efdc" stroke="#8a6a12" stroke-width="3"/>
+  <circle cx="230" cy="270" r="68" fill="#a8324a"/>
+  <text x="230" y="277" text-anchor="middle" font-size="20" fill="#ffffff" font-weight="bold">core</text>
+  <text x="230" y="168" text-anchor="middle" font-size="18" fill="#8a6a12" font-weight="bold">margin</text>
+  <text x="230" y="90" text-anchor="middle" font-size="18" fill="#2a7f8f" font-weight="bold">everyday biology</text>
+  <g stroke="#1b2a3a" stroke-width="1.5" fill="none">
+    <line x1="298" y1="270" x2="480" y2="104"/>
+    <line x1="368" y1="270" x2="480" y2="270"/>
+    <line x1="440" y1="330" x2="480" y2="440"/>
+  </g>
+  <g font-size="18" fill="#1b2a3a">
+    <rect x="480" y="30" width="500" height="150" rx="8" fill="#f8eef0" stroke="#a8324a" stroke-width="2"/>
+    <text x="498" y="60" font-weight="bold" fill="#a8324a">Blocked for everyone</text>
+    <text x="498" y="88">Weapons; making a pathogen spread more</text>
+    <text x="498" y="112">easily or cause more harm; ways to make or</text>
+    <text x="498" y="136">obtain dangerous pathogens and toxins;</text>
+    <text x="498" y="160">detailed protocols for working with them</text>
+    <rect x="480" y="200" width="500" height="140" rx="8" fill="#fbf6ea" stroke="#8a6a12" stroke-width="2"/>
+    <text x="498" y="230" font-weight="bold" fill="#8a6a12">Safety margin: may be blocked or vaguer</text>
+    <text x="498" y="258">Virology, toxin biology, some protein and</text>
+    <text x="498" y="282">molecular design, some lab methods,</text>
+    <text x="498" y="306">biosecurity research itself</text>
+    <rect x="480" y="360" width="500" height="140" rx="8" fill="#e6f2f4" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="498" y="390" font-weight="bold" fill="#2a7f8f">Usually fine</text>
+    <text x="498" y="418">Textbook biology, gene expression analysis,</text>
+    <text x="498" y="442">ecology, most medicine, statistics, lab</text>
+    <text x="498" y="466">results, teaching material</text>
+  </g>
+  <text x="500" y="540" text-anchor="middle" font-size="16" fill="#8a97a5">Boundaries are drawn by each provider, are not published in detail, and change.</text>
+</svg>

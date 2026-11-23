@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" width="1000" height="380" font-family="Helvetica, Arial, sans-serif">
+  <defs><marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker></defs>
+  <rect width="1000" height="380" fill="#fff"/>
+  <g text-anchor="middle">
+    <g font-size="19" font-weight="bold" fill="#fff">
+      <rect x="15" y="40" width="175" height="100" rx="10" fill="#8a6a12"/><text x="102" y="82">1. Read</text><text x="102" y="108">the rules</text>
+      <rect x="215" y="40" width="175" height="100" rx="10" fill="#a8324a"/><text x="302" y="82">2. Token</text><text x="302" y="108">in .env</text>
+      <rect x="415" y="40" width="175" height="100" rx="10" fill="#2a7f8f"/><text x="502" y="82">3. Download</text><text x="502" y="108">raw pages</text>
+      <rect x="615" y="40" width="175" height="100" rx="10" fill="#6b4fa0"/><text x="702" y="82">4. Clean</text><text x="702" y="108">one table</text>
+      <rect x="815" y="40" width="175" height="100" rx="10" fill="#555"/><text x="902" y="82">5. Analyse</text><text x="902" y="108">and plot</text>
+    </g>
+    <g font-size="16" fill="#333">
+      <text x="102" y="190">API page, Swagger,</text><text x="102" y="212">robots.txt, credit</text>
+      <text x="302" y="190">public token or</text><text x="302" y="212">your own; .gitignore</text>
+      <text x="502" y="190">search "soil",</text><text x="502" y="212">100 per page, 1 s</text>
+      <text x="702" y="190">one row = one project;</text><text x="702" y="212">no names</text>
+      <text x="902" y="190">per year, funder,</text><text x="902" y="212">field, topic</text>
+    </g>
+    <g font-size="16" fill="#2a7f8f" font-weight="bold">
+      <rect x="15" y="250" width="175" height="80" rx="8" fill="#e3f0f2"/><text x="102" y="282">check: quote</text><text x="102" y="304">the sentences</text>
+      <rect x="215" y="250" width="175" height="80" rx="8" fill="#e3f0f2"/><text x="302" y="282">check: git status</text><text x="302" y="304">does not list .env</text>
+      <rect x="415" y="250" width="175" height="80" rx="8" fill="#e3f0f2"/><text x="502" y="282">check: records</text><text x="502" y="304">= reported total</text>
+      <rect x="615" y="250" width="175" height="80" rx="8" fill="#e3f0f2"/><text x="702" y="282">check: 3 projects</text><text x="702" y="304">by hand</text>
+      <rect x="815" y="250" width="175" height="80" rx="8" fill="#e3f0f2"/><text x="902" y="282">check: funder's</text><text x="902" y="304">own statistics</text>
+    </g>
+  </g>
+  <g stroke="#555" stroke-width="2.5">
+    <line x1="190" y1="90" x2="211" y2="90" marker-end="url(#ar)"/>
+    <line x1="390" y1="90" x2="411" y2="90" marker-end="url(#ar)"/>
+    <line x1="590" y1="90" x2="611" y2="90" marker-end="url(#ar)"/>
+    <line x1="790" y1="90" x2="811" y2="90" marker-end="url(#ar)"/>
+  </g>
+</svg>
