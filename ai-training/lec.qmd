@@ -71,10 +71,9 @@ Before the two routes, a decision order that saves a lot of work. First, look fo
 
 ## If you only need positions, a detector is cheaper than outlines
 
-- **Segmentation** draws the outline of every object: needed for area and shape.
-- **Detection** puts a box around each object: enough for counting and locating.
-- Box labels are much faster to draw, and detectors such as **YOLO\*** are fast to train and run.
-- A simulator can produce boxes as easily as outlines.
+![](fig20-detect-vs-segment.png){width="82%" fig-align="center"}
+
+- Boxes are much faster to label, and detectors such as **YOLO\*** are fast to train and run. A simulator gives boxes as easily as outlines.
 
 \* The common YOLO software (Ultralytics) is AGPL-3.0: the licence matters for commercial or closed-source use.
 
