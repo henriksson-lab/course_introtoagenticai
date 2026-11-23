@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="400" fill="#fff"/>
+<rect x="60" y="40" width="170" height="170" rx="4" fill="#1b1b1b" stroke="#fff" stroke-width="2"/>
+<rect x="70" y="50" width="170" height="170" rx="4" fill="#1b1b1b" stroke="#fff" stroke-width="2"/>
+<rect x="80" y="60" width="170" height="170" rx="4" fill="#1b1b1b" stroke="#fff" stroke-width="2"/>
+<rect x="90" y="70" width="170" height="170" rx="4" fill="#1b1b1b" stroke="#fff" stroke-width="2"/>
+<rect x="100" y="80" width="170" height="170" rx="4" fill="#1b1b1b" stroke="#fff" stroke-width="2"/>
+<rect x="110" y="90" width="170" height="170" rx="4" fill="#1b1b1b" stroke="#fff" stroke-width="2"/>
+<ellipse cx="141" cy="212" rx="13" ry="9" fill="#d0d0d0" transform="rotate(137 141 212)"/>
+<ellipse cx="156" cy="169" rx="13" ry="9" fill="#d0d0d0" transform="rotate(81 156 169)"/>
+<ellipse cx="203" cy="205" rx="13" ry="9" fill="#d0d0d0" transform="rotate(17 203 205)"/>
+<ellipse cx="128" cy="210" rx="13" ry="9" fill="#d0d0d0" transform="rotate(78 128 210)"/>
+<ellipse cx="216" cy="110" rx="13" ry="9" fill="#d0d0d0" transform="rotate(80 216 110)"/>
+<ellipse cx="212" cy="137" rx="13" ry="9" fill="#d0d0d0" transform="rotate(170 212 137)"/>
+<ellipse cx="233" cy="114" rx="13" ry="9" fill="#d0d0d0" transform="rotate(5 233 114)"/>
+<ellipse cx="190" cy="223" rx="13" ry="9" fill="#d0d0d0" transform="rotate(69 190 223)"/>
+<ellipse cx="151" cy="161" rx="13" ry="9" fill="#d0d0d0" transform="rotate(5 151 161)"/>
+<text x="170" y="300" font-size="22" fill="#333" text-anchor="middle" font-weight="bold" >20 000 images</text>
+<text x="170" y="328" font-size="18" fill="#888" text-anchor="middle" font-weight="normal" >from the scanner: easy</text>
+<line x1="270" y1="170" x2="370" y2="170" stroke="#888" stroke-width="3"/><polygon points="370,170 358.9,174.7 358.9,165.3" fill="#888"/>
+<circle cx="450" cy="110" r="18.2" fill="#6b4fa0"/><path d="M418.8,177.60000000000002 Q418.8,133.4 450,133.4 Q481.2,133.4 481.2,177.60000000000002 Z" fill="#6b4fa0"/>
+<text x="450" y="220" font-size="22" fill="#6b4fa0" text-anchor="middle" font-weight="bold" >one expert</text>
+<text x="450" y="248" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >outlines each image</text>
+<text x="450" y="274" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >about 5 minutes</text>
+<line x1="540" y1="170" x2="640" y2="170" stroke="#888" stroke-width="3"/><polygon points="640,170 628.9,174.7 628.9,165.3" fill="#888"/>
+<rect x="660" y="70" width="290" height="200" rx="8" fill="#fbe9ea" stroke="#a8324a" stroke-width="2"/>
+<text x="805" y="110" font-size="22" fill="#a8324a" text-anchor="middle" font-weight="bold" >20 000 × 5 min</text>
+<text x="805" y="145" font-size="20" fill="#333" text-anchor="middle" font-weight="normal" >= about 1 700 hours</text>
+<text x="805" y="175" font-size="20" fill="#333" text-anchor="middle" font-weight="normal" >= about a year of</text>
+<text x="805" y="202" font-size="20" fill="#333" text-anchor="middle" font-weight="normal" >full-time work</text>
+<text x="805" y="245" font-size="17" fill="#888" text-anchor="middle" font-weight="normal" >and a second expert disagrees</text>
+<text x="500" y="375" font-size="22" fill="#333" text-anchor="middle" font-weight="bold" >Images are cheap. Labels are not.</text>
+</svg>

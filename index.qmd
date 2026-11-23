@@ -40,7 +40,8 @@ describe the task, check the result and keep your work organised.
 - **Part 4: Literature, documents and the web.** Literature review, extracting
   data from PDFs, analysing grant results, preparing for grant reviewers.
 - **Part 5: Scaling up.** Claude and Codex in parallel, custom skills, reading
-  other people's code, translating code to Rust.
+  other people's code, translating code to Rust, using agents to train AI
+  models on curated and simulated data.
 - **Part 6: The wider picture.** Choosing a model, open-weights models and
   data privacy, labelling AI-generated content, guardrails and safety levels,
   limits for biological research, copyright and credit.

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="420" fill="#fff"/>
+<rect x="370" y="140" width="260" height="110" rx="8" fill="#f4f4f4" stroke="#333" stroke-width="2"/>
+<text x="500" y="182" font-size="22" fill="#333" text-anchor="middle" font-weight="bold" >few, messy</text>
+<text x="500" y="212" font-size="22" fill="#333" text-anchor="middle" font-weight="bold" >labelled examples</text>
+<rect x="30" y="40" width="300" height="310" rx="8" fill="#e8f3f5" stroke="#2a7f8f" stroke-width="2"/>
+<text x="180" y="80" font-size="26" fill="#2a7f8f" text-anchor="middle" font-weight="bold" >1. Curate</text>
+<text x="180" y="120" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >the agent writes audit scripts:</text>
+<text x="180" y="150" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >duplicates, leakage, odd labels,</text>
+<text x="180" y="180" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >broken files, units</text>
+<text x="180" y="210" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" ></text>
+<text x="180" y="240" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >builds a review gallery</text>
+<text x="180" y="270" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >the expert decides</text>
+<text x="180" y="300" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >every decision is logged</text>
+<rect x="670" y="40" width="300" height="310" rx="8" fill="#efeaf7" stroke="#6b4fa0" stroke-width="2"/>
+<text x="820" y="80" font-size="26" fill="#6b4fa0" text-anchor="middle" font-weight="bold" >2. Simulate</text>
+<text x="820" y="120" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >the agent writes a simulator:</text>
+<text x="820" y="150" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >unlimited images with</text>
+<text x="820" y="180" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >exact labels for free</text>
+<text x="820" y="210" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" ></text>
+<text x="820" y="240" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >train the network on them</text>
+<text x="820" y="270" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >test on a small set of</text>
+<text x="820" y="300" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >REAL hand-labelled images</text>
+<line x1="365" y1="195" x2="335" y2="195" stroke="#2a7f8f" stroke-width="3"/><polygon points="335,195 346.1,190.3 346.1,199.7" fill="#2a7f8f"/>
+<line x1="635" y1="195" x2="665" y2="195" stroke="#6b4fa0" stroke-width="3"/><polygon points="665,195 653.9,199.7 653.9,190.3" fill="#6b4fa0"/>
+<text x="500" y="395" font-size="20" fill="#333" text-anchor="middle" font-weight="normal" >Both routes: the agent does the tedious work; a human judges what is true.</text>
+</svg>

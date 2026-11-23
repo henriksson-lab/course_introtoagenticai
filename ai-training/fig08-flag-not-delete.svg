@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 310" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="310" fill="#fff"/>
+<rect x="20" y="60" width="200" height="120" rx="8" fill="#e8f3f5" stroke="#2a7f8f" stroke-width="2"/>
+<text x="120" y="105" font-size="20" fill="#2a7f8f" text-anchor="middle" font-weight="bold" >script flags</text>
+<text x="120" y="135" font-size="20" fill="#333" text-anchor="middle" font-weight="normal" >41 images</text>
+<text x="120" y="160" font-size="16" fill="#888" text-anchor="middle" font-weight="normal" >(suspects)</text>
+<line x1="225" y1="120" x2="295" y2="120" stroke="#888" stroke-width="3"/><polygon points="295,120 283.9,124.7 283.9,115.3" fill="#888"/>
+<circle cx="360" cy="70" r="14.0" fill="#6b4fa0"/><path d="M336.0,122.0 Q336.0,88.0 360,88.0 Q384.0,88.0 384.0,122.0 Z" fill="#6b4fa0"/>
+<text x="360" y="160" font-size="20" fill="#6b4fa0" text-anchor="middle" font-weight="bold" >expert looks</text>
+<text x="360" y="185" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >at each one</text>
+<line x1="425" y1="120" x2="495" y2="120" stroke="#888" stroke-width="3"/><polygon points="495,120 483.9,124.7 483.9,115.3" fill="#888"/>
+<rect x="505" y="35" width="200" height="80" rx="8" fill="#fff" stroke="#8a6a12" stroke-width="2"/>
+<text x="605" y="68" font-size="20" fill="#8a6a12" text-anchor="middle" font-weight="bold" >29 relabelled</text>
+<text x="605" y="95" font-size="16" fill="#333" text-anchor="middle" font-weight="normal" >label was wrong</text>
+<rect x="505" y="130" width="200" height="80" rx="8" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<text x="605" y="163" font-size="20" fill="#2a7f8f" text-anchor="middle" font-weight="bold" >12 kept</text>
+<text x="605" y="190" font-size="16" fill="#333" text-anchor="middle" font-weight="normal" >unusual but correct</text>
+<line x1="710" y1="120" x2="760" y2="120" stroke="#888" stroke-width="3"/><polygon points="760,120 748.9,124.7 748.9,115.3" fill="#888"/>
+<rect x="770" y="30" width="220" height="180" rx="4" fill="#f7f7f7" stroke="#333" stroke-width="2"/>
+<text x="880" y="58" font-size="18" fill="#333" text-anchor="middle" font-weight="bold" font-family="Consolas, Menlo, monospace">decisions.csv</text>
+<text x="785" y="88" font-size="15" fill="#333" text-anchor="start" font-weight="normal" font-family="Consolas, Menlo, monospace">file, decision,</text>
+<text x="785" y="109" font-size="15" fill="#333" text-anchor="start" font-weight="normal" font-family="Consolas, Menlo, monospace">reason, who, date</text>
+<text x="785" y="130" font-size="15" fill="#333" text-anchor="start" font-weight="normal" font-family="Consolas, Menlo, monospace"></text>
+<text x="785" y="151" font-size="15" fill="#333" text-anchor="start" font-weight="normal" font-family="Consolas, Menlo, monospace">img_1203, relabel,</text>
+<text x="785" y="172" font-size="15" fill="#333" text-anchor="start" font-weight="normal" font-family="Consolas, Menlo, monospace">4 pieces visible, AB,</text>
+<text x="785" y="193" font-size="15" fill="#333" text-anchor="start" font-weight="normal" font-family="Consolas, Menlo, monospace">2026-11-20</text>
+<text x="500" y="262" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >A cleaner that deletes everything unusual would have removed 12 correct, hard examples:</text>
+<text x="500" y="290" font-size="18" fill="#a8324a" text-anchor="middle" font-weight="bold" >exactly the cases the network most needs to learn.</text>
+</svg>

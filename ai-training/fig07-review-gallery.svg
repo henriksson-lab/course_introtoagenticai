@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 490" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="490" fill="#fff"/>
+<rect x="10" y="10" width="980" height="470" rx="8" fill="#fff" stroke="#999" stroke-width="2"/>
+<rect x="10" y="10" width="980" height="40" rx="8" fill="#e9e9e9"/>
+<rect x="120" y="18" width="600" height="24" rx="12" fill="#fff" stroke="#bbb" stroke-width="1"/>
+<text x="135" y="36" font-size="15" fill="#888" text-anchor="start" font-weight="normal" >review/index.html</text>
+<text x="30" y="82" font-size="17" fill="#333" text-anchor="start" font-weight="normal" >Flagged: label looks unusual for its class (41)   ·   sorted by sample   ·   raw image, no overlay</text>
+<rect x="30" y="100" width="110" height="110" fill="#1b1b1b" rx="3"/><circle cx="78.7" cy="149.0" r="6.1" fill="#efefef"/><circle cx="62.9" cy="137.4" r="8.2" fill="#efefef"/><circle cx="85.3" cy="150.2" r="5.6" fill="#efefef"/><circle cx="84.4" cy="149.7" r="7.4" fill="#efefef"/>
+<text x="152" y="122" font-size="15" fill="#333" text-anchor="start" font-weight="normal" >img_1650</text>
+<text x="152" y="146" font-size="15" fill="#333" text-anchor="start" font-weight="normal" >label: intact</text>
+<text x="152" y="168" font-size="15" fill="#888" text-anchor="start" font-weight="normal" >patient P06</text>
+<rect x="30" y="220" width="64" height="28" rx="5" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<text x="62" y="239" font-size="14" fill="#2a7f8f" text-anchor="middle" font-weight="normal" >keep</text>
+<rect x="100" y="220" width="64" height="28" rx="5" fill="#fff" stroke="#8a6a12" stroke-width="2"/>
+<text x="132" y="239" font-size="14" fill="#8a6a12" text-anchor="middle" font-weight="normal" >relabel</text>
+<rect x="170" y="220" width="64" height="28" rx="5" fill="#fff" stroke="#a8324a" stroke-width="2"/>
+<text x="202" y="239" font-size="14" fill="#a8324a" text-anchor="middle" font-weight="normal" >exclude</text>
+<text x="30" y="270" font-size="14" fill="#888" text-anchor="start" font-weight="normal" >note: ____________</text>
+<rect x="270" y="100" width="110" height="110" fill="#1b1b1b" rx="3"/><circle cx="312.1" cy="131.8" r="6.4" fill="#efefef"/><circle cx="320.5" cy="174.5" r="6.8" fill="#efefef"/><circle cx="306.3" cy="143.3" r="8.8" fill="#efefef"/><circle cx="303.9" cy="160.8" r="6.7" fill="#efefef"/><circle cx="332.8" cy="147.2" r="7.8" fill="#efefef"/>
+<text x="392" y="122" font-size="15" fill="#333" text-anchor="start" font-weight="normal" >img_2039</text>
+<text x="392" y="146" font-size="15" fill="#333" text-anchor="start" font-weight="normal" >label: intact</text>
+<text x="392" y="168" font-size="15" fill="#888" text-anchor="start" font-weight="normal" >patient P34</text>
+<rect x="270" y="220" width="64" height="28" rx="5" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<text x="302" y="239" font-size="14" fill="#2a7f8f" text-anchor="middle" font-weight="normal" >keep</text>
+<rect x="340" y="220" width="64" height="28" rx="5" fill="#fff" stroke="#8a6a12" stroke-width="2"/>
+<text x="372" y="239" font-size="14" fill="#8a6a12" text-anchor="middle" font-weight="normal" >relabel</text>
+<rect x="410" y="220" width="64" height="28" rx="5" fill="#fff" stroke="#a8324a" stroke-width="2"/>
+<text x="442" y="239" font-size="14" fill="#a8324a" text-anchor="middle" font-weight="normal" >exclude</text>
+<text x="270" y="270" font-size="14" fill="#888" text-anchor="start" font-weight="normal" >note: ____________</text>
+<rect x="510" y="100" width="110" height="110" fill="#1b1b1b" rx="3"/><ellipse cx="565.0" cy="155.0" rx="34.1" ry="21.0" fill="#d8d8d8" transform="rotate(26 565.0 155.0)"/>
+<text x="632" y="122" font-size="15" fill="#333" text-anchor="start" font-weight="normal" >img_0264</text>
+<text x="632" y="146" font-size="15" fill="#333" text-anchor="start" font-weight="normal" >label: fragmented</text>
+<text x="632" y="168" font-size="15" fill="#888" text-anchor="start" font-weight="normal" >patient P35</text>
+<rect x="510" y="220" width="64" height="28" rx="5" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<text x="542" y="239" font-size="14" fill="#2a7f8f" text-anchor="middle" font-weight="normal" >keep</text>
+<rect x="580" y="220" width="64" height="28" rx="5" fill="#fff" stroke="#8a6a12" stroke-width="2"/>
+<text x="612" y="239" font-size="14" fill="#8a6a12" text-anchor="middle" font-weight="normal" >relabel</text>
+<rect x="650" y="220" width="64" height="28" rx="5" fill="#fff" stroke="#a8324a" stroke-width="2"/>
+<text x="682" y="239" font-size="14" fill="#a8324a" text-anchor="middle" font-weight="normal" >exclude</text>
+<text x="510" y="270" font-size="14" fill="#888" text-anchor="start" font-weight="normal" >note: ____________</text>
+<rect x="750" y="100" width="110" height="110" fill="#1b1b1b" rx="3"/><circle cx="804.5" cy="140.2" r="8.6" fill="#efefef"/><circle cx="808.8" cy="166.1" r="8.4" fill="#efefef"/><circle cx="794.6" cy="148.1" r="8.4" fill="#efefef"/><circle cx="787.3" cy="167.8" r="5.8" fill="#efefef"/>
+<text x="872" y="122" font-size="15" fill="#333" text-anchor="start" font-weight="normal" >img_1286</text>
+<text x="872" y="146" font-size="15" fill="#333" text-anchor="start" font-weight="normal" >label: intact</text>
+<text x="872" y="168" font-size="15" fill="#888" text-anchor="start" font-weight="normal" >patient P23</text>
+<rect x="750" y="220" width="64" height="28" rx="5" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<text x="782" y="239" font-size="14" fill="#2a7f8f" text-anchor="middle" font-weight="normal" >keep</text>
+<rect x="820" y="220" width="64" height="28" rx="5" fill="#fff" stroke="#8a6a12" stroke-width="2"/>
+<text x="852" y="239" font-size="14" fill="#8a6a12" text-anchor="middle" font-weight="normal" >relabel</text>
+<rect x="890" y="220" width="64" height="28" rx="5" fill="#fff" stroke="#a8324a" stroke-width="2"/>
+<text x="922" y="239" font-size="14" fill="#a8324a" text-anchor="middle" font-weight="normal" >exclude</text>
+<text x="750" y="270" font-size="14" fill="#888" text-anchor="start" font-weight="normal" >note: ____________</text>
+<rect x="30" y="285" width="110" height="110" fill="#1b1b1b" rx="3"/><ellipse cx="85.0" cy="340.0" rx="34.6" ry="23.0" fill="#d8d8d8" transform="rotate(91 85.0 340.0)"/>
+<text x="152" y="307" font-size="15" fill="#333" text-anchor="start" font-weight="normal" >img_0810</text>
+<text x="152" y="331" font-size="15" fill="#333" text-anchor="start" font-weight="normal" >label: fragmented</text>
+<text x="152" y="353" font-size="15" fill="#888" text-anchor="start" font-weight="normal" >patient P20</text>
+<rect x="30" y="405" width="64" height="28" rx="5" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<text x="62" y="424" font-size="14" fill="#2a7f8f" text-anchor="middle" font-weight="normal" >keep</text>
+<rect x="100" y="405" width="64" height="28" rx="5" fill="#fff" stroke="#8a6a12" stroke-width="2"/>
+<text x="132" y="424" font-size="14" fill="#8a6a12" text-anchor="middle" font-weight="normal" >relabel</text>
+<rect x="170" y="405" width="64" height="28" rx="5" fill="#fff" stroke="#a8324a" stroke-width="2"/>
+<text x="202" y="424" font-size="14" fill="#a8324a" text-anchor="middle" font-weight="normal" >exclude</text>
+<text x="30" y="455" font-size="14" fill="#888" text-anchor="start" font-weight="normal" >note: ____________</text>
+<rect x="270" y="285" width="110" height="110" fill="#1b1b1b" rx="3"/><ellipse cx="325.0" cy="340.0" rx="25.9" ry="20.6" fill="#d8d8d8" transform="rotate(92 325.0 340.0)"/>
+<text x="392" y="307" font-size="15" fill="#333" text-anchor="start" font-weight="normal" >img_0293</text>
+<text x="392" y="331" font-size="15" fill="#333" text-anchor="start" font-weight="normal" >label: intact</text>
+<text x="392" y="353" font-size="15" fill="#888" text-anchor="start" font-weight="normal" >patient P33</text>
+<rect x="270" y="405" width="64" height="28" rx="5" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<text x="302" y="424" font-size="14" fill="#2a7f8f" text-anchor="middle" font-weight="normal" >keep</text>
+<rect x="340" y="405" width="64" height="28" rx="5" fill="#fff" stroke="#8a6a12" stroke-width="2"/>
+<text x="372" y="424" font-size="14" fill="#8a6a12" text-anchor="middle" font-weight="normal" >relabel</text>
+<rect x="410" y="405" width="64" height="28" rx="5" fill="#fff" stroke="#a8324a" stroke-width="2"/>
+<text x="442" y="424" font-size="14" fill="#a8324a" text-anchor="middle" font-weight="normal" >exclude</text>
+<text x="270" y="455" font-size="14" fill="#888" text-anchor="start" font-weight="normal" >note: ____________</text>
+<rect x="510" y="285" width="110" height="110" fill="#1b1b1b" rx="3"/><circle cx="567.2" cy="332.5" r="8.5" fill="#efefef"/><circle cx="555.1" cy="326.4" r="5.6" fill="#efefef"/><circle cx="553.1" cy="330.2" r="7.8" fill="#efefef"/><circle cx="561.0" cy="347.6" r="5.9" fill="#efefef"/><circle cx="585.9" cy="357.0" r="5.6" fill="#efefef"/><circle cx="587.9" cy="323.6" r="5.9" fill="#efefef"/>
+<text x="632" y="307" font-size="15" fill="#333" text-anchor="start" font-weight="normal" >img_1559</text>
+<text x="632" y="331" font-size="15" fill="#333" text-anchor="start" font-weight="normal" >label: fragmented</text>
+<text x="632" y="353" font-size="15" fill="#888" text-anchor="start" font-weight="normal" >patient P22</text>
+<rect x="510" y="405" width="64" height="28" rx="5" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<text x="542" y="424" font-size="14" fill="#2a7f8f" text-anchor="middle" font-weight="normal" >keep</text>
+<rect x="580" y="405" width="64" height="28" rx="5" fill="#fff" stroke="#8a6a12" stroke-width="2"/>
+<text x="612" y="424" font-size="14" fill="#8a6a12" text-anchor="middle" font-weight="normal" >relabel</text>
+<rect x="650" y="405" width="64" height="28" rx="5" fill="#fff" stroke="#a8324a" stroke-width="2"/>
+<text x="682" y="424" font-size="14" fill="#a8324a" text-anchor="middle" font-weight="normal" >exclude</text>
+<text x="510" y="455" font-size="14" fill="#888" text-anchor="start" font-weight="normal" >note: ____________</text>
+<rect x="750" y="285" width="110" height="110" fill="#1b1b1b" rx="3"/><ellipse cx="805.0" cy="340.0" rx="33.4" ry="20.9" fill="#d8d8d8" transform="rotate(163 805.0 340.0)"/>
+<text x="872" y="307" font-size="15" fill="#333" text-anchor="start" font-weight="normal" >img_0570</text>
+<text x="872" y="331" font-size="15" fill="#333" text-anchor="start" font-weight="normal" >label: intact</text>
+<text x="872" y="353" font-size="15" fill="#888" text-anchor="start" font-weight="normal" >patient P27</text>
+<rect x="750" y="405" width="64" height="28" rx="5" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<text x="782" y="424" font-size="14" fill="#2a7f8f" text-anchor="middle" font-weight="normal" >keep</text>
+<rect x="820" y="405" width="64" height="28" rx="5" fill="#fff" stroke="#8a6a12" stroke-width="2"/>
+<text x="852" y="424" font-size="14" fill="#8a6a12" text-anchor="middle" font-weight="normal" >relabel</text>
+<rect x="890" y="405" width="64" height="28" rx="5" fill="#fff" stroke="#a8324a" stroke-width="2"/>
+<text x="922" y="424" font-size="14" fill="#a8324a" text-anchor="middle" font-weight="normal" >exclude</text>
+<text x="750" y="455" font-size="14" fill="#888" text-anchor="start" font-weight="normal" >note: ____________</text>
+<text x="980" y="472" font-size="14" fill="#888" text-anchor="end" font-weight="normal" >illustrative</text>
+</svg>

@@ -201,6 +201,16 @@ These rules decide the order. Check any reordering against them.
     translation enables Rust as a full stack bioinformatics language",
     [arXiv:2608.13029](https://arxiv.org/abs/2608.13029), and
     [rustification](https://github.com/henriksson-lab/rustification).
+21c. **Using agents to train AI: curated and simulated data.** The labelling
+    bottleneck for rare, expensive or slow-to-annotate data. Agents write
+    dataset audits (duplicates, train/test leakage, label errors) and review
+    packets for a human expert; agents write simulators that produce images
+    with perfect labels, so a CNN can be trained on them (domain
+    randomisation, sim-to-real gap, always test on a small real labelled set,
+    fine-tune on few real labels). Case study: the course author's tissue
+    cut-face project, including its honest negative result on real data.
+    Exercise: audit a planted-problem dataset; train a nuclei counter on
+    simulated images and test it on real BBBC039 images.
 ### Part 6: The wider picture
 These units need little hands-on agent skill. They sit in Part 6 for now; each
 notes where it could move later.

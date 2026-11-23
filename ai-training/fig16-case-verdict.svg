@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="400" fill="#fff"/>
+<text x="250" y="32" font-size="21" fill="#6b4fa0" text-anchor="middle" font-weight="bold" >simulated validation specimens</text>
+<line x1="70" y1="300" x2="450" y2="300" stroke="#333" stroke-width="2"/>
+<line x1="70" y1="300" x2="70" y2="70" stroke="#333" stroke-width="2"/>
+<text x="60" y="306" font-size="15" fill="#888" text-anchor="end" font-weight="normal" >0.0</text>
+<line x1="70" y1="300" x2="450" y2="300" stroke="#eee"/>
+<text x="60" y="196.0" font-size="15" fill="#888" text-anchor="end" font-weight="normal" >0.5</text>
+<line x1="70" y1="190.0" x2="450" y2="190.0" stroke="#eee"/>
+<text x="60" y="86.0" font-size="15" fill="#888" text-anchor="end" font-weight="normal" >1.0</text>
+<line x1="70" y1="80.0" x2="450" y2="80.0" stroke="#eee"/>
+<text x="25" y="180" font-size="16" fill="#888" text-anchor="middle" font-weight="normal" transform="rotate(-90 25 180)">F1 score</text>
+<rect x="100" y="201" width="40" height="99" fill="#bbb"/>
+<rect x="144" y="93" width="40" height="207" fill="#6b4fa0"/>
+<text x="142" y="324" font-size="15" fill="#333" text-anchor="middle" font-weight="normal" >specimen 1</text>
+<rect x="220" y="214" width="40" height="86" fill="#bbb"/>
+<rect x="264" y="120" width="40" height="180" fill="#6b4fa0"/>
+<text x="262" y="324" font-size="15" fill="#333" text-anchor="middle" font-weight="normal" >specimen 2</text>
+<rect x="340" y="225" width="40" height="75" fill="#bbb"/>
+<rect x="384" y="124" width="40" height="176" fill="#6b4fa0"/>
+<text x="382" y="324" font-size="15" fill="#333" text-anchor="middle" font-weight="normal" >specimen 3</text>
+<rect x="90" y="345" width="16" height="16" fill="#bbb"/>
+<text x="112" y="359" font-size="16" fill="#333" text-anchor="start" font-weight="normal" >simpler control model</text>
+<rect x="290" y="345" width="16" height="16" fill="#6b4fa0"/>
+<text x="312" y="359" font-size="16" fill="#333" text-anchor="start" font-weight="normal" >improved model</text>
+<text x="750" y="32" font-size="21" fill="#a8324a" text-anchor="middle" font-weight="bold" >real tissue</text>
+<rect x="560" y="55" width="400" height="250" rx="8" fill="#fbe9ea" stroke="#a8324a" stroke-width="2"/>
+<circle cx="620" cy="95" r="12.6" fill="#6b4fa0"/><path d="M598.4,141.8 Q598.4,111.2 620,111.2 Q641.6,111.2 641.6,141.8 Z" fill="#6b4fa0"/>
+<text x="660" y="105" font-size="18" fill="#333" text-anchor="start" font-weight="normal" >the author looks at the</text>
+<text x="660" y="130" font-size="18" fill="#333" text-anchor="start" font-weight="normal" >predictions on real data:</text>
+<text x="760" y="185" font-size="28" fill="#a8324a" text-anchor="middle" font-weight="bold" >“almost random”</text>
+<text x="760" y="235" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >rejected as unusable;</text>
+<text x="760" y="262" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >kept only as a baseline</text>
+<text x="760" y="345" font-size="16" fill="#888" text-anchor="middle" font-weight="normal" >no real labels existed to compute a score</text>
+<text x="990" y="392" font-size="13" fill="#888" text-anchor="end" font-weight="normal" >numbers rounded from the project's reports</text>
+</svg>

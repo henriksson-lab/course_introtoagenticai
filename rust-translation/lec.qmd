@@ -403,8 +403,8 @@ The summary in two parts. Rust gives speed and a single program that runs anywhe
 | When not to | one-off scripts, code you cannot test, fast-moving upstream, licence that does not allow it |
 | Credit | a translation is a derived work: keep the licence, cite the authors, name it clearly |
 
-**Next (Choosing a model: families, sizes and benchmarks):** which model to run for which job, how to read model names and benchmark graphs, and why a small test on your own task beats a leaderboard.
+**Next (Using agents to train AI: curated and simulated data):** how agents audit labelled data and write simulators that make training data with exact labels, and why a small real test set decides whether any of it works.
 
 ::: notes
-Equivalence is proven on outputs, many of them, including the awkward cases. Benchmarks are fair only when both programs do the same work under the same conditions. The paper shows what is possible at scale, with honest caveats. Do not translate what you cannot test or may not translate, and give credit when you do. This was the last unit of Part 5. You have seen in this unit that the choice between Claude and Codex mattered, and that it may change with the next release. Part 6 starts exactly there: how to choose a model, and how to test models on your own task rather than trusting a leaderboard.
+Equivalence is proven on outputs, many of them, including the awkward cases. Benchmarks are fair only when both programs do the same work under the same conditions. The paper shows what is possible at scale, with honest caveats. Do not translate what you cannot test or may not translate, and give credit when you do. The next unit stays with agents writing serious code, but for a different goal: training your own image-analysis networks. The agent audits the labelled data you have and writes simulators that make more, and, as here, the proof is a comparison against real data.
 :::

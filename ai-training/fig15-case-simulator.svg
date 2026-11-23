@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="420" fill="#fff"/>
+<rect x="15" y="30" width="222" height="120" rx="8" fill="#fff" stroke="#8a6a12" stroke-width="2"/>
+<text x="126" y="70" font-size="18" fill="#8a6a12" text-anchor="middle" font-weight="bold" >random organ</text>
+<text x="126" y="97" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >shape and vessel</text>
+<text x="126" y="124" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >tree (3D)</text>
+<line x1="239" y1="90" x2="261" y2="90" stroke="#888" stroke-width="3"/><polygon points="261,90 249.9,94.7 249.9,85.3" fill="#888"/>
+<rect x="263" y="30" width="222" height="120" rx="8" fill="#fff" stroke="#a8324a" stroke-width="2"/>
+<text x="374" y="70" font-size="18" fill="#a8324a" text-anchor="middle" font-weight="bold" >virtual knife</text>
+<text x="374" y="97" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >cuts, handling</text>
+<text x="374" y="124" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >deformation</text>
+<line x1="487" y1="90" x2="509" y2="90" stroke="#888" stroke-width="3"/><polygon points="509,90 497.9,94.7 497.9,85.3" fill="#888"/>
+<rect x="511" y="30" width="222" height="120" rx="8" fill="#fff" stroke="#6b4fa0" stroke-width="2"/>
+<text x="622" y="70" font-size="18" fill="#6b4fa0" text-anchor="middle" font-weight="bold" >render like the</text>
+<text x="622" y="97" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >microscope: blur,</text>
+<text x="622" y="124" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >texture, noise</text>
+<line x1="735" y1="90" x2="757" y2="90" stroke="#888" stroke-width="3"/><polygon points="757,90 745.9,94.7 745.9,85.3" fill="#888"/>
+<rect x="759" y="30" width="222" height="120" rx="8" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<text x="870" y="70" font-size="18" fill="#2a7f8f" text-anchor="middle" font-weight="bold" >exact labels</text>
+<text x="870" y="97" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >for every voxel:</text>
+<text x="870" y="124" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >cut, rim, normal</text>
+<text x="500" y="200" font-size="21" fill="#333" text-anchor="middle" font-weight="bold" >What the agent did to make the labels trustworthy</text>
+<circle cx="60" cy="238" r="7" fill="#2a7f8f"/>
+<text x="80" y="244" font-size="18" fill="#333" text-anchor="start" font-weight="normal" >assigned whole specimens to train or validation before rendering (no leakage)</text>
+<circle cx="60" cy="274" r="7" fill="#2a7f8f"/>
+<text x="80" y="280" font-size="18" fill="#333" text-anchor="start" font-weight="normal" >froze the generator and its settings before any training</text>
+<circle cx="60" cy="310" r="7" fill="#2a7f8f"/>
+<text x="80" y="316" font-size="18" fill="#333" text-anchor="start" font-weight="normal" >re-checked every label voxel with an independent script and test shapes</text>
+<circle cx="60" cy="346" r="7" fill="#2a7f8f"/>
+<text x="80" y="352" font-size="18" fill="#333" text-anchor="start" font-weight="normal" >kept ambiguous places (creases, vessel mouths) as 'unknown', not as a guess</text>
+<circle cx="60" cy="382" r="7" fill="#2a7f8f"/>
+<text x="80" y="388" font-size="18" fill="#333" text-anchor="start" font-weight="normal" >measured real background noise: the simulation was about ten times too noisy</text>
+</svg>

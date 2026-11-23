@@ -1,0 +1,242 @@
+---
+title: "Exercise: train a counter on simulated nuclei"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- an **audit script** and a **review gallery** for a small labelled image dataset, written by the agent, and your own decisions on what it flagged, in a log;
+- a **simulator** of fluorescent nucleus images with exact counts, and a small **counting network** trained on it;
+- a comparison of the network's error on **simulated** and on **real** images, and with a classical pipeline;
+- a plan for a small **real test set** in your own project.
+
+This is a light exercise. You do not write code; you write prompts, look at pictures and tables, and judge. Agents write different code each time, so your numbers will differ from ours and from your neighbours'. What should agree is the **direction** of the comparisons.
+
+## Before you start
+
+- You have done Part 2 (a project folder, git). Python is installed or the agent may install it (*Terminal survival kit*). Part B needs about 1 GB of disk for PyTorch and the images, and 10 to 30 minutes of computing on a laptop.
+- Part B reuses the BBBC039 images from *Track C: Image analysis in Python*. If you did that track, you already have them in `~/agentic-course/track-image/data/raw/`. If not, the agent downloads them (about 80 MB) in step B1.
+- Make a folder for this unit and start the agent in it:
+
+```text
+~/agentic-course/ai-training/
+```
+
+(Windows: `C:\Users\<you>\agentic-course\ai-training\`.)
+
+- Download [curation-set.zip](data/curation-set.zip) and unzip it into that folder, so that you have `ai-training/curation-set/manifest.csv` and `ai-training/curation-set/tiles/`. Everything in it is synthetic: no real cells, no real patients.
+
+## Worked example
+
+### Part A: audit a labelled dataset
+
+The dataset stands for a typical small research dataset: 157 small images of single nuclei, each labelled **intact** or **fragmented**, from 15 samples (slides), split into train and test. Several problems are planted in it. Do not open the answer key until step A4.
+
+#### Step A1: set up and look
+
+```text
+Make this folder a git repository with a .gitignore that keeps .venv/,
+results/ and data/ out of git. Write a README.md: this folder audits the
+dataset in curation-set/ and trains a nucleus counter on simulated
+images. curation-set/ is read-only: never change, move or delete
+anything in it. Commit.
+```
+
+Open `curation-set/README.txt` and `manifest.csv` yourself (a spreadsheet program is fine). Click through ten tiles in your file browser. Note anything that strikes you.
+
+#### Step A2: the audit script
+
+```text
+Write scripts/audit.py and run it. It must not change anything in
+curation-set/. Check and report, with counts and the affected file names:
+1. rows without a file, files without a row, files that cannot be opened;
+2. exact duplicate images (identical bytes);
+3. near-duplicate images (the same nucleus mirrored, rotated, or with a
+   small change in brightness or noise);
+4. samples that appear in both train and test, and duplicates that
+   cross between train and test;
+5. inconsistent values in every column (spellings, units, outliers);
+6. the number of images per label and per split;
+7. images whose appearance does not fit their label. Use a simple,
+   explainable measure (for example the number of separate bright pieces)
+   and list the suspects; do not decide for me.
+Save the report as results/audit.md.
+```
+
+**What to look for.** Read `results/audit.md`. For each finding, ask yourself: is this a fact (two files have identical bytes) or a suspicion (this tile looks fragmented)? For near duplicates and label suspects, ask the agent how it decided: *"What exactly did you compare, and what threshold did you use?"*
+
+#### Step A3: the review gallery
+
+```text
+Make results/review/index.html: one page that shows every image flagged
+in step 7 of the audit, and every near-duplicate pair side by side, large
+enough to judge (at least 150 pixels wide, no smoothing). Under each:
+file name, sample, split, current label, why it was flagged. Show the
+raw image only, no overlays. Add for each a choice keep / relabel /
+exclude and a note field, and a button that downloads my answers as
+decisions.csv (file, decision, new_label, note). No server: a single
+HTML file that works offline.
+```
+
+Open the page in your browser and decide each case yourself. Download `decisions.csv` into `results/`. Then:
+
+```text
+Read results/decisions.csv. Write scripts/apply_decisions.py that writes
+a cleaned manifest to results/manifest_clean.csv: apply my decisions,
+remove exact and near duplicates (keep the one in train), move or remove
+leaked samples so that no sample is in both splits (tell me the options
+first and let me choose), unify label spellings, and fix the pixel size
+only if you can say why the wrong value is wrong. Never change
+curation-set/. Log every change with its reason in results/changes.csv.
+```
+
+#### Step A4: check against the answer key
+
+**Check.** Before opening the key:
+
+- Can you name the problems you found, with counts?
+- Does `changes.csv` explain every difference between the original and the cleaned manifest?
+- Did any of your "relabel" or "exclude" decisions concern a tile that you now think was unusual but correct?
+
+::: {.callout-note collapse="true" title="Answer key (open after step A3)"}
+157 rows and 157 files; 150 different nuclei from 15 samples; S01-S11 are train and S12-S15 test, except as below.
+
+| Planted problem | Exact answer |
+|---|---|
+| Exact duplicates | 4 pairs: tile_0007 = tile_0141, tile_0131 = tile_0073, tile_0156 = tile_0024, tile_0092 = tile_0114. Two of the copies are in test, their originals in train. |
+| Near duplicates (mirrored, slightly brighter, re-noised) | 3 pairs: tile_0104 / tile_0062, tile_0102 / tile_0010, tile_0044 / tile_0051. One copy is in test. So 3 duplicates in all cross from train into test. |
+| Same sample in train and test | S09: 6 tiles in train, 4 in test (the planted leak). S01, S04 and S05 also appear in test, but only through the 3 duplicate copies (tile_0073, tile_0062, tile_0141); removing the duplicates fixes them. |
+| Corrupt file | tile_0046.png (truncated, cannot be opened). |
+| Wrong labels (6) | labelled intact but fragmented: tile_0066, tile_0070, tile_0123, tile_0125; labelled fragmented but intact: tile_0047, tile_0108. |
+| Hard but correct (2) | tile_0085: intact, with a bright speck of debris beside it. tile_0138: fragmented into only two large pieces. A simple "count the pieces" measure flags both; their labels are right. |
+| Pixel size | sample S14 (10 rows) says 650: nanometres entered in the micrometre column; all others 0.65. |
+| Label spelling | 3 rows say "Intact" instead of "intact": tile_0052, tile_0053, tile_0126. |
+| Labels as given | intact 104, Intact 3, fragmented 50. Among the 150 different nuclei: 101 truly intact, 49 truly fragmented. |
+
+The data were made by [make-data.py](data/make-data.py) with a fixed seed, so these answers are the same for everyone.
+:::
+
+If your audit missed a problem, ask the agent why, and whether the script would find it next time. If you relabelled one of the two hard but correct tiles, you have seen the risk from the lecture first hand.
+
+### Part B: simulate, train, test on real images
+
+#### Step B1: decide what to train, and set up
+
+First, the decision order from the lecture. Ask:
+
+```text
+I want to count nuclei in fluorescence images like those in BBBC039.
+Before we train anything ourselves: which pretrained models exist for
+this (for example Cellpose or StarDist), what are their licences, and
+would a detector that only draws boxes (for example YOLO) be enough for
+counting? Answer briefly, with links to the official pages. Do not
+install anything yet.
+```
+
+Here we train our own small network anyway, because the point is to see the sim-to-real gap. In your own project, try the pretrained route first.
+
+```text
+Set up a Python virtual environment in .venv with numpy, scipy,
+scikit-image, matplotlib and the CPU version of PyTorch, and record the
+versions in requirements.txt. If the BBBC039 images and masks are not
+in ../track-image/data/raw/, download images.zip, masks.zip and
+metadata.zip from https://bbbc.broadinstitute.org/BBBC039 into data/bbbc039/
+and unzip them there. Do not commit them.
+```
+
+#### Step B2: the simulator
+
+```text
+Write scripts/simulate.py: a simulator of fluorescence microscopy images
+of cell nuclei, 256 x 256 pixels, with exact labels: the number of
+nuclei, an instance mask, and a density map that sums to the count.
+Randomise everything that should not change the count: nucleus size,
+elongation and orientation, brightness and texture, crowding and
+touching nuclei, nuclei cut by the image border, small debris that must
+not be counted, blur, noise, and an uneven background. Use a fixed seed.
+Save 12 example images with their counts in results/sim_examples/ as one
+contact sheet, next to 4 real BBBC039 images at the same contrast.
+```
+
+**What to look for.** Open the contact sheet. Do the simulated nuclei look like the real ones? Write down the three most obvious differences (size? shape? spacing? background?). Do not fix them yet: you will see what they do.
+
+#### Step B3: train a small counting network
+
+```text
+Write scripts/train.py. Train a small convolutional network (a small
+U-Net, about 100 000 parameters) to predict the density map from the
+image, on CPU, on about 800 simulated images. The count is the sum of
+the predicted map. Tell me before you start how long you expect
+training to take on this computer, and keep it under 15 minutes.
+Normalise every image the same way (for example 1st to 99.8th
+percentile). Save the model in results/, not in git.
+```
+
+#### Step B4: test on simulated and on real images
+
+```text
+Write scripts/evaluate.py. Report the mean absolute error of the count
+(a) on 100 new simulated images, and (b) on the first 10 images in
+BBBC039's metadata/test.txt, using true counts from the masks (label
+the connected pieces of each mask colour separately). For (b) also
+report the error as a percentage of the true count, and add the counts
+of a classical pipeline (smoothing, background removal, Otsu threshold,
+watershed), as in Track C. Save a table in results/evaluation.csv and
+4 real images with the predicted and true count in the title.
+```
+
+**Check.**
+
+- The true counts for the 10 real images must match the table in *Track C* exactly (for example 156 for C07_s5, 66 for B02_s9, 1128 in total). If not, the mask decoding is wrong; fix that first.
+- Compare the two errors. On our test run, the network counted simulated images to within a few nuclei, and on real images it was off by a large fraction of the count, far worse than the classical pipeline (which is within about 10% on most images). Yours will differ, but the error on real images should be **clearly larger** than on simulated ones.
+- Look at the real images with their predicted counts. Is the network too high or too low? Does that fit the differences you wrote down in step B2?
+
+#### Step B5 (optional): fine-tune on five real images
+
+```text
+Fine-tune the network on 5 images from BBBC039's metadata/training.txt
+(not from test.txt), with density maps made from their masks, for a few
+hundred steps. Evaluate again exactly as in step B4. Then, as a control,
+train the same network from scratch on only those 5 real images, for
+the same total number of steps, and evaluate it too.
+```
+
+**What to look for.** On our run, fine-tuning on five real images reduced the real-image error a lot, to roughly 20% of the count; training from scratch on the same five images reached a similar level. Simulation helped less than one might hope, and the classical pipeline remained best. That is a realistic result, not a failure of the exercise: with a crude simulator, a few real labels are worth more.
+
+### Check the result
+
+- [ ] `curation-set/` unchanged (`git status` and the agent confirm it); `audit.md`, `decisions.csv`, `changes.csv` and `manifest_clean.csv` exist.
+- [ ] You can say which flagged tiles you kept, and why.
+- [ ] Simulated and real images compared side by side; three differences written down.
+- [ ] The true counts for the 10 test images match *Track C*.
+- [ ] Error on simulated and on real images reported, real clearly larger; classical pipeline compared.
+- [ ] Nothing large in git: no images, no model files (`git status`, and ask the agent for the size of the repository).
+
+## On your own project
+
+::: {.callout-warning}
+**Privacy reminder.** Images of patients or tissue from people are health data. Do not let a cloud agent open them unless your data class and approvals allow it (see your README). Let the agent write audit scripts and simulators on public or synthetic look-alike data, and run them yourself on the real data.
+:::
+
+Answer these in your project README, under a new heading "Training data":
+
+1. **Where is your labelling bottleneck?** What would a label be in your project, who could make it, and how long does one take?
+2. **Does a pretrained model already do it?** Ask the agent to list candidates for your kind of data, with licences. Try one on a few of your (shareable) examples if possible.
+3. **Could an audit help?** Ask the agent for an audit prompt tailored to your data: what is the unit of leakage (patient, animal, site, batch)? Which metadata columns could be inconsistent?
+4. **Could a simulator help?** Describe in five lines how your data arises and what varies. Ask the agent what a simulator would need to get right, and what it would probably get wrong.
+5. **Design the real test set first.** How many real examples, chosen how, labelled by whom, and stored where so that nobody tunes on them?
+
+Commit, and add a line to your **Log of AI use**: the date, the tool, "training data plan", and one sentence on what you checked.
+
+## What you should have now
+
+- `ai-training/`: a git repository with the audit script, the review gallery, your decisions and the cleaned manifest; a simulator, a training script and an evaluation table.
+- The experience of a "suspicious" image that was correct, and of a network that was good on simulated images and worse on real ones.
+- A "Training data" section in your project README with a plan for a small locked real test set.

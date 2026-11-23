@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="400" fill="#fff"/>
+<text x="150" y="35" font-size="20" fill="#333" text-anchor="middle" font-weight="bold" >1. a cleared organ</text>
+<path d="M254.5,190.0 L248.4,225.5 L216.5,252.6 L174.0,268.9 L126.3,267.8 L77.5,258.2 L59.5,222.7 L34.7,190.0 L68.4,160.5 L86.3,130.1 L127.0,114.3 L171.3,119.9 L224.6,119.8 L242.3,156.7 L254.5,190.0 Z" fill="#e7ddd0" stroke="#8a6a12" stroke-width="3"/>
+<path d="M130,226 q20,-25 45,-10 t40,5" fill="none" stroke="#6b4fa0" stroke-width="4" stroke-linecap="round"/>
+<path d="M93,221 q20,-25 45,-10 t40,5" fill="none" stroke="#6b4fa0" stroke-width="4" stroke-linecap="round"/>
+<path d="M132,203 q20,-25 45,-10 t40,5" fill="none" stroke="#6b4fa0" stroke-width="4" stroke-linecap="round"/>
+<path d="M77,187 q20,-25 45,-10 t40,5" fill="none" stroke="#6b4fa0" stroke-width="4" stroke-linecap="round"/>
+<path d="M119,174 q20,-25 45,-10 t40,5" fill="none" stroke="#6b4fa0" stroke-width="4" stroke-linecap="round"/>
+<line x1="110" y1="60" x2="110" y2="320" stroke="#a8324a" stroke-width="3" stroke-dasharray="8,5"/>
+<line x1="190" y1="60" x2="190" y2="320" stroke="#a8324a" stroke-width="3" stroke-dasharray="8,5"/>
+<text x="150" y="345" font-size="17" fill="#a8324a" text-anchor="middle" font-weight="normal" >cut by hand into pieces</text>
+<line x1="290" y1="190" x2="360" y2="190" stroke="#888" stroke-width="3"/><polygon points="360,190 348.9,194.7 348.9,185.3" fill="#888"/>
+<text x="560" y="35" font-size="20" fill="#333" text-anchor="middle" font-weight="bold" >2. each piece imaged in 3D, separately</text>
+<g transform="rotate(-6 427.0 200)">
+<rect x="372.0" y="95" width="110" height="210" rx="18" fill="#e7ddd0" stroke="#999" stroke-width="2"/>
+<line x1="482.0" y1="110" x2="482.0" y2="290" stroke="#2a7f8f" stroke-width="7"/>
+<ellipse cx="482.0" cy="140" rx="5" ry="11" fill="#6b4fa0"/>
+</g>
+<g transform="rotate(4 560.0 180)">
+<rect x="505.0" y="75" width="110" height="210" rx="18" fill="#e7ddd0" stroke="#999" stroke-width="2"/>
+<line x1="505.0" y1="90" x2="505.0" y2="270" stroke="#2a7f8f" stroke-width="7"/>
+<line x1="615.0" y1="90" x2="615.0" y2="270" stroke="#2a7f8f" stroke-width="7"/>
+<ellipse cx="615.0" cy="120" rx="5" ry="11" fill="#6b4fa0"/>
+<ellipse cx="505.0" cy="175" rx="5" ry="11" fill="#6b4fa0"/>
+</g>
+<g transform="rotate(-3 693.0 205)">
+<rect x="638.0" y="100" width="110" height="210" rx="18" fill="#e7ddd0" stroke="#999" stroke-width="2"/>
+<line x1="638.0" y1="115" x2="638.0" y2="295" stroke="#2a7f8f" stroke-width="7"/>
+<ellipse cx="638.0" cy="200" rx="5" ry="11" fill="#6b4fa0"/>
+</g>
+<line x1="760" y1="190" x2="800" y2="190" stroke="#888" stroke-width="3"/><polygon points="800,190 788.9,194.7 788.9,185.3" fill="#888"/>
+<text x="900" y="90" font-size="20" fill="#333" text-anchor="middle" font-weight="bold" >3. find the cut</text>
+<text x="900" y="115" font-size="20" fill="#333" text-anchor="middle" font-weight="bold" >faces and put the</text>
+<text x="900" y="140" font-size="20" fill="#333" text-anchor="middle" font-weight="bold" >pieces back together</text>
+<line x1="830" y1="185" x2="860" y2="185" stroke="#2a7f8f" stroke-width="7"/>
+<text x="870" y="191" font-size="17" fill="#2a7f8f" text-anchor="start" font-weight="normal" >knife cut</text>
+<line x1="830" y1="220" x2="860" y2="220" stroke="#999" stroke-width="3"/>
+<text x="870" y="226" font-size="17" fill="#333" text-anchor="start" font-weight="normal" >natural surface</text>
+<ellipse cx="845" cy="255" rx="5" ry="11" fill="#6b4fa0"/>
+<text x="870" y="261" font-size="17" fill="#6b4fa0" text-anchor="start" font-weight="normal" >vessel opening</text>
+<text x="560" y="345" font-size="18" fill="#a8324a" text-anchor="middle" font-weight="normal" >no one has labelled which surface is which, in 3D</text>
+<text x="990" y="392" font-size="14" fill="#888" text-anchor="end" font-weight="normal" >schematic</text>
+</svg>

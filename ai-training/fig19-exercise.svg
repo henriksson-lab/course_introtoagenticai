@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 390" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="390" fill="#fff"/>
+<rect x="20" y="30" width="460" height="300" rx="8" fill="#e8f3f5" stroke="#2a7f8f" stroke-width="2"/>
+<text x="250" y="70" font-size="24" fill="#2a7f8f" text-anchor="middle" font-weight="bold" >A. Curate</text>
+<text x="250" y="115" font-size="19" fill="#333" text-anchor="middle" font-weight="normal" >157 small labelled images</text>
+<text x="250" y="153" font-size="19" fill="#333" text-anchor="middle" font-weight="normal" >the agent writes an audit script</text>
+<text x="250" y="191" font-size="19" fill="#333" text-anchor="middle" font-weight="normal" >and a review gallery</text>
+<text x="250" y="229" font-size="19" fill="#333" text-anchor="middle" font-weight="normal" >you decide, file by file</text>
+<text x="250" y="267" font-size="19" fill="#333" text-anchor="middle" font-weight="normal" >decisions.csv + a cleaned manifest</text>
+<rect x="520" y="30" width="460" height="300" rx="8" fill="#efeaf7" stroke="#6b4fa0" stroke-width="2"/>
+<text x="750" y="70" font-size="24" fill="#6b4fa0" text-anchor="middle" font-weight="bold" >B. Simulate</text>
+<text x="750" y="115" font-size="19" fill="#333" text-anchor="middle" font-weight="normal" >the agent writes a nucleus simulator</text>
+<text x="750" y="153" font-size="19" fill="#333" text-anchor="middle" font-weight="normal" >trains a small counting CNN</text>
+<text x="750" y="191" font-size="19" fill="#333" text-anchor="middle" font-weight="normal" >tests it on real BBBC039 images</text>
+<text x="750" y="229" font-size="19" fill="#333" text-anchor="middle" font-weight="normal" >compares with Track C's pipeline</text>
+<text x="750" y="267" font-size="19" fill="#333" text-anchor="middle" font-weight="normal" >optionally fine-tunes on 5 real</text>
+<text x="500" y="370" font-size="19" fill="#333" text-anchor="middle" font-weight="normal" >A laptop is enough; part B computes for 10 to 30 minutes.</text>
+</svg>

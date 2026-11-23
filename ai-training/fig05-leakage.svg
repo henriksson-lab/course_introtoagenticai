@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 410" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="410" fill="#fff"/>
+<text x="250" y="30" font-size="22" fill="#a8324a" text-anchor="middle" font-weight="bold" >split images at random</text>
+<rect x="30" y="65" width="200" height="230" rx="8" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<rect x="270" y="65" width="200" height="230" rx="8" fill="#fff" stroke="#a8324a" stroke-width="2"/>
+<text x="130" y="53" font-size="19" fill="#2a7f8f" text-anchor="middle" font-weight="bold" >train</text>
+<text x="370" y="53" font-size="19" fill="#a8324a" text-anchor="middle" font-weight="bold" >test</text>
+<rect x="44" y="79" width="22" height="22" rx="3" fill="#2a7f8f"/>
+<rect x="74" y="79" width="22" height="22" rx="3" fill="#2a7f8f"/>
+<rect x="104" y="79" width="22" height="22" rx="3" fill="#2a7f8f"/>
+<rect x="134" y="79" width="22" height="22" rx="3" fill="#2a7f8f"/>
+<rect x="164" y="79" width="22" height="22" rx="3" fill="#6b4fa0"/>
+<rect x="194" y="79" width="22" height="22" rx="3" fill="#6b4fa0"/>
+<rect x="44" y="109" width="22" height="22" rx="3" fill="#6b4fa0"/>
+<rect x="74" y="109" width="22" height="22" rx="3" fill="#8a6a12"/>
+<rect x="104" y="109" width="22" height="22" rx="3" fill="#8a6a12"/>
+<rect x="134" y="109" width="22" height="22" rx="3" fill="#8a6a12"/>
+<rect x="164" y="109" width="22" height="22" rx="3" fill="#a8324a"/>
+<rect x="194" y="109" width="22" height="22" rx="3" fill="#a8324a"/>
+<rect x="44" y="139" width="22" height="22" rx="3" fill="#a8324a"/>
+<rect x="74" y="139" width="22" height="22" rx="3" fill="#4a6fa5"/>
+<rect x="104" y="139" width="22" height="22" rx="3" fill="#5b8c3a"/>
+<rect x="134" y="139" width="22" height="22" rx="3" fill="#5b8c3a"/>
+<rect x="284" y="79" width="22" height="22" rx="3" fill="#6b4fa0"/>
+<rect x="314" y="79" width="22" height="22" rx="3" fill="#8a6a12"/>
+<rect x="344" y="79" width="22" height="22" rx="3" fill="#a8324a"/>
+<rect x="374" y="79" width="22" height="22" rx="3" fill="#4a6fa5"/>
+<rect x="404" y="79" width="22" height="22" rx="3" fill="#4a6fa5"/>
+<rect x="434" y="79" width="22" height="22" rx="3" fill="#4a6fa5"/>
+<rect x="284" y="109" width="22" height="22" rx="3" fill="#5b8c3a"/>
+<rect x="314" y="109" width="22" height="22" rx="3" fill="#5b8c3a"/>
+<text x="250" y="330" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >the same patient on both sides:</text>
+<text x="250" y="355" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >the test checks memory, not skill</text>
+<text x="750" y="30" font-size="22" fill="#2a7f8f" text-anchor="middle" font-weight="bold" >split by patient</text>
+<rect x="530" y="65" width="200" height="230" rx="8" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<rect x="770" y="65" width="200" height="230" rx="8" fill="#fff" stroke="#a8324a" stroke-width="2"/>
+<text x="630" y="53" font-size="19" fill="#2a7f8f" text-anchor="middle" font-weight="bold" >train</text>
+<text x="870" y="53" font-size="19" fill="#a8324a" text-anchor="middle" font-weight="bold" >test</text>
+<rect x="544" y="79" width="22" height="22" rx="3" fill="#2a7f8f"/>
+<rect x="574" y="79" width="22" height="22" rx="3" fill="#2a7f8f"/>
+<rect x="604" y="79" width="22" height="22" rx="3" fill="#2a7f8f"/>
+<rect x="634" y="79" width="22" height="22" rx="3" fill="#2a7f8f"/>
+<rect x="664" y="79" width="22" height="22" rx="3" fill="#6b4fa0"/>
+<rect x="694" y="79" width="22" height="22" rx="3" fill="#6b4fa0"/>
+<rect x="544" y="109" width="22" height="22" rx="3" fill="#6b4fa0"/>
+<rect x="574" y="109" width="22" height="22" rx="3" fill="#6b4fa0"/>
+<rect x="604" y="109" width="22" height="22" rx="3" fill="#8a6a12"/>
+<rect x="634" y="109" width="22" height="22" rx="3" fill="#8a6a12"/>
+<rect x="664" y="109" width="22" height="22" rx="3" fill="#8a6a12"/>
+<rect x="694" y="109" width="22" height="22" rx="3" fill="#8a6a12"/>
+<rect x="544" y="139" width="22" height="22" rx="3" fill="#a8324a"/>
+<rect x="574" y="139" width="22" height="22" rx="3" fill="#a8324a"/>
+<rect x="604" y="139" width="22" height="22" rx="3" fill="#a8324a"/>
+<rect x="634" y="139" width="22" height="22" rx="3" fill="#a8324a"/>
+<rect x="784" y="79" width="22" height="22" rx="3" fill="#4a6fa5"/>
+<rect x="814" y="79" width="22" height="22" rx="3" fill="#4a6fa5"/>
+<rect x="844" y="79" width="22" height="22" rx="3" fill="#4a6fa5"/>
+<rect x="874" y="79" width="22" height="22" rx="3" fill="#4a6fa5"/>
+<rect x="904" y="79" width="22" height="22" rx="3" fill="#5b8c3a"/>
+<rect x="934" y="79" width="22" height="22" rx="3" fill="#5b8c3a"/>
+<rect x="784" y="109" width="22" height="22" rx="3" fill="#5b8c3a"/>
+<rect x="814" y="109" width="22" height="22" rx="3" fill="#5b8c3a"/>
+<text x="750" y="330" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >test patients are new:</text>
+<text x="750" y="355" font-size="18" fill="#333" text-anchor="middle" font-weight="normal" >the score means what you think</text>
+<text x="500" y="395" font-size="17" fill="#888" text-anchor="middle" font-weight="normal" >colour = patient (or animal, slide, batch, plate, site)</text>
+</svg>

@@ -175,6 +175,12 @@ website:
                 href: rust-translation/lec.qmd
               - text: "Exercise: port a tool to Rust"
                 href: rust-translation/exercise.qmd
+          - section: "Using agents to train AI"
+            contents:
+              - text: "Lecture (slides)"
+                href: ai-training/lec.qmd
+              - text: "Exercise: train a counter on simulated nuclei"
+                href: ai-training/exercise.qmd
       - section: "Part 6: The wider picture"
         contents:
           - section: "Choosing a model"

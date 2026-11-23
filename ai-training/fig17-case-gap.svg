@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="400" fill="#fff"/>
+<text x="165" y="32" font-size="20" fill="#333" text-anchor="middle" font-weight="bold" >background noise</text>
+<rect x="60" y="238" width="70" height="22" fill="#a8324a"/>
+<rect x="180" y="45" width="70" height="215" fill="#6b4fa0"/>
+<line x1="40" y1="260" x2="290" y2="260" stroke="#333" stroke-width="2"/>
+<text x="95" y="285" font-size="17" fill="#a8324a" text-anchor="middle" font-weight="normal" >real</text>
+<text x="215" y="285" font-size="17" fill="#6b4fa0" text-anchor="middle" font-weight="normal" >simulated</text>
+<text x="165" y="330" font-size="17" fill="#333" text-anchor="middle" font-weight="normal" >about 10 times too noisy</text>
+<text x="165" y="355" font-size="16" fill="#888" text-anchor="middle" font-weight="normal" >(found, then fixed)</text>
+<text x="500" y="32" font-size="20" fill="#333" text-anchor="middle" font-weight="bold" >brightness towards a cut face</text>
+<line x1="380" y1="260" x2="630" y2="260" stroke="#333" stroke-width="2"/>
+<line x1="380" y1="260" x2="380" y2="60" stroke="#333" stroke-width="2"/>
+<path d="M380,90 L595,90 L602,235 L630,235" fill="none" stroke="#6b4fa0" stroke-width="4"/>
+<path d="M380,150 L470,150 C520,160 570,215 630,235" fill="none" stroke="#a8324a" stroke-width="4"/>
+<text x="480" y="82" font-size="16" fill="#6b4fa0" text-anchor="start" font-weight="normal" >simulated: sharp edge</text>
+<text x="400" y="140" font-size="16" fill="#a8324a" text-anchor="start" font-weight="normal" >real: fades over ~0.5 mm</text>
+<text x="505" y="285" font-size="16" fill="#888" text-anchor="middle" font-weight="normal" >position → cut face</text>
+<text x="500" y="330" font-size="17" fill="#333" text-anchor="middle" font-weight="normal" >the network learned a cue</text>
+<text x="500" y="355" font-size="17" fill="#333" text-anchor="middle" font-weight="normal" >that real tissue does not show</text>
+<text x="835" y="32" font-size="20" fill="#333" text-anchor="middle" font-weight="bold" >real or simulated?</text>
+<rect x="720" y="60" width="230" height="200" rx="8" fill="#e8f3f5" stroke="#2a7f8f" stroke-width="2"/>
+<text x="835" y="100" font-size="17" fill="#333" text-anchor="middle" font-weight="normal" >a classifier trained to</text>
+<text x="835" y="124" font-size="17" fill="#333" text-anchor="middle" font-weight="normal" >tell real patches from</text>
+<text x="835" y="148" font-size="17" fill="#333" text-anchor="middle" font-weight="normal" >simulated ones</text>
+<text x="835" y="200" font-size="30" fill="#2a7f8f" text-anchor="middle" font-weight="bold" >AUC 0.87</text>
+<text x="835" y="235" font-size="16" fill="#888" text-anchor="middle" font-weight="normal" >(0.5 = cannot tell)</text>
+<text x="835" y="330" font-size="17" fill="#333" text-anchor="middle" font-weight="normal" >summary numbers matched;</text>
+<text x="835" y="355" font-size="17" fill="#333" text-anchor="middle" font-weight="normal" >the patches still did not</text>
+<text x="835" y="380" font-size="15" fill="#888" text-anchor="middle" font-weight="normal" >(one artefact type)</text>
+</svg>
