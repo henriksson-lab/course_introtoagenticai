@@ -196,7 +196,47 @@ These rules decide the order. Check any reordering against them.
 These units need little hands-on agent skill. They sit in Part 6 for now; each
 notes where it could move later.
 
-22. **Open-weights models and data privacy.** Closed models (Claude, GPT) vs
+22. **Choosing a model: families, sizes and benchmarks.**
+    - The landscape: the main providers and their model families (Anthropic
+      Claude, OpenAI GPT, Google Gemini) and the main open-weights families
+      (Llama, Qwen, DeepSeek, Mistral, gpt-oss). Within a family, large /
+      medium / small tiers trade capability against speed, cost and usage
+      limits. Reasoning ("thinking") settings. Context length. How to switch
+      model inside Claude Code and Codex, and when it is worth it (hard
+      analysis vs bulk file chores).
+    - Model names change every few months: teach how to read a model name
+      and a release note, not a fixed list. Keep the current list on the single
+      version-specific page (see designprinciples §6).
+    - Benchmarks, what they measure and how the results are normalised. Redraw
+      a few published graphs (with credit) rather than make our own claims:
+      - *Score on a fixed test* over time: e.g. SWE-bench Verified (fixing real
+        code bugs), Terminal-Bench (agent work in a terminal), GPQA Diamond
+        (expert science questions), Humanity's Last Exam. Show saturation:
+        tests that went from near 0 to near 100 % within a year or two.
+      - *Normalised by human task length*: METR's "time horizon", the length
+        of task (in human working time) a model completes half the time, and
+        how it has doubled roughly every 7 months (Kwa et al. 2025, METR).
+        **Probably the most intuitive graph for this audience.**
+      - *Normalised across many benchmarks*: composite indices such as Epoch
+        AI's Capabilities Index or the Artificial Analysis Intelligence Index.
+      - *Normalised by cost*: score per dollar, or the cost of reaching a given
+        score falling over time (Epoch AI; Stanford AI Index report).
+      - *Human preference*: LMArena-style rankings from blind side-by-side
+        votes (Elo-like scores), and what they reward (style, length).
+      - Closed vs open-weights gap over time (Epoch AI, Stanford AI Index).
+    - Caveats, at a basic level: test questions leaking into training data;
+      providers choosing which benchmarks to report; scores on a test vs
+      usefulness on *your* task. Conclusion for participants: try two models on
+      a small sample of your own task and compare (links to *Parallel workers*).
+    - Sources to take figures from (**[?]** check licences and fetch current
+      versions before writing): [METR time horizons](https://metr.org),
+      [Epoch AI data hub](https://epoch.ai/data),
+      [Stanford AI Index](https://hai.stanford.edu/ai-index),
+      [Artificial Analysis](https://artificialanalysis.ai),
+      [LMArena](https://lmarena.ai), [SWE-bench](https://www.swebench.com).
+    - Placement: Part 6 for now. Alternative later: right after *How LLMs and
+      agents work*, or before *Parallel workers*.
+23. **Open-weights models and data privacy.** Closed models (Claude, GPT) vs
     open-weights models (e.g. Llama, Qwen, Mistral, gpt-oss) that anyone can
     download and run. Where the data goes in each case: the provider's cloud,
     a university- or nationally hosted service, or your own computer.
@@ -209,7 +249,7 @@ notes where it could move later.
     *Privacy, ethics and safety* for participants whose own project involves
     sensitive data. *Privacy, ethics and safety* should point forward to it
     either way.
-23. **Labelling AI-generated content: the EU rules, watermarks and detection.**
+24. **Labelling AI-generated content: the EU rules, watermarks and detection.**
     No maths; pictures and small worked examples only.
     - The rules: the EU AI Act's transparency obligations (Article 50).
       Providers must mark AI-generated content in a machine-readable way;
@@ -239,7 +279,7 @@ notes where it could move later.
       HTML page) to see how much text a detector needs.
     - Placement: Part 6 for now (decided 2026-11-23). Alternative later: near *Privacy, ethics and safety*, or before *A course
       or project page* (the first time participants publish content).
-24. **Limits of AI for biological research: safety guardrails.**
+25. **Limits of AI for biological research: safety guardrails.**
     - Why they exist: providers block help that could make biological
       weapons or dangerous pathogens easier to produce (dual-use concern).
       Anthropic and OpenAI both run extra safeguards for biology in their most
@@ -286,7 +326,7 @@ notes where it could move later.
   same process as a correct one, which is why it sounds just as confident.
 
 ### Part 6 (continued)
-25. **Copyright, memorisation and credit.**
+26. **Copyright, memorisation and credit.**
     - Current legal state, briefly and without legal advice: training on
       copyrighted material and whether outputs infringe are being decided in
       court case by case. Examples to present (**[?]** check the status of each
