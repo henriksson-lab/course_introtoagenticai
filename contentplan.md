@@ -193,8 +193,8 @@ These rules decide the order. Check any reordering against them.
 21. **Reading other people's code.** Explain, document, port (MATLAB → R/Python)
     and test that the results match.
 ### Part 6: The wider picture
-These units need little hands-on agent skill and could move earlier; each
-notes its own placement question.
+These units need little hands-on agent skill. They sit in Part 6 for now; each
+notes where it could move later.
 
 22. **Open-weights models and data privacy.** Closed models (Claude, GPT) vs
     open-weights models (e.g. Llama, Qwen, Mistral, gpt-oss) that anyone can
@@ -205,7 +205,7 @@ notes its own placement question.
     possible (sensitive data that may not leave the institution) and what they
     cost (weaker models, less capable agents, hardware). Connecting an agent
     harness to an open model. Builds directly on *Privacy, ethics and safety*.
-    **[?]** Placement: here (needs comfort with the tools), or right after
+    Placement: Part 6 for now (decided 2026-11-23). Alternative later: here (needs comfort with the tools), or right after
     *Privacy, ethics and safety* for participants whose own project involves
     sensitive data. *Privacy, ethics and safety* should point forward to it
     either way.
@@ -237,7 +237,7 @@ notes its own placement question.
     - Exercise idea: inspect the content credentials of an AI-generated image;
       run a toy text-watermark demo (a coin-flip simulation in a self-contained
       HTML page) to see how much text a detector needs.
-    - **[?]** Placement: near *Privacy, ethics and safety*, or before *A course
+    - Placement: Part 6 for now (decided 2026-11-23). Alternative later: near *Privacy, ethics and safety*, or before *A course
       or project page* (the first time participants publish content).
 24. **Limits of AI for biological research: safety guardrails.**
     - Why they exist: providers block help that could make biological
@@ -263,7 +263,7 @@ notes its own placement question.
       safety steps), medical questions, and the gap between plausible text and
       what actually works at the bench.
     - Relevant for Track A (RNA-seq) and anyone in life sciences or medicine.
-      **[?]** Placement: a unit here, or a section of *How LLMs and agents
+      Placement: Part 6 for now (decided 2026-11-23). Alternative later: a unit here, or a section of *How LLMs and agents
       work, and how they fail*.
 
 ### Pending additions to existing units
@@ -322,7 +322,7 @@ notes its own placement question.
       [MIT Technology Review](https://www.technologyreview.com/2026/09/08/1143747/what-openais-latest-controversy-tells-us-about-the-future-of-math),
       [Axios](https://axios.com/2026/09/08/openai-math-solution-navier-stokes-credit).
       **[?]** Check for later developments before writing.
-    - **[?]** Placement: in Part 6, or split so that copyright goes before *A
+    - Placement: Part 6 for now (decided 2026-11-23). Alternative later: in Part 6, or split so that copyright goes before *A
       course or project page* (when participants first publish) and the credit
       case goes with the novelty slide in *How LLMs and agents work*.
 
