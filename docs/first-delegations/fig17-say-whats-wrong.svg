@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#fff"/>
+  <!-- left -->
+  <text x="250" y="40" font-size="22" font-weight="bold" fill="#a8324a" text-anchor="middle">Starting over</text>
+  <rect x="30" y="60" width="440" height="120" rx="10" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+  <text x="55" y="110" font-size="20" fill="#333" font-family="Menlo, Consolas, monospace">&gt; The dates are wrong.</text>
+  <text x="55" y="145" font-size="20" fill="#333" font-family="Menlo, Consolas, monospace">  Do it again.</text>
+  <g font-size="18" fill="#333">
+    <text x="45" y="225">• Which dates? The agent has to guess.</text>
+    <text x="45" y="260">• It may change rows that were right.</text>
+    <text x="45" y="295">• The cause stays in the script.</text>
+    <text x="45" y="330">• Next month: the same error.</text>
+  </g>
+  <!-- right -->
+  <text x="750" y="40" font-size="22" font-weight="bold" fill="#2a7f8f" text-anchor="middle">Saying what is wrong</text>
+  <rect x="530" y="60" width="440" height="210" rx="10" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <g font-size="17" fill="#333" font-family="Menlo, Consolas, monospace">
+    <text x="550" y="95">&gt; Row B2-17 has date 2024-09-04.</text>
+    <text x="550" y="122">  Both weighings were in March</text>
+    <text x="550" y="149">  and April, so it must be</text>
+    <text x="550" y="176">  9 April (typed month first).</text>
+    <text x="550" y="203">  Fix the script, rerun it, and</text>
+    <text x="550" y="230">  add this to decisions.md.</text>
+  </g>
+  <g font-size="18" fill="#333">
+    <text x="545" y="310">• Points to the place</text>
+    <text x="545" y="345">• Gives the reason</text>
+    <text x="545" y="380">• Fixes the cause and the record</text>
+  </g>
+</svg>

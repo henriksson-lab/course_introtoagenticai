@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#333"/></marker>
+  </defs>
+  <rect width="1000" height="500" fill="#ffffff"/>
+
+  <!-- quadrants -->
+  <rect x="180" y="30" width="390" height="200" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <rect x="570" y="30" width="390" height="200" fill="#fbf6ec" stroke="#8a6a12" stroke-width="2"/>
+  <rect x="180" y="230" width="390" height="200" fill="#f4f4f4" stroke="#999" stroke-width="2"/>
+  <rect x="570" y="230" width="390" height="200" fill="#faf3f5" stroke="#a8324a" stroke-width="2"/>
+
+  <!-- quadrant titles -->
+  <g font-size="21" font-weight="bold" text-anchor="middle">
+    <text x="375" y="66" fill="#2a7f8f">Start here</text>
+    <text x="765" y="66" fill="#8a6a12">Later, with care</text>
+    <text x="375" y="266" fill="#666">Possible, check hard</text>
+    <text x="765" y="266" fill="#a8324a">Not for now</text>
+  </g>
+  <g font-size="17" fill="#333" text-anchor="middle">
+    <text x="375" y="106">plot from public data</text>
+    <text x="375" y="134">rename files from a list</text>
+    <text x="375" y="162">course page from your slides</text>
+    <text x="765" y="106">anonymised exam statistics</text>
+    <text x="765" y="134">your own unpublished data</text>
+    <text x="765" y="162">(after Privacy, ethics and safety)</text>
+    <text x="375" y="306">literature summary</text>
+    <text x="375" y="334">themes in open-ended answers</text>
+    <text x="375" y="362">(need a way to check)</text>
+    <text x="765" y="306">grading student work</text>
+    <text x="765" y="334">patient records</text>
+    <text x="765" y="362">personnel matters</text>
+  </g>
+
+  <!-- axes -->
+  <line x1="180" y1="460" x2="960" y2="460" stroke="#333" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="570" y="490" text-anchor="middle" font-size="19" fill="#333">how sensitive is the data?  low → high</text>
+  <line x1="150" y1="430" x2="150" y2="34" stroke="#333" stroke-width="2" marker-end="url(#ar)"/>
+  <text x="120" y="230" text-anchor="middle" font-size="19" fill="#333" transform="rotate(-90 120 230)">how easy to check the result?  hard → easy</text>
+</svg>

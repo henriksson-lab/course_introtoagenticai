@@ -1,0 +1,22 @@
+<svg xml:space="preserve" style="white-space:pre" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#ffffff"/>
+  <g font-size="20" font-weight="bold" fill="#222">
+    <text x="30" y="70">Absolute</text>
+    <text x="30" y="180">Relative</text>
+    <text x="30" y="290">Home shortcut</text>
+    <text x="30" y="400">One level up</text>
+  </g>
+  <g font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="24" fill="#222">
+    <text x="220" y="70"><tspan fill="#2a7f8f" font-weight="bold">/Users/anna</tspan>/Documents/teaching/week1.pdf</text>
+    <text x="220" y="180">teaching/week1.pdf</text>
+    <text x="220" y="290"><tspan fill="#2a7f8f" font-weight="bold">~</tspan>/Documents/teaching/week1.pdf</text>
+    <text x="220" y="400"><tspan fill="#a8324a" font-weight="bold">..</tspan>/Desktop</text>
+  </g>
+  <g font-size="19" fill="#555">
+    <text x="220" y="106">starts at the top (/); means the same thing from any folder</text>
+    <text x="220" y="216">starts from the current folder (here: you are in Documents)</text>
+    <text x="220" y="326"><tspan fill="#2a7f8f">~</tspan> is short for your home folder, <tspan fill="#2a7f8f">/Users/anna</tspan></text>
+    <text x="220" y="436"><tspan fill="#a8324a">..</tspan> is the folder above; from Documents: up to anna, then into Desktop</text>
+  </g>
+  <g stroke="#ddd" stroke-width="1.5"><path d="M30,135 H970 M30,245 H970 M30,355 H970"/></g>
+</svg>

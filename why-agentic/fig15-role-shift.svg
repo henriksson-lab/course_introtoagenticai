@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#ffffff"/>
+  <!-- labels -->
+  <text x="20" y="90" font-size="20" font-weight="bold" fill="#666">Before</text>
+  <text x="20" y="270" font-size="20" font-weight="bold" fill="#2a7f8f">With an agent</text>
+
+  <!-- step labels -->
+  <g font-size="17" fill="#1f2933" text-anchor="middle">
+    <text x="245" y="40">decide what</text>
+    <text x="405" y="40">find files</text>
+    <text x="565" y="40">write code</text>
+    <text x="725" y="40">run, debug</text>
+    <text x="885" y="40">judge result</text>
+  </g>
+
+  <!-- before row: all you -->
+  <g>
+    <rect x="170" y="60" width="150" height="56" rx="8" fill="#6b4fa0"/>
+    <rect x="330" y="60" width="150" height="56" rx="8" fill="#6b4fa0"/>
+    <rect x="490" y="60" width="150" height="56" rx="8" fill="#6b4fa0"/>
+    <rect x="650" y="60" width="150" height="56" rx="8" fill="#6b4fa0"/>
+    <rect x="810" y="60" width="150" height="56" rx="8" fill="#6b4fa0"/>
+  </g>
+  <g font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">
+    <text x="245" y="94">you</text><text x="405" y="94">you</text><text x="565" y="94">you</text><text x="725" y="94">you</text><text x="885" y="94">you</text>
+  </g>
+  <text x="565" y="150" text-anchor="middle" font-size="17" fill="#666">most of your time goes to the middle, the part you are not trained for</text>
+
+  <!-- after row -->
+  <rect x="170" y="240" width="150" height="56" rx="8" fill="#6b4fa0"/>
+  <rect x="330" y="240" width="470" height="56" rx="8" fill="#2a7f8f"/>
+  <rect x="810" y="240" width="150" height="56" rx="8" fill="#6b4fa0"/>
+  <g font-size="18" fill="#ffffff" text-anchor="middle" font-weight="bold">
+    <text x="245" y="274">you</text>
+    <text x="565" y="274">agent (you approve each step)</text>
+    <text x="885" y="274">you</text>
+  </g>
+  <g font-size="17" fill="#333" text-anchor="middle">
+    <text x="245" y="330">describe the task</text>
+    <text x="885" y="330">check with your</text>
+    <text x="885" y="354">field knowledge</text>
+  </g>
+</svg>

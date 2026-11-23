@@ -1,0 +1,33 @@
+<svg xml:space="preserve" style="white-space:pre" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1000 400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#ffffff"/>
+  <rect x="20" y="30" width="450" height="130" rx="10" fill="#fafafa" stroke="#999" stroke-width="2"/>
+  <path d="M20,40 a10,10 0 0 1 10,-10 h430 a10,10 0 0 1 10,10 v26 h-450 z" fill="#e4e4e4"/>
+  <text x="245" y="54" font-size="16" fill="#555" text-anchor="middle">Terminal</text>
+  <g font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18">
+    <text x="36" y="116"><tspan fill="#2a7f8f" font-weight="bold">anna@laptop agentic-course %</tspan><tspan fill="#6b4fa0" font-weight="bold"> open .</tspan></text>
+  </g>
+  <!-- arrow -->
+  <path d="M478,100 C510,100 515,120 540,120" stroke="#6b4fa0" stroke-width="3" fill="none"/>
+  <path d="M552,120 l-13,-8 v16 z" fill="#6b4fa0"/>
+  <!-- file browser -->
+  <rect x="555" y="30" width="425" height="250" rx="10" fill="#ffffff" stroke="#999" stroke-width="2"/>
+  <path d="M555,40 a10,10 0 0 1 10,-10 h405 a10,10 0 0 1 10,10 v26 h-425 z" fill="#e4e4e4"/>
+  <text x="767" y="54" font-size="16" fill="#555" text-anchor="middle">agentic-course</text>
+  <path d="M600,100 h40 l14,14 v56 h-54 z" fill="#ffffff" stroke="#666" stroke-width="1.5"/>
+  <path d="M640,100 v14 h14" fill="none" stroke="#666" stroke-width="1.5"/>
+  <text x="627" y="200" font-size="17" fill="#222" text-anchor="middle">notes.md</text>
+  <text x="767" y="255" font-size="17" fill="#888" text-anchor="middle">the same folder, now in the file browser</text>
+  <!-- per OS -->
+  <g font-size="20">
+    <text x="40" y="225" fill="#222" font-weight="bold">macOS</text>
+    <text x="40" y="270" fill="#222" font-weight="bold">Windows</text>
+    <text x="40" y="315" fill="#222" font-weight="bold">Linux</text>
+  </g>
+  <g font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="22" fill="#6b4fa0" font-weight="bold">
+    <text x="170" y="225">open .</text>
+    <text x="170" y="270">explorer .</text>
+    <text x="170" y="315">xdg-open .</text>
+  </g>
+  <text x="40" y="370" font-size="19" fill="#555">The dot ( . ) means "this folder", the one you are standing in.</text>
+  <text x="972" y="300" font-size="14" fill="#999" text-anchor="end">illustrative</text>
+</svg>

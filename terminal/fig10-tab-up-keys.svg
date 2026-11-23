@@ -1,0 +1,25 @@
+<svg xml:space="preserve" style="white-space:pre" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="360" fill="#ffffff"/>
+  <!-- Tab row -->
+  <text x="30" y="50" font-size="21" fill="#222" font-weight="bold">Tab finishes a name for you</text>
+  <rect x="30" y="75" width="300" height="60" rx="6" fill="#fafafa" stroke="#999" stroke-width="1.5"/>
+  <text x="48" y="113" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="21"><tspan fill="#2a7f8f">%</tspan><tspan fill="#6b4fa0"> cd agen</tspan></text>
+  <rect x="375" y="72" width="100" height="66" rx="10" fill="#ffffff" stroke="#444" stroke-width="2.5"/>
+  <rect x="381" y="78" width="88" height="48" rx="6" fill="#f2f2f2"/>
+  <text x="425" y="110" font-size="22" fill="#222" text-anchor="middle" font-weight="bold">Tab</text>
+  <path d="M495,105 h45" stroke="#6b4fa0" stroke-width="3"/><path d="M552,105 l-13,-8 v16 z" fill="#6b4fa0"/>
+  <rect x="565" y="75" width="410" height="60" rx="6" fill="#fafafa" stroke="#999" stroke-width="1.5"/>
+  <text x="583" y="113" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="21"><tspan fill="#2a7f8f">%</tspan><tspan fill="#6b4fa0"> cd agentic-course/</tspan></text>
+  <text x="30" y="168" font-size="18" fill="#666">No typos, and if nothing happens, the name does not exist here.</text>
+  <!-- Up row -->
+  <text x="30" y="225" font-size="21" fill="#222" font-weight="bold">The up arrow brings back your last command</text>
+  <rect x="30" y="250" width="300" height="60" rx="6" fill="#fafafa" stroke="#999" stroke-width="1.5"/>
+  <text x="48" y="288" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="21"><tspan fill="#2a7f8f">%</tspan></text>
+  <rect x="390" y="247" width="70" height="66" rx="10" fill="#ffffff" stroke="#444" stroke-width="2.5"/>
+  <rect x="396" y="253" width="58" height="48" rx="6" fill="#f2f2f2"/>
+  <path d="M425,262 l-12,16 h8 v16 h8 v-16 h8 z" fill="#222"/>
+  <path d="M495,280 h45" stroke="#6b4fa0" stroke-width="3"/><path d="M552,280 l-13,-8 v16 z" fill="#6b4fa0"/>
+  <rect x="565" y="250" width="410" height="60" rx="6" fill="#fafafa" stroke="#999" stroke-width="1.5"/>
+  <text x="583" y="288" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="21"><tspan fill="#2a7f8f">%</tspan><tspan fill="#6b4fa0"> mkdir agentic-course</tspan></text>
+  <text x="30" y="343" font-size="18" fill="#666">Press it again to go further back. Edit the line, then press Enter.</text>
+</svg>

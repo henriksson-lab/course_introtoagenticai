@@ -1,0 +1,282 @@
+---
+title: "Exercise: find your way around"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- open a terminal and find out **where you are** (`pwd`) and **what is there** (`ls`),
+- make a **course folder**, move into it (`cd`) and open it in your **file browser**,
+- start **Claude Code and/or Codex inside that folder**, and check that it is working in the right place,
+- set the agent to **ask before it changes anything**,
+- read a **permission request** and answer it: yes once, or no with an instruction,
+- ask the agent to **explain a command** before it runs,
+- **exit** the agent cleanly.
+
+You do not need to remember any of the commands afterwards. You need to recognise them when the agent shows them to you.
+
+## Before you start
+
+- You have installed Claude Code and/or Codex and signed in (*Accounts and installation*). If `claude` or `codex` gives "command not found", go back to that unit first.
+- Close other programs that hold sensitive files open. Nothing in this exercise touches your existing files, but it is a good habit.
+- Keep this page open next to the terminal. Your screens will look a little different from the examples: the tools change often, and so does the look of each operating system.
+
+**Privacy:** this exercise uses only a file you create yourself. Do not open the agent in a folder that holds student data, patient data or anything confidential.
+
+## Worked example
+
+### Step 1: Open a terminal
+
+::: {.panel-tabset}
+
+### macOS
+
+Press **Cmd+Space**, type `Terminal` and press Enter. A window opens with a line ending in `%` (or `$`).
+
+### Windows
+
+Press the **Windows key**, type `PowerShell` (or `Terminal`) and press Enter. Use the normal one, **not** "Run as administrator". The line ends in `>`, for example `PS C:\Users\anna>`.
+
+### Linux
+
+Press **Ctrl+Alt+T**, or open **Terminal** from the applications menu. The line ends in `$`.
+
+:::
+
+### Step 2: Where am I, and what is here?
+
+Type each command and press Enter.
+
+```bash
+pwd
+ls
+```
+
+`pwd` should print your **home folder**. `ls` should list names you recognise from your file browser: Desktop, Documents, Downloads and so on.
+
+### Step 3: Make the course folder and go into it
+
+```bash
+mkdir agentic-course
+ls
+cd agentic-course
+pwd
+```
+
+After `mkdir`, the second `ls` should show `agentic-course` in the list. After `cd`, the prompt changes, and `pwd` shows a path ending in `agentic-course`.
+
+::: {.callout-tip}
+Use **Tab**: type `cd agen` and press Tab. The terminal completes the name. Use the **up arrow** to bring back a command you typed before.
+:::
+
+If your institution asks you to keep work files in a particular place (for example a OneDrive folder), make `agentic-course` there instead and `cd` to it. Avoid the Desktop.
+
+### Step 4: Open the folder in your file browser
+
+| macOS | Windows | Linux |
+|---|---|---|
+| `open .` | `explorer .` | `xdg-open .` |
+
+An empty folder called `agentic-course` opens. Place it next to the terminal window. You will watch it in the next steps.
+
+### What you should see on your system
+
+::: {.panel-tabset}
+
+### macOS
+
+| Command | What you see |
+|---|---|
+| `pwd` | `/Users/anna` (your user name) |
+| `ls` | `Applications  Desktop  Documents  Downloads  ...` |
+| `mkdir agentic-course` | nothing: silence means it worked |
+| `cd agentic-course` | nothing, but the prompt now ends in `agentic-course %` |
+| `pwd` | `/Users/anna/agentic-course` |
+| `open .` | a Finder window showing the empty folder |
+| `claude` / `codex` | the agent's welcome screen, maybe a question about trusting the folder |
+
+macOS may ask "Terminal would like to access files in your Documents folder" if you work in Documents or Desktop. Another reason to use `~/agentic-course`.
+
+### Windows
+
+| Command | What you see |
+|---|---|
+| `pwd` | a small table: `Path`, `----`, `C:\Users\anna` |
+| `ls` (or `dir`) | a table with columns `Mode`, `LastWriteTime`, `Length`, `Name` |
+| `mkdir agentic-course` | a short table describing the new folder (this is normal) |
+| `cd agentic-course` | nothing, but the prompt now reads `PS C:\Users\anna\agentic-course>` |
+| `pwd` | `C:\Users\anna\agentic-course` (in the same small table) |
+| `explorer .` | a File Explorer window showing the empty folder |
+| `claude` / `codex` | the agent's welcome screen, maybe a question about trusting the folder |
+
+On many Windows computers, Documents and Desktop are inside OneDrive (`C:\Users\anna\OneDrive\Documents`). That is why we use a folder directly in your home folder.
+
+### Linux
+
+| Command | What you see |
+|---|---|
+| `pwd` | `/home/anna` |
+| `ls` | `Desktop  Documents  Downloads  ...` |
+| `mkdir agentic-course` | nothing: silence means it worked |
+| `cd agentic-course` | nothing, but the prompt now shows `~/agentic-course` |
+| `pwd` | `/home/anna/agentic-course` |
+| `xdg-open .` | your file manager showing the empty folder |
+| `claude` / `codex` | the agent's welcome screen, maybe a question about trusting the folder |
+
+:::
+
+### Step 5: Start the agent in the course folder
+
+Check with `pwd` that you are in `agentic-course`. Then start one of the agents (or both, one after the other):
+
+| Claude Code | Codex |
+|---|---|
+| `claude` | `codex` |
+
+If it asks whether you **trust this folder**, answer **yes**: it is your own, empty folder.
+
+### Step 6: Make the agent ask before it changes anything
+
+::: {.panel-tabset}
+
+### Claude Code
+
+Look at the line **below the prompt box**. If it says that **auto mode** or **accept edits** is on, press **Shift+Tab** until it says **manual mode on**. (Recent versions start in auto mode. One press usually takes you to Manual.)
+
+### Codex
+
+Type `/status` and press Enter. Look for the approval and sandbox settings. Then type `/permissions` and choose **Read Only**, so that Codex asks before it writes a file. (In a plain folder like this one, Codex may already be in Read Only.)
+
+:::
+
+### Step 7: Look at the commands available
+
+| Claude Code | Codex |
+|---|---|
+| Type `/help` and press Enter. Close it with **Esc**. | Type `/` and look at the list that appears. Press **Esc** to close it. |
+
+Find the commands that **exit**, that **start a new conversation**, and that show the **status**. Write them down; the names change between versions.
+
+### Step 8: Ask the agent to create a file
+
+Type this into the prompt box:
+
+```text
+Create a file called notes.md in this folder with exactly three lines:
+Course: Introduction to agentic AI
+Folder: the full path of this folder
+Today I learned: to read the terminal before I approve anything
+```
+
+**What to look for:** the agent should ask for permission before it writes the file. Read the request:
+
+- **What:** is it creating `notes.md`, and nothing else?
+- **Where:** is the file inside `agentic-course`?
+- **How long:** choose the plain **Yes** (once), not the "don't ask again" or "allow for this session" option.
+
+Look at the file browser. `notes.md` appears in the folder. Double-click it to open it in a text editor (if your computer asks which program to use, choose a text editor such as TextEdit or Notepad).
+
+If the agent did **not** ask, check the mode again (Step 6). The file is still fine; this time you just skipped the practice.
+
+### Step 9: Say no, and tell the agent what to do instead
+
+Type:
+
+```text
+Make a folder called archive and move notes.md into it.
+```
+
+The agent will probably ask to run a command such as `mkdir archive` or `mv notes.md archive/`, possibly both in one line.
+
+- When it asks to **move** `notes.md`, answer **No**, and add an instruction:
+  - **Claude Code:** highlight **No**, press **Tab**, type `Keep notes.md where it is. Only make the archive folder.` and press Enter.
+  - **Codex:** choose the option to decline and tell Codex what to do differently, then type the same sentence.
+- When it then asks to run only `mkdir archive`, answer **Yes**.
+
+### Step 10: Ask the agent to explain a command
+
+Type:
+
+```text
+Which command would you use to delete the archive folder?
+Explain in plain words what it does and whether it can be undone. Do not run it.
+```
+
+**What to look for:** a command such as `rm -r archive` (or `Remove-Item` on Windows), an explanation that it deletes the folder and everything in it, and a clear statement that it does **not** go to the wastebasket. Nothing should run.
+
+Now ask about the very first command you typed today:
+
+```text
+What does the command ls -la show that plain ls does not?
+```
+
+### Step 11 (optional): Check which software is installed
+
+Later units need R, Python and git. Ask, without installing anything:
+
+```text
+Which of R, Python and git are installed on this computer, and which versions?
+Only check. Do not install anything.
+```
+
+The agent will want to run commands like `R --version`, `python3 --version` and `git --version`. These only look, so **Yes** is safe. Write down what is missing; installation is covered when a unit first needs it.
+
+### Step 12: Exit the agent
+
+| Claude Code | Codex |
+|---|---|
+| `/exit` (or Ctrl+C twice) | `/exit` or `/quit` (or Ctrl+C) |
+
+You are back at the normal terminal prompt. Type `pwd`: you are still in `agentic-course`. Type `ls`: you should see `archive` and `notes.md`.
+
+If you have both tools, repeat Steps 5 to 12 with the other one. Ask it to add a fourth line to `notes.md` instead of creating the file again.
+
+### Check the result
+
+Do not take the agent's word for it. Check each point yourself:
+
+1. **In the file browser**, `agentic-course` contains `notes.md` and an empty folder `archive`. `notes.md` is **not** inside `archive` (you said no).
+2. **Open `notes.md`** in a text editor. It has exactly three lines (four if you used both tools). The second line shows the full path of your course folder, and that path matches what `pwd` printed in the terminal.
+3. **In the terminal**, after exiting the agent, `pwd` ends in `agentic-course` and `ls` lists the same two names as the file browser.
+4. You can say, in one sentence each, what `pwd`, `ls`, `cd`, `cd ..`, `mkdir`, `mv` and `rm` do.
+5. You wrote down the names of the commands that exit, start a new conversation, and show the status in the tool(s) you use.
+
+If something does not match, that is useful: ask the agent "**Why is notes.md in archive?**" (or whatever is wrong) and compare its answer with what you see.
+
+## Commands you will see the agent run
+
+Keep this table at hand for the next units.
+
+| Command | Plain English | Risk |
+|---|---|---|
+| `ls`, `pwd` | list files; show the current folder | none: only looks |
+| `cat file`, `head file` | show a file; show its first lines | none: only looks |
+| `mkdir name` | make a folder | low |
+| `cp a b` | copy a to b | low, but can **overwrite** b |
+| `mv a b` | move or rename a to b | **medium: overwrites b without warning** |
+| `rm file`, `rm -r folder` | delete; delete a folder with everything in it | **high: no wastebasket, no undo** |
+| `Rscript x.R`, `python x.py` | run an R or Python script | depends on the script: ask what it does |
+| `git status`, `git log` | show what changed; show the history | none: only looks |
+| `git add`, `git commit` | save a snapshot | low |
+| `curl`, `pip install`, `install.packages` | fetch or install from the internet | ask: what, and from where? |
+
+On Windows you may also see `Get-ChildItem` (list), `Copy-Item` (copy), `Move-Item` (move) and `Remove-Item` (delete).
+
+When in doubt: **"What does this command do? Explain in plain words. Do not run it."**
+
+## On your own project
+
+You choose your own project at the end of Part 1, in *Privacy, ethics and safety*. For now, all work happens in `agentic-course` on example data.
+
+## What you should have now
+
+- A course folder, **`~/agentic-course`** (or `C:\Users\<you>\agentic-course`), containing `notes.md` and `archive/`. Every later unit starts with: open a terminal, `cd agentic-course`, start the agent.
+- At least one agent that you can start in that folder, set to ask before it changes anything, and exit cleanly.
+- The habit of reading a permission request (what, why, where, how long) and the one sentence that gets you out of any doubt.

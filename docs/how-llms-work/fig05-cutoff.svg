@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 320" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="320" fill="#ffffff"/>
+  <line x1="40" y1="150" x2="950" y2="150" stroke="#666" stroke-width="3"/>
+  <path d="M950,141 L966,150 L950,159 Z" fill="#666"/>
+  <rect x="40" y="120" width="480" height="60" fill="#e3f1f3"/>
+  <text x="280" y="157" font-size="20" text-anchor="middle" fill="#2a7f8f">text the model was trained on</text>
+  <line x1="520" y1="80" x2="520" y2="220" stroke="#a8324a" stroke-width="3"/>
+  <text x="520" y="66" font-size="20" font-weight="bold" text-anchor="middle" fill="#a8324a">knowledge cut-off</text>
+  <rect x="520" y="120" width="160" height="60" fill="#f5f5f5"/>
+  <text x="600" y="157" font-size="18" text-anchor="middle" fill="#666">release</text>
+  <line x1="680" y1="110" x2="680" y2="190" stroke="#999" stroke-width="2"/>
+  <rect x="680" y="120" width="270" height="60" fill="#f6e4e8"/>
+  <text x="815" y="157" font-size="20" text-anchor="middle" fill="#a8324a">you, today</text>
+  <g font-size="18" fill="#333">
+    <text x="540" y="250">New package versions, renamed functions,</text>
+    <text x="540" y="274">new papers, new guidelines:</text>
+    <text x="540" y="298">the model has never seen them.</text>
+  </g>
+  <g font-size="18" fill="#333">
+    <text x="40" y="250">Fix: let it look things up (web search,</text>
+    <text x="40" y="274">the installed version, the error message)</text>
+    <text x="40" y="298">instead of answering from memory.</text>
+  </g>
+</svg>

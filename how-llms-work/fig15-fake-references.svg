@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="430" fill="#ffffff"/>
+  <text x="20" y="34" font-size="20" fill="#666">"Give me five key papers on X, with DOIs." Then check each one.</text>
+  <g font-size="17">
+    <rect x="20" y="52" width="960" height="70" rx="8" fill="#e3f1f3" stroke="#2a7f8f"/>
+    <text x="40" y="80" fill="#333">1. Berg, Haddad &amp; Moreau (2018). Seasonal variation in ... J. Plant Res. doi:10.1000/jpr.0412</text>
+    <text x="40" y="106" fill="#2a7f8f" font-weight="bold">exists, and it is the paper described</text>
+    <rect x="20" y="132" width="960" height="70" rx="8" fill="#f6e4e8" stroke="#a8324a"/>
+    <text x="40" y="160" fill="#333">2. Lindqvist &amp; Okafor (2020). A cold-storage effect on ... Plant Cell Env. doi:10.1000/pce.7781</text>
+    <text x="40" y="186" fill="#a8324a" font-weight="bold">DOI does not resolve; no such paper in PubMed or the journal</text>
+    <rect x="20" y="212" width="960" height="70" rx="8" fill="#f6e4e8" stroke="#a8324a"/>
+    <text x="40" y="240" fill="#333">3. Tanaka et al. (2016). Dormancy and germination ... New Phytol. doi:10.1000/nph.2290</text>
+    <text x="40" y="266" fill="#a8324a" font-weight="bold">DOI works, but leads to a different paper by different authors</text>
+    <rect x="20" y="292" width="960" height="70" rx="8" fill="#f5efdd" stroke="#8a6a12"/>
+    <text x="40" y="320" fill="#333">4. Rossi &amp; Patel (2021). Light quality and seed vigour ... Seed Sci. Res. doi:10.1000/ssr.1187</text>
+    <text x="40" y="346" fill="#8a6a12" font-weight="bold">real paper, but it does not say what the summary claims</text>
+  </g>
+  <text x="20" y="398" font-size="18" fill="#333">Each line looks equally confident. Only checking tells them apart.</text>
+  <text x="985" y="422" font-size="14" fill="#999" text-anchor="end">illustrative: made-up references with the example DOI prefix 10.1000</text>
+</svg>

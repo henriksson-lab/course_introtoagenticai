@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 640" width="1000" height="640" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+  </defs>
+  <rect width="1000" height="640" fill="#ffffff"/>
+  <!-- start -->
+  <rect x="60" y="14" width="380" height="46" rx="23" fill="#1b2a3a"/>
+  <text x="250" y="44" text-anchor="middle" font-size="18" font-weight="bold" fill="#ffffff">I want the agent to read this</text>
+  <line x1="250" y1="60" x2="250" y2="80" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <!-- Q1 -->
+  <rect x="40" y="86" width="420" height="80" rx="8" fill="#f4f7fa" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="250" y="118" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2a3a">Was it given to me in confidence?</text>
+  <text x="250" y="144" text-anchor="middle" font-size="16" fill="#3a4a5a">(a proposal or manuscript to review, an NDA)</text>
+  <line x1="460" y1="126" x2="560" y2="126" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="508" y="116" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2a3a">yes</text>
+  <rect x="566" y="96" width="414" height="60" rx="8" fill="#a8324a"/>
+  <text x="773" y="133" text-anchor="middle" font-size="18" font-weight="bold" fill="#ffffff">No. Never give it to an AI tool.</text>
+  <line x1="250" y1="166" x2="250" y2="194" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="264" y="186" font-size="16" fill="#3a4a5a">no</text>
+  <!-- Q2 -->
+  <rect x="40" y="200" width="420" height="80" rx="8" fill="#f4f7fa" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="250" y="232" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2a3a">Sensitive personal data?</text>
+  <text x="250" y="258" text-anchor="middle" font-size="16" fill="#3a4a5a">(health, ethnicity, genetics, religion, ...)</text>
+  <line x1="460" y1="240" x2="560" y2="240" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="508" y="230" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2a3a">yes</text>
+  <rect x="566" y="204" width="414" height="72" rx="8" fill="#f8eef0" stroke="#a8324a" stroke-width="2"/>
+  <text x="773" y="234" text-anchor="middle" font-size="17" font-weight="bold" fill="#a8324a">Not without explicit approval.</text>
+  <text x="773" y="258" text-anchor="middle" font-size="16" fill="#a8324a">Build on a synthetic stand-in instead.</text>
+  <line x1="250" y1="280" x2="250" y2="308" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="264" y="300" font-size="16" fill="#3a4a5a">no</text>
+  <!-- Q3 -->
+  <rect x="40" y="314" width="420" height="80" rx="8" fill="#f4f7fa" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="250" y="346" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2a3a">Other personal data?</text>
+  <text x="250" y="372" text-anchor="middle" font-size="16" fill="#3a4a5a">(names, grades, emails, anyone identifiable)</text>
+  <line x1="460" y1="354" x2="560" y2="354" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="508" y="344" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2a3a">yes</text>
+  <rect x="566" y="318" width="414" height="72" rx="8" fill="#faf5e8" stroke="#8a6a12" stroke-width="2"/>
+  <text x="773" y="348" text-anchor="middle" font-size="17" font-weight="bold" fill="#8a6a12">Only in a university-approved tool.</text>
+  <text x="773" y="372" text-anchor="middle" font-size="16" fill="#8a6a12">Otherwise remove identifiers or use stand-ins.</text>
+  <line x1="250" y1="394" x2="250" y2="422" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="264" y="414" font-size="16" fill="#3a4a5a">no</text>
+  <!-- Q4 -->
+  <rect x="40" y="428" width="420" height="80" rx="8" fill="#f4f7fa" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="250" y="460" text-anchor="middle" font-size="17" font-weight="bold" fill="#1b2a3a">Unpublished or internal?</text>
+  <text x="250" y="486" text-anchor="middle" font-size="16" fill="#3a4a5a">(own results, exam drafts, internal notes)</text>
+  <line x1="460" y1="468" x2="560" y2="468" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="508" y="458" text-anchor="middle" font-size="16" font-weight="bold" fill="#1b2a3a">yes</text>
+  <rect x="566" y="432" width="414" height="72" rx="8" fill="#f1f5f3" stroke="#4a7a66" stroke-width="2"/>
+  <text x="773" y="462" text-anchor="middle" font-size="17" font-weight="bold" fill="#4a7a66">Yes, with training off or an</text>
+  <text x="773" y="486" text-anchor="middle" font-size="17" font-weight="bold" fill="#4a7a66">institutional plan. Keep it private.</text>
+  <line x1="250" y1="508" x2="250" y2="536" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="264" y="528" font-size="16" fill="#3a4a5a">no, it is public</text>
+  <!-- end -->
+  <rect x="40" y="542" width="420" height="56" rx="8" fill="#2a7f8f"/>
+  <text x="250" y="576" text-anchor="middle" font-size="18" font-weight="bold" fill="#ffffff">Yes. Respect its licence.</text>
+  <text x="980" y="572" text-anchor="end" font-size="16" fill="#3a4a5a">Always: send the least data</text>
+  <text x="980" y="596" text-anchor="end" font-size="16" fill="#3a4a5a">that does the job.</text>
+  <text x="500" y="630" text-anchor="middle" font-size="16" fill="#8a97a5">Your university's rules come first. When unsure, ask your data protection officer.</text>
+</svg>

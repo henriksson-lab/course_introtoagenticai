@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 55 1000 350" width="1000" height="350" font-family="Helvetica, Arial, sans-serif">
+  <rect x="0" y="0" width="1000" height="420" fill="#ffffff"/>
+
+  <!-- Card 1: messy spreadsheet -->
+  <g transform="translate(20,70)">
+    <rect width="225" height="320" rx="10" fill="#f4f8f9" stroke="#2a7f8f" stroke-width="2.5"/>
+    <text x="112" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="#2a7f8f">Messy spreadsheet</text>
+    <!-- grid -->
+    <g transform="translate(22,56)">
+      <rect width="180" height="140" fill="#ffffff" stroke="#999" stroke-width="1"/>
+      <g stroke="#ccc" stroke-width="1">
+        <line x1="0" y1="28" x2="180" y2="28"/><line x1="0" y1="56" x2="180" y2="56"/>
+        <line x1="0" y1="84" x2="180" y2="84"/><line x1="0" y1="112" x2="180" y2="112"/>
+        <line x1="60" y1="0" x2="60" y2="140"/><line x1="120" y1="0" x2="120" y2="140"/>
+      </g>
+      <g font-size="16" fill="#333">
+        <text x="8" y="20">high</text><text x="68" y="20">12,4</text><text x="128" y="20">ok</text>
+        <text x="8" y="48" fill="#a8324a">High</text><text x="68" y="48">13.1</text><text x="128" y="48"></text>
+        <text x="8" y="76">low</text><text x="68" y="76" fill="#a8324a">n/a</text><text x="128" y="76">ok</text>
+        <text x="8" y="104">low </text><text x="68" y="104">9.8</text><text x="128" y="104" fill="#a8324a">??</text>
+        <text x="8" y="132">med</text><text x="68" y="132">11</text><text x="128" y="132">ok</text>
+      </g>
+    </g>
+    <text x="112" y="238" text-anchor="middle" font-size="17" fill="#333">three spellings,</text>
+    <text x="112" y="262" text-anchor="middle" font-size="17" fill="#333">two decimal marks,</text>
+    <text x="112" y="286" text-anchor="middle" font-size="17" fill="#333">blank cells</text>
+  </g>
+
+  <!-- Card 2: figure redone by hand -->
+  <g transform="translate(265,70)">
+    <rect width="225" height="320" rx="10" fill="#f7f4fa" stroke="#6b4fa0" stroke-width="2.5"/>
+    <text x="112" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="#6b4fa0">Figure, again</text>
+    <g transform="translate(30,60)">
+      <line x1="10" y1="120" x2="160" y2="120" stroke="#333" stroke-width="2"/>
+      <line x1="10" y1="120" x2="10" y2="10" stroke="#333" stroke-width="2"/>
+      <rect x="25" y="70" width="28" height="50" fill="#6b4fa0" opacity="0.8"/>
+      <rect x="70" y="40" width="28" height="80" fill="#6b4fa0" opacity="0.8"/>
+      <rect x="115" y="55" width="28" height="65" fill="#6b4fa0" opacity="0.8"/>
+      <text x="140" y="24" font-size="16" fill="#a8324a" font-weight="bold">v7</text>
+    </g>
+    <text x="112" y="238" text-anchor="middle" font-size="17" fill="#333">reviewer asks for</text>
+    <text x="112" y="262" text-anchor="middle" font-size="17" fill="#333">new data, new font:</text>
+    <text x="112" y="286" text-anchor="middle" font-size="17" fill="#333">click it all again</text>
+  </g>
+
+  <!-- Card 3: 40 PDFs -->
+  <g transform="translate(510,70)">
+    <rect width="225" height="320" rx="10" fill="#fbf6ec" stroke="#8a6a12" stroke-width="2.5"/>
+    <text x="112" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="#8a6a12">40 PDFs to read</text>
+    <g transform="translate(50,60)" stroke="#8a6a12" stroke-width="1.5" fill="#ffffff">
+      <rect x="40" y="0" width="70" height="92"/>
+      <rect x="28" y="12" width="70" height="92"/>
+      <rect x="16" y="24" width="70" height="92"/>
+      <rect x="4" y="36" width="70" height="92"/>
+      <g stroke="#ccc" stroke-width="2">
+        <line x1="14" y1="54" x2="64" y2="54"/><line x1="14" y1="66" x2="64" y2="66"/>
+        <line x1="14" y1="78" x2="58" y2="78"/><line x1="14" y1="90" x2="64" y2="90"/>
+        <line x1="14" y1="102" x2="50" y2="102"/>
+      </g>
+    </g>
+    <text x="112" y="238" text-anchor="middle" font-size="17" fill="#333">one number from</text>
+    <text x="112" y="262" text-anchor="middle" font-size="17" fill="#333">each paper, into</text>
+    <text x="112" y="286" text-anchor="middle" font-size="17" fill="#333">one table</text>
+  </g>
+
+  <!-- Card 4: course page -->
+  <g transform="translate(755,70)">
+    <rect width="225" height="320" rx="10" fill="#faf3f5" stroke="#a8324a" stroke-width="2.5"/>
+    <text x="112" y="34" text-anchor="middle" font-size="20" font-weight="bold" fill="#a8324a">A course page</text>
+    <g transform="translate(22,56)">
+      <rect width="180" height="140" rx="6" fill="#ffffff" stroke="#999" stroke-width="1.5"/>
+      <rect width="180" height="22" rx="6" fill="#eee"/>
+      <circle cx="12" cy="11" r="4" fill="#ccc"/><circle cx="26" cy="11" r="4" fill="#ccc"/>
+      <rect x="14" y="36" width="110" height="12" fill="#a8324a" opacity="0.7"/>
+      <rect x="14" y="58" width="150" height="8" fill="#ddd"/>
+      <rect x="14" y="74" width="140" height="8" fill="#ddd"/>
+      <rect x="14" y="90" width="150" height="8" fill="#ddd"/>
+      <rect x="14" y="108" width="60" height="20" fill="#f0e3e7" stroke="#a8324a"/>
+    </g>
+    <text x="112" y="238" text-anchor="middle" font-size="17" fill="#333">schedule, slides,</text>
+    <text x="112" y="262" text-anchor="middle" font-size="17" fill="#333">exercises in one</text>
+    <text x="112" y="286" text-anchor="middle" font-size="17" fill="#333">place for students</text>
+  </g>
+</svg>

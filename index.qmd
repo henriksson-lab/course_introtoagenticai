@@ -1,0 +1,45 @@
+---
+title: 'Introduction to agentic AI'
+title-block-banner: false
+---
+
+A course for **teachers and researchers** on using coding agents (**Claude Code**
+and **Codex**) to get real work done: cleaning data, making reproducible
+figures, reviewing literature, extracting data from documents, building course
+pages and interactive apps.
+
+You do **not** need to know programming, the command line or GitHub. We teach
+the parts you need, as you need them. The agent writes the code; you learn to
+describe the task, check the result and keep your work organised.
+
+## How the course works
+
+- Work through the sidebar from top to bottom. Each unit has a **lecture**
+  (slides) and an **exercise**.
+- Every exercise has a **worked example** on shared data, and a part where you
+  apply the same skill to **your own project**. You choose that project at the
+  end of Part 1.
+- Agents give different answers each time. Your session will not look exactly
+  like the slides, and that is expected.
+
+## Start here
+
+1. [Why agentic AI?](why-agentic/lec.qmd)
+2. [Accounts and installation](accounts-install/exercise.qmd): which
+   subscriptions you need and how to install the tools.
+
+## The parts of the course
+
+- **Part 1: Getting started.** What an agent is, installing it, the terminal,
+  your first delegations, how LLMs fail, and privacy. Ends with choosing your
+  own project.
+- **Part 2: A project that lasts.** Delegating well, organising a project folder
+  for an agent, git as an undo button, reproducible figures.
+- **Part 3: Sharing.** GitHub, a course or project page, interactive demos,
+  Shiny apps.
+- **Part 4: Literature, documents and the web.** Literature review, extracting
+  data from PDFs, analysing grant results, preparing for grant reviewers.
+- **Part 5: Scaling up.** Claude and Codex in parallel, custom skills, reading
+  other people's code.
+- **Tracks.** RNA-seq, simulation, image analysis in Python, survey data,
+  teaching materials.

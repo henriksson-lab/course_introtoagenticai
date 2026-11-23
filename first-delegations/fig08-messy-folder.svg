@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#fff"/>
+  <rect x="20" y="15" width="960" height="430" rx="8" fill="#fff" stroke="#999" stroke-width="2"/>
+  <rect x="20" y="15" width="960" height="36" rx="8" fill="#e6e6e6"/>
+  <rect x="20" y="40" width="960" height="11" fill="#e6e6e6"/>
+  <text x="40" y="40" font-size="17" fill="#333">messy-folder   (40 items)</text>
+  <g font-size="16" fill="#333">
+    <!-- column 1 -->
+    <text x="40" y="80">Budget_2024_revised.xlsx</text>
+    <text x="40" y="106">Copy of temps_20240409.csv</text>
+    <text x="40" y="132">Course schedule spring 2024.pdf</text>
+    <text x="40" y="158">Ethics approval letter 2024.pdf</text>
+    <text x="40" y="184">Figure 1 NEW.png</text>
+    <text x="40" y="210">GrowthCurve-2024-04-02.csv</text>
+    <text x="40" y="236">IMG_0041.png</text>
+    <text x="40" y="262">IMG_0042 (1).png</text>
+    <text x="40" y="288">IMG_0042.png</text>
+    <text x="40" y="314">Lab protocol v1.docx</text>
+    <text x="40" y="340">Lecture 1 slides.pdf</text>
+    <text x="40" y="366">Meeting notes 4 March.txt</text>
+    <text x="40" y="392">MeetingNotes_01APR2024.txt</text>
+    <text x="40" y="418">Plate_reader_12.3.2024.csv</text>
+    <!-- column 2 -->
+    <text x="360" y="80">Report_final_v2.docx</text>
+    <text x="360" y="106">Screenshot 2024-03-07 at 10.15.32.png</text>
+    <text x="360" y="132">TODO (old).txt</text>
+    <text x="360" y="158">budget 2024.xlsx</text>
+    <text x="360" y="184">course_schedule_2024_v3.pdf</text>
+    <text x="360" y="210">data 2024-03-05.csv</text>
+    <text x="360" y="236">data_05-03-2024 (1).csv</text>
+    <text x="360" y="262">fig2_final.png</text>
+    <text x="360" y="288">fig2_final_REALLYfinal.png</text>
+    <text x="360" y="314">figure1.png</text>
+    <text x="360" y="340">growth_curve_Mar26.csv</text>
+    <text x="360" y="366">lab_protocol_v2_final.docx</text>
+    <text x="360" y="392">lab_protocol_v2_final_REALLYfinal.docx</text>
+    <text x="360" y="418">… and 13 more</text>
+  </g>
+  <!-- callouts -->
+  <g font-size="18" font-weight="bold">
+    <rect x="720" y="75" width="245" height="64" rx="8" fill="#f8e9ec" stroke="#a8324a"/>
+    <text x="735" y="102" fill="#a8324a">"Copy of", "(1)":</text>
+    <text x="735" y="126" fill="#a8324a">duplicates?</text>
+    <rect x="720" y="160" width="245" height="64" rx="8" fill="#f6f1e3" stroke="#8a6a12"/>
+    <text x="735" y="187" fill="#8a6a12">5+ date formats,</text>
+    <text x="735" y="211" fill="#8a6a12">some with no year</text>
+    <rect x="720" y="245" width="245" height="64" rx="8" fill="#f1edf7" stroke="#6b4fa0"/>
+    <text x="735" y="272" fill="#6b4fa0">final, final_v2,</text>
+    <text x="735" y="296" fill="#6b4fa0">REALLYfinal</text>
+    <rect x="720" y="330" width="245" height="64" rx="8" fill="#e3f0f2" stroke="#2a7f8f"/>
+    <text x="735" y="357" fill="#2a7f8f">data, images, docs,</text>
+    <text x="735" y="381" fill="#2a7f8f">slides in one heap</text>
+  </g>
+  <text x="975" y="462" font-size="14" fill="#999" text-anchor="end">illustrative file browser</text>
+</svg>

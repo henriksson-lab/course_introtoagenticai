@@ -1,0 +1,87 @@
+project:
+  type: website
+  output-dir: docs
+  render:
+    - "*.qmd"
+    - "*.md"
+    - "*/*.qmd"
+    - "*/*.md"
+    - "!plan/"
+    - "!tools/"
+    # Teacher-only pages: kept in the repo (read them on GitHub), not published.
+    - "!README.md"
+    - "!audience.md"
+    - "!contentplan.md"
+    - "!designprinciples.md"
+    - "!*/data/"
+
+website:
+  title: "Introduction to agentic AI"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+  sidebar:
+    style: docked
+    search: true
+    contents:
+      - text: Home
+        href: index.qmd
+      # ----------------------------------------------------------------------
+      # Order is defined HERE, not in folder names. To reorder a unit, move its
+      # block; never rename its folder. The agreed order and the reasons for it
+      # are in contentplan.md ("Course order"). styles.css colours leaf links by
+      # filename: *lec* → green, exercises → default.
+      # ----------------------------------------------------------------------
+      - section: "Part 1: Getting started"
+        contents:
+          - section: "Why agentic AI?"
+            contents:
+              - text: "Lecture (slides)"
+                href: why-agentic/lec.qmd
+              - text: "Exercise: watch an agent work"
+                href: why-agentic/exercise.qmd
+          - section: "Accounts and installation"
+            contents:
+              - text: "Lecture (slides)"
+                href: accounts-install/lec.qmd
+              - text: "Exercise: install and sign in"
+                href: accounts-install/exercise.qmd
+          - section: "Terminal survival kit"
+            contents:
+              - text: "Lecture (slides)"
+                href: terminal/lec.qmd
+              - text: "Exercise: find your way around"
+                href: terminal/exercise.qmd
+          - section: "First delegations"
+            contents:
+              - text: "Lecture (slides)"
+                href: first-delegations/lec.qmd
+              - text: "Exercise: three small jobs"
+                href: first-delegations/exercise.qmd
+          - section: "How LLMs and agents work, and how they fail"
+            contents:
+              - text: "Lecture (slides)"
+                href: how-llms-work/lec.qmd
+              - text: "Exercise: catch the agent out"
+                href: how-llms-work/exercise.qmd
+          - section: "Privacy, ethics and safety"
+            contents:
+              - text: "Lecture (slides)"
+                href: privacy-ethics/lec.qmd
+              - text: "Exercise: choose your own project"
+                href: privacy-ethics/exercise.qmd
+
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+    theme: cosmo
+    css: styles.css
+
+# reveal.js navigation arrows for every lecture deck (see 3MB00A).
+controls: true
+controls-layout: edges
+controls-back-arrows: visible

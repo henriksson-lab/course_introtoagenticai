@@ -1,0 +1,446 @@
+---
+title: "Exercise: accounts and installation"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+::: {.callout-important title="Last checked: 2026-11"}
+This page is the **one place** in the course with version-specific details: plans, install commands, menu names. We check it against the official documentation before each course run. If something on your screen differs, the official pages linked below win, and please tell us so we can update this page.
+:::
+
+## Goal
+
+By the end of this exercise you should have:
+
+- an **account** that includes Claude Code, Codex, or both;
+- a free **GitHub** account (for Part 3);
+- **Claude Code and/or Codex installed** on your own computer, and a terminal that can find them;
+- **signed in** once through the browser;
+- had a **first conversation** with the agent in an empty folder, and **checked** what it did.
+
+One tool is enough for the course. Both are useful for *Parallel workers* later.
+
+## Before you start
+
+- About **30–60 minutes**, longer on a university-managed laptop.
+- An **internet connection** that is not blocked for `claude.ai` / `chatgpt.com`.
+- Your computer's **operating system**: Windows 10 (version 1809 or later) or 11, macOS 13 or later, or a recent Linux (for example Ubuntu 20.04 or later). 4 GB of memory or more.
+- You do **not** need administrator rights for the installers. On a managed laptop, see [When it does not work](#when-it-does-not-work).
+- Nothing else. Git, R, Python and Quarto come later, with the agent's help.
+
+### Accounts and licences
+
+We give pointers, not prices: plans change often. Read the official pages.
+
+| Tool | What you need | Where |
+|------|---------------|-------|
+| **Claude Code** | A paid Claude plan: **Pro or higher** (Max, Team, Enterprise). The **free plan does not include Claude Code.** Alternative: pay-as-you-go API billing through the Claude Console. | [claude.com/pricing](https://claude.com/pricing) · [Claude Code setup docs](https://code.claude.com/docs/en/setup) · [Claude Console](https://platform.claude.com/) |
+| **Codex** | A **ChatGPT account**. Codex is included across ChatGPT plans, including Free and Go, but with low limits, and on those plans terminal access may be limited. **Plus or higher** (Pro, Business, Edu, Enterprise) is realistic for the course. Alternative: an OpenAI API key, billed per use. | [chatgpt.com/pricing](https://chatgpt.com/pricing) · [Codex pricing](https://learn.chatgpt.com/docs/pricing) · [Codex help article](https://help.openai.com/en/articles/11369540-codex) |
+| **Institutional plans** | Claude for Education, Claude Team/Enterprise and ChatGPT Edu/Enterprise **may** include the agents. It depends on the institution's workspace settings. **Ask your IT department.** | Local IT |
+| **GitHub** | A **free personal account**. Educators can apply for GitHub Education benefits. Needed from Part 3; create it now. | [github.com/signup](https://github.com/signup) · [GitHub Education](https://github.com/education) |
+| **Free software** | Git, R (+ RStudio, optional), Python, Quarto. **Not today**: installed with the agent's help in *Terminal survival kit*. | [git-scm.com](https://git-scm.com) · [cran.r-project.org](https://cran.r-project.org) · [quarto.org](https://quarto.org) |
+
+::: {.callout-tip title="Subscription or API key?"}
+Use a **subscription** (Claude Pro, ChatGPT Plus or an institutional plan) for this course. You pay a fixed amount and wait when you hit the limit. An API key bills per use, with no cap, which is easy to overspend while learning.
+:::
+
+## Worked example
+
+Work through the steps in order. Do the steps for **one** tool first, get it working, and only then add the other if you want both.
+
+### Step 1: Get the accounts
+
+1. **Ask IT** whether your university has a Claude or ChatGPT plan that includes Claude Code or Codex. A ready-to-send question: *"Do we have a Claude or ChatGPT plan, and does it include Claude Code or Codex? If so, how do I get access?"*
+2. If not (or while you wait), get **Claude Pro** or **ChatGPT Plus** yourself from the pricing pages above.
+3. Create a **GitHub** account at [github.com/signup](https://github.com/signup). Choose a username you are happy to show colleagues: it becomes part of your project page address. Confirm the e-mail.
+
+**What you should see:** you can log in at [claude.ai](https://claude.ai) and/or [chatgpt.com](https://chatgpt.com) in the browser, and your plan name is shown in the account settings. You can log in at [github.com](https://github.com).
+
+### Step 2: Open a terminal
+
+You only need it to paste a line today. *Terminal survival kit* explains it properly.
+
+::: {.panel-tabset}
+
+#### Windows
+
+1. Press `Win + X` (the Windows key and X together).
+2. Choose **Terminal** or **Windows PowerShell**. Not *Command Prompt*, and not an entry marked **(x86)**.
+3. You do **not** need *Run as administrator*.
+
+**What you should see:** a window whose last line starts with `PS`, for example `PS C:\Users\yourname>`. If there is no `PS`, you are in Command Prompt: close it and try again.
+
+#### macOS
+
+1. Press `Cmd + Space` to open Spotlight.
+2. Type `Terminal` and press Enter.
+
+**What you should see:** a window whose last line ends with `%` or `$`, for example `yourname@MacBook ~ %`.
+
+#### Linux
+
+1. Press `Ctrl + Alt + T`, or search for *Terminal* in your application menu.
+
+**What you should see:** a window whose last line ends with `$`, for example `yourname@computer:~$`.
+
+:::
+
+**Pasting:** `Ctrl + V` or right-click in Windows Terminal/PowerShell; `Cmd + V` on macOS; `Ctrl + Shift + V` on Linux. Then press **Enter**.
+
+### Step 3: Install the agent
+
+Copy the line for your system and your tool **from this page** (use the copy button at the right of each box), paste it into the terminal, and press Enter. The install may show **no progress** for a minute or two. Wait.
+
+::: {.panel-tabset}
+
+#### Windows
+
+**Claude Code** (in PowerShell):
+
+```powershell
+irm https://claude.ai/install.ps1 | iex
+```
+
+**What you should see:** after a short wait, a message that Claude Code was successfully installed. It may add *Setup notes*; read them.
+
+Optional but recommended for Claude Code: [Git for Windows](https://git-scm.com/downloads/win). Without it, Claude Code uses PowerShell to run commands; with it, Claude Code can also use Bash. If you install it, accept all the default choices. You can also leave this until *Terminal survival kit*.
+
+**Codex** (in PowerShell):
+
+```powershell
+powershell -ExecutionPolicy ByPass -c "irm https://chatgpt.com/codex/install.ps1 | iex"
+```
+
+**What you should see:** progress lines starting with `==>`, ending with a message that Codex is installed. It may ask whether to start Codex now; you can answer no and continue with Step 4.
+
+Codex now runs **natively** on Windows. You do not need WSL (the Linux subsystem for Windows) for this course. If you already work in WSL 2, you can instead install both tools inside it with the Linux commands.
+
+::: {.callout-note collapse="true" title="Already in Command Prompt (CMD)? Or prefer WinGet?"}
+Claude Code in **CMD**:
+
+```bat
+curl -fsSL https://claude.ai/install.cmd -o install.cmd && install.cmd && del install.cmd
+```
+
+Claude Code with **WinGet** (does not update itself; run `winget upgrade Anthropic.ClaudeCode` now and then):
+
+```powershell
+winget install Anthropic.ClaudeCode
+```
+
+Codex has no CMD line: use PowerShell.
+:::
+
+#### macOS
+
+**Claude Code:**
+
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+**What you should see:** after a short wait, `Claude Code successfully installed!`, possibly with *Setup notes* about your PATH. Read them.
+
+**Codex:**
+
+```bash
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
+```
+
+**What you should see:** progress lines starting with `==>`, ending with a note to open a new terminal and run `codex`. It may ask whether to start Codex now; you can answer no.
+
+::: {.callout-note collapse="true" title="Already use Homebrew?"}
+If you already use [Homebrew](https://brew.sh), these work too. Homebrew installs do not update themselves; see [Keep it up to date](#keep-it-up-to-date).
+
+```bash
+brew install --cask claude-code
+brew install --cask codex
+```
+:::
+
+#### Linux
+
+**Claude Code:**
+
+```bash
+curl -fsSL https://claude.ai/install.sh | bash
+```
+
+**What you should see:** after a short wait, `Claude Code successfully installed!`, possibly with *Setup notes* about your PATH. Read them.
+
+**Codex:**
+
+```bash
+curl -fsSL https://chatgpt.com/codex/install.sh | sh
+```
+
+**What you should see:** progress lines starting with `==>`, ending with a note to open a new terminal and run `codex`.
+
+If `curl` is missing (`curl: command not found`), install it with your package manager first (for example `sudo apt install curl` on Ubuntu), or ask IT. Claude Code also offers signed apt, dnf and apk repositories; see the [setup docs](https://code.claude.com/docs/en/setup).
+
+:::
+
+::: {.callout-warning title="Only paste install lines from official sources"}
+The address in the line must be `claude.ai` (Claude Code) or `chatgpt.com` (Codex). Copy from this page or the official docs, never from a forum post, video comment or e-mail.
+:::
+
+::: {.callout-note collapse="true" title="Installing with npm instead"}
+Both tools are also on npm: `npm install -g @anthropic-ai/claude-code@latest` (needs Node.js 22 or later) and `npm install -g @openai/codex` (needs Node.js). Use this only if you already work with Node.js. Never use `sudo` with these commands.
+:::
+
+### Step 4: Check that the terminal finds it
+
+1. **Close the terminal window** and open a new one (Step 2). A window that was open during the install may not find the new program.
+2. Type the version command for each tool you installed and press Enter:
+
+```bash
+claude --version
+```
+
+```bash
+codex --version
+```
+
+**What you should see:** a version number, for example `2.1.330 (Claude Code)` or `codex-cli 0.171.0`. Yours will be higher. If you instead see `command not found` or `is not recognized`, go to [When it does not work](#when-it-does-not-work).
+
+For Claude Code, `claude doctor` gives a fuller health check of the installation.
+
+### Step 5: Make an empty folder and start the agent there
+
+We use a new folder called `agent-hello` in your home folder, so the agent has nothing of yours to touch. Type these lines one at a time (they work on Windows PowerShell, macOS and Linux):
+
+```bash
+mkdir ~/agent-hello
+cd ~/agent-hello
+```
+
+**What you should see:** after `mkdir`, nothing on macOS and Linux (that means success) or a short listing of the new folder on Windows; after `cd`, the prompt now mentions `agent-hello`.
+
+Now start the agent:
+
+::: {.panel-tabset}
+
+#### Claude Code
+
+```bash
+claude
+```
+
+The first time:
+
+1. It may ask a few setup questions, such as a **colour theme**. Any choice is fine.
+2. It asks how to **log in**. Choose your **Claude account with subscription** (or the Console account if you use API billing).
+3. A **browser window** opens. Log in with the account that has your plan, and approve.
+4. Back in the terminal it confirms you are logged in. It may ask whether you **trust the files in this folder**. For your empty `agent-hello` folder, answer yes.
+
+If no browser opens, press `c` to copy the login link, and paste it into your browser yourself. If the browser asks for a code to paste back into the terminal, copy all of it.
+
+**What you should see:** a welcome box showing the version, the model, and the folder (ending in `agent-hello`), and a prompt where you can type.
+
+#### Codex
+
+```bash
+codex
+```
+
+The first time:
+
+1. Choose **Sign in with ChatGPT**.
+2. A **browser window** opens. Log in with the ChatGPT account that has your plan, and approve.
+3. Back in the terminal, Codex may ask whether you **trust this folder** or how much it may do without asking. For your empty `agent-hello` folder, accept the suggested default. (Codex can start in a read-only mode in folders that are not under version control. That is fine today; it will ask before writing.)
+4. On Windows, Codex may ask to set up its **sandbox** (the protection that keeps it inside your folder). Accept the default. If it needs administrator approval you do not have, see [When it does not work](#when-it-does-not-work).
+
+You can also sign in separately with `codex login` before you start.
+
+**What you should see:** a short header with the model and the folder (ending in `agent-hello`), and a prompt where you can type.
+
+:::
+
+### Step 6: Say hello
+
+Type each prompt below, press Enter, and read the answer before you type the next. Your answers will be worded differently from anyone else's: agents are not deterministic.
+
+**Prompt 1.** Ask it to look, not guess:
+
+```text
+Which folder are we in, and what files can you see here?
+```
+
+**What to look for:** it should run a small action to list the files (you see a line saying it is listing or reading the folder) and then tell you the folder is **empty**. You know the right answer, because you just made the folder. If it claims to see files, you started it in the wrong folder (check the path it names), or it is guessing.
+
+**Prompt 2.** A first small change. Replace the part in brackets with your own field (one general sentence, nothing confidential):
+
+```text
+Create a file called hello.txt containing one sentence that says
+I work in [your field]. Then tell me exactly what you did.
+```
+
+**What to look for:** the agent **asks permission** before it creates the file. Read the question. It should name `hello.txt` in your `agent-hello` folder. Choose **Yes** (the first option). *Terminal survival kit* explains the other options.
+
+**Prompt 3.** Ask about its limits:
+
+```text
+What can you do for me in this folder, and what would you ask
+my permission for before doing it?
+```
+
+**What to look for:** a short, plain answer: it can read and write files here and run commands, and it asks before changing files or running commands (depending on settings). Keep this answer in mind for the next unit, where we test it.
+
+Then leave the agent:
+
+| | Claude Code | Codex |
+|---|---|---|
+| Leave | `/exit` (or `Ctrl + D` twice) | `/exit` or `/quit` (or `Ctrl + C`) |
+| Stop it in the middle of an answer | `Esc` | `Esc` |
+| See commands | `/help` | type `/` |
+| Continue the last conversation in this folder | `claude -c` | `codex resume` |
+
+#### Check the result
+
+"It replied" is not a check. Do all of these:
+
+1. **The file is really there.** Open the folder in your normal file browser from the terminal: `explorer .` (Windows), `open .` (macOS) or `xdg-open .` (Linux). You should see `hello.txt`. Open it: it contains your sentence, and nothing else.
+2. **The agent did only what you asked.** The folder contains `hello.txt` and nothing more. (Hidden settings files are fine; your file browser normally does not show them.)
+3. **Start and resume works.** Start the agent again in the same folder with `claude -c` or `codex resume` and ask:
+
+    ```text
+    What did we do in our last conversation?
+    ```
+
+    It should mention creating `hello.txt`. Then leave again.
+4. **Version check works in a fresh window.** Close the terminal, open a new one, and run `claude --version` / `codex --version` once more.
+
+If you installed both tools, repeat Steps 5–6 with the other one in the same folder, and compare: did both list the folder before answering? Did both ask before creating the file?
+
+### Keep it up to date
+
+Both tools release new versions every week or so. When the course and your screen disagree, update first.
+
+| Installed with | Claude Code | Codex |
+|---|---|---|
+| Official installer (this page) | Updates itself in the background. Update now: `claude update` | `codex update`, or run the install line from Step 3 again |
+| Homebrew | `brew upgrade claude-code` | `brew upgrade --cask codex` |
+| WinGet | `winget upgrade Anthropic.ClaudeCode` | |
+| npm | `npm install -g @anthropic-ai/claude-code@latest` | `npm install -g @openai/codex` |
+
+### Desktop apps and editor extensions
+
+Both tools also exist as a **desktop app** ([Claude desktop app](https://claude.com/download); the [ChatGPT desktop app](https://learn.chatgpt.com/docs/app), which includes Codex) and as **editor extensions** (for example VS Code). They use the same engine. The course uses the **terminal** version because it is the same on every system. The desktop app is a good fallback if the terminal install is blocked on your computer.
+
+## When it does not work
+
+Find your symptom. Read the **last lines** the terminal printed: they usually name the problem.
+
+| What you see | What it means | What to do |
+|---|---|---|
+| `command not found: claude` / `codex`, or `'claude' is not recognized` | The program is installed, but this terminal does not know where | 1. Open a **new** terminal window and try again. 2. Look for *Setup notes* in the install output and run the fix it prints. 3. Use the PATH fix below. 4. Only then reinstall. |
+| `'irm' is not recognized` | You are in Command Prompt, not PowerShell | Open PowerShell (`Win + X`) |
+| `The token '&&' is not a valid statement separator` | You pasted the CMD line into PowerShell | Use the PowerShell line |
+| `'bash' is not recognized` or `parameter name 'fsSL'` | You pasted the macOS/Linux line on Windows | Use the Windows line |
+| `does not support 32-bit Windows` | You opened *Windows PowerShell (x86)* | Open *Windows PowerShell* without (x86) |
+| `running scripts is disabled on this system` | Windows script policy blocks the installer | On a managed laptop, ask IT. Do not change the policy yourself on a work computer. |
+| `syntax error near unexpected token '<'`, HTML in the terminal, or `403` | The install address returned a web page instead of the script: blocked network, region, or a temporary error | Try once more. If it repeats, check the page text: "App unavailable in region" means the service is not offered in your country. On a university network, ask IT. |
+| Certificate, `SSL`/`TLS` or `unable to get local issuer certificate` errors | A university or company network inspects encrypted traffic | Ask IT; send them the exact error and the official install page |
+| Claude Code says your account has no access | You logged in with a **free** Claude account, or a workspace where Claude Code is switched off | Check the plan at claude.ai. Use `/login` inside Claude Code to switch account. |
+| Wrong account is used | The browser remembered another login (personal vs university) | Log out in the browser, then `/login` (Claude Code) or `/logout` and start again (Codex) |
+| No browser opens at sign-in | The terminal cannot open a browser | Claude Code: press `c` to copy the link, paste it into a browser. Codex: copy the link it prints. |
+| The agent lists your other files | You started it in the wrong folder | `/exit`, then `cd ~/agent-hello`, then start again |
+
+### The PATH fix
+
+Only if a **new** terminal still cannot find `claude` or `codex`, and the install output did not print a fix you could follow. Both installers put the program in a folder called `.local/bin` in your home folder (on Windows, `%USERPROFILE%\.local\bin` for Claude Code). These commands add that folder to the list the terminal searches. You only do this once.
+
+::: {.panel-tabset}
+
+#### Windows
+
+In PowerShell, check that the file exists:
+
+```powershell
+Test-Path "$env:USERPROFILE\.local\bin\claude.exe"
+```
+
+If it prints `True`, add the folder to your PATH:
+
+```powershell
+$currentPath = [Environment]::GetEnvironmentVariable('PATH', 'User')
+[Environment]::SetEnvironmentVariable('PATH', "$currentPath;$env:USERPROFILE\.local\bin", 'User')
+```
+
+Close PowerShell, open a new one, and try `claude --version`. If it printed `False`, the install did not finish: run the install line again and read its output.
+
+For Codex on Windows, the installer manages its own PATH entry. If `codex` is not found in a new window, run the install line again and read the last lines.
+
+#### macOS
+
+Check that the file exists:
+
+```bash
+ls -la ~/.local/bin/claude ~/.local/bin/codex
+```
+
+If it lists the files, add the folder to your PATH (zsh is the default shell on macOS):
+
+```bash
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.zshrc
+source ~/.zshrc
+```
+
+Then try `claude --version` again.
+
+#### Linux
+
+Check that the file exists:
+
+```bash
+ls -la ~/.local/bin/claude ~/.local/bin/codex
+```
+
+If it lists the files, add the folder to your PATH (bash is the default on most distributions):
+
+```bash
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+Then try `claude --version` again.
+
+:::
+
+### University-managed laptops
+
+- The installers do **not** need administrator rights: they install into your own user folder.
+- IT policy can still block scripts, downloads or the companies' websites. **Do not try to work around it.** Send IT the exact error message and the links to the official install pages: [Claude Code setup](https://code.claude.com/docs/en/setup), [Codex CLI](https://learn.chatgpt.com/docs/codex/cli).
+- Meanwhile, ask whether the **desktop app** is available in your software centre, or work on a personal computer for the course exercises (example data only, so no university data is involved).
+
+### Official troubleshooting pages
+
+- Claude Code: [Troubleshoot installation and login](https://code.claude.com/docs/en/troubleshoot-install) · [Terminal guide for new users](https://code.claude.com/docs/en/terminal-guide)
+- Codex: [Codex CLI](https://learn.chatgpt.com/docs/codex/cli) · [Authentication](https://learn.chatgpt.com/docs/auth) · [Windows sandbox](https://learn.chatgpt.com/docs/windows/windows-sandbox) · [WSL](https://learn.chatgpt.com/docs/windows/wsl)
+
+## On your own project
+
+You choose your own project at the end of Part 1, in *Privacy, ethics and safety*. Until then, keep the agent in folders with example data only, like `agent-hello`.
+
+## What you should have now
+
+- An account with a plan that includes Claude Code and/or Codex, and a free GitHub account.
+- The agent installed, found by a fresh terminal, and signed in.
+- A folder `~/agent-hello` containing `hello.txt`, created by the agent and checked by you.
+
+You can delete `agent-hello` when you are done. In *Terminal survival kit* you make the course folder `agentic-course` that you use for the rest of the course.
+
+### You are ready when ...
+
+- [ ] you can log in at claude.ai and/or chatgpt.com, and your plan includes the agent;
+- [ ] you have a GitHub username and can log in at github.com;
+- [ ] in a **new** terminal window, `claude --version` and/or `codex --version` prints a version number;
+- [ ] starting `claude` or `codex` in `~/agent-hello` goes straight to a prompt, without asking you to log in again;
+- [ ] the agent told you the folder was empty before you asked it to create anything;
+- [ ] `hello.txt` exists in `agent-hello` and contains your sentence, checked in your file browser;
+- [ ] you can leave the agent (`/exit`) and continue the last conversation (`claude -c` / `codex resume`);
+- [ ] you know how to update the tool you installed.

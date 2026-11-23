@@ -1,0 +1,45 @@
+<svg xml:space="preserve" style="white-space:pre" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="500" fill="#ffffff"/>
+  <!-- connectors -->
+  <g stroke="#999" stroke-width="2" fill="none">
+    <path d="M500,70 V95 M250,95 H500 M250,95 V110 M500,95 V110"/>
+    <path d="M500,150 V175 M500,175 H750 M500,175 V190 M750,175 V190"/>
+    <path d="M500,230 V260 M200,260 H800 M200,260 V280 M400,260 V280 M600,260 V280 M800,260 V280"/>
+    <path d="M400,320 V345 M340,345 H460 M340,345 V360 M460,345 V360"/>
+    <path d="M800,320 V360"/>
+  </g>
+  <g font-size="19" text-anchor="middle">
+    <rect x="450" y="30" width="100" height="40" rx="6" fill="#f2f2f2" stroke="#666" stroke-width="1.5"/>
+    <text x="500" y="57" fill="#222" font-weight="bold">/</text>
+    <rect x="185" y="110" width="130" height="40" rx="6" fill="#f7f7f7" stroke="#bbb" stroke-width="1.5"/>
+    <text x="250" y="137" fill="#999">Applications</text>
+    <rect x="440" y="110" width="120" height="40" rx="6" fill="#f2f2f2" stroke="#666" stroke-width="1.5"/>
+    <text x="500" y="137" fill="#222">Users</text>
+    <rect x="440" y="190" width="120" height="40" rx="6" fill="#2a7f8f" stroke="#2a7f8f" stroke-width="1.5"/>
+    <text x="500" y="217" fill="#ffffff" font-weight="bold">anna</text>
+    <rect x="690" y="190" width="120" height="40" rx="6" fill="#f7f7f7" stroke="#bbb" stroke-width="1.5"/>
+    <text x="750" y="217" fill="#999">bob</text>
+    <rect x="125" y="280" width="150" height="40" rx="6" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+    <text x="200" y="307" fill="#222">Desktop</text>
+    <rect x="325" y="280" width="150" height="40" rx="6" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+    <text x="400" y="307" fill="#222">Documents</text>
+    <rect x="525" y="280" width="150" height="40" rx="6" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+    <text x="600" y="307" fill="#222">Downloads</text>
+    <rect x="715" y="280" width="170" height="40" rx="6" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+    <text x="800" y="307" fill="#222">agentic-course</text>
+    <rect x="280" y="360" width="120" height="40" rx="6" fill="#ffffff" stroke="#999" stroke-width="1.5"/>
+    <text x="340" y="387" fill="#222">teaching</text>
+    <rect x="410" y="360" width="100" height="40" rx="6" fill="#ffffff" stroke="#999" stroke-width="1.5"/>
+    <text x="460" y="387" fill="#222">grants</text>
+    <rect x="740" y="360" width="120" height="40" rx="6" fill="#ffffff" stroke="#999" stroke-width="1.5" stroke-dasharray="5,3"/>
+    <text x="800" y="387" fill="#222">notes.md</text>
+  </g>
+  <g font-size="18">
+    <text x="565" y="57" fill="#666">the top of the disk ("root")</text>
+    <text x="575" y="140" fill="#666">one folder per user</text>
+    <text x="300" y="217" fill="#2a7f8f" font-weight="bold" text-anchor="middle">your home folder (~)</text>
+    <text x="880" y="387" fill="#666">a file</text>
+  </g>
+  <text x="500" y="460" font-size="18" fill="#666" text-anchor="middle">On Windows the top is a drive (C:\) and the home folder is C:\Users\anna.</text>
+  <text x="500" y="486" font-size="18" fill="#666" text-anchor="middle">On Linux the home folder is /home/anna.</text>
+</svg>

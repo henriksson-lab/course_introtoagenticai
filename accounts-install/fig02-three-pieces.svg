@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 520" width="640" height="520" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+    <marker id="arwo" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#e6b84f"/></marker>
+  </defs>
+  <rect x="0" y="0" width="640" height="520" fill="#ffffff"/>
+  <rect x="30" y="150" width="340" height="300" rx="14" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="2"/>
+  <text x="200" y="182" font-size="22" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">Your computer</text>
+  <rect x="60" y="205" width="280" height="95" rx="10" fill="#eee9f6" stroke="#6b4fa0" stroke-width="2.5"/>
+  <text x="200" y="240" font-size="22" fill="#6b4fa0" text-anchor="middle" font-weight="bold" xml:space="preserve">2. Agent program</text>
+  <text x="200" y="270" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">claude  /  codex</text>
+  <rect x="60" y="325" width="280" height="95" rx="10" fill="#f5efdf" stroke="#8a6a12" stroke-width="2.5"/>
+  <text x="200" y="360" font-size="22" fill="#8a6a12" text-anchor="middle" font-weight="bold" xml:space="preserve">3. Terminal</text>
+  <text x="200" y="390" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">where you type</text>
+  <line x1="200" y1="323" x2="200" y2="305" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <path d="M455,120 C430,120 420,95 440,80 C440,50 480,40 500,58 C515,30 570,30 580,62 C610,55 630,80 615,100 C635,115 620,140 595,138 L470,138 C455,138 445,130 455,120 Z" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="528" y="100" font-size="20" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">AI model</text>
+  <text x="528" y="124" font-size="15" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">(company servers)</text>
+  <rect x="420" y="190" width="200" height="110" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2.5"/>
+  <text x="520" y="225" font-size="22" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">1. Account</text>
+  <text x="520" y="255.0" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">plan + usage</text>
+  <text x="520" y="278.4" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">limits</text>
+  <line x1="520" y1="188" x2="525" y2="145" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <path d="M340,250 C380,250 380,165 440,140" fill="none" stroke="#1b2a3a" stroke-width="2.5" stroke-dasharray="7 5" marker-end="url(#arw)"/>
+  <text x="410" y="330" font-size="17" fill="#5a6670" text-anchor="middle" font-weight="normal" font-style="italic" xml:space="preserve">internet</text>
+  <text x="320" y="495" font-size="17" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">Claude Code and Codex each need their own account and program.</text>
+</svg>

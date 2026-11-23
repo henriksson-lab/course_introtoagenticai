@@ -1,0 +1,246 @@
+---
+title: "Exercise: three small jobs"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- **organised a messy folder** of 40 files into a structure you chose, with a rename log that makes it undoable,
+- **cleaned a messy spreadsheet** into a tidy table, with a script you can rerun and a list of every decision,
+- **summarised six PDF reports** into one table, with the page each value came from,
+- **checked each result** with counts, totals and three random spot checks, and
+- **corrected the agent at least once** by saying what was wrong, instead of starting over.
+
+All data in this exercise is **synthetic**: the files, people, mice and reports are made up. Do not use your own files yet. That comes after *Privacy, ethics and safety*.
+
+Your session will look different from anyone else's, including the examples below. Compare **results**, not sessions.
+
+## Before you start
+
+- You have Claude Code or Codex installed and signed in (*Accounts and installation*).
+- You can open a terminal, use `cd` to go into a folder, and start the agent there (*Terminal survival kit*).
+- Download the three example files. Each is one zip file:
+
+| Job | Download | What is inside |
+|---|---|---|
+| 1. Organise a folder | [messy-folder.zip](data/messy-folder.zip) | a folder `messy-folder` with 40 files |
+| 2. Clean a spreadsheet | [messy-sheet.zip](data/messy-sheet.zip) | `messy-sheet.xlsx` |
+| 3. Summarise PDFs | [reports.zip](data/reports.zip) | a folder `reports` with 6 short PDFs |
+
+- Make a folder for this exercise, for example `first-delegations` in your Documents folder, and unzip the three files into it. On a Mac, double-click the zip. On Windows, right-click and choose **Extract All**. Windows sometimes puts the folder inside a folder of the same name; open it and make sure you can see the 40 files (or the 6 PDFs) directly.
+- Keep a short note open (a text file or paper) called **what went wrong**. Each time the agent does something you did not expect, write one line. We use these notes in the next unit.
+
+### Starting the agent in a copy
+
+For every job, **make a copy first** and start the agent in the copy, never in the original.
+
+1. In your file browser, duplicate the folder (for job 2, the folder holding `messy-sheet.xlsx`) and rename the copy, for example `messy-folder-work`.
+2. In the terminal, go into the copy and start the agent:
+
+::: {.panel-tabset}
+## Claude Code
+```bash
+cd ~/Documents/first-delegations/messy-folder-work
+claude
+```
+## Codex
+```bash
+cd ~/Documents/first-delegations/messy-folder-work
+codex
+```
+:::
+
+3. If the agent asks whether you trust this folder, say yes: it is a copy of example data.
+4. When the agent asks for permission to run a command or change files, read what it wants to do before you approve (*Terminal survival kit*). If you do not understand a command, ask: "What does this command do?"
+
+## Worked example
+
+### Job 1: organise a messy folder
+
+Make the copy `messy-folder-work` and start the agent in it. Before you type anything, open the folder in your file browser and look at it for a minute. Note how many items your file browser says there are.
+
+Type this prompt (copy it, then change anything you would like differently):
+
+```text
+This folder holds 40 files from a small lab project: data, images,
+documents and slides. Organise it so that a colleague could find things.
+
+What I want at the end:
+- a few subfolders by kind of file (for example data, figures, documents)
+- every file renamed as YYYY-MM-DD_short-description.ext, using the date
+  in the name, or the file's own date if the name has none
+- exact duplicates moved to a folder called duplicates, not deleted
+- a file rename-log.csv with one row per file: old path, new path, reason
+- nothing deleted, and nothing outside this folder touched
+
+Before you move anything, show me your plan and list your assumptions,
+for example how you read dates like 05-03-2024.
+```
+
+**What to look for.** The agent should first look at the files, then stop and show a plan and a list of assumptions. Read them. Do you agree with the folders? With how it reads the dates? If not, say so now. For example:
+
+```text
+Use only three folders: data, figures, documents. Put the spreadsheets
+in data. Otherwise go ahead.
+```
+
+Then let it work. It will ask before it creates folders and moves files.
+
+#### Check the result
+
+1. **Count.** In your file browser, count the files in each subfolder (the status bar or the folder's info shows the number of items). The total, including `duplicates`, must be **40**. Open `rename-log.csv` (in Excel or LibreOffice) and check it has **40 rows** below the header.
+2. **Duplicates.** There are exactly **3** exact duplicates (pairs of files with identical content), so **37** distinct files should be in the subfolders. Open each file in `duplicates` next to its twin. Are they really the same?
+3. **Tricky dates.** Find these files in the rename log and check the new date:
+
+| Original name | Correct date | Why |
+|---|---|---|
+| `data_05-03-2024 (1).csv` | 2024-03-05 | a duplicate of `data 2024-03-05.csv` |
+| `Plate_reader_12.3.2024.csv` | 2024-03-12 | day first |
+| `microscope 14-03-24.png` | 2024-03-14 | there is no month 14 |
+| `growth_curve_Mar26.csv` | 2024-03-26 | the year is in the file's date column |
+| `Meeting notes 4 March.txt` | 2024-03-04 | the year is in the first line of the file |
+| `TODO (old).txt` | 2024-03-02 | no date in the name; the file's own date |
+
+4. **Spot check.** Pick three other rows of the log at random. Find the new file and open it. Is it the file the log says it is?
+5. **Not duplicates.** `fig2_final.png` and `fig2_final_REALLYfinal.png` look like copies but are different figures. The same holds for the two `survey_results` files and the three lab protocols. None of them should be in `duplicates`.
+
+If your file dates all show today's date, your unzip tool did not keep the original dates. Then the agent has to use the contents of the files or ask you. That is fine, and a good thing to note in your *what went wrong* list.
+
+::: {.callout-note collapse="true" title="Expected outcome for job 1"}
+- 40 files: 10 `.csv`, 12 `.png`, 5 `.docx`, 5 `.pdf`, 5 `.txt`, 1 `.md`, 2 `.xlsx`.
+- 3 exact duplicates: `data_05-03-2024 (1).csv` (copy of `data 2024-03-05.csv`), `Copy of temps_20240409.csv` (copy of `temps_20240409.csv`) and `IMG_0042 (1).png` (copy of `IMG_0042.png`). Which file of each pair goes to `duplicates` is your choice; the log should say.
+- 37 distinct files. With folders data / figures / documents you get, for example, 10 / 11 / 16 (if the spreadsheets go in data).
+- Files with no date in the name take the file's own date, for example `logo.png` 2024-01-15, `figure1.png` 2024-03-20, `Report_final_v2.docx` 2024-04-12.
+:::
+
+**Undo test (optional).** Ask the agent: "Using rename-log.csv, put every file back where it was, with its old name. Then tell me how many files are in the folder." You should be back at 40 files with the original names. Then ask it to redo the organisation, or simply make a fresh copy.
+
+### Job 2: clean a messy spreadsheet
+
+Make a copy of the folder that holds `messy-sheet.xlsx`, start the agent in the copy, and open the sheet yourself in Excel or LibreOffice for a minute. What would you have to fix by hand?
+
+```text
+messy-sheet.xlsx holds body weights from a mouse study. I want a tidy
+table I can analyse, and a way to do the same next month.
+
+What I want at the end:
+- clean_weights.csv with one row per mouse and the columns animal_id,
+  sex (F or M), group (control, low or high), dose_mg_per_kg,
+  date_weighed (YYYY-MM-DD), weight_g (a number), comment
+- a script that makes clean_weights.csv from the .xlsx file, so I can
+  rerun it on a new sheet
+- decisions.md: a numbered list of every decision you made, including
+  each row you removed and how you read each odd value
+Do not change messy-sheet.xlsx. If a value is unclear, leave it empty
+and list it, rather than guess.
+```
+
+**What to look for.** The agent will probably write a short script in Python or R. To read Excel files it may need to install a package, and it will ask first. That is normal: approve it. If it asks which language you prefer and you have no preference, say Python.
+
+When it is done, read `decisions.md` line by line. For each decision, ask yourself: would I have decided the same? Pay special attention to rows that were removed and to values that were changed.
+
+#### Check the result
+
+Open `clean_weights.csv` in Excel or LibreOffice. (If the weights look wrong, for example 241 instead of 24.1, that is your spreadsheet program's regional setting, not the agent. Import it with **Data → From Text/CSV** and choose comma as separator and point as decimal, or ask the agent to also save the table as an `.xlsx` file.)
+
+1. **Rows.** The sheet's own note says "Total animals: 48". The clean table must have **48 rows** below the header: one per mouse, with `B1-01` to `B1-24` and `B2-01` to `B2-24`.
+2. **Categories.** Turn on the filter (Data → Filter) and open the drop-down of each column:
+   - `sex` has only **F** and **M**: **26 F** and **22 M**.
+   - `group` has only control, low and high, **16 mice each**.
+   - `dose_mg_per_kg` has only **0, 5 and 20**, matching the groups.
+   - `date_weighed` has exactly **two dates**: **2024-03-12** and **2024-04-09**, 24 mice each. A third date means a day and month got swapped.
+3. **Total.** Select the `weight_g` column. The status bar shows the average: it must be **23.27**, the same as the Mean row in the original sheet. **One** weight is empty (`B2-11`, not weighed because the mouse was sick).
+4. **Spot check.** Pick three mice at random, find them in the original sheet and compare every column. Some to try: `B1-05` (male, low, 5, 2024-03-12, 24.1), `B1-14` (female, control, 0, 2024-03-12, 17.5), `B1-19` (male, low, 5, 2024-03-12, 23.7, re-weighed).
+5. **Rerun.** Ask the agent: "Delete clean_weights.csv and run the script again. Is the new file identical to the old one?" A script you cannot rerun is not much use next month.
+
+**Now correct something.** In many sessions at least one check fails the first time, often the dates. If one of yours fails, say exactly what is wrong. For example:
+
+```text
+Row B2-17 has date 2024-09-04. Both weighings were in March and April
+2024, so this must be 9 April; the sheet has it month first. Fix the
+script, rerun it, and add this decision to decisions.md.
+```
+
+If every check passed, try a change of mind instead: "Put the comment about re-weighing in a separate column `reweighed` (yes/no). Update the script and decisions.md." Then check that the rest of the table did not change.
+
+::: {.callout-note collapse="true" title="Expected outcome for job 2"}
+What had to happen to get from the sheet to 48 clean rows:
+
+- Rows 1 to 3 are headers (two of them with merged cells); row 3 holds the column names.
+- Below them are 55 rows: 48 mice, **1 duplicated row** (`B1-15` twice), **4 blank rows**, **1 note row** ("Batch 2 - arrived 2 April…") and **1 Mean row**.
+- Two IDs need tidying: `B1-07 ` (trailing space) and `b2-3` (meaning `B2-03`).
+- Sex is written as Female, female, F, f, `F ` (with a space), Male, male, M and m.
+- Group is written as Control, control, ctrl, Ctrl, Low dose, low dose, LD, low, High dose, high-dose, HD and High.
+- Dose has units in some cells (`5 mg/kg`, `5mg/kg`) and `-` or `none` for control animals, which means 0.
+- Weights have `g` in some cells, decimal commas in others (`24,1`), one `23.7 (re-weighed)` and one `not weighed (sick)`.
+- Dates are real Excel dates in some cells and text in others (`12/03/2024`, `12.3.2024`, `12 March 2024`). One cell, `B2-17`, is written month first: `04/09/2024` means 9 April 2024.
+
+A full answer table is in [messy-sheet-answer.csv](data/messy-sheet-answer.csv) (without the comment column). You can ask the agent to compare your table with it, but do your own checks first.
+:::
+
+### Job 3: summarise six PDFs into one table
+
+Make a copy of the `reports` folder (for example `reports-work`) and start the agent in it.
+
+```text
+This folder holds six short PDF reports. Make one table,
+reports_summary.csv, with one row per report and these columns:
+file, title, authors, date (YYYY-MM-DD), main_finding, one_line_summary,
+and the page number where you found the title, the date and the
+main finding.
+
+Use only what is written in the reports. If something is missing or
+unclear, write "not stated" and tell me; do not fill it in.
+At the end, list every value you were unsure about.
+```
+
+**What to look for.** Claude Code can usually read PDFs directly. Codex usually runs a small program to extract the text, and may ask to install one. Either way, check the list of values the agent was unsure about at the end. A good answer mentions at least the date of the peer-feedback report and the date of the barley report.
+
+#### Check the result
+
+1. **Rows.** Six rows, one per PDF, no PDF missing.
+2. **Spot check three cells.** Roll a die (or pick at random) for three cells. Open the PDF at the page the table names. Is the value there, and is it right?
+3. **The trap.** Look at the main finding for the peer-feedback report. Is it this study's own result, or the earlier pilot mentioned in the background?
+4. **Dates.** Check the three hard ones yourself: the peer-feedback date (`03/09/2025`), the barley report (only a month) and the corrosion report (no date on page 1).
+5. **Correct.** If something is wrong, say what is wrong, with the page: "The date of the corrosion report is on page 2: 'Submitted 3 February 2025'. Fix the row and the page column."
+
+::: {.callout-note collapse="true" title="Expected outcome for job 3"}
+| File | Title (p. 1) | Authors | Date (page) | Main finding (page) |
+|---|---|---|---|---|
+| `report-flipped-chemistry.pdf` | Flipped classroom pilot in first-year chemistry | Lena Bergqvist, Omar Haddad | 2025-03-14 (p. 1) | Exam pass rate rose from 61% (2024, 142 students) to 72% (2025, 138 students); attendance fell (p. 2) |
+| `report-soil-sensors.pdf` | Soil moisture sensors in three urban allotments | Priya Natarajan | 2025-06-30 (p. 1) | Low-cost sensors read 4.1 percentage points higher than the gravimetric reference; error grew above about 35% water content (p. 2) |
+| `report-peer-feedback.pdf` | Peer feedback on lab reports in a molecular biology course | Henrik Sjöström, Maja Lindgren, Tomás Ruiz | 2025-09-03 (p. 1) | No clear difference in report grades (mean 3.9 with vs 3.8 without peer feedback); students valued it (p. 2) |
+| `report-barley-drought.pdf` | Drought tolerance of six barley lines in a greenhouse trial | Aino Virtanen | November 2024: no day stated (p. 1) | Line HB-17 kept 82% of its control biomass; the others 55-68% (p. 3, table) |
+| `report-hand-hygiene.pdf` | Hand-hygiene reminders on a surgical ward: a before-and-after audit | Grace Okafor, Daniel Weiss | 2025-01-22 (p. 1) | Compliance rose from 64% (410 opportunities) to 79% (395 opportunities) (p. 1, key finding box) |
+| `report-printed-steel.pdf` | Corrosion of 3D-printed stainless steel coupons in seawater | Mateo Fernández | 2025-02-03 (p. 2, "Submitted") | Printed coupons lost about twice the mass of machined ones (0.42 vs 0.20 mg/cm²); heat treatment cut this to 0.27 (p. 2) |
+
+Notes:
+
+- **Peer feedback, date.** `03/09/2025` can be 3 September or 9 March. The report says it was written "in the first week of the autumn term", after a course in spring 2025, so 3 September is right. A good agent flags this.
+- **Peer feedback, finding.** "Improved report grades by a full grade step" is another department's pilot (p. 1), not this study's result.
+- **Barley, date.** Only a month is given. "2024-11" or "not stated" (with a note) are both fine. "2024-11-01" is an invented day.
+- **Corrosion, date.** Page 1 has no date. The table should say page 2.
+- The one-line summaries will differ from person to person. Check that each one matches the report's own conclusion.
+:::
+
+## Try it on something of yours
+
+You choose your own project at the end of Part 1, after *Privacy, ethics and safety*. Until then, only use files that are **already public and contain no personal data**.
+
+If you want to try now, one safe option is a folder with 4-6 of **your own published papers** (open-access PDFs). Use the job 3 prompt to make a summary table, then check it: you know these papers better than anyone. Do not use student data, patient data, unpublished manuscripts, reviews, emails or anything from a shared drive.
+
+## What you should have now
+
+- `messy-folder-work`: an organised folder and a **rename-log.csv** that can undo it.
+- A folder with **clean_weights.csv**, the **cleaning script** and **decisions.md**.
+- **reports_summary.csv** with page references.
+- A record of your checks: which counts, totals and spot checks you did, and what they showed.
+- Your **what went wrong** list: every surprise, misread date or invented value. Bring it to the next unit, *How LLMs and agents work, and how they fail*, where we explain why these things happen.
+- The five-step checklist: **copy, describe, record, check, correct**. You will use it in every unit from now on.

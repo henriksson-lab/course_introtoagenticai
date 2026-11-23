@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#ffffff"/>
+  <rect x="30" y="30" width="62" height="50" rx="6" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <text x="39" y="64" font-size="26" fill="#2a7f8f">The</text>
+  <rect x="100" y="30" width="105" height="50" rx="6" fill="#eeeaf5" stroke="#6b4fa0" stroke-width="1.5"/>
+  <text x="109" y="64" font-size="26" fill="#6b4fa0"><tspan fill="#aaaaaa">␣</tspan>model</text>
+  <rect x="213" y="30" width="105" height="50" rx="6" fill="#f5efdd" stroke="#8a6a12" stroke-width="1.5"/>
+  <text x="222" y="64" font-size="26" fill="#8a6a12"><tspan fill="#aaaaaa">␣</tspan>never</text>
+  <rect x="326" y="30" width="91" height="50" rx="6" fill="#f6e4e8" stroke="#a8324a" stroke-width="1.5"/>
+  <text x="335" y="64" font-size="26" fill="#a8324a"><tspan fill="#aaaaaa">␣</tspan>sees</text>
+  <rect x="425" y="30" width="76" height="50" rx="6" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <text x="434" y="64" font-size="26" fill="#2a7f8f"><tspan fill="#aaaaaa">␣</tspan>the</text>
+  <rect x="509" y="30" width="134" height="50" rx="6" fill="#eeeaf5" stroke="#6b4fa0" stroke-width="1.5"/>
+  <text x="518" y="64" font-size="26" fill="#6b4fa0"><tspan fill="#aaaaaa">␣</tspan>letters</text>
+  <rect x="652" y="30" width="62" height="50" rx="6" fill="#f5efdd" stroke="#8a6a12" stroke-width="1.5"/>
+  <text x="661" y="64" font-size="26" fill="#8a6a12"><tspan fill="#aaaaaa">␣</tspan>in</text>
+  <rect x="30" y="102" width="47" height="50" rx="6" fill="#f6e4e8" stroke="#a8324a" stroke-width="1.5"/>
+  <text x="39" y="136" font-size="26" fill="#a8324a"><tspan fill="#aaaaaa">␣</tspan>“</text>
+  <rect x="85" y="102" width="62" height="50" rx="6" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <text x="94" y="136" font-size="26" fill="#2a7f8f">str</text>
+  <rect x="155" y="102" width="47" height="50" rx="6" fill="#eeeaf5" stroke="#6b4fa0" stroke-width="1.5"/>
+  <text x="164" y="136" font-size="26" fill="#6b4fa0">aw</text>
+  <rect x="210" y="102" width="91" height="50" rx="6" fill="#f5efdd" stroke="#8a6a12" stroke-width="1.5"/>
+  <text x="219" y="136" font-size="26" fill="#8a6a12">berry</text>
+  <rect x="309" y="102" width="34" height="50" rx="6" fill="#f6e4e8" stroke="#a8324a" stroke-width="1.5"/>
+  <text x="318" y="136" font-size="26" fill="#a8324a">”</text>
+  <rect x="351" y="102" width="34" height="50" rx="6" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <text x="360" y="136" font-size="26" fill="#2a7f8f">:</text>
+  <rect x="393" y="102" width="62" height="50" rx="6" fill="#eeeaf5" stroke="#6b4fa0" stroke-width="1.5"/>
+  <text x="402" y="136" font-size="26" fill="#6b4fa0"><tspan fill="#aaaaaa">␣</tspan>it</text>
+  <rect x="462" y="102" width="91" height="50" rx="6" fill="#f5efdd" stroke="#8a6a12" stroke-width="1.5"/>
+  <text x="471" y="136" font-size="26" fill="#8a6a12"><tspan fill="#aaaaaa">␣</tspan>sees</text>
+  <rect x="30" y="174" width="47" height="50" rx="6" fill="#f6e4e8" stroke="#a8324a" stroke-width="1.5"/>
+  <text x="39" y="208" font-size="26" fill="#a8324a"><tspan fill="#aaaaaa">␣</tspan>3</text>
+  <rect x="85" y="174" width="120" height="50" rx="6" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <text x="94" y="208" font-size="26" fill="#2a7f8f"><tspan fill="#aaaaaa">␣</tspan>tokens</text>
+  <rect x="213" y="174" width="34" height="50" rx="6" fill="#eeeaf5" stroke="#6b4fa0" stroke-width="1.5"/>
+  <text x="222" y="208" font-size="26" fill="#6b4fa0">.</text>
+  <rect x="255" y="174" width="134" height="50" rx="6" fill="#f5efdd" stroke="#8a6a12" stroke-width="1.5"/>
+  <text x="264" y="208" font-size="26" fill="#8a6a12"><tspan fill="#aaaaaa">␣</tspan>Numbers</text>
+  <rect x="398" y="174" width="105" height="50" rx="6" fill="#f6e4e8" stroke="#a8324a" stroke-width="1.5"/>
+  <text x="407" y="208" font-size="26" fill="#a8324a"><tspan fill="#aaaaaa">␣</tspan>split</text>
+  <rect x="511" y="174" width="76" height="50" rx="6" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <text x="520" y="208" font-size="26" fill="#2a7f8f"><tspan fill="#aaaaaa">␣</tspan>too</text>
+  <rect x="595" y="174" width="34" height="50" rx="6" fill="#eeeaf5" stroke="#6b4fa0" stroke-width="1.5"/>
+  <text x="604" y="208" font-size="26" fill="#6b4fa0">:</text>
+  <rect x="637" y="174" width="47" height="50" rx="6" fill="#f5efdd" stroke="#8a6a12" stroke-width="1.5"/>
+  <text x="646" y="208" font-size="26" fill="#8a6a12"><tspan fill="#aaaaaa">␣</tspan>1</text>
+  <rect x="692" y="174" width="34" height="50" rx="6" fill="#f6e4e8" stroke="#a8324a" stroke-width="1.5"/>
+  <text x="701" y="208" font-size="26" fill="#a8324a">,</text>
+  <rect x="734" y="174" width="62" height="50" rx="6" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="1.5"/>
+  <text x="743" y="208" font-size="26" fill="#2a7f8f">234</text>
+  <rect x="804" y="174" width="34" height="50" rx="6" fill="#eeeaf5" stroke="#6b4fa0" stroke-width="1.5"/>
+  <text x="813" y="208" font-size="26" fill="#6b4fa0">.</text>
+  <text x="30" y="276" font-size="20" fill="#333">One sentence, 26 tokens. <tspan fill="#aaaaaa">␣</tspan> marks a space: it is usually part of the next token.</text>
+  <text x="30" y="308" font-size="20" fill="#333">Inside the model each token is just a number, e.g. “berry” → 15717.</text>
+  <text x="30" y="340" font-size="20" fill="#333">Rule of thumb for English: 100 tokens ≈ 75 words. Other languages often need more.</text>
+  <text x="985" y="392" font-size="14" fill="#999" text-anchor="end">illustrative: every model splits text in its own way</text>
+</svg>

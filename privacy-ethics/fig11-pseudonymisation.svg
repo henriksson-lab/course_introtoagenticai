@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" width="1000" height="430" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="a" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+  </defs>
+  <rect width="1000" height="430" fill="#ffffff"/>
+  <!-- original -->
+  <text x="150" y="36" text-anchor="middle" font-size="18" font-weight="bold" fill="#1b2a3a">Original</text>
+  <rect x="40" y="50" width="220" height="190" rx="8" fill="#f4f7fa" stroke="#9aa8b5"/>
+  <g font-size="16" fill="#1b2a3a">
+    <text x="58" y="80" font-weight="bold">Name</text><text x="190" y="80" font-weight="bold">Total</text>
+    <text x="58" y="116">Anna Exempel</text><text x="200" y="116">14</text>
+    <text x="58" y="148">Bo Testsson</text><text x="200" y="148">12</text>
+    <text x="58" y="180">Cleo Prov</text><text x="200" y="180">18</text>
+    <text x="58" y="212">Dana Fiktiv</text><text x="204" y="212">7</text>
+  </g>
+  <line x1="268" y1="145" x2="372" y2="145" stroke="#1b2a3a" stroke-width="2" marker-end="url(#a)"/>
+  <text x="320" y="130" text-anchor="middle" font-size="15" fill="#3a4a5a">replace</text>
+  <text x="320" y="170" text-anchor="middle" font-size="15" fill="#3a4a5a">by codes</text>
+  <!-- pseudonymised -->
+  <text x="490" y="36" text-anchor="middle" font-size="18" font-weight="bold" fill="#8a6a12">Pseudonymised</text>
+  <rect x="380" y="50" width="220" height="190" rx="8" fill="#faf5e8" stroke="#8a6a12" stroke-width="2"/>
+  <g font-size="16" fill="#1b2a3a">
+    <text x="398" y="80" font-weight="bold">Code</text><text x="530" y="80" font-weight="bold">Total</text>
+    <text x="398" y="116">S001</text><text x="540" y="116">14</text>
+    <text x="398" y="148">S002</text><text x="540" y="148">12</text>
+    <text x="398" y="180">S003</text><text x="540" y="180">18</text>
+    <text x="398" y="212">S004</text><text x="544" y="212">7</text>
+  </g>
+  <!-- key -->
+  <text x="840" y="36" text-anchor="middle" font-size="18" font-weight="bold" fill="#a8324a">Key file</text>
+  <rect x="720" y="50" width="240" height="190" rx="8" fill="#f8eef0" stroke="#a8324a" stroke-width="2" stroke-dasharray="7 4"/>
+  <g font-size="16" fill="#1b2a3a">
+    <text x="738" y="80" font-weight="bold">Code</text><text x="820" y="80" font-weight="bold">Name</text>
+    <text x="738" y="116">S001</text><text x="820" y="116">Anna Exempel</text>
+    <text x="738" y="148">S002</text><text x="820" y="148">Bo Testsson</text>
+    <text x="738" y="180">S003</text><text x="820" y="180">Cleo Prov</text>
+    <text x="738" y="212">S004</text><text x="820" y="212">Dana Fiktiv</text>
+  </g>
+  <text x="840" y="266" text-anchor="middle" font-size="16" fill="#a8324a">stored separately,</text>
+  <text x="840" y="288" text-anchor="middle" font-size="16" fill="#a8324a">never near the agent</text>
+  <!-- warnings -->
+  <rect x="40" y="320" width="920" height="96" rx="8" fill="#f4f7fa" stroke="#c9d3dd"/>
+  <text x="60" y="352" font-size="17" fill="#1b2a3a">Pseudonymised data is <tspan font-weight="bold">still personal data</tspan> under GDPR: the key reverses it.</text>
+  <text x="60" y="380" font-size="17" fill="#1b2a3a">Rare values give people away: the only 60-year-old in the class, a small village, a rare diagnosis.</text>
+  <text x="60" y="406" font-size="17" fill="#1b2a3a">Do the replacement yourself, before the agent sees the file.</text>
+</svg>

@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="1000" height="360" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <rect width="1000" height="360" fill="#fff"/>
+  <text x="20" y="40" font-size="20" font-weight="bold" fill="#333">Today</text>
+  <text x="20" y="220" font-size="20" font-weight="bold" fill="#333">Next month</text>
+  <!-- row 1 -->
+  <rect x="140" y="60" width="200" height="80" rx="8" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="240" y="96" font-size="19" text-anchor="middle" fill="#333">messy-sheet.xlsx</text>
+  <text x="240" y="122" font-size="16" text-anchor="middle" fill="#666">March and April</text>
+  <rect x="660" y="60" width="200" height="80" rx="8" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="760" y="96" font-size="19" text-anchor="middle" fill="#333">clean_weights.csv</text>
+  <text x="760" y="122" font-size="16" text-anchor="middle" fill="#666">48 rows</text>
+  <!-- row 2 -->
+  <rect x="140" y="240" width="200" height="80" rx="8" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="240" y="276" font-size="19" text-anchor="middle" fill="#333">new-sheet.xlsx</text>
+  <text x="240" y="302" font-size="16" text-anchor="middle" fill="#666">same habits, new mice</text>
+  <rect x="660" y="240" width="200" height="80" rx="8" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="760" y="276" font-size="19" text-anchor="middle" fill="#333">clean_weights.csv</text>
+  <text x="760" y="302" font-size="16" text-anchor="middle" fill="#666">in seconds</text>
+  <!-- script in middle -->
+  <rect x="410" y="140" width="180" height="100" rx="10" fill="#f6f1e3" stroke="#8a6a12" stroke-width="2.5"/>
+  <text x="500" y="180" font-size="20" font-weight="bold" text-anchor="middle" fill="#8a6a12">the script</text>
+  <text x="500" y="208" font-size="16" text-anchor="middle" fill="#333">every decision</text>
+  <text x="500" y="228" font-size="16" text-anchor="middle" fill="#333">written down</text>
+  <g stroke="#555" stroke-width="2.5" fill="none" marker-end="url(#ar)">
+    <path d="M345,100 L440,100 L470,135"/>
+    <path d="M530,135 L560,100 L652,100"/>
+    <path d="M345,280 L440,280 L470,245"/>
+    <path d="M530,245 L560,280 L652,280"/>
+  </g>
+</svg>

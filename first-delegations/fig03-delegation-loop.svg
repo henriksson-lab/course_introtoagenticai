@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#555"/></marker>
+  </defs>
+  <rect width="1000" height="520" fill="#fff"/>
+  <!-- six boxes around an ellipse -->
+  <g font-size="20" text-anchor="middle">
+    <rect x="60" y="40" width="240" height="90" rx="12" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="180" y="78" font-weight="bold" fill="#2a7f8f">1. Copy</text>
+    <text x="180" y="106" font-size="17" fill="#333">work in a copy</text>
+
+    <rect x="380" y="40" width="240" height="90" rx="12" fill="#e3f0f2" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="500" y="78" font-weight="bold" fill="#2a7f8f">2. Describe</text>
+    <text x="500" y="106" font-size="17" fill="#333">the result, not the steps</text>
+
+    <rect x="700" y="40" width="240" height="90" rx="12" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+    <text x="820" y="78" font-weight="bold" fill="#6b4fa0">3. Agent works</text>
+    <text x="820" y="106" font-size="17" fill="#333">asks before it acts</text>
+
+    <rect x="700" y="330" width="240" height="90" rx="12" fill="#f1edf7" stroke="#6b4fa0" stroke-width="2"/>
+    <text x="820" y="368" font-weight="bold" fill="#6b4fa0">4. Record</text>
+    <text x="820" y="396" font-size="17" fill="#333">log, decisions, assumptions</text>
+
+    <rect x="380" y="330" width="240" height="90" rx="12" fill="#f6f1e3" stroke="#8a6a12" stroke-width="2"/>
+    <text x="500" y="368" font-weight="bold" fill="#8a6a12">5. Check</text>
+    <text x="500" y="396" font-size="17" fill="#333">counts, totals, 3 at random</text>
+
+    <rect x="60" y="330" width="240" height="90" rx="12" fill="#f8e9ec" stroke="#a8324a" stroke-width="2"/>
+    <text x="180" y="368" font-weight="bold" fill="#a8324a">6. Correct</text>
+    <text x="180" y="396" font-size="17" fill="#333">say what is wrong</text>
+  </g>
+  <g stroke="#555" stroke-width="2.5" fill="none" marker-end="url(#ar)">
+    <line x1="305" y1="85" x2="372" y2="85"/>
+    <line x1="625" y1="85" x2="692" y2="85"/>
+    <line x1="820" y1="135" x2="820" y2="322"/>
+    <line x1="695" y1="375" x2="628" y2="375"/>
+    <line x1="375" y1="375" x2="308" y2="375"/>
+    <path d="M300,345 C 420,240 600,240 712,140"/>
+  </g>
+  <text x="590" y="250" font-size="17" fill="#a8324a" font-style="italic">not happy:</text><text x="590" y="272" font-size="17" fill="#a8324a" font-style="italic">back to the agent</text>
+  <!-- done branch -->
+  <line x1="500" y1="425" x2="500" y2="470" stroke="#2a7f8f" stroke-width="2.5" marker-end="url(#ar)"/>
+  <text x="515" y="500" font-size="18" fill="#2a7f8f" font-weight="bold">checks pass: keep the result</text>
+</svg>

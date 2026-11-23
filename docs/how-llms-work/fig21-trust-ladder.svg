@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#ffffff"/>
+  <!-- rails -->
+  <line x1="60" y1="20" x2="60" y2="450" stroke="#666" stroke-width="6"/>
+  <line x1="180" y1="20" x2="180" y2="450" stroke="#666" stroke-width="6"/>
+  <g stroke="#666" stroke-width="6">
+    <line x1="60" y1="60" x2="180" y2="60"/><line x1="60" y1="150" x2="180" y2="150"/>
+    <line x1="60" y1="240" x2="180" y2="240"/><line x1="60" y1="330" x2="180" y2="330"/>
+    <line x1="60" y1="420" x2="180" y2="420"/>
+  </g>
+  <text x="120" y="40" font-size="16" text-anchor="middle" fill="#2a7f8f" font-weight="bold">trust more</text>
+  <text x="120" y="468" font-size="16" text-anchor="middle" fill="#a8324a" font-weight="bold">trust less</text>
+  <g font-size="19">
+    <rect x="220" y="32" width="760" height="58" rx="8" fill="#2a7f8f"/>
+    <text x="240" y="68" fill="#fff">Ran code, and the result matches a known answer you checked</text>
+    <rect x="220" y="122" width="760" height="58" rx="8" fill="#5f9fab"/>
+    <text x="240" y="158" fill="#fff">Ran code that stays on disk: you can read it and rerun it</text>
+    <rect x="220" y="212" width="760" height="58" rx="8" fill="#9a8fb8"/>
+    <text x="240" y="248" fill="#fff">Quotes a file or web page, with a location you can open</text>
+    <rect x="220" y="302" width="760" height="58" rx="8" fill="#b96a7c"/>
+    <text x="240" y="338" fill="#fff">Says it did something ("I checked all rows") without showing it</text>
+    <rect x="220" y="392" width="760" height="58" rx="8" fill="#a8324a"/>
+    <text x="240" y="428" fill="#fff">Answers from memory: references, numbers, versions, facts</text>
+  </g>
+</svg>

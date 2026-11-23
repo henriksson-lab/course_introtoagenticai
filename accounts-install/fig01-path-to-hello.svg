@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 230" width="1000" height="230" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+    <marker id="arwo" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#e6b84f"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="230" fill="#ffffff"/>
+  <rect x="30.0" y="40" width="205" height="150" rx="12" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2.5"/>
+  <circle cx="60.0" cy="72" r="18" fill="#2a7f8f"/>
+  <text x="60.0" y="79" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold" xml:space="preserve">1</text>
+  <text x="90.0" y="80" font-size="26" fill="#2a7f8f" text-anchor="start" font-weight="bold" xml:space="preserve">Account</text>
+  <text x="132.5" y="128.0" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">a plan that</text>
+  <text x="132.5" y="152.7" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">includes the agent</text>
+  <line x1="239.0" y1="115" x2="269.0" y2="115" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <rect x="275.0" y="40" width="205" height="150" rx="12" fill="#eee9f6" stroke="#6b4fa0" stroke-width="2.5"/>
+  <circle cx="305.0" cy="72" r="18" fill="#6b4fa0"/>
+  <text x="305.0" y="79" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold" xml:space="preserve">2</text>
+  <text x="335.0" y="80" font-size="26" fill="#6b4fa0" text-anchor="start" font-weight="bold" xml:space="preserve">Install</text>
+  <text x="377.5" y="128.0" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">one line pasted</text>
+  <text x="377.5" y="152.7" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">into a terminal</text>
+  <line x1="484.0" y1="115" x2="514.0" y2="115" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <rect x="520.0" y="40" width="205" height="150" rx="12" fill="#f5efdf" stroke="#8a6a12" stroke-width="2.5"/>
+  <circle cx="550.0" cy="72" r="18" fill="#8a6a12"/>
+  <text x="550.0" y="79" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold" xml:space="preserve">3</text>
+  <text x="580.0" y="80" font-size="26" fill="#8a6a12" text-anchor="start" font-weight="bold" xml:space="preserve">Sign in</text>
+  <text x="622.5" y="128.0" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">once, through</text>
+  <text x="622.5" y="152.7" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">the browser</text>
+  <line x1="729.0" y1="115" x2="759.0" y2="115" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <rect x="765.0" y="40" width="205" height="150" rx="12" fill="#f7e6ea" stroke="#a8324a" stroke-width="2.5"/>
+  <circle cx="795.0" cy="72" r="18" fill="#a8324a"/>
+  <text x="795.0" y="79" font-size="20" fill="#ffffff" text-anchor="middle" font-weight="bold" xml:space="preserve">4</text>
+  <text x="825.0" y="80" font-size="26" fill="#a8324a" text-anchor="start" font-weight="bold" xml:space="preserve">Hello</text>
+  <text x="867.5" y="128.0" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">first test in an</text>
+  <text x="867.5" y="152.7" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">empty folder</text>
+  <text x="500.0" y="222" font-size="18" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">Each step takes minutes. A failure in any one of them stops everything after it.</text>
+</svg>

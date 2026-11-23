@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 340" width="1000" height="340" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+    <marker id="arwo" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#e6b84f"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="340" fill="#ffffff"/>
+  <rect x="20" y="30" width="360" height="230" rx="10" fill="#1e2630" stroke="#3a4654" stroke-width="1.5"/>
+  <rect x="20" y="30" width="360" height="34" rx="10" fill="#2d3743"/>
+  <rect x="20" y="54" width="360" height="10" fill="#2d3743"/>
+  <circle cx="40" cy="47" r="6.5" fill="#e0605a"/>
+  <circle cx="62" cy="47" r="6.5" fill="#e6b84f"/>
+  <circle cx="84" cy="47" r="6.5" fill="#5fbf6a"/>
+  <text x="200.0" y="53" font-size="15" fill="#b8c2cc" text-anchor="middle" font-weight="normal" xml:space="preserve">Terminal</text>
+  <text x="38" y="92" font-size="16" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">$ claude</text>
+  <text x="38" y="118" font-size="16" fill="#b8c2cc" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">Select login method:</text>
+  <text x="38" y="144" font-size="16" fill="#8fd0dc" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">❯ 1. Claude account</text>
+  <text x="38" y="170" font-size="16" fill="#8fd0dc" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">     with subscription</text>
+  <text x="38" y="196" font-size="16" fill="#b8c2cc" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  2. Console account</text>
+  <text x="38" y="222" font-size="16" fill="#b8c2cc" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">     (API billing)</text>
+  <rect x="560" y="30" width="420" height="230" rx="10" fill="#ffffff" stroke="#aab5bf" stroke-width="2"/>
+  <rect x="560" y="30" width="420" height="40" rx="10" fill="#f4f7fa"/>
+  <rect x="560" y="58" width="420" height="12" fill="#f4f7fa"/>
+  <rect x="580" y="40" width="380" height="22" rx="11" fill="#ffffff" stroke="#c9d3dd" stroke-width="1"/>
+  <text x="595" y="57" font-size="14" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">claude.ai / chatgpt.com</text>
+  <text x="770" y="110" font-size="24" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">Log in</text>
+  <rect x="640" y="130" width="260" height="36" rx="6" fill="#f4f7fa" stroke="#c9d3dd" stroke-width="1.5"/>
+  <text x="655" y="154" font-size="16" fill="#5a6670" text-anchor="start" font-weight="normal" xml:space="preserve">you@university.se</text>
+  <rect x="670" y="185" width="200" height="44" rx="8" fill="#2a7f8f" stroke="#2a7f8f" stroke-width="1.5"/>
+  <text x="770" y="214" font-size="19" fill="#ffffff" text-anchor="middle" font-weight="bold" xml:space="preserve">Authorize</text>
+  <line x1="385" y1="110" x2="552" y2="110" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#arw)"/>
+  <text x="468" y="98" font-size="16" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">opens</text>
+  <path d="M640,268 C600,320 440,320 400,268" fill="none" stroke="#2a7f8f" stroke-width="2.5" marker-end="url(#arwt)"/>
+  <text x="520" y="330" font-size="17" fill="#2a7f8f" text-anchor="middle" font-weight="bold" xml:space="preserve">signed in: back to the terminal</text>
+  <text x="990" y="15" font-size="14" fill="#9aa4ad" text-anchor="end" font-weight="normal" font-style="italic" xml:space="preserve">illustrative</text>
+</svg>

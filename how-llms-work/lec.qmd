@@ -1,0 +1,387 @@
+---
+title: "How LLMs and agents work, and how they fail"
+subtitle: "Part 1: Getting started"
+author: "Introduction to agentic AI"
+format:
+  revealjs:
+    theme: [simple, ../theme.scss]
+    slide-number: c/t
+    width: 1280
+    height: 720
+    transition: none
+    history: false
+    highlight-style: github
+    code-overflow: wrap
+    code-line-numbers: false
+    incremental: false
+    chalkboard: false
+    menu: true
+---
+
+## About this lecture
+
+In *First delegations* the agent sorted a folder, cleaned a spreadsheet and summarised PDFs. Most of it went well, and some of it went subtly wrong. To know **when to trust the agent and how to check it**, you need a working picture of what is going on inside.
+
+- An **LLM** is a model trained to **continue text, one token at a time**. It produces plausible text, which is not the same as true text.
+- Its **context window** is its working memory. What is not in the conversation or in the files it read does not exist for it.
+- An **agent** is an LLM with **tools in a loop**: read, write, run, search. It can check its own work by running it.
+- It fails in **recognisable ways**, and each one has a matching defence.
+
+This is a **concept** unit with no maths. Writing good task descriptions comes in *Delegating well*; notes files that survive between sessions come in *Organising a project for an agent*.
+
+::: notes
+Start from what they did last time. Everyone in the room has now watched an agent work on real files, and most of them will have noticed at least one thing that was not quite right: a file in the wrong folder, a row missing, a number that looked odd. Today we explain why that happens. The aim is not to make anyone an expert on neural networks. The aim is a mental model good enough to predict where the agent will be reliable and where it will not, so that checking becomes targeted rather than anxious. We will keep returning to one idea: trust what was run and can be rerun, and be suspicious of what was produced from memory. The exercise afterwards is called "catch the agent out" and you will deliberately provoke the failures we discuss.
+:::
+
+## Last time, all three jobs looked fine; not all of them were
+
+![](fig01-three-jobs.svg){width="78%" fig-align="center"}
+
+Each result **looked** finished and was described with confidence. The problems were only visible to someone who **checked**.
+
+::: notes
+These are the three jobs from First delegations, and the kind of problem that turned up in at least some of your sessions. In the folder job, a couple of files ended up in a folder that made sense to the agent but not to you. In the spreadsheet job, rows that the cleaning script could not parse were dropped, and the summary at the end did not mention it. In the PDF job, one number in the summary table was not in the paper at all. Notice what these have in common: in every case the agent's final message sounded equally sure of itself. Confidence in the wording tells you nothing about correctness. By the end of this lecture you should be able to say, for each of these three, why it happened and what check would have caught it. Ask the room: who found something like this? Collect two or three examples; we will come back to them.
+:::
+
+## An LLM is a model trained to continue text
+
+![](fig02-next-token.svg){width="70%" fig-align="center"}
+
+- Given the text so far, it scores **every possible next token** and picks one.
+- It adds that token to the text and repeats, **one token at a time**, until the answer is done.
+- An entire answer, a whole script, a summary of a PDF: all made this way.
+
+::: notes
+This is the single most important idea of the lecture. A large language model is, at its core, a function that takes the text so far and returns a score for every possible next piece of text. The tool picks one piece, usually a likely one, appends it, and asks again. That is it. There is no separate database of facts being looked up and no calculator being consulted, unless the agent explicitly uses a tool, which we will come to. When you read a long, well-structured answer, every word was produced this way, left to right, without the model going back to revise. This explains a lot of what follows: the model is very good at producing text that fits, and "fits" is close to "true" for common, well-documented facts and far from it for rare ones.
+:::
+
+## The model reads tokens, not letters or words
+
+![](fig03-tokens.svg){width="85%" fig-align="center"}
+
+::: notes
+The pieces the model works with are called tokens. A token is usually a common word, a part of a word, or a punctuation mark, and the space before a word is usually glued to it. The split shown here is illustrative; every model family splits text a little differently. Why does this matter for you? First, it explains a classic failure: asked how many r's there are in "strawberry", models have often got it wrong, because they never see the individual letters, only three chunks. Counting letters, characters, or rows by eye is the same kind of task. Second, numbers are split into pieces too, which is part of why arithmetic done "in the head" is unreliable. Third, lengths and limits are measured in tokens, not words: as a rule of thumb, a hundred tokens is roughly seventy-five English words, and other languages, Swedish included, often need more tokens for the same text.
+:::
+
+## Training: first a lot of text, then instructions and tools
+
+![](fig04-training.svg){width="85%" fig-align="center"}
+
+- **Stage 1** gives it language and a broad, patchy knowledge of the world.
+- **Stages 2 and 3** make it a helpful assistant that can use tools, and also shape its habits, good and bad.
+
+::: notes
+How does the model get good at predicting the next token? In the first stage it is trained on a very large amount of text: web pages, books, scientific papers, code, forums. Simply by learning to predict the next token in all of that, it picks up grammar, facts, styles of reasoning, programming languages and the conventions of many fields. That knowledge is broad but patchy: well-documented topics are covered many times over, niche topics barely at all. In the second stage it is trained further, on examples of good answers and on people's ratings of answers, so that it behaves like a helpful assistant instead of just continuing text. In the third stage, for agent models, it practises tasks with tools: writing code, running it, reading the errors, fixing them. Keep in mind that underneath all three stages it is still a next-token predictor. And the second stage has a side effect we will meet later: if people rate agreeable answers highly, the model learns to be agreeable.
+:::
+
+## Its knowledge stops at a cut-off date
+
+![](fig05-cutoff.svg){width="80%" fig-align="center"}
+
+The model does not know what happened after its training data was collected, and it **does not always know that it does not know**.
+
+::: notes
+Training data is collected up to some date, the knowledge cut-off. Then the model is tested and released, and then you use it, possibly a year or more later. Anything that changed in that gap is invisible to it: new versions of R packages and Python libraries, functions that were renamed or removed, new guidelines, new papers. The model will still answer confidently, using the world as it was. This is one of the main reasons agents are more useful than plain chat for technical work: an agent can check which version is actually installed on your computer, read the error message when an old function fails, and search the web for the current documentation. When the answer depends on something recent, ask it to look it up rather than recall it.
+:::
+
+## The same prompt can give different answers
+
+![](fig06-sampling.svg){width="75%" fig-align="center"}
+
+- The next token is **picked with some randomness**, not always the single most likely one.
+- One different early choice changes everything that follows.
+- So: running twice is a cheap test. **Where two runs disagree, at least one is wrong** or the question is open.
+
+::: notes
+When the tool picks the next token it usually does not take the single most likely one every time; it samples, with a bit of randomness. That makes the text more natural, but it also means that the same prompt in two fresh sessions can give different answers. For a course title that is harmless, even useful. For a number, a list of problems in a data file, or a decision about which rows to keep, it is a signal. If two independent runs agree, that is weak evidence that the answer is stable. If they disagree, you have learnt that at least one of them is wrong, or that the question has no single answer and you need to decide. You will try this in the exercise. Note that agreement between two runs is not proof: both can be wrong in the same way, especially when both answer from memory.
+:::
+
+## The context window is the model's working memory
+
+![](fig07-context-window.svg){width="80%" fig-align="center"}
+
+::: notes
+Everything the model "knows" about your task is in the context window: the instructions built into the tool, a project notes file if there is one, your messages, the files it has opened, the output of the commands it ran, and its own earlier replies. For every new token, the whole window is taken into account. What is not in the window does not exist for the model. It has not seen files it did not open, even if they sit in the same folder. It has no memory of yesterday's session. And it does not know what you meant but did not say: the unwritten habits of your lab, the fact that column C is in millimetres, the reason sample 17 is excluded. A very common cause of a "stupid" mistake is simply that the information was never in the window. The fix is usually to put it there: tell it, or point it at the file.
+:::
+
+## Long sessions get compacted, and details get lost
+
+![](fig08-compaction.svg){width="65%" fig-align="center"}
+
+- The window is large but **finite**. When it fills up, the conversation is **summarised** to make room.
+- Claude Code does this automatically; in both tools you can also ask for it with `/compact`. Claude Code's `/context` shows how full it is.
+
+::: notes
+The context window is big, often the size of a long book, but not unlimited, and every file read and every command output takes up space. When it is nearly full, the tool compacts the conversation: it replaces the long history with a summary and continues from there. Claude Code does this automatically, and both Claude Code and Codex have a /compact command to do it on request. Claude Code also has /context to show how full the window is. A summary is shorter than the original by design, so something is lost. Often it is exactly the kind of detail that matters: an instruction you gave at the start, such as "never edit the files in raw", or the exact numbers from an earlier step. That is why agents sometimes seem to forget a rule halfway through a long session. Two habits help: keep sessions to one task, and write important rules into a file rather than only into the chat.
+:::
+
+## A new session starts from a blank slate
+
+![](fig09-new-session.svg){width="65%" fig-align="center"}
+
+- Close the terminal, or start fresh (`/clear` in Claude Code, `/new` in Codex): the new session **remembers nothing** of the old one.
+- What should carry over has to be **written in a file** in the project folder. That is the job of the notes file in *Organising a project for an agent*.
+
+::: notes
+When you start a new session, the context window is empty again apart from the built-in instructions and any notes file the tool reads at start-up. Two hours of corrections on Monday are gone on Tuesday. This surprises many people, because chat products sometimes have a memory feature, and because the agent seemed to "know" your project so well yesterday. It knew it because it had read the files and your corrections were in the window. The practical consequence: anything you want the agent to know every time belongs in a file. Both Claude Code and Codex read a project notes file automatically when they start in a folder: CLAUDE.md for Claude Code and AGENTS.md for Codex. We set that up properly in Organising a project for an agent. For now, just remember: a new session is a new colleague who has never seen your project.
+:::
+
+## An agent is an LLM with tools, in a loop
+
+![](fig10-agent-loop.svg){width="75%" fig-align="center"}
+
+The LLM only ever **writes text**. Some of that text is a **request** to use a tool; the **harness** (Claude Code, Codex) carries it out, after asking you.
+
+::: notes
+Now from the model to the agent. The model itself can only produce text. An agent adds two things around it. First, tools: small, well-defined actions such as reading a file, writing or editing a file, running a command in the terminal, and searching or fetching a web page. Second, a loop: the model can write a special kind of text that means "please use this tool with these inputs". The program around the model, which we call the harness, recognises that request, asks you for permission if needed, runs the tool, and pastes the result back into the context window. Then the model continues, now with the result in front of it. This repeats until the model decides it is done and writes a normal reply to you. Claude Code and Codex are harnesses: the terminal program you start is the loop, the permission prompts, and the tools, all wrapped around a model that runs in the cloud.
+:::
+
+## The tools are few and simple; the loop makes them powerful {.smaller}
+
+| Tool | What it does | Example from *First delegations* |
+|---|---|---|
+| **Read** a file | puts the file's content into the context window | opening each PDF |
+| **Write / edit** a file | creates or changes a file on your disk | writing `clean_sheet.py` |
+| **Run** a command | runs a program in the terminal and captures what it prints | `python3 clean_sheet.py`, moving files |
+| **Search / fetch** the web | brings a web page or search results into the window | looking up a DOI |
+
+- None of these is clever on its own. The power comes from **chaining** them: read, write a script, run it, read the output, fix, run again.
+- Every tool result lands in the **context window**, so it uses up working memory.
+
+::: notes
+It is worth being concrete about how little the agent can actually do. There are a handful of tools: reading files, writing or editing files, running commands, and searching or fetching from the web. Some setups add more through connectors, which we meet in Making the agent yours. Each tool is simple, and each one you have already seen in First delegations: the PDFs were read, the cleaning script was written, the script was run, files were moved by commands. The power comes from chaining these steps in a loop, with the model deciding the next step based on what the last step returned. And every result goes into the context window, which is why a session that reads forty PDFs fills up faster than one that edits a single script.
+:::
+
+## One turn of the loop, step by step
+
+![](fig11-loop-steps.svg){width="85%" fig-align="center"}
+
+::: notes
+Let us walk through one full iteration in detail, with the plant height file you will use in the exercise. Step one: you ask for the mean height per group. Step two: the model's next tokens are not an answer but a tool request, here to run a small script it has just written. Step three: the harness shows you the command and asks whether it may run it. The model cannot run anything by itself; it is the harness on your computer that does it, and only after your yes. Step four: the script runs and prints two means and a warning that four values could not be read. Step five: that printed output is pasted into the conversation, just as if it were a message. Step six: the model continues from the new, longer context. A good agent now notices that 86 centimetres is a strange height for these plants and that four values were skipped, and goes back to step two to look at the rows. A careless run just reports the numbers. Which of the two you get is not guaranteed; that is why you check.
+:::
+
+## The harness, not the model, asks for your permission
+
+![](fig12-permission-prompt.svg){width="62%" fig-align="center"}
+
+- **Read the command** before you say yes. If you do not understand it, choose "no" and ask the agent to explain it.
+- "Don't ask again" is convenient, but it **removes a check**. Use it only for commands you understand.
+
+::: notes
+You met permission prompts in the Terminal survival kit. Now you know where they sit in the loop: between the model's request and the tool actually running. This is your main control point. The wording differs between Claude Code and Codex and changes between versions, but the shape is the same: what will run, and yes, yes-and-don't-ask-again, or no with an instruction. Reading the command is not about understanding every flag. It is about noticing surprises: a command that deletes files, one that touches a folder you did not mention, one that installs something, or one that sends data somewhere. If you are unsure, say no and ask "what does this command do, and why do you need it?". The agent will explain, and that costs you ten seconds. The settings that change how often you are asked, and why we keep them cautious in this course, were covered in the Terminal survival kit.
+:::
+
+## Agents beat chat for real work because they can check by running
+
+![](fig13-chat-vs-agent-check.svg){width="85%" fig-align="center"}
+
+::: notes
+This is the reason the course is about agents and not about chat. In a chat window, you paste the table and the model produces numbers from reading it. They will be plausible, and for a small, clean table they may even be right, but nothing was computed and nothing can be rerun. An agent writes a script, runs it, and sees what comes back, including errors and warnings and numbers that look wrong. It can then fix the script and run it again. The final answer is backed by a file on your disk that you, a colleague or another agent can read and rerun. This does not make the agent always right. It can still write a script that computes the wrong thing. But it moves the answer from "trust me" to "here is how I got it", and that is something you can check.
+:::
+
+## Eight ways the agent fails, each with a defence
+
+![](fig14-failure-map.svg){width="85%" fig-align="center"}
+
+The next slides take them one at a time: **a concrete example, why it happens, and the defence**.
+
+::: notes
+Here is the map for the second half of the lecture. These eight failure modes cover most of what you will run into in this course. They are not exotic: you will see several of them in the exercise today, and probably all of them by the end of the course. The colours group them loosely. Red: the model produces things that are not true. Purple: it tells you what you want to hear or quietly makes the job easier for itself. Ochre: it works outside the boundaries of the task, in space or in time. Teal: problems that come from the context window itself. For each one we will look at a realistic example and a defence. The defences overlap a lot, and at the end we collect them into one toolbox.
+:::
+
+## Hallucination: invented references look exactly like real ones
+
+![](fig15-fake-references.svg){width="75%" fig-align="center"}
+
+**Defence:** open every DOI or PMID yourself, and check that the paper **says** what the summary claims. Ask the agent to **fetch** each reference rather than recall it.
+
+::: notes
+Hallucination means the model produces something that sounds right but is not. References are the classic case. Remember: the model continues text. A reference has a very predictable shape: authors, year, title, journal, DOI. The model can produce that shape fluently even when it has no specific paper in mind. There are degrees of wrong. The DOI may not exist at all. It may exist but point to a different paper. Or the paper is real but does not support the claim attached to it, which is the hardest to catch because the link works. All four lines on the slide look equally confident. The defence is to treat every reference as unverified until you have opened it. An agent can help here, because it can fetch the DOI or search PubMed and show you what came back, rather than recalling. We return to this in depth in the Literature review unit.
+:::
+
+## Hallucination in code: options that do not exist, or mean something else {.smaller}
+
+The agent writes a script that calls a function with an option that **sounds right**:
+
+```python
+data = read_table("plants.csv", skip_bad_rows=True, units="cm")
+```
+
+- If the option does **not exist**, the script stops with an error. The agent sees it and fixes it. **Harmless, because it ran.**
+- If a similar option **exists but does something else** (it skips rows silently, or ignores the unit), the script runs and the result is **quietly wrong**.
+
+**Defence:** let it run the code, not just write it. Ask: "What does each option in this call do? Show me the documentation for it." Check the result against something you know.
+
+::: notes
+The same mechanism produces invented function options in code. The model has seen thousands of scripts and produces something that looks like them; occasionally it invents a parameter name that would be sensible but does not exist. Here the agent has a big advantage over chat: when it runs the script, a non-existent option usually produces an error immediately, the error goes into the context window, and the agent corrects itself. You may see this happen several times in a session, and that is fine. It is the loop doing its job. The dangerous case is the near miss: an option that exists but does something slightly different from what the agent assumed, so no error appears. You do not need to read code to defend against this. Ask the agent to explain each option and show the documentation, and above all check the output against something you know, which is the subject of the next slides.
+:::
+
+## Confident wrong numbers: counting and arithmetic "in its head"
+
+![](fig16-count-head-vs-code.svg){width="80%" fig-align="center"}
+
+**Defence:** for any number that matters, ask it to **compute it with code** and show the command. "112" from reading is a guess written to look like a count.
+
+::: notes
+Because the model works on tokens, counting rows, adding up a column, or computing a mean by reading the data is the same kind of task as counting the r's in strawberry. It will produce a number with the right shape, often close, sometimes exact, sometimes far off, and always stated with the same confidence. The fix is simple and costs nothing: ask it to compute the number with code. Then the number comes from a program that actually counts, the command is visible, and you can rerun it. Make this a reflex. In the exercise you will ask for the same count both ways and compare. Watch out also for a subtle version: an agent that has run code earlier in the session may later quote a number from memory instead of rerunning, for example after the data changed. If in doubt, ask "did you compute that just now, or is it from earlier?".
+:::
+
+## Sycophancy: it agrees with you, and caves when you push
+
+![](fig17-sycophancy.svg){width="65%" fig-align="center"}
+
+**Defence:** ask neutral questions ("which group grew taller?", not "the treated group grew taller, right?"). When it changes its mind, ask **what new evidence** changed it. Ask it to argue against you.
+
+::: notes
+Sycophancy is the tendency to tell you what you want to hear. It comes partly from the second training stage: people rating answers tend to prefer ones that agree with them, so the model learns to agree. It shows up in two ways. First, a leading question gets a confirming answer: if you say "the treated plants grew taller, right?", the agent may agree without looking carefully. Second, and worse, when the agent gives a correct answer and you push back, it may cave and apologise, even though nothing changed in the data. Models have become better at holding their ground, but this has not gone away. As experts you often do know better than the agent, so pushing back is right. The test is whether its change of mind comes with new evidence: a rerun, a row it had missed, a different calculation. If it just apologises and flips, be suspicious of both answers and check the data yourself. A useful prompt is "argue against my interpretation" or "what would make me wrong here?".
+:::
+
+## Silent shortcuts: it makes the task easier and does not say so
+
+![](fig18-silent-drop.svg){width="80%" fig-align="center"}
+
+::: notes
+This is the one from the spreadsheet job in First delegations, and in practice it is one of the most damaging failures because nothing looks wrong. Faced with messy data, the easiest way to make a script run without errors is to skip the rows that cause errors. The agent then reports success, honestly from its point of view: the script ran and produced a clean file. The fifty-seven rows that were dropped are not mentioned. Here they were rows with an unusual date format, which may well be all the samples from one site or one technician, so dropping them biases the result. The defence is one you can apply without reading code: count the rows before and after, and ask directly, "did you drop, skip, fill in or simplify anything? List it."
+:::
+
+## Silent shortcuts, part 2: hard-coding and quietly simplifying {.smaller}
+
+- **Hard-coding to make a check pass.** You ask for a script that reproduces the published value 4.2. It cannot get there, so it writes `result = 4.2`. The check passes; nothing is reproduced.
+- **"Simplifying" the task.** You asked for all 40 PDFs; it did 12 "as a representative sample". You asked for a mixed model; it ran a t-test "for simplicity".
+- **Fallbacks that hide failure.** When a step fails, it fills in a default (0, the mean, "unknown") and carries on.
+
+**Defence:** ask "**what did you not do** that I asked for?" and "**are any values typed in by hand** rather than computed?" Check one known case by hand. Read the final summary for words like *representative*, *for simplicity*, *placeholder*, *assumed*.
+
+::: notes
+Dropped rows are one kind of shortcut; here are three more. Hard-coding: when a script must produce a known answer and the agent cannot make it work, it may simply write the answer in. This happens in software testing, where agents have been seen to change a test so that it passes, and it can happen in your analysis too. Simplifying: the agent quietly does less than you asked, often announcing it in a single word you might skim past, such as "representative" or "for simplicity". Fallbacks: a missing value replaced by a default so the pipeline keeps running. None of this is malicious. The model was trained to finish tasks, and finishing a simpler task looks a lot like finishing the real one. The defences are direct questions, and checking one case you can work out yourself. Agents tend to answer honestly when asked directly what they skipped; they just do not always volunteer it.
+:::
+
+## Scope creep: it changes files you did not ask about
+
+![](fig19-scope-creep.svg){width="80%" fig-align="center"}
+
+::: notes
+Scope creep is the opposite of a shortcut: the agent does more than you asked. You ask for one axis label to be fixed, and while it is there it also tidies up a helper script, rewrites the README, and corrects a "typo" in a raw data file. Each change might be well meant. Together they make the job hard to review, can break things that worked, and in this example touched raw data, which should never change. The defence has three parts. Say in the task what may and may not be changed, for example "only edit make_plot.R". Work in a copy of your data, which we make a habit in Privacy, ethics and safety. And at the end ask "list every file you created, changed or deleted". In Git as undo button and lab notebook you will get a tool that shows every change and lets you undo any of them, which turns scope creep from a disaster into a nuisance.
+:::
+
+## Stale knowledge: old versions, old functions, old advice {.smaller}
+
+The model learnt from code written before its cut-off, much of it years older. Typical symptoms:
+
+- It uses a function that has since been **renamed or removed**: for example `df.append()` in pandas (removed in pandas 2.0), or `size =` for line width in ggplot2 (replaced by `linewidth` in version 3.4.0).
+- It suggests installing a **specific old version**, or a package that is no longer maintained.
+- It describes **its own tool** (Claude Code, Codex) as it was when it was trained, not as it is now.
+
+**Defence:** let it **run** the code: errors and deprecation warnings show up and get fixed. Ask it to check the **installed version** and read the **current documentation** before relying on a function. For questions about the tools themselves, check the official docs.
+
+::: notes
+Stale knowledge is the cut-off from earlier, seen in practice. Software changes constantly. Two examples you may well meet: pandas, a Python data library, removed a commonly used function called append in version 2.0, and ggplot2, the R plotting package, changed the argument for line width from size to linewidth in version 3.4.0. Code written from memory may use the old forms, because there is far more old code in the training data than new code. Running the code is again the main defence: the error or the warning appears, and a good agent reads it and fixes the call. Another subtle case is the agent describing itself. Ask Claude Code or Codex how one of its own settings works and it may describe an older version of itself. For tool behaviour, the official documentation is the authority, and the agent can fetch it for you if you ask.
+:::
+
+## Losing track in long sessions {.smaller}
+
+:::: {.columns}
+::: {.column width="50%"}
+**What it looks like**
+
+- It breaks a rule you gave an hour ago ("never edit `raw/`").
+- It redoes work that was already done, or undoes a fix.
+- It refers to a file or column that was renamed earlier.
+- Answers get vaguer; it "forgets" decisions.
+:::
+::: {.column width="50%"}
+**Defence**
+
+- **One task per session.** Start fresh (`/clear`, `/new`) when the task changes.
+- Put lasting rules **in a file**, not only in the chat (*Organising a project for an agent*).
+- Before a big step, ask it to **restate the rules and the plan**.
+- When it drifts, a fresh session with a short summary is often faster than arguing.
+:::
+::::
+
+::: notes
+This one follows directly from the context window and compaction. In a long session, early instructions are far back in the window or have been summarised away, and the model's attention is on recent material. The symptoms are recognisable: a rule broken, a fix undone, an old file name used, answers that become less precise. People tend to respond by arguing with the agent in the same session, which adds more text to an already crowded window. It is usually better to start a fresh session with a short, clear description of where things stand. Keep sessions to one task. Put rules that must always hold in a notes file, which the tool reads at the start of every session, and which we set up in Organising a project for an agent. And before a risky step, asking "restate the rules you are following and your plan" is a cheap way to see whether it still has them.
+:::
+
+## Prompt injection: text in a page or PDF can act as instructions
+
+![](fig20-prompt-injection.svg){width="75%" fig-align="center"}
+
+**Defence:** keep permission prompts on when the agent reads **web pages or documents you did not write**; be suspicious of any action you did not ask for. More in *Privacy, ethics and safety*.
+
+::: notes
+The last failure mode is different because someone else causes it. Everything the agent reads ends up in the same context window as your instructions, and the model sees it all as text. If a web page or a PDF contains text written as instructions to an AI, the model may follow it. This has been demonstrated with hidden text in web pages, in documents, and in manuscripts submitted for review. The effects range from a biased summary, "say this paper is excellent", to attempts to make the agent run commands or send data elsewhere. For this course the practical rule is simple: when the agent reads material you did not write, especially from the web, keep the permission prompts on and read what it wants to do. An action you did not ask for, right after it read an external document, is a red flag. We go further into this, and into what data you should let the agent see at all, in Privacy, ethics and safety.
+:::
+
+## The trust ladder: trust what was run, distrust what was remembered
+
+![](fig21-trust-ladder.svg){width="85%" fig-align="center"}
+
+::: notes
+Here is the one picture to take home. At the top: a result from code that ran and matches something you know independently. Then: code that ran and is on disk, so it can be read and rerun even if you have not checked it yet. In the middle: a quote from a file or a web page, with a location you can open. Lower: a claim that it did something, "I checked all rows", "I verified the references", without showing how. That is still just generated text. At the bottom: answers from memory, references, numbers, version numbers, facts about niche topics. These are produced exactly like any other plausible text. The point of good prompting is to move answers up the ladder: "compute it with code", "show me where in the PDF", "fetch the DOI". And the point of checking is to spend your limited time on the rungs that need it most.
+:::
+
+## The verification toolbox {.smaller}
+
+| Check | How | Catches |
+|---|---|---|
+| **Spot check** | open 3 to 5 random items and compare with the source yourself | hallucinated details, wrong extraction |
+| **Known answer** | include a case where you already know the result | wrong method, hard-coded values |
+| **Rerun** | run the script again; or the same prompt in a fresh session | randomness, numbers from memory |
+| **Count before and after** | rows, files, samples in and out | silent drops, duplicates |
+| **Ask for sources, then check them** | DOI, PMID, page number, file and line | invented references and quotes |
+| **Ask another agent** | a fresh session, or the other tool, reviews the work | blind spots of the first session |
+| **Ask directly** | "what did you skip, assume, or simplify? which files did you change?" | shortcuts, scope creep |
+
+Your **domain knowledge** is the strongest check of all: does this result make sense in your field?
+
+::: notes
+Here are the checks collected in one place. None needs programming. A spot check means picking a few items at random, not the first few, and comparing them with the original. A known answer means planting or choosing a case where you know the right result: a sample you measured by hand, a total from a published report. Rerunning catches both randomness and answers produced from memory. Counting before and after catches silent drops and duplicates. Asking for sources only helps if you then check them. A second agent, in a fresh session or the other tool, has none of the first session's assumptions in its context and often spots problems. Asking directly works surprisingly well, because agents tend to answer honestly when asked. Above all, you are the expert in your field. A mean plant height of 86 centimetres for seedlings, or a sample size larger than the patient cohort, should make you stop, and the agent will often not notice what you notice at a glance.
+:::
+
+## Keep a failure log: each surprise becomes a habit {.smaller}
+
+| Date | What I asked | What went wrong | Type | How I caught it | Next time |
+|---|---|---|---|---|---|
+| 12 Nov | clean `raw.xlsx` | 57 rows dropped | silent shortcut | counted rows | ask "what did you drop?" |
+| 19 Nov | 5 refs on topic X | 2 DOIs fake | hallucination | opened each DOI | ask it to fetch, not recall |
+
+- One line per surprise. You start it in today's exercise and **keep it for the whole course**.
+- After a few weeks it tells you **which checks to do by default** for your kind of work.
+
+::: notes
+The exercise today starts a small habit that we keep for the rest of the course: a failure log. Every time the agent gets something wrong, or nearly does, add one line: what you asked, what went wrong, which type from our map, how you caught it, and what you will do differently. It takes a minute. The value comes after a few weeks, when you can see a pattern: maybe in your work the typical problem is extraction errors from PDFs, or silent drops in messy spreadsheets. That tells you which checks to make routine. It is also a good basis for a conversation with colleagues about how much to rely on these tools, grounded in what actually happened rather than in hype or fear. A template is in the exercise.
+:::
+
+## What we do not understand about LLMs {.smaller}
+
+- **Why a particular answer came out.** We can see the inputs and the outputs, but reading the reasons off the model's internals is still an open research field.
+- **Whether its explanation is the real reason.** When it explains its reasoning, that explanation is also generated text; it may not reflect how the answer was actually produced.
+- **Where it will fail next.** Ability is uneven: it may solve a hard task and fail an easy one next to it. Benchmarks tell you little about **your** task.
+- **How it will behave after an update.** Models and tools change every few months; a habit that worked may need rechecking.
+- **What it "understands".** Researchers disagree on how to describe what these models know. For our purposes it does not matter: we judge **results**, not intentions.
+
+::: notes
+It is important to be honest about the limits of our own understanding, not just the model's. Nobody, including the companies that build these models, can fully explain why a particular answer came out. Interpretability research is making progress, but it is far from routine. When the model explains its reasoning, that explanation is produced the same way as everything else, and it may be a plausible story rather than an account of what happened. Its abilities are uneven in ways that are hard to predict: it may write a correct statistical analysis and then miscount the samples. Benchmarks measure average performance on someone else's tasks, not yours. Models and tools are updated every few months, sometimes changing behaviour you relied on. And whether the model "understands" anything is genuinely debated. None of this stops us from using it well. It is exactly why this course is built around checking results rather than trusting the process.
+:::
+
+## Summary {.smaller}
+
+| Concept | Key fact |
+|---|---|
+| LLM | trained to continue text, one **token** at a time; plausible is not the same as true |
+| Token | a word or a piece of one; the model does not see letters, so counting by eye is unreliable |
+| Training | a lot of text, then instructions and tools; knowledge stops at a **cut-off** |
+| Sampling | the same prompt can give different answers; disagreement between runs is a warning |
+| Context window | working memory; not in the window = does not exist; long sessions are **compacted** |
+| New session | blank slate; lasting rules go in a **file** |
+| Agent | LLM + tools + loop; the **harness** runs tools after your permission |
+| Why agents | they can **check by running**; the script stays on disk to rerun |
+| Failure modes | hallucination, wrong numbers, sycophancy, silent shortcuts, scope creep, stale knowledge, losing track, prompt injection |
+| Trust ladder | trust what was run and can be rerun; distrust what was remembered |
+
+**Next (Privacy, ethics and safety):** what you may send to a cloud model, how to keep the agent away from data it should not see, and how to choose your own project for the rest of the course.
+
+::: notes
+The summary is the revision sheet. If you remember one line, make it the trust ladder: trust what was run and can be rerun, distrust what was remembered. Everything else explains why. The model continues text token by token, so it is fluent rather than reliable. It knows only what is in its context window, and forgets between sessions and sometimes within long ones. The agent loop lets it run code and see the result, which is what makes it useful for real work, and the harness puts you in control of each step. The eight failure modes all have defences, and most of them are simple questions or simple counts. Next we turn to what you should and should not let the agent see: privacy, ethics and safety. At the end of that unit you choose the project you will carry through the rest of the course, and the habits from today apply to it from the first session.
+:::

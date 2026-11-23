@@ -1,0 +1,6 @@
+# Quarto cache. The built site lives in docs/ and IS tracked (committed HTML).
+/.quarto/
+.DS_Store
+.Rhistory
+.RData
+__pycache__/

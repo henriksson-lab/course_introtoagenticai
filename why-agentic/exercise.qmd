@@ -1,0 +1,148 @@
+---
+title: "Exercise: watch an agent work"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- follow what a coding agent does in a session: where it **reads files**, where it **writes** them, where it **runs commands**, and where it **asks you for permission**,
+- tell what the agent **checked by itself** and what it **decided without asking**,
+- name concrete checks that **you** would make before trusting the result, using what you know about the experiment,
+- sort chores from your own job by **how easy the result is to check** and **how sensitive the data is**, as a first step towards choosing your own project.
+
+This exercise needs **no installation** and no account. You read a session; you do not run one. Installing comes in the next unit, *Accounts and installation*.
+
+## Before you start
+
+- Have the lecture slides at hand, especially the slides on the agent loop and the two-question grid.
+- Have something to write on: a text document, a spreadsheet or paper. You keep your answers.
+- Optional: look at the example data, [`seedlings.csv`](data/seedlings.csv). It is **synthetic** (made up by a script), so nothing in it is real or personal. It has 192 rows: 24 pea seedlings (8 each under low, medium and high light), height in mm measured every second day from day 0 to day 14.
+
+## Worked example: read an annotated agent session
+
+Below is a full session in which an agent turns `seedlings.csv` into a plot with an R script. It is written out in the style of Claude Code in a terminal; a Codex session looks much the same, with slightly different symbols and wording. The data, the final script and both plots are real. Your own sessions, once you have installed a tool, will look different in the details: agents do not give the same answer twice.
+
+Read the whole session once without stopping. Then read it again with the questions in the next section.
+
+{{< include _transcript.qmd >}}
+
+### Questions on the session
+
+Write short answers. Refer to steps by their number, for example "in [5]".
+
+**Q1. Reading.** In which steps did the agent *read* something, and what did it read? (Hint: it read more than the CSV.)
+
+**Q2. Permission.** Where did the agent ask for permission, and what exactly did it want to do? The agent ran `Rscript` three times in total, but asked only once. Why? Would you have chosen option 1 or option 2, and why?
+
+**Q3. Checking.** What did the agent check on its own initiative, without being asked? What made it suspicious in the first place?
+
+**Q4. Decisions.** List the decisions the agent made *without asking you*. For each one, say whether you are happy for an agent to make that kind of decision alone, or whether it should have stopped and asked.
+
+**Q5. Your own checks.** You are the teacher who ran this lab. Name **three concrete checks** you would make before you show this plot to students. Be specific: what would you open, what would you compare, what number would you expect?
+
+**Q6. Chat versus agent.** Imagine doing the same task in a chat window. Which of steps [2] to [8] would you have had to do yourself?
+
+### Check the result
+
+You do not have to trust the plot either. Do at least two of these checks; they need only a spreadsheet program.
+
+1. **Count the labels.** Open `seedlings.csv` in Excel, LibreOffice or Numbers. Filter or sort the `treatment` column. Do you see 48 rows of `high` and 16 of `High`, as the agent said in step [5]? Which plants are the `High` ones?
+2. **Recompute one point by hand.** Filter to `low` and `day` = 0. Take the mean of the 8 heights. The plot shows the first `low` point at a little over 10 mm. Do you agree? (Use the spreadsheet's `AVERAGE` function.)
+3. **Find the missing value.** Find the row with an empty `height_mm`. Is it the plant and day the agent reported in step [8]?
+4. **Look at the "High" plants.** Compare the day 14 heights of h07 and h08 with the other six high-light plants. Are they similar, or do they stand out? What would that make you ask the student who typed them?
+
+::: {.callout-tip collapse="true"}
+## Model answers (open after you have tried)
+
+**Q1.** [2] read `seedlings.csv`; [5] read `growth_plot.png` (it looked at its own figure) and read the CSV again via a small R command; [7] read `growth_plot.png` again. In [6] the agent edited `plot_growth.R`, which means it had the file's contents in front of it.
+
+**Q2.** Only in [4], to run `Rscript plot_growth.R`. The person chose option 2 ("don't ask again for Rscript commands in this folder"), so the later `Rscript` runs in [5] and [7] went ahead without a prompt. Option 2 is reasonable here because every `Rscript` call stays inside a folder of example data. With your own data, option 1 (ask every time) is the safer choice until you trust the setup. Note that in Codex the default limits are different: it usually runs commands inside the project folder without asking and asks before going outside it. *Terminal survival kit* covers how to set these limits.
+
+**Q3.** It looked at the figure, saw four groups where the task said three, counted rows per label, looked for missing values, and listed which plants carried the odd label. After the fix it printed the number of plants per treatment and looked at the figure again. What made it suspicious: the person had written "There are three treatments" in the prompt. Without that sentence, a four-line plot would have looked fine to the agent.
+
+**Q4.** (a) Merging `High` into `high`. (b) Dropping the missing value. (c) Using standard errors rather than standard deviations. (d) Choosing the order and colours of the treatments. (c) and (d) are fine to decide alone, as long as they are reported. (a) changes the meaning of the data and arguably should have been a question ("Should I merge these?") rather than a decision reported afterwards. A prompt can ask for this: "If the data disagree with what I said, stop and ask before changing anything."
+
+**Q5.** Good answers are concrete, for example: count the labels in the CSV (48 + 16 = 64 high rows); recompute one plotted mean by hand (low, day 0: mean 10.55 mm); check that h07 and h08 really were under the same lamp (their day 14 heights, 59.8 and 67.5 mm, are among the tallest, which could mean a different lamp, a different student measuring, or chance); check that the y-axis unit (mm) matches how heights were measured; check that "8 plants per treatment" in the subtitle is honest given the missing value; check that the error bars are what you would show students (SE or SD).
+
+**Q6.** In a chat window you would have done almost all of it: describe the file (the chat cannot see it), copy the script into a file, run it, look at the plot, notice the fourth group yourself, find the cause, paste it back, copy the corrected script, run it again. The agent did [2] to [7]; you would still do the judging in [8].
+:::
+
+### Optional: run the same session yourself, after the next unit
+
+Once you have installed a tool in *Accounts and installation*, you can try this yourself. Make a new empty folder, copy [`seedlings.csv`](data/seedlings.csv) into it, start the agent in that folder and give it the same prompt.
+
+::: {.panel-tabset}
+## Claude Code
+Start it in the folder by typing `claude`, then paste:
+
+```text
+Make a line plot of mean seedling height per light treatment over time,
+with error bars. There are three treatments. Use an R script so I can
+rerun it, and save the figure as growth_plot.png.
+```
+
+## Codex
+Start it in the folder by typing `codex`, then paste:
+
+```text
+Make a line plot of mean seedling height per light treatment over time,
+with error bars. There are three treatments. Use an R script so I can
+rerun it, and save the figure as growth_plot.png.
+```
+:::
+
+You need R with the ggplot2 package. If you do not have it yet, wait until *Terminal survival kit*, where the agent helps you install it. Expect a different session: perhaps the agent asks about `High` before merging, perhaps it does not notice at all. Either way, do the checks above.
+
+## Try it on something of yours: sort five chores
+
+You choose your own project at the end of Part 1, in *Privacy, ethics and safety*. This task prepares that choice. It uses **no data at all**, only a description of your work, so it is privacy-safe. Do not paste anything from these chores into a chat or an agent yet.
+
+**Step 1. List five chores.** Think of the last month. Write down five tasks from your own job that took time, involved files, and felt like they were not the core of your work. Write one line each, concrete enough that a colleague would know what you mean. Examples:
+
+- "Merge the exam results from four teaching assistants' spreadsheets into one."
+- "Redraw Figure 3 of the manuscript with the new batch included."
+- "Get the sample size from each of the 30 papers in my review into one table."
+- "Rename 400 microscope images from the plate map."
+- "Put the reading list, schedule and slides for my seminar course on one page."
+
+**Step 2. Rate each chore on two questions.**
+
+- **How easy is it to check the result?** *Easy*: you could tell right from wrong in a few minutes (a known total, a figure you know well, a page you can look at). *Hard*: checking would take nearly as long as doing it, or you are not sure what right looks like.
+- **How sensitive is the data?** *Low*: public, synthetic or your own non-personal material. *High*: personal data about students, patients or staff, unpublished data under agreement, anything your university restricts.
+
+**Step 3. Place them on the grid.** Copy this table and fill it in.
+
+| Chore | Check: easy or hard? | Sensitivity: low or high? | Quadrant |
+|---|---|---|---|
+| 1. | | | |
+| 2. | | | |
+| 3. | | | |
+| 4. | | | |
+| 5. | | | |
+
+Use the quadrants from the lecture:
+
+| | Low sensitivity | High sensitivity |
+|---|---|---|
+| **Easy to check** | **Start here** | **Later, with care** (after the privacy unit) |
+| **Hard to check** | **Possible, check hard** (needs a checking plan) | **Not for now** |
+
+**Step 4. Note one thing per chore.** For each chore in *Start here* or *Possible, check hard*, write one sentence: *how would you check the result?* For example, "the total number of students must still be 212", or "I compare five random rows with the PDFs".
+
+::: {.callout-warning appearance="simple"}
+**Privacy reminder.** Until the *Privacy, ethics and safety* unit, do not give an agent or a chat any real data about students, patients or staff, and do not start an agent in your home folder.
+:::
+
+## What you should have now
+
+- **Your answers to Q1 to Q6**, and at least two checks of the plot done by hand.
+- **Your chore grid**: five chores from your own job, each rated for how easy it is to check and how sensitive the data is, with one checking idea for each chore in the top-left and bottom-left squares.
+
+Keep the grid. You will come back to it at the end of Part 1, when you choose the own project that runs through the rest of the course.

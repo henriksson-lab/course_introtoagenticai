@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+    <marker id="arwo" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#e6b84f"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="420" fill="#ffffff"/>
+  <rect x="20" y="20" width="960" height="370" rx="10" fill="#1e2630" stroke="#3a4654" stroke-width="1.5"/>
+  <rect x="20" y="20" width="960" height="34" rx="10" fill="#2d3743"/>
+  <rect x="20" y="44" width="960" height="10" fill="#2d3743"/>
+  <circle cx="40" cy="37" r="6.5" fill="#e0605a"/>
+  <circle cx="62" cy="37" r="6.5" fill="#e6b84f"/>
+  <circle cx="84" cy="37" r="6.5" fill="#5fbf6a"/>
+  <text x="500.0" y="43" font-size="15" fill="#b8c2cc" text-anchor="middle" font-weight="normal" xml:space="preserve">Claude Code (Codex looks similar)</text>
+  <text x="38" y="82" font-size="18" fill="#b8c2cc" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">~/agent-hello $ claude</text>
+  <text x="38" y="112" font-size="18" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve"></text>
+  <text x="38" y="142" font-size="18" fill="#ffffff" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">&gt; Which folder are we in, and what files can you see?</text>
+  <text x="38" y="172" font-size="18" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve"></text>
+  <text x="38" y="202" font-size="18" fill="#8fd0dc" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">● List files in the current folder</text>
+  <text x="38" y="232" font-size="18" fill="#b8c2cc" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  (no files)</text>
+  <text x="38" y="262" font-size="18" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve"></text>
+  <text x="38" y="292" font-size="18" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">● We are in /Users/you/agent-hello.</text>
+  <text x="38" y="322" font-size="18" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  The folder is empty: there are no files here yet.</text>
+  <text x="38" y="352" font-size="18" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">  What would you like to create?</text>
+  <rect x="32" y="178" width="470" height="64" rx="6" fill="none" stroke="#e6b84f" stroke-width="2.5"/>
+  <text x="970" y="230" font-size="17" fill="#e6b84f" text-anchor="end" font-weight="bold" xml:space="preserve">it looked before answering</text>
+  <text x="980" y="412" font-size="14" fill="#9aa4ad" text-anchor="end" font-weight="normal" font-style="italic" xml:space="preserve">illustrative: wording differs between runs and tools</text>
+</svg>

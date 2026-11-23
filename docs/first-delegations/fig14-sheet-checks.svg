@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <rect x="30" y="20" width="940" height="400" rx="12" fill="#fafafa" stroke="#bbb"/>
+  <g font-size="20" fill="#333">
+    <text x="60" y="62" font-weight="bold">Check</text><text x="430" y="62" font-weight="bold">Expected</text><text x="700" y="62" font-weight="bold">Got</text>
+    <line x1="50" y1="76" x2="950" y2="76" stroke="#bbb"/>
+    <text x="60" y="114">Rows (one per mouse)</text><text x="430" y="114">48 ("Total animals: 48")</text><text x="700" y="114">48</text>
+    <text x="60" y="160">Sex codes</text><text x="430" y="160">F 26, M 22</text><text x="700" y="160">F 26, M 22</text>
+    <text x="60" y="206">Group sizes</text><text x="430" y="206">16, 16, 16</text><text x="700" y="206">16, 16, 16</text>
+    <text x="60" y="252">Mean of weight_g</text><text x="430" y="252">23.27 (the Mean row)</text><text x="700" y="252">23.27</text>
+    <text x="60" y="298">Empty weights</text><text x="430" y="298">1 (B2-11, sick)</text><text x="700" y="298">1</text>
+    <text x="60" y="344">Distinct dates</text><text x="430" y="344">2</text><text x="700" y="344" fill="#a8324a" font-weight="bold">3: 2024-09-04 ?</text>
+  </g>
+  <g font-size="26" font-weight="bold">
+    <text x="900" y="116" fill="#2a7f8f">✓</text><text x="900" y="162" fill="#2a7f8f">✓</text>
+    <text x="900" y="208" fill="#2a7f8f">✓</text><text x="900" y="254" fill="#2a7f8f">✓</text>
+    <text x="900" y="300" fill="#2a7f8f">✓</text><text x="900" y="346" fill="#a8324a">✗</text>
+  </g>
+  <rect x="50" y="320" width="900" height="36" fill="none" stroke="#a8324a" stroke-width="2.5" rx="6"/>
+  <text x="500" y="395" font-size="18" fill="#a8324a" text-anchor="middle">B2-17 was typed month first (04/09/2024) and read day first. Rows and mean cannot see it.</text>
+  <text x="965" y="434" font-size="14" fill="#999" text-anchor="end">illustrative result</text>
+</svg>

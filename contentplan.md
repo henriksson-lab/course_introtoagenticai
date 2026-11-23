@@ -192,6 +192,25 @@ These rules decide the order. Check any reordering against them.
     Zotero); a reusable "house style" for figures or reports.
 21. **Reading other people's code.** Explain, document, port (MATLAB → R/Python)
     and test that the results match.
+22. **Open-weights models and data privacy.** Closed models (Claude, GPT) vs
+    open-weights models (e.g. Llama, Qwen, Mistral, gpt-oss) that anyone can
+    download and run. Where the data goes in each case: the provider's cloud,
+    a university- or nationally hosted service, or your own computer.
+    [SciLifeLab OpenLLM](https://openllm.scilifelab.se/about/) as the Swedish
+    example of a hosted service for research. What open-weights models make
+    possible (sensitive data that may not leave the institution) and what they
+    cost (weaker models, less capable agents, hardware). Connecting an agent
+    harness to an open model. Builds directly on *Privacy, ethics and safety*.
+    **[?]** Placement: here (needs comfort with the tools), or right after
+    *Privacy, ethics and safety* for participants whose own project involves
+    sensitive data. *Privacy, ethics and safety* should point forward to it
+    either way.
+
+### Pending additions to existing units
+- *How LLMs and agents work*: add a high-level slide on **how each token
+  depends on all the earlier ones** (the model reads the whole context each
+  time it produces the next token; earlier tokens shape later ones), linking the
+  token, next-token and context-window slides into one picture.
 
 ### Tracks (pick one or more; all teach the same agent skills on different data)
 A track can start once *Reproducible figures* is done. The recommended point is

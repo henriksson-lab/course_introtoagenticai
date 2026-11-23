@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+    <marker id="arwo" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#e6b84f"/></marker>
+  </defs>
+  <rect x="0" y="0" width="600" height="440" fill="#ffffff"/>
+  <circle cx="300" cy="210" r="140" fill="none" stroke="#c9d3dd" stroke-width="10"/>
+  <path d="M440,210 A140,140 0 0,1 312,349" fill="none" stroke="#2a7f8f" stroke-width="10"/>
+  <path d="M160,210 A140,140 0 0,1 288,71" fill="none" stroke="#2a7f8f" stroke-width="10"/>
+  <path d="M314,336 L286,350 L314,364 Z" fill="#2a7f8f"/>
+  <path d="M286,56 L314,70 L286,84 Z" fill="#2a7f8f"/>
+  <text x="300" y="202" font-size="22" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">new version</text>
+  <text x="300" y="232" font-size="18" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">every week or so</text>
+  <text x="300" y="45" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">release</text>
+  <text x="460" y="216" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="normal" xml:space="preserve">download</text>
+  <text x="300" y="392" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="normal" xml:space="preserve">used at next start</text>
+  <text x="140" y="216" font-size="18" fill="#1b2a3a" text-anchor="end" font-weight="normal" xml:space="preserve">you work</text>
+  <text x="300" y="425" font-size="17" fill="#a8324a" text-anchor="middle" font-weight="bold" xml:space="preserve">Screen looks different from the course? Update first.</text>
+</svg>

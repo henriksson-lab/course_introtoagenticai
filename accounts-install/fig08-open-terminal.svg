@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300" width="1000" height="300" font-family="Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arw" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#1b2a3a"/></marker>
+    <marker id="arwt" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#2a7f8f"/></marker>
+    <marker id="arwc" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#a8324a"/></marker>
+    <marker id="arwo" markerWidth="10" markerHeight="10" refX="7" refY="3.4" orient="auto"><path d="M0,0 L7.5,3.4 L0,6.8 Z" fill="#e6b84f"/></marker>
+  </defs>
+  <rect x="0" y="0" width="1000" height="300" fill="#ffffff"/>
+  <text x="165" y="34" font-size="24" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">macOS</text>
+  <rect x="66.0" y="52" width="68" height="44" rx="7" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="100.0" y="81" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">Cmd</text>
+  <text x="149.0" y="81" font-size="20" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">+</text>
+  <rect x="164.0" y="52" width="100" height="44" rx="7" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="214.0" y="81" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">Space</text>
+  <text x="165" y="124" font-size="17" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">type Terminal, Enter</text>
+  <rect x="20" y="145" width="290" height="125" rx="10" fill="#1e2630" stroke="#3a4654" stroke-width="1.5"/>
+  <rect x="20" y="145" width="290" height="34" rx="10" fill="#2d3743"/>
+  <rect x="20" y="169" width="290" height="10" fill="#2d3743"/>
+  <circle cx="40" cy="162" r="6.5" fill="#e0605a"/>
+  <circle cx="62" cy="162" r="6.5" fill="#e6b84f"/>
+  <circle cx="84" cy="162" r="6.5" fill="#5fbf6a"/>
+  <text x="165.0" y="168" font-size="15" fill="#b8c2cc" text-anchor="middle" font-weight="normal" xml:space="preserve">macOS</text>
+  <text x="38" y="207.0" font-size="17" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">you@mac ~ % _</text>
+  <text x="495" y="34" font-size="24" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">Windows</text>
+  <rect x="416.0" y="52" width="68" height="44" rx="7" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="450.0" y="81" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">Win</text>
+  <text x="499.0" y="81" font-size="20" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">+</text>
+  <rect x="514.0" y="52" width="60" height="44" rx="7" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="544.0" y="81" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">X</text>
+  <text x="495" y="124" font-size="17" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">choose Terminal / PowerShell</text>
+  <rect x="350" y="145" width="290" height="125" rx="10" fill="#1e2630" stroke="#3a4654" stroke-width="1.5"/>
+  <rect x="350" y="145" width="290" height="34" rx="10" fill="#2d3743"/>
+  <rect x="350" y="169" width="290" height="10" fill="#2d3743"/>
+  <circle cx="370" cy="162" r="6.5" fill="#e0605a"/>
+  <circle cx="392" cy="162" r="6.5" fill="#e6b84f"/>
+  <circle cx="414" cy="162" r="6.5" fill="#5fbf6a"/>
+  <text x="495.0" y="168" font-size="15" fill="#b8c2cc" text-anchor="middle" font-weight="normal" xml:space="preserve">Windows</text>
+  <text x="368" y="207.0" font-size="17" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">PS C:\Users\you&gt; _</text>
+  <text x="825" y="34" font-size="24" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">Linux</text>
+  <rect x="689.0" y="52" width="84" height="44" rx="7" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="731.0" y="81" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">Ctrl</text>
+  <text x="788.0" y="81" font-size="20" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">+</text>
+  <rect x="803.0" y="52" width="68" height="44" rx="7" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="837.0" y="81" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">Alt</text>
+  <text x="886.0" y="81" font-size="20" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">+</text>
+  <rect x="901.0" y="52" width="60" height="44" rx="7" fill="#ffffff" stroke="#1b2a3a" stroke-width="2"/>
+  <text x="931.0" y="81" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="bold" xml:space="preserve">T</text>
+  <text x="825" y="124" font-size="17" fill="#5a6670" text-anchor="middle" font-weight="normal" xml:space="preserve">or search Terminal</text>
+  <rect x="680" y="145" width="290" height="125" rx="10" fill="#1e2630" stroke="#3a4654" stroke-width="1.5"/>
+  <rect x="680" y="145" width="290" height="34" rx="10" fill="#2d3743"/>
+  <rect x="680" y="169" width="290" height="10" fill="#2d3743"/>
+  <circle cx="700" cy="162" r="6.5" fill="#e0605a"/>
+  <circle cx="722" cy="162" r="6.5" fill="#e6b84f"/>
+  <circle cx="744" cy="162" r="6.5" fill="#5fbf6a"/>
+  <text x="825.0" y="168" font-size="15" fill="#b8c2cc" text-anchor="middle" font-weight="normal" xml:space="preserve">Linux</text>
+  <text x="698" y="207.0" font-size="17" fill="#e8edf2" text-anchor="start" font-weight="normal" font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" xml:space="preserve">you@pc:~$ _</text>
+  <text x="990" y="290" font-size="14" fill="#9aa4ad" text-anchor="end" font-weight="normal" font-style="italic" xml:space="preserve">illustrative</text>
+</svg>

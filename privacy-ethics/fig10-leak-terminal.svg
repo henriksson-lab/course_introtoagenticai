@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#ffffff"/>
+  <rect x="20" y="16" width="960" height="330" rx="10" fill="#1f2933"/>
+  <circle cx="44" cy="38" r="6" fill="#4a5866"/><circle cx="64" cy="38" r="6" fill="#4a5866"/><circle cx="84" cy="38" r="6" fill="#4a5866"/>
+  <g font-family="Courier New, monospace" font-size="18">
+    <text x="50" y="84" fill="#cfd6dc">&gt; Run the script on data/real_grades.csv and fix any errors</text>
+    <text x="50" y="128" fill="#e0c27a">● Bash(Rscript grade_report.R data/real_grades.csv)</text>
+    <text x="70" y="160" fill="#cfd6dc">Error in check_row(): row 37 has no total:</text>
+    <rect x="66" y="172" width="800" height="34" rx="4" fill="#5a2330"/>
+    <text x="78" y="196" fill="#ffffff">"Bo Testsson","20000215-xxxx","bo.t@stud…",5,NA,"ill"</text>
+    <text x="50" y="248" fill="#e0c27a">● I see: Bo Testsson has no score for Q2 because</text>
+    <text x="70" y="276" fill="#e0c27a">they were ill. I will treat NA as 0 and rerun...</text>
+  </g>
+  <text x="970" y="336" text-anchor="end" font-size="14" fill="#8a97a5">illustrative, invented data</text>
+  <text x="500" y="382" text-anchor="middle" font-size="19" fill="#a8324a" font-weight="bold">The error message printed a real row. That row has now been sent to the provider.</text>
+  <text x="500" y="410" text-anchor="middle" font-size="17" fill="#3a4a5a">(and the agent quietly decided how to handle missing scores: check that too)</text>
+</svg>

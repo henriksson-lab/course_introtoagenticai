@@ -1,0 +1,32 @@
+<svg xml:space="preserve" style="white-space:pre" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#ffffff"/>
+  <g stroke="#999" stroke-width="2" fill="none">
+    <path d="M60,90 V322 M60,135 H90 M60,185 H90 M60,322 H90"/>
+    <path d="M110,200 V280 M110,235 H140 M110,280 H140"/>
+  </g>
+  <g font-size="20" fill="#222">
+    <text x="40" y="78" font-weight="bold" fill="#2a7f8f">anna (~)</text>
+    <text x="98" y="142">Desktop</text>
+    <text x="98" y="192">Documents</text>
+    <text x="148" y="242">grants</text>
+    <rect x="140" y="260" width="110" height="32" rx="5" fill="#a8324a"/>
+    <text x="148" y="284" fill="#ffffff" font-weight="bold">teaching</text>
+    <text x="98" y="329">agentic-course</text>
+  </g>
+  <!-- you are here -->
+  <path d="M370,276 H262" stroke="#a8324a" stroke-width="2.5"/>
+  <path d="M262,276 l12,-7 v14 z" fill="#a8324a"/>
+  <text x="378" y="283" font-size="21" fill="#a8324a" font-weight="bold">you are here</text>
+  <!-- terminal -->
+  <rect x="520" y="40" width="460" height="230" rx="10" fill="#fafafa" stroke="#999" stroke-width="2"/>
+  <path d="M520,50 a10,10 0 0 1 10,-10 h440 a10,10 0 0 1 10,10 v26 h-460 z" fill="#e4e4e4"/>
+  <text x="750" y="64" font-size="16" fill="#555" text-anchor="middle">Terminal</text>
+  <g font-family="Menlo, Consolas, 'DejaVu Sans Mono', monospace" font-size="18">
+    <text x="538" y="120"><tspan fill="#2a7f8f" font-weight="bold">anna@laptop teaching %</tspan><tspan fill="#6b4fa0" font-weight="bold"> pwd</tspan></text>
+    <text x="538" y="156" fill="#333">/Users/anna/Documents/teaching</text>
+    <text x="538" y="200"><tspan fill="#2a7f8f" font-weight="bold">anna@laptop teaching %</tspan></text>
+  </g>
+  <text x="750" y="318" font-size="20" fill="#222" text-anchor="middle">pwd = "print working directory"</text>
+  <text x="750" y="348" font-size="20" fill="#666" text-anchor="middle">in plain words: where am I?</text>
+  <text x="972" y="290" font-size="14" fill="#999" text-anchor="end">illustrative</text>
+</svg>

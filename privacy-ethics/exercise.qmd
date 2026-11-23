@@ -1,0 +1,237 @@
+---
+title: "Exercise: privacy, ethics and safety, and choosing your own project"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should be able to:
+
+- decide, for a given file or task, whether it may go to the agent, may go with **precautions**, or must **not** go (using the flowchart from the lecture),
+- find your own university's **AI policy** and its list of **approved tools**, and check the **training setting** of your own account,
+- describe **your own project** for the rest of the course in a short worksheet: goal, data, data class, what a good result looks like, how you will check it, who could use it,
+- set up the **own-project folder** with a `README.md` holding those answers, using the agent.
+
+The first half (worked example) uses only made-up scenarios and public web pages. The second half is about your own project, but you will **not** give the agent any of your data yet: only a description in your own words.
+
+## Before you start
+
+- You have Claude Code or Codex installed and working (*Accounts and installation*), and you can start it in a folder from the terminal (*Terminal survival kit*).
+- You know which **plan** you use: a personal plan (Claude Pro or Max; ChatGPT Free, Go, Plus or Pro) or an institutional one (Claude Team, Enterprise or Education; ChatGPT Business, Enterprise or Edu). If unsure, look at your account page.
+- You have the course folder you used in *First delegations*. If not, create an empty folder such as `agentic-course` in your Documents folder. Do **not** use your home folder or Desktop.
+- Have the **decision flowchart** from the lecture open (slide "One flowchart answers most 'May I give this to the agent?' questions").
+
+Check the two settings below once, now. Menus move between versions; if you cannot find them, search the provider's help pages for the words in quotes.
+
+| | Claude Code | Codex |
+|---|---|---|
+| **Training on your sessions** (personal plans) | [claude.ai/settings/data-privacy-controls](https://claude.ai/settings/data-privacy-controls). The choice covers Claude Code too. | ChatGPT: Settings › Data controls › "Improve the model for everyone". On by default on Free, Plus and Pro; covers Codex too. |
+| **Policy pages** | [Claude Code data usage](https://code.claude.com/docs/en/data-usage) · [Anthropic privacy center](https://privacy.claude.com) | [OpenAI Data Controls FAQ](https://help.openai.com/en/articles/7730893-data-controls-faq) |
+| **See the permission mode** | Shown in the status line under the prompt; **Shift+Tab** cycles. | Type `/permissions` in the session. |
+| **Careful mode for own data** | Manual mode (`⏸ manual mode on`) | The default Auto preset in a git folder, or read-only; never full access |
+
+On an institutional plan, the training setting may be controlled by your organisation; ask IT what applies.
+
+## Worked example
+
+### Part 1: Classify six scenarios
+
+No agent needed. For each scenario, decide: **allowed**, **allowed with precautions** (say which), or **not allowed**. Use the flowchart and write one sentence of reasoning. Assume a **personal Claude Pro or ChatGPT Plus account** with training turned off, and a university that has **not** approved that account for personal data.
+
+**A. Grade distribution.** A teacher has the learning platform's export of last year's exam: student names, personal identity numbers, emails, points per question, and a note column ("extra time", "ill"). They want plots of the points per question and a short report.
+
+**B. Open-access literature table.** A researcher has downloaded 15 open-access papers under CC BY from PubMed Central and wants a table with organism, sample size and main finding for each.
+
+**C. Reviewing a proposal.** A researcher has been asked to review a grant proposal for the Swedish Research Council. They want the agent to summarise the proposal's methods section to save time.
+
+**D. Survival analysis.** A clinical researcher wants an R script for a survival analysis on an export of patient records from the hospital's system (diagnosis codes, dates, age, sex). The study has ethics approval.
+
+**E. Industrial test data.** An engineer has a folder of fatigue-test measurements on steel samples, made in a project with a company. The collaboration agreement says results are confidential until both parties approve publication. No people are involved.
+
+**F. Next month's exam.** A teacher wants the agent to draft ten new exam questions for next month's exam, using last year's exam (already published on the course page) as a model.
+
+::: {.callout-note collapse="true" title="Answers and reasons"}
+
+**A. Not allowed as it stands; allowed with precautions in another form.** The file holds personal data (names, IDs, emails), and the note column holds health data ("ill", "extra time" for a disability), which is a special category. A personal plan is not approved for it. The safe route is the one from the lecture: describe the columns, let the agent build and test the script on a **synthetic stand-in**, then run the script on the real file yourself with the agent closed. Removing the identifying columns yourself (in Excel, before the agent sees the file) and dropping the note column would also help, but the remaining data is still personal data if a student can be identified, so check with your university.
+
+**B. Allowed.** Public, openly licensed material. Respect the licence (CC BY requires attribution, which the table should keep), and check the extracted numbers against the papers: the agent can misread tables.
+
+**C. Not allowed, never.** The proposal was given in confidence. The Swedish Research Council does not allow generative AI in the scientific assessment, and uploading any part of a proposal to an AI service breaks the confidentiality promise. This holds even for one section, and even with training off.
+
+**D. Not allowed for the data; allowed with precautions for the script.** Patient data is sensitive personal data, and the ethics approval almost certainly specifies where the data may be processed; a cloud AI tool is not on that list. The agent may write the script on a **synthetic** dataset with the same columns and realistic value ranges; the researcher then runs it in the approved secure environment, without the agent. Check with the study's data controller before you even describe rare features of the cohort.
+
+**E. Allowed with precautions, depending on the contract.** There is no personal data, but the results are confidential under an agreement. Read the clause on third parties; if it forbids processing by third-party services, an AI provider counts, and the answer is not allowed. If it is silent, ask the partner. An institutional plan with a data processing agreement is a much better basis than a personal one.
+
+**F. Allowed with precautions.** Last year's exam is public, so using it as a model is fine. The new questions are confidential until the exam: keep training off (or use an institutional plan), keep the folder private, and do not push it to a public GitHub repository (Part 3). And check every question and answer yourself: you are responsible for the exam.
+:::
+
+### Part 2: Find your university's AI policy
+
+Here the agent searches the web for you. Nothing private is involved: the prompt contains only your university's name.
+
+1. Open a terminal and go to your course folder (`cd`, as in *Terminal survival kit*). Start the agent there (`claude` or `codex`). If Codex says the folder is not under version control and suggests read-only, accept that: this part needs no file edits.
+2. Type this prompt, with your university's name filled in:
+
+```text
+Search the web for <my university>'s official policy or guidelines on
+using generative AI tools (like ChatGPT, Claude, Copilot) for staff:
+teachers and researchers. I want:
+1. the link to the official policy page (on the university's own website),
+2. which AI tools the university has approved, and for which kinds of
+   data (public, internal, personal, sensitive),
+3. any rules on AI use in teaching, exams and theses,
+4. who to contact with questions (data protection officer, IT, library).
+Only use pages on the university's own domain or its official intranet.
+For every claim, give the exact link where you found it. If you cannot
+find something, say so instead of guessing.
+Do not create or change any files.
+```
+
+3. When the agent asks to search or fetch a web page, read the request and approve it. If it proposes anything else, such as writing a file, say no.
+4. Copy the answer somewhere you can find it (you will use it in the README below).
+
+::: {.callout-tip}
+If your university's policy is behind a login (an intranet), the agent cannot read it. Then it will find at most a public summary. Open the intranet yourself and look for "AI", "generative AI" or "ChatGPT" in its search.
+:::
+
+### Check the result
+
+- **Open every link** the agent gave you. Is it on your university's own domain? Does the page actually say what the agent claimed? Agents sometimes produce plausible links that do not exist, or summarise a page wrongly (*How LLMs and agents work*).
+- **Look for the date** on the policy page. Policies from 2023 and 2024 are often replaced; make sure you have the current one.
+- **Find the approved tools list yourself** if the agent did not. If it does not exist, write down who to ask.
+- **Check your account setting** from the table in *Before you start* by opening the settings page, not by asking the agent.
+- **Compare your Part 1 answers** with the solutions. Where you differed, was it because your own university's policy says something different? That is a good thing to notice.
+
+## On your own project
+
+Now choose the project you will keep for the rest of the course. Every exercise from *Delegating well* on has an "On your own project" part that applies to it.
+
+::: {.callout-warning}
+**Privacy reminder.** Do not give the agent any of your project's data in this exercise. You only describe the project, in your own words, and that description goes to the provider. Do not put names of students, patients, colleagues, or confidential details into the description.
+:::
+
+### Step 1: Choose a project
+
+A good project is:
+
+- **Real:** something your job needs, not a toy.
+- **Small:** a first useful result within a few sessions. You can grow it later.
+- **Yours:** from your own field, so you can tell a right answer from a wrong one.
+- **Safe:** data you may give to the agent, or a plan for a synthetic stand-in.
+- **Checkable:** you can already say how you would verify the result.
+
+You can swap projects later. If you have no idea yet, pick one from the list below.
+
+### Example projects
+
+Each example says what you would build, where the data comes from, and how you would check it. All of them are privacy-safe as described.
+
+#### For teachers
+
+**A course page with one interactive demo.** Take one of your own courses and build a small website with the course description, schedule and one interactive page that explains a hard concept (for example how a sample mean varies with sample size, how a lens forms an image, or how compound interest grows). *Data:* your own public course material. *Good result:* a page a student can use without you explaining it. *Check:* let a colleague or a student try the demo and explain back what it shows; compare the demo's numbers with a hand calculation. (Builds on *A course or project page* and *Interactive demos*.)
+
+**A question bank with variants and answer keys.** Turn a set of your own published exercises into a structured bank (one file per question, with topic and difficulty), and let the agent generate numeric variants with answer keys. *Data:* your own exercises (keep unreleased exam questions private). *Good result:* 20 questions, each with three variants and a correct key. *Check:* solve a random sample of variants yourself; the agent's keys must match.
+
+**Course evaluation numbers as a short report.** Turn the **numeric** part of last year's course evaluation (the averages and counts per question, as published to students or the programme board) into a report with plots and a comparison with earlier years. *Data:* aggregated numbers only; leave out free-text comments, which often identify people. *Good result:* a two-page report you could hand to the programme board. *Check:* recompute two averages by hand from the source table.
+
+#### For researchers in biology and medicine
+
+**A literature map of 20 genes or proteins.** Choose 20 genes, proteins or pathways from your field. Build a table with, for each, its function, three key papers with verified PMIDs or DOIs, and the organisms studied. *Data:* PubMed and open-access papers. *Good result:* a table you would trust in a review article draft. *Check:* look up every reference in PubMed; open five papers and confirm the claimed finding. (Builds on *Literature review*.)
+
+**Reanalysis of a public dataset.** Pick a published RNA-seq dataset from [GEO](https://www.ncbi.nlm.nih.gov/geo/) or an image set from the [Broad Bioimage Benchmark Collection](https://bbbc.broadinstitute.org/), and reproduce one figure from the paper. *Data:* public, with a licence or terms you check first. *Good result:* your figure next to the published one. *Check:* the main result matches the paper (direction, rough size); differences are explained. (Tracks A and C.)
+
+**A Shiny app for your lab's measurement data.** An app where lab members can filter and plot non-personal measurements, such as plate-reader runs, growth curves or instrument QC values. *Data:* lab data with no people in it; copies only. *Good result:* a colleague can answer a real question with the app in two minutes. *Check:* reproduce one plot from the app by hand in Excel. (Builds on *Shiny apps*.)
+
+#### For researchers in engineering and natural sciences
+
+**An automated weekly report from instrument logs.** Instruments, sensors and simulations write log files. Build a script that reads a week of logs and produces a one-page summary: uptime, ranges, warnings, a plot. *Data:* log files with no personal data (check that user names are not in them). *Good result:* a report you would actually read every Monday. *Check:* count warnings in one log file by hand and compare.
+
+**Making an old analysis reproducible.** Take an analysis that only works on one computer (an old MATLAB, R or Python script, or an Excel workbook) and turn it into one script with pinned package versions and a README that lets a new student rerun it. *Data:* your own analysis and its input data (copies). *Good result:* someone else reruns it and gets the same numbers. *Check:* the new script's output equals the old output to the last reported digit. (Builds on *Reproducible figures* and *Reading other people's code*.)
+
+**A table of material properties from papers.** Collect one property (for example the thermal conductivity, Young's modulus or band gap of a class of materials) from 20 to 30 open-access papers into one spreadsheet with a "source page" column. *Data:* open-access PDFs. *Good result:* a table you would cite. *Check:* verify a random sample of five values against the papers by hand. (Builds on *Extracting data from PDFs*.)
+
+#### For researchers in the humanities and social sciences
+
+**The funding landscape of your field.** Who funds research like yours in Sweden or the EU, how much, and how has it changed? Use [Swecris](https://www.vr.se/english/swecris.html) (Swedish funders, with an API) or [CORDIS](https://cordis.europa.eu) (EU projects, open data). *Data:* public grant records. *Good result:* three plots and a paragraph you could put in your next application's background. *Check:* compare yearly totals with the funder's own published statistics. (Builds on *Collecting and analysing grant results*.)
+
+**A cleaned, documented open dataset ready for deposit.** Take a dataset you have built (a corpus of public-domain texts, a coded table of historical records with no living persons, a set of public documents) and make it deposit-ready for [Zenodo](https://zenodo.org): tidy files, a data dictionary, a README, a licence. *Data:* your own, non-personal or already-public material. *Good result:* a colleague understands each column from the documentation alone. *Check:* a colleague answers three questions about the data using only the README.
+
+**Preparing your next grant application.** Collect the published panel members for a call you plan to apply to, build an expertise profile for each from public sources (ORCID, OpenAlex), and have the agent write mock reviews of **your own** draft from several perspectives, using the funder's criteria. *Data:* public information about people (still personal data: keep it for your own preparation) and your own draft. *Good result:* a list of weak points to fix before submission. *Check:* compare each profile with the person's own web page; judge whether the mock reviews raise points a real reviewer would. (Builds on *Likely reviewers*. Never contact or lobby reviewers.)
+
+### Step 2: Fill in the worksheet
+
+Answer these in a text editor (or on paper) in a few sentences each. Keep personal and confidential details out.
+
+1. **Project title.** A short name, and a folder name without spaces (for example `soil-funding-map` or `course-page-cellbio`).
+2. **Goal.** What will exist at the end that does not exist now?
+3. **Who could use it?** You, your students, your group, a programme board, reviewers?
+4. **What data?** What files, from where, roughly how large? Who owns them, and under what licence or agreement?
+5. **Data class.** Public, internal, personal, sensitive personal or confidential? Run the data through the flowchart and write the outcome.
+6. **Precautions.** Which ones follow from the data class (training off, synthetic stand-in, approved tool, keep the folder private)? What must **never** go into the folder?
+7. **What a good result looks like.** Be concrete: "a plot of X against Y for all 12 sites", not "nice figures".
+8. **How you will check it.** A known answer, a hand calculation, a sample checked against the source, a colleague's review.
+9. **Your university's rules.** The link to your AI policy from Part 2, and the contact person.
+
+If your data class is **sensitive** or your data is **given in confidence**, choose a different project, or plan from the start to work only on a synthetic stand-in. If you are unsure, ask your data protection officer before the next unit.
+
+### Step 3: Create the project folder
+
+The agent creates the folder and writes your answers into a `README.md`. That is all the folder holds for now; it gets its proper structure in *Organising a project for an agent*.
+
+1. Start the agent in your **course folder** (the parent of the new project folder), not in your home folder.
+2. Make sure the agent may create files. In Claude Code, the status line shows the mode; manual mode is fine, you will approve each step. In Codex, if the session is read-only, type `/permissions` and choose the mode that lets Codex edit files in the folder (not full access).
+3. Type this prompt, with your own answers pasted at the end:
+
+```text
+Create a new folder called <folder-name> inside the current folder.
+In it, create only one file, README.md, with these sections:
+
+# <Project title>
+## Goal
+## Who could use it
+## Data
+## Data class and precautions
+## What a good result looks like
+## How I will check it
+## University AI policy
+## Log of AI use
+
+Fill the sections from my worksheet answers below. Keep my wording;
+fix only spelling. Under "Data class and precautions", add a short
+list called "Never put in this folder" based on my answers.
+Under "Log of AI use", add one line: today's date, the tool and plan I
+use, and "created this README from my worksheet".
+Do not create any other files or folders. Show me the README when done.
+
+My worksheet answers:
+<paste your answers here>
+```
+
+4. Read each action before you approve it. The agent should ask to create one folder and one file, nothing else.
+
+| | Claude Code | Codex |
+|---|---|---|
+| Start in the course folder | `claude` | `codex` |
+| If it cannot write files | Press **Shift+Tab** until the status line shows a mode that allows edits, or approve each edit when asked | `/permissions`, choose the mode that allows edits in the workspace |
+| Show the README afterwards | Ask: "show me README.md" | Ask: "show me README.md" |
+
+### Check the result
+
+- Open the new folder in your **file browser**. It contains exactly one file, `README.md`. No data, no copies, no other files.
+- Open `README.md` in a text editor. Every section is there, the wording is yours, and the agent has not added claims you did not make (for example a promise about data you do not have, or a different goal).
+- The "Never put in this folder" list matches what the flowchart said for your data.
+- The policy link opens and is the page you checked in Part 2.
+- Nothing in the README is personal or confidential: you could show it to a colleague from another university without worry.
+
+## What you should have now
+
+- Your six scenario classifications, with reasons, compared with the solutions.
+- The link to your university's **AI policy**, its approved tools (or the name of the person to ask), and your account's **training setting** checked.
+- A folder for **your own project** next to your course material, containing only a `README.md` with the goal, data, data class, precautions, a description of a good result, how you will check it, and the first line of your **AI-use log**.
+
+In *Delegating well* you will write the first real brief for this project, and in *Organising a project for an agent* the folder gets its full structure.
