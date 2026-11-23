@@ -271,6 +271,60 @@ notes its own placement question.
   depends on all the earlier ones** (the model reads the whole context each
   time it produces the next token; earlier tokens shape later ones), linking the
   token, next-token and context-window slides into one picture.
+- *How LLMs and agents work*: **likely, not new.** The model picks among the
+  most probable next tokens, so by default it gives the typical answer, not the
+  most original one. Novelty is low unless you push for it (ask for
+  alternatives, unusual angles, critiques of the obvious answer) and judge the
+  result yourself. Consequences: good at standard analyses and conventional
+  text, weak at original research ideas; ideas it presents as new may already
+  be in the literature. Point to *Copyright, memorisation and credit* for the
+  Navier–Stokes case, which shows the other side: with search, verification and
+  heavy compute, agents can produce new results.
+- *How LLMs and agents work*: tie **hallucination** to the same mechanism.
+  The model produces what is *plausible* given the context, not what is
+  *true*. A plausible but non-existent reference or function comes out of the
+  same process as a correct one, which is why it sounds just as confident.
+
+### Part 6 (continued)
+25. **Copyright, memorisation and credit.**
+    - Current legal state, briefly and without legal advice: training on
+      copyrighted material and whether outputs infringe are being decided in
+      court case by case. Examples to present (**[?]** check the status of each
+      before writing):
+      - *GEMA v OpenAI* (Munich, 2025): song lyrics memorised by the model
+        judged to infringe. An EU example.
+      - *Bartz v Anthropic* (US, 2025): settlement over books from pirate
+        sites.
+      - *New York Times v OpenAI and Microsoft* (US, ongoing).
+      - *Getty Images v Stability AI* (UK, 2025).
+    - Memorisation: models can sometimes reproduce training material word for
+      word or image for image: long passages of books, song lyrics, code with
+      its licence comments, near-copies of training images. Research has
+      extracted such material on purpose. Rare text that appears many times
+      online is memorised most.
+    - What it means for participants: their AI-generated text, code or
+      figures could contain someone else's material without them knowing;
+      licence of the code an agent writes; what to check before publishing a
+      course page or a paper; the EU AI Act's copyright-related duties for
+      model providers (brief).
+    - Credit and novelty, with the **OpenAI Navier–Stokes controversy**
+      (September 2026) as the case: OpenAI claimed its model produced a solution
+      to a Navier–Stokes Millennium Prize problem. Mathematicians questioned
+      whether it solved the problem experts actually mean (a forcing term,
+      a loophole), the result is not peer-reviewed, and there is a dispute over
+      credit to human mathematicians whose work it built on. There are also
+      allegations, which OpenAI denies, about the use of a mathematician's notes
+      stored in a Codex session. Use it to discuss who gets credit when AI is
+      involved, why verification by experts still matters, and, linking back to
+      *Privacy, ethics and safety*, what happens to unpublished ideas you give
+      a cloud agent. Present the allegations as allegations; sources:
+      [Scientific American](https://scientificamerican.com/article/did-openai-solve-the-wrong-navier-stokes-problem),
+      [MIT Technology Review](https://www.technologyreview.com/2026/09/08/1143747/what-openais-latest-controversy-tells-us-about-the-future-of-math),
+      [Axios](https://axios.com/2026/09/08/openai-math-solution-navier-stokes-credit).
+      **[?]** Check for later developments before writing.
+    - **[?]** Placement: in Part 6, or split so that copyright goes before *A
+      course or project page* (when participants first publish) and the credit
+      case goes with the novelty slide in *How LLMs and agents work*.
 
 ### Tracks (pick one or more; all teach the same agent skills on different data)
 A track can start once *Reproducible figures* is done. The recommended point is
