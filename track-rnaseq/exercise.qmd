@@ -12,7 +12,7 @@ format:
 
 By the end of this exercise you should have:
 
-- run a **complete bulk RNA-seq analysis by prompting**: counts and sample sheet, QC, DESeq2, volcano and MA plots, enrichment, and a link to your literature table,
+- run a **complete bulk RNA-seq analysis by prompting**: counts and sample sheet, QC, DESeq2, a volcano plot, enrichment, and a link to your literature table,
 - **caught a planted problem** in a sample sheet from the QC plots, and decided yourself what to do about it,
 - **checked the agent against a known answer** (400 planted genes) and against **known genes** in a real dataset,
 - stated the **design formula in plain words** and checked the reference level,
@@ -270,18 +270,17 @@ KLF15 and GAPDH.
 
 If FKBP5 is **negative**, the reference level is wrong. Say so and ask the agent to fix the script, not the numbers.
 
-#### Step 10: volcano and MA plots
+#### Step 10: volcano plot
 
 ```text
 Write scripts/04-plots.R: a volcano plot (log2 fold change against
--log10 padj) and an MA plot (mean count against log2 fold change) from
-the full results table. Mark genes with padj < 0.05, and label FKBP5,
-TSC22D3, PER1, DUSP1, KLF15 and GAPDH. Save both as PNG and PDF in
+-log10 padj) from the full results table. Mark genes with padj < 0.05, and label FKBP5,
+TSC22D3, PER1, DUSP1, KLF15 and GAPDH. Save it as PNG and PDF in
 results/figures/. Use the same style as my figures from Reproducible
 figures if you can find them; otherwise keep it plain.
 ```
 
-**Check.** The labelled glucocorticoid genes are up and high in the volcano; GAPDH sits at the bottom near zero. In the MA plot, the cloud is wider on the left (few reads) than on the right. Is the x axis of the volcano labelled with the direction ("dexamethasone vs untreated")? If not, ask for it: a reader must know which way is up.
+**Check.** The labelled glucocorticoid genes are up and high in the volcano; GAPDH sits at the bottom near zero. Is the x axis of the volcano labelled with the direction ("dexamethasone vs untreated")? If not, ask for it: a reader must know which way is up.
 
 #### Step 11: enrichment
 
@@ -381,7 +380,7 @@ Whichever you choose:
 ## What you should have now
 
 - `track-rnaseq/pilot/` and `track-rnaseq/airway/`, each a git repository with read-only raw data, numbered scripts, a results folder that can be remade, `decisions.md` and `sessionInfo.txt`.
-- A checked gene list for airway with volcano and MA plots, an enrichment table against the right background, and a table linking genes to your verified literature.
+- A checked gene list for airway with a volcano plot, an enrichment table against the right background, and a table linking genes to your verified literature.
 - The answer-key comparison showing what a sample swap and plain p-values would have done.
 - The verification checklist, used once on data with a known answer and once on real data.
 - A step of your own project done with the same checks, recorded in its README and AI-use log.

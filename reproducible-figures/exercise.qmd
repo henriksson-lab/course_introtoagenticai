@@ -197,6 +197,11 @@ Commit, with a message that mentions the "High" fix.
 
 ### Step 6: Pin the versions
 
+::: {.callout-note}
+## No environment needed with Rust
+Pinning versions is needed because R and Python scripts depend on packages installed on each computer. A program written in **Rust** compiles to one self-contained file, so there is nothing to install or pin when you run it. See *[Translating code to Rust](../rust-translation/lec.qmd)*.
+:::
+
 ```text
 Set up renv for this project and record the exact versions of R and the
 packages the script uses. Make sure the installed package library is

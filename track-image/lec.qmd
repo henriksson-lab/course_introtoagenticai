@@ -74,9 +74,11 @@ This is the only programming vocabulary you need for this track. Python is a pro
 Here is the whole analysis. Load the image, and find out its pixel size. Clean it up: smooth it lightly against noise, and even out the background if it is uneven. Threshold: decide, for each pixel, whether it belongs to a nucleus or to the background. Turn the yes-or-no pixels into objects: split nuclei that touch, give each object a number, and drop things that are too small to be nuclei. Measure each object: its area, its brightness, its position. Save the measurements as tables and make a plot. And the branch at the bottom is the part that makes it trustworthy: draw the outline of every object the script found on top of the image, and look at it. Then count a few images by hand. All of this is one script, with the same settings for every image.
 :::
 
-## The agent sets up a virtual environment; you only need to know it exists
+## The agent sets up a virtual environment*; you only need to know it exists
 
-![](fig04-environment.svg){width="85%" fig-align="center"}
+![](fig04-environment.svg){width="76%" fig-align="center"}
+
+\* With **Rust**, no virtual environment is needed: a Rust program compiles to one self-contained file. See [Translating code to Rust](../rust-translation/lec.qmd).
 
 ::: notes
 Before the agent can run anything, Python and the packages must be installed. Python itself may already be on your computer; you checked in the Terminal survival kit. The packages go into a virtual environment: a folder, usually called .venv, inside your project. The agent creates it with a command like python -m venv, or with a newer tool called uv; either is fine. It also writes a file called requirements.txt, which lists the packages and their versions, so that a colleague can rebuild the same environment on their computer. Your part is small. Ask the agent to use a virtual environment in the project folder, not to install packages for the whole computer. Read the install commands before you approve them. And do not delete the .venv folder, or put it in git: it is large, and it can always be rebuilt from requirements.txt.

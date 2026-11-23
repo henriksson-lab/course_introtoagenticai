@@ -117,6 +117,11 @@ data/raw/metadata/test.txt in results/previews/.
 Do not change anything in data/raw.
 ```
 
+::: {.callout-note}
+## No environment needed with Rust
+This step exists because Python and R programs need their packages installed next to them. A program written in **Rust** compiles to one self-contained file that runs without a virtual environment, conda or Docker. See *[Translating code to Rust](../rust-translation/lec.qmd)*.
+:::
+
 **Check.**
 
 - 200 images, 200 masks, names match.

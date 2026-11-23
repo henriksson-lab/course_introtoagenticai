@@ -258,9 +258,11 @@ The best defence is a script that refuses surprises. Ask the agent to make the s
 There is a second way a figure can stop being reproducible, even if nobody touches the script: the software underneath changes. R, ggplot2 and their dozens of helper packages are updated several times a year. Most updates are harmless, but some change defaults, rename functions or fix bugs that your figure relied on. Two years from now, on a new laptop or in a new student's hands, the same script may stop with an error, or, worse, run and produce a slightly different figure. The fix is simple at our level: write down which versions made the figure, in a file the computer can read, next to the script.
 :::
 
-## renv and `requirements.txt` record the versions
+## renv and `requirements.txt` record the versions*
 
-![](fig17-lockfiles.svg){width="88%" fig-align="center"}
+![](fig17-lockfiles.svg){width="80%" fig-align="center"}
+
+\* With **Rust**, no environment or lock file of installed packages is needed to run it: a Rust program compiles to one self-contained file. See [Translating code to Rust](../rust-translation/lec.qmd).
 
 ::: notes
 For R, the standard tool is renv. The agent sets it up for the project with one instruction; it records R's version and every package's version in a file called renv.lock. Later, anyone can run renv restore and get exactly those versions installed for this project, without touching other projects. For Python, the simplest form is a file called requirements.txt that lists each package with an exact version number, plus a note of the Python version in the README; pip install with that file installs the same versions. Both files are small text files that belong in git, next to the script. That is enough for this course. More thorough approaches, such as containers, exist when a result must be reproducible for many years.

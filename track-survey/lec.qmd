@@ -20,13 +20,13 @@ format:
 
 ## About this lecture
 
-Every course ends with an evaluation, and many research projects run a questionnaire. The export is messy, the programme board meets next week, and the free-text answers are the most useful part and the slowest to read. An agent can turn the export into a tidy table, plots and a short report in an afternoon. **The risks are quiet ones**: a reversed item read the wrong way, a group of three students made recognisable, a quote that nobody wrote.
+Every course ends with an evaluation, and many research projects run a questionnaire. The export is messy, and the free-text answers are the most useful part and the slowest to read. An agent can turn the export into a tidy table, plots and a short report in an afternoon. **The risks are quiet ones**: a reversed item read the wrong way, a group of three students made recognisable, a quote that nobody wrote.
 
 - **Tidy first, with a codebook.** One row per respondent, every decision written down.
 - **Show the whole distribution** of a Likert item, not only its mean: diverging stacked bars.
 - **Compare groups plainly**, with the number of people behind every percentage, and few planned comparisons.
 - **Never report groups smaller than five**, and check combinations too.
-- **The agent may summarise free text, but every quote must exist word for word.**
+- **Read student comments yourself.** An agent may miss or invent things, and comments can hold sensitive data.
 
 This is a **track**: a hands-on unit on one kind of data, using the skills from Parts 1 to 4. It builds on *Privacy, ethics and safety* (synthetic stand-ins), *Reproducible figures* and *A course or project page* (Quarto).
 
@@ -34,9 +34,11 @@ This is a **track**: a hands-on unit on one kind of data, using the skills from 
 Welcome to the survey track. Almost everyone in this room handles survey data in some form: course evaluations, student or staff questionnaires, research surveys. The work is the same every time: clean the export, describe it, plot it, compare a few groups, read the comments, and write something short for a board or a report. An agent is very good at all of this. But survey data has risks that do not show up as errors: an item that is worded negatively and read the wrong way round, a small group of students who become identifiable, and above all, quotes that sound perfectly real and were never written. The five ideas on this slide are about those risks. The worked example uses a synthetic course evaluation, so nothing real goes to the cloud.
 :::
 
-## The export arrives two days before the programme board
+## The export is messier, and more sensitive, than it looks*
 
-![](fig01-export-sheet.svg){width="85%" fig-align="center"}
+![](fig01-export-sheet.svg){width="76%" fig-align="center"}
+
+\* Evaluation data is often personal and can be sensitive. Before an agent sees it, read *[Privacy, ethics and safety](../privacy-ethics/lec.qmd)* and the next slides on identification and the safe route.
 
 ::: notes
 Here is the concrete problem. The course evaluation closed, and the survey tool produced an Excel export. It looks fine at first glance. Then you notice things. Row one is the test response you made yourself before the survey opened. Two rows are identical, a minute apart: someone pressed submit twice. One student stopped halfway. And at the bottom, a teaching assistant typed in fifteen paper forms from the last lab session, with numbers instead of words and programme names spelled however the student wrote them, some in Swedish. This is not a badly run survey. This is what every real export looks like. The board meets in two days and wants a short, fair summary.
@@ -262,7 +264,18 @@ Now the privacy rule for results. Never report a group smaller than about five p
 This is why the rule has to apply to combinations, not only to single groups. Start with all 120 respondents. Biotechnology students: 38, fine. Biotechnology distance students: 13, still fine. Add an age group and a gender, and you are at exactly one person. Each step looked harmless. The name for the protection is k-anonymity: every combination of facts you report should be shared by at least k people, and for course evaluations k of at least five is a sensible rule. Ask the agent to check this for every table and plot it produces, and to list any cell below five. It is a mechanical check, exactly the kind of thing a script does better than a tired person the night before a board meeting.
 :::
 
-## The agent sorts free text into themes in minutes
+## Think twice before an LLM summarises student comments
+
+- It can **miss things**: the one serious comment about harassment, health or safety gets lost in a theme count.
+- It can **make mistakes**: wrong themes, merged opinions, invented or "improved" quotes.
+- Comments can hold **sensitive data**: names of staff and students, health, personal circumstances. Sending them to a cloud service may not be allowed (*[Privacy, ethics and safety](../privacy-ethics/lec.qmd)*, *[Open-weights models and data privacy](../open-weights/lec.qmd)*).
+- Our recommendation: **read every comment yourself**. If your institution allows an agent at all, use it only to *organise* comments you have read, never as the only reader.
+
+::: notes
+Before we look at how an agent sorts comments, a clear recommendation: in most cases, you should not let an LLM summarise student comments for you. There are three reasons. First, it can miss things. A theme count of "workload: 31 comments" looks complete, but the single comment that reports harassment, a health problem or a safety issue is exactly the kind of thing that disappears into a theme. Those comments need a person, and sometimes action, not a count. Second, it makes mistakes: themes that do not fit, two opposite opinions merged into one, and quotes that are smoothed or invented, as the next slides show. Third, comments are personal data and often sensitive: students name teachers and each other, and write about illness and private circumstances. Whether you may send them to a cloud provider at all is a question for your institution's rules, as in Privacy, ethics and safety; an open-weights model run locally, from the open-weights unit, changes where the data goes but not the first two problems. So: read every comment yourself. Reading 120 comments takes an hour, and it is part of the job. If you are allowed to use an agent, use it to organise comments you have already read, for example to count themes you defined, and check its work. The rest of this section shows how to do that safely, and what goes wrong when you do not.
+:::
+
+## If you use an agent on free text: themes in minutes, checked by you
 
 ![](fig16-themes.svg){width="68%" fig-align="center"}
 
@@ -273,7 +286,7 @@ This is why the rule has to apply to combinations, not only to single groups. St
 Free-text answers are often the most useful part of an evaluation, and the slowest part to read. Here the agent can save real time. Give it the comments, ask for themes with counts, and ask for a table with every comment, its respondent id, and the theme it assigned. That table is what makes the themes checkable: you can read down it and disagree. In our synthetic data, the top themes for "what should be improved" are workload in the middle weeks and late feedback on lab reports, which matches the Likert items. Note the two red bars: one comment names a lecturer with a complaint, one identifies a student. These are not themes for a board report; we come back to them. Comments in Swedish can be translated for your reading, but a quote in a report stays in the language the student wrote.
 :::
 
-## Summarising is fine; an invented quote is fabricated evidence
+## A summary can be checked; an invented quote is fabricated evidence
 
 ![](fig17-invented-quote.svg){width="88%" fig-align="center"}
 
@@ -408,7 +421,7 @@ Here is the summary. Make the data tidy with a codebook and a decisions list. Re
 |---|---|
 | Group comparison | side-by-side bars with n; plan few comparisons; size first, p-value second |
 | Small cells | never a group or cell below 5; check combinations (k-anonymity) |
-| Free text | themes with rough counts; code a sample yourself |
+| Free text | real comments: read them yourself; an agent may miss, err, and see sensitive data |
 | Quotes | checked by script, word for word; no names, nothing identifying |
 | Privacy | real evaluations: synthetic stand-in for the agent, run the script yourself |
 

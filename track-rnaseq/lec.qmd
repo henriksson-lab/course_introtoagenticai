@@ -58,7 +58,7 @@ This is the division of labour for the whole track. On the left, the decisions o
 ![](fig03-pipeline.svg){width="95%" fig-align="center"}
 
 ::: notes
-Here is the whole analysis on one line. Counts and the sample sheet go in. Quality control comes first: how many reads each sample has, how the samples group in a PCA plot, how well they correlate with each other. Then DESeq2 tests every gene, using a design formula that describes the experiment. The results are shown as a volcano plot and an MA plot. Enrichment analysis asks which pathways or functions are over-represented among the changed genes. Finally, the genes are linked to what is already known, using your literature table. Under each step is the check that belongs to it. Most of the time in this track is spent on these checks, not on the analysis itself, which the agent runs in seconds. At the bottom: everything lives in scripts on disk, so that you can rerun the whole thing from scratch and get the same numbers.
+Here is the whole analysis on one line. Counts and the sample sheet go in. Quality control comes first: how many reads each sample has, how the samples group in a PCA plot, how well they correlate with each other. Then DESeq2 tests every gene, using a design formula that describes the experiment. The results are shown as a volcano plot. Enrichment analysis asks which pathways or functions are over-represented among the changed genes. Finally, the genes are linked to what is already known, using your literature table. Under each step is the check that belongs to it. Most of the time in this track is spent on these checks, not on the analysis itself, which the agent runs in seconds. At the bottom: everything lives in scripts on disk, so that you can rerun the whole thing from scratch and get the same numbers.
 :::
 
 ## We use two datasets: one with a known answer, one real
@@ -275,14 +275,6 @@ Here is why the sample sheet matters so much. Same data, same design, three diff
 
 ::: notes
 Now the real dataset, airway. A volcano plot has one dot per gene. Across: the log2 fold change, how large the change is. Up: minus log10 of padj, how sure we are. Higher means more certain; the dashed line is padj 0.05. Red dots are significant and more than two-fold changed, ochre are significant but smaller changes. With dexamethasone, about 4000 of 16 000 tested genes are significant, about 940 of them more than two-fold. The circled genes are classic glucocorticoid targets: DUSP1, PER1, KLF15, ZBTB16, FKBP5, TSC22D3. All are up, as expected, and all are among the strongest. GAPDH, a gene that should not change, sits at the bottom middle. This is what a good sanity check looks like: you knew where these genes should be before you saw the plot.
-:::
-
-## The MA plot shows where low counts make changes unreliable
-
-![](fig16-ma-plot.svg){width="74%" fig-align="center"}
-
-::: notes
-The second standard plot is the MA plot. Across: how much a gene is expressed, on a log scale. Up: its fold change. Red dots are significant. The shape matters: on the left, where genes have few reads, the cloud is wide. Large fold changes are common there, and many are not significant, because a change from three reads to twelve is weak evidence. On the right, with thousands of reads, even small fold changes are significant. Two practical points. Never rank genes by fold change alone: the top of such a list is full of low-count noise. And a gene you care about with very few reads may simply not be measurable in this experiment. If you ask the agent for "the most changed genes", say whether you mean by padj, by fold change among significant genes, or by a shrunken fold change, which DESeq2 offers for exactly this reason.
 :::
 
 ## Genes you already know are the quickest sanity check

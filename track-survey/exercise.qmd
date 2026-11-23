@@ -182,6 +182,11 @@ The check must find at least: **Exchange student (4)**, **Non-binary (3)**, **Pr
 
 ### Step 6: free-text themes, a sample of your own, and sensitive comments
 
+::: {.callout-warning}
+## With real student comments, read them yourself
+This step uses synthetic comments so you can see how an agent sorts free text and where it goes wrong. With **real** student comments, our recommendation is not to let an LLM summarise them: it can miss the one comment that needs action, make mistakes or invent quotes, and comments often hold sensitive personal data that may not be sent to a cloud service. Read every comment yourself; use an agent at most to organise comments you have already read, if your institution allows it. See *[Privacy, ethics and safety](../privacy-ethics/lec.qmd)*.
+:::
+
 First, code a sample yourself. Open the export, take the first **15** answers to "What should be improved for next year?" and write one short theme next to each, on paper. Then:
 
 ```text

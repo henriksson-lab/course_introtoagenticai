@@ -72,4 +72,5 @@
 .sidebar-menu-container > ul > li:nth-child(4) { --week-color: #a8324a; --week-tint: #f8e9ec; } /* Week 3 crimson */
 .sidebar-menu-container > ul > li:nth-child(5) { --week-color: #8a6a12; --week-tint: #f6f0de; } /* Week 4 ochre */
 .sidebar-menu-container > ul > li:nth-child(6) { --week-color: #3b5bab; --week-tint: #e9eef8; } /* Week 5 blue */
-.sidebar-menu-container > ul > li:nth-child(7) { --week-color: #6c757d; --week-tint: #f1f3f5; } /* Further reading grey */
+.sidebar-menu-container > ul > li:nth-child(7) { --week-color: #2f7d4f; --week-tint: #e8f4ec; } /* Part 6 green */
+.sidebar-menu-container > ul > li:nth-child(8) { --week-color: #b35900; --week-tint: #fbeee2; } /* Tracks orange */

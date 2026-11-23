@@ -211,6 +211,11 @@ activate the environment. Then check that "import skfem" works and tell
 me the version.
 ```
 
+::: {.callout-note}
+## No environment needed with Rust
+This step exists because Python and R programs need their packages installed next to them. A program written in **Rust** compiles to one self-contained file that runs without a virtual environment, conda or Docker. See *[Translating code to Rust](../rust-translation/lec.qmd)*.
+:::
+
 Read the install command before you approve it: it should install into the project folder (often `.venv`), not into the whole computer. When this page was written, the current version was 12.0.2.
 
 **Step B2: the plate, with a known answer.**

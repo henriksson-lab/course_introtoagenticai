@@ -252,11 +252,13 @@ This is the kind of output you want back. A table of checks, each with the expec
 
 ## For FEM, let the agent install scikit-fem in a project environment
 
-![](fig19-fem-install.svg){width="62%" fig-align="center"}
+![](fig19-fem-install.svg){width="55%" fig-align="center"}
 
-- `scikit-fem` is a small Python library (needs only numpy and scipy). Ask for it **in a project environment**, never system-wide.
+- `scikit-fem` is a small Python library (needs only numpy and scipy). Ask for it **in a project environment**\*, never system-wide.
 - Record the versions (`requirements.txt`), as in *Reproducible figures*.
 - Heavier alternatives exist: **FEniCSx** (more powerful, harder to install, usually via conda or Docker) or a commercial package your department licenses.
+
+\* With **Rust**, no project environment, conda or Docker is needed: a Rust program compiles to one self-contained file. See [Translating code to Rust](../rust-translation/lec.qmd).
 
 ::: notes
 If you choose the finite element option, the agent needs a library. We suggest scikit-fem, a small Python package that only needs numpy and scipy, which makes it easy to install. Ask the agent to install it for this project only, in what Python calls a virtual environment, a folder inside the project that holds its own copies of the packages. That way nothing else on your computer changes, and a colleague can recreate the same setup. The agent will ask permission to run the install command; read it as you learned in the Terminal survival kit, and check that it installs into the project folder. Ask it to record the versions, exactly as in Reproducible figures. If you need more power, FEniCSx is a widely used open-source alternative, but it is harder to install. If your department has a commercial package, the agent can often write input files for that too, but you need the licence.
