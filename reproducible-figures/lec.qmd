@@ -50,7 +50,7 @@ Here is the situation. Figure 2 of a manuscript was made in a spreadsheet, a yea
 A script is a short program, here in R, that does four things in order: read the data file, make any choices such as leaving out the plant that died, draw the plot, and save it in the formats you need. Three things follow. You can run it again next year and get the same figure. You can run it on a new data file with the same columns and get the matching figure. And the script is a written record of every choice: if a reviewer asks whether the dead plant was excluded, the answer is in the script, in one line, and the agent can point you to it. This is the same idea as the cleaning script in First delegations, applied to figures.
 :::
 
-## The agent writes the script; you decide what the figure shows and check it {.smaller}
+## The agent writes the script; you decide what the figure shows and check it
 
 | You | The agent |
 |---|---|
@@ -82,7 +82,7 @@ Here is the example data for the exercise. It is synthetic: a made-up experiment
 A word on data shape, because your own data may not look like our example. Many spreadsheets are wide: one column per depth, or per time point, or per patient. That is convenient for typing, but for plotting, the depth is hidden in the column names. The long, or tidy, form has one row per measured value, and the depth becomes a column of its own, which you can colour by or split into panels. You do not have to reshape your files yourself. Tell the agent what the columns mean, and ask it to do any reshaping inside the script, so that the raw file stays as it is. We use the long form for the lake temperature data in the Python variant.
 :::
 
-## R or Python? Both are fine; choose what your colleagues use {.smaller}
+## R or Python? Both are fine; choose what your colleagues use
 
 | | R with ggplot2 | Python with matplotlib |
 |---|---|---|
@@ -105,7 +105,7 @@ Which language should the script be in? For our purposes the answer matters litt
 R or the plotting package may not be installed yet. As in the Terminal survival kit, ask the agent to check first, and to propose an installation without doing it. R itself is installed from the official CRAN site or a package manager, and may need an administrator password or the university software centre. Packages like ggplot2 then come from CRAN, the official R package archive, into your personal library, which does not need administrator rights. Notice that installing a package downloads code from the internet; the permission request shows where from. CRAN for R and PyPI for Python are the standard sources. If the agent proposes a source you do not recognise, ask.
 :::
 
-## The first prompt describes the figure, not the code {.smaller}
+## The first prompt describes the figure, not the code
 
 ```text
 plant-biomass.csv holds dry biomass (mg) of 48 seedlings: fertiliser
@@ -160,7 +160,7 @@ Here is one result of that prompt, made by our reference script. Every plant is 
 Checking a figure works like checking a table: compare it with the source. Pick one group, at random, not the first one. Open the CSV in a spreadsheet, filter to that group, count the rows and compute the mean. Compare with the summary table the script wrote, and then with the figure itself: is the mean marker where it should be on the axis? In our example, low fertiliser under drought has 8 plants with a mean of 117.4 milligrams. Then look at the counts: 48 rows went in, 47 were plotted, and the script should name the plant it left out. If n is seven in a group where you expected eight, find out why before you trust anything else.
 :::
 
-## Check labels, units and what the error bars mean {.smaller}
+## Check labels, units and what the error bars mean
 
 - **Units.** Is it milligrams, as in the data? An agent may "helpfully" convert to grams, or label mg data as g.
 - **Error bars.** SD, standard error or confidence interval? They differ by a factor of about 3 for n = 8. Ask which, and put it in the caption.
@@ -299,7 +299,7 @@ The Python variant uses a second data set: daily lake water temperature at three
 A reminder, as in every hands-on unit. Your agent will write a different script from ours and make a figure that looks different in the details. Compare numbers, not appearances. If a number differs, do not assume the reference is right: go back to the data. Scripts often fail the first time, because a package is missing or a column name is spelled differently. The agent reads the error message and fixes the script, usually without your help. That is fine, but a script that runs is not a script that is right. "It ran without errors" never counts as checked.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Silently dropped rows.** Missing values, odd labels or a filter: fewer points than you think. Count.
 - **The wrong summary.** SE labelled as SD, a median called a mean, a log scale nobody mentions.
@@ -322,7 +322,7 @@ Here are the typical failures. Silently dropped rows are the most common and the
 Here is the checklist to use for every figure from now on, in the exercise and in your own work. Rows in equals rows plotted plus rows left out, with reasons. The number per group matches the design. One group's mean checked by hand. Labels and units correct. Error bars say what they are. Readable at the final size, and the colours still work when printed in grey. And script, figure and versions committed together. The first three must be redone after every rerun on new data, because that is where new data brings surprises.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|

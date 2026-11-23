@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 620" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="620" fill="#ffffff"/>
+  <text x="500" y="44" text-anchor="middle" font-size="30" font-weight="bold" fill="#222">Where is the key fact in a long context?</text>
+  <!-- axes -->
+  <line x1="130" y1="470" x2="900" y2="470" stroke="#444" stroke-width="2.5"/>
+  <line x1="130" y1="470" x2="130" y2="100" stroke="#444" stroke-width="2.5"/>
+  <text x="515" y="520" text-anchor="middle" font-size="24" fill="#333">position of the key fact in the context</text>
+  <text x="170" y="500" text-anchor="middle" font-size="22" fill="#555">start</text>
+  <text x="515" y="500" text-anchor="middle" font-size="22" fill="#555">middle</text>
+  <text x="860" y="500" text-anchor="middle" font-size="22" fill="#555">end</text>
+  <text transform="translate(70,285) rotate(-90)" text-anchor="middle" font-size="24" fill="#333">answers correct</text>
+  <!-- U curve -->
+  <path d="M 170 150 C 300 330, 420 380, 515 380 C 620 380, 740 320, 860 135" fill="none" stroke="#2a7f8f" stroke-width="7" stroke-linecap="round"/>
+  <circle cx="170" cy="150" r="10" fill="#2a7f8f"/>
+  <circle cx="515" cy="380" r="10" fill="#a8324a"/>
+  <circle cx="860" cy="135" r="10" fill="#2a7f8f"/>
+  <!-- labels -->
+  <text x="200" y="130" font-size="22" fill="#2a7f8f" font-weight="bold">used well</text>
+  <text x="760" y="112" font-size="22" fill="#2a7f8f" font-weight="bold">used well</text>
+  <text x="515" y="430" text-anchor="middle" font-size="22" fill="#a8324a" font-weight="bold">easily missed</text>
+  <!-- caption -->
+  <text x="500" y="575" text-anchor="middle" font-size="18" fill="#666">Schematic, not data. After Liu et al. (2024), "Lost in the Middle: How Language Models Use Long Contexts",</text>
+  <text x="500" y="600" text-anchor="middle" font-size="18" fill="#666">Transactions of the ACL 12. The size of the dip differs between models and tasks.</text>
+</svg>

@@ -149,7 +149,7 @@ Here is the most common mistake, made visible. Both curves come from the same co
 The second skill is to check, and to check in a particular order, from the bottom of this ladder upwards. First, a case with an exact answer: one half-life, a straight line, the textbook formula. Second, nothing appears from nowhere: in the epidemic model the total number of people stays the same, temperatures never go above the hottest edge, amounts never go negative. Third, extreme cases behave sensibly: no outbreak when R0 is below one, no bending without a force, twice the dose gives twice the level in a linear model. Fourth, refine the steps or the mesh until the answer stops changing. Only then, at the top, compare with real measurements. You need no mathematics for any of these rungs. You need to know what answer to expect, which comes from your field, a textbook, or a simple case.
 :::
 
-## The drug model passes when it halves every half-life {.smaller}
+## The drug model passes when it halves every half-life
 
 ![](fig13-pk-check.svg){width="82%" fig-align="center"}
 
@@ -160,7 +160,7 @@ The second skill is to check, and to check in a particular order, from the botto
 Here is the first rung in practice. The thick grey line is the known answer: the concentration halves every six hours. The teal dots are the simulation. They lie on the line, and the printed numbers match to three decimals. This check takes the agent a few seconds to add, and it catches unit mistakes, sign mistakes and a wrong formula at once. Notice the second bullet. Ask for the comparison as numbers, not only as a plot. Two lines on top of each other can hide a difference of a few per cent, and a plot at the wrong scale can hide much more. A small table with "expected", "got" and "OK" is much harder to misread.
 :::
 
-## The epidemic model passes three checks that need no maths {.smaller}
+## The epidemic model passes three checks that need no maths
 
 ![](fig14-sir-check.svg){width="85%" fig-align="center"}
 
@@ -172,7 +172,7 @@ Here is the first rung in practice. The thick grey line is the known answer: the
 The epidemic model has several known answers, and you can state all of them in words. First, the total: susceptible plus infected plus recovered must stay at ten thousand, because the model has no births, deaths or travel. The grey dashed line shows it does. Second, a textbook property of this model is that the number of infected peaks exactly when the share still susceptible has fallen to one over R0, here one third. The simulation peaks at 3320 susceptible, very close to 3333; the small gap is because a few people were infected at the start. Third, with R0 below one there is no outbreak at all: the right panel shows the number infected only falls. If any of these failed, something would be wrong in the code, and you would not need to read the code to know it.
 :::
 
-## Skill 3: refine until the answer stops changing {.smaller}
+## Skill 3: refine until the answer stops changing
 
 | Cell size along the rod | Largest error (°C) | Error shrinks by |
 |---|---|---|
@@ -207,7 +207,7 @@ Both meshes give a picture of a nicely bent beam. Only the formula and the refin
 This is a more subtle example, from the finite element method. The beam from earlier, with two kinds of triangles. With quadratic triangles, the purple line, the tip deflection is right at the textbook value from the first, coarse mesh. With linear triangles, the red line, the coarse mesh gives a tip deflection of 0.56 millimetres, 63 per cent too small. The beam is far too stiff. Engineers call this locking. It slowly improves as the mesh gets finer, but even with five thousand triangles it is still a few per cent off. The point is not the name of the effect. The point is that the picture of the bent beam looks perfectly fine in both cases. You would only know something was wrong from the formula, or from the fact that the answer keeps changing as you refine. That is why refinement is not optional.
 :::
 
-## Agent-based models are noisy: compare many runs, not one {.smaller}
+## Agent-based models are noisy: compare many runs, not one
 
 ![](fig17-walkers-noise.svg){width="88%" fig-align="center"}
 
@@ -218,7 +218,7 @@ This is a more subtle example, from the finite element method. The beam from ear
 Agent-based models have a check of their own. They involve chance, so every run is different. On the left, twenty thousand walkers match the diffusion prediction closely. On the right, five runs with only fifty walkers each: every run tells a different story, and one is thirty per cent below the prediction. If you had run only one small simulation, you could have reported any of these. Two habits fix this. First, ask the agent to set a fixed random seed, so that the same run can be repeated exactly, which matters for reproducibility. Second, run several different seeds and report the spread, not one run. The same holds for any model with chance in it, including stochastic epidemic models.
 :::
 
-## The prompt states the model, the numbers, the checks and the output {.smaller}
+## The prompt states the model, the numbers, the checks and the output
 
 ```text
 Build a one-compartment pharmacokinetic model in Python (scipy).
@@ -250,7 +250,7 @@ Here is a prompt that puts the three skills together. It names the model in plai
 This is the kind of output you want back. A table of checks, each with the expected value that you supplied, the value the simulation got, and whether they agree. Then, and only then, the answer to your question: here, the level stays above two milligrams per litre for about fourteen hours after one dose. You can read this in ten seconds, and you can paste it into your notes or your project's log. Make the checks part of the script, so they run every time, not a one-off conversation. Next month, when you change a parameter, the checks still run. If a check fails after a change, you know immediately. As always, your session will look different: the agent may lay out the table differently or choose other wording. What matters is that the expected values come from you.
 :::
 
-## For FEM, let the agent install scikit-fem in a project environment {.smaller}
+## For FEM, let the agent install scikit-fem in a project environment
 
 ![](fig19-fem-install.svg){width="62%" fig-align="center"}
 
@@ -262,7 +262,7 @@ This is the kind of output you want back. A table of checks, each with the expec
 If you choose the finite element option, the agent needs a library. We suggest scikit-fem, a small Python package that only needs numpy and scipy, which makes it easy to install. Ask the agent to install it for this project only, in what Python calls a virtual environment, a folder inside the project that holds its own copies of the packages. That way nothing else on your computer changes, and a colleague can recreate the same setup. The agent will ask permission to run the install command; read it as you learned in the Terminal survival kit, and check that it installs into the project folder. Ask it to record the versions, exactly as in Reproducible figures. If you need more power, FEniCSx is a widely used open-source alternative, but it is harder to install. If your department has a commercial package, the agent can often write input files for that too, but you need the licence.
 :::
 
-## Change one thing at a time, and keep every run {.smaller}
+## Change one thing at a time, and keep every run
 
 - **What if** the half-life is 4 h? 8 h? Change **one** parameter per run.
 - Ask for a small **runs table**: run id, what changed, key result, all checks passed?
@@ -287,7 +287,7 @@ Once the model passes its checks, the fun starts: what-if questions. The habit t
 Here is an important distinction. Everything so far has been verification: did we solve the model right? Known answers, conservation, extreme cases, refinement. The agent can do most of this work, as long as you supply the expected answers. Validation is a different question: did we pick the right model at all? Is one compartment enough for this drug, or does it move into tissue and back? Do pupils in a school really mix at random, or mostly within their class? Does the plate really have insulated edges? These questions need your field: measurements, literature, a colleague's opinion. A perfectly verified model can still be the wrong model for your question. The agent can suggest what might be missing, but it cannot tell you which simplifications are acceptable in your field.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Missing units.** The agent guesses hours or minutes, metres or millimetres. Write them every time.
 - **Wrong edges.** Insulated vs fixed temperature; clamped vs free. Draw a sketch and describe each edge.
@@ -316,7 +316,7 @@ Here are the ways this goes wrong, collected in one place. Missing units and wro
 To sum up the division of labour. The agent is very good at the parts that used to require programming: writing the model, choosing a solver, setting up a mesh and installing libraries, adding checks and plots, and explaining what each part of the code does. It can also suggest standard models and known results, such as the textbook formula for a beam. But treat those suggestions like any other claim from a language model: look them up in a trusted source before you use them as a check. You supply the model in words, the numbers with units, the expected answers, and the judgement of whether the model fits your question. That last column is where your expertise matters, and it is what makes the result yours.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|

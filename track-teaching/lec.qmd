@@ -66,7 +66,7 @@ The most important design decision in this track is where the questions live. No
 Here is one question from the example bank, with its parts labelled. An identifier, so the question can be found and tracked across years. A short title. A topic and a difficulty, so you can pick a balanced quiz later. The stem, which is the question itself. The choices, with exactly one marked correct. Under each choice, one line saying why it is right or wrong; Canvas shows this to the student who picked it. And a general explanation shown after the attempt. The reasons are the part most question banks lack, and the part that turns a quiz into teaching. They are also the part an agent is good at drafting, because explaining a misconception is a writing task. The format is deliberately plain: a teacher can read and edit it without any tools.
 :::
 
-## Good distractors come from real mistakes, each with its reason {.smaller}
+## Good distractors come from real mistakes, each with its reason
 
 **Stem:** *The caption says the error bars "show how much individual plants vary". Which quantity should they show?*
 
@@ -104,7 +104,7 @@ student would, and list any question where you are unsure of the key.
 Here is a prompt that works, and it is the first prompt in the exercise. It follows everything from Delegating well. It names the learning goals, so the questions test what you teach rather than trivia. It names the misconceptions you see. It points to an existing file for the format, which is far more precise than describing it. It sets constraints that are easy to forget: exactly one correct answer, a reason for every choice, a spread of difficulty, the correct answer not always in the same position, realistic numbers. And it asks the agent to solve its own questions afterwards and flag doubts. That self-check is not a replacement for yours, but it catches the worst errors before you see them.
 :::
 
-## Generated questions fail in predictable ways {.smaller}
+## Generated questions fail in predictable ways
 
 | Failure | Example | How to catch it |
 |---|---|---|
@@ -154,7 +154,7 @@ How does a plain text file become a Canvas quiz? Through a standard called QTI, 
 In Canvas, the import is a few clicks. Go to your course, then Settings, then Import Course Content. Some universities label the link slightly differently. Choose QTI .zip file as the content type, choose your zip file, and click Import. Canvas processes it in the background, and after a minute the quiz appears under Quizzes, unpublished. If your institution has enabled New Quizzes, there may be a checkbox to import the quiz as a New Quiz; more on that on the next slide. Use a sandbox course for your first import if your university gives you one, or an unpublished course. This picture is a mock-up; your Canvas may look a little different.
 :::
 
-## Classic Quizzes and New Quizzes import differently {.smaller}
+## Classic Quizzes and New Quizzes import differently
 
 | | Classic Quizzes | New Quizzes |
 |---|---|---|
@@ -205,7 +205,7 @@ If your course page lives in a public GitHub repository, as it does since A cour
 Now variants. When students sit next to each other, or when last year's answers circulate, you want the same question with different numbers. The robust way is a template: the question text with placeholders, rules for the numbers, for example a standard deviation between 8 and 15 and a sample size that is a perfect square so the arithmetic stays simple, and a formula for the answer. A script draws the numbers, fills in the template, and computes the answer. A fixed random seed means the script produces the same variants every time you run it, so you can regenerate them and get the same sheet. Never let the agent write the variants and their answers as free text: then each answer is a separate chance for an arithmetic slip. The script computes; you check.
 :::
 
-## The key is computed, then checked by hand {.smaller}
+## The key is computed, then checked by hand
 
 ```text
 Make a script that writes 3 variants of each question in
@@ -244,7 +244,7 @@ Once you have variants, Canvas can hand one to each student. In Classic Quizzes,
 Now slides. You already know Quarto from A course or project page. The same tool makes slide decks: every deck in this course is a Quarto file rendered as a reveal.js presentation, which is a web page that behaves like slides. The workflow is: you write an outline, the points you want to make in the order you want to make them, with the figures you would like and the audience. The agent turns the outline into a Quarto file: one slide per point, with a claim as the title, the content, and speaker notes. Quarto renders it into HTML, which you can present from a browser, put on your course page, or print to PDF. Because the source is plain text, it goes into git like everything else, and next year's update is a diff, not a new PowerPoint.
 :::
 
-## A deck source is plain text: a header, then one section per slide {.smaller}
+## A deck source is plain text: a header, then one section per slide
 
 ````text
 ---
@@ -302,7 +302,7 @@ Figures are where slides go wrong most visibly. For concept figures, a diagram, 
 Accessibility is easy to postpone and expensive to retrofit. It matters for students with visual impairments, hearing impairments, dyslexia or colour blindness, and for everyone watching a recording on a phone. For public universities in the EU it is also a legal requirement. The Web Accessibility Directive covers public-sector websites, and in Sweden it is implemented in the law on accessibility of digital public services, with the agency DIGG as supervisor. The standard everyone points to is WCAG, the Web Content Accessibility Guidelines, at level AA. Your university has its own guidelines and someone who knows them. The good news is that the basics are exactly the kind of systematic, tedious work an agent does well, as long as you check the result.
 :::
 
-## Alt text says what the figure shows, not what it is called {.smaller}
+## Alt text says what the figure shows, not what it is called
 
 | Figure | Poor alt text | Good alt text |
 |---|---|---|
@@ -362,7 +362,7 @@ Here is how to use the agent for rubrics without crossing a line. Give it the as
 Here is the summary of the privacy rules for teaching, from Privacy, ethics and safety. Your own published material, your learning goals, your own model answers: fine. Exam questions before the exam: not forbidden, but they need precautions. Training off or an institutional plan, a private folder, never a public repository, and many universities have their own rules, so check yours. If in doubt, let the agent help with the practice bank, and pick and adapt the exam questions yourself, outside the agent. Never: student work, grades, names, email addresses, information about accommodations such as extra time, and free-text course evaluations, which often identify people. If you want statistics on your results, build the script on synthetic data and run it yourself, as in the privacy exercise.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Publishing a quiz without solving a sample.** One wrong key costs more time than the whole check.
 - **Distractors that are also correct.** Read each one and ask whether you could defend it.
@@ -377,7 +377,7 @@ Here is the summary of the privacy rules for teaching, from Privacy, ethics and 
 Here are the ways this track goes wrong, collected. Most are about checking: the key, the distractors, the rendering in Canvas, the alt text. Two are about where things live: answers in a public repository, and fixes made in Canvas but not in the source file, which means you lose them next year. One is about method: variants written by hand or by the agent as free text instead of computed. And the last is the privacy line, which does not move: no student work, grades or names. If you keep these in mind, the agent will save you many hours a term, and the material will be better than what you had time to write by hand.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -386,6 +386,15 @@ Here are the ways this track goes wrong, collected. Most are about checking: the
 | Checking a bank | solve three blind, key positions, read every reason, match goals |
 | Canvas import | QTI .zip: Settings › Import Course Content; creates a new quiz |
 | Student View | take the quiz as a student before publishing |
+
+::: notes
+To sum up the teaching track. Keep questions in one plain file and generate everything else from it. Write every question with a reason under every choice, and check a bank by solving a sample, looking at key positions and reading every reason. Import into Canvas as a QTI zip, and always take the quiz in Student View before you publish. Keep answers out of public repositories. Make variants from a template with a computed key, and check the extremes. Make slides from an outline with Quarto, with speaker notes on every slide. Build accessibility in from the start. And let the agent draft rubrics but never grade. That is the end of this track. From here, go back to the course overview and pick another track, or return to any unit you would like to apply to your own teaching.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | Private answers | private folder in `.gitignore`; never in a public repo |
 | Variants | template + seed + computed key; solve two by hand; check extremes |
 | Slides | outline → Quarto reveal.js; speaker notes on every slide; press S |
@@ -395,5 +404,5 @@ Here are the ways this track goes wrong, collected. Most are about checking: the
 **Next:** this is the last unit of the teaching track. Return to the [course overview](../index.qmd) for the other tracks (RNA-seq, simulation, image analysis, survey data), or to any earlier unit you want to apply to your teaching.
 
 ::: notes
-To sum up the teaching track. Keep questions in one plain file and generate everything else from it. Write every question with a reason under every choice, and check a bank by solving a sample, looking at key positions and reading every reason. Import into Canvas as a QTI zip, and always take the quiz in Student View before you publish. Keep answers out of public repositories. Make variants from a template with a computed key, and check the extremes. Make slides from an outline with Quarto, with speaker notes on every slide. Build accessibility in from the start. And let the agent draft rubrics but never grade. That is the end of this track. From here, go back to the course overview and pick another track, or return to any unit you would like to apply to your own teaching.
+The rest of the summary table, and where we go next.
 :::

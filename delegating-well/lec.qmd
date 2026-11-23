@@ -113,7 +113,7 @@ Constraints are the fences. What must stay untouched, which tools to use, which 
 The fourth part is the one most people leave out, and it is the most powerful. Write down how you will check the result. Twelve students, three conditions, every value between 150 and 1000 milliseconds after cleaning, a table of means that you can compare with your own spot check. Once these are written in the brief, the agent can run the same checks itself before it says it is done, find its own mistakes and fix them. Without criteria, the agent stops when the result looks done. With criteria, it stops when the result passes your tests. Remember from *How LLMs and agents work* that the agent's own check does not replace yours. But it catches many mistakes before you ever see them.
 :::
 
-## Good acceptance criteria can be checked by counting or looking {.smaller}
+## Good acceptance criteria can be checked by counting or looking
 
 | Vague | Checkable |
 |---|---|
@@ -145,7 +145,7 @@ A brief describes one result that you can check. "Analyse my whole project" is n
 Here is an example from teaching. On the left, a wish: "make some exam questions about photosynthesis". You will get ten questions, probably reasonable, probably at the wrong level, testing recall rather than understanding, with distractors no student would pick. On the right, the same request as a brief. The goal says the level and purpose. The context points at the learning outcomes and at last year's exam for style. The constraints rule out the usual weaknesses of generated questions. And the acceptance criteria say how the teacher will check: every question linked to an outcome, and an answer key with a reason, which the teacher will verify by solving the questions themself.
 :::
 
-## Research example: from a wish to a brief {.smaller}
+## Research example: from a wish to a brief
 
 **Weak:** "Find papers on microplastics in fish."
 
@@ -188,7 +188,7 @@ A common reaction to all this is to write two pages. That does not help. A long 
 Now two tools that help. The first is plan mode. In plan mode the agent can read files and look around, but it cannot change anything. Instead it writes a plan: what it found, what it intends to do, and often a few questions. You read the plan, correct it, and only then let the agent start. In *First delegations* we got a similar effect by writing "show me your plan before you change anything". Plan mode does the same with a guarantee: the tool blocks edits until you approve. This picture is a mock-up of Claude Code; the wording in your version may differ.
 :::
 
-## Plan mode in each tool {.smaller}
+## Plan mode in each tool
 
 | | Claude Code | Codex |
 |---|---|---|
@@ -204,7 +204,7 @@ For your own project, choose to approve edits one by one until you trust the pla
 Here is how plan mode works in each tool. In Claude Code you press Shift+Tab until the status line says plan mode, or you start a single prompt with slash plan. When the plan is ready, Claude Code asks whether to proceed, and offers to switch to auto mode or to approve edits manually. For your own data, choose the manual option. In Codex you type slash plan, optionally followed by the prompt. Codex gathers context, may ask questions, and writes a plan; when you are happy, tell it to go ahead. Menus and wording change between versions, so look for these words rather than exact positions. In Claude Code, pressing Shift+Tab at the approval prompt approves the plan, so use Escape if you want to leave instead.
 :::
 
-## Reading a plan: five things to look for {.smaller}
+## Reading a plan: five things to look for
 
 1. **Did it understand the goal?** The first lines should say back your purpose in its own words.
 2. **Which files will it change or create?** Anything outside what you expected is scope creep.
@@ -251,7 +251,7 @@ Here is a prompt for the interview. Three details matter. "One question at a tim
 Even with a good brief, the first result is rarely the final one. That is normal, and it is the same for work you hand to a person. The loop is: brief, plan, result, check against your criteria, correct, and round again. What matters is how quickly the loop closes. With checkable criteria and specific corrections, two or three rounds usually get you there. With vague criteria and vague corrections, the loop can go on all afternoon, and each round may undo something that was right.
 :::
 
-## A specific correction points, explains and fixes the cause {.smaller}
+## A specific correction points, explains and fixes the cause
 
 | Vague | Specific |
 |---|---|
@@ -317,7 +317,7 @@ Here is the template we use in the exercise. Goal, with the purpose. Context: wh
 A reminder you have heard before. Agents are not deterministic. The same brief, given twice, gives two different sessions, and sometimes two different results. A brief does not change that. What it does is give you a fixed yardstick: both runs must pass the same acceptance criteria. If both pass and give the same means, good. If they give different means, you have learnt that something in the job is ambiguous, and the brief needs another line. In the exercise, compare your results with the expected outcomes, not your session with the screenshots.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Steps instead of a goal.** The agent follows your steps into a wall it could have walked around.
 - **No acceptance criteria.** The agent stops when it looks done, not when it is done.
@@ -332,7 +332,7 @@ A reminder you have heard before. Agents are not deterministic. The same brief, 
 Here is what goes wrong, collected. Most items are the reverse of a part of the brief. Two deserve a comment. The agent can run your checks, and should, but its report that the checks passed is still a claim. Spot-check yourself, as always. And the brief itself is text that goes to the provider. Describing your data in a brief is fine; pasting a list of students' names into it is not. The privacy rules from Part 1 apply to everything you type, not only to files.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|

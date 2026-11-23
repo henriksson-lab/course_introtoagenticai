@@ -33,7 +33,7 @@ This is a **practical** unit. The exact commands live on the exercise page, whic
 Welcome to the unit everyone dreads a little: installation. The good news is that installing these tools has become much simpler. For each tool, it is one line pasted into a terminal, followed by a sign-in in the browser. The less good news is that every computer is slightly different, and university laptops in particular can have restrictions. So this unit is as much about what to do when it does not work as about the happy path. I will show you the shape of the process here. The exact commands, which change from time to time, are on the exercise page, and that page is the one you should have open when you actually install. We do not learn the terminal today. We only open it, paste, and press Enter. The next unit teaches the terminal properly.
 :::
 
-## Monday morning: you want to try this on a real task {.smaller}
+## Monday morning: you want to try this on a real task
 
 Imagine a teacher who saw the live build in *Why agentic AI?* and wants to try it on their own course material on Monday. Between them and the first useful result stand:
 
@@ -50,7 +50,7 @@ Each step is small. Missing any one of them stops everything. This lecture walks
 Let us make it concrete. Picture a colleague who wants to try this on Monday morning. They have perhaps used ChatGPT in a browser before. What stands between them and a working agent is not one big obstacle but four small ones in a row: account, install, sign-in, first test. Each takes a few minutes when it goes right. The trouble is that when one goes wrong, the error messages are written for programmers. So the plan for today is to walk the whole path once, slowly, and to look at the typical ways each step goes wrong. When you then do it yourself in the exercise, you will know where you are on this path at every moment.
 :::
 
-## You need three things: a plan, a program and a place to type {.smaller}
+## You need three things: a plan, a program and a place to type
 
 :::: {.columns}
 ::: {.column width="45%"}
@@ -69,7 +69,7 @@ Each tool (Claude Code, Codex) needs its own account and its own program. The te
 It helps to separate three things that are easy to mix up. First, the account. The language model itself runs on the company's servers, not on your laptop, and your plan decides how much you may use it. Second, the program. This is a small application that sits on your computer, reads your files when you ask, runs commands, and sends your requests to the model. Third, the terminal, which is simply the window where you start the program and type to it. Claude Code and Codex each need their own account and their own program, but they share the terminal. When something fails later, it helps to ask which of the three is the problem: is it my account, my installation, or my terminal?
 :::
 
-## Claude Code needs a paid Claude plan; the free plan does not include it {.smaller}
+## Claude Code needs a paid Claude plan; the free plan does not include it
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -89,7 +89,7 @@ We give **no prices**: they change. Links to the official plan pages are on the 
 For Claude Code, the rule is simple. The free Claude plan, the one many of you may have used in the browser, does not include Claude Code. You need Pro or something above it: Max, Team or Enterprise. The other route is the Claude Console, where you buy API credits and pay for what you use. Every plan has usage limits that reset after some hours. On a normal day of course work, Pro is usually enough; if you use the agent for long sessions every day, you may hit the limit and have to wait. I am deliberately not giving prices, because they change between course runs. The exercise page links to the official pricing page.
 :::
 
-## Codex comes with a ChatGPT account; Plus or higher is realistic {.smaller}
+## Codex comes with a ChatGPT account; Plus or higher is realistic
 
 - Codex is included across ChatGPT plans, **including Free and Go**, but with **low limits** there. On those plans, access to the terminal version may also be limited or still rolling out.
 - **Plus** or higher (Pro, Business, Edu, Enterprise) is what we recommend for the course.
@@ -121,7 +121,7 @@ Codex is OpenAI's agent, and it is tied to your ChatGPT account. OpenAI includes
 Before you pay out of your own pocket, find out whether your university already has an agreement. Many institutions now have Claude for Education, ChatGPT Edu or an enterprise plan. Having the plan is not the same as having the agent, though. The workspace administrator decides which features are switched on, and coding agents are sometimes switched off by default. So the question to send to IT is specific: do we have a plan, and does it include Claude Code or Codex? An institutional plan has one more advantage: the data terms are usually stricter, for example a promise not to train on your data. We come back to why that matters in the privacy unit.
 :::
 
-## A subscription has a monthly cap; an API key has a meter {.smaller}
+## A subscription has a monthly cap; an API key has a meter
 
 :::: {.columns}
 ::: {.column width="55%"}
@@ -175,7 +175,7 @@ You may have heard that you need to install a long list of programs to do data a
 Here is why there is an install step at all. When you use ChatGPT or Claude in the browser, everything happens on a web page. The model sees only what you type or paste. A coding agent is different: it is a program that runs on your own computer, and it can open the files in a folder, write new files, and run programs such as R or Python. The thinking still happens on the company's servers, but the hands are on your machine. That is what makes it useful, and it is also why we care so much about which folder you start it in. Today we start it in an empty folder, so it has nothing to touch.
 :::
 
-## Desktop apps and editor extensions exist; we use the terminal version because it is the same everywhere {.smaller}
+## Desktop apps and editor extensions exist; we use the terminal version because it is the same everywhere
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -238,7 +238,7 @@ Paste the line, press Enter, **wait**. The download shows little or no progress.
 Here is what an installation looks like. You paste one line, press Enter, and wait. For Claude Code there is often no progress bar at all for a while, which makes people think it has hung. Give it a minute or two. At the end you get a message saying the installation succeeded, sometimes with a note about something called PATH, which we come to shortly. Codex's installer behaves similarly, and it may offer to start Codex right away. Your screen will look slightly different from this picture: version numbers, colours and wording change. What matters is the last few lines: success, or an error message.
 :::
 
-## The install lines: one for macOS and Linux, one for Windows {.smaller}
+## The install lines: one for macOS and Linux, one for Windows
 
 | | macOS / Linux (Terminal) | Windows (PowerShell) |
 |---|---|---|
@@ -253,7 +253,7 @@ Here is what an installation looks like. You paste one line, press Enter, and wa
 Here are the actual lines, for orientation. Each tool has one line for Mac and Linux, and one for Windows PowerShell. Please do not type these off the slide: copy them from the exercise page, which we check before every course run, because these commands do change. There are also alternative routes. If you already use Homebrew on a Mac, or WinGet on Windows, or npm, both tools can be installed that way, but they then do not always update themselves. For a beginner, the official one-line installer is the simplest. A note for Windows users who have read older guides: Codex used to require WSL, the Linux subsystem for Windows. That is no longer the case; it now runs directly in PowerShell.
 :::
 
-## The install line downloads a program and tells the terminal where it is {.smaller}
+## The install line downloads a program and tells the terminal where it is
 
 ![](fig11-what-install-does.svg){width="90%" fig-align="center"}
 
@@ -359,7 +359,7 @@ The folder is empty, so a good answer says so. If it **claims to see files**, so
 And now the moment: your first conversation. Type a plain question, such as: which folder are we in, and what files can you see here? A good agent looks, rather than guesses. You will see it run a small action to list the files, and then it tells you the folder is empty. That is already a tiny verification exercise. You know the true answer, because you just made the folder. If it lists files, either you started it in the wrong folder, or it is making things up. Either way, you have learned something. Then ask it to create a small file, and approve when it asks. Finally, open the folder in your normal file browser and check that the file is really there.
 :::
 
-## The agent asks before it changes things; say yes for now, we discuss this next time {.smaller}
+## The agent asks before it changes things; say yes for now, we discuss this next time
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -392,7 +392,7 @@ Commands that start with `/` are instructions to the program, not to the AI.
 A few practical keys, so you can get out again. Both tools understand commands starting with a slash; these go to the program itself rather than to the AI. Slash exit leaves. Escape stops the agent if it is in the middle of something you do not want. Your conversations are saved on your computer, and you can pick the last one up again with claude dash c, or codex resume. You do not need to memorise this table; it is on the exercise page, and the next unit uses these all the time.
 :::
 
-## Keep the tools up to date: Claude Code updates itself, Codex needs a nudge {.smaller}
+## Keep the tools up to date: Claude Code updates itself, Codex needs a nudge
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -418,7 +418,7 @@ A few practical keys, so you can get out again. Both tools understand commands s
 Both tools change quickly. New versions come out every week, sometimes several times. Claude Code, when installed with the official installer, updates itself in the background, and the new version starts next time you open it. If you want to update right away, type claude update in the terminal. Claude doctor gives you a quick health check of the installation. For Codex, either run codex update or simply run the install line again, which also updates. One rule for the course: if what you see on screen does not match the instructions, update first, then ask.
 :::
 
-## "Command not found" means the terminal cannot find the program yet {.smaller}
+## "Command not found" means the terminal cannot find the program yet
 
 ![](fig18-command-not-found.svg){width="88%" fig-align="center"}
 
@@ -444,7 +444,7 @@ Now, the most common failure: you type claude and the terminal answers "command 
 On Windows, a whole family of errors means just one thing: the command and the window do not match. If you see "irm is not recognized", you are in Command Prompt, not PowerShell. If you see a complaint about the token double ampersand, you pasted the Command Prompt version into PowerShell. If it complains about bash, or about a parameter called fsSL, you copied the Mac and Linux line by mistake. And the 32-bit message means you opened the x86 version of PowerShell. In every case the fix is to match the line to the window. None of these mean anything is broken.
 :::
 
-## On a university-managed laptop, the install may be blocked: ask IT, or use the desktop app {.smaller}
+## On a university-managed laptop, the install may be blocked: ask IT, or use the desktop app
 
 :::: {.columns}
 ::: {.column width="55%"}
@@ -462,7 +462,7 @@ On Windows, a whole family of errors means just one thing: the command and the w
 Many of you work on laptops managed by the university. The installers themselves do not need administrator rights: they install into your own user folder. But managed machines can block things in other ways. Script execution may be disabled, the network may route through a proxy that breaks secure connections, or the download sites may be blocked. The error messages then mention certificates, TLS, a 403 code, or scripts being disabled. Please do not try to work around these restrictions yourself; they exist for good reasons, and bypassing them can violate university policy. Instead, send IT the exact error and the link to the official install page. In the meantime, the desktop app is often easier to get approved, and it may even be in your software centre already.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Wrong plan.** Signed in with a free Claude account: Claude Code will not work. Check which account the browser was logged into.
 - **Wrong account.** You have both a personal and an institutional login. The browser picks the one it remembers. Log out in the browser first if needed, then use `/login` in Claude Code or `/logout` and restart in Codex.
@@ -475,7 +475,7 @@ Many of you work on laptops managed by the university. The installers themselves
 Let me collect the things that typically go wrong, so you recognise them. The first is the plan: someone signs in with a free Claude account and wonders why Claude Code will not work. The second is the account: many of us have a personal and a university login, and the browser quietly uses whichever it remembers. If the agent reports the wrong account, sign out in the browser and sign in again from the agent. The third is the old terminal window we discussed. The fourth is following an old blog post; these tools change fast, so stick to the exercise page. The fifth is starting the agent in the wrong folder. And finally, both services are only available in supported countries, which is rarely an issue here but good to know when travelling.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -484,6 +484,15 @@ Let me collect the things that typically go wrong, so you recognise them. The fi
 | Institutional plans | May include the agents; ask IT whether they are switched on. |
 | GitHub | Free account; create it now, use it in Part 3. |
 | Install | One official line per tool, pasted into Terminal (macOS/Linux) or PowerShell (Windows). No admin rights needed. |
+
+::: notes
+To sum up. You need an account that includes the agent: Pro or higher for Claude Code, a ChatGPT plan for Codex, with Plus being realistic, and possibly your university's plan, if IT has switched the agents on. Make a free GitHub account now for later. Installing is one official line per tool. Command not found almost always means the terminal needs to be reopened. The first start signs you in through the browser, and the first hello happens in an empty folder, where you can check the answer yourself. Keep the tools updated. In the next unit, Terminal survival kit, we learn to move around in the terminal, read what the agent wants to do before approving it, and let it install the rest of our software.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | PATH | The list of folders the terminal searches. "Command not found" usually means: open a new terminal. |
 | First start | Sign in through the browser, once per computer. |
 | First hello | In an empty folder: "What can you see?" Check the answer yourself. |
@@ -492,5 +501,5 @@ Let me collect the things that typically go wrong, so you recognise them. The fi
 **Next (Terminal survival kit):** files, folders and paths; moving around in the terminal; reading and approving what the agent wants to do; permission modes; letting the agent install R, Python and git for you.
 
 ::: notes
-To sum up. You need an account that includes the agent: Pro or higher for Claude Code, a ChatGPT plan for Codex, with Plus being realistic, and possibly your university's plan, if IT has switched the agents on. Make a free GitHub account now for later. Installing is one official line per tool. Command not found almost always means the terminal needs to be reopened. The first start signs you in through the browser, and the first hello happens in an empty folder, where you can check the answer yourself. Keep the tools updated. In the next unit, Terminal survival kit, we learn to move around in the terminal, read what the agent wants to do before approving it, and let it install the rest of our software.
+The rest of the summary table, and where we go next.
 :::

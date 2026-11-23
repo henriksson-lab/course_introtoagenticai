@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 560" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="560" fill="#ffffff"/>
+  <text x="500" y="44" text-anchor="middle" font-size="30" font-weight="bold" fill="#222">Arrange the context window on purpose</text>
+  <!-- window -->
+  <rect x="60" y="90" width="880" height="150" rx="12" fill="#f4f4f4" stroke="#777" stroke-width="2"/>
+  <rect x="75" y="105" width="230" height="120" rx="8" fill="#2a7f8f"/>
+  <text x="190" y="152" text-anchor="middle" font-size="23" fill="#fff" font-weight="bold">Standing rules</text>
+  <text x="190" y="182" text-anchor="middle" font-size="17" fill="#fff">AGENTS.md, CLAUDE.md</text>
+  <text x="190" y="206" text-anchor="middle" font-size="19" fill="#fff">loaded first</text>
+  <rect x="320" y="105" width="360" height="120" rx="8" fill="#d9d9d9"/>
+  <text x="500" y="152" text-anchor="middle" font-size="23" fill="#333" font-weight="bold">Material</text>
+  <text x="500" y="182" text-anchor="middle" font-size="19" fill="#333">only the files and parts</text>
+  <text x="500" y="206" text-anchor="middle" font-size="19" fill="#333">this task needs</text>
+  <rect x="695" y="105" width="230" height="120" rx="8" fill="#6b4fa0"/>
+  <text x="810" y="152" text-anchor="middle" font-size="23" fill="#fff" font-weight="bold">The request</text>
+  <text x="810" y="182" text-anchor="middle" font-size="19" fill="#fff">task, constraints,</text>
+  <text x="810" y="206" text-anchor="middle" font-size="19" fill="#fff">how it will be checked</text>
+  <text x="190" y="272" text-anchor="middle" font-size="20" fill="#2a7f8f">start: used well</text>
+  <text x="500" y="272" text-anchor="middle" font-size="20" fill="#a8324a">middle: easily missed</text>
+  <text x="810" y="272" text-anchor="middle" font-size="20" fill="#6b4fa0">end: used well</text>
+  <!-- do / avoid -->
+  <text x="80" y="330" font-size="24" font-weight="bold" fill="#2a7f8f">Do</text>
+  <text x="80" y="366" font-size="21" fill="#333">• put the question after a long document</text>
+  <text x="80" y="398" font-size="21" fill="#333">• restate the key constraint at the end</text>
+  <text x="80" y="430" font-size="21" fill="#333">• let a script read big data; show summaries</text>
+  <text x="80" y="462" font-size="21" fill="#333">• one task per session; notes in files</text>
+  <text x="540" y="330" font-size="24" font-weight="bold" fill="#a8324a">Avoid</text>
+  <text x="540" y="366" font-size="21" fill="#333">• pasting whole datasets or many PDFs</text>
+  <text x="540" y="398" font-size="21" fill="#333">• the one crucial rule buried mid-prompt</text>
+  <text x="540" y="430" font-size="21" fill="#333">• long sessions that drift across tasks</text>
+  <text x="540" y="462" font-size="21" fill="#333">• old, wrong attempts left in the window</text>
+  <text x="500" y="530" text-anchor="middle" font-size="18" fill="#666">Schematic. Positions are a tendency, not a rule; the agent also reads files on its own.</text>
+</svg>

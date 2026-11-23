@@ -63,3 +63,10 @@ annotated (arrows, highlighted boxes) so that the eye lands on the point.
 There is no page limit. A deck may have up to about 40 slides when the topic
 needs it. One topic per deck still holds: if a deck covers two topics, split it
 rather than cut good material.
+
+## 11. One font size on every slide
+Text size never changes between slides: no `{.smaller}`, `.r-fit-text`, inline
+`font-size` or similar. When a slide does not fit, make the **image smaller**
+first, then cut or move text, then split the slide (e.g. "Summary" and
+"Summary (continued)"). Check fit by rendering the deck and looking at it, or
+with the overflow check described in README.md.

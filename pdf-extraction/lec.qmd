@@ -79,7 +79,7 @@ Ask the agent: "Is there a structured version of this paper or its data?" before
 Before we go into PDF techniques, a shortcut that saves a lot of trouble. Many open-access papers also exist in a structured form. Europe PMC and PubMed Central keep the full text as XML, where a table is stored as a real table with rows and cells, and Europe PMC's API, which you used in the last unit, can return it. Supplementary material is often a spreadsheet. And the data behind a paper may be in a repository. Any of these is far more reliable than taking a PDF apart. So the first question is always whether a better source exists. For old reports, theses, protocols and most of your own archive, there is no alternative, and then the rest of this lecture applies.
 :::
 
-## The agent has several ways to read a PDF {.smaller}
+## The agent has several ways to read a PDF
 
 | | Claude Code | Codex |
 |---|---|---|
@@ -155,7 +155,7 @@ A practical point that costs a lot of time in real work: the number you want is 
 This is the hardest kind of error, because the agent reads correctly and still gets it wrong. A paper mentions many numbers that look like the answer. Here, 260 people were recruited, but only 229 were analysed. The abstract gives the median, 42.5, while we want the mean, 44.8, which is only in the table. The introduction quotes another survey's mean of 71. Every one of these numbers is in the paper, so a quote will not prove it is the right one. You saw the same thing in First delegations, where a report quoted another study's result. The defence is a precise definition of what you want, and checks that look at the context, not only at the number.
 :::
 
-## Define the quantity exactly before you extract {.smaller}
+## Define the quantity exactly before you extract
 
 ```text
 # extraction-definition.md
@@ -186,7 +186,7 @@ So before extracting anything, write down exactly what you want. Which number: a
 The first worked example uses six short synthetic papers that we made for this course, plus one supplement. They are invented studies of vitamin D in different groups of people, and each hides one problem you will meet in real papers: units in a header, a table over a page break with decimal commas, a scanned paper with no text, a paper full of tempting wrong numbers, and a paper whose numbers are only in the supplement. The first one is easy, as a baseline. Because we made them, there is an answer key. That lets you see which traps your agent falls into, before you work on real papers where nobody knows the answers.
 :::
 
-## The prompt asks for the value as printed, the unit, the page and a quote {.smaller}
+## The prompt asks for the value as printed, the unit, the page and a quote
 
 ```text
 The folder papers/ holds seven PDFs (six studies and one supplement).
@@ -261,7 +261,7 @@ The third check is new in this unit and very effective. Give the same PDFs and t
 Here is what the comparison might look like. Out of all the cells, a few differ. For each, you open the PDF and decide who is right. In this illustrative case, one agent forgot to convert ng/mL, the other took the recruited number and the median. So instead of checking every cell, you check four places. Where both agents agree, they can still both be wrong, for example if the definition itself was unclear, so the random hand check still matters. The differences also teach you something about each agent: which traps it falls into. That is useful knowledge for Parallel workers in Part 5, where you will use two agents together routinely.
 :::
 
-## Worked example 2: real open-access papers from your literature table {.smaller}
+## Worked example 2: real open-access papers from your literature table
 
 - Take the papers in your literature table that are **open access with a CC BY licence**. Europe PMC's API returns the licence and the PMCID.
 - Choose **five** that report a human cohort or patient samples (Hedgehog) or a study with students (teaching methods).
@@ -273,7 +273,7 @@ Here is what the comparison might look like. Out of all the cells, a few differ.
 The second worked example uses real papers: the ones in your literature table from the last unit. The agent can ask Europe PMC which of them are open access and under which licence. Pick five that report human data. For the Hedgehog genes, those are the papers with patients or tumour samples; for teaching methods, studies with students. Extract the number analysed, with the page, and one main result as the authors report it. Real papers are messier than our practice set: the number analysed may differ between the methods and a table, or not be stated at all. Write the definition first, then the same two-agent extraction and comparison. With only five papers, check every row by hand.
 :::
 
-## Get the papers through official routes, not by scraping {.smaller}
+## Get the papers through official routes, not by scraping
 
 - **A handful of papers:** download the PDF yourself from the article page in Europe PMC, PMC or the journal.
 - **Structured full text:** Europe PMC's API serves the XML of open-access papers; no scraping needed.
@@ -305,7 +305,7 @@ Copyright decides what you may do with the papers. Under the most common open li
 The same workflow applies to your own documents: a folder of old lab protocols with concentrations to collect, reports with yearly measurements, theses with tables of results. Two extra cautions. Old documents are often scanned, so expect OCR and check more rows than you would for text PDFs. And your own documents are not necessarily public. Run them through the data classification from Privacy, ethics and safety before the agent reads them: whatever the agent reads is sent to the provider. Documents with personal data, such as names, patient details or student results, do not go to a cloud agent. Start small, five documents, and scale up only when the checks pass.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Scanned pages skipped silently.** The text tool returns nothing, the row says "not reported". Check text per file first.
 - **Shifted columns.** The SD read as the mean; the header two lines up. Check against the page.
@@ -321,7 +321,7 @@ The same workflow applies to your own documents: a folder of old lab protocols w
 Here is what goes wrong, in one list. Scanned pages that a text tool skips without complaint, so a value becomes "not reported". Columns that shift, so the standard deviation becomes the mean. Units copied without conversion. Decimal commas misread. The right paper but the wrong number. Values the agent computed rather than found. Supplements nobody opened. A subtle one: both agents wrong in the same way, which happens when your definition was ambiguous, so they both made the same reasonable guess. That is why the hand checks stay even when the agents agree. And last, the legal side: PDFs shared or downloaded in ways their licence or the website's terms do not allow.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -330,6 +330,15 @@ Here is what goes wrong, in one list. Scanned pages that a text tool skips witho
 | Structured first | full-text XML, supplementary spreadsheets, data repositories before the PDF |
 | Reading methods | model reads the page (flexible, no record) or a script (exact, repeatable); OCR for scans |
 | Typical traps | tables apart, page breaks, units in headers, decimal commas, supplements, the wrong number |
+
+::: notes
+To sum up. A PDF stores text at positions, not tables, so every extraction involves guesses. Find out first whether each PDF has text, is a scan, or is a mix, and look for a structured version before you open a PDF at all. The model reading the page and a script reading the file have different strengths; record which was used for each value. Define the quantity exactly, and keep the value as printed next to the converted one, with page, table and quote. Verify with an answer key while practising, then with random hand checks and a second, independent agent. And share your table freely, but PDFs only as their licence allows. In the next unit we move from documents to web data at scale: grant databases, their APIs, and the rules for collecting from the web.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | Definition | which number, which group, which unit, what if missing; the brief for both agents |
 | Extraction table | value as printed + unit, converted value, file, page, table, quote, method |
 | Verification | answer key (practice), random hand checks, a second agent and a diff |
@@ -338,5 +347,5 @@ Here is what goes wrong, in one list. Scanned pages that a text tool skips witho
 **Next (Collecting and analysing grant results):** from documents to databases on the web: APIs versus scraping, terms of use, and storing raw downloads apart from the analysis.
 
 ::: notes
-To sum up. A PDF stores text at positions, not tables, so every extraction involves guesses. Find out first whether each PDF has text, is a scan, or is a mix, and look for a structured version before you open a PDF at all. The model reading the page and a script reading the file have different strengths; record which was used for each value. Define the quantity exactly, and keep the value as printed next to the converted one, with page, table and quote. Verify with an answer key while practising, then with random hand checks and a second, independent agent. And share your table freely, but PDFs only as their licence allows. In the next unit we move from documents to web data at scale: grant databases, their APIs, and the rules for collecting from the web.
+The rest of the summary table, and where we go next.
 :::

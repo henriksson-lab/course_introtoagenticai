@@ -63,7 +63,7 @@ Dual use is not new to you. Knowing how a pathogen causes disease, how it spread
 What exactly are the providers afraid of? Not that a model explains how the immune system works; that is in every textbook. The worry is uplift: that the model could fill in the hard, practical steps that today require years of specialist training, and so lower the barrier for someone who should not have that capability. Anthropic's Responsible Scaling Policy, version 3.4 from July 2026, describes its biology thresholds in exactly these terms, at two levels: helping people with basic technical backgrounds, such as an undergraduate science degree, and functionally substituting for the rare world-leading expertise that is now the main barrier. OpenAI's Preparedness Framework defines High biological capability as meaningful help to a novice. Note the last bullet: in 2025 both companies said openly that they could not prove their newest models crossed these thresholds, and switched on the protections anyway. That precaution is the reason you see so many blocks.
 :::
 
-## The most capable models carry the strictest biology safeguards {.smaller}
+## The most capable models carry the strictest biology safeguards
 
 | | Anthropic (Claude) | OpenAI (ChatGPT, Codex) |
 |---|---|---|
@@ -132,7 +132,7 @@ After a stop: **check what was already written**, and do not assume the task is 
 In an agent like Claude Code or Codex, the same classifier can stop a long task in the middle. This is what happened on Friday. The agent had read the notes, written two files of the handout, and was in the middle of the third when an error appeared saying the request was stopped by a safety system and that a new session is needed. Three things follow. First, the files already written are real and on your disk; open them and check they are complete. Second, the third file may be half written, so do not use it as it is. Third, a new session starts from nothing: the agent does not remember the plan. If you continue, you brief it again, ideally with more context, as we will see. And if you use git from Git as undo button, you can see exactly which files changed before the stop.
 :::
 
-## Each form tells you something different about what to do next {.smaller}
+## Each form tells you something different about what to do next
 
 | What you see | Where it comes from | First thing to do |
 |---|---|---|
@@ -191,7 +191,7 @@ practice; no organism-specific details are needed.
 Here is what that looks like for the Friday example. The first prompt is short and gives the agent almost nothing to go on: spills of what, for whom? The second says who is asking, what kind of lab it is, who will read the result, what the section should contain, and what it should not contain. Notice that nothing here is a trick. Every sentence is true and would be fine for the biosafety officer to read. Notice also the last sentence: saying what you do not need is useful, because it keeps the request clearly in the teaching zone. This does not guarantee that the classifier lets it through; classifiers are not perfectly predictable. If it still stops, write that section yourself or with your biosafety officer's template, and let the agent do the layout. In the exercise you practise exactly this.
 :::
 
-## Providers run access programmes for verified organisations {.smaller}
+## Providers run access programmes for verified organisations
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -255,7 +255,7 @@ Now the second half: limits that have nothing to do with safety policies, and af
 Numbers deserve their own slide, because this is where plausible text fails most quietly. A microgram and a milligram per millilitre differ by one character and a factor of a thousand. A millimolar and a molar, the same. A 1x and a 10x buffer differ by a digit. And 70 percent ethanol disinfects, while 7 percent does not. The model writes each version with exactly the same confidence, and there is nothing in the text that looks wrong. In data analysis, a wrong number usually produces a strange plot that you notice. At the bench, a wrong concentration can mean a failed week, a ruined sample, or a real hazard. So the rule is simple: recalculate every amount and every concentration yourself, as you would for a student's protocol. Better still, ask the agent to show its calculation for each one, and check that.
 :::
 
-## Safety steps go missing more often than they go wrong {.smaller}
+## Safety steps go missing more often than they go wrong
 
 | Often missing from agent-written protocols | Where to check |
 |---|---|
@@ -324,7 +324,7 @@ To put this in proportion: most biology and medicine work in this course will ne
 The limits of this lecture. First, the specifics date quickly: classifiers change from month to month, model names change, and the access programmes are in beta. Check the providers' pages. Second, false positives are certain if you work near the core; take them as a cost of the system, not as a judgement about you. Third, the vaguer answer is the form most people miss, so compare with what you know. Fourth, an agent stopped midway leaves half-written files. Fifth, honest context helps when the request was benign, but it is not a key, and invented context breaks the policy. And last, the limit that affects everyone: fluent protocols contain errors, and the person who runs the experiment is responsible for its safety, not the agent.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -333,6 +333,15 @@ The limits of this lecture. First, the specifics date quickly: classifiers chang
 | Who blocks most | The most capable models, with classifiers for chemical and biological weapons (Anthropic ASL-3, OpenAI "High") |
 | Where | A small core (weapons, enhancing pathogens, making or obtaining them, detailed protocols) and a safety margin (virology, toxin biology, some molecular design) |
 | What it looks like | Refusal, vaguer answer, switch to another model, system message, agent stopping partway |
+
+::: notes
+To sum up. Biology is dual use, and the model cannot see who is asking, so the providers block help that gives real uplift toward weapons, most strictly on their most capable models. The blocks cluster in a small core, with a safety margin where legitimate virology, toxin biology and molecular design get caught. You see them as a refusal, a vaguer answer, a switch to another model, a system message, or a stopped agent. Treat them as a policy limit: never reword or disguise; give honest context when the request was benign; otherwise go to your biosafety officer, colleagues and the literature, and ask whether your institution uses one of the providers' access programmes. Beyond guardrails, check every agent-written protocol like a student's. In the next unit, Copyright, memorisation and credit, we look at another limit of a different kind: what the model has memorised from its training data, and what that means for copyright and credit.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | What to do | Policy limit, not a bug. Never reword or disguise. Benign request: honest context. Otherwise: biosafety officer, colleagues, literature |
 | Access programmes | Anthropic Life Sciences Verification Program, OpenAI trusted access: for organisations |
 | Other limits | Wrong concentrations, missing safety steps, invented references; medical advice needs a qualified human |
@@ -341,5 +350,5 @@ The limits of this lecture. First, the specifics date quickly: classifiers chang
 **Next (Copyright, memorisation and credit):** models can reproduce what they were trained on. What that means for copyright, for your own texts and data, and for giving credit when the agent helped.
 
 ::: notes
-To sum up. Biology is dual use, and the model cannot see who is asking, so the providers block help that gives real uplift toward weapons, most strictly on their most capable models. The blocks cluster in a small core, with a safety margin where legitimate virology, toxin biology and molecular design get caught. You see them as a refusal, a vaguer answer, a switch to another model, a system message, or a stopped agent. Treat them as a policy limit: never reword or disguise; give honest context when the request was benign; otherwise go to your biosafety officer, colleagues and the literature, and ask whether your institution uses one of the providers' access programmes. Beyond guardrails, check every agent-written protocol like a student's. In the next unit, Copyright, memorisation and credit, we look at another limit of a different kind: what the model has memorised from its training data, and what that means for copyright and credit.
+The rest of the summary table, and where we go next.
 :::

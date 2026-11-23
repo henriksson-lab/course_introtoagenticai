@@ -60,7 +60,7 @@ This is a working demo, embedded in the slide. Try a few things. Drag the red li
 In this course, a demo is a single HTML file. HTML is the language of web pages, and a single file can hold the page, its look and its behaviour, written in JavaScript. You do not have to read any of it. What matters is what this gives you. You can open the file by double-clicking it, in any browser. It works on a phone. You can embed it in your course page with one line. And it needs no internet and no installation, so it works in a lecture hall with bad wifi, and it will still work in ten years. The two example demos for this unit are about 11 and 14 kilobytes each.
 :::
 
-## One file, no build step, no internet: we insist on all three {.smaller}
+## One file, no build step, no internet: we insist on all three
 
 | Rule | Why | What to tell the agent |
 |---|---|---|
@@ -83,7 +83,7 @@ These rules are stricter than what a web developer would use, and that is on pur
 To give you an idea of what is possible, here are sketches of four demos from a sister course in quantitative biology. In the first, students drag two arrows and see that scaling one of them changes the distance between them but not the angle, which is why we use correlation rather than distance for expression profiles. In the second, two hundred random walkers hop between states, and the fractions in each state settle even though no walker ever stops. The third drops random events along a line, and students see that random events cluster much more than people expect. The fourth runs cross-validation on pure noise and shows that a common mistake gives 90% accuracy on data with no signal at all. Each one has a single message that a student can discover by playing.
 :::
 
-## What those demos have in common {.smaller}
+## What those demos have in common
 
 | Demo | What the learner moves | What the learner discovers |
 |---|---|---|
@@ -108,7 +108,7 @@ If we put the demos side by side, a pattern appears. Each demo has one message, 
 This is the most important slide of the unit. The natural way to start is to think about the widgets: I want a slider for this and a plot of that. Do not start there. Start with the learning goal, and then with the discovery: the one sentence that the student should be able to say after five minutes with the demo. "Growth is fastest at half of the carrying capacity." Only then decide which control lets them find it, and what they should watch while they move it. Steps one and two are yours: they need your teaching experience, and the agent cannot guess them. The agent is good at three and four. Step five, a known case, is how you check the model, and we come back to it in a few slides.
 :::
 
-## Write the discovery as one sentence you could test {.smaller}
+## Write the discovery as one sentence you could test
 
 | Too vague | A discovery you can test |
 |---|---|
@@ -132,7 +132,7 @@ A useful habit is to write the discovery as a sentence that could be true or fal
 Agents, like enthusiastic programmers, tend to make everything adjustable. The left demo has ten sliders, including step size, random seed and line colour. Students will move all of them and learn none of them. The right demo has two sliders, a reset and a preset. Everything that the learning goal does not need is fixed. If the discovery is about the carrying capacity, the student needs K, and perhaps r to see that the result holds whatever r is. They do not need the number of time steps. Presets are a very good tool: a button called "bacteria in a flask" or "deer on an island" puts the demo in an interesting state and gives the student a story. If the agent adds controls you did not ask for, ask it to remove them.
 :::
 
-## The prompt describes the learner, the discovery and the controls {.smaller}
+## The prompt describes the learner, the discovery and the controls
 
 ```text
 Make a single self-contained HTML file, logistic-growth.html, that teaches
@@ -172,7 +172,7 @@ This is roughly what the session looks like. The agent may ask a question or two
 To try the demo, find the file in your file browser and double-click it. It opens in your web browser. Look at the address bar: it starts with file colon slash slash and the path on your disk. Nothing is on the internet yet; you are the only person who can see it. You can also ask the agent to open it for you. Keep the browser window open next to the terminal. Every time the agent changes the file, reload the page with F5 on Windows or Command R on a Mac, and try again. This short loop, change, reload, try, is where most of the work of making a good demo happens.
 :::
 
-## Say what a student would see, not what to change in the code {.smaller}
+## Say what a student would see, not what to change in the code
 
 Good feedback describes the experience:
 
@@ -224,7 +224,7 @@ Here is the second example demo. Each line is a 95% confidence interval from one
 How do you catch a wrong model? Not by reading the code. You compare the demo with a case where you know the answer from theory, from a textbook, or from a hand calculation. For logistic growth there are several. The population reaches half of K at a time you can compute with a calculator: for these settings, 8.74 days. The steepest slope is r times K divided by 4, here 100 per day. Early on, the population doubles every ln 2 divided by r days. And a step-by-step numerical solution of the differential equation must agree with the formula the demo uses. Our example has a "Check the model" button that does the last two automatically. Compute at least one known case yourself, by hand or in Excel. The agent's own check is useful, but it is not your check.
 :::
 
-## Known cases exist in every field {.smaller}
+## Known cases exist in every field
 
 | Demo | A known case to check |
 |---|---|
@@ -244,7 +244,7 @@ Ask for a **check mode** that prints these values next to the expected ones. The
 Every field has such cases. A pharmacologist knows that after one half-life, half the drug is left. A chemist knows that at Km the rate is half of Vmax. An engineer knows that a capacitor reaches 63% of its final voltage after one time constant. These are the checks to ask for. A good way to use the agent is to ask it to build a check mode into the demo, a button or a hidden panel that computes these known values and shows them next to the expected numbers. Then you check at least one of them yourself, and you try an extreme setting: zero, very large, equal values. Models often break at the edges, for example when the start population is above K.
 :::
 
-## Ask for a check mode, fixed random numbers and a formula in the file {.smaller}
+## Ask for a check mode, fixed random numbers and a formula in the file
 
 - **Check mode:** a button that compares the demo's numbers with known cases and says "agrees" or "does not agree".
 - **Fixed random seed:** "Start again" gives the same random numbers every time. Then 1000 draws at n = 10 give the same result in every lecture (in our demo, 940 of 1000, 94.0%) and you can write it in the exercise.
@@ -288,7 +288,7 @@ In the unit A course or project page you built a Quarto website in its own page 
 From here on it is the same loop as for the rest of your page. The agent edits the demo, Quarto renders the site into the docs folder, you open it and try the demo locally, you commit, including docs, and push, and after a minute or two GitHub Pages serves the new version. Then you check the live page on a laptop and on a phone. If something needs fixing, go round again. Nothing new here, which is the point: the course page from the previous unit is the place where every later result goes, and today a demo joins it.
 :::
 
-## Topic ideas: life sciences and medicine {.smaller}
+## Topic ideas: life sciences and medicine
 
 | Topic | What the learner discovers |
 |---|---|
@@ -305,7 +305,7 @@ From here on it is the same loop as for the rest of your page. The agent edits t
 Here are topic ideas from the life sciences and medicine, each with its discovery sentence. Several of them are classics where students hold a wrong intuition: that an epidemic only stops when everyone has been infected, or that a positive test with 99% specificity means the patient is probably ill. Demos are best exactly where intuition is wrong, because the student can see their prediction fail. Pick a topic from your own teaching rather than from this list, if you can: you know where your students get stuck.
 :::
 
-## Topic ideas: physical sciences, engineering, social sciences {.smaller}
+## Topic ideas: physical sciences, engineering, social sciences
 
 | Topic | What the learner discovers |
 |---|---|
@@ -323,7 +323,7 @@ Here are topic ideas from the life sciences and medicine, each with its discover
 And some ideas from the physical sciences, engineering and the social sciences. The sampling one is a favourite in the social sciences: students expect that a poll of a country of ten million needs a much larger sample than a poll of a town, and it does not. Regression with a draggable outlier works in any field that fits lines. The segregation model is a striking example of how simple individual rules give strong collective patterns. Notice that almost every row has a known case you could check. If you cannot think of a known case for your topic, that is a warning sign: you will not be able to check the demo.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **A plausible but wrong model.** The demo looks fine and teaches a mistake (the 1.96 shortcut, a wrong unit, a formula that only holds for small values). Check a known case.
 - **Too many controls.** The demo becomes a toy without a message. Remove what the discovery does not need.
@@ -351,7 +351,7 @@ Let us collect what goes wrong. The worst failure is a model that is plausible b
 To sum up the division of labour. The agent does the programming: the page, the layout, the model as code, the check mode and the embed line. It is fast and usually good at this. You do the parts that need a teacher and a subject expert: what the demo teaches, which controls that needs, whether the model is right, and whether a real student understands it. None of your parts requires reading code. All of them require your judgement, and they are what makes the difference between a demo that teaches and one that merely moves.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|

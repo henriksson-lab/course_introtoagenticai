@@ -82,7 +82,7 @@ Here are the six steps we will follow. First a plan: the question, the databases
 A word you will hear all through Part 4 is API, application programming interface. For our purposes it is simple: a web address that returns data for a program rather than a page for a person. On the left is the PubMed web page you know, built for reading: ten results per page, links and buttons. On the right is what the same database returns through its API: named fields, such as the PubMed ID, the title, the year and the DOI, in a format a program can read. You never have to read this yourself. But it explains why the agent uses the API: it gets exact identifiers in named fields, every result rather than the first page, and the same answer every time it asks the same question on the same day.
 :::
 
-## Five free literature APIs cover most needs {.smaller}
+## Five free literature APIs cover most needs
 
 | Database | Covers | Identifiers | Key needed? |
 |---|---|---|---|
@@ -155,7 +155,7 @@ The set: **flipped classroom, peer instruction, retrieval practice, spaced pract
 For participants outside the life sciences, the exercise runs a parallel example with eight teaching methods that many of you will have tried or heard of. The question is what evidence there is that each one improves learning in higher education. PubMed covers little of this, so we search OpenAlex, which covers all fields, and check DOIs against Crossref. There are no PubMed IDs, so the DOI is the identifier. The evidence types are different too: meta-analyses and randomised trials at one end, a report from a single course at the other. And the vocabulary problem is different: method names are often ordinary words. The rest of the workflow is identical, and the exercise gives you the changed prompts.
 :::
 
-## Step 1: write the search plan before you search {.smaller}
+## Step 1: write the search plan before you search
 
 ```text
 # search-plan.md
@@ -186,7 +186,7 @@ The first step happens before any search. Write down the question, the database,
 Here is a concrete reason why the plan matters. The symbol SMO appears in the title or abstract of almost four thousand PubMed records. Fewer than half of them also mention smoothened, the gene we want. Others are about spermine oxidase, or use SMO as an abbreviation for something else entirely. So a search on the symbol alone fills your table with the wrong biology. But adding the pathway name is not enough either: almost nine hundred papers about smoothened and Hedgehog never use the abbreviation SMO. The query needs both the symbol and the full name. These numbers are from the day this slide was made and will have grown by the time you read it. In other fields the same problem appears as acronyms, trade names or everyday words used as technical terms.
 :::
 
-## Step 2: the prompt asks for a script, raw downloads and a log {.smaller}
+## Step 2: the prompt asks for a script, raw downloads and a log
 
 ```text
 Read search-plan.md. Write a Python script scripts/search.py that runs
@@ -233,7 +233,7 @@ This is the folder layout we ask for, and it applies the ideas from Organising a
 Now the table. Here is one row, with made-up identifiers. Look at where each cell comes from. The gene, the PubMed ID, the DOI, the year, the title and the journal are copied by the script from the saved records; the model never types them. The evidence type and the claim are written by the agent, so those are what you check. And the quote is copied word for word from the abstract. That last column is the trick that makes the table checkable at scale: because the quote must appear exactly in the abstract, a script can confirm that it does, and you can compare the claim with the quote in seconds without opening the paper.
 :::
 
-## Evidence types tell a reader how much a claim can carry {.smaller}
+## Evidence types tell a reader how much a claim can carry
 
 | Evidence type | Example | What it can support |
 |---|---|---|
@@ -250,7 +250,7 @@ Agree the categories with the agent before it fills the column. Then check a few
 The evidence type column tells a reader how much weight a claim can bear. A review summarises what the field thinks; it adds no new evidence. A study of patient tissue shows an association; it does not show that the gene causes anything. A knock-out mouse can show cause, but in a mouse. A cell line shows mechanism in that system. Give the agent a fixed list of categories, like this one or your own, so it does not invent new ones for each row. Then check a few. The agent decides the category from the abstract, and abstracts do not always say clearly what was done. For teaching methods, the list would be meta-analysis, randomised trial, quasi-experiment, survey and single-course report.
 :::
 
-## The prompt for the table forbids claims without a quote {.smaller}
+## The prompt for the table forbids claims without a quote
 
 ```text
 Build results/literature_table.csv from the saved records in raw/ only.
@@ -304,7 +304,7 @@ Passing the script does not make a row right. Here are three invented examples o
 For the fifth layer, take a random sample, five rows out of forty is enough to start. Let the script pick them with a fixed random seed, written in the notes, so nobody can say you picked the easy ones. For each, open the PubMed page, read the abstract, and if it is open access, skim the paper. Write down what you found in notes/hand-checks.md. What you do next depends on the result. One wrong row in five is not a small error rate to accept: it tells you there is a kind of mistake in the table. Fix the row, ask the agent to recheck every row for the same kind of mistake, and draw five new rows. Five out of five right does not prove the table is perfect. It tells you there is no common error you have missed.
 :::
 
-## Retracted papers and preprints need a flag {.smaller}
+## Retracted papers and preprints need a flag
 
 - **Retractions.** PubMed marks retracted papers with the publication type *Retracted Publication*, and the retraction notice as *Retraction of Publication*. The verification script should flag both.
 - **Corrections and expressions of concern** are linked from the PubMed record. Worth a look for any paper the table leans on.
@@ -333,7 +333,7 @@ Once the table is verified, it becomes references you can use. The agent writes 
 The last step is publishing. Your project page from A course or project page gets a new page, literature, that shows the table with a link from every row to PubMed or the DOI. At the top, two lines of method: where the papers came from, when the search ran, how the table was checked, and a pointer to the README where your log of AI use lives. Add download links for the CSV and the BibTeX file. Then commit and push, as you have practised: the page rebuilds and the table is public. Publishing a table of claims with sources is fine: you are citing, not copying. Do not publish the PDFs themselves; that is a copyright question we come back to in the next unit.
 :::
 
-## The teaching-methods version: same steps, other database, other evidence {.smaller}
+## The teaching-methods version: same steps, other database, other evidence
 
 | Step | Hedgehog genes | Teaching methods |
 |---|---|---|
@@ -373,7 +373,7 @@ You may have heard that agents can be connected to PubMed directly, through so-c
 As always, your session will differ from these slides and from your neighbour's. The script may be in R instead of Python. The agent may choose different papers among equally relevant ones. And the database itself changes: a query run next month returns more hits. So reproducible here does not mean identical. It means that the query, the date, the raw records and the scripts are all saved, so anyone can see exactly what you did and run it again. In the exercise, if you work next to someone, compare tables. Where you chose the same paper, did you write the same claim? Where you chose different papers, why? That conversation is a good test of the search plan.
 :::
 
-## This is a structured search, not a systematic review {.smaller}
+## This is a structured search, not a systematic review
 
 | | This unit | A systematic review |
 |---|---|---|
@@ -389,7 +389,7 @@ The agent can help with a systematic review, but the rules of that method still 
 Be honest about what this is. A well-documented, verified, structured search is a big step up from a list of references typed from memory, and good enough for a grant background, a teaching page or getting into a new topic. It is not a systematic review. A systematic review registers its protocol in advance, searches several databases, has two people screen every record independently, and reports by the PRISMA standard. An agent can help with each of those steps, and some groups already use agents that way. But the method's own rules apply: if you publish a systematic review, the screening must be done the way the method requires, and your use of AI must be reported.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Papers from memory.** One famous paper "added for completeness" without a database record. Forbid it; the verification script finds it.
 - **Real ID, wrong paper.** The ID exists, the title does not match. Only a title check catches it.
@@ -404,7 +404,7 @@ Be honest about what this is. A well-documented, verified, structured search is 
 Here is what goes wrong, collected in one place. The worst error is still the invented paper, and in an agent workflow it usually comes as a helpful extra: a classic paper the model knows, added without a record. The rule in the prompt and the verification script catch it. Real identifiers for the wrong paper are only caught by comparing titles. Overstated claims are caught by you, comparing claim and quote. Abstracts oversell, so read the sample in full when you can. A bad query fills the table with the wrong biology, so read the hit counts. Count rows per item to find silent gaps. Keep keys in .env. And, as always, an agent saying it verified everything is a claim to check, not a check.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -413,6 +413,15 @@ Here is what goes wrong, collected in one place. The worst error is still the in
 | Politeness and keys | respect rate limits; keys in `.env`, never in prompts, scripts or git |
 | Search plan | question, queries (symbol and full name), limits, rules, date, written first |
 | Raw folder | what the database said that day; never edited |
+
+::: notes
+To sum up. The agent looks papers up with a script instead of remembering them, using free literature APIs, politely and with keys kept out of prompts and git. You write the search plan first. The raw downloads are kept as they came. Every claim carries an exact quote and an evidence type from a fixed list. Verification has layers: a script checks every identifier, title and quote, and you compare claims with quotes and read a random sample. Then the verified table becomes BibTeX, a Zotero library and a page on your site. In the next unit we go from abstracts to the papers themselves: we take the open-access papers from this table and extract one number from each, with the page it came from.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | Claim + quote | the quote is copied exactly, so a script can find it |
 | Evidence type | a fixed list; tells the reader how much a claim can carry |
 | Verification | script: IDs resolve, titles match, quotes found, retractions flagged; you: claims vs quotes, random sample |
@@ -422,5 +431,5 @@ Here is what goes wrong, collected in one place. The worst error is still the in
 **Next (Extracting data from PDFs):** from abstracts to full text: pull one number out of the open-access papers you just found, with the page it came from, and check it with a second agent.
 
 ::: notes
-To sum up. The agent looks papers up with a script instead of remembering them, using free literature APIs, politely and with keys kept out of prompts and git. You write the search plan first. The raw downloads are kept as they came. Every claim carries an exact quote and an evidence type from a fixed list. Verification has layers: a script checks every identifier, title and quote, and you compare claims with quotes and read a random sample. Then the verified table becomes BibTeX, a Zotero library and a page on your site. In the next unit we go from abstracts to the papers themselves: we take the open-access papers from this table and extract one number from each, with the page it came from.
+The rest of the summary table, and where we go next.
 :::

@@ -462,7 +462,7 @@ The exercise describes each one concretely, with data sources and how to check t
 If you do not have an idea yet, that is fine; pick one of these and change later if something better comes up. They come from the course plan, and they all reuse units we will do anyway. Teachers can build a course page with a demo, which Part 3 covers in detail. Biologists and medical researchers can build a literature map, which Part 4 covers, or reanalyse a public dataset. Engineers often have instrument logs or old MATLAB analyses that nobody can rerun. People in the humanities and social sciences can map the funding landscape of their field with open grant databases, which is a Part 4 unit. Note that all examples are privacy-safe by design: public data, non-personal measurements, or aggregated numbers. The exercise page has a full description of each, with where to get the data.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -471,6 +471,15 @@ If you do not have an idea yet, that is fine; pick one of these and change later
 | Data classes | Public, internal, personal, sensitive personal, confidential. The class decides what you may do |
 | Never | Manuscripts and proposals you review in confidence |
 | Your university | Its AI policy and approved tools come first; ask the data protection officer |
+
+::: notes
+To sum up. The agent sends what it reads to the provider; what happens there depends on your plan and settings, so check the providers' pages. Classify your data, and let the class decide. Material you review in confidence never goes to an AI tool. Your university's policy comes first. When data is personal, build on a synthetic stand-in and run the real-data step yourself. You are responsible for what the agent produces, and you disclose its use. Respect licences. Keep the agent in one project folder, on copies, in a careful mode, with no secrets in reach, and read what it wants to run, especially when it has read material from the web. In the exercise, you classify six scenarios, look up your university's policy, and set up your own project folder. In Delegating well, the first unit of Part 2, we learn how to brief the agent on that project.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | Synthetic stand-in | The agent builds the script on fake data; you run it on the real data, outside the agent |
 | Responsibility | You are accountable for the agent's output; disclose AI use as each venue asks |
 | Licences | Uploading a PDF or dataset is a use; check its licence |
@@ -480,5 +489,5 @@ If you do not have an idea yet, that is fine; pick one of these and change later
 **Next (Delegating well):** with your own project chosen, we learn to brief the agent like a capable new colleague: goal, context, constraints and how you will judge the result.
 
 ::: notes
-To sum up. The agent sends what it reads to the provider; what happens there depends on your plan and settings, so check the providers' pages. Classify your data, and let the class decide. Material you review in confidence never goes to an AI tool. Your university's policy comes first. When data is personal, build on a synthetic stand-in and run the real-data step yourself. You are responsible for what the agent produces, and you disclose its use. Respect licences. Keep the agent in one project folder, on copies, in a careful mode, with no secrets in reach, and read what it wants to run, especially when it has read material from the web. In the exercise, you classify six scenarios, look up your university's policy, and set up your own project folder. In Delegating well, the first unit of Part 2, we learn how to brief the agent on that project.
+The rest of the summary table, and where we go next.
 :::

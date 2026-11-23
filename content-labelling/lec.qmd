@@ -18,7 +18,7 @@ format:
     menu: true
 ---
 
-## About this lecture {.smaller}
+## About this lecture
 
 You now publish things made with AI: course pages, figures, slides, perhaps a news text for your department. Since **2 August 2026**, EU law has rules on telling people when content is AI-generated. At the same time, AI providers have started to hide **marks** in what their models produce, and teachers are offered "AI detectors" for student work.
 
@@ -50,7 +50,7 @@ Two situations from the same department. On the left, a teacher has built a cour
 Let us separate three ideas that are often mixed up. A label is for people: a caption under a figure, a line in a video, an icon. The person who publishes the content puts it there. A mark is for machines: information built into the content when it is generated, either as metadata attached to a file, or as a watermark hidden in the pixels, the sound or the choice of words. The provider of the AI system builds it in. Detection is checking afterwards whether something was made by AI. If a mark exists and you have the right tool, detection can be quite reliable. Without a mark, a detector can only guess from style. The EU rules require labels and marks. What most teachers meet as "AI detection" is the third kind, the guess.
 :::
 
-## EU AI Act Article 50 has four transparency duties {.smaller}
+## EU AI Act Article 50 has four transparency duties
 
 | Duty | Who | What |
 |---|---|---|
@@ -81,7 +81,7 @@ The timeline. The AI Act entered into force in August 2024, with obligations pha
 Who does what? The provider is the company that makes the AI system: Anthropic, OpenAI, Google. They carry the marking duty and must offer a way to check marks. The deployer is whoever uses the system in a professional context, and that is usually you: a teacher publishing a course page, a researcher publishing a figure, a department publishing a news item. Your duty is the label, and only in the cases of Article 50 paragraph 4. Purely personal, non-professional use is outside the deployer definition, but your teaching and research are professional. One case where you may become a provider: if you build a chatbot for your students, as some of you might in Interactive demos or Shiny apps, then the people using it must be told that they are talking to an AI.
 :::
 
-## A deepfake is realistic content that could pass as real {.smaller}
+## A deepfake is realistic content that could pass as real
 
 - The Act's definition: AI-generated or manipulated **image, audio or video** that **resembles existing persons, objects, places, entities or events** and would **falsely appear authentic**.
 - Examples close to your work:
@@ -95,7 +95,7 @@ Who does what? The provider is the company that makes the AI system: Anthropic, 
 The word deepfake suggests political videos, but the legal definition is broader and plainer: image, audio or video, generated or manipulated by AI, that resembles real people, objects, places or events and would falsely appear authentic. So a team photo where generative fill removed one colleague and added two students is a deepfake in this sense, even if the intention is harmless. A welcome video read by a synthetic copy of your own voice is too. A photorealistic image of a field site or an instrument that does not exist could be. A schematic of a cell, a cartoon, or a plot drawn from your data by an R script is not: nobody would take it for a photograph of reality. For clearly artistic, satirical or fictional work, the Act allows a lighter disclosure that does not ruin the work. When in doubt, label: it costs one line.
 :::
 
-## AI-written text must be disclosed only in one case, but your university may ask for more {.smaller}
+## AI-written text must be disclosed only in one case, but your university may ask for more
 
 - **Article 50(4)** covers AI-generated or manipulated text **published to inform the public on matters of public interest**: think news items, press releases, public information.
 - **Not** covered when a person **reviewed or edited** it and someone takes **editorial responsibility**. A department news item checked and published by the communications office is in that position; an unreviewed bot posting news is not.
@@ -106,7 +106,7 @@ The word deepfake suggests political videos, but the legal definition is broader
 Text is where people worry most, and where the AI Act asks least. The duty covers text published to inform the public on matters of public interest, such as news, and even then not when a human reviewed or edited it and someone takes editorial responsibility. The idea is that a newspaper with an editor is responsible for what it publishes, whoever drafted it. So for most of your text, a course page, a lab manual, a paper you wrote with an agent's help and checked, the AI Act does not require a label. That does not mean no disclosure. We saw in Privacy, ethics and safety that journals ask for an AI statement, universities have rules for theses, and you set rules for your students. Those apply on their own terms. A practical rule: the AI Act sets a minimum; your venue's rules usually ask for more.
 :::
 
-## The code of practice shows how to comply, with layers and common icons {.smaller}
+## The code of practice shows how to comply, with layers and common icons
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -131,7 +131,7 @@ The icons and their guidance: Commission page "EU icons for labelling AI-generat
 The code of practice is voluntary, but it is the practical guide, and many providers have signed it, including Anthropic, which says so on its help page. For providers, the key idea is layers: no single marking technique is robust enough, so they combine at least two where necessary, typically signed metadata and an invisible watermark, and they offer a way for others to check. For deployers, the code says how to show labels: visible, clear, early, accessible. The Commission has published a set of EU icons, free for anyone to use: a basic one, one for content that is fully AI-generated, and one for content that AI partly modified. The Commission's page is explicit that using the icon is optional, that the labelling duty is not, and that the icon alone does not make you compliant. I am not showing the official icons here; download them from the Commission's page if you want to use them.
 :::
 
-## What this means for what you publish {.smaller}
+## What this means for what you publish
 
 | You publish | AI Act duty for you? | What to do anyway |
 |---|---|---|
@@ -171,7 +171,7 @@ Now to marking: how can a machine tell that a file was AI-generated? The first m
 The weakness of metadata is that it travels with the file, not with the picture. Take a screenshot of the image, and you have a new file with the same pixels and no credential. Many websites, chat apps and email services recompress uploaded images and strip metadata on the way. Converting from one format to another often drops it too. So content credentials are good for proving that something was made a certain way, when they are present, and almost useless for proving the opposite. A missing credential tells you nothing about who made an image. That is why the code of practice asks for a second layer.
 :::
 
-## The big providers now mark by default and offer checking tools {.smaller}
+## The big providers now mark by default and offer checking tools
 
 | | Anthropic (Claude) | OpenAI (ChatGPT, API) |
 |---|---|---|
@@ -211,7 +211,7 @@ How can you hide a watermark in plain text, where there are no pixels? Remember 
 Here is the intuition, with no formulas. Ordinary text is green about half the time, like a fair coin coming up heads. Watermarked text is green a bit more often, say 60 percent. Can you tell from ten words? No: six heads out of ten happens with a fair coin 38 percent of the time. From a hundred words? Sixty green out of a hundred happens by chance about once in 35 texts: suspicious, not convincing, and you would not accuse anyone on that. From four hundred words? Two hundred and forty green happens by chance about once in 27,000 texts. Now the explanation "it is just chance" becomes very hard to believe. The bias per word is the same throughout. What changes is how much evidence you have. That is the whole idea of detection, and also its main limit.
 :::
 
-## Try it: a toy watermark and a detector that counts green words {.smaller}
+## Try it: a toy watermark and a detector that counts green words
 
 <iframe src="examples/watermark-demo.html" width="100%" height="560" style="border:none;" title="Text watermark demo"></iframe>
 
@@ -227,7 +227,7 @@ This is a small simulation you can open yourself; it is in the exercise. A toy m
 This chart says the same thing with numbers. How many words does a detector need, on average, before it can say "this is very unlikely to be chance", which here means less than about one chance in thirty thousand? With a strong bias, 75 percent green words, a few sentences. With a medium bias, a paragraph. With a weak bias, about a page. With a very weak bias, over fifteen hundred words. Halve the extra share of green words, and you need four times as much text. Providers choose a bias weak enough not to harm the writing, so in practice short texts, such as a one-line answer, a title or a short email, carry too little signal to say anything. OpenAI says that short passages and code are not required to carry its watermark at all.
 :::
 
-## Paraphrasing and translating dilute the watermark {.smaller}
+## Paraphrasing and translating dilute the watermark
 
 ![](fig12-paraphrase.svg){width="62%" fig-align="center"}
 
@@ -262,7 +262,7 @@ Most AI detectors offered to teachers do not look for watermarks; they have no k
 Here is the study that made this concrete. Liang and colleagues at Stanford, published in Patterns in 2023, took 91 essays written by people for the TOEFL English test, by non-native writers, and ran them through seven widely used detectors. On average, a detector classified 61 percent of these human essays as AI-generated. Eighteen essays were flagged by all seven detectors; 89 of the 91 were flagged by at least one. The same detectors classified essays by US eighth-graders almost perfectly. The authors traced it to the predictability measure: a smaller vocabulary looks like AI. When they asked ChatGPT to make the non-native essays more varied, the false positives dropped. In other words, the detector penalised the students with the least fluent English and rewarded polishing with AI.
 :::
 
-## The evidence on detectors points the same way {.smaller}
+## The evidence on detectors points the same way
 
 - **OpenAI withdrew its own AI text classifier** in July 2023, six months after launch, citing its low accuracy.
 - **Weber-Wulff and colleagues (2023)** tested 14 detection tools on human and AI texts, including paraphrased and machine-translated ones, and concluded that they are **neither accurate nor reliable**, with a bias towards calling texts human.
@@ -274,7 +274,7 @@ Here is the study that made this concrete. Liang and colleagues at Stanford, pub
 That study is not alone. OpenAI itself released an AI text classifier in January 2023 and withdrew it in July the same year because of its low rate of accuracy. Weber-Wulff and colleagues, writing in the International Journal for Educational Integrity in 2023, tested fourteen tools, including commercial ones, and found them neither accurate nor reliable; paraphrasing and machine translation made them worse. Watermark checkers are more reliable, but the providers do not offer them for checking student work: Anthropic's text checker is in private preview for regulators, researchers, media and similar organisations, and OpenAI's application page puts academic integrity use outside its scope. And none of them can see text from a local open-weights model. The commercial detectors have improved since 2023, and vendors publish good numbers. But the basic problem remains: without a mark, they guess from style, and the people with the plainest style pay for the errors.
 :::
 
-## For teachers: a detector score is not evidence {.smaller}
+## For teachers: a detector score is not evidence
 
 - A score is a **guess from style**, not a finding. On its own it must **not** be the basis for a misconduct case.
 - False accusations fall hardest on **non-native writers** and students who write plainly.
@@ -289,7 +289,7 @@ That study is not alone. OpenAI itself released an AI text classifier in January
 For the teachers among you, this is the take-home slide. A detector score is a guess from style. It can prompt a conversation, but on its own it is not evidence, and a misconduct case built on it can harm an innocent student, most likely a non-native writer. Note also the privacy angle: pasting a student's essay into a commercial detector sends personal data to a third party, which needs the same approval as any other AI tool. What works better is boring and effective: clear rules for each assignment, assignments where the process is visible, drafts and version history, a short oral follow-up where the student explains their choices, and a conversation. Several universities have published guidance advising against relying on detectors; check what yours says. And remember your own position: you now use AI to draft course material, and so do your students.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **"It is only a schematic"**, when the image is photorealistic. If it could pass as real, label it.
 - **Labels in the wrong place**: in the credits at the end, in alt text only, or after the first exposure.
@@ -304,7 +304,7 @@ For the teachers among you, this is the take-home slide. A detector score is a g
 The usual mistakes, from most to least common in my experience. People call an image a schematic when it is in fact realistic enough to pass as a photograph; then it is a deepfake in the Act's sense. Labels appear too late or in the wrong place. Chatbots are given human-sounding names. Then the two errors of interpretation: concluding from a missing mark that a human made something, and concluding from a found mark that nobody did any work. Using a detector score as proof is the most harmful. And people forget that the AI Act sets a minimum, with other rules on top. Finally, this whole field moved fast in 2026: the code, the guidelines, the transition dates, the providers' marking. I checked everything in November 2026. Check again before you rely on it.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -313,6 +313,15 @@ The usual mistakes, from most to least common in my experience. People call an i
 | Your duty | Label deepfakes (realistic manipulated images, audio, video) and unreviewed public-interest text; tell chatbot users it is an AI |
 | Code of practice | Final 10 June 2026; voluntary; at least two marking layers; free EU icons |
 | Content credentials (C2PA) | A signed note in the file; easy to check, lost by a screenshot |
+
+::: notes
+To sum up. Labelling, marking and detecting are different. Article 50 of the AI Act applies from 2 August 2026: chatbots must say they are AI, providers must mark their output, and deployers like you must label deepfakes and unreviewed AI text meant to inform the public. The code of practice explains how, with marking in layers and free EU icons. Marks come as signed content credentials, which a screenshot removes, and invisible watermarks, which survive more. A text watermark is a slight preference for green words, detectable like a biased coin when there is enough text, and weakened by paraphrase and translation. A found mark means a model processed the content; a missing one means almost nothing. And detectors without a watermark guess from style and falsely accuse non-native writers, so a score is not evidence. In the exercise you check a content credential, play with the watermark demo, and decide which items in a small course folder need a label. Next we look at guardrails.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | Invisible watermarks | A keyed pattern in pixels, sound or word choice; survives some editing |
 | Text watermark | Green words slightly preferred; detectable over enough text, like a biased coin; paraphrase and translation weaken it |
 | What a mark means | Found: the model processed it. Not found: almost nothing |
@@ -321,5 +330,5 @@ The usual mistakes, from most to least common in my experience. People call an i
 **Next (Guardrails and safety levels):** the different kinds of guardrail you may hit when an agent refuses or stops, how to tell them apart, and the safety levels behind the strictest ones.
 
 ::: notes
-To sum up. Labelling, marking and detecting are different. Article 50 of the AI Act applies from 2 August 2026: chatbots must say they are AI, providers must mark their output, and deployers like you must label deepfakes and unreviewed AI text meant to inform the public. The code of practice explains how, with marking in layers and free EU icons. Marks come as signed content credentials, which a screenshot removes, and invisible watermarks, which survive more. A text watermark is a slight preference for green words, detectable like a biased coin when there is enough text, and weakened by paraphrase and translation. A found mark means a model processed the content; a missing one means almost nothing. And detectors without a watermark guess from style and falsely accuse non-native writers, so a score is not evidence. In the exercise you check a content credential, play with the watermark demo, and decide which items in a small course folder need a label. Next we look at guardrails.
+The rest of the summary table, and where we go next.
 :::

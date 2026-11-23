@@ -84,7 +84,7 @@ This is the shape of every delegation in this course. You make a copy to work in
 The first rule is the simplest and the most important. Before you let the agent touch anything, make a copy and start the agent inside the copy. The agent only works in the folder where you start it, unless you give it permission to go elsewhere, so the original stays safe. If the result is bad, you delete the copy and make a new one. This costs ten seconds and removes almost all of the risk from today's jobs. Later, in the unit Git as undo button and lab notebook, we get a more powerful safety net that keeps every version. Until then, the copy is your undo button.
 :::
 
-## Making the copy takes ten seconds {.smaller}
+## Making the copy takes ten seconds
 
 1. Unzip the download. You now have, for example, a folder `messy-folder`.
 2. Duplicate the folder in your file browser and rename the copy `messy-folder-work`.
@@ -111,7 +111,7 @@ Here is how the copy works in practice. Unzip the file, duplicate the folder in 
 The second rule surprises people. When we explain a task to a person, we often explain the steps: first do this, then that. With an agent, it works better to describe the result: what the finished folder or table looks like. The agent is good at working out the steps. It cannot guess what you consider a good result. On the left, the steps are given but the result is vague: what is "a good name"? On the right, nothing is said about how to do it, but anyone, person or agent, could tell whether the job is done. That is the test of a good description: could you check the result against it?
 :::
 
-## A description of the result answers four questions {.smaller}
+## A description of the result answers four questions
 
 - **What is there now?** "This folder holds 40 files from a small lab project."
 - **What does done look like?** "Subfolders by kind of file; names like `2024-03-12_plate-reader.csv`."
@@ -143,7 +143,7 @@ The third rule: ask for a record. For the folder job, the record is a rename log
 The fourth rule is to ask the agent to list its assumptions. An agent fills every gap in your description with a guess, and it usually does not tell you. Is 05-03-2024 the fifth of March or the third of May? Should a file with no date get today's date or the date it was last saved? Is "ctrl" the same as "Control"? Each guess is probably reasonable, but some will be wrong for your situation, and you cannot correct a guess you do not know about. Asking for assumptions turns hidden guesses into a list you can read in a minute. It is also a good way to see whether the agent understood the task at all.
 :::
 
-## Rule 5: check with counts, totals and three random samples {.smaller}
+## Rule 5: check with counts, totals and three random samples
 
 - **Count before and after.** 40 files in, 40 files out (or 37 plus 3 duplicates). 48 animals in, 48 rows out.
 - **Check a total.** If the sheet has a mean or a sum, the cleaned data should give the same number.
@@ -210,7 +210,7 @@ Here is one sensible result. Data in one folder, figures and photos in another, 
 The first check is a count. Forty files went in. Afterwards, the subfolders should hold thirty-seven files and the duplicates folder three, and the rename log should have forty rows. If any of these numbers is off, something was lost, overwritten or skipped, and you ask about it. Overwriting is the classic accident here: if two files get the same new name, one replaces the other and silently disappears. Counting catches it. Then open the duplicates folder and check that each file really has a twin: same size, and the same content when you open both.
 :::
 
-## Dates in file names are where the agent has to guess {.smaller}
+## Dates in file names are where the agent has to guess
 
 | Original name | Possible readings | What settles it |
 |---|---|---|
@@ -234,7 +234,7 @@ The trickiest part of the folder job is dates. Some names are unambiguous, some 
 The second job is a spreadsheet of body weights from a mouse study, typed in by hand over two weighing days. A person reads it without trouble: the title, the group headings, the notes. A program cannot: merged headings span several columns, weights are written as "26.5 g" or with a decimal comma, sex is written in nine different ways, there are blank rows, a note in the middle of the data, a duplicated row and a mean at the bottom. If you load this into R, Python or a statistics package as it is, you either get an error or, worse, a result that looks fine and is wrong.
 :::
 
-## Each kind of mess needs a decision {.smaller}
+## Each kind of mess needs a decision
 
 | Mess | Example | A decision someone has to make |
 |---|---|---|
@@ -285,7 +285,7 @@ and list it, rather than guess.
 Here is the prompt. Again, it describes the result: the exact columns of the clean table, the allowed values for sex and group, the date format. It asks for the script and for a decision list. And it sets one important rule for unclear values: leave them empty and list them, rather than guess. That rule matters. Without it, an agent will often fill a gap with something plausible, and a plausible invented value in a data table is very hard to find later. With it, you get a short list of questions to answer yourself.
 :::
 
-## The decision list shows what the agent decided for you {.smaller}
+## The decision list shows what the agent decided for you
 
 An example of what you might get back (yours will differ):
 
@@ -349,7 +349,7 @@ The prompt for the third job. As before, it describes the table: the columns, th
 Now the spot check. Pick three cells at random, for example by rolling a die for the row, or by asking a colleague to point. Open the PDF at the page the table names and check the value. Is the number right? Is the author list complete? Is the main finding really the finding of this report? If all three are right, you have some confidence in the table, though not certainty. If one is wrong, check more, and tell the agent what was wrong. With six reports, you could check everything. The habit matters for later, when you summarise sixty reports and can only check a sample.
 :::
 
-## Summaries are where plausible but wrong details creep in {.smaller}
+## Summaries are where plausible but wrong details creep in
 
 The peer-feedback report says on page 1:
 
@@ -377,7 +377,7 @@ Here is the kind of mistake to look for. Our peer-feedback report mentions an ea
 Sooner or later a check fails. The natural reaction is to say "this is wrong, do it again", or to close the session and start over. Both waste the work that was right. The agent does not know which part you are unhappy with, so it may change the parts that were fine and keep the part that was wrong. Instead, say exactly what is wrong: which row, what you expected, and why. Then ask it to fix the cause, not only the symptom. For the spreadsheet, that means fixing the script, rerunning it, and updating the decision list, so that next month's run gets it right too.
 :::
 
-## Good corrections point, explain and ask for the record to be updated {.smaller}
+## Good corrections point, explain and ask for the record to be updated
 
 | Instead of | Say |
 |---|---|
@@ -402,7 +402,7 @@ Here are some examples of good corrections. Each one points to the exact place, 
 A practical warning before you start. If you type exactly the same prompt as your neighbour, you will get a different session. The agent may look at the files in a different order, choose a different folder name, or write the script in R instead of Python. Even the same person gets different sessions on different days. That is a property of how these models work, which we explain in the next unit. For the exercise, it means you should not compare your screen with the slides. Compare your result with the expected outcomes on the exercise page. If the numbers differ, that is interesting: find out whether the agent or the key is right.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Working in the original.** One bad rename command, and the old names are gone.
 - **Vague descriptions.** "Clean this up" gets the agent's idea of clean, not yours.
@@ -425,7 +425,7 @@ Here are the ways today's jobs go wrong, collected in one place. Almost all of t
 Here are the five rules as a checklist that fits on a sticky note. Copy first. Describe the result. Ask for a record and a list of assumptions. Check with counts, totals and three random samples. Correct by saying what is wrong. You will use this checklist in every unit of the course, and you will find that it works for any job you give an agent, not only for files and spreadsheets. Keep it next to your screen for the exercise.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|

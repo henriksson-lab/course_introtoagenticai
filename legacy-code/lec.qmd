@@ -139,7 +139,7 @@ An explanation of code is generated text, like everything else the model writes.
 Step two is the one people skip, and it is the one that makes everything else checkable. Before writing a single line of the port, pin down what the old code actually produces. Run the original, unchanged, on its own example data, and save the outputs in a reference folder. Commit them. These numbers are your answer key. Without them you have nothing to compare the port with, except your impression that the new numbers look reasonable, and that is precisely the kind of check that misses a five per cent error. If the old code produced a figure, keep the figure too, but numbers are what you compare. If you have several example datasets, get reference outputs for all of them: a port can match on one and fail on another.
 :::
 
-## No MATLAB licence? There are still ways to get reference outputs {.smaller}
+## No MATLAB licence? There are still ways to get reference outputs
 
 | Option | What it gives you | Watch out for |
 |---|---|---|
@@ -173,7 +173,7 @@ One function at a time; the same names as the original; the same output format, 
 Ask for the port in pieces that match the original: one R or Python function per MATLAB function, with the same names, so that the map stays valid for both versions. Where possible, compare intermediate results too: the blank-corrected data, the smoothed curves, the fit windows. If the final growth rates differ, intermediate comparisons tell you where the difference starts, instead of leaving you to guess. And ask for the output in exactly the same format as the original, the same columns in the same order, so that a simple script can compare the two files row by row. A pretty new output format can come later, once the port is trusted. For a big codebase, this piece-by-piece approach is also what makes the work fit into sessions: one piece, one comparison, one commit.
 :::
 
-## The classic porting traps change numbers quietly {.smaller}
+## The classic porting traps change numbers quietly
 
 | Trap | MATLAB | R | Python (numpy) |
 |---|---|---|---|
@@ -309,7 +309,7 @@ Search for these **before** the agent reads the folder (*Privacy, ethics and saf
 Two warnings before the limits slide. First, privacy. Old research code often contains data: a list of excluded patients by ID, a comment saying "subject 14 is Anna, dropped out", a password for the lab database in plain text. Everything the agent reads goes to the provider, so look through the code yourself first, or search it for obvious patterns such as "password", ID formats and names, on your own computer without the agent. If something is there, remove it in a copy before the agent starts, exactly as in Privacy, ethics and safety. Second, ownership. Code without a licence is not free to republish. If you plan to put the port on GitHub, ask the original author and check the university's rules. And give credit: the port is built on someone's work, so name them in the README and keep the original in the history.
 :::
 
-## What the agent does and does not do here {.smaller}
+## What the agent does and does not do here
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -336,7 +336,7 @@ Two warnings before the limits slide. First, privacy. Old research code often co
 To sum up the division of labour. The agent is very good at the reading and writing parts: it reads in minutes what would take you days, it spots inconsistencies like a comment that disagrees with the code, it knows the traps between languages, and it can write and run the comparison. What it cannot know is the scientific reasoning behind the choices, and what a correct result looks like in your field. It will also, fairly often, fix things it was told to leave alone, or loosen a test, and you only learn about it if you ask or look at the history. And decisions about a published result are yours, your supervisor's and your co-authors'. The workflow puts your judgement exactly where it is needed: checking the map, setting the tolerance, reading the comparison, and deciding about bugs.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -345,6 +345,15 @@ To sum up the division of labour. The agent is very good at the reading and writ
 | Comments and README | only comments change; check with git or keep annotated copies apart |
 | Reference outputs | run the original (or Octave), or use saved outputs, **before** porting |
 | Faithful port | reproduce the old numbers, bugs included; one piece at a time |
+
+::: notes
+The summary is the recipe. Keep the original untouched. Map it and document it before changing anything. Pin down the reference outputs. Port faithfully, piece by piece. Compare with a tolerance you chose in advance, and keep the comparison as a test. Write down every assumption, and fix bugs only after the port matches, measuring each fix. In the exercise you do all of this on a small plate-reader analysis with a hidden bug and a hidden assumption, and then on a piece of old code from your own project. This is the last unit of Part 5. Part 6 steps back to look at the wider picture, starting with the models themselves: how to choose between them, and how to read the benchmark graphs that are used to rank them.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | Porting traps | counting from 0, n vs n−1, missing values, row vs column order |
 | Comparison | a rerunnable script; tolerance from the printed digits, set in advance; names and counts exact |
 | Cheating check | "did you change the tolerance, the references, or type in values?" plus git |
@@ -354,5 +363,5 @@ To sum up the division of labour. The agent is very good at the reading and writ
 **Next (Choosing a model: families, sizes and benchmarks):** which model to run for which job, how to read model names and benchmark graphs, and why a small test on your own task beats a leaderboard.
 
 ::: notes
-The summary is the recipe. Keep the original untouched. Map it and document it before changing anything. Pin down the reference outputs. Port faithfully, piece by piece. Compare with a tolerance you chose in advance, and keep the comparison as a test. Write down every assumption, and fix bugs only after the port matches, measuring each fix. In the exercise you do all of this on a small plate-reader analysis with a hidden bug and a hidden assumption, and then on a piece of old code from your own project. This is the last unit of Part 5. Part 6 steps back to look at the wider picture, starting with the models themselves: how to choose between them, and how to read the benchmark graphs that are used to rank them.
+The rest of the summary table, and where we go next.
 :::

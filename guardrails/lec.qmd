@@ -58,7 +58,7 @@ Here is the map we use for the rest of the lecture. Start from the right. The mo
 The most common guardrail is the model itself declining. Providers train their models to refuse some kinds of request: help with weapons, content that sexualises minors, hateful content, encouragement of self-harm, false accusations against real people, and so on. You recognise it because it is in the model's own voice, it usually gives a reason, and very often it offers a safer alternative. Here, a teacher wants a realistic fake news article about a named politician for an ethics seminar. The goal is fine; the specific output could harm a real person. The model offers the same exercise with an invented person. That is usually what you want anyway. The session continues normally: you can take the offer, or explain what you really need. A refusal in the reply is a conversation, not a wall.
 :::
 
-## Models also say "partly yes": a safe part, a vaguer answer, or extra caveats {.smaller}
+## Models also say "partly yes": a safe part, a vaguer answer, or extra caveats
 
 | What you see | What is happening | Typical areas |
 |---|---|---|
@@ -89,7 +89,7 @@ The second kind of guardrail is not the model at all. Providers run small, speci
 Here are two typical looks, with generic wording, because the exact messages change between versions. On the left, an agent is summarising thirty papers. At paper seventeen, the session stops with an error from the system: the model cannot help with this request, start a new session. No reason, no offer, no way to continue in that session. Probably one of the papers was about a pathogen, and the classifier judged the context as too close to a blocked area. On the right, in a chat app, a small banner says the message was answered by a different model; the answer is shorter and more general than usual. Anthropic, for example, reroutes blocked requests on its most capable model to a less capable one, and says so openly. The signs on the slide are what to look for: system text instead of the model's voice, no reason, an answer that stops, or a switch of model.
 :::
 
-## Classifiers also stop legitimate research, and providers say so openly {.smaller}
+## Classifiers also stop legitimate research, and providers say so openly
 
 - Classifiers are tuned to **err on the side of blocking**. They see words and context, not your intentions or your institution.
 - Typical false alarms: **virology**, **toxin biology**, **some protein design**, **biosecurity research** itself, and lab safety material that names dangerous agents.
@@ -102,7 +102,7 @@ Here are two typical looks, with generic wording, because the exact messages cha
 If you work in life sciences, you will meet false positives. A classifier is built to be cautious, because the cost of letting through real help with a biological weapon is catastrophic, while the cost of a false alarm is a frustrated researcher. Providers are quite open about this trade-off. Anthropic wrote in August 2026 that after retraining its biology classifier, biology-related fallbacks dropped by about 85 percent across its products, but that false positives inevitably remain and that dual-use areas like virology, toxicology and molecular design still fall back to a less capable model. Anthropic's usage policy also says explicitly that a blocked output alone does not count as a violation. So if you are a virologist and a session ends, you have not done anything wrong. You have hit a limit set on purpose, and the next unit shows what you can do about it.
 :::
 
-## Security and computing requests can look like hacking, even when they are your job {.smaller}
+## Security and computing requests can look like hacking, even when they are your job
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -128,7 +128,7 @@ If you work in life sciences, you will meet false positives. A classifier is bui
 The third kind of guardrail is about computer security. Many ordinary IT tasks look exactly like attacks: a network scan, a password audit, a look at a suspicious attachment. Providers' usage policies forbid malware, unauthorised access and attacks on others' systems, but they allow security work on systems you own or are authorised to test. Anthropic's usage policy says this explicitly. The model cannot check your authorisation, so it may ask, or it may give a cautious, general answer. Context helps here: say whose system it is, that you are responsible for it, and what you want to protect. Asking how to detect or harden something gets further than asking how to break it. And some requests are refused because they are the problem: getting around a paywall or a licence check is not a security task, it is a breach of the terms.
 :::
 
-## Personal data, copyright and professional advice have their own limits {.smaller}
+## Personal data, copyright and professional advice have their own limits
 
 | Area | What the model tends to do | What to do instead |
 |---|---|---|
@@ -175,7 +175,7 @@ Finally, three things that are often mistaken for guardrails. A usage limit: you
 Here is the whole first half as one flowchart. First: is the agent asking you to approve something? Then it is the harness; read and decide. Second: does the message mention a limit, a reset time, the context or a network error? Then it is not a guardrail at all. Third: is the no inside the model's own reply, with a reason or an offer? Then it is the model's own refusal or caution; you can give honest context or take the safe part. Fourth: is it a system error, a banner, an answer cut off, a session that ended, or a note that a different model answered? Then a safety classifier was involved; do not reword to get past it. Fifth, rarer: an e-mail or account notice is account enforcement. If none fits, simply ask the agent why it stopped; agents sometimes stop because they are unsure or think the task is done. You will practise this in the exercise.
 :::
 
-## The same question in a table {.smaller}
+## The same question in a table
 
 | What you see | Where it comes from | Who can change it | What to do |
 |---|---|---|---|
@@ -191,7 +191,7 @@ Here is the whole first half as one flowchart. First: is the agent asking you to
 The same content as a table, for those who prefer it, and for your notes. The useful column is "who can change it". The harness is yours to configure. The model's behaviour cannot be switched off, but it responds to context, so a clear and honest description of what you are doing often turns a refusal into an answer. Classifiers and account enforcement are set by the provider; the only legitimate ways to change them are the provider's own programmes for vetted users, and normal channels outside the AI tool. And the last row is about your plan and your session, not about content at all. The exercise starts with a set of twelve situations that you sort into these rows.
 :::
 
-## If the request is legitimate, say who you are and what it is for {.smaller}
+## If the request is legitimate, say who you are and what it is for
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -228,7 +228,7 @@ Context works for the **model's own** caution. It does **not** change what a cla
 When the model is cautious, the main cause is that it cannot tell a legitimate request from a harmful one. You can help it. Say who you are, what the task is for, who asked for it or approved it, and what a good outcome is. The example on the left is exactly what an attacker would type. The one on the right describes a real, ordinary job: an IT contact asked by the security office to audit passwords on a server they are responsible for. The model can now help, and it will probably suggest existing tools and documentation, which is better advice anyway. Two warnings. First, context must be true. Inventing a cover story to get help you would not otherwise get is precisely the circumvention the usage policies forbid. Second, context helps with the model's own judgement; it is not meant to get past a classifier, and you should not use it for that.
 :::
 
-## Split the task: let the agent do the safe parts, handle the restricted part another way {.smaller}
+## Split the task: let the agent do the safe parts, handle the restricted part another way
 
 - Most tasks that hit a guardrail are **mostly fine**. One part triggers it.
 - Ask for the parts that are clearly fine: structure, background, analysis code, formatting, a reading list.
@@ -239,7 +239,7 @@ When the model is cautious, the main cause is that it cannot tell a legitimate r
 The second move is to split the work. A literature summary on thirty papers stops at paper seventeen: let the agent do the other twenty-nine and read that one yourself. A lab safety handout that names dangerous agents gets blocked: let the agent do the layout and the general sections and write the agent-specific part yourself from your institution's manual. The restricted part is usually small, and it is often the part where your own expertise matters most anyway. For anything genuinely sensitive, the right channel is a human one: your colleagues, the literature, your biosafety officer or security office, and in some cases the provider's own verification programme for vetted teams. And keep a note in your project README of what was blocked and what you did. That is part of the AI-use log we started in Privacy, ethics and safety.
 :::
 
-## Do not try to trick the model past a guardrail {.smaller}
+## Do not try to trick the model past a guardrail
 
 - Both providers' usage policies **prohibit** intentionally getting around safeguards. It can cost you your **account**.
 - If something is blocked on purpose, a trick that "works" means you are now doing the very thing the block was for, **under your name**.
@@ -268,7 +268,7 @@ Now the second half: where do the strictest guardrails come from? Each major pro
 For the biologists here this analogy will be immediate. When Anthropic published its Responsible Scaling Policy in September 2023, it said its AI Safety Levels were "modeled loosely after the US government's biosafety level standards for handling of dangerous biological materials." In a lab, the more dangerous the organism, the stricter the containment: from an open bench at BSL-1 to suits and a separate building at BSL-4. The ASLs work the same way. ASL-1 is a system with no meaningful catastrophic risk, like a chess program. ASL-2 shows early signs of dangerous knowledge but gives no real help beyond what a search engine does. ASL-3 could substantially raise the risk of catastrophic misuse, and requires classifiers, monitoring and stronger security. ASL-4 and above were never spelled out as a fixed list. One subtlety: since 2024, Anthropic uses ASL as the name of a set of protections, not of a model. You deploy a model "with ASL-3 protections", just as you work with an organism "at BSL-3".
 :::
 
-## Anthropic today: all current models run with ASL-3 protections {.smaller}
+## Anthropic today: all current models run with ASL-3 protections
 
 - **Responsible Scaling Policy**, version 3.4 (effective 8 July 2026). Version 3.0 (February 2026) was a rewrite: it adds public **Risk Reports** every 3 to 6 months and a **Frontier Safety Roadmap**.
 - **ASL-3 protections** were first switched on in May 2025, with Claude Opus 4, as a precaution. They are aimed above all at **chemical and biological weapons**.
@@ -290,7 +290,7 @@ What does this mean today? I checked the current policy and Anthropic's model re
 OpenAI's equivalent is the Preparedness Framework. The current published version is version 2, from April 2025. It tracks three categories: biological and chemical, cybersecurity, and AI self-improvement. For each there are two thresholds. High means the model could amplify existing pathways to severe harm; it needs safeguards before deployment. Critical means it could introduce new pathways to severe harm; it then also needs safeguards during development. Since ChatGPT agent and GPT-5 in mid 2025, OpenAI has treated its most capable models as High in biology and chemistry, again as a precaution, with the matching safeguards on. In cybersecurity, OpenAI wrote in August 2026 that it could not rule out the Critical level for an upcoming model, and paused some internal work on it until stronger security was in place. There is also a list of research categories that are watched but do not yet have thresholds. OpenAI has signalled that a revised framework is coming, so check the current version.
 :::
 
-## Google DeepMind's Frontier Safety Framework uses "critical capability levels" {.smaller}
+## Google DeepMind's Frontier Safety Framework uses "critical capability levels"
 
 - **Frontier Safety Framework**, version 3.0 (September 2025), updated to **3.1** (April 2026).
 - **Critical Capability Levels (CCLs)**: thresholds at which a model could cause severe harm without extra protections. Domains: **CBRN** (chemical, biological, radiological, nuclear), **cyber**, **harmful manipulation**, **machine-learning R&D**, and **misalignment** (a model working against its operators).
@@ -303,7 +303,7 @@ Source: [deepmind.google/frontier-safety](https://deepmind.google/frontier-safet
 Google DeepMind's version is the Frontier Safety Framework. The current version is 3.1, from April 2026, building on version 3.0 from September 2025. Its central idea is the critical capability level: a capability that, without extra protections, could cause severe harm. The domains overlap with the others: chemical, biological, radiological and nuclear; cyber; machine learning research and development; and two that are more specific to Google, harmful manipulation, meaning a model that could systematically change people's beliefs in high-stakes situations, and misalignment, a model that works against its operators. Version 3.1 added tracked capability levels, lower thresholds meant to raise a flag earlier. When a model reaches a critical level, Google commits to a safety case review before release and to stronger protections. Different words, same shape: test, compare with thresholds, add protections.
 :::
 
-## The EU AI Act now requires this kind of testing for the largest models {.smaller}
+## The EU AI Act now requires this kind of testing for the largest models
 
 - The AI Act calls the largest models **general-purpose AI models with systemic risk**. A model trained with more than **10^25^ operations** of compute is presumed to be one.
 - Their providers must: **evaluate** the model, including adversarial testing; **assess and mitigate** systemic risks (CBRN and loss of control among them); **report serious incidents**; and ensure **cybersecurity** of the model.
@@ -316,7 +316,7 @@ For you as a user, the AI Act changes little directly. It is why the providers' 
 Briefly, the regulatory side. The EU AI Act has a special category for the largest general-purpose models, those with systemic risk, presumed for models trained with more than ten to the twenty-fifth operations. Their providers must evaluate the models, including adversarial testing, assess and reduce systemic risks such as help with chemical and biological weapons or loss of control, report serious incidents to the EU AI Office, and protect the model with adequate cybersecurity. These obligations have applied since August 2025, and since August 2026 the Commission can enforce them, with fines and, in the worst case, by requiring a model to be withdrawn. Most major providers have signed the Code of Practice that describes how to comply. For you as a user, this does not change much directly. But it is part of why the frameworks on the previous slides are published, kept up to date, and checked by outsiders. The content-labelling rules of the AI Act were covered in the previous unit.
 :::
 
-## Three frameworks, one shape {.smaller}
+## Three frameworks, one shape
 
 | | Anthropic | OpenAI | Google DeepMind |
 |---|---|---|---|
@@ -340,7 +340,7 @@ Here is a summary for your notes. The three frameworks have different names and 
 Why does this matter to you in practice? Two consequences. First, the most capable models carry the strictest guardrails. A request that the newest model blocks may be answered by an older or smaller model, which has fewer classifier triggers but also gives less capable answers. Do not switch models just to get past a block on a dual-use topic; that is the same circumvention as before. But be aware that the difference exists, so a block on the strongest model does not mean you did something wrong. Second, open-weights models, which you met in Open-weights models and data privacy, run on your own computer or your institution's server. There is no classifier and no account to enforce a policy. The model still has trained refusals, but anyone can fine-tune those away. For sensitive data this is an advantage. For dual-use work, it means the responsibility moves entirely to you and your institution.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Misreading the type.** Rewording a request that hit a **usage limit**; waiting out a **classifier** that will not change.
 - **Taking a false alarm personally**, or giving up on a legitimate task that only needed honest context or splitting.
@@ -353,7 +353,7 @@ Why does this matter to you in practice? Two consequences. First, the most capab
 The limits slide. The first mistake is misreading the type: people reword their request when they simply hit a usage limit, or retry again and again after a classifier block, which only builds a pattern on their account. The second is overreacting to a false alarm: it is not an accusation. The third is the opposite mistake: making up context to get past a guardrail. The fourth is subtle and important: when the model does help, that is not a statement that the task is allowed. It does not know your ethics approval, your data agreement, or your institution's rules on dual-use research. The fifth: guardrails are a coarse safety net designed against catastrophic misuse, not a check of whether your work is safe or correct. And finally, everything on the policy slides has a short shelf life. Learn the shape; look up the details.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -362,6 +362,15 @@ The limits slide. The first mistake is misreading the type: people reword their 
 | Safety classifier | Separate model; system error, cut-off answer, ended session or a switch of model. False alarms happen |
 | Harness guardrail | Permission prompts, sandbox, network: your settings |
 | Account enforcement | Usage policy; looks at patterns; one block is not a violation; getting around safeguards is |
+
+::: notes
+To sum up. When the agent stops, first ask which layer stopped it: the model, a classifier, the harness, your account, or simply a limit. The model's own refusals respond to honest context. Classifiers do not, and they produce false alarms on legitimate research; that is a policy limit, handled through normal channels. Harness guardrails are your settings. Account enforcement looks at patterns, and deliberately getting around safeguards is itself a violation. Behind the strictest guardrails stand safety frameworks that test each model and add protections above thresholds, an idea borrowed from biosafety levels. In the exercise you sort twelve situations by guardrail type, look up the current policy pages, and check your own harness settings. In the next unit, Limits of AI for biological research, we go deeper into biology and medicine.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | Not guardrails | Usage limits, full context, network errors |
 | What to do | Honest context; split the task; normal channels; never trick the model |
 | Safety levels | Test before release; stronger protections above thresholds. ASL modelled on BSL |
@@ -371,5 +380,5 @@ The limits slide. The first mistake is misreading the type: people reword their 
 **Next (Limits of AI for biological research):** the deep dive for life sciences and medicine: which biology triggers the classifiers, what that looks like, the programmes for vetted researchers, and the limits that are not guardrails at all, such as protocols the model gets subtly wrong.
 
 ::: notes
-To sum up. When the agent stops, first ask which layer stopped it: the model, a classifier, the harness, your account, or simply a limit. The model's own refusals respond to honest context. Classifiers do not, and they produce false alarms on legitimate research; that is a policy limit, handled through normal channels. Harness guardrails are your settings. Account enforcement looks at patterns, and deliberately getting around safeguards is itself a violation. Behind the strictest guardrails stand safety frameworks that test each model and add protections above thresholds, an idea borrowed from biosafety levels. In the exercise you sort twelve situations by guardrail type, look up the current policy pages, and check your own harness settings. In the next unit, Limits of AI for biological research, we go deeper into biology and medicine.
+The rest of the summary table, and where we go next.
 :::

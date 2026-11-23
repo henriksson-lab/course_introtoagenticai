@@ -18,7 +18,7 @@ format:
     menu: true
 ---
 
-## About this lecture {.smaller}
+## About this lecture
 
 So far every prompt and every file the agent read went to Anthropic or OpenAI. For much of your work that is fine. For some it is not: patient data, interview transcripts, data under a contract. **Open-weights models** can run somewhere else: on a service your university or a national infrastructure runs, or on your own computer.
 
@@ -60,7 +60,7 @@ Recall from How LLMs and agents work that a trained model is, in the end, a very
 This is the main slide of the lecture. There are three places a model can run, and your prompt and files go wherever it runs. First, the provider's cloud: this is what you have used all course. The company sees your data, under the terms of your plan or your university's contract. Note that cloud companies also host open models; an open model in someone else's cloud is no more private than a closed one. Second, a hosted service run by a university or a national infrastructure. The data goes to that service, under its own policy and agreements. Third, your own computer. The model is downloaded once, and after that nothing leaves your machine. The trade-off runs the other way for quality: the best models are only in the provider's cloud, a hosted service can run large open models on shared GPUs, and your own computer runs the smaller ones.
 :::
 
-## "Hosted in Sweden" is not the same as "approved for your data" {.smaller}
+## "Hosted in Sweden" is not the same as "approved for your data"
 
 | Question to ask | Why it matters |
 |---|---|
@@ -94,7 +94,7 @@ Questions: **openllm@scilifelab.se**, or the `#openllm_pilot_users` channel on S
 Who can use it? According to the registration page, staff at all SciLifeLab infrastructure units, and members of research groups affiliated with SciLifeLab, such as SciLifeLab and DDLS fellows and their groups, group leaders and PULSE postdocs. Collaborators on joint projects may also register. You register with your official work email, verify it, and then a person from the team approves the account if there is room. The pilot is about learning what capacity is needed, so they say plainly that they cannot guarantee a place for everyone. Once approved, you log in to the web interface, or create an API key under Settings, Account, API Keys. Keys expire after four weeks. If you are not in the SciLifeLab community, this service is not for you, but the questions you would ask about it are the same for any service your own university offers.
 :::
 
-## It offers large open models, and the list changes during the pilot {.smaller}
+## It offers large open models, and the list changes during the pilot
 
 | Model (as listed, Nov 2026) | Family | Service's recommendation |
 |---|---|---|
@@ -112,7 +112,7 @@ Who can use it? According to the registration page, staff at all SciLifeLab infr
 Here is the model list from the service's Models page in November 2026. Do not memorise it; the service says it will add and replace models during the pilot. What matters is the size. Mistral Large 3 has 675 billion parameters in total, Qwen3 235 billion. Neither would run on anything you have at home; they need data-centre GPUs. That is the main advantage of a hosted service over your own laptop: much larger, better open models, with the data still staying in Sweden. Two practical notes. The web interface does not search the web, so asking it about the latest literature will fail or produce invented answers. And bge-m3 is not a chat model at all: it turns text into numbers for search systems, which is useful for people who build such systems.
 :::
 
-## Its own policy says: send only public information for now {.smaller}
+## Its own policy says: send only public information for now
 
 > *"Do not send any text, data, or code that requires any level of confidentiality above publicly available information."*
 > SciLifeLab OpenLLM, use policy page (pilot), November 2026
@@ -180,7 +180,7 @@ Why does the gap matter more for agents than for chat? Remember the agent loop f
 Recall that the agent is two things: the harness on your computer, Claude Code or Codex, which reads files, runs commands and asks your permission; and the model, which does the thinking. The harness reaches the model at an address, normally the maker's cloud. Many harnesses let you change that address. Then the same harness, with the same permission prompts and the same tools, talks to a different brain: a hosted open-model service such as SciLifeLab OpenLLM, or a model server running on your own computer, such as Ollama or LM Studio. The permission prompts still protect you; the file tools work the same way. What changes is how well the agent works, because that depends on the model.
 :::
 
-## Codex supports local models; Claude Code can be pointed elsewhere, unsupported {.smaller}
+## Codex supports local models; Claude Code can be pointed elsewhere, unsupported
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -215,7 +215,7 @@ How does this look in practice? I checked both tools' documentation in November 
 A word on licences, because "open" is used loosely. A closed model you use under terms of service. An open-weights model comes with a licence, and licences differ a lot. Meta's Llama models use a custom community licence: you may run them, but there is an acceptable use policy, companies with more than 700 million monthly users need a special licence, and for Llama 4 the rights to the multimodal models are not granted to individuals or companies based in the EU, with some exceptions for end users. Earlier Gemma versions also had Google's own terms. Many other models use standard permissive licences: most Qwen models, many Mistral models, gpt-oss and, since April 2026, Gemma 4 use Apache 2.0; DeepSeek uses MIT. Those allow almost any use, including commercial. Finally, a few models are fully open: the weights, the training code and a description or release of the training data, such as OLMo from the Allen Institute and the Swiss Apertus. The Open Source Initiative's definition of open-source AI asks for that kind of openness. For you: the model card on Hugging Face names the licence, for the exact version you download. Read it before you build something others will use.
 :::
 
-## Open models have fewer outside guardrails, so more responsibility falls on you {.smaller}
+## Open models have fewer outside guardrails, so more responsibility falls on you
 
 - Cloud providers run **safety classifiers and usage policies** around their models. A downloaded model has only what was trained into it, and some published versions have had even that removed.
 - Nobody **monitors** what you do with a local model. That is the privacy benefit, and also the responsibility.
@@ -260,7 +260,7 @@ A hosted service takes most of these off you, but keeps one: the quality of open
 Let me be honest about the costs, because the privacy benefit is real but so are these. Quality: you will check more and break tasks into smaller pieces. Hardware: a small model runs on a normal laptop; anything larger needs memory most office machines do not have. Speed: on a laptop, a model may write a few words per second, so a long transcript takes minutes, and an agent session, which processes the whole context again and again, can be painfully slow. Set-up: choosing among the many versions on Hugging Face, keeping things updated, and configuring an agent to talk to it is real work, and the kind of work this course mostly avoids. A hosted service, like SciLifeLab OpenLLM, handles hardware, speed and set-up for you. What it cannot change is that the best open models still trail the best closed ones.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Local is assumed to mean approved.** A model on your laptop does not make the laptop an approved place for sensitive data.
 - **Hosted is assumed to mean private.** Read the service's policy; a pilot may ask for public data only.
@@ -274,7 +274,7 @@ Let me be honest about the costs, because the privacy benefit is real but so are
 Here is how this goes wrong in practice. The first two are mirror images: assuming that a local model is automatically allowed for sensitive data, and assuming that a hosted service is private because it is in Sweden. In both cases, the policy and the approval decide. Third, open models are offered by many cloud companies too, and then you are back in someone else's cloud. Fourth, the harness may send telemetry or update checks even when the model is local; for the strictest cases, check that, or ask IT to check. Fifth, and most common: people feel safer with a local model and check its output less, when it is weaker and needs more checking. Sixth, licences. And finally, everything on these slides about specific tools, models and the SciLifeLab pilot was checked in November 2026 and will change.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -283,6 +283,15 @@ Here is how this goes wrong in practice. The first two are mirror images: assumi
 | Hosted services | Ask who runs it, what it is approved for, what it logs, and whether it is a pilot |
 | SciLifeLab OpenLLM | Pilot for the SciLifeLab community; open models on Swedish infrastructure; for now, public information only |
 | Running locally | LM Studio, Ollama, llama.cpp; memory decides model size (about half a GB per billion parameters at 4-bit) |
+
+::: notes
+To sum up. Closed models are a service; open-weights models are files that can run anywhere. Privacy follows the place where the model runs: the provider's cloud, a hosted service, or your own computer. For a hosted service, ask who runs it, what it is approved for, what it keeps, and whether it is a pilot. SciLifeLab OpenLLM is a good Swedish example, for the SciLifeLab community, and in its pilot phase it asks for public information only. On your own computer, LM Studio or Ollama run models up to the size your memory allows. Open models are weaker, especially as agents, and small ones much weaker. Codex has a built-in local option; Claude Code can be pointed elsewhere but Anthropic does not support it. Read the licence. And match the route to the data class, with your university having the last word. In the exercise you compare a closed and an open model on the same task. Next we turn from what goes into the model to what comes out: labelling AI-generated content.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | Quality | Large open models trail the frontier; small local models trail by far, most of all as agents |
 | Connecting an agent | Codex: `--oss` with Ollama or LM Studio. Claude Code: `ANTHROPIC_BASE_URL`, not supported by Anthropic for non-Claude models |
 | Licences | Open weights is not open source; read the licence on the model card |
@@ -291,5 +300,5 @@ Here is how this goes wrong in practice. The first two are mirror images: assumi
 **Next (Labelling AI-generated content: the EU rules, watermarks and detection):** what you must label when you publish AI-generated text and images, how watermarks work, and why "AI detectors" are not evidence.
 
 ::: notes
-To sum up. Closed models are a service; open-weights models are files that can run anywhere. Privacy follows the place where the model runs: the provider's cloud, a hosted service, or your own computer. For a hosted service, ask who runs it, what it is approved for, what it keeps, and whether it is a pilot. SciLifeLab OpenLLM is a good Swedish example, for the SciLifeLab community, and in its pilot phase it asks for public information only. On your own computer, LM Studio or Ollama run models up to the size your memory allows. Open models are weaker, especially as agents, and small ones much weaker. Codex has a built-in local option; Claude Code can be pointed elsewhere but Anthropic does not support it. Read the licence. And match the route to the data class, with your university having the last word. In the exercise you compare a closed and an open model on the same task. Next we turn from what goes into the model to what comes out: labelling AI-generated content.
+The rest of the summary table, and where we go next.
 :::

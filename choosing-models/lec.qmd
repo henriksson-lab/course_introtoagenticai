@@ -135,16 +135,31 @@ Recent models can produce a stretch of hidden or visible reasoning before their 
 
 ## Context length: how much the model can hold at once
 
-- Current top models hold up to about **1 million tokens**: roughly 750,000 words, several books' worth.
-- That is the **maximum**, not the sweet spot. In very long sessions, details are still missed or summarised away (compaction).
-- Some models offer a large window only as an option or with higher usage. Check the model overview.
-- For most course tasks the window is not the limit; **focus** is. One task per session still wins.
+:::: {.columns}
+::: {.column width="48%"}
+- Top models hold up to about **1 million tokens**: several books' worth.
+- That is the **maximum**, not the sweet spot.
+- Facts at the **start** and **end** of a long context are used best; facts in the **middle** are missed more often.
+- So **focus** beats size: one task per session.
+:::
+::: {.column width="52%"}
+![](fig19-lost-in-middle.svg){width="100%"}
+:::
+::::
 
 ::: notes
-The context window from How LLMs and agents work is another property that differs between models and tiers. Today's largest windows are around a million tokens. Using the rule of thumb from that unit, a hundred tokens is about seventy-five English words, so that is roughly three-quarters of a million words. That sounds as if size is no longer a concern, but two cautions apply. A large window does not mean the model pays equal attention to everything in it; details in the middle of a huge context are still missed. And long sessions still get compacted. The habits from earlier units, one task per session and rules written in files, matter more than the size of the window for almost everything you will do in this course.
+The context window from How LLMs and agents work is another property that differs between models and tiers. Today's largest windows are around a million tokens, roughly three-quarters of a million English words. That sounds as if size is no longer a concern, but a large window does not mean the model pays equal attention to everything in it. A well-known study by Liu and colleagues, published in 2024 under the title Lost in the Middle, hid one relevant fact at different positions in a long context and measured how often models used it. Accuracy was highest when the fact was near the beginning or the end, and dropped when it was in the middle: a U-shaped curve, which the figure sketches. Newer models are better at this, and the size of the dip differs between models and tasks, but later studies also find that performance drops as the context grows, well before the limit. And long sessions still get compacted. So the size of the window matters less than what you put in it, and where. That is the next slide.
 :::
 
-## Switching model and effort in Claude Code and Codex {.smaller}
+## Context engineering: what goes into the window, and where
+
+![](fig20-context-layout.svg){width="72%" fig-align="center"}
+
+::: notes
+Because position and clutter matter, it pays to arrange the context on purpose. People call this context engineering. The agent tools already help: your standing rules in AGENTS.md or CLAUDE.md are loaded at the very start of every session, which is one of the two strong positions; that is why the important, lasting rules belong there, as in Organising a project for an agent. The other strong position is the end, which is where your request sits. Put the task, the constraints and how you will check the result there, and if you pasted or pointed to a long document, put the question after it, not before; provider guides for long documents give the same advice. Restate the one rule that must not be broken at the end of a long prompt. In the middle goes the material, and only the material this task needs: let a script read a big data file and show you a summary, rather than pasting the whole thing. And keep sessions to one task: an old, wrong attempt left in the window is material too, and it can pull the next answer back toward the mistake. The positions are a tendency, not a law, and the agent also reads files on its own; but these habits cost nothing and make results more reliable.
+:::
+
+## Switching model and effort in Claude Code and Codex
 
 | | Claude Code | Codex |
 |---|---|---|
@@ -190,7 +205,7 @@ In practice there are only a few situations where switching models pays off. If 
 Now to the evidence. A benchmark is simply a fixed test: a set of questions or tasks with known correct answers, a way of running the model on them, and a rule for scoring. The score is usually the percentage correct. Because the test is fixed, different models can be compared, and the same model can be compared over time. The important details are hidden in the small print: which version of the test, which thinking setting, whether the model could use tools, how many attempts it got, and who ran it, the provider or an independent group. Two numbers for the same model on the same benchmark can differ by many points because of these choices. That is why the sources we use in the following graphs are independent groups that run the tests themselves under fixed conditions.
 :::
 
-## Benchmark graphs come in five kinds; each normalises differently {.smaller}
+## Benchmark graphs come in five kinds; each normalises differently
 
 | Kind | Example | What it tells you | Watch out for |
 |---|---|---|---|
@@ -242,7 +257,7 @@ The research group METR found a more intuitive way to normalise. They collected 
 This is METR's graph, redrawn from their published data. Note the vertical axis: it is logarithmic, so each step up is a multiplication. GPT-2 in 2019 could do tasks of a few seconds. GPT-4 in 2023, a few minutes. By early 2026, several hours, and the latest model measured is beyond METR's reliable range. METR's original paper in 2025 found that the time horizon doubled roughly every seven months; with their updated task set they estimate a doubling about every four months from 2023 on. The purple diamonds show the eighty per cent horizon: tasks the model completes four times out of five. They are several times shorter. That gap matters for you: a task at the edge of a model's horizon fails half the time.
 :::
 
-## How to read the time-horizon graph, and how not to {.smaller}
+## How to read the time-horizon graph, and how not to
 
 - **50 % is not reliable.** For tasks you need done right, look at the **80 %** points, which are several times shorter.
 - **The tasks are software and research tasks** with clear success criteria. Your field's tasks may be easier or harder for a model.
@@ -306,7 +321,7 @@ Three things to keep in mind for every graph you see. First, leakage, also calle
 So here is the conclusion for practice. When the choice of model matters, for a big batch job, a pipeline you will rerun for months, or a kind of analysis you do often, run your own small benchmark. Take ten to twenty real examples from your task, ideally ones where you know the right answer. Give exactly the same prompt to two models, or two settings, in fresh sessions. Compare the results against your known answers, and if you can, without knowing which model produced which, just as LMArena does. Count errors, note the time taken and the usage. This takes an hour and tells you more about your task than any leaderboard. It is the same idea as Parallel workers, applied to the choice of model. And it gives you a result you can write in your log: which model, which setting, how many errors on your test set.
 :::
 
-## A small model test: what to record {.smaller}
+## A small model test: what to record
 
 | Record | Example |
 |---|---|
@@ -323,7 +338,7 @@ Keep it in the project's notes or README. When a new model comes out, **rerun th
 To make the small test worth keeping, record it properly. What the task and test set were, with the correct answers. The exact model IDs, effort settings and the date, because models change. The prompt, saved as a file so you can reuse it word for word. The result per item, so you can see whether the models fail on the same items or different ones. The totals, including time and usage. And the decision you made because of it. The real payoff comes later: when a new model is released and the launch graphs say it is much better, you rerun your test in half an hour and find out whether that is true for you. That is a much better basis for switching than a headline.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Chasing the newest model.** Switching every month costs time and breaks reproducibility; the default is usually fine.
 - **Reading one number as "intelligence".** Each benchmark measures one kind of task, under conditions someone chose.
@@ -336,7 +351,7 @@ To make the small test worth keeping, record it properly. What the task and test
 To finish, the common mistakes. Constantly switching to the newest model feels productive but costs time and makes your results harder to reproduce. Treating a single benchmark number as general intelligence ignores that each test measures one narrow thing. Leaderboard positions are often within each other's uncertainty. Trend lines are estimates, and projecting them forward is guesswork. A model asked about itself answers from its training data, which predates its own release, so it often gets its own version wrong. And the simplest mistake of all: not writing down which model produced a result. All of these have the same remedy as everything else in this course: a check you control, and a record you keep.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -345,6 +360,15 @@ To finish, the common mistakes. Constantly switching to the newest model feels p
 | Model names | family + tier + version (+ size, + effort); aliases move, exact IDs do not; log the exact ID |
 | Thinking effort | more effort helps multi-step, tricky work; wasted on simple chores |
 | Switching | `/model`, `/effort` (Claude Code); `/model`, `-m` (Codex); the default is usually fine |
+
+::: notes
+The summary in one sentence: choose a model on purpose, write down which one you used, and trust your own small test more than anyone's leaderboard. The families and tiers give you a menu; the name tells you where on the menu you are; the effort setting trades time for depth. Benchmarks come in a few kinds, fixed tests, time horizons, combined indices, cost and human preference, and each answers a narrow question with its own blind spot. Independent sources that publish their data are better than launch posts. In the next unit we look more closely at open-weights models: what it means to run a model at a university or on your own computer, what you gain in privacy and what you give up in capability.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | Fixed tests | saturate within a few years; harder tests replace them |
 | Time horizon (METR) | length of task done half the time; doubled every few months; 80 % is much shorter |
 | Combined index, cost | open models months behind; the cost of a given score falls fast |
@@ -354,5 +378,5 @@ To finish, the common mistakes. Constantly switching to the newest model feels p
 **Next (Open-weights models and data privacy):** where your data goes with closed, hosted and local models, and when an open-weights model is the right choice.
 
 ::: notes
-The summary in one sentence: choose a model on purpose, write down which one you used, and trust your own small test more than anyone's leaderboard. The families and tiers give you a menu; the name tells you where on the menu you are; the effort setting trades time for depth. Benchmarks come in a few kinds, fixed tests, time horizons, combined indices, cost and human preference, and each answers a narrow question with its own blind spot. Independent sources that publish their data are better than launch posts. In the next unit we look more closely at open-weights models: what it means to run a model at a university or on your own computer, what you gain in privacy and what you give up in capability.
+The rest of the summary table, and where we go next.
 :::

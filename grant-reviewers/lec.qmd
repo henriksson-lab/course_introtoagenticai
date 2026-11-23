@@ -58,7 +58,7 @@ Panels are broad. A panel for ecology and soil science may have one soil microbi
 Now the ethics, before any method. A list of named panel members, with their affiliations and publications, is personal data under GDPR. That it is published by the funder does not change that. It means you need a reason to process it, you should collect as little as you need, keep it secure, and not keep it longer than necessary. Preparing your own application is a reasonable purpose for a short list of professional facts. It is not a reason to collect everything that can be found about a person. So the left column is what we do: professional expertise from professional sources, kept in a private folder, deleted after the decision. The right column is what we never do. If you are unsure whether your university needs to know about such processing, ask your data protection officer. This is not legal advice; it is the cautious reading.
 :::
 
-## Never contact or lobby a reviewer; panels change {.smaller}
+## Never contact or lobby a reviewer; panels change
 
 - The ERC is explicit: applicants, potential applicants and host institutions **must not contact reviewers**; applications may be rejected for breach of research integrity. Other funders have similar rules on conflicts of interest and influence.
 - The aim is to make the proposal **clearer and stronger for any competent reader**, not to tailor it to one person's taste or to flatter their work.
@@ -85,7 +85,7 @@ You may meet a guardrail here. Models are trained to be careful about compiling 
 Here is the whole workflow. Step one: collect the published panel into a small table, with the source and the date. Step two: for each member, build a short expertise profile from public professional sources such as ORCID, OpenAlex and PubMed. Step three: match the profiles against your draft. Which sections will the experts scrutinise, and which terms will the non-experts not know? Step four: mock reviews against the funder's own criteria, written from several kinds of expertise. Step five: you go through every point and decide what to fix, what to explain and what to ignore. Each step has a check, shown under it. The rest of the lecture goes through the steps in order.
 :::
 
-## Funders publish panels in different places and at different times {.smaller}
+## Funders publish panels in different places and at different times
 
 | Funder | What is published | Where (check the current page) |
 |---|---|---|
@@ -115,7 +115,7 @@ This picture shows why we think in kinds of expertise rather than in names. Betw
 Step one is simple. Copy the panel list into a table: name, role, affiliation, panel, the address of the page you took it from, and the date. On some funders' pages the list is loaded by the browser and is hard for an agent to fetch; then copy it by hand from the page or save the page and give the agent the file. Do not let the agent guess or fill in members from memory: a model may produce plausible names of people who were never on that panel. The check is to compare the table with the web page, row by row. The source and date columns matter later, when someone asks you where the list came from, or when you notice the page has changed.
 :::
 
-## Step 2: expertise profiles come from public professional sources {.smaller}
+## Step 2: expertise profiles come from public professional sources
 
 | Source | What it gives | Access |
 |---|---|---|
@@ -230,7 +230,7 @@ This is what one mock review might look like, here from the statistics perspecti
 When you have several reviews, put them side by side. They will disagree, as real reviews do. The biogeochemist worries about novelty and the carbon use efficiency method; the statistician about the design; the outsider about clarity and why it matters. Some points come up in all three, and those are the ones to fix first. The grades are the least useful part. A mock grade of five is not a prediction of your real grade: the agent has no idea how strong the other applications are. Use the grades only to see which criterion is weakest in the reviewers' eyes, and the comments to see why.
 :::
 
-## An agent as reviewer is too kind, too generic, or too sure {.smaller}
+## An agent as reviewer is too kind, too generic, or too sure
 
 - **Too kind.** Models tend to agree and praise. Ask for strictness, for the three weakest points, and for what would make a panel reject it.
 - **Too generic.** "The methods could be described in more detail" fits every proposal. Demand a quote from the draft for every weakness.
@@ -250,7 +250,7 @@ These are the failure modes we met in How LLMs and agents work, now in a reviewe
 The last step is yours. Go through every point from the gap list, the jargon list and the mock reviews, and give each one of three labels. Fix: the point is right and the proposal changes, for example the design gets a proper unit of replication and a power analysis. Explain: the point is a misunderstanding, but a real reviewer could misunderstand it too, so you add a sentence. Ignore: the point is wrong, irrelevant, or invented; write down why. The table becomes your revision plan, and the reasons in the last column keep you honest. Afterwards, the best check is a human one: give the revised draft to a colleague in a neighbouring field and see whether they stumble where the mock outsider did.
 :::
 
-## Your own draft is your decision; someone else's never is {.smaller}
+## Your own draft is your decision; someone else's never is
 
 - Your **own draft** may go to the agent if you accept the provider's terms (*Privacy, ethics and safety*). Leave out unpublished results you would not share and anything confidential.
 - **Co-applicants' text and data:** ask them first.
@@ -269,7 +269,7 @@ A reminder from Privacy, ethics and safety, because this unit makes it tempting 
 Where should these files live? Not in your project repository on GitHub, and certainly not on your project page. Make a separate folder for the call, outside the published project, or add it to .gitignore if it must sit inside. The panel list and profiles contain personal data; the mock reviews and the revision plan contain your unpublished ideas. Neither belongs in public. When the decision has come, delete the panel list and the profiles: you no longer need them, and keeping personal data without a purpose is exactly what GDPR asks you not to do. Keep the revision plan and the lessons; they are yours and they help with the next application.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Wrong people.** Last year's panel, a namesake, a member who left. Check against the funder's page and the identifier.
 - **Too much about people.** Profiles that drift into private life or opinions. Keep the fixed format; delete what does not belong.

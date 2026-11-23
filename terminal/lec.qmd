@@ -425,7 +425,7 @@ The terminal skills from today are exactly what you need to let the agent instal
 This is the limits slide. The terminal skills here are a safety net with holes, and participants should know where the holes are. The commonest problem by far is the wrong starting folder, and the fix is one command. The most insidious is approval fatigue: the permission system only protects you while you read the requests. If a task produces a flood of requests, that is a sign to split it into smaller steps or to plan first, not to approve everything. Saving "don't ask again" rules for destructive commands is the fastest way to lose the protection. And Esc stops but does not undo; for real undo we need git, which comes early in Part 2 before the agent edits your own files at scale.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -435,6 +435,15 @@ This is the limits slide. The terminal skills here are a safety net with holes, 
 | Paths | absolute from the top (`/`, `C:\`); relative from where you stand; `..` = up one |
 | Five commands | `pwd`, `ls`, `cd`, `cd ..`, `mkdir`; plus `open .` / `explorer .` |
 | Starting folder | the agent works in the folder you start it in: one course folder, never home |
+
+::: notes
+Recap the mental model in one breath: one tree of folders, one current folder, the agent works in the folder you start it in, and every request tells you what, why, where and for how long. If you remember only one sentence, make it the escape hatch: no, explain that command first. In First delegations we use exactly this setup for real work on example data: you will start the agent in the course folder, give it three small jobs, and read the requests it makes along the way. Everyone should leave today with a working course folder and at least one agent that starts inside it.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | Session control | Esc stops; `/help` or `/`; `/clear` or `/new`; `/exit` |
 | Permission modes | Claude Code: Shift+Tab (Manual for now); Codex: `/permissions` (Read Only for now) |
 | Permission request | what, why, where, how long; yes once / yes always / no and say what |
@@ -444,5 +453,5 @@ This is the limits slide. The terminal skills here are a safety net with holes, 
 **Next (First delegations):** three small jobs in your course folder (organise a messy folder, clean an Excel file, summarise a few PDFs into a table), reading and approving each step as you go.
 
 ::: notes
-Recap the mental model in one breath: one tree of folders, one current folder, the agent works in the folder you start it in, and every request tells you what, why, where and for how long. If you remember only one sentence, make it the escape hatch: no, explain that command first. In First delegations we use exactly this setup for real work on example data: you will start the agent in the course folder, give it three small jobs, and read the requests it makes along the way. Everyone should leave today with a working course folder and at least one agent that starts inside it.
+The rest of the summary table, and where we go next.
 :::

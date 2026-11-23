@@ -77,7 +77,7 @@ Here is one commit up close. It has a unique name, a long string of letters and 
 Where does the history live? In a hidden folder called .git inside your project folder. Your file browser does not show it by default, and you never need to open it. Two consequences. First, git works entirely offline and nothing is uploaded anywhere: it is not a cloud service. GitHub, which many people confuse with git, is a website where you can put a copy of the history, and that is the next unit. Second, if you delete the project folder, the history goes with it. Git is an undo button and a notebook, not a backup. We will come back to that on the limits slide.
 :::
 
-## Five words cover almost everything {.smaller}
+## Five words cover almost everything
 
 | Word | Meaning | You say to the agent |
 |---|---|---|
@@ -101,7 +101,7 @@ Git has a reputation for being hard, and for programmers working in teams it can
 This is how we use git in this course. You speak in plain language, the agent translates it into git commands, and you check the result. Look at the right column: each request has a simple check. After a commit, read the message: is it true? After asking what changed, look at the list of files: are these the files you expected? After an undo, check that the file is back and nothing else was lost. The agents are very good at git, because there is an enormous amount of git usage in their training data. The risk is not that they type the wrong command, but that they do more than you asked, so the check is still yours.
 :::
 
-## If git is missing, the agent installs it with you {.smaller}
+## If git is missing, the agent installs it with you
 
 Ask first, without installing: "**Is git installed on this computer? Only check.**" (You may have done this in *Terminal survival kit*.)
 
@@ -211,7 +211,7 @@ Here is what you get after a few days of work. The agent turns git's history int
 The diff is the most useful thing git gives you as a checker. It lists exactly which lines changed in which files: red lines were removed, green lines added. In this example we asked for a change to the cleaning script. The first change is the one we asked for, the filter on amounts, although we should check whether 100,000 is the threshold we meant. The second is in a raw data file, which we did not ask for at all: one grant amount has lost a zero. Perhaps the agent thought it was a typo. Without the diff, this edit would have been invisible, and it would have quietly changed the results. With git, you see it at once, and one sentence undoes it.
 :::
 
-## Reading the diff is how you check the agent's work {.smaller}
+## Reading the diff is how you check the agent's work
 
 - **Which files?** "List the files you changed, created or deleted since the last commit." Anything unexpected is a question.
 - **Raw data changed?** That should almost never happen. Ask why, and undo it.
@@ -241,7 +241,7 @@ Going back comes in three kinds, and the agent picks the right command if you sa
 Here is an undo in practice. Note the second sentence of the prompt: before you do, tell me what will be thrown away and what will be kept. This is a good habit for any undo. The agent looks at the status, sees that two files changed, and explains: the two changed lines in the script go, and the results file, which the last run also changed, goes back too, so script and results match. Then it asks permission for the command. Afterwards it checks the status again: nothing left to commit, everything matches the last snapshot. Your session will look different. What should be the same is that you know, before you approve, what will be lost.
 :::
 
-## Some git commands throw work away: read before you approve {.smaller}
+## Some git commands throw work away: read before you approve
 
 | Command you may see | What it does | Risk |
 |---|---|---|
@@ -293,7 +293,7 @@ So do you still need git? Yes, and the documentation says so itself: checkpoints
 You will meet the word branch. In git, a branch is a parallel line of history: you can try something on a side line and either bring it back into the main line or throw it away. Teams of programmers use them all the time. For our purposes they add complexity without much gain, because commit-before-and-after plus undo already gives you a safe way to experiment. When the agent says you are on branch main, or master on some systems, that is simply the name of your single line of history. We come back to branches when we run several agents in parallel, where they really help.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Committing too rarely.** One commit for a week of work cannot be partly undone. Commit per task.
 - **Secrets or personal data committed.** They stay in the history. Ignore first; check the file list.
@@ -316,7 +316,7 @@ Here are the ways this goes wrong. Committing too rarely is the most common: if 
 Here is the routine to keep next to your screen from now on. At the start of a session, ask whether everything is committed, so you start clean. Give the agent one task. Ask what changed, and read the diff, or the agent's plain-language explanation of it. Check the result itself, with the methods from First delegations. If it is good, commit with a message that says what and why. If it is bad, undo, and then tell the agent what was wrong. Then the next task. After a week, the history is a readable notebook of your project, and every step in it can be taken back.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -325,6 +325,15 @@ Here is the routine to keep next to your screen from now on. At the start of a s
 | Diff | exactly which lines changed; the way to check what the agent did |
 | Going back | discard uncommitted edits, restore an old file, or revert a commit |
 | `.gitignore` | secrets, personal data, large files and junk stay out; write it first |
+
+::: notes
+Here is the summary. A commit is a snapshot of the whole folder with a message, and the history of commits is your lab notebook. The diff shows exactly what changed, which makes it the main tool for checking the agent's work. You can go back in three ways. The ignore list keeps secrets, personal data and large files out, and it comes before the first commit. The agent writes the messages and types the commands; you read and check. Commit before and after every task. Watch out for the few commands that throw work away. Codex relaxes its default in a git folder; Claude Code's checkpoints give a quick session undo next to git. In the next unit, Reproducible figures, we put this to work: a figure made by a script, both committed, so the figure can be remade at any time.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | Commit message | what, why, what it affects; the agent writes it, you check it |
 | Rhythm | commit before and after every agent task |
 | Dangerous commands | `reset --hard`, `clean -f`, `push --force`: ask what will be lost |
@@ -334,5 +343,5 @@ Here is the routine to keep next to your screen from now on. At the start of a s
 **Next (Reproducible figures):** a figure made by a script, committed together with the script, that you can remake on new data in one sentence.
 
 ::: notes
-Here is the summary. A commit is a snapshot of the whole folder with a message, and the history of commits is your lab notebook. The diff shows exactly what changed, which makes it the main tool for checking the agent's work. You can go back in three ways. The ignore list keeps secrets, personal data and large files out, and it comes before the first commit. The agent writes the messages and types the commands; you read and check. Commit before and after every task. Watch out for the few commands that throw work away. Codex relaxes its default in a git folder; Claude Code's checkpoints give a quick session undo next to git. In the next unit, Reproducible figures, we put this to work: a figure made by a script, both committed, so the figure can be remade at any time.
+The rest of the summary table, and where we go next.
 :::

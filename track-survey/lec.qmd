@@ -66,7 +66,7 @@ Before we touch any data: privacy. Many survey tools have an "anonymous" setting
 This is the route from Privacy, ethics and safety, applied to surveys. The agent only ever sees the column names, the answer options and a synthetic export with the same columns and invented rows. It builds the script and the report on that, and you test until every check passes. Then you close the agent, and run the same script yourself on the real export. You read the report and check it. The agent never sees a real answer. This is the default for course evaluations, unless your university has approved the tool you use for this kind of data, and even then, the free text deserves extra care. Today's worked example is synthetic, so you can let the agent read everything.
 :::
 
-## Course evaluations come with their own rules {.smaller}
+## Course evaluations come with their own rules
 
 | Question | Short answer (check your own university's rules) |
 |---|---|
@@ -81,7 +81,7 @@ This is the route from Privacy, ethics and safety, applied to surveys. The agent
 Course evaluations have rules of their own, and they differ between countries and universities, so treat this table as a list of questions to ask locally rather than legal advice. In Sweden, the Higher Education Ordinance requires universities to offer course evaluations, compile them, inform students about the results and any actions, and keep the results available to students. Because answers can identify people, they are personal data, with the usual GDPR duties: a purpose, limited access, a retention period. Who may see the raw answers is usually a small group. At Swedish public universities, there is an extra twist: submitted answers may be official documents that anyone can request, which is another reason to be careful with what is collected. And using evaluations for a research paper is a different purpose that may need ethics review. Your data protection officer can tell you what applies.
 :::
 
-## Today: a synthetic course evaluation with known answers {.smaller}
+## Today: a synthetic course evaluation with known answers
 
 - `course-evaluation-export.xlsx`: an invented course, *Cell Biology, spring 2026*. 164 students registered.
 - 122 rows: 105 online answers, 15 paper forms typed in by hand, **1 test response**, **1 double submission**.
@@ -104,7 +104,7 @@ Here is the data for the exercise. It is entirely invented: the course, the stud
 The first step is always the same: make the data tidy. An export is built for reading by people: long question texts as headers, answers as words, the same group spelled four ways. A tidy table is built for counting: one row per respondent, one column per question, short column names, one coding for every answer, and one spelling for every group. Every later step, counting, plotting, comparing, becomes simple once the table is tidy, and very error-prone if it is not. You do not need to do this yourself, but you need to recognise a tidy table when you see one, so you can check the agent's result.
 :::
 
-## Every kind of mess needs a decision you can see {.smaller}
+## Every kind of mess needs a decision you can see
 
 | Mess in the export | A decision someone has to make |
 |---|---|
@@ -122,7 +122,7 @@ As in *First delegations*: ask for a numbered **decisions list**, and read it.
 Each kind of mess needs a decision, and you want to see every one. Removing the test row is obvious. The double submission is probably one person pressing submit twice, but it is a judgement, so it goes in the list. The paper forms need a check that the agent cannot make on its own: did the paper form use 1 for "strongly disagree" as well, or the other way round? Only you can find out, by looking at the paper form. Programme names need a mapping, including Swedish ones. "Not applicable" is not a number on the scale. Blanks are missing, not zero. And one student agreed strongly with everything, including the two negative statements, which suggests they did not read the questions. Whether to remove them is a judgement, and the honest answer is often to report both ways if it changes anything.
 :::
 
-## The tidy step in one prompt {.smaller}
+## The tidy step in one prompt
 
 ```text
 course-evaluation-export.xlsx is a course evaluation export with paper
@@ -179,7 +179,7 @@ How do you check that the reversal was done? There is a quick test you can ask t
 Missing answers come in different kinds, and they should not be treated the same. A skipped question in an otherwise complete row is simply missing for that item. "Not applicable" is an answer, but not a point on the scale: nine students did not use the recordings, and that is worth reporting as a number, not hiding. A student who stopped after item six still gave six real answers; keep them. And the biggest group of all: 44 of 164 registered students did not reply. Report the response rate, because a report on 73 per cent of a course is different from one on 20 per cent. The one rule that always holds: a blank must never become a zero or a three. Both change every mean, and both are easy mistakes for a script to make.
 :::
 
-## A mean hides the shape of the answers {.smaller}
+## A mean hides the shape of the answers
 
 ![](fig10-means-hide.svg){width="92%" fig-align="center"}
 
@@ -198,7 +198,7 @@ Now describing the data. Likert answers are ordered categories, not measurements
 Here are all twelve items of our synthetic evaluation as diverging stacked bars. Each bar is one item. Agreement goes to the right, disagreement to the left, and neutral sits across the middle line. The number of answers is on the right of each bar. You can see the story in seconds: teachers were approachable, the labs and the outcomes are fine, and the feedback on lab reports came too late to use: more than half disagree with "the feedback came in time". Two items are marked R: there, agreeing is bad, so "workload too high" with half agreeing is a problem, not a success. This is the one plot that belongs in almost every course evaluation report.
 :::
 
-## A good Likert plot follows a few fixed rules {.smaller}
+## A good Likert plot follows a few fixed rules
 
 - **Same colours, same order** for every item: disagree in one colour family, agree in the other, neutral in grey.
 - **Neutral centred** on the zero line, so the eye compares left and right.
@@ -222,7 +222,7 @@ A few rules make a Likert plot honest and readable, and they are worth giving to
 Now group comparisons. The plainest way to compare groups is to put the same diverging bars side by side for each group, with the number of people in each. Here are campus and distance students on three items. The first two are the differences we built into the data: distance students value the recordings much more, 86 per cent agree against 44 per cent on campus, and they rate the labs much lower, 31 per cent against 71, because their lab week was compressed into a few days on campus. On overall satisfaction the two groups look similar. You can see all of this without any statistics. The statistics come in to answer one question: could a difference this size have appeared by chance?
 :::
 
-## A test answers one question: could this be chance? {.smaller}
+## A test answers one question: could this be chance?
 
 | Item | Campus: % agree (n) | Distance: % agree (n) | Could it be chance? |
 |---|---|---|---|
@@ -262,7 +262,7 @@ Now the privacy rule for results. Never report a group smaller than about five p
 This is why the rule has to apply to combinations, not only to single groups. Start with all 120 respondents. Biotechnology students: 38, fine. Biotechnology distance students: 13, still fine. Add an age group and a gender, and you are at exactly one person. Each step looked harmless. The name for the protection is k-anonymity: every combination of facts you report should be shared by at least k people, and for course evaluations k of at least five is a sensible rule. Ask the agent to check this for every table and plot it produces, and to list any cell below five. It is a mechanical check, exactly the kind of thing a script does better than a tired person the night before a board meeting.
 :::
 
-## The agent sorts free text into themes in minutes {.smaller}
+## The agent sorts free text into themes in minutes
 
 ![](fig16-themes.svg){width="68%" fig-align="center"}
 
@@ -281,7 +281,7 @@ Free-text answers are often the most useful part of an evaluation, and the slowe
 Here is the biggest risk in this track. On the left, four real comments about workload. On the right, two things an agent might write. The first is a summary: workload in weeks three and four was the most common complaint, with a count. That is fine, and checkable. The second is presented as a quote: "Weeks 3 and 4 were crushing, I barely slept." It sounds exactly like a student. It fits the theme perfectly. Nobody wrote it. A language model produces what is plausible, and a plausible quote comes out of the same process as a real one, as we saw in How LLMs and agents work. In a report to a programme board, an invented quote is fabricated evidence, and it can end up in minutes and decisions. It must never happen.
 :::
 
-## Check every quote against the data, word for word {.smaller}
+## Check every quote against the data, word for word
 
 ![](fig18-quote-check.svg){width="68%" fig-align="center"}
 
@@ -292,7 +292,7 @@ Here is the biggest risk in this track. On the left, four real comments about wo
 The fix is a check that does not rely on the agent's word. Ask the agent to write a small script that takes every quoted sentence in the report and searches for it, character for character, in the export, and prints a table with the respondent id and whether it was found. Here, three quotes are found and one is not. The one that is not found is the invented one, and it comes out of the report. Note the difference between this and asking "did you check the quotes?", which gets you a confident yes. The script checks the data. Then do your own spot check: open the export, find three quotes, and read them in context. Is the quote fair, or does the rest of the comment say something different?
 :::
 
-## Theme counts are judgement: check a sample yourself {.smaller}
+## Theme counts are judgement: check a sample yourself
 
 - Two careful people **code the same comments differently** at the edges. So does an agent, between runs.
 - **Code 15 comments yourself**, before you look at the agent's themes. Compare: where do you disagree, and why?
@@ -310,7 +310,7 @@ respondent id, theme and the comment. Do not create new themes.
 Sorting comments into themes is a judgement, not a measurement. Two careful people will disagree about some comments, and so will two runs of an agent. That is fine, as long as you know how large the disagreement is. Here are three ways to find out. Code fifteen comments yourself before you look at the agent's result, then compare. Give the same comments and the same theme list to a second agent or a fresh session, with the prompt shown here, and compare the counts. And report themes with the precision they have: "about fifteen comments mentioned workload", not "26.8 per cent". The full coding table belongs with the analysis files. It contains every comment and should not go into a report that others will read.
 :::
 
-## Some comments must not be quoted at all {.smaller}
+## Some comments must not be quoted at all
 
 | Comment contains | Example from the synthetic data | What to do |
 |---|---|---|
@@ -334,7 +334,7 @@ Some comments should never be quoted, even when they are real. A staff member's 
 Finally, the report. A programme board wants two pages, not twenty. Start with the response rate and who replied. Then three key messages in plain words, one diverging bar chart for all items, only the group differences you planned to look at, with the number of people and no group under five. Then the themes from the free text with rough counts and two or three verified quotes, what you propose to change, and a short method section that says how the analysis was done, including that an AI agent was used and how it was checked. Write it in Quarto, which you know from A course or project page. The big advantage: the numbers in the text, the tables and the plots all come from the same script, so they always agree, and next year the report rebuilds from the new export.
 :::
 
-## The report prompt names the audience, the content and the rules {.smaller}
+## The report prompt names the audience, the content and the rules
 
 ```text
 Write report.qmd, a Quarto report (HTML and PDF) for the programme
@@ -358,7 +358,7 @@ the table.
 Here is the prompt for the report. It names the audience and the length. It lists the content in order, including which group comparisons to make, which keeps the number of tests small. It asks for a placeholder for proposed actions, because those are your decision, not the agent's. It asks for a method section that discloses the use of the agent, as discussed in Privacy, ethics and safety. Then the rules: no small cells, no names, no identifying quotes, every quote exact. And it ends with the quote check, so the check is part of producing the report, not an afterthought. Rendering to PDF needs a LaTeX installation or Typst; if that fails, HTML is fine, and the agent can help install what is missing.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Reversed items averaged as worded.** The course score is wrong; alpha drops. Check the item-agreement plot.
 - **Blanks as 0 or 3.** Every mean shifts. Count NA per item and compare with the export.
@@ -388,7 +388,7 @@ Here are the ways this goes wrong, in one place. The first three are cleaning mi
 To sum up the division of labour. The agent is very good at the mechanical parts: reading a messy export, writing the script, making plots and codebooks, running and explaining tests, suggesting themes, and running checks for quotes and cell sizes. It drafts the report. You make the decisions that need knowledge of the course and the people: which rows to remove, which comparisons matter, what to do with sensitive comments, what actions to propose. And you take responsibility for the report that goes to the board. The quote check and the cell-size check are scripts, so they are reliable; reading three quotes in context and deciding about sensitive comments are yours.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -397,6 +397,15 @@ To sum up the division of labour. The agent is very good at the mechanical parts
 | Reverse coding | 6 − answer, for scores only; a negative item-agreement bar means "check reversal" |
 | Missing | blank, not applicable, stopped, no reply: four meanings; never 0 or 3 |
 | Likert description | n, % agree, % disagree, median; diverging stacked bars |
+
+::: notes
+Here is the summary. Make the data tidy with a codebook and a decisions list. Reverse negatively worded items for scores, and check that you did with the item-agreement plot. Treat each kind of missing answer for what it is. Describe Likert items with counts and percentages, and show them as diverging stacked bars. Compare a few planned groups with the number of people visible, and report the size of a difference before its p-value. Never report a group or a cell below five. Let the agent find themes, but check a sample yourself, and check every quote by script, word for word. And keep real evaluations away from cloud agents unless your university says otherwise. In Part 5, Parallel workers shows how to give the same task to two agents and compare: a natural way to double-check theme coding.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | Group comparison | side-by-side bars with n; plan few comparisons; size first, p-value second |
 | Small cells | never a group or cell below 5; check combinations (k-anonymity) |
 | Free text | themes with rough counts; code a sample yourself |
@@ -406,5 +415,5 @@ To sum up the division of labour. The agent is very good at the mechanical parts
 **Next (Parallel workers: Claude and Codex):** two agents at once, the same task given to both, and one agent checking the other's work. Or continue with another track.
 
 ::: notes
-Here is the summary. Make the data tidy with a codebook and a decisions list. Reverse negatively worded items for scores, and check that you did with the item-agreement plot. Treat each kind of missing answer for what it is. Describe Likert items with counts and percentages, and show them as diverging stacked bars. Compare a few planned groups with the number of people visible, and report the size of a difference before its p-value. Never report a group or a cell below five. Let the agent find themes, but check a sample yourself, and check every quote by script, word for word. And keep real evaluations away from cloud agents unless your university says otherwise. In Part 5, Parallel workers shows how to give the same task to two agents and compare: a natural way to double-check theme coding.
+The rest of the summary table, and where we go next.
 :::

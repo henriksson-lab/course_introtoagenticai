@@ -72,7 +72,7 @@ An agent is good at reading files. It will find out which files exist, what the 
 We write for two readers. People read the README: what the project is, where the data came from, how to rerun it, who to ask. You already have a README from *Privacy, ethics and safety*. Agents read a second file, AGENTS.md, at the start of every session, automatically. It holds the same facts plus the working rules: which folders are read-only, how to check a result, what to do in case of doubt. The two overlap, and that is fine. They are short, and each is written for its reader. AGENTS.md is an open convention that many coding agents read, not a product of one company.
 :::
 
-## Claude Code reads CLAUDE.md; Codex reads AGENTS.md {.smaller}
+## Claude Code reads CLAUDE.md; Codex reads AGENTS.md
 
 | | Claude Code | Codex |
 |---|---|---|
@@ -96,7 +96,7 @@ Here are the facts, as of now. Claude Code's own file is CLAUDE.md. Codex's is A
 The recipe is this. Write everything in AGENTS.md. Next to it, put a CLAUDE.md that contains a single line: at-sign AGENTS.md. Codex reads AGENTS.md directly. Claude Code reads CLAUDE.md, and the import line pulls in AGENTS.md. Anthropic's documentation describes exactly this setup for sharing one file between tools, and confirms that keeping the import never makes Claude read the file twice. You edit one file, and both agents, and any colleague using a third tool, get the same instructions. If you only ever use one tool, you could skip the extra file, but it costs nothing and makes the project work for whoever picks it up next.
 :::
 
-## What goes into AGENTS.md: what a new colleague would ask on day one {.smaller}
+## What goes into AGENTS.md: what a new colleague would ask on day one
 
 - **What this project is**, in two sentences, and who it is for.
 - **Where things are**: a short map, one line per folder, and which file is current.
@@ -112,7 +112,7 @@ Not: every file, long explanations, things the agent can see by opening a file.
 What goes in? Think of what a new colleague would ask on their first day. What is this, and for whom? Where are things, and which version counts? What must I never do? What do the odd values mean? How do I know if I broke something? How do you like to work? And what should I do when unsure? Leave out what the agent can see for itself: a list of every file, or a description of every column, only makes the file longer. Both Anthropic and OpenAI give the same advice in their guides: short, specific, and about what the agent cannot discover.
 :::
 
-## An AGENTS.md for the bird project {.smaller}
+## An AGENTS.md for the bird project
 
 ```markdown
 # Bird counts 2025
@@ -208,7 +208,7 @@ The notes folder holds three files, each with one job. plan.md says where the pr
 Here is how plan.md works in practice. At the end of a session, before you close it, ask the agent to update the plan: what was done, what is next, what is still open. At the start of the next session, the first thing the agent does, because AGENTS.md tells it to, is read the plan. It then knows where you stopped, without you retyping anything, and without a long old conversation weighing on it. This is the habit from *Delegating well*, "write what we learnt to a file before you clear", made permanent. It also makes it much easier to come back after a holiday.
 :::
 
-## decisions.md records why, not only what {.smaller}
+## decisions.md records why, not only what
 
 ```markdown
 # Decisions
@@ -231,7 +231,7 @@ One entry per decision: date, what, why, where it is implemented.
 The decision log is the file people most often skip and most often wish they had. Each entry has a date, the decision, the reason, and where in the project it is implemented. When a reviewer asks why site F has no autumn data, the answer is here. When the agent is about to "fix" the missing autumn data for site F, the answer is here too, and AGENTS.md tells it to look. You do not have to write these by hand: tell the agent "log this decision in notes/decisions.md" whenever you make one in a session.
 :::
 
-## The log of AI use is your record for disclosure {.smaller}
+## The log of AI use is your record for disclosure
 
 ```markdown
 # Log of AI use
@@ -250,7 +250,7 @@ The decision log is the file people most often skip and most often wish they had
 The third notes file is the log of AI use. You started it in your README in *Privacy, ethics and safety*; now it gets its own file. One line per session or per task: date, tool, what it was used for, and how you checked the result. When a journal, a funder, a thesis committee or your own university asks how generative AI was used, you will have the answer instead of a vague memory. The last column is the important one. "Used AI to clean data" is a confession; "used AI to clean data, checked row counts and totals against the original" is a method.
 :::
 
-## Names that sort, search and survive {.smaller}
+## Names that sort, search and survive
 
 | Instead of | Use | Why |
 |---|---|---|
@@ -282,7 +282,7 @@ Some things must never be in the project folder, because the agent reads the fol
 What if your project does need data that must not go to the agent? Then the data lives outside the project folder, in the place your university approves, and the project contains everything else: the scripts, a synthetic stand-in with the same columns for the agent to build and test on, and a line in AGENTS.md and the README that says where the real data lives and that the agent must not open it. You then run the finished script on the real data yourself, without the agent. This is the workflow from *Privacy, ethics and safety*, built into the folder.
 :::
 
-## Both tools also have a memory of their own {.smaller}
+## Both tools also have a memory of their own
 
 | | Claude Code: auto memory | Codex: memories |
 |---|---|---|
@@ -306,7 +306,7 @@ Both tools have a memory feature on top of the instruction files. Claude Code's 
 Here is the division of labour. In the project folder, and therefore shared with colleagues and on GitHub: AGENTS.md, the README, the notes, the data and scripts. On your computer only: the agent's own memory, your personal preferences, your session history. The test is simple. If a colleague would need to know it to continue the project, it belongs in the folder. If it is only how you like to work, such as "answer in short sentences", it can live in memory or in your personal instruction file. Never rely on the agent's memory for a project rule: when someone else, or another tool, opens the project, the rule is gone.
 :::
 
-## /init drafts the instruction file; you finish it {.smaller}
+## /init drafts the instruction file; you finish it
 
 | | Claude Code | Codex |
 |---|---|---|
@@ -345,7 +345,7 @@ What about a large project: a thesis, a multi-year study, a course with fifty fi
 The final test of organisation is a person. Could a colleague, given only the folder, answer four questions in ten minutes: what is this project, where did the data come from, how do I rerun the analysis, and who do I ask? If yes, the project is shareable. If they would need to call you, something is missing from the README. In *GitHub*, Part 3, you will swap projects with another participant and do exactly this, with your agents helping. Organising now is what makes that exercise go well.
 :::
 
-## Restructuring an existing folder is a delegation like any other {.smaller}
+## Restructuring an existing folder is a delegation like any other
 
 ```text
 Reorganise this folder into the layout below. Do not delete anything.
@@ -365,7 +365,7 @@ Show me your plan first.
 How do you get from the messy folder to the tidy one? It is a delegation, and everything from *First delegations* and *Delegating well* applies. Work in a copy. Use plan mode. Describe the result, not the steps. Ask for a move log, so every move can be checked and undone. And give an acceptance criterion that tests the most likely failure: when files move, scripts that refer to them break. "The scripts run and produce the same numbers as before" catches that. Old versions go to an archive folder for now; after the next unit, git keeps them instead, and the archive folder can go.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **AGENTS.md becomes a novel.** Long files are followed less well. One screen.
 - **AGENTS.md goes stale.** It still points to the old file; every session believes it.
@@ -380,7 +380,7 @@ How do you get from the messy folder to the tidy one? It is a delegation, and ev
 Here is what goes wrong. The instruction file grows until nobody, human or agent, reads it properly, or it goes stale and confidently points to an old file. A CLAUDE.md somewhere above the project, for example in your home folder or course folder, can stop Claude Code from reading AGENTS.md; the one-line import avoids that. Starting the agent in the wrong folder means it reads the wrong instructions. And three that are about safety: a rule is not a lock, a secret in the folder is a secret at risk, and a rule that lives only in the agent's memory disappears the moment someone else opens the project.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|

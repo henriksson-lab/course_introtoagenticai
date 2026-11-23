@@ -50,7 +50,7 @@ Here is the concrete problem. You have a dataset that other people want to look 
 This is the example app from today's exercise. On the left are the inputs: which sites, which dates, which measurement, and a button to download the selected rows. On the right are the outputs: a plot over time and a summary table. The person who wanted Mill Creek only ticks Mill Creek. The person who wanted last year's mean sets the dates and reads the table. Nobody emails you. The app itself is about a hundred lines of R, which the agent writes in a minute or two. The data is synthetic: invented water samples from four invented sites.
 :::
 
-## A demo explains a model; an app explores data {.smaller}
+## A demo explains a model; an app explores data
 
 | | Interactive demo (previous unit) | Shiny app (this unit) |
 |---|---|---|
@@ -73,7 +73,7 @@ How does this differ from the demo of the previous unit? A demo contains a model
 Here is the whole idea of Shiny in one picture. The script lists inputs, such as tick boxes, a date range and a menu. It describes how to get the selected rows from the data, given the inputs. And it describes the outputs: a plot of the selected rows, a summary table, a download. Shiny then keeps everything up to date: when you untick a site, the selected rows change, and the plot, the table and the download all follow by themselves. You do not need to write or read this logic. But it helps to know the shape, because it tells you what to check: if the plot and the table disagree, they are probably not using the same selected rows.
 :::
 
-## Shiny exists for R and for Python; use the one your figures use {.smaller}
+## Shiny exists for R and for Python; use the one your figures use
 
 | | R Shiny | Shiny for Python |
 |---|---|---|
@@ -98,7 +98,7 @@ Shiny started in R, and there is now an equivalent for Python with almost the sa
 Our example data is a single CSV file: invented water samples from four invented sites, taken twice a month for three years. Each row has a site, a date and four measurements: water temperature, pH, nitrate and dissolved oxygen. 288 rows in total. Six values are missing on purpose, as in real field data: an oxygen probe broke for a few weeks, and two pH readings were lost. Missing values are a good test for an app, because a careless app either crashes or silently drops them. The file is small and synthetic, so it is safe to publish. Your own data may not be, and we come back to that.
 :::
 
-## The prompt lists the questions the app should answer {.smaller}
+## The prompt lists the questions the app should answer
 
 ```text
 water-quality.csv has water samples from four sites (one row per sample:
@@ -154,7 +154,7 @@ Now the check. Choose one setting of the filters: Mill Creek, the year 2023, nit
 Next, try to break it. Untick every site. Choose a date range with no samples. Choose oxygen at North Pond in 2023, where four values are missing. A good app says what is wrong in plain words, and counts missing values instead of hiding them. A bad app shows a red error message that means nothing to a colleague, an empty plot without explanation, or a mean of NA. The worst case is an app that silently drops the rows with missing values and reports a mean as if nothing happened. Your colleagues will try all of these by accident, so you should try them on purpose first.
 :::
 
-## Change one thing at a time, and check again {.smaller}
+## Change one thing at a time, and check again
 
 Good requests describe what a user sees:
 
@@ -203,7 +203,7 @@ Here is how Shinylive works. A normal Shiny app needs a computer running R somew
 This is the most important slide of the unit. The Shinylive documentation says it plainly: the code and data of the application are sent to the browser, so they cannot be kept secret from the user. Every visitor's browser downloads the complete data file, all rows and all columns, even the columns your app never shows and the rows your filters hide. Anyone can open the browser's developer tools, which take one key press, and save the file. In practice, publishing a Shinylive app means publishing its data. If the data is public anyway, that is fine and even useful. If it is not, Shinylive is the wrong tool.
 :::
 
-## Hiding something in the app does not hide it in the data {.smaller}
+## Hiding something in the app does not hide it in the data
 
 - A filter that only shows **2024** still ships 2022 and 2023.
 - A table that drops the **name** column still ships the names.
@@ -217,7 +217,7 @@ This is the most important slide of the unit. The Shinylive documentation says i
 People get this wrong in predictable ways. They think that filtering the data in the app protects the rest. It does not: the filter runs in the visitor's browser, on the complete file. They drop a column from the display and think it is gone. It is not. They show only means and think the individual values are hidden. They are not, if the file has them. Some even build a password box into the app; with Shinylive, that check runs in the visitor's browser and can be bypassed. And any key or password written in the app's code is published with it. The rule is simple: whatever is in the app folder is published. If only an aggregated table may be public, make that table first, and give the app only that table.
 :::
 
-## What may go into a static app depends on the data class {.smaller}
+## What may go into a static app depends on the data class
 
 | Data class (from *Privacy, ethics and safety*) | Shinylive on GitHub Pages? |
 |---|---|
@@ -232,7 +232,7 @@ When in doubt, ask the data owner or your data protection officer **before** you
 Here is the decision as a table, using the data classes from the privacy unit in Part 1. Public data, including synthetic data, is fine in a static app; add a licence and a note on the source. Internal data, such as unpublished measurements without people in them, may only go public if the owner, often your group leader or a collaborator, agrees, because publishing the app publishes the data. Otherwise use a server with a login. Personal data never goes into a Shinylive app. Even aggregated tables can identify people when groups are small: a course with three students in one category reveals their grades. Sensitive data does not belong in a public app at all. And remember that once something has been on the internet, it may have been copied.
 :::
 
-## Exporting is one command, which the agent runs {.smaller}
+## Exporting is one command, which the agent runs
 
 | | R | Python |
 |---|---|---|
@@ -272,7 +272,7 @@ A practical point that confuses people. The demo from the previous unit opened w
 Where do the files go? In A course or project page, your page got its own folder and public repository, separate from the project, which may stay private. That fits apps well. The source, app.R and its data, lives in the project folder, where you edit and check it. The export, made by the shinylive command, goes into the page folder, and you never edit it by hand: you make it again after every change to the app. As with the demo, Quarto must copy the exported folder into docs when it renders, so the agent lists it under resources in the project file, next to the .nojekyll file. A page on your site then links to it, or embeds it with an iframe like the demo. Quarto also has a Shinylive extension that puts an app directly inside a page; the agent can set that up instead, but a separate folder is easier to check.
 :::
 
-## Shinylive has limits {.smaller}
+## Shinylive has limits
 
 - **Everything is public**: code, data, any keys (see the previous slides).
 - **Packages**: only packages that have been built for the browser. shiny and ggplot2 work; some others do not. Ask the agent to check before relying on one.
@@ -296,7 +296,7 @@ Shinylive is excellent for small, public datasets, and it has limits. Everything
 Here is the whole decision as a flowchart. First question: may anyone in the world download all of this data? If yes, and the app needs nothing special, Shinylive on GitHub Pages is the simplest. If it needs secrets, a database or large data, use a server. If the data is not public, Shinylive is out. For internal data, a server with a login, preferably at the university, is the usual answer. For personal or sensitive data, do not publish an app at all; use aggregated or synthetic data instead, or talk to your data protection officer about an approved setup. Notice the sentence at the bottom. A server keeps the raw file off the visitor's computer, and a login limits who gets in. But whatever the app shows on screen, and whatever its download button offers, those people can still see and save.
 :::
 
-## Hosted and university servers: what to know before you choose {.smaller}
+## Hosted and university servers: what to know before you choose
 
 - **shinyapps.io** and **Posit Connect Cloud** (both from Posit) host R and Python apps. Free tiers exist, with limits on the number of apps and on running time. Password protection comes with some paid plans. Check the current plans on their pages; they change.
 - Deploying to them uses an account and a token. The agent can do the steps, but **you** create the account and keep the token out of your git repository.
@@ -308,7 +308,7 @@ Here is the whole decision as a flowchart. First question: may anyone in the wor
 If you need a server, there are two routes. Posit, the company behind Shiny, runs shinyapps.io and Posit Connect Cloud. Both have free tiers with limits, and both change their plans, so check the pages rather than relying on this slide. To deploy, you create an account and get a token, a kind of password for the agent's deploy command. Keep that token out of git: a token in a public repository is a published password. A hosted service is an external company, so the same rules apply as for the AI tools themselves: for anything but public data, check with your university first. The alternative is a university server, which many universities run. And finally, a server app needs looking after, unlike a static export, which keeps working as long as the files are there.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Publishing data by accident.** A Shinylive export of personal or unpublished data. The single most serious mistake in this unit.
 - **Extra files in the app folder.** A raw data file, a draft, a notes file with names: all exported with the app.
@@ -336,7 +336,7 @@ Let us collect what goes wrong. The worst is publishing data you should not, whi
 To sum up the division of labour. The agent writes the app, installs packages, starts it, exports it and wires it into your site. It can even list the files in the export, which you asked for. You decide what the app is for, check its numbers, try to break it, and above all decide whether the data may be published at all, which is not a technical question but a question of ownership, consent and law. No agent can answer that for you, and it is not the agent's account or name on the published page.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|

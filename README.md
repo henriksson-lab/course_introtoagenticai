@@ -29,5 +29,10 @@ which renders the site and deploys it to GitHub Pages
 gitignored: render locally only to check slides (`make preview`, or
 `quarto render <unit>/lec.qmd` and open `docs/<unit>/lec.html`).
 
+**Slide overflow check:** after rendering, `python3 tools/check-overflow.py <unit> ...`
+measures every slide in headless Chrome and lists slides taller than 720 px.
+Rule (designprinciples §11): one font size everywhere; shrink images or split
+slides instead.
+
 Note: the *A course or project page* unit teaches participants the simpler
 "commit `docs/`" approach on purpose; this repo uses Actions to keep history small.

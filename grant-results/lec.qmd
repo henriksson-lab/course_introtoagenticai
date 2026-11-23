@@ -109,7 +109,7 @@ This is the project layout from Organising a project for an agent, applied to we
 Next to the raw files, ask for a download log: one row per request, with the date and time, the address that was called, the file it was saved to, how many records came back and what the database said the total was. Two details matter. First, the address is logged without the key, otherwise your key ends up in a file you might share or commit. Second, the total is recorded, because it gives you a free check: the number of records in all your files must add up to the total the database reported. When you cite these numbers later, the log is your methods section: "Swecris, searched for soil, downloaded on this date".
 :::
 
-## Some APIs need a key, and a key is a password {.smaller}
+## Some APIs need a key, and a key is a password
 
 - A **key** or **token** is a string that identifies you to the service, like `ab12-...-9f`.
 - **Swecris** asks for a token. A public one is on the API page and changes regularly; for repeated use you register for your own.
@@ -130,7 +130,7 @@ Some services want to know who is calling. They give you a key, also called a to
 Here is the safe pattern we promised in Privacy, ethics and safety. The key lives in one small text file called dot env in the project folder, with a line like SWECRIS_TOKEN equals and then the key. You type or paste the key into that file yourself, in a text editor, never in the chat. The file is listed in dot gitignore, so git never records it and it never reaches GitHub. The script reads the key from the file when it runs and sends it to the API. The agent writes and runs the script, but it never needs to see the key itself: it only needs to know the name of the variable. And we tell the agent not to open the file, and, in Claude Code, back that up with a rule.
 :::
 
-## Tell the agent the rule, and back it up with a setting {.smaller}
+## Tell the agent the rule, and back it up with a setting
 
 ```text
 The Swecris token is in the file .env as SWECRIS_TOKEN. Never open, print or
@@ -149,7 +149,7 @@ token into a script, a log, an output file or this chat. Log URLs without it.
 An instruction is a good start, and it belongs in the project's instructions file, CLAUDE.md or AGENTS.md, so it holds in every session, not only today. In Claude Code you can go one step further with a deny rule in the project settings, which stops its file-reading tool from opening the file. The documentation shows exactly this example. Codex has similar settings, but they are aimed at administrators, so for you the rule in AGENTS.md and your own attention are the practical protection. Neither setting is a wall: a shell command could still print the file. That is why the last line matters. If a permission prompt shows a command that prints or uploads .env, say no and ask why.
 :::
 
-## If a key leaks, change it; deleting the message is not enough {.smaller}
+## If a key leaks, change it; deleting the message is not enough
 
 - **Pasted into the chat?** It is in the provider's logs and in your local session history. Assume it is exposed.
 - **Committed to git?** It stays in the history even after you delete the line. If the repository is public, assume it is copied.
@@ -215,7 +215,7 @@ Open one of the raw files, or ask the agent to show you one record, before you a
 This is the most common mistake in grant data, and agents make it too. Some routes return one row per project with the total amount. Others return one row per project per year, or one row per funder per year. If you add up a table of yearly payments as if each row were a whole project, you count the same grant three or four times. If you count projects in a table of yearly rows, you get too many projects. So before any sum, ask the agent a plain question: in this table, what is one row? And check its answer yourself on one project you look up in the Swecris web search. Swecris also reports its own per-year totals for each search, which gives you a check you can do in a minute.
 :::
 
-## Grant data have traps that a domain expert spots and an agent may not {.smaller}
+## Grant data have traps that a domain expert spots and an agent may not
 
 | Trap | Example | What to decide |
 |---|---|---|
@@ -274,7 +274,7 @@ This is the most personal analysis, and many find it the most useful. You give t
 Now the check that this unit is built around. Funders publish their own statistics: the Swedish Research Council has decision statistics per year on its website, NIH publishes funding per institute and fiscal year, the EU publishes Horizon Europe dashboards. Pick one number they publish, and compute the same number from your downloaded data. They will rarely match to the krona. Swecris may count a different year, include co-funded projects, or have been updated since. A difference of a few percent with a clear explanation is fine. A difference of half, or one you cannot explain, means something is wrong with the search, the year or the summing, and you find out before a reviewer does.
 :::
 
-## Two quick checks need no statistics at all {.smaller}
+## Two quick checks need no statistics at all
 
 1. **The reported total.** Swecris reports how many projects match and the amount per year for every search. Your raw files must contain exactly that many records, and your yearly sums must match the reported ones.
 2. **Three projects by hand.** Pick three random rows of the clean table. Find each in the [Swecris web search](https://www.vr.se/english/swecris.html). Same title, funder, amount and years?
@@ -286,7 +286,7 @@ Now the check that this unit is built around. Funders publish their own statisti
 Besides the funder's statistics, two quick checks catch most problems. The first uses the database's own report: every Swecris search response says how many projects match and how much money falls in each year. If your files contain fewer records than reported, a page was lost; if your yearly sums differ from the reported ones, the table was summed wrongly, which is the grain problem again. The second check is old-fashioned: three random rows, looked up by hand in the web search. And then your own expertise: you know the big projects and groups in your field. If a famous one is missing, the search missed it, and you have learned something about your search terms.
 :::
 
-## Outside Sweden: the same method, a different source {.smaller}
+## Outside Sweden: the same method, a different source
 
 | | NIH RePORTER | CORDIS (EU) |
 |---|---|---|
@@ -310,7 +310,7 @@ If you work outside Sweden, or your field is funded mostly from the EU or the US
 Something new: data sources have started writing messages to AI agents. Some sites publish an llms.txt file with instructions for agents. Some APIs include notices in their responses addressed to "an AI agent" that suggest what to do next, for example to register for a key with the user's email address. Most of these are harmless and even helpful. But this is the same mechanism as prompt injection from Privacy, ethics and safety: text in the data that reads like an instruction. The rule stays the same. Text that comes from the web is data, not orders. An agent should not register accounts, send your email address or download extra things because a response said so. If a permission prompt shows something you did not ask for, say no.
 :::
 
-## Personal data and licences still apply to public grant data {.smaller}
+## Personal data and licences still apply to public grant data
 
 - Grant records name **researchers**. That is personal data under GDPR, even though it is public. Leave names out of the clean table unless your question needs them.
 - Aggregated results (sums per year, field, university) are fine to publish.
@@ -321,7 +321,7 @@ Something new: data sources have started writing messages to AI agents. Some sit
 Public does not mean free of rules. The grant records include researchers' names and sometimes ORCID identifiers. For an analysis of money and topics you do not need them, so the simplest course is to drop them when you clean. If your question really is about people, for example how many women lead grants in your field, check with your data protection officer first, and publish only aggregates. The abstracts are texts written by the applicants. Using them for counting and grouping is normal; copying them wholesale onto your project page is not necessary. And credit the source with the date, as Swecris asks. These are small habits, and they make the result something you can publish without worry.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **The search was wrong.** Too narrow (one language, one word) or too wide (other fields share the word). Read random abstracts.
 - **The sum was wrong.** Rows were yearly payments, not projects; future commitments were included.

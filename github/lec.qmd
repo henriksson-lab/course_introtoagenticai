@@ -77,7 +77,7 @@ Every repository on GitHub is private or public. A private repository can be rea
 This is the trap. Suppose that in your second commit a file with contact details slipped in, and in the fourth commit you deleted it. Today's folder looks clean. But git keeps every snapshot, that is the whole point, so the file is still in snapshot 2. If you make the repository public, anyone can click back to snapshot 2 and read it. Removing a file from the history is possible, but it is fiddly and does not help if someone has already copied the repository. So the check before going public covers the history, not just the current files. Ask the agent: "list every file that has ever been in this repository, and flag anything personal or confidential".
 :::
 
-## Your data class decides where the repository may live {.smaller}
+## Your data class decides where the repository may live
 
 | Data class (from *Privacy, ethics and safety*) | On GitHub? |
 |---|---|
@@ -145,7 +145,7 @@ Here is roughly what you will see. The exact wording changes between versions of
 Now the agent can take over. In the project folder, you ask it to put the project on GitHub as a private repository. A careful agent first checks that gh is logged in, that the folder is a git repository, and that nothing is left uncommitted. Then it proposes one command: gh repo create, with the name, the word private, source equals dot, which means this folder, and push. That single command creates the empty repository on GitHub, connects your folder to it, and pushes every commit. Before you approve, read two things: is it private, and is the name the one you want? Those are the two mistakes that are annoying to undo. This picture is illustrative; your agent's wording will differ.
 :::
 
-## Read GitHub commands before you approve them {.smaller}
+## Read GitHub commands before you approve them
 
 | Command the agent proposes | What it does | Risk |
 |---|---|---|
@@ -176,7 +176,7 @@ After the push, open github.com, your user name, slash, the repository name. You
 The README is written in Markdown, a way of formatting plain text that you have been reading since Part 1, mostly without noticing. A hash and a space make a heading; two hashes make a smaller heading. Vertical bars make a table. Backticks mark a file name or command, and two stars make bold text. GitHub shows the file on the left as the page on the right. You do not have to write Markdown yourself: the agent writes it well. But it helps to recognise it, because the same syntax is used for Quarto web pages in the next unit, for issues, and for the CLAUDE.md or AGENTS.md file in your project.
 :::
 
-## A visitor's first questions should be answered by the README {.smaller}
+## A visitor's first questions should be answered by the README
 
 - **What is this?** One or two sentences: the goal, in plain words.
 - **What is in it?** The folder layout and a data dictionary: what each column means.
@@ -199,7 +199,7 @@ A good README answers the questions a visitor has in the first two minutes. What
 Every repository on GitHub has an Issues tab. An issue is a note with a title, a description and a discussion below it. Despite the name, it does not have to be a problem: "add a licence" or "rerun with the 2026 data" are fine issues. You can label them, assign them to someone, and close them when done. What makes issues useful is that they are attached to the project. A colleague can file one without emailing you. You can refer to issue number 2 in a commit message. And the agent can read the list: "look at the open issues and suggest which one to do first". Keep one problem per issue, so that each can be closed on its own.
 :::
 
-## A useful issue says what is wrong, where, and how you know {.smaller}
+## A useful issue says what is wrong, where, and how you know
 
 | Not useful | Useful |
 |---|---|
@@ -264,7 +264,7 @@ A last thing every shared repository needs is a licence. Without one, copyright 
 Adding a licence takes one prompt. The agent knows the standard texts, but do check two things. First, the copyright holder: depending on your contract and university, that is you or your employer. Second, that the licence only covers what you own. If your page shows a figure from a published paper under the publisher's copyright, your CC BY licence cannot cover it, and the README should say so. GitHub reads the LICENSE file and shows the licence name on the repository page, which is how visitors find it quickly. The sites choosealicense.com and creativecommons.org explain the options in plain words if you need something else.
 :::
 
-## Pull when you start, push when you stop {.smaller}
+## Pull when you start, push when you stop
 
 ![](fig02-local-and-remote.svg){width="45%" fig-align="center"}
 
@@ -298,7 +298,7 @@ The main part of the exercise is a swap. You pair up with another participant. E
 A word of care before the swap. A repository written by someone else, even a friendly colleague, is untrusted input for your agent. It could contain a script that deletes files, or a README with instructions that the agent may follow, the prompt injection we discussed in the privacy unit. In this course that is very unlikely, but the habits matter for later, when you clone repositories from strangers. So: a read-only mode, a separate folder, and no running of their scripts, only reading. And remember the collaborator table: as a collaborator you could push to your partner's repository. Do not. Your contribution is an issue, which they can decide what to do with.
 :::
 
-## A good review checks what *Organising a project* promised {.smaller}
+## A good review checks what *Organising a project* promised
 
 | Question for your agent | What it tests |
 |---|---|
@@ -315,7 +315,7 @@ Then check one answer yourself: open the file the agent points to.
 Here are the questions we use in the exercise, each tied to something from Organising a project for an agent. What is the project; that tests the README. Which files are which; that tests the layout. How would I reproduce the main figure; that tests whether the scripts and instructions are complete. Do the documents agree with the files; the commonest problem in real projects is a README that was true three months ago. Is there anything that should not be shared. And finally, what is the most useful fix, which becomes your issue. As always, do not pass on the agent's answer unchecked. Open the file it points to and confirm the problem is real before you file it in your name.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Public by mistake.** Check the label on the repository page. Private is the default for your own project.
 - **"Deleted" is still in the history.** Check the history, not only today's files, before anything goes public.
@@ -331,7 +331,7 @@ Here are the questions we use in the exercise, each tied to something from Organ
 Here is the list of things that go wrong, collected in one place. The first three are about privacy, and they are the ones that cannot be undone: a repository that was public for an hour may already have been copied. Check the label, check the history, keep personal data out from the first commit. The login belongs to you, not the agent. Committed but not pushed is a common surprise when a laptop dies. Two commands deserve a no by default: force-push and delete. Collaborators have write access on personal repositories. A missing licence quietly blocks the reuse you hoped for. And when your agent reviews a colleague's work, its findings are claims until you have checked them.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -341,6 +341,15 @@ Here is the list of things that go wrong, collected in one place. The first thre
 | `.gitignore` | keeps files out of the repository before their first commit |
 | `gh auth login` | you, once, in a second terminal; the agent then pushes with your approval |
 | `gh repo create --private` | one command: new repository from this folder, pushed |
+
+::: notes
+To sum up. GitHub keeps a copy of your repository with its history. Push and pull move commits; push when you stop. Your own project stays private; anything public gets a check of the files and the history first, and .gitignore keeps real data out from the start. You log in once yourself, and after that the agent creates repositories, pushes and handles issues, with your approval. The README is your project's front page. Issues are the to-do list, and a commit can close one. Collaborators can push, and pull requests let changes wait for review. A licence makes reuse possible. In the next unit we turn a repository into a public web page, which is where the question of what becomes public gets very concrete.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | README | rendered on the repository page; answers a visitor's first questions |
 | Issues | a to-do list next to the project; "fixes #1" in a commit closes issue 1 |
 | Collaborators | can read and push on a personal account; invite only people you trust |
@@ -350,5 +359,5 @@ Here is the list of things that go wrong, collected in one place. The first thre
 **Next (A course or project page):** turn a repository into a public web site with Quarto and GitHub Pages, with your figures from *Reproducible figures* as the first content.
 
 ::: notes
-To sum up. GitHub keeps a copy of your repository with its history. Push and pull move commits; push when you stop. Your own project stays private; anything public gets a check of the files and the history first, and .gitignore keeps real data out from the start. You log in once yourself, and after that the agent creates repositories, pushes and handles issues, with your approval. The README is your project's front page. Issues are the to-do list, and a commit can close one. Collaborators can push, and pull requests let changes wait for review. A licence makes reuse possible. In the next unit we turn a repository into a public web page, which is where the question of what becomes public gets very concrete.
+The rest of the summary table, and where we go next.
 :::

@@ -58,7 +58,7 @@ Quarto is free software that turns text files into documents: web pages, slides,
 GitHub Pages is a free service of GitHub that publishes the contents of a repository as a website. You tell it which branch and which folder to serve; we use the main branch and the docs folder, so the rendered site sits right next to its sources. After each push to main, GitHub picks up the new docs folder and publishes it, usually within a minute or two. The address is your username dot github dot io, slash, the name of the repository. No server to run, no hosting to pay for, no login for your readers. That is why your GitHub username matters, as we said in Accounts and installation: it is part of the address.
 :::
 
-## This course site is built exactly this way {.smaller}
+## This course site is built exactly this way
 
 The real `_quarto.yml` of this course (shortened):
 
@@ -114,7 +114,7 @@ You do not have to know Quarto's file layout. Describe the site you want, and th
 Here is one page, before and after. At the top, between two lines of three dashes, is the header: here only the title. Below it is Markdown, exactly as in the README. A paragraph is just text. A figure is an exclamation mark, the caption in square brackets, and the file name in round brackets. Two hashes make a heading. Two stars make bold. Quarto turns this into the page on the right, in the style of the site, with the sidebar around it. You can ask the agent to write the page, but you should be able to read it, because the text on this page is what the world will see under your name.
 :::
 
-## Five Markdown constructs cover most pages {.smaller}
+## Five Markdown constructs cover most pages
 
 | You write | You get |
 |---|---|
@@ -241,7 +241,7 @@ That gives two ways to organise a page. This course keeps the site in the same r
 When the site is live, check it yourself; the agent cannot see it the way your readers do. Open the address. Click every link in the sidebar and look at every figure: a figure that worked locally but not online usually means a file was not committed, or the file name differs in upper and lower case, which matters on the web but not on a Mac or Windows. Open the slides and advance a few. Open the site in a private browser window, where you are not logged in to GitHub, to see what the public sees. Look at it on your phone. Read it once more for anything that should not be public. Then send the link to a colleague and ask whether it opens and makes sense.
 :::
 
-## A page should say who made it, under what licence, and how AI was used {.smaller}
+## A page should say who made it, under what licence, and how AI was used
 
 | On the page | Why |
 |---|---|
@@ -256,7 +256,7 @@ When the site is live, check it yourself; the agent cannot see it the way your r
 A public page represents you, so give it the basics of any publication. Who made it, with a contact route that you are happy to make public, such as your university profile page. What the figures show and where they came from. A licence, as we discussed in the GitHub unit, so that colleagues know they may reuse your teaching material. Where the data comes from, and if it is synthetic, say so clearly. A short statement on how AI was used, in the same spirit as the disclosure we discussed in Privacy, ethics and safety: for example, "the site and the plotting script were written with the help of Claude Code; all figures and text were checked by the author". And a date, so readers can tell whether it is current.
 :::
 
-## Other ways to make a page exist; a git-based page is the reproducible one {.smaller}
+## Other ways to make a page exist; a git-based page is the reproducible one
 
 | | Google Sites, Canvas pages, university CMS | Quarto + GitHub Pages |
 |---|---|---|
@@ -284,7 +284,7 @@ There are other ways to make a page, and some of them may be required by your un
 This page is not a one-off. From now on, each unit ends with something that can go on it. In the next unit, Interactive demos, you make a single HTML page that explains a concept from your field, a slider that moves a curve for example, and embed it in this site. After that comes Shiny, for interactive apps on your data. In Part 4, the literature table, data extracted from PDFs and the grant analysis can each become a page. That way you practise the loop many times, and by the end of the course the page is a real record of your project. Each time, the same steps: edit, render, look, commit, push, check the live page.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **404 on the live address.** Pages not switched on, wrong folder (not `/docs`), `output-dir` missing, or the address has the wrong repository name.
 - **Page looks unstyled or broken.** `docs/.nojekyll` missing, or `docs/site_libs/` not committed.
@@ -299,7 +299,7 @@ This page is not a one-off. From now on, each unit ends with something that can 
 Here are the problems you are most likely to meet. A 404 error on the live address almost always means a setting: Pages is off, the folder is wrong, Quarto wrote to underscore site instead of docs, or there is a typo in the address. A page without its styling means the support files were not committed or the nojekyll file is missing. A missing figure online usually means an uncommitted file or a difference in upper and lower case. If the old version is still showing, wait and reload without the cache. A page missing from the sidebar is not listed in the settings. And the serious one: something that should not be public. The agent can help you diagnose all the others; that last one is your responsibility.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -309,6 +309,15 @@ Here are the problems you are most likely to meet. A 404 error on the live addre
 | Sidebar | pages listed under `website: sidebar: contents`, in order |
 | Slides | `format: revealjs`; each `##` heading starts a slide |
 | First content | figures from *Reproducible figures*, with the script named in the caption |
+
+::: notes
+To sum up. A Quarto website is a folder of text files that Quarto renders into the docs folder, and GitHub Pages serves that folder at your username dot github dot io. This course is built the same way. The sidebar lists the pages; slides are pages with format revealjs. Your first content is the figure from Reproducible figures, with its source in the caption. You switch Pages on once, in the settings or with gh api. On a free account, Pages means a public repository, so the site, the repository and its history all become public; for a private project, use a separate page repository. And every update is the same loop. In the next unit we make the page interactive, with a demo that explains a concept from your own field.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | Switch on | Settings → Pages → Deploy from a branch → `main`, `/docs` (or `gh api`) |
 | Free account | Pages only from a public repository; the site is always public |
 | What becomes public | the site, the repository and its whole history |
@@ -318,5 +327,5 @@ Here are the problems you are most likely to meet. A 404 error on the live addre
 **Next (Interactive demos):** one self-contained HTML page that explains a concept from your own field, embedded in the page you built today.
 
 ::: notes
-To sum up. A Quarto website is a folder of text files that Quarto renders into the docs folder, and GitHub Pages serves that folder at your username dot github dot io. This course is built the same way. The sidebar lists the pages; slides are pages with format revealjs. Your first content is the figure from Reproducible figures, with its source in the caption. You switch Pages on once, in the settings or with gh api. On a free account, Pages means a public repository, so the site, the repository and its history all become public; for a private project, use a separate page repository. And every update is the same loop. In the next unit we make the page interactive, with a demo that explains a concept from your own field.
+The rest of the summary table, and where we go next.
 :::

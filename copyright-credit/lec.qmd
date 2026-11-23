@@ -49,7 +49,7 @@ Here is the concrete situation, and it is the example in today's exercise. A tea
 It helps to separate three points in the chain. On the left is training: the provider collected a huge amount of text, code and images, much of it copyrighted, and trained the model on it. Whether that was allowed is what most of the big lawsuits are about. In the middle is output: what the model writes for you. If the output reproduces a protected work, publishing it may infringe, whatever the legality of the training. On the right is credit: when you publish, who is named, who is cited, and is the AI's role disclosed? Your responsibility is mainly on the right two. You cannot fix how the model was trained. You can check what you publish, and you can give credit properly.
 :::
 
-## Copyright protects the expression, not the idea {.smaller}
+## Copyright protects the expression, not the idea
 
 | | What it means for you |
 |---|---|
@@ -117,7 +117,7 @@ The third case is the one most people have heard of. The New York Times showed e
 The fourth case is from the UK and is about images. Getty, the photo agency, sued Stability AI over Stable Diffusion. During the trial Getty dropped its main claim about training, because it could not show the training took place in the UK, and UK copyright law applies to acts in the UK. What remained was whether the trained model itself is an infringing copy, imported into the UK. The judge said no: the model weights do not contain or store the images; they are the result of learning patterns from them. Getty did win a narrow trade mark point, because some generated images showed a distorted version of the Getty watermark. Notice the contrast with Munich. The German court said the memorised lyrics were in the model; the English court said the images were not. The facts differ, lyrics against photos, but the question is the same. The Court of Appeal heard Getty's appeal this month, and we wait for its answer.
 :::
 
-## What the four cases add up to, for now {.smaller}
+## What the four cases add up to, for now
 
 | Question | Where things stand (November 2026) |
 |---|---|
@@ -153,7 +153,7 @@ A short word on the EU AI Act, which we met in the privacy unit and in Labelling
 Now the technical part. In How LLMs and agents work, we said a model predicts the next token from everything before it, and that it produces what is likely, not what is true. Usually, "likely" means a fresh mixture of many sources. But for text the model has seen very many times, the most likely continuation is the original text itself. Give it the first line of Pride and Prejudice and it will often continue with Austen's next sentences exactly. That is memorisation. Austen is in the public domain, so this example is harmless, and in the exercise you will try it yourself. The same mechanism works for song lyrics, famous speeches, popular code, and passages of books that are quoted everywhere. And the models do not mark memorised text as a quotation: it comes out looking like any other answer.
 :::
 
-## Researchers have extracted memorised training data on purpose {.smaller}
+## Researchers have extracted memorised training data on purpose
 
 | Study | What they showed |
 |---|---|
@@ -211,7 +211,7 @@ The providers know about memorisation and add guardrails, which we met in Guardr
 Let me put the routes together. First, from memory: the model reproduces something it saw many times in training. Second, from a fetch: the agent read a page or a PDF during the session and copied from it into your file. Third, from you: you, or a colleague, put material into the project folder that was not yours to publish, the found-online cartoon, the figure redrawn from a paywalled paper. The third route is the oldest and still the most common. The agent does not change it, except that it makes it faster and less visible. Each route has its own check, which is what the checklist in a moment is built on.
 :::
 
-## Who owns what the agent writes is partly unsettled {.smaller}
+## Who owns what the agent writes is partly unsettled
 
 | Question | Short answer |
 |---|---|
@@ -300,7 +300,7 @@ Here is the case. The Navier–Stokes equations describe how fluids flow, and wh
 The first part of the controversy is mathematical, and you do not need the details. The official statement of the problem, written by Charles Fefferman in 2000, has several options, and one of them allows an external force acting on the fluid. OpenAI's result uses that option, with a force constructed to make the flow blow up. Several mathematicians, quoted in Scientific American, said that this is not the problem most of them work on, which is whether a fluid left alone can break down. Others replied that real fluids always have forces acting on them, so the option is legitimate. Within weeks, three mathematicians posted a paper arguing that the method cannot be pushed to the unforced case, and another group argued that the formal Lean proof did not faithfully match the written one. As of November 2026, the proof has not been through peer review. For us the lesson is plain: a formal-looking result from an AI system still needs experts to check what exactly it shows.
 :::
 
-## The credit dispute: who built on whose work? {.smaller}
+## The credit dispute: who built on whose work?
 
 | | What was said |
 |---|---|
@@ -313,7 +313,7 @@ The first part of the controversy is mathematical, and you do not need the detai
 The second part is about credit. Here, too, I report what each side said, not what happened, because we do not know. The mathematical idea that both teams used goes back to Diego Córdoba and Luis Martínez-Zoroa, and Buckmaster's statement gives them the credit explicitly. Buckmaster and Alpöge had worked on the problem for about a year, using AI tools heavily. According to Buckmaster, OpenAI contacted him after rumours of their progress, and offered either a coordinated release or a paper by him alone, leaving out his co-author because of where he works. He refused. OpenAI says its work was independent, and that it recognises the pair's priority on the related result. Commentators, including well-known mathematicians, raised a broader worry: if a company can throw ten thousand agents at a problem, what happens to the slow human work through which a field understands its own results? For you, the lesson is simpler: credit the people whose ideas you built on, whatever tool did the last step.
 :::
 
-## The allegation about drafts in Codex, and OpenAI's denial {.smaller}
+## The allegation about drafts in Codex, and OpenAI's denial
 
 :::: {.columns}
 ::: {.column width="50%"}
@@ -344,7 +344,7 @@ The third part is the one that concerns every participant in this course. Buckma
 Here is that question. In Privacy, ethics and safety we said: when the agent reads a file, the file goes to the provider. Your unpublished ideas, your draft proofs, your grant idea, your unpublished data, are in that file. What happens next depends on your plan and settings: how long the session is kept, whether it may be used for training, which staff may look at it for safety reasons, and whether it can be requested in a lawsuit. Training on a personal plan is controlled by a setting you can switch off, which we did in the privacy exercise. Institutional and business plans usually exclude training by contract. None of this means your ideas will leak. It means you should decide, for each project, whether the convenience is worth the risk, the same way you would decide whether to discuss an idea at a conference before you publish it. For an idea you think is a breakthrough, the bar should be high.
 :::
 
-## Credit when AI is involved: five habits {.smaller}
+## Credit when AI is involved: five habits
 
 | Habit | Why |
 |---|---|
@@ -358,7 +358,7 @@ Here is that question. In Privacy, ethics and safety we said: when the agent rea
 Here is what I would take away from the case, as habits. Cite the people whose ideas you built on; the model will not do it for you, and the agent's last step does not make the earlier work less important. Disclose how AI was used, in the form your journal, thesis rules or course require. Have people who know the field check the result; a formal proof checker checks the proof, not whether the statement is the one you cared about. Keep a dated record of your own work. The git history you have built since Git as undo button is exactly that: a timestamped record of what you had and when. It is not legal proof of priority, but it is good evidence. A preprint is stronger. And decide before a project becomes important what you are willing to put into a cloud agent.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Assuming agent output is free to use.** The terms give you the provider's rights, not other people's.
 - **Publishing a standard explanation that is someone's paragraph.** Common definitions are the most memorised text.
@@ -374,7 +374,7 @@ Here is what I would take away from the case, as habits. Cite the people whose i
 Here are the ways it goes wrong, in one place. The biggest misunderstanding is that agent output is automatically yours to publish: it is yours as far as the provider is concerned, and that is all. The memorisation risk is highest for standard material, which people least suspect. Licence headers are easy to miss in both directions: keeping someone else's GPL header in your MIT project, or deleting a header that the licence required you to keep. Found-online images remain the most common copyright problem in teaching, with or without AI. A model's claim that an idea is new is not a literature review. The agent's own check is useful but not a certificate. And the last point once more: this lecture is an orientation, not legal advice.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|

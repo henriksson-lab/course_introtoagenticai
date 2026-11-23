@@ -381,7 +381,7 @@ You keep: your annotated answers and your chore grid. You need the grid at the e
 The exercise has two tasks, and neither needs any software. First, you read a written-out session of an agent working on the seedling data, the same one you saw in the live build, but in full. It reads the file, writes a script, asks permission to run it, makes a mistake, notices it, fixes it, and reports. You answer four questions about it. The last one, what would you check, is the most important. Second, you write down five chores from your own job and place them on the two-question grid from earlier. Keep both. The grid is your starting point when you choose your own project at the end of Part 1.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -390,6 +390,15 @@ The exercise has two tasks, and neither needs any software. First, you read a wr
 | What you get | Ordinary files you keep: scripts, figures, tables, pages. Rerun instead of re-ask. |
 | The loop | Goal → plan → act with tools → look at the result → repeat → report. |
 | Permission prompts | The agent asks before steps outside the limits you set. Read them; you can say no. |
+
+::: notes
+To sum up. A chat window gives you text; an agent works in a folder and leaves you files. It does this by running a loop: plan, act with tools, look at the result, repeat, report. It asks before steps outside the limits you set, and reading those prompts is your first safety habit. Claude Code and Codex are two versions of the same idea, and the course teaches both. Your role moves to the two ends of the task, describing and judging, which is where your expertise is. Be clear about the limits: confident errors, privacy and the cost of not checking. In the next unit, Accounts and installation, we get you an account and install the tools, step by step, on Windows and Mac.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | Claude Code / Codex | Two similar tools (Anthropic / OpenAI). The course teaches both; skills transfer. |
 | Your role | Describe the task, judge the result. Domain expertise matters more, not less. |
 | Limits | Confident errors, privacy, and the cost of not checking. Example data only until the privacy unit. |
@@ -398,5 +407,5 @@ The exercise has two tasks, and neither needs any software. First, you read a wr
 **Next (Accounts and installation):** get a Claude or ChatGPT account that includes the agent, install Claude Code and/or Codex, and say hello to it in a terminal.
 
 ::: notes
-To sum up. A chat window gives you text; an agent works in a folder and leaves you files. It does this by running a loop: plan, act with tools, look at the result, repeat, report. It asks before steps outside the limits you set, and reading those prompts is your first safety habit. Claude Code and Codex are two versions of the same idea, and the course teaches both. Your role moves to the two ends of the task, describing and judging, which is where your expertise is. Be clear about the limits: confident errors, privacy and the cost of not checking. In the next unit, Accounts and installation, we get you an account and install the tools, step by step, on Windows and Mac.
+The rest of the summary table, and where we go next.
 :::

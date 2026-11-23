@@ -70,7 +70,7 @@ Running two agents needs nothing new. You open a second terminal window, or a se
 There is one hard rule. Two agents must never edit the same files at the same time. Each agent reads a file, decides on a change and writes it back. If another agent changed the file in between, one of the two changes is lost, and neither agent notices, because each one's picture of the file is now out of date. You also lose track of who did what. The fix is simple: give each agent its own place. That can be its own folder, its own copy of the data, or at least a set of files that the other agent never touches. When you want to bring the results together, do that afterwards, with one agent only.
 :::
 
-## Good pairs of jobs do not touch each other's files {.smaller}
+## Good pairs of jobs do not touch each other's files
 
 | Pair well | Why |
 |---|---|
@@ -162,7 +162,7 @@ This is the folder layout for the exercise. The original data sits at the top an
 Here is what the comparison might show. This is an illustration; your two results will differ in other places. On the left the result from one agent, on the right from the other. Most cells agree. Twelve cells differ, in four rows. Three rows have seven samples instead of six on the right: that agent kept the duplicated rows. And the phosphorus values for Tallträsk differ in both years, even where the number of samples is the same. That is the detection-limit question. Notice what this gives you: instead of checking 48 cells, you have four rows to look into. That is the practical value of the comparison.
 :::
 
-## Each difference leads back to a decision {.smaller}
+## Each difference leads back to a decision
 
 | What differs | Cause | Who is right? |
 |---|---|---|
@@ -258,7 +258,7 @@ Reviews have the same limit as comparisons. A reviewer misses mistakes it would 
 So far we have had two separate sessions. An agent can also start helpers inside its own session. These are called subagents. Each subagent gets a task from the main session, works in a fresh context of its own, and returns a short report. The main session never sees all the files the helper read, only its answer, so its own context stays small and focused. Helpers can run at the same time. In this picture, one helper recomputes the summary from the raw data without looking at either script, which is exactly the independent recomputation from the last slide, and two others review the two scripts. The main session then puts the three reports together for you.
 :::
 
-## You ask for subagents in plain words {.smaller}
+## You ask for subagents in plain words
 
 ```text
 Use three subagents in parallel. One recomputes the number of samples
@@ -299,7 +299,7 @@ When are subagents worth it? When the work splits into independent pieces. Searc
 A related feature is background tasks. Some steps take a long time: downloading a large public dataset, running a slow model, rendering a whole website. Instead of waiting, you can move the job to the background and keep talking to the agent about something else. In Claude Code you press Control-B while the command or helper is running, and the slash command tasks lists what is running in the background. In Codex, helpers run in their own threads that you can switch between. Two cautions. Background work is not unsupervised work: the same permissions apply, and the result still needs checking. And in Claude Code, background work belongs to the session: close the session and it stops.
 :::
 
-## The two tools differ more in defaults than in what they can do {.smaller}
+## The two tools differ more in defaults than in what they can do
 
 | | Claude Code | Codex |
 |---|---|---|
@@ -346,7 +346,7 @@ Now the cost. Your plan gives you a certain amount of use per time window, and w
 Given the cost, use parallel work where it pays. That is the steps whose numbers end up somewhere that matters: a report, a paper, a grant application. Renaming files or drafting an email does not need two agents. A good habit is to run the first comparison on a small sample of the data, settle the decisions, and only then run the full job once. And when a comparison has shown you a decision, write it into the project's instruction file. Then every later session makes that decision your way from the start, and you do not pay twice to discover the same thing.
 :::
 
-## Where this goes wrong {.smaller}
+## Where this goes wrong
 
 - **Two agents, one file.** Changes overwrite each other without warning. One writer per file, always.
 - **Comparing sessions instead of results.** Different words and steps are normal; compare the tables.
@@ -369,7 +369,7 @@ Here is what goes wrong, collected in one place. Two agents in one file is the o
 Here is the unit as a checklist. Separate places for each agent. The same prompt and the same data when you compare. Compare results, not sessions, cell by cell. Fix the errors; decide the choices and write them down. Treat review findings as claims, each one checked. Remember that agreement is not proof. And keep an eye on usage, because every agent and every helper counts. You will use the whole list in the exercise, and the first three items whenever you run a second agent on your own project.
 :::
 
-## Summary {.smaller}
+## Summary
 
 | Concept | Key fact |
 |---|---|
@@ -378,6 +378,15 @@ Here is the unit as a checklist. Separate places for each agent. The same prompt
 | Same task twice | identical prompt and data; differences show where to look |
 | Errors and choices | fix the errors; decide the choices, write them into the instruction file |
 | Agreement | not proof: shared mistakes stay invisible |
+
+::: notes
+To sum up. Two agents can work side by side if each has its own place. Giving both the same task and comparing the results is a cheap way to find the shaky parts of a result. Some differences are errors to fix; others are choices you must make, and once made they belong in the project's instruction file. Agreement between agents is not proof. A cross-review by the other tool gives you a list of claims to check, each with evidence. The strongest check is an independent recomputation. Subagents are helpers inside one session, good for independent pieces of work, and long jobs can run in the background. And all of it uses your plan's limits. In the next unit, Making the agent yours, we take the decisions and the style instructions you keep repeating and turn them into skills and slash commands, and we connect the agent to outside services such as PubMed and Zotero.
+:::
+
+## Summary (continued)
+
+| Concept | Key fact |
+|---|---|
 | Cross-review | the other tool reviews; findings are claims with line and rows |
 | Independent recomputation | a fresh agent computes a number from raw data without the script |
 | Subagents | helpers with their own context, inside one session, for independent pieces |
@@ -387,5 +396,5 @@ Here is the unit as a checklist. Separate places for each agent. The same prompt
 **Next (Making the agent yours):** save the decisions and the style you keep repeating as skills and slash commands, and connect the agent to PubMed or Zotero.
 
 ::: notes
-To sum up. Two agents can work side by side if each has its own place. Giving both the same task and comparing the results is a cheap way to find the shaky parts of a result. Some differences are errors to fix; others are choices you must make, and once made they belong in the project's instruction file. Agreement between agents is not proof. A cross-review by the other tool gives you a list of claims to check, each with evidence. The strongest check is an independent recomputation. Subagents are helpers inside one session, good for independent pieces of work, and long jobs can run in the background. And all of it uses your plan's limits. In the next unit, Making the agent yours, we take the decisions and the style instructions you keep repeating and turn them into skills and slash commands, and we connect the agent to outside services such as PubMed and Zotero.
+The rest of the summary table, and where we go next.
 :::
