@@ -25,5 +25,5 @@ technology, though the material should work for any faculty.
 - Participants are working staff with little time. Units must produce something
   useful for their own job, preferably with their own data (when the privacy
   rules allow it).
-- Expect a big spread in confidence. The setup clinic and live help sessions
-  matter more than in a programming course.
+- Expect a big spread in confidence. Installation instructions (unit 0) must be
+  step by step, with screenshots for Windows and Mac.
