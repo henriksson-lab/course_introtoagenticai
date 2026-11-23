@@ -279,7 +279,72 @@ notes where it could move later.
       HTML page) to see how much text a detector needs.
     - Placement: Part 6 for now (decided 2026-11-23). Alternative later: near *Privacy, ethics and safety*, or before *A course
       or project page* (the first time participants publish content).
-25. **Limits of AI for biological research: safety guardrails.**
+25. **Guardrails and safety levels.** Participants will hit guardrails of
+    several kinds, often without knowing which one stopped them. This unit
+    names them, shows what each looks like, and explains the safety levels
+    behind the strictest ones. (**[?]** Check every provider page and level
+    name below against current versions before writing.)
+    - **Kinds of guardrail**, each with an illustrative example of what the
+      user sees and what to do:
+      - *Content refusals in the model*: the model declines (harmful content,
+        weapons, self-harm, sexual content, hateful content). Usually a polite
+        refusal in the reply.
+      - *Safety classifiers around the model*: a separate system that blocks
+        input or output in high-risk areas (biological and chemical weapons,
+        some cyber-attack help). Can trigger on legitimate research; may stop
+        an answer midway or end a session. Bio deep dive in the next unit.
+      - *Dual-use computing and security work*: requests that look like
+        hacking (scanning networks, cracking passwords, malware analysis) may
+        be refused even for legitimate IT or security research.
+      - *Personal data and people*: reluctance to compile profiles of named
+        private individuals, find addresses, or identify people in photos.
+        Relevant to *Likely reviewers for an upcoming grant*: stay with
+        public professional information.
+      - *Copyright*: refusing to reproduce long passages of books, lyrics or
+        paywalled articles (links to *Copyright, memorisation and credit*).
+      - *Medical, legal and financial caution*: extra caveats, referral to a
+        professional, or a vaguer answer.
+      - *Agent-level guardrails in the harness*, not the model: permission
+        prompts, sandboxing, network access switched off, protected folders
+        (taught in *Terminal survival kit* and *Privacy, ethics and safety*).
+        These are settings the user controls.
+      - *Account-level enforcement*: warnings, restricted features or a banned
+        account for repeated policy violations, under the provider's usage
+        policy.
+      - Not guardrails, but often mistaken for them: usage and rate limits
+        ("you have reached your limit"), context running out, network errors.
+    - **Recognising which one you hit**: refusal in the reply vs a system
+      message vs a task stopping vs a permission prompt. A small decision
+      table.
+    - **What to do**: if the request is legitimate, give context (who you are,
+      what the task is for) and ask for the safe parts; split out the part that
+      is genuinely restricted and handle it through normal channels. Do not try
+      to trick the model past a guardrail: it breaks the usage policy and can
+      cost you the account. False positives can be reported to the provider.
+    - **Safety levels** behind the strictest guardrails, at a basic level:
+      providers test each new model for dangerous capabilities before release
+      and switch on stronger protections when a model crosses a threshold.
+      - Anthropic's Responsible Scaling Policy: AI Safety Levels (ASL-2,
+        ASL-3, ...), modelled loosely on biosafety levels (BSL). A comparison
+        biologists will recognise at once.
+      - OpenAI's Preparedness Framework: tracked risk categories (biological
+        and chemical, cybersecurity, AI self-improvement) with "High" and
+        "Critical" capability thresholds.
+      - Google DeepMind's Frontier Safety Framework: "critical capability
+        levels".
+      - The EU AI Act's obligations for general-purpose models with
+        "systemic risk" (brief).
+      - Why this matters to participants: the most capable models carry the
+        strictest classifiers, so a stronger model can refuse something a
+        weaker one would do; open-weights models (*Open-weights models and
+        data privacy*) have fewer outside guardrails, which shifts the
+        responsibility to the user and the institution.
+    - Placement: Part 6 for now. Alternative later: a short version in
+      *How LLMs and agents work, and how they fail*, since participants may hit
+      guardrails as early as *First delegations*.
+26. **Limits of AI for biological research: safety guardrails.**
+    Deep dive for life sciences and medicine, building on *Guardrails and
+    safety levels*.
     - Why they exist: providers block help that could make biological
       weapons or dangerous pathogens easier to produce (dual-use concern).
       Anthropic and OpenAI both run extra safeguards for biology in their most
@@ -326,7 +391,7 @@ notes where it could move later.
   same process as a correct one, which is why it sounds just as confident.
 
 ### Part 6 (continued)
-26. **Copyright, memorisation and credit.**
+27. **Copyright, memorisation and credit.**
     - Current legal state, briefly and without legal advice: training on
       copyrighted material and whether outputs infringe are being decided in
       court case by case. Examples to present (**[?]** check the status of each
