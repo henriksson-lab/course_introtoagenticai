@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#fff"/>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#777"/></marker></defs>
+  <rect x="20" y="40" width="250" height="300" rx="12" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="40" y="75" font-family="Menlo, Consolas, monospace" font-size="18" fill="#2a7f8f" font-weight="bold">data/raw/</text>
+  <g fill="#333">
+    <rect x="45" y="95" width="44" height="44" fill="#222"/><rect x="99" y="95" width="44" height="44" fill="#222"/><rect x="153" y="95" width="44" height="44" fill="#222"/><rect x="207" y="95" width="44" height="44" fill="#222"/>
+    <rect x="45" y="149" width="44" height="44" fill="#222"/><rect x="99" y="149" width="44" height="44" fill="#222"/><rect x="153" y="149" width="44" height="44" fill="#222"/><rect x="207" y="149" width="44" height="44" fill="#222"/>
+    <rect x="45" y="203" width="44" height="44" fill="#222"/><rect x="99" y="203" width="44" height="44" fill="#222"/><rect x="153" y="203" width="44" height="44" fill="#222"/><rect x="207" y="203" width="44" height="44" fill="#222"/>
+  </g>
+  <text x="145" y="290" font-size="17" text-anchor="middle" fill="#333">12 images, or 200:</text>
+  <text x="145" y="315" font-size="17" text-anchor="middle" fill="#333">the same script</text>
+  <rect x="350" y="110" width="260" height="160" rx="12" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="480" y="150" font-size="19" text-anchor="middle" fill="#6b4fa0" font-weight="bold">count_nuclei.py</text>
+  <text x="480" y="185" font-size="17" text-anchor="middle" fill="#333">same settings</text>
+  <text x="480" y="210" font-size="17" text-anchor="middle" fill="#333">for every image,</text>
+  <text x="480" y="235" font-size="17" text-anchor="middle" fill="#333">in one place at the top</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="17" fill="#333">
+    <rect x="690" y="40" width="290" height="300" rx="12" fill="#f8eef0" stroke="#a8324a" stroke-width="2"/>
+    <text x="710" y="75" fill="#a8324a" font-weight="bold">results/</text>
+    <text x="710" y="115">per_object.csv</text>
+    <text x="710" y="150">per_image.csv</text>
+    <text x="710" y="185">overlays/ (one png</text><text x="730" y="207">per image)</text>
+    <text x="710" y="240">counts_plot.png</text>
+    <text x="710" y="270">settings.txt</text>
+  </g>
+  <g font-size="15" fill="#555"><text x="710" y="300">threshold method, min. size,</text><text x="710" y="320">pixel size, package versions</text></g>
+  <line x1="272" y1="190" x2="347" y2="190" stroke="#777" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="612" y1="190" x2="687" y2="190" stroke="#777" stroke-width="3" marker-end="url(#a)"/>
+  <text x="500" y="380" font-size="18" text-anchor="middle" fill="#333">number of rows in per_image.csv = number of images in the folder</text>
+</svg>

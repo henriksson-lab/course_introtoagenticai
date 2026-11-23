@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" width="1000" height="380" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="380" fill="#fff"/>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#777"/></marker></defs>
+  <g font-size="18">
+    <rect x="20" y="40" width="290" height="230" rx="12" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="40" y="80" fill="#2a7f8f" font-weight="bold" font-size="21">1. Size factors</text>
+    <text x="40" y="118" fill="#333">How deeply was each</text>
+    <text x="40" y="142" fill="#333">sample sequenced?</text>
+    <text x="40" y="180" fill="#333">Correct for it, robust to</text>
+    <text x="40" y="204" fill="#333">a few strongly changed</text>
+    <text x="40" y="228" fill="#333">genes.</text>
+    <rect x="355" y="40" width="290" height="230" rx="12" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+    <text x="375" y="80" fill="#6b4fa0" font-weight="bold" font-size="21">2. Noise per gene</text>
+    <text x="375" y="118" fill="#333">How much do replicates</text>
+    <text x="375" y="142" fill="#333">of the same group vary?</text>
+    <text x="375" y="180" fill="#333">Few reads = more noise.</text>
+    <text x="375" y="204" fill="#333">Genes borrow information</text>
+    <text x="375" y="228" fill="#333">from each other.</text>
+    <rect x="690" y="40" width="290" height="230" rx="12" fill="#f8eef0" stroke="#a8324a" stroke-width="2"/>
+    <text x="710" y="80" fill="#a8324a" font-weight="bold" font-size="21">3. Test each gene</text>
+    <text x="710" y="118" fill="#333">Is the change larger</text>
+    <text x="710" y="142" fill="#333">than the noise?</text>
+    <text x="710" y="180" fill="#333">Fold change, p-value,</text>
+    <text x="710" y="204" fill="#333">and padj (corrected for</text>
+    <text x="710" y="228" fill="#333">testing all genes).</text>
+  </g>
+  <line x1="312" y1="155" x2="352" y2="155" stroke="#777" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="647" y1="155" x2="687" y2="155" stroke="#777" stroke-width="3" marker-end="url(#a)"/>
+  <rect x="20" y="300" width="960" height="56" rx="8" fill="#f4f4f4"/>
+  <text x="500" y="335" font-size="19" text-anchor="middle" fill="#333">Input: raw whole-number counts, the sample sheet and the design. One command runs all three.</text>
+</svg>

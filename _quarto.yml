@@ -239,6 +239,14 @@ website:
                 href: track-teaching/lec.qmd
               - text: "Exercise: a quiz, variants and slides"
                 href: track-teaching/exercise.qmd
+          - section: "F. Lab instruments and hardware"
+            contents:
+              - text: "Lecture: why, and is it legal?"
+                href: track-hardware/lec.qmd
+              - text: "Lecture: reverse engineering with agents"
+                href: track-hardware/lec-practice.qmd
+              - text: "Exercise: decode an instrument protocol"
+                href: track-hardware/exercise.qmd
 
 format:
   html:

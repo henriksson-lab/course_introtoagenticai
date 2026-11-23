@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#fff"/>
+  <text x="20" y="32" font-size="18" fill="#333" font-weight="bold">measurements.csv: one row per object</text>
+  <g font-size="16" fill="#333">
+    <rect x="20" y="48" width="960" height="34" fill="#e9eef0"/>
+    <g font-weight="bold"><text x="30" y="71">file</text><text x="230" y="71">object</text><text x="320" y="71">area_px</text><text x="420" y="71">area_um2</text><text x="530" y="71">mean_intensity</text><text x="680" y="71">x</text><text x="740" y="71">y</text><text x="800" y="71">on_border</text></g>
+    <text x="30" y="108">A16_s2.tif</text><text x="230" y="108">1</text><text x="320" y="108">671</text><text x="420" y="108">288.7</text><text x="530" y="108">702</text><text x="680" y="108">52</text><text x="740" y="108">18</text><text x="800" y="108">no</text>
+    <text x="30" y="140">A16_s2.tif</text><text x="230" y="140">2</text><text x="320" y="140">212</text><text x="420" y="140">91.2</text><text x="530" y="140">655</text><text x="680" y="140">3</text><text x="740" y="140">96</text><text x="800" y="140" fill="#a8324a" font-weight="bold">yes</text>
+    <text x="30" y="172">A16_s2.tif</text><text x="230" y="172">3</text><text x="320" y="172">598</text><text x="420" y="172">257.3</text><text x="530" y="172">811</text><text x="680" y="172">140</text><text x="740" y="172">41</text><text x="800" y="172">no</text>
+    <text x="30" y="204">...</text>
+    <text x="30" y="236">C23_s2.tif</text><text x="230" y="236">112</text><text x="320" y="236">640</text><text x="420" y="236">275.4</text><text x="530" y="236">744</text><text x="680" y="236">577</text><text x="740" y="236">410</text><text x="800" y="236">no</text>
+    <g stroke="#ddd"><line x1="20" y1="120" x2="980" y2="120"/><line x1="20" y1="152" x2="980" y2="152"/><line x1="20" y1="184" x2="980" y2="184"/><line x1="20" y1="216" x2="980" y2="216"/></g>
+  </g>
+  <rect x="415" y="44" width="100" height="200" fill="none" stroke="#2a7f8f" stroke-width="2.5"/>
+  <g font-size="18" fill="#333">
+    <text x="20" y="290"><tspan fill="#2a7f8f" font-weight="bold">Units in the column name:</tspan> area_um2, not "area".</text>
+    <text x="20" y="322"><tspan fill="#a8324a" font-weight="bold">Border flag:</tspan> object 2 is cut off by the image edge; its area is too small.</text>
+    <text x="20" y="354"><tspan font-weight="bold">Plus a per-image table:</tspan> file, count, median area. Totals must match.</text>
+  </g>
+  <text x="975" y="392" font-size="14" fill="#999" text-anchor="end">illustrative values</text>
+</svg>

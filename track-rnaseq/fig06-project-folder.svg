@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="470" fill="#fff"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="18" fill="#333">
+    <text x="30" y="40" font-weight="bold">rnaseq-airway/</text>
+    <text x="60" y="75">README.md</text>
+    <text x="60" y="105">CLAUDE.md / AGENTS.md</text>
+    <text x="60" y="140" fill="#2a7f8f" font-weight="bold">data/raw/</text>
+    <text x="100" y="170">counts.csv</text><text x="100" y="198">samples.csv</text>
+    <text x="60" y="235" fill="#6b4fa0" font-weight="bold">scripts/</text>
+    <text x="100" y="265">01-qc.R</text><text x="100" y="293">02-deseq2.R</text><text x="100" y="321">03-enrichment.R</text>
+    <text x="60" y="358" fill="#a8324a" font-weight="bold">results/</text>
+    <text x="100" y="388">qc/  tables/  figures/</text>
+    <text x="60" y="425">decisions.md</text>
+    <text x="60" y="455">sessionInfo.txt</text>
+  </g>
+  <g font-size="18" fill="#555">
+    <text x="520" y="105">the project's instructions for the agent</text>
+    <text x="520" y="170" fill="#2a7f8f">read-only: never changed by a script</text>
+    <text x="520" y="196" fill="#2a7f8f">or by the agent</text>
+    <text x="520" y="280" fill="#6b4fa0">numbered: run in this order;</text>
+    <text x="520" y="306" fill="#6b4fa0">together they make every result</text>
+    <text x="520" y="388" fill="#a8324a">everything here can be deleted and remade</text>
+    <text x="520" y="425">every choice you made, with the reason</text>
+    <text x="520" y="455">package versions used</text>
+  </g>
+  <line x1="505" y1="100" x2="330" y2="100" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="505" y1="180" x2="250" y2="180" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="505" y1="290" x2="320" y2="290" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="505" y1="383" x2="360" y2="383" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="505" y1="420" x2="210" y2="420" stroke="#ccc" stroke-width="1.5"/>
+  <line x1="505" y1="450" x2="250" y2="450" stroke="#ccc" stroke-width="1.5"/>
+</svg>

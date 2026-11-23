@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <rect x="20" y="15" width="960" height="395" rx="10" fill="#fafafa" stroke="#bbb" stroke-width="2"/>
+  <rect x="20" y="15" width="960" height="42" rx="10" fill="#e9eef0"/>
+  <text x="40" y="43" font-size="18" fill="#333" font-weight="bold">decisions.md</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="17" fill="#333">
+    <text x="45" y="95" font-weight="bold">## 2026-11-23  Samples S08 and S11</text>
+    <text x="45" y="128">Seen: in the PCA, S08 (labelled control) sits with the</text>
+    <text x="45" y="153">  treated samples and S11 (labelled treated) with the controls.</text>
+    <text x="45" y="178">  lab-notes.txt: "S08 and S11 may have been swapped".</text>
+    <text x="45" y="211">Checked: asked the lab; tube log confirms the swap.</text>
+    <text x="45" y="244" fill="#2a7f8f" font-weight="bold">Decision: swap the labels of S08 and S11 in a corrected</text>
+    <text x="45" y="269" fill="#2a7f8f" font-weight="bold">  copy (data/samples_corrected.csv). Raw sheet unchanged.</text>
+    <text x="45" y="302">Alternative run: S08 and S11 left out. Results agree.</text>
+    <text x="45" y="335">Decided by: me, not the agent.</text>
+    <text x="45" y="378" fill="#777">## 2026-11-23  S03 low depth (1.1 M reads): kept, see QC</text>
+  </g>
+  <text x="975" y="432" font-size="14" fill="#999" text-anchor="end">illustrative</text>
+</svg>

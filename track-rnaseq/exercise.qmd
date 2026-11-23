@@ -1,0 +1,387 @@
+---
+title: "Exercise: from counts to a gene list"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- run a **complete bulk RNA-seq analysis by prompting**: counts and sample sheet, QC, DESeq2, volcano and MA plots, enrichment, and a link to your literature table,
+- **caught a planted problem** in a sample sheet from the QC plots, and decided yourself what to do about it,
+- **checked the agent against a known answer** (400 planted genes) and against **known genes** in a real dataset,
+- stated the **design formula in plain words** and checked the reference level,
+- **rerun the analysis from scratch** and got the same numbers, and
+- applied the same checks to **your own project**.
+
+You do not write any R. You read the sample sheet, the design, the plots and the numbers. Your session will look different from anyone else's, and the agent may choose other functions or plot styles. Compare **results**: the numbers and checks below.
+
+## Before you start
+
+- You have done Part 2 (a project folder, git) and ideally *Literature review* (Part 4), whose verified table you use at the end. If you have not, you can still do everything except step 12.
+- You need R. If it is not installed, the agent will install it with your approval, as in *Terminal survival kit*. The R packages (DESeq2 and a few others from [Bioconductor](https://bioconductor.org)) are installed during the exercise. The first install can take 10 to 30 minutes; start it early.
+- Download the example data:
+
+| Download | What is inside |
+|---|---|
+| [synthetic-rnaseq.zip](data/synthetic-rnaseq.zip) | `counts.csv` (10 000 genes x 12 samples), `samples.csv`, `lab-notes.txt`: a synthetic drug experiment |
+| [truth.csv](data/truth.csv) | the **answer key**: which genes were planted as changed. Do not put it in the agent's folder until step 7. |
+
+The synthetic data were made by [make-data.R](data/make-data.R). The real dataset, *airway*, is downloaded in step 8.
+
+- Make a folder for the track in your course folder, with one subfolder per dataset:
+
+```text
+~/agentic-course/track-rnaseq/pilot/data/raw/     <- unzip the three files here
+~/agentic-course/track-rnaseq/airway/              <- empty for now
+```
+
+(Windows: `C:\Users\<you>\agentic-course\track-rnaseq\...`.) Unzipping creates a folder `synthetic-rnaseq`; move the three files out of it into `data/raw`. Keep `truth.csv` somewhere else, for example in your Downloads folder.
+
+- Open the three files yourself first. `samples.csv` and `lab-notes.txt` open in any text editor or in Excel. What do the lab notes say?
+
+## Worked example
+
+### Part 1: the synthetic pilot (known answer)
+
+#### Step 1: start the agent in the pilot folder
+
+Start the agent in `~/agentic-course/track-rnaseq/pilot`. Make it a git repository, so every step can be undone, as in *Git as undo button and lab notebook*:
+
+```text
+Make this folder a git repository and commit the files in data/raw with
+the message "raw data as received". Add a short README.md that says
+what the folder is for. From now on, commit after each step I approve.
+```
+
+Then make the raw data read-only for the agent by writing it down where the agent reads it every time:
+
+::: {.panel-tabset}
+## Claude Code
+```text
+Create CLAUDE.md with these rules: data/raw is read-only, never change,
+move or overwrite anything in it. Scripts go in scripts/, numbered in
+the order they run. Results go in results/. Every decision about
+samples goes in decisions.md, and only after I have approved it.
+```
+## Codex
+```text
+Create AGENTS.md with these rules: data/raw is read-only, never change,
+move or overwrite anything in it. Scripts go in scripts/, numbered in
+the order they run. Results go in results/. Every decision about
+samples goes in decisions.md, and only after I have approved it.
+```
+:::
+
+#### Step 2: let the agent describe the data back to you
+
+```text
+This folder holds an RNA-seq experiment: data/raw/counts.csv (raw counts,
+genes x samples), data/raw/samples.csv (the sample sheet) and
+data/raw/lab-notes.txt. Do not analyse anything yet.
+
+Read the three files and tell me:
+- how many genes and samples there are, and whether all values are
+  whole numbers
+- each sample with its group and batch, matched BY NAME between the
+  count table and the sample sheet, as a table
+- any sample that is in one file but not the other
+- anything in the lab notes that could affect the analysis
+Do not change any file in data/raw.
+```
+
+**Check.**
+
+- 10 000 genes, 12 samples, all whole numbers.
+- The matched table: S01 to S03 and S07 to S09 are control, S04 to S06 and S10 to S12 treated; S01 to S06 are `day1`, S07 to S12 `day2`. Compare it with `samples.csv` yourself.
+- Notice that the sample sheet lists the samples in a **different order** from the count columns. Did the agent mention it? If it ever proposes to match "the first row with the first column", stop it.
+- The agent should mention two things from the lab notes: S03 had little RNA, and S08 and S11 may have been swapped. If it does not, ask: "Is there anything in lab-notes.txt that matters for the analysis?" and note in your log that it missed it.
+
+#### Step 3: install R and DESeq2
+
+```text
+I want to analyse this with the R package DESeq2 from Bioconductor.
+Check whether R is installed and which version. Then tell me exactly
+what you need to install (R itself, BiocManager, DESeq2, and any
+plotting packages) and how. Wait for my approval before installing.
+```
+
+Read the plan, then approve. Installing DESeq2 compiles or downloads many packages; let it run.
+
+| | Claude Code | Codex |
+|---|---|---|
+| Installing needs the internet | asks permission to run each install command | the default sandbox blocks network access; Codex asks to run the install command outside the sandbox. Approve install commands you expected, nothing else. |
+| Admin password or system dialog | do this step yourself; the agent cannot type passwords | the same |
+
+On a university-managed computer, R may have to come from your software centre or IT. Then install R that way and ask the agent to continue from there.
+
+**Check.** Ask: "Load DESeq2 in R and tell me its version." Write the R and DESeq2 versions in your README.
+
+#### Step 4: quality control
+
+```text
+Write scripts/01-qc.R that makes, in results/qc/: a bar chart of library
+sizes, a PCA plot coloured by treatment and shaped by batch, and a
+heatmap of sample correlations. Match samples between the count table
+and the sample sheet by name. Run it and show me the plots.
+
+Then tell me which samples, if any, look unusual and why. Do NOT remove,
+relabel or reweight any sample. I will decide. List what you would
+recommend and what I could check in the lab to settle it.
+```
+
+Open the three plots yourself (in your file browser, they are PNG or PDF files).
+
+**Check.**
+
+- **Library sizes.** S03 has about 1.1 million reads, the others 5 to 7 million. Does the agent recommend removing S03? Low depth alone is not a reason; DESeq2 corrects for depth. Look at S03 in the PCA: it sits with the other day-1 controls.
+- **PCA.** The first axis separates control from treated (about 70% of the variation), the second the two days (about 17%). Two samples are on the wrong side: **S08** (labelled control) with the treated samples, **S11** (labelled treated) with the controls.
+- **Correlations.** S08 correlates best with the day-2 treated samples, S11 with the day-2 controls.
+- **No silent changes.** The script still uses all 12 samples. Ask: "How many samples does 01-qc.R use, and with which labels?"
+
+Your plots will look different from the lecture: other colours, other layout, perhaps mirrored axes (the sign of a PCA axis is arbitrary). The groupings must be the same.
+
+#### Step 5: decide about S08 and S11
+
+In this exercise, assume you asked the lab, and the tube log **confirms** that S08 and S11 were swapped. Tell the agent your decision:
+
+```text
+Decision: the lab has confirmed that S08 and S11 were swapped (S08 is
+really treated, S11 is really control). Do not change data/raw.
+Create data/samples_corrected.csv with the two labels swapped, and
+nothing else changed. Write the decision in decisions.md: what we saw,
+what the lab confirmed, what was changed, and that I decided it.
+Also record that S03 is kept, and why. Show me the differences
+between the two sample sheets.
+```
+
+**Check.** The difference between the sheets is exactly two cells: the treatment of S08 and S11. `data/raw/samples.csv` is unchanged (ask the agent to show `git status`: nothing in `data/raw` should be modified). Read `decisions.md`: does it say what you decided, in your terms?
+
+#### Step 6: DESeq2 with the design in words
+
+```text
+Before running DESeq2, tell me in plain words:
+- the design formula you will use, and what each term means for
+  this experiment
+- which group is the reference, so that a positive log2 fold change
+  means "higher in treated"
+- how many samples are in each group, using data/samples_corrected.csv
+- whether anything about the design worries you (batch, pairing,
+  too few replicates)
+Then write scripts/02-deseq2.R, run it on the raw counts, and save the
+full results table (every gene) to results/tables/deseq2_all_genes.csv.
+Tell me how many genes have padj < 0.05, and how many have pvalue < 0.05.
+```
+
+**Check.**
+
+- The design is `~ batch + treatment`, in words: compare treated with control within each extraction day.
+- The reference is `control`, and there are **6 and 6** samples.
+- The input is the raw counts, not normalised values. Ask, if the agent does not say.
+- The full table has **10 000 rows**. Genes with `padj` = `NA` are genes DESeq2 did not test.
+- About **420 genes** at `padj < 0.05`, and about **940** at `pvalue < 0.05`. If your numbers differ a lot, ask the agent whether it filtered genes first, and how.
+
+#### Step 7: check against the answer key
+
+Now copy `truth.csv` into the pilot folder (not into `data/raw`) and ask:
+
+```text
+truth.csv is the answer key: it says which genes were planted as
+changed (column planted) and their true log2 fold change. Compare it
+with results/tables/deseq2_all_genes.csv:
+- of the genes with padj < 0.05, how many were planted, how many not?
+- the same for pvalue < 0.05
+- for the planted genes found, does the sign of the fold change agree?
+Then rerun DESeq2 once with the ORIGINAL sample sheet (data/raw/samples.csv,
+S08 and S11 swapped) and once with S08 and S11 left out, and add both to
+the comparison as a small table. Save this as scripts/03-compare-truth.R.
+```
+
+**Check** against this table (your numbers may differ by a few genes):
+
+| Analysis (design `~ batch + treatment`) | Genes at padj < 0.05 | Of them planted | Not planted |
+|---|---|---|---|
+| sample sheet as given (S08, S11 swapped) | about 11 | about 10 | about 1 |
+| swap corrected | about 421 | about 383 | about 38 |
+| S08 and S11 left out | about 412 | about 377 | about 35 |
+| swap corrected, but **pvalue** < 0.05 instead of padj | about 943 | about 392 | about 551 |
+
+Three things to take from it. The swap turns a strong effect into almost nothing, and nothing warns you except the QC plots. Leaving the two doubtful samples out is a safe alternative when the lab cannot confirm. And plain p-values give hundreds of false hits. The fold-change signs of the planted genes found should all agree.
+
+Commit everything: "pilot analysis with known answer".
+
+### Part 2: the airway dataset (real data)
+
+The [airway](https://bioconductor.org/packages/airway/) package holds RNA-seq counts from four human airway smooth-muscle cell lines, each untreated or treated with dexamethasone, a glucocorticoid (Himes et al. 2014, *PLoS One*; GEO accession GSE52778). It is public and widely used for teaching.
+
+#### Step 8: get the data as plain files
+
+Start the agent in `~/agentic-course/track-rnaseq/airway` and set up git and the same `CLAUDE.md` / `AGENTS.md` rules as in step 1. Then:
+
+```text
+Install the Bioconductor data package "airway" if needed (ask me first).
+Export its data to plain files in data/raw/: counts.csv (raw counts,
+genes x samples, with the Ensembl gene ID as first column),
+samples.csv (one row per sample: sample, cell, dex, and any other
+columns), and genes.csv (gene ID, gene name, Entrez ID).
+Save the export as scripts/00-export.R. Then describe the data back
+to me, as you would for a count table from a facility: number of
+genes and samples, samples per group, library sizes.
+```
+
+**Check.** 63 677 genes (many with zero counts everywhere: about 30 000), 8 samples, 4 untreated (`untrt`) and 4 treated (`trt`), one of each per cell line (`N61311`, `N052611`, `N080611`, `N061011`). Library sizes about 15 to 31 million reads.
+
+#### Step 9: QC and DESeq2
+
+Reuse what you learned. Ask for the QC plots as in step 4, look at them, then:
+
+```text
+Run DESeq2 on airway. Before running, tell me the design in plain words,
+the reference level for dex, and the number of samples per group. The
+cell lines are paired: each was measured untreated and treated. A
+positive log2 fold change must mean "higher with dexamethasone".
+Save the full results table with gene names to
+results/tables/deseq2_all_genes.csv and report how many genes have
+padj < 0.05. Then show me the results for FKBP5, TSC22D3, PER1, DUSP1,
+KLF15 and GAPDH.
+```
+
+**Check.**
+
+- **Design:** `~ cell + dex`, in words: compare treated with untreated within each cell line.
+- **Reference level:** `untrt`. R sorts `trt` before `untrt`, so without an explicit choice the coefficient would be "untrt vs trt" and every sign would flip. Ask the agent which comparison its results describe (DESeq2 prints it at the top of the results, as `dex trt vs untrt`).
+- **PCA:** untreated and treated separate on the first axis; the cell lines spread along the second.
+- **Numbers:** about 4 000 genes at `padj < 0.05` (between about 3 900 and 4 100 depending on how low-count genes were filtered).
+- **Known genes** (log2 fold changes from our run; yours should be within a few hundredths):
+
+| Gene | log2 fold change | Expected |
+|---|---|---|
+| FKBP5 | 4.0 | up |
+| TSC22D3 | 3.2 | up |
+| PER1 | 3.2 | up |
+| DUSP1 | 2.9 | up |
+| KLF15 | 4.5 | up |
+| GAPDH | about -0.2, padj about 0.4 | no change |
+
+If FKBP5 is **negative**, the reference level is wrong. Say so and ask the agent to fix the script, not the numbers.
+
+#### Step 10: volcano and MA plots
+
+```text
+Write scripts/04-plots.R: a volcano plot (log2 fold change against
+-log10 padj) and an MA plot (mean count against log2 fold change) from
+the full results table. Mark genes with padj < 0.05, and label FKBP5,
+TSC22D3, PER1, DUSP1, KLF15 and GAPDH. Save both as PNG and PDF in
+results/figures/. Use the same style as my figures from Reproducible
+figures if you can find them; otherwise keep it plain.
+```
+
+**Check.** The labelled glucocorticoid genes are up and high in the volcano; GAPDH sits at the bottom near zero. In the MA plot, the cloud is wider on the left (few reads) than on the right. Is the x axis of the volcano labelled with the direction ("dexamethasone vs untreated")? If not, ask for it: a reader must know which way is up.
+
+#### Step 11: enrichment
+
+You can do this in the browser or let the agent do it in R. Both are fine for airway, which is public.
+
+```text
+Run an over-representation analysis with g:Profiler (the R package
+gprofiler2) for the genes with padj < 0.05 and log2 fold change > 1
+(up with dexamethasone). Use ALL genes that DESeq2 tested (padj not NA)
+as a custom background, not the whole genome. Use Ensembl gene IDs.
+Report: how many genes went in, how many g:Profiler did not recognise,
+the top 15 terms from GO biological process and from KEGG or Reactome,
+and group terms that are about the same theme. Save the full table to
+results/tables/enrichment_up.csv and the script as scripts/05-enrichment.R.
+```
+
+**Check.**
+
+- **Background:** the script or the agent's answer must show a custom background of the tested genes (about 18 000 without filtering, about 16 000 with). If it used the default, ask it to redo.
+- **Lost genes:** a few genes are usually not recognised. Tens are fine; hundreds mean an ID problem.
+- **Themes:** look for terms about the response to glucocorticoids or corticosteroids. If none appear among the up-regulated genes, something is wrong upstream: check the sign.
+- **Redundancy:** many GO terms are near-duplicates. Can you summarise the result in three themes?
+- Optionally, paste the same gene list into the [g:Profiler web page](https://biit.cs.ut.ee/gprofiler/gost), set the background yourself under the advanced options, and compare the top terms.
+
+#### Step 12: link to your literature table
+
+Copy the table from *Literature review* (for example `literature.csv`) into `data/raw/`. Then:
+
+```text
+data/raw/literature.csv is my verified literature table. Join it with
+the DESeq2 results by gene name. Make results/tables/genes_vs_literature.csv
+with: gene, log2 fold change, padj, what the literature table says, the
+reference, and a column "agrees" (yes / no / not comparable) with a
+one-line reason. Then list the 10 most significant up-regulated genes
+that are NOT in my table. Do not add references from memory.
+```
+
+If your literature table is about other genes (it may well be), do the same with the top 10 genes: ask the agent to search PubMed for one review or primary paper per gene on glucocorticoid response, and verify each PMID yourself as in *Literature review*.
+
+**Check.** Open two references at random and confirm they say what the table says. Disagreements are not errors in themselves: is it the same cell type, the same drug, the same direction?
+
+#### Step 13: rerun from scratch
+
+Close the session. Start a **new** session in the airway folder:
+
+```text
+Delete the results folder. Then run the scripts in scripts/ in order,
+exactly as the README describes, without changing them. Report the
+number of genes at padj < 0.05, the log2 fold change of FKBP5, and the
+top 10 genes. Do not fix anything; if a script fails, tell me why.
+```
+
+**Check.** The same numbers as before, to the last digit. If something differs or a script fails, find out which step lived only in the chat, fix the script, and rerun. Then commit: "airway analysis, reproducible from scratch". Ask the agent to save `sessionInfo()` to `sessionInfo.txt`.
+
+### Check the result
+
+Go through the checklist from the lecture for both datasets:
+
+- [ ] Every sample in, matched by name; the matched table printed and read.
+- [ ] n per group stated: 6 and 6 (pilot), 4 pairs (airway).
+- [ ] Library sizes, PCA and correlations looked at by you; S08 and S11 found.
+- [ ] No sample dropped or relabelled without your decision; `decisions.md` says what and why.
+- [ ] Design in words matches the experiment; reference level checked with FKBP5.
+- [ ] padj used, not p; the answer key shows about 383 of 400 planted genes found.
+- [ ] Enrichment against the tested genes; lost IDs counted.
+- [ ] References in the literature join checked by you.
+- [ ] Rerun from scratch gives the same numbers.
+
+::: {.callout-note collapse="true" title="Expected outcomes (both datasets)"}
+**Pilot (synthetic).** 10 000 genes, 12 samples. Library sizes 1.1 million (S03) and 5 to 7 million (the others). PCA: treatment on PC1 (about 70%), day on PC2 (about 17%); S08 and S11 on the wrong side. With the corrected sheet and `~ batch + treatment`: about 421 genes at padj < 0.05, about 383 of them among the 400 planted; at pvalue < 0.05 about 943, about 551 not planted. With the sheet as given: about 11 genes. With S08 and S11 left out: about 412, about 377 planted. Leaving out `batch` gives somewhat fewer genes (about 387). All signs of planted genes found agree with the truth.
+
+**airway.** 63 677 genes, 8 samples, 4 cell lines x untreated/treated, 15 to 31 million reads. `~ cell + dex`, reference `untrt`: about 4 000 genes at padj < 0.05 (about 2 200 up), about 940 of them more than 2-fold. Top genes by padj include SPARCL1, CACNB2, DUSP1, SAMHD1, MAOA, GPX3. FKBP5 log2FC 4.0, TSC22D3 3.2, PER1 3.2, DUSP1 2.9, KLF15 4.5, ZBTB16 7.4; GAPDH about -0.2 (not significant). With `~ dex` only (cell line ignored), about 2 800 genes: the pairing adds power.
+
+Numbers are from DESeq2 1.52 and airway 1.32; other versions and filtering choices give slightly different counts.
+:::
+
+## On your own project
+
+Apply the habits of this track to your own project. Choose the option that fits.
+
+::: {.callout-warning}
+**Privacy reminder.** Counts from human participants are personal data, even with coded sample names; raw reads (FASTQ, BAM) from humans are genetic data. Do not put them in the agent's folder unless your data class and approvals allow it (see your README). The sample sheet is often the most sensitive file: give the agent only the columns the analysis needs.
+:::
+
+**A. You have RNA-seq counts you may use.** Put a copy in `data/raw` of your project folder and repeat steps 2, 4, 5 and 6. Before the analysis, write in your README: the groups, n per group, how samples were processed (days, batches, pairing), and **five genes you expect to change** and **two you expect not to**. Those are your known answer.
+
+**B. Your project is about genes, but you have no data.** Find a public dataset on [GEO](https://www.ncbi.nlm.nih.gov/geo/) on your topic with a count table and at least three samples per group. Ask the agent to download it and describe it back to you (step 2) before anything else. Check the paper's methods: does your design match theirs? Can you reproduce one of their reported genes?
+
+**C. Your project is not about RNA-seq.** The core of this track applies to any experiment with samples and groups: a sample sheet matched by name, QC plots before any test, a design you can say in a sentence, decisions about odd samples written down by you, multiple testing, and a rerun from scratch. Pick the dataset in your project and do steps 2, 4 and 5 on it: "describe it back", "show me what looks unusual, change nothing", "record my decision".
+
+Whichever you choose:
+
+- Add a section "Analysis decisions" to your README pointing to `decisions.md`.
+- Add one line to your **Log of AI use**: the date, the tool, "RNA-seq track (or option C)", and one sentence on what you checked.
+- Commit, and if your project page exists (*A course or project page*), add the volcano plot (or your QC plot) and two sentences on what it shows. Public data only.
+
+## What you should have now
+
+- `track-rnaseq/pilot/` and `track-rnaseq/airway/`, each a git repository with read-only raw data, numbered scripts, a results folder that can be remade, `decisions.md` and `sessionInfo.txt`.
+- A checked gene list for airway with volcano and MA plots, an enrichment table against the right background, and a table linking genes to your verified literature.
+- The answer-key comparison showing what a sample swap and plain p-values would have done.
+- The verification checklist, used once on data with a known answer and once on real data.
+- A step of your own project done with the same checks, recorded in its README and AI-use log.

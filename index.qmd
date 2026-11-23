@@ -45,5 +45,6 @@ describe the task, check the result and keep your work organised.
   data privacy, labelling AI-generated content, guardrails and safety levels,
   limits for biological research, copyright and credit.
 - **Tracks.** Pick one or more: RNA-seq, simulation, image analysis in Python,
-  survey data, teaching materials. A track can start once *Reproducible
+  survey data, teaching materials, lab instruments and hardware (including the
+  legal state of reverse engineering). A track can start once *Reproducible
   figures* is done.

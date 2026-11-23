@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#fff"/>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#777"/></marker></defs>
+  <rect x="20" y="30" width="290" height="340" rx="12" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="165" y="70" font-size="22" text-anchor="middle" fill="#2a7f8f" font-weight="bold">You decide</text>
+  <g font-size="18" fill="#333">
+    <text x="45" y="115">the question</text>
+    <text x="45" y="150">which samples are compared</text>
+    <text x="45" y="185">the design (what to adjust for)</text>
+    <text x="45" y="220">what to do with odd samples</text>
+    <text x="45" y="255">the cut-offs</text>
+  </g>
+  <rect x="355" y="30" width="290" height="340" rx="12" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="500" y="70" font-size="22" text-anchor="middle" fill="#6b4fa0" font-weight="bold">The agent types</text>
+  <g font-size="18" fill="#333">
+    <text x="380" y="115">installs R and DESeq2</text>
+    <text x="380" y="150">writes the R scripts</text>
+    <text x="380" y="185">runs them</text>
+    <text x="380" y="220">makes tables and plots</text>
+    <text x="380" y="255">explains what it did</text>
+  </g>
+  <rect x="690" y="30" width="290" height="340" rx="12" fill="#f8eef0" stroke="#a8324a" stroke-width="2"/>
+  <text x="835" y="70" font-size="22" text-anchor="middle" fill="#a8324a" font-weight="bold">You check</text>
+  <g font-size="18" fill="#333">
+    <text x="715" y="115">QC plots: odd samples?</text>
+    <text x="715" y="150">known genes behave?</text>
+    <text x="715" y="185">known answer found?</text>
+    <text x="715" y="220">no sample lost?</text>
+    <text x="715" y="255">same result on rerun?</text>
+  </g>
+  <line x1="312" y1="320" x2="352" y2="320" stroke="#777" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="647" y1="320" x2="687" y2="320" stroke="#777" stroke-width="3" marker-end="url(#a)"/>
+  <text x="500" y="340" font-size="17" text-anchor="middle" fill="#555">prompts in, script and results out</text>
+</svg>

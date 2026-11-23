@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" width="1000" height="400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#fff"/>
+  <rect x="40" y="40" width="320" height="320" fill="#151515"/>
+  <g fill="#9fd3dc">
+    <ellipse cx="130" cy="120" rx="30" ry="24"/><ellipse cx="250" cy="200" rx="28" ry="26"/><ellipse cx="150" cy="280" rx="27" ry="23"/>
+  </g>
+  <clipPath id="c"><rect x="40" y="40" width="320" height="320"/></clipPath>
+  <ellipse cx="355" cy="100" rx="30" ry="25" fill="#9fd3dc" clip-path="url(#c)"/>
+  <ellipse cx="45" cy="210" rx="28" ry="24" fill="#9fd3dc" clip-path="url(#c)"/>
+  <circle cx="300" cy="300" r="4" fill="#fff"/><circle cx="210" cy="90" r="3.5" fill="#fff"/>
+  <circle cx="300" cy="300" r="16" fill="none" stroke="#ffb000" stroke-width="2.5"/><circle cx="210" cy="90" r="16" fill="none" stroke="#ffb000" stroke-width="2.5"/>
+  <circle cx="345" cy="100" r="34" fill="none" stroke="#ff4d6d" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <circle cx="55" cy="210" r="34" fill="none" stroke="#ff4d6d" stroke-width="2.5" stroke-dasharray="6 4"/>
+  <g font-size="19" fill="#333">
+    <text x="410" y="70" fill="#8a6a12" font-weight="bold">Debris (orange)</text>
+    <text x="410" y="98">Tiny bright specks. Drop objects below</text>
+    <text x="410" y="124">a minimum area, for example 13 µm²</text>
+    <text x="410" y="150">(30 pixels). Check the rule on the overlay.</text>
+    <text x="410" y="205" fill="#a8324a" font-weight="bold">Cut by the border (red dashed)</text>
+    <text x="410" y="233">Part of the nucleus is outside the image.</text>
+    <text x="410" y="259">Counting: decide and write it down.</text>
+    <text x="410" y="285">Measuring area: leave them out.</text>
+    <text x="410" y="340" font-weight="bold">Both are your decisions, not the agent's.</text>
+  </g>
+</svg>

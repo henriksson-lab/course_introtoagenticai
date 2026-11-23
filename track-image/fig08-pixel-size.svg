@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="420" fill="#fff"/>
+  <g stroke="#ccc" stroke-width="1">
+    <path d="M40,40 h320 M40,80 h320 M40,120 h320 M40,160 h320 M40,200 h320 M40,240 h320 M40,280 h320 M40,320 h320 M40,360 h320"/>
+    <path d="M40,40 v320 M80,40 v320 M120,40 v320 M160,40 v320 M200,40 v320 M240,40 v320 M280,40 v320 M320,40 v320 M360,40 v320"/>
+  </g>
+  <ellipse cx="200" cy="200" rx="115" ry="95" fill="#9fd3dc" fill-opacity="0.7" stroke="#2a7f8f" stroke-width="2.5"/>
+  <rect x="40" y="40" width="40" height="40" fill="none" stroke="#a8324a" stroke-width="3"/>
+  <text x="40" y="395" font-size="17" fill="#555">each square = one pixel (drawn very large)</text>
+  <g font-size="20" fill="#333">
+    <text x="420" y="70"><tspan fill="#a8324a" font-weight="bold">1 pixel</tspan> = 0.656 µm wide (BBBC022 page)</text>
+    <text x="420" y="110">1 pixel area = 0.656 × 0.656 = <tspan font-weight="bold">0.430 µm²</tspan></text>
+    <text x="420" y="170">A typical nucleus covers 650 pixels:</text>
+    <text x="420" y="205" fill="#2a7f8f" font-weight="bold">650 × 0.430 = 280 µm²   correct</text>
+    <text x="420" y="245" fill="#a8324a">650 × 0.656 = 426 "µm²"   wrong: not squared</text>
+    <text x="420" y="285" fill="#a8324a">650 "µm²"   wrong: still in pixels</text>
+    <text x="420" y="345">Ask the agent where the pixel size came from.</text>
+    <text x="420" y="375">If nobody knows, measure a scale bar or a slide.</text>
+  </g>
+</svg>

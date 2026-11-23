@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 450" width="1000" height="450" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="450" fill="#fff"/>
+  <g font-family="Menlo, Consolas, monospace" font-size="46">
+    <text x="270" y="70" fill="#777">~</text>
+    <text x="330" y="70" fill="#8a6a12">batch</text>
+    <text x="510" y="70" fill="#777">+</text>
+    <text x="570" y="70" fill="#a8324a">treatment</text>
+  </g>
+  <g stroke-width="2">
+    <line x1="283" y1="85" x2="170" y2="140" stroke="#777"/>
+    <line x1="410" y1="85" x2="500" y2="140" stroke="#8a6a12"/>
+    <line x1="700" y1="85" x2="830" y2="140" stroke="#a8324a"/>
+  </g>
+  <g font-size="18" text-anchor="middle">
+    <rect x="30" y="145" width="280" height="110" rx="10" fill="#f4f4f4"/>
+    <text x="170" y="180" fill="#333" font-weight="bold">"~"</text>
+    <text x="170" y="208" fill="#333">explain each gene's</text>
+    <text x="170" y="232" fill="#333">counts by ...</text>
+    <rect x="360" y="145" width="280" height="110" rx="10" fill="#f6f1e1"/>
+    <text x="500" y="180" fill="#8a6a12" font-weight="bold">batch</text>
+    <text x="500" y="208" fill="#333">extraction day: not the</text>
+    <text x="500" y="232" fill="#333">question, but it shifts genes</text>
+    <rect x="690" y="145" width="280" height="110" rx="10" fill="#f8eef0"/>
+    <text x="830" y="180" fill="#a8324a" font-weight="bold">treatment</text>
+    <text x="830" y="208" fill="#333">the question: drug vs</text>
+    <text x="830" y="232" fill="#333">control (written last)</text>
+  </g>
+  <text x="500" y="305" font-size="21" text-anchor="middle" fill="#333" font-weight="bold">In words: compare treated with control within each extraction day,</text>
+  <text x="500" y="333" font-size="21" text-anchor="middle" fill="#333" font-weight="bold">then combine the days.</text>
+  <g font-size="17" fill="#555">
+    <text x="60" y="390">day 1:  control  S01 S02 S03   vs  treated  S04 S05 S06</text>
+    <text x="60" y="420">day 2:  control  S07 S08 S09   vs  treated  S10 S11 S12   (as labelled)</text>
+  </g>
+</svg>

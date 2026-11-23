@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="520" fill="#fff"/>
+  <rect x="150" y="15" width="700" height="490" fill="#fdf3c4" stroke="#d9c77a" stroke-width="1.5"/>
+  <text x="500" y="58" font-size="24" text-anchor="middle" fill="#333" font-weight="bold">Before you believe a gene list</text>
+  <g font-size="20" fill="#333">
+    <g transform="translate(185,100)"><rect width="22" height="22" fill="#fff" stroke="#555" stroke-width="2"/><text x="38" y="19">Every sample in, matched by name</text></g>
+    <g transform="translate(185,145)"><rect width="22" height="22" fill="#fff" stroke="#555" stroke-width="2"/><text x="38" y="19">n per group stated; replicates are real replicates</text></g>
+    <g transform="translate(185,190)"><rect width="22" height="22" fill="#fff" stroke="#555" stroke-width="2"/><text x="38" y="19">QC: depth, PCA, correlation looked at</text></g>
+    <g transform="translate(185,235)"><rect width="22" height="22" fill="#fff" stroke="#555" stroke-width="2"/><text x="38" y="19">No sample dropped or relabelled silently</text></g>
+    <g transform="translate(185,280)"><rect width="22" height="22" fill="#fff" stroke="#555" stroke-width="2"/><text x="38" y="19">Design matches the experiment (batch, pairs)</text></g>
+    <g transform="translate(185,325)"><rect width="22" height="22" fill="#fff" stroke="#555" stroke-width="2"/><text x="38" y="19">Direction: which group is the reference?</text></g>
+    <g transform="translate(185,370)"><rect width="22" height="22" fill="#fff" stroke="#555" stroke-width="2"/><text x="38" y="19">padj, not p; known genes where expected</text></g>
+    <g transform="translate(185,415)"><rect width="22" height="22" fill="#fff" stroke="#555" stroke-width="2"/><text x="38" y="19">Enrichment against the tested genes</text></g>
+    <g transform="translate(185,460)"><rect width="22" height="22" fill="#fff" stroke="#555" stroke-width="2"/><text x="38" y="19">Rerun from scratch: same numbers</text></g>
+  </g>
+</svg>

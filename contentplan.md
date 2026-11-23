@@ -451,6 +451,23 @@ literature review.
 - **E. Teaching materials.** Question bank → Canvas (reuse 3MB00A's
   `canvas-quiz/`), exercise variants with answer keys, slides as Quarto/reveal.js.
 
+- **F. Lab instruments and hardware** (last module). Two decks:
+  - *Open control of lab instruments: why, and is it legal?* For everyone,
+    including heads of department and infrastructure managers: vendor lock-in,
+    data sovereignty (GDPR, the US CLOUD Act, dependence on foreign services),
+    open file formats, and the legal state of reverse engineering in the EU,
+    Sweden and the US (Trade Secrets Directive 2016/943, Software Directive
+    2009/24/EC Art. 5, 6, 8, DMCA §1201(f), copyright and firmware pitfalls,
+    clean-room work, patents, the EU Data Act). What institutions can require
+    at procurement.
+  - *Reverse engineering instruments with agents*: black-box recording
+    (USBPcap, reveng-recorder, Cynthion) and decompilation (Ghidra), decoding
+    logs with an agent, firmware, writing open drivers (Rust; nu-manager),
+    Claude vs Codex in this work, lab-safety rules.
+  - Exercise: decode a synthetic instrument protocol from a captured log, plus
+    legal scenarios. Source: the course author's talk "Toward open source
+    control of hardware using reverse engineering and AI" (2026-11-09).
+
 ## Example own projects (for those without an idea)
 - A course page for one of your own courses, with one interactive demo.
 - A literature map of 20 genes, proteins or materials from your field, with a

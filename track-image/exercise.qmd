@@ -1,0 +1,309 @@
+---
+title: "Exercise: count nuclei in a folder"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- a **Python project** with a virtual environment, set up by the agent, that you can rerun,
+- a script that **segments, counts and measures** nuclei in a folder of real microscopy images, with areas in **square micrometres**,
+- **overlays** of the script's outlines on every image, and you have looked at them,
+- a comparison with a **known answer**: hand-drawn masks for 10 images, decoded by a script you checked, and your own hand count of part of one image,
+- a plot of the results and a **rerun from scratch** with the same numbers, and
+- applied the same checks to **your own project**.
+
+You do not write Python. You read file lists, settings, tables and pictures. Your session will look different from anyone else's, and the agent may choose other methods or settings. Compare **results**: the numbers and checks below.
+
+## Before you start
+
+- You have done Part 2 (a project folder, git). Python is installed or the agent may install it (*Terminal survival kit*).
+- About 100 MB of free disk space and a network connection. The images are downloaded during the exercise.
+- Optional but useful: [Fiji](https://fiji.sc), a free image viewer and analysis program, to look at the original 16-bit images yourself.
+- Make a folder for the track in your course folder:
+
+```text
+~/agentic-course/track-image/
+```
+
+(Windows: `C:\Users\<you>\agentic-course\track-image\`.)
+
+### The dataset
+
+We use [BBBC039](https://bbbc.broadinstitute.org/BBBC039) from the Broad Bioimage Benchmark Collection: 200 fields of view of U2OS cell nuclei stained with Hoechst, from a chemical screen, with about 23 000 nuclei outlined by hand. It is released under **CC0** (no restrictions). The authors ask for this citation:
+
+> We used image set BBBC039v1 Caicedo et al. 2018, available from the Broad Bioimage Benchmark Collection [Ljosa et al., Nature Methods, 2012].
+
+Three of the images, as small 8-bit previews, and the [true counts for the 10 test images](data/sample/true-counts.csv) come with this course (folder `data/sample`, with a README on source and licence). You can look at the previews in your browser before you start: [A16_s2](data/sample/A16_s2_preview.png), [A12_s7](data/sample/A12_s7_preview.png), [C07_s5](data/sample/C07_s5_preview.png).
+
+## Worked example
+
+### Step 1: set up the folder and its rules
+
+Start the agent in `~/agentic-course/track-image` and type:
+
+```text
+Make this folder a git repository. Create the folders data/raw, scripts
+and results. Add a .gitignore that keeps data/raw/, results/ and .venv/
+out of git (the images are large and can be downloaded again).
+Write a README.md that says this folder counts nuclei in the public
+BBBC039 images. Commit.
+```
+
+Then write the rules the agent reads every session:
+
+::: {.panel-tabset}
+## Claude Code
+```text
+Create CLAUDE.md with these rules: data/raw is read-only: never change,
+convert, move or overwrite anything in it. Scripts go in scripts/.
+Everything a script makes goes in results/. Use the Python virtual
+environment in .venv; never install packages for the whole computer.
+Settings (threshold method, minimum size, pixel size) are defined once,
+at the top of the script.
+```
+## Codex
+```text
+Create AGENTS.md with these rules: data/raw is read-only: never change,
+convert, move or overwrite anything in it. Scripts go in scripts/.
+Everything a script makes goes in results/. Use the Python virtual
+environment in .venv; never install packages for the whole computer.
+Settings (threshold method, minimum size, pixel size) are defined once,
+at the top of the script.
+```
+:::
+
+**Check.** `git status` (ask the agent to run it) shows a clean repository. Open `.gitignore`: are `data/raw/`, `results/` and `.venv/` in it?
+
+### Step 2: download the images
+
+```text
+Download images.zip, masks.zip and metadata.zip of the BBBC039 dataset
+from https://bbbc.broadinstitute.org/BBBC039 (the download links are on
+that page) into data/raw/, and unzip them there into data/raw/images,
+data/raw/masks and data/raw/metadata. Ignore the __MACOSX folders in the
+zip files. Then add a section "Data source" to README.md with the page,
+the licence and the requested citation, as stated on the page.
+```
+
+| | Claude Code | Codex |
+|---|---|---|
+| Downloading | asks permission for the download commands | the default sandbox has no network access; Codex asks to run the download outside the sandbox. Approve downloads you expected. |
+
+**Check.**
+
+- `data/raw/images` holds **200** `.tif` files, `data/raw/masks` **200** `.png` files, `data/raw/metadata` a few `.txt` files including `test.txt` and `training.txt`.
+- There is no `__MACOSX` folder, or, if there is, nothing in it is counted as an image.
+- The README states the licence (CC0) and the citation in the words of the BBBC page. Open the page yourself and compare.
+
+### Step 3: the environment, and the images described back to you
+
+```text
+Set up a Python virtual environment in .venv with scikit-image, numpy,
+pandas and matplotlib, and record the packages and versions in
+requirements.txt. Do not analyse anything yet.
+
+Then tell me: how many images and masks there are, and whether every
+image has a mask with the same name; the size, bit depth and value range
+of the first image; and how the masks encode the nuclei. Make
+contrast-stretched preview PNGs of the first 3 images listed in
+data/raw/metadata/test.txt in results/previews/.
+Do not change anything in data/raw.
+```
+
+**Check.**
+
+- 200 images, 200 masks, names match.
+- Images are **520 x 696 pixels, 16-bit**, values up to at most 4095 (a 12-bit camera).
+- `requirements.txt` exists and lists the four packages with versions. The `.venv` folder exists and is **not** in git.
+- Open the previews. You see nuclei, not a black square. Open one original `.tif` in your file browser or in Fiji: does it look black at first? That is the display, not the file (lecture).
+
+### Step 4: the pixel size
+
+```text
+What is the pixel size of these images in micrometres? Tell me where
+you found it. If it is not stated for BBBC039, check the page of the
+dataset it was taken from. Do not use a typical value: if you cannot
+find it, say so.
+```
+
+**Check.** The BBBC039 page itself does not give the pixel size. BBBC039 is a sample of [BBBC022](https://bbbc.broadinstitute.org/BBBC022), whose page says: 20x magnification, **0.656 µm per pixel**. One pixel is then 0.656 x 0.656 = **0.430 µm²**. If the agent gives a number without a source, ask again. Add the value and its source to the README.
+
+### Step 5: decode the true counts, and check the decoding
+
+The ground truth is in the masks, but they need decoding (lecture: one colour is not one nucleus).
+
+```text
+Write scripts/decode_masks.py. For the first 10 images in
+data/raw/metadata/test.txt, turn each mask into a labelled image with
+one number per nucleus: the masks reuse colours, so label the connected
+pieces of each colour separately. Save results/truth_counts.csv with the
+image name and the number of nuclei. Also save, for 2 of the images, an
+overlay with the decoded outlines drawn on the contrast-stretched image,
+in results/truth_overlays/.
+```
+
+**Check.**
+
+- Open the two overlays. Does every nucleus have exactly one outline? Are touching nuclei outlined separately?
+- Compare `truth_counts.csv` with this table. The numbers must match **exactly**:
+
+| Image (short) | True count | | Image (short) | True count |
+|---|---|---|---|---|
+| A09_s1 | 156 | | B04_s2 | 122 |
+| A12_s7 | 69 | | B05_s5 | 115 |
+| A16_s2 | 93 | | C07_s5 | 156 |
+| A22_s8 | 95 | | C14_s8 | 137 |
+| B02_s9 | 66 | | C23_s2 | 119 |
+
+The short name is the well and site in the file name, for example `IXMtest_C07_s5_w1...tif`. The full table, with median areas, is in [data/sample/true-counts.csv](data/sample/true-counts.csv).
+
+- If your counts are 2 or 3 per image, the script counted **colours**. If they are a bit low (for example 122 instead of 156 for C07_s5), it labelled the mask as black and white and **merged touching nuclei**, exactly the error we want to detect in the segmentation. Say what is wrong and ask for a fix.
+
+### Step 6: a first, simple segmentation of one image
+
+```text
+Write scripts/count_nuclei.py. For now, process only the image C07_s5
+(from the test list). Steps: smooth lightly, one global Otsu threshold,
+label the connected objects, and count them. Save an overlay with the
+outlines in cyan on the contrast-stretched image to results/overlays/.
+Tell me the count. Do not split touching nuclei or filter by size yet.
+```
+
+**Check.** Open the overlay and compare with the true count, 156.
+
+- You will probably get about **117**. Look at the overlay: where are the missing nuclei? You should see outlines that contain two or more nuclei.
+- Find at least one tiny outlined speck, and one nucleus with no outline.
+- Write in your log: "simple threshold on C07_s5: X found, 156 true, main error: ...".
+
+### Step 7: improve the settings on training images, not on the test images
+
+The 10 test images are your final check, so you do not tune on them. BBBC039 provides a separate training list.
+
+```text
+Improve count_nuclei.py: split touching nuclei (for example a distance
+transform and watershed), drop objects smaller than a minimum size, and
+remove uneven background before thresholding if it helps. Put all
+settings at the top of the script. Tune the settings ONLY on the first
+3 images in data/raw/metadata/training.txt: make overlays for them and
+show me. Do not look at the test images or their true counts while
+tuning.
+```
+
+**Check.** Open the three training overlays.
+
+- Are touching nuclei now mostly separated? Is any single nucleus cut in two (over-splitting)?
+- Is the minimum size reasonable, in µm²? Ask: "What is the minimum size in square micrometres, and why that value?"
+- Ask the agent to explain each setting at the top of the script in one sentence each. You should be able to say what would happen if you doubled it.
+
+### Step 8: process all 10 test images and compare with the truth
+
+```text
+Now run count_nuclei.py with the tuned settings, unchanged, on the 10
+test images. Save results/per_object.csv (one row per nucleus: image,
+object number, area in pixels, area in um2 using 0.656 um per pixel,
+mean intensity, position, whether it touches the image border) and
+results/per_image.csv (one row per image: count, median area in um2).
+Save one overlay per image. Then compare per_image.csv with
+results/truth_counts.csv in a table and a scatter plot (script count
+against true count), saved to results/.
+```
+
+**Check.**
+
+- `per_image.csv` has exactly **10 rows**, and the counts per image in `per_object.csv` add up to the counts in `per_image.csv`.
+- The area column has its unit in the name, and a typical nucleus is a few hundred µm² (the hand-drawn masks give a median of about **280 µm²** over the 10 images). If you see values around 600 to 700, the areas are still in pixels.
+- In the scatter plot, most images should be close to the diagonal: within about 10% of the true count. Our careful pipeline (lecture) found 1049 of 1128 nuclei; a plain threshold found 931.
+- **A12_s7** will be far below the diagonal (true 69, scripts about 20). Open its overlay and the preview: the compound fragmented the nuclei, and the hand-drawn masks count each fragment. That is a difference of definition, not only of method. Write down which definition you would use for your question.
+- Open **three overlays at random** and look at them for a minute each. Merges? Misses? Specks?
+
+### Step 9: count by hand
+
+Your own count is the check you will use on your own images, where no masks exist.
+
+1. Open the preview of **B02_s9** (the least crowded test image), from `results/previews/` or by asking the agent to make one. Ask the agent to draw a grid that divides it into four quarters.
+2. Count the nuclei in the **top-left quarter** by hand. In Fiji you can use the Multi-point tool and read the count; on paper or a screenshot, tick each nucleus. Decide in advance what you do with nuclei cut by the quarter's edge (for example, count those touching the top and left edges, not the others).
+3. Ask the agent for the script's count and the true count in the same quarter, using the same edge rule.
+
+**Check.** Your count, the true count and the script's count should be within one or two of each other. If yours differs from the true count, look again: who is right?
+
+### Step 10: plot the results
+
+```text
+Make results/area_histogram.png: the distribution of nucleus areas in
+um2 over the 10 test images, from the hand-drawn masks and from the
+script, in one plot. Label the axes with units. Then tell me how many
+objects are larger than twice the median true area, for each.
+```
+
+**Check.** The two distributions overlap for most nuclei. A tail of large objects in the script's distribution means merged nuclei remain. Small objects in the truth come mostly from A12_s7's fragments.
+
+### Step 11: rerun from scratch
+
+Close the session, start a new one:
+
+```text
+Delete the results folder. Then run the scripts in order, as the README
+describes, without changing them. Report the counts per image and the
+total. If a script fails, tell me why; do not fix it.
+```
+
+**Check.** The same counts as before. If not, find out which step lived only in the chat, fix the script, rerun, and commit: "nuclei counting, reproducible from scratch". Also ask the agent to check that `requirements.txt` matches what is installed in `.venv`.
+
+### Check the result
+
+- [ ] 200 images and masks, junk folders ignored; raw data untouched and not in git.
+- [ ] Pixel size 0.656 µm with its source; areas in µm².
+- [ ] True counts decoded and matching the table exactly; decoding checked on two overlays.
+- [ ] Settings tuned on training images only; the test images processed with the same settings.
+- [ ] Overlays looked at, at random; merges, misses and specks noted.
+- [ ] `per_image.csv` has 10 rows; totals agree with `per_object.csv`.
+- [ ] Script within about 10% of the truth on all images except A12_s7, and you can explain A12_s7.
+- [ ] Your hand count agrees with the truth in one quarter of B02_s9.
+- [ ] Rerun from scratch gives the same numbers.
+
+::: {.callout-note collapse="true" title="Expected outcomes"}
+- Images: 200 TIFF files, 520 x 696, 16-bit, values up to 4095; 200 PNG masks. The zip files contain `__MACOSX` folders with junk files.
+- Pixel size: 0.656 µm (BBBC022 page), 0.430 µm² per pixel.
+- Masks: each uses only 2 or 3 colours; decoding by connected pieces per colour gives the counts in the table above (1128 nuclei in the 10 images). Labelling the mask as black and white gives fewer (for example 122 for C07_s5, 19 for A12_s7).
+- Simple script (smoothing, one Otsu threshold, no splitting): about 931 objects in the 10 images, from 18 (A12_s7) to 136 (A09_s1). C07_s5: about 117. A16_s2 and B02_s9 look almost exact, but A16_s2 includes 11 specks smaller than 30 pixels.
+- Careful script (background removal, minimum size 30 pixels, watershed split): about 1049, within about 10% on all images except A12_s7 (about 22). Your agent's careful script will differ in details; expect a similar picture.
+- Median true area over the 10 images: about 280 µm² (A12_s7 alone: about 56 µm², the fragments).
+:::
+
+### Optional: images with an exact answer
+
+[make-synthetic.py](data/make-synthetic.py) generates 12 synthetic nucleus images with an exactly known count, including touching nuclei, debris, objects cut by the border and one field with a dark corner (uneven illumination, which BBBC039 does not have). Download it into `~/agentic-course/track-image/scripts/`, read its first lines (they say what it makes), and ask the agent to run it with the virtual environment, writing into a new folder `synthetic/images`. It also writes the answer key, `synthetic/images-answer-key.csv`: do not show it to the agent until the end. Then run `count_nuclei.py` on the images with the pixel size from the generator's notes, settings otherwise unchanged. Does the dark corner break it?
+
+## On your own project
+
+Apply the habits of this track to your own project. Choose the option that fits.
+
+::: {.callout-warning}
+**Privacy reminder.** Images of patients, tissue from people, or anything with faces are personal data, often health data. File names and image metadata can contain patient IDs, user names and dates. Do not put such images in the agent's folder unless your data class and approvals allow it (see your README). Develop on a public look-alike instead and run the script yourself.
+:::
+
+**A. You have images to count or measure** (cells, colonies, particles, pores, seeds, droplets). Copy 10 images into `data/raw` of your project folder and repeat steps 3, 4, 6 to 8. Before you start, write in your README: what one object is (your definition), the pixel size and where it comes from, and what you will do with objects at the border and with debris. **Count three images by hand** before you look at the script's numbers; those are your known answer. Tune on other images than those three.
+
+**B. Your project uses images, but you cannot share them.** Find a public look-alike: the [Broad Bioimage Benchmark Collection](https://bbbc.broadinstitute.org) has many annotated sets, and the [Image Data Resource](https://idr.openmicroscopy.org) many more. Check the licence of the set you pick, write it in your README, and develop the script there.
+
+**C. Your project has no images.** Use the core of the track on your own data: raw files read-only, units checked at the start ("where does this number's unit come from?"), a visual check of what the script did (the equivalent of an overlay: plot the raw data with what the script found marked on it), a known answer from a few cases done by hand, and tuning separated from checking.
+
+Whichever you choose:
+
+- Add your decisions (object definition, pixel size, border and debris rules) to the README.
+- Add one line to your **Log of AI use**: the date, the tool, "image track (or option C)", and one sentence on what you checked.
+- Commit. If your project page exists (*A course or project page*), add one overlay image and the comparison plot, with the dataset's citation. Public or your own non-personal images only.
+
+## What you should have now
+
+- `track-image/`: a git repository with a virtual environment (`.venv`, not committed), `requirements.txt`, the scripts `decode_masks.py` and `count_nuclei.py`, and a README with the data source, licence, citation, pixel size and your decisions.
+- Results that can be deleted and remade: per-object and per-image tables in µm², an overlay for every image, the comparison with the truth, and an area histogram.
+- The experience of a count that looked right for the wrong reasons, and of a disagreement (A12_s7) that was about a definition.
+- A step of your own project done with the same checks, recorded in its README and AI-use log.

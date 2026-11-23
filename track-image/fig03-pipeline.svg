@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 360" width="1000" height="360" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="360" fill="#fff"/>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#777"/></marker></defs>
+  <g font-size="18" text-anchor="middle">
+    <rect x="10" y="40" width="140" height="80" rx="10" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/><text x="80" y="75" fill="#2a7f8f" font-weight="bold">load</text><text x="80" y="100" fill="#555" font-size="16">TIFF, pixel size</text>
+    <rect x="175" y="40" width="140" height="80" rx="10" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/><text x="245" y="75" fill="#2a7f8f" font-weight="bold">clean up</text><text x="245" y="100" fill="#555" font-size="16">even out, smooth</text>
+    <rect x="340" y="40" width="140" height="80" rx="10" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/><text x="410" y="75" fill="#6b4fa0" font-weight="bold">threshold</text><text x="410" y="100" fill="#555" font-size="16">Otsu: yes or no</text>
+    <rect x="505" y="40" width="140" height="80" rx="10" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/><text x="575" y="75" fill="#6b4fa0" font-weight="bold">objects</text><text x="575" y="100" fill="#555" font-size="16">split, label</text>
+    <rect x="670" y="40" width="140" height="80" rx="10" fill="#f8eef0" stroke="#a8324a" stroke-width="2"/><text x="740" y="75" fill="#a8324a" font-weight="bold">measure</text><text x="740" y="100" fill="#555" font-size="16">area, intensity</text>
+    <rect x="835" y="40" width="155" height="80" rx="10" fill="#f8eef0" stroke="#a8324a" stroke-width="2"/><text x="912" y="75" fill="#a8324a" font-weight="bold">CSV + plot</text><text x="912" y="100" fill="#555" font-size="16">tables, a plot</text>
+  </g>
+  <g stroke="#777" stroke-width="2.5" marker-end="url(#a)">
+    <line x1="150" y1="80" x2="172" y2="80"/><line x1="315" y1="80" x2="337" y2="80"/><line x1="480" y1="80" x2="502" y2="80"/>
+    <line x1="645" y1="80" x2="667" y2="80"/><line x1="810" y1="80" x2="832" y2="80"/>
+  </g>
+  <path d="M575,122 L575,200 L420,200" fill="none" stroke="#8a6a12" stroke-width="2.5" marker-end="url(#a)"/>
+  <rect x="150" y="170" width="265" height="70" rx="10" fill="#f6f1e1" stroke="#8a6a12" stroke-width="2"/>
+  <text x="282" y="200" font-size="18" text-anchor="middle" fill="#8a6a12" font-weight="bold">outlines drawn</text>
+  <text x="282" y="224" font-size="18" text-anchor="middle" fill="#8a6a12" font-weight="bold">on the image</text>
+  <text x="440" y="235" font-size="18" fill="#333">→ you look at them, and count a few images by hand</text>
+  <rect x="10" y="280" width="980" height="50" rx="8" fill="#f4f4f4"/>
+  <text x="500" y="311" font-size="18" text-anchor="middle" fill="#333">one script, the same settings for every image in the folder</text>
+</svg>

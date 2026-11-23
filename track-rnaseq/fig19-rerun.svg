@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" width="1000" height="380" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="380" fill="#fff"/>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#777"/></marker></defs>
+  <rect x="20" y="40" width="260" height="200" rx="12" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="150" y="78" font-size="20" text-anchor="middle" fill="#6b4fa0" font-weight="bold">Session 1</text>
+  <g font-size="17" fill="#333" text-anchor="middle"><text x="150" y="115">many prompts,</text><text x="150" y="140">corrections, detours</text><text x="150" y="190" font-weight="bold">4077 genes</text><text x="150" y="214">at padj &lt; 0.05</text></g>
+  <rect x="370" y="40" width="260" height="200" rx="12" fill="#f4f4f4" stroke="#777" stroke-width="2"/>
+  <text x="500" y="78" font-size="20" text-anchor="middle" fill="#333" font-weight="bold">Scripts on disk</text>
+  <g font-family="Menlo, Consolas, monospace" font-size="16" fill="#333"><text x="400" y="118">01-qc.R</text><text x="400" y="146">02-deseq2.R</text><text x="400" y="174">03-enrichment.R</text><text x="400" y="202">README: how to run</text></g>
+  <rect x="720" y="40" width="260" height="200" rx="12" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="850" y="78" font-size="20" text-anchor="middle" fill="#2a7f8f" font-weight="bold">Fresh run</text>
+  <g font-size="17" fill="#333" text-anchor="middle"><text x="850" y="115">new session, results/</text><text x="850" y="140">deleted, scripts only</text><text x="850" y="190" font-weight="bold">4077 genes?</text><text x="850" y="214">same plots?</text></g>
+  <line x1="282" y1="140" x2="367" y2="140" stroke="#777" stroke-width="3" marker-end="url(#a)"/>
+  <line x1="632" y1="140" x2="717" y2="140" stroke="#777" stroke-width="3" marker-end="url(#a)"/>
+  <g font-size="18" fill="#333">
+    <text x="20" y="295"><tspan fill="#2a7f8f" font-weight="bold">Same numbers:</tspan> the result lives in the scripts, not in the chat.</text>
+    <text x="20" y="330"><tspan fill="#a8324a" font-weight="bold">Different numbers:</tspan> a step was done by hand or in the chat only. Find it.</text>
+  </g>
+</svg>

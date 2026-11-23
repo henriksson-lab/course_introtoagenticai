@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 430" width="1000" height="430" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="430" fill="#fff"/>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a6a12"/></marker></defs>
+  <g font-size="17">
+    <rect x="20" y="30" width="600" height="40" fill="#e9eef0"/>
+    <g fill="#333" font-weight="bold"><text x="35" y="57">gene_id</text><text x="175" y="57">S01</text><text x="255" y="57">S02</text><text x="335" y="57">S03</text><text x="415" y="57">S04</text><text x="495" y="57">...</text><text x="555" y="57">S12</text></g>
+    <g fill="#333">
+      <text x="35" y="102">g00001</text><text x="175" y="102">164</text><text x="255" y="102">271</text><text x="335" y="102">32</text><text x="415" y="102">219</text><text x="495" y="102">...</text><text x="555" y="102">256</text>
+      <text x="35" y="140">g00002</text><text x="175" y="140">102</text><text x="255" y="140">188</text><text x="335" y="140">23</text><text x="415" y="140">120</text><text x="495" y="140">...</text><text x="555" y="140">87</text>
+      <text x="35" y="178">g00003</text><text x="175" y="178">8</text><text x="255" y="178">6</text><text x="335" y="178">4</text><text x="415" y="178">11</text><text x="495" y="178">...</text><text x="555" y="178">11</text>
+      <text x="35" y="216">...</text><text x="175" y="216">...</text><text x="255" y="216">...</text><text x="335" y="216">...</text><text x="415" y="216">...</text><text x="555" y="216">...</text>
+    </g>
+    <rect x="20" y="236" width="600" height="40" fill="#f6f1e1"/>
+    <g fill="#8a6a12" font-weight="bold"><text x="35" y="263">total</text><text x="175" y="263">5.5 M</text><text x="255" y="263">5.1 M</text><text x="335" y="263">1.1 M</text><text x="415" y="263">6.2 M</text><text x="555" y="263">5.3 M</text></g>
+    <g stroke="#ddd"><line x1="20" y1="80" x2="620" y2="80"/><line x1="20" y1="118" x2="620" y2="118"/><line x1="20" y1="156" x2="620" y2="156"/><line x1="20" y1="194" x2="620" y2="194"/></g>
+  </g>
+  <rect x="245" y="83" width="60" height="28" fill="none" stroke="#a8324a" stroke-width="2.5"/>
+  <g font-size="18" fill="#333">
+    <text x="660" y="85">one cell = how many reads</text>
+    <text x="660" y="108">came from this gene in this</text>
+    <text x="660" y="131">sample: a whole number</text>
+    <text x="660" y="250">the column total is the</text>
+    <text x="660" y="273">sequencing depth: it differs</text>
+    <text x="660" y="296">between samples for</text>
+    <text x="660" y="319">technical reasons</text>
+  </g>
+  <line x1="655" y1="100" x2="620" y2="97" stroke="#a8324a" stroke-width="2"/>
+  <line x1="655" y1="262" x2="628" y2="257" stroke="#8a6a12" stroke-width="2" marker-end="url(#a)"/>
+  <text x="20" y="330" font-size="18" fill="#333">S03 has 1.1 million reads, the others about 5 to 6 million.</text>
+  <text x="20" y="356" font-size="18" fill="#333">Raw counts are not comparable between samples until this is corrected.</text>
+  <text x="20" y="400" font-size="16" fill="#777">first rows of counts.csv from the synthetic example (10 000 genes x 12 samples)</text>
+</svg>
