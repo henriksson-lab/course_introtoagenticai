@@ -4,8 +4,9 @@ A working draft. Units will shift, merge and split. See [audience.md](audience.m
 for who we teach and [designprinciples.md](designprinciples.md) for how we build
 material. Open questions are marked **[?]**.
 
-The course language is **English**. Scheduling, credits, cost and help sessions
-are out of scope for this plan.
+The course language is **English**. Scheduling, total time, credits, cost and
+help sessions are out of scope for this plan. We aim for content of good quality
+first and fit it to a time frame later.
 
 ## The course in one sentence
 
@@ -42,9 +43,9 @@ on **one** page of the site that we update before each run.
 | **Codex** | A ChatGPT account. The Codex CLI works with all ChatGPT plans, including Free and Go, but with low usage limits; Plus or higher is realistic for the course. | [chatgpt.com/pricing](https://chatgpt.com/pricing) · [Codex help article](https://help.openai.com/en/articles/11369540-codex) · [Codex pricing](https://developers.openai.com/codex/pricing) |
 | **Institutional plans** | Claude for Education, Claude Team/Enterprise and ChatGPT Edu/Enterprise may include the agents. Whether they do depends on the institution's workspace settings, so participants should ask their IT department. | Local IT |
 | **GitHub** | A free personal account. Educators can apply for GitHub Education benefits. | [github.com/signup](https://github.com/signup) · [GitHub Education](https://github.com/education) |
-| **Free software** | Git, R (+ RStudio, optional), Python, Quarto. Installed with the agent's help in unit 3 where possible. | [git-scm.com](https://git-scm.com) · [cran.r-project.org](https://cran.r-project.org) · [quarto.org](https://quarto.org) |
+| **Free software** | Git, R (+ RStudio, optional), Python, Quarto. Installed with the agent's help in *Terminal survival kit* where possible. | [git-scm.com](https://git-scm.com) · [cran.r-project.org](https://cran.r-project.org) · [quarto.org](https://quarto.org) |
 
-**[?]** Do we require both Claude Code and Codex? The parallel-workers unit (16)
+**[?]** Do we require both Claude Code and Codex? The *Parallel workers* unit
 needs both. All other units can be done with either.
 
 ## Evaluation of the initial idea list
@@ -62,56 +63,104 @@ needs both. All other units can be done with either.
 | Basic RNA-seq analysis by LLM alone | **Keep as a track** | Counts → QC → DESeq2 → volcano plot → enrichment → link back to the literature review. |
 | Basic FEM simulation | **Keep as a track, broaden** | A "simulation" track: FEM (heat diffusion or beam bending with scikit-fem), ODE models (SIR epidemic, pharmacokinetics), or agent-based models. Verify against a known analytic solution. |
 | Git and GitHub | **Keep, after they have something worth saving** | Present git first as an **undo button and lab notebook**, and only then as a way to share. The agent does the typing. |
-| Grant results: collect and analyse | **Add (new)** | See unit 13. |
-| Likely reviewers for an upcoming grant | **Add (new)** | See unit 14. |
+| Grant results: collect and analyse | **Add (new)** | See *Collecting and analysing grant results*. |
+| Likely reviewers for an upcoming grant | **Add (new)** | See *Likely reviewers*. |
+| Shiny apps | **Add (new)** | See *Shiny apps*. |
+| Extracting data from PDFs | **Add (new)** | See *Extracting data from PDFs*. |
+| Basic Python image analysis | **Add (new)** | Track C. |
 
-## Proposed structure
+## Course order
 
 Each unit = a slide deck that stands on its own (recorded or not) + an exercise
-with a worked example and an "on your own project" part. Blocks are groupings by
-theme, not weeks.
+with a worked example and an "on your own project" part. Units are referred to
+by **name**, not number, so they can be reordered without breaking links.
 
-### Block 0: Before you start
-0. **Accounts and installation.** The table above; install Claude Code and/or
+### Ordering rules
+These rules decide the order. Check any reordering against them.
+
+1. **Motivation before installation.** People put up with a painful install only
+   once they have seen why it is worth it.
+2. **A first success before theory.** Participants do something useful with the
+   agent before we explain how LLMs work. The explanation then refers to things
+   they have just seen go right or wrong.
+3. **Privacy before own data.** The own project is chosen only after the privacy
+   unit, so nobody's first own-data session sends patient or student data to
+   the cloud.
+4. **Safety net before heavy editing.** Git comes right after the project folder
+   exists, before the agent starts changing participants' own files at scale.
+5. **Each unit leans on the one before.** Git → GitHub → page → demo/Shiny (all
+   hosted on the page). Literature review → PDF extraction (from the papers just
+   found) → grant data → reviewer profiles (built from the same literature
+   databases).
+6. **Sharing comes early.** Once the project page exists, every later result
+   (the literature table, the grant analysis, the extracted data) is published
+   on it. Participants practise the git → GitHub loop again in every unit
+   instead of once.
+7. **Scaling up comes last.** Parallel agents, custom skills and reading other
+   people's code all pay off only once participants have repeated a workflow
+   often enough to want to automate it.
+
+### Part 1: Getting started (example data only)
+1. **Why agentic AI?** Live build: an empty folder becomes a plot, a web page and
+   a literature table. Chat vs agent; what it changes for teaching and research.
+2. **Accounts and installation.** The table above; install Claude Code and/or
    Codex; first "hello" in the terminal.
-
-### Block 1: Foundations
-1. **Why agentic AI?** Live build; chat vs agent; what it changes for teaching
-   and research. *Choose your own project* (or pick from the list).
-2. **How LLMs and agents work, and how they fail.** Tokens, context, tools, the
-   agent loop; hallucination, sycophancy, silent shortcuts; why we verify.
 3. **Terminal survival kit.** Files, folders, paths; starting Claude Code and
    Codex; reading and approving what the agent wants to do; permission modes;
    letting the agent install R/Python/git for you.
 4. **First delegations.** Organise a messy folder; clean an Excel file; summarise
-   a folder of PDFs into a table. Verify by spot checks.
-5. **Privacy, ethics and safety.** What data may be sent to a cloud LLM; GDPR and
+   a few PDFs into a table. Example data only. Verify by spot checks.
+5. **How LLMs and agents work, and how they fail.** Tokens, context, tools, the
+   agent loop; hallucination, sycophancy, silent shortcuts; why we verify. Uses
+   examples from what went wrong in *First delegations*.
+6. **Privacy, ethics and safety.** What data may be sent to a cloud LLM; GDPR and
    university policy; AI disclosure in papers and theses; never pointing the
-   agent at your whole home folder; working in a copy.
+   agent at your whole home folder; working in a copy. **Ends with: choose your
+   own project** (or pick one from the list).
 
-### Block 2: Working like a professional
-6. **Delegating well.** Goal, context, constraints, acceptance criteria; plan
+### Part 2: A project that lasts
+7. **Delegating well.** Goal, context, constraints, acceptance criteria; plan
    mode; "interview me first"; iterating; when to start over.
-7. **Organising a project for an agent.** `CLAUDE.md`/`AGENTS.md`, README, folder
+8. **Organising a project for an agent.** `CLAUDE.md`/`AGENTS.md`, README, folder
    layout, plan and notes files, memory; making it shareable. *The own-project
    folder gets this structure now.*
-8. **Reproducible figures.** From CSV to a publication-quality plot with an R
-   script (Python variant); rerun on new data; pin package versions.
-9. **Literature review on a gene (or topic) set.** Search, structured table,
-   verified references, BibTeX/Zotero export.
-10. **Git as undo button and lab notebook.** Snapshots, history, "what changed",
-    going back. The agent does the typing.
+9. **Git as undo button and lab notebook.** Snapshots, history, "what changed",
+   going back. The agent does the typing.
+10. **Reproducible figures.** From CSV to a publication-quality plot with an R
+    script (Python variant); rerun on new data; pin package versions. Commit
+    the result.
 
-### Block 3: Sharing
+### Part 3: Sharing
 11. **GitHub.** Repositories, push, collaborators, issues; public vs private.
     *Peer exercise:* swap repositories with another participant; use your own
-    agent to understand and critique theirs. This tests unit 7 directly.
-12. **A course or project page.** Quarto website on GitHub Pages.
+    agent to understand and critique theirs. This tests *Organising a project*
+    directly.
+12. **A course or project page.** Quarto website on GitHub Pages. The figures
+    from *Reproducible figures* are its first content.
 13. **Interactive demos.** One self-contained HTML page that explains a concept
     from your own field; embed it in your page.
+14. **Shiny apps.** An interactive app for exploring your own data (filters,
+    plots, tables), in R Shiny or Shiny for Python. Run it locally first, then
+    publish it: [Shinylive](https://shiny.posit.co/py/docs/shinylive.html) runs
+    the app in the browser and can be hosted on the same GitHub Pages site. Use
+    [shinyapps.io](https://www.shinyapps.io) or a university server when the
+    app needs a real R/Python server. Discuss what data becomes public when you
+    publish an app.
 
-### Block 4: Data from the web, with grants as the example
-14. **Collecting and analysing grant results.** APIs vs scraping; checking terms
+### Part 4: Literature, documents and the web
+15. **Literature review on a gene (or topic) set.** Search, structured table,
+    verified references, BibTeX/Zotero export. Publish the table on your page.
+16. **Extracting data from PDFs.** Tables, numbers and text from a folder of
+    papers, reports or old lab protocols into one tidy spreadsheet.
+    - Worked example: extract one reported quantity (sample sizes, effect sizes,
+      or measured values) from the open-access papers found in the literature
+      review, into one table with a "source page" column.
+    - Teach the difference between PDFs with real text and scanned images
+      (OCR), and tables that come apart when extracted.
+    - Verification: the agent records page and table numbers; the participant
+      checks a random sample by hand; a second agent extracts independently and
+      the two are compared.
+17. **Collecting and analysing grant results.** APIs vs scraping; checking terms
     of use and `robots.txt`; storing raw downloads separately from analysis.
     - Sources: [Swecris](https://www.vr.se/english/swecris.html) (Swedish funders,
       2008 onwards, with an [API](https://www.vr.se/english/swecris/swecris-api.html)),
@@ -122,7 +171,7 @@ theme, not weeks.
       topic trends from abstracts (keywords → clusters); "who funds work like
       mine?"; where your own topic sits on the map.
     - Verification: totals checked against the funder's published statistics.
-15. **Likely reviewers for an upcoming grant, and mock reviews.**
+18. **Likely reviewers for an upcoming grant, and mock reviews.**
     - Collect the published panel and reviewer lists for a call (for example
       the Swedish Research Council's review panels, or ERC panel members from
       earlier rounds).
@@ -136,20 +185,29 @@ theme, not weeks.
       keep it for your own preparation; never contact or lobby reviewers;
       panels change between rounds.
 
-### Block 5: Scaling up
-16. **Parallel workers: Claude and Codex.** Two agents at once; the same task to
+### Part 5: Scaling up
+19. **Parallel workers: Claude and Codex.** Two agents at once; the same task to
     both and a comparison; cross-review; subagents; strengths of each tool.
-17. **Making the agent yours.** Slash commands, skills, MCP connectors (PubMed,
+20. **Making the agent yours.** Slash commands, skills, MCP connectors (PubMed,
     Zotero); a reusable "house style" for figures or reports.
-18. **Reading other people's code.** Explain, document, port (MATLAB → R/Python)
+21. **Reading other people's code.** Explain, document, port (MATLAB → R/Python)
     and test that the results match.
 
 ### Tracks (pick one or more; all teach the same agent skills on different data)
+A track can start once *Reproducible figures* is done. The recommended point is
+after Part 4, so the track's results go on the page and RNA-seq can build on the
+literature review.
+
 - **A. Bulk RNA-seq.** Counts → QC → DESeq2 → volcano → enrichment → link back to
-  unit 9's literature table.
+  the literature table from *Literature review*.
 - **B. Simulation.** FEM heat or elasticity (scikit-fem), ODE models, or
   agent-based models; validate against an analytic solution.
-- **C. Image analysis.** Microscopy: segment, count, measure; batch processing.
+- **C. Image analysis in Python.** Basic Python scripts (scikit-image, with
+  numpy/pandas) to segment, count and measure objects, for example nuclei in
+  microscopy images, colonies on plates, or particles in materials images.
+  Batch-process a folder; save measurements to CSV; plot them. Verification:
+  overlay the detected outlines on the images and count a few by hand. This is
+  also the course's gentle introduction to Python.
 - **D. Survey and tabular data.** Questionnaire or course-evaluation data;
   descriptive statistics, plots, a report.
 - **E. Teaching materials.** Question bank → Canvas (reuse 3MB00A's
@@ -159,17 +217,17 @@ theme, not weeks.
 - A course page for one of your own courses, with one interactive demo.
 - A literature map of 20 genes, proteins or materials from your field, with a
   verified reference table.
-- The funding landscape of your research area in Sweden or the EU (unit 14
-  extended).
+- The funding landscape of your research area in Sweden or the EU (extends a unit above).
 - Preparing your next grant application: reviewer profiles and mock reviews
-  (unit 15 extended).
+  (extends a unit above).
 - Making an old analysis reproducible: one script, pinned versions, a README.
 - A cleaned and documented dataset ready for deposit (Zenodo, FAIR).
-- A small Shiny or Streamlit dashboard for your lab's data.
+- A Shiny app for your lab's data, published next to your course page
+  (extends a unit above).
+- A spreadsheet of values extracted from the papers in your field (extends a unit above).
 - An automated weekly report, for example from instrument logs.
 
 ## More candidate material
-- Extract tables and numbers from a folder of PDFs into one spreadsheet.
 - Bulk file chores: rename images from a metadata sheet; convert formats.
 - A data management plan for a new project.
 - Checking a manuscript's statistics against its own tables.
@@ -177,7 +235,7 @@ theme, not weeks.
 - Scheduled and recurring agent tasks.
 
 ## Open questions
-- **[?]** Require both Claude Code and Codex, or one plus the other for unit 16
+- **[?]** Require both Claude Code and Codex, or one plus the other for *Parallel workers*
   only?
 - **[?]** Which grant funders to use as the main example: Swecris (Swedish
   audience), or NIH RePORTER (best API, international)?

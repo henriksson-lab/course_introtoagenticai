@@ -11,7 +11,7 @@ technology, though the material should work for any faculty.
 - Many have used a chat LLM (ChatGPT, Claude.ai, Copilot) for text.
 
 ## What we do NOT assume
-- The command line. Never assumed, introduced in unit 3.
+- The command line. Never assumed, introduced in *Terminal survival kit*.
 - Programming in any language. Biologists may have run an R script someone else
   wrote; we do not depend on it.
 - git, GitHub, Markdown, HTML.
@@ -25,5 +25,5 @@ technology, though the material should work for any faculty.
 - Participants are working staff with little time. Units must produce something
   useful for their own job, preferably with their own data (when the privacy
   rules allow it).
-- Expect a big spread in confidence. Installation instructions (unit 0) must be
+- Expect a big spread in confidence. Installation instructions (*Accounts and installation*) must be
   step by step, with screenshots for Windows and Mac.
