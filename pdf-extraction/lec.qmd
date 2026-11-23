@@ -321,6 +321,18 @@ The same workflow applies to your own documents: a folder of old lab protocols w
 Here is what goes wrong, in one list. Scanned pages that a text tool skips without complaint, so a value becomes "not reported". Columns that shift, so the standard deviation becomes the mean. Units copied without conversion. Decimal commas misread. The right paper but the wrong number. Values the agent computed rather than found. Supplements nobody opened. A subtle one: both agents wrong in the same way, which happens when your definition was ambiguous, so they both made the same reasonable guess. That is why the hand checks stay even when the agents agree. And last, the legal side: PDFs shared or downloaded in ways their licence or the website's terms do not allow.
 :::
 
+## Errors here propagate: proofread the key facts once more
+
+- The agent can **hallucinate**: a plausible number that is not in the PDF at all, or a correct number from the wrong paper.
+- Extraction is the **first step**. Every later table, figure, test and sentence in your paper inherits its errors.
+- So before you build on the table, ask for a **proofreading pass** of the key facts: in a **fresh session**, re-find every value on its page and quote the sentence or table cell it came from.
+- Use **more than one agent**. In the course author's experience, Codex tends to be more conservative and flags more doubtful values; disagreements show you where to look.
+- Agreement between agents is not proof: **keep your own hand checks**.
+
+::: notes
+One more point, because it matters more than any single item on the last slide. The agent can hallucinate here like anywhere else: a value that looks right, has the right unit and the right size, but does not appear in the PDF at all, or is copied from a different paper in the folder. And extraction is usually the first step of something bigger. The table goes into a meta-analysis, a figure, a grant text or a paper, and every error travels with it, harder to find at each step. So treat the extracted table as a draft until the key facts have been proofread once more. The simplest way is a second pass in a fresh session, so the agent does not just repeat its earlier reading: ask it to find each key value again on its page and quote the exact sentence or table cell, and to mark anything it cannot find. Even better, give the same check to a second agent. In the course author's experience Codex tends to be the more conservative of the two and flags more doubtful values, which makes it a good proofreader, but that is experience, not a benchmark. Where the agents disagree, look at the page yourself. And where they agree, remember the previous slide: both can be wrong the same way, so your own hand checks of a random sample stay.
+:::
+
 ## Summary
 
 | Concept | Key fact |
