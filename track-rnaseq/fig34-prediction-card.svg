@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 405" width="1000" height="405" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="405" fill="#fff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#777"/></marker><marker id="a2a7f8f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2a7f8f"/></marker><marker id="a6b4fa0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b4fa0"/></marker><marker id="aa8324a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a8324a"/></marker><marker id="a8a6a12" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a6a12"/></marker></defs>
+<rect x="20" y="15" width="960" height="360" rx="8" fill="#fff" stroke="#a8324a" stroke-width="2.5"/>
+<text x="45" y="55" font-size="21" fill="#a8324a" text-anchor="start" font-weight="bold">Prediction 1: the induction needs the glucocorticoid receptor</text>
+<text x="45" y="100" font-size="18" fill="#333" text-anchor="start" font-weight="bold">Intervention</text>
+<text x="220" y="100" font-size="18" fill="#333" text-anchor="start">siRNA against NR3C1 (and a non-targeting control), then dexamethasone</text>
+<text x="45" y="145" font-size="18" fill="#333" text-anchor="start" font-weight="bold">Read-out</text>
+<text x="220" y="145" font-size="18" fill="#333" text-anchor="start">qPCR of FKBP5, TSC22D3, PER1, DUSP1, KLF15; GAPDH unchanged</text>
+<text x="45" y="190" font-size="18" fill="#333" text-anchor="start" font-weight="bold">Expected</text>
+<text x="220" y="190" font-size="18" fill="#333" text-anchor="start">induction of all five clearly smaller with NR3C1 knock-down</text>
+<text x="45" y="235" font-size="18" fill="#333" text-anchor="start" font-weight="bold">Refuted if</text>
+<text x="220" y="235" font-size="18" fill="#333" text-anchor="start">knock-down confirmed (GR protein down) but induction unchanged</text>
+<text x="45" y="280" font-size="18" fill="#333" text-anchor="start" font-weight="bold">Also tells</text>
+<text x="220" y="280" font-size="18" fill="#333" text-anchor="start">PGR versus NR3C1: a PGR knock-down should change nothing</text>
+<text x="45" y="325" font-size="18" fill="#333" text-anchor="start" font-weight="bold">Evidence now</text>
+<text x="220" y="325" font-size="18" fill="#333" text-anchor="start">inferred (TF activity) + cited (GR at DUSP1 in ASM)</text>
+<text x="500" y="395" font-size="17" fill="#777" text-anchor="middle">Specific genes, a direction, a control, and a result that would prove it wrong.</text>
+</svg>

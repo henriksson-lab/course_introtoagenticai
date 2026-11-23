@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 380" width="1000" height="380" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="380" fill="#fff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#777"/></marker><marker id="a2a7f8f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2a7f8f"/></marker><marker id="a6b4fa0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b4fa0"/></marker><marker id="aa8324a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a8324a"/></marker><marker id="a8a6a12" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a6a12"/></marker></defs>
+<rect x="20" y="40" width="330" height="55" rx="8" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+<text x="185.0" y="75" font-size="18" fill="#2a7f8f" text-anchor="middle" font-weight="bold">(TSC22D3[tiab] OR GILZ[tiab])</text>
+<text x="185.0" y="125" font-size="17" fill="#333" text-anchor="middle">the gene: symbol AND aliases</text>
+<text x="395" y="75" font-size="20" fill="#333" text-anchor="middle" font-weight="bold">AND</text>
+<rect x="440" y="40" width="540" height="55" rx="8" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+<text x="710.0" y="75" font-size="18" fill="#6b4fa0" text-anchor="middle" font-weight="bold">(glucocorticoid*[tiab] OR dexamethasone[tiab])</text>
+<text x="710.0" y="125" font-size="17" fill="#333" text-anchor="middle">the treatment</text>
+<text x="360" y="190" font-size="20" fill="#333" text-anchor="middle" font-weight="bold">AND</text>
+<rect x="440" y="160" width="540" height="55" rx="8" fill="#f6f1e1" stroke="#8a6a12" stroke-width="2" stroke-dasharray="6,4"/>
+<text x="710" y="195" font-size="18" fill="#8a6a12" text-anchor="middle" font-weight="bold">optional: (smooth muscle[tiab] OR airway[tiab])</text>
+<text x="710" y="245" font-size="17" fill="#333" text-anchor="middle">the tissue or cell type: add it when the gene has many hits</text>
+<text x="20" y="300" font-size="18" fill="#333" text-anchor="start">Gene alone: everything ever written about it, mostly other contexts.</text>
+<text x="20" y="330" font-size="18" fill="#333" text-anchor="start">Gene + treatment: is this response already known?  Gene + treatment + tissue: known here?</text>
+<text x="20" y="360" font-size="18" fill="#2a7f8f" text-anchor="start" font-weight="bold">Run all three levels and keep the counts: they tell you how new the finding is.</text>
+</svg>

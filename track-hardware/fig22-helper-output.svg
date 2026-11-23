@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="520" fill="#ffffff"/>
+<rect x="20" y="16" width="960" height="480" rx="10" fill="#1f2430" stroke="#1f2430" stroke-width="0"/>
+<text x="500.0" y="42" font-size="15" fill="#aab" text-anchor="middle">terminal: stage-reveng</text>
+<text x="44" y="76" font-size="17" fill="#7fc4cf" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">&gt; Group the OUT packets to the stage by their first 4 bytes.</text>
+<text x="44" y="104" font-size="17" fill="#7fc4cf" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">  Show counts and which user actions they are near.</text>
+<text x="44" y="132" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre"></text>
+<text x="44" y="160" font-size="17" fill="#e0c27a" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">Prefix        count  near action (within 2 s)</text>
+<text x="44" y="188" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">02 03 47 53     612  (none: sent every 1.0 s)</text>
+<text x="44" y="216" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">02 07 53 54       3  'set temperature' x 3</text>
+<text x="44" y="244" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">02 04 4C 44       2  'open lid', 'close lid'</text>
+<text x="44" y="272" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">02 03 52 53       1  'reset'</text>
+<text x="44" y="300" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre"></text>
+<text x="44" y="328" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">The 4 bytes after 53 54 decode as little-endian floats:</text>
+<text x="44" y="356" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">30.0, 37.0, 4.0, matching the values typed in the</text>
+<text x="44" y="384" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">screenshots. 47 53 looks like a status poll.</text>
+<text x="44" y="412" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">Not yet explained: the byte before 03 (a checksum?).</text>
+<text x="44" y="440" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">Next: test XOR and sum of the bytes before it.</text>
+<text x="970" y="486" font-size="14" fill="#9aa5b1" text-anchor="end">illustrative; fictional instrument</text>
+</svg>

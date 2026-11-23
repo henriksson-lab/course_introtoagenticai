@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="500" fill="#ffffff"/>
+<rect x="20" y="50" width="380" height="420" rx="14" fill="#f8e6ea" stroke="#a8324a" stroke-width="2"/>
+<text x="210" y="85" font-size="20" fill="#a8324a" text-anchor="middle" font-weight="bold">Team A ("dirty room")</text>
+<text x="210" y="110" font-size="17" fill="#1b2a3a" text-anchor="middle">sees the original</text>
+<rect x="600" y="50" width="380" height="420" rx="14" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+<text x="790" y="85" font-size="20" fill="#2a7f8f" text-anchor="middle" font-weight="bold">Team B ("clean room")</text>
+<text x="790" y="110" font-size="17" fill="#1b2a3a" text-anchor="middle">never sees the original</text>
+<rect x="60" y="140" width="300" height="90" rx="10" fill="#fff" stroke="#a8324a" stroke-width="2"/>
+<text x="210.0" y="179.7" font-size="19" fill="#a8324a" text-anchor="middle" font-weight="bold">Vendor software</text>
+<text x="210.0" y="201.7" font-size="17" fill="#1b2a3a" text-anchor="middle">+ an instrument</text>
+<rect x="60" y="290" width="300" height="110" rx="10" fill="#fff" stroke="#a8324a" stroke-width="2"/>
+<text x="210.0" y="328.1" font-size="17" fill="#a8324a" text-anchor="middle" font-weight="bold">Studies, decompiles,</text>
+<text x="210.0" y="350.1" font-size="17" fill="#1b2a3a" text-anchor="middle">records, writes a</text>
+<text x="210.0" y="372.1" font-size="17" fill="#1b2a3a" text-anchor="middle">specification</text>
+<defs><marker id="a3198" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a8324a"/></marker></defs>
+<line x1="210" y1="235" x2="210" y2="285" stroke="#a8324a" stroke-width="2.5" marker-end="url(#a3198)"/>
+<rect x="420" y="290" width="160" height="110" rx="10" fill="#efe9f7" stroke="#6b4fa0" stroke-width="2"/>
+<text x="500.0" y="330.7" font-size="19" fill="#6b4fa0" text-anchor="middle" font-weight="bold">Spec</text>
+<text x="500.0" y="350.7" font-size="16" fill="#1b2a3a" text-anchor="middle">facts only,</text>
+<text x="500.0" y="370.7" font-size="16" fill="#1b2a3a" text-anchor="middle">no code</text>
+<defs><marker id="a8343" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b4fa0"/></marker></defs>
+<line x1="365" y1="345" x2="415" y2="345" stroke="#6b4fa0" stroke-width="2.5" marker-end="url(#a8343)"/>
+<defs><marker id="a8343" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b4fa0"/></marker></defs>
+<line x1="585" y1="345" x2="635" y2="345" stroke="#6b4fa0" stroke-width="2.5" marker-end="url(#a8343)"/>
+<rect x="640" y="290" width="300" height="110" rx="10" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<text x="790.0" y="339.1" font-size="17" fill="#2a7f8f" text-anchor="middle" font-weight="bold">Writes the driver</text>
+<text x="790.0" y="361.1" font-size="17" fill="#1b2a3a" text-anchor="middle">from the spec only</text>
+<rect x="640" y="140" width="300" height="90" rx="10" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<text x="790.0" y="179.1" font-size="17" fill="#2a7f8f" text-anchor="middle" font-weight="bold">Tests on</text>
+<text x="790.0" y="201.1" font-size="17" fill="#1b2a3a" text-anchor="middle">its own instrument</text>
+<defs><marker id="a9037" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2a7f8f"/></marker></defs>
+<line x1="790" y1="285" x2="790" y2="235" stroke="#2a7f8f" stroke-width="2.5" marker-end="url(#a9037)"/>
+<text x="500" y="200" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="bold">no other</text>
+<text x="500" y="222" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="bold">contact</text>
+<line x1="500" y1="60" x2="500" y2="170" stroke="#1b2a3a" stroke-width="2" stroke-dasharray="6 6"/>
+<line x1="500" y1="240" x2="500" y2="280" stroke="#1b2a3a" stroke-width="2" stroke-dasharray="6 6"/>
+<line x1="500" y1="410" x2="500" y2="470" stroke="#1b2a3a" stroke-width="2" stroke-dasharray="6 6"/>
+<text x="210" y="450" font-size="17" fill="#a8324a" text-anchor="middle" font-weight="bold">cost: two teams</text>
+<text x="790" y="450" font-size="17" fill="#2a7f8f" text-anchor="middle" font-weight="bold">cost: a second instrument</text>
+</svg>

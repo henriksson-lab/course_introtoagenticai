@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 505" width="1000" height="505" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="505" fill="#fff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#777"/></marker><marker id="a2a7f8f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2a7f8f"/></marker><marker id="a6b4fa0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b4fa0"/></marker><marker id="aa8324a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a8324a"/></marker><marker id="a8a6a12" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a6a12"/></marker></defs>
+<rect x="20" y="15" width="310" height="70" rx="8" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+<text x="175" y="45" font-size="19" fill="#2a7f8f" text-anchor="middle" font-weight="bold">by padj</text>
+<text x="175" y="72" font-size="16" fill="#333" text-anchor="middle">smallest first</text>
+<text x="40" y="118" font-size="17" fill="#777" text-anchor="start">1.</text>
+<text x="75" y="118" font-size="17" fill="#333" text-anchor="start">SPARCL1</text>
+<text x="40" y="148" font-size="17" fill="#777" text-anchor="start">2.</text>
+<text x="75" y="148" font-size="17" fill="#333" text-anchor="start">CACNB2</text>
+<text x="40" y="178" font-size="17" fill="#777" text-anchor="start">3.</text>
+<text x="75" y="178" font-size="17" fill="#333" text-anchor="start">DUSP1</text>
+<text x="40" y="208" font-size="17" fill="#777" text-anchor="start">4.</text>
+<text x="75" y="208" font-size="17" fill="#333" text-anchor="start">SAMHD1</text>
+<text x="40" y="238" font-size="17" fill="#777" text-anchor="start">5.</text>
+<text x="75" y="238" font-size="17" fill="#333" text-anchor="start">MAOA</text>
+<text x="40" y="268" font-size="17" fill="#777" text-anchor="start">6.</text>
+<text x="75" y="268" font-size="17" fill="#333" text-anchor="start">GPX3</text>
+<text x="40" y="298" font-size="17" fill="#777" text-anchor="start">7.</text>
+<text x="75" y="298" font-size="17" fill="#333" text-anchor="start">STEAP2</text>
+<text x="40" y="328" font-size="17" fill="#777" text-anchor="start">8.</text>
+<text x="75" y="328" font-size="17" fill="#333" text-anchor="start">NEXN</text>
+<text x="40" y="358" font-size="17" fill="#777" text-anchor="start">9.</text>
+<text x="75" y="358" font-size="17" fill="#333" text-anchor="start">MT2A</text>
+<text x="40" y="388" font-size="17" fill="#777" text-anchor="start">10.</text>
+<text x="75" y="388" font-size="17" fill="#333" text-anchor="start">ADAMTS1</text>
+<rect x="350" y="15" width="310" height="70" rx="8" fill="#f9ecef" stroke="#a8324a" stroke-width="2"/>
+<text x="505" y="45" font-size="19" fill="#a8324a" text-anchor="middle" font-weight="bold">by |log2 fold change|</text>
+<text x="505" y="72" font-size="16" fill="#333" text-anchor="middle">largest first, no filter</text>
+<text x="370" y="118" font-size="17" fill="#777" text-anchor="start">1.</text>
+<text x="405" y="118" font-size="17" fill="#333" text-anchor="start">ALOX15B</text>
+<text x="650" y="118" font-size="15" fill="#777" text-anchor="end">mean 67</text>
+<text x="370" y="148" font-size="17" fill="#777" text-anchor="start">2.</text>
+<text x="405" y="148" font-size="17" fill="#333" text-anchor="start">ZBTB16</text>
+<text x="650" y="148" font-size="15" fill="#777" text-anchor="end">mean 385</text>
+<text x="370" y="178" font-size="17" fill="#777" text-anchor="start">3.</text>
+<text x="405" y="178" font-size="17" fill="#333" text-anchor="start">LOC101928819</text>
+<text x="650" y="178" font-size="15" fill="#777" text-anchor="end">mean 56</text>
+<text x="370" y="208" font-size="17" fill="#777" text-anchor="start">4.</text>
+<text x="405" y="208" font-size="17" fill="#777" text-anchor="start">GUCY2D</text>
+<text x="650" y="208" font-size="15" fill="#777" text-anchor="end">mean 5.7</text>
+<text x="370" y="238" font-size="17" fill="#777" text-anchor="start">5.</text>
+<text x="405" y="238" font-size="17" fill="#777" text-anchor="start">MCHR1</text>
+<text x="650" y="238" font-size="15" fill="#777" text-anchor="end">mean 6.6</text>
+<text x="370" y="268" font-size="17" fill="#777" text-anchor="start">6.</text>
+<text x="405" y="268" font-size="17" fill="#333" text-anchor="start">STEAP4</text>
+<text x="650" y="268" font-size="15" fill="#777" text-anchor="end">mean 286</text>
+<text x="370" y="298" font-size="17" fill="#777" text-anchor="start">7.</text>
+<text x="405" y="298" font-size="17" fill="#777" text-anchor="start">LINC02997</text>
+<text x="650" y="298" font-size="15" fill="#777" text-anchor="end">mean 8.8</text>
+<text x="370" y="328" font-size="17" fill="#777" text-anchor="start">8.</text>
+<text x="405" y="328" font-size="17" fill="#333" text-anchor="start">ANGPTL7</text>
+<text x="650" y="328" font-size="15" fill="#777" text-anchor="end">mean 255</text>
+<text x="370" y="358" font-size="17" fill="#777" text-anchor="start">9.</text>
+<text x="405" y="358" font-size="17" fill="#333" text-anchor="start">PRODH</text>
+<text x="650" y="358" font-size="15" fill="#777" text-anchor="end">mean 55</text>
+<text x="370" y="388" font-size="17" fill="#777" text-anchor="start">10.</text>
+<text x="405" y="388" font-size="17" fill="#777" text-anchor="start">SERTM2</text>
+<text x="650" y="388" font-size="15" fill="#777" text-anchor="end">mean 6.7</text>
+<rect x="680" y="15" width="310" height="70" rx="8" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+<text x="835" y="45" font-size="19" fill="#6b4fa0" text-anchor="middle" font-weight="bold">|log2 FC|, mean count &gt; 100</text>
+<text x="835" y="72" font-size="16" fill="#333" text-anchor="middle">5 up + 5 down</text>
+<text x="700" y="118" font-size="17" fill="#777" text-anchor="start">1.</text>
+<text x="735" y="118" font-size="17" fill="#333" text-anchor="start">ZBTB16</text>
+<text x="700" y="148" font-size="17" fill="#777" text-anchor="start">2.</text>
+<text x="735" y="148" font-size="17" fill="#333" text-anchor="start">STEAP4</text>
+<text x="700" y="178" font-size="17" fill="#777" text-anchor="start">3.</text>
+<text x="735" y="178" font-size="17" fill="#333" text-anchor="start">ANGPTL7</text>
+<text x="700" y="208" font-size="17" fill="#777" text-anchor="start">4.</text>
+<text x="735" y="208" font-size="17" fill="#333" text-anchor="start">FAM107A</text>
+<text x="700" y="238" font-size="17" fill="#777" text-anchor="start">5.</text>
+<text x="735" y="238" font-size="17" fill="#333" text-anchor="start">RASL11B</text>
+<text x="700" y="268" font-size="17" fill="#777" text-anchor="start">6.</text>
+<text x="735" y="268" font-size="17" fill="#a8324a" text-anchor="start">VCAM1</text>
+<text x="980" y="268" font-size="15" fill="#a8324a" text-anchor="end">down</text>
+<text x="700" y="298" font-size="17" fill="#777" text-anchor="start">7.</text>
+<text x="735" y="298" font-size="17" fill="#a8324a" text-anchor="start">FER1L6</text>
+<text x="980" y="298" font-size="15" fill="#a8324a" text-anchor="end">down</text>
+<text x="700" y="328" font-size="17" fill="#777" text-anchor="start">8.</text>
+<text x="735" y="328" font-size="17" fill="#a8324a" text-anchor="start">WNT2</text>
+<text x="980" y="328" font-size="15" fill="#a8324a" text-anchor="end">down</text>
+<text x="700" y="358" font-size="17" fill="#777" text-anchor="start">9.</text>
+<text x="735" y="358" font-size="17" fill="#a8324a" text-anchor="start">AQP3</text>
+<text x="980" y="358" font-size="15" fill="#a8324a" text-anchor="end">down</text>
+<text x="700" y="388" font-size="17" fill="#777" text-anchor="start">10.</text>
+<text x="735" y="388" font-size="17" fill="#a8324a" text-anchor="start">SLC7A14</text>
+<text x="980" y="388" font-size="15" fill="#a8324a" text-anchor="end">down</text>
+<text x="500" y="435" font-size="18" fill="#333" text-anchor="middle">Top 20 by padj and top 20 by fold change share only 2 genes; with the count filter, 8.</text>
+<text x="500" y="462" font-size="18" fill="#333" text-anchor="middle">Without a filter, fold change favours genes with a handful of reads (grey: mean count &lt; 20).</text>
+<text x="20" y="492" font-size="15" fill="#777" text-anchor="start">airway, ~ cell + dex, DESeq2 1.52, genes with padj &lt; 0.05. Unshrunken fold changes.</text>
+</svg>

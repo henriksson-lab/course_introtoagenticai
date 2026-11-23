@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 700" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="700" fill="#fff"/>
+<line x1="230.0" y1="15" x2="230.0" y2="590" stroke="#e3e3e3"/>
+<text x="230.0" y="612" font-size="16" text-anchor="middle" fill="#555">0.5</text>
+<line x1="323.3" y1="15" x2="323.3" y2="590" stroke="#e3e3e3"/>
+<text x="323.3" y="612" font-size="16" text-anchor="middle" fill="#555">1</text>
+<line x1="416.6" y1="15" x2="416.6" y2="590" stroke="#e3e3e3"/>
+<text x="416.6" y="612" font-size="16" text-anchor="middle" fill="#555">2</text>
+<line x1="540.0" y1="15" x2="540.0" y2="590" stroke="#e3e3e3"/>
+<text x="540.0" y="612" font-size="16" text-anchor="middle" fill="#555">5</text>
+<line x1="633.3" y1="15" x2="633.3" y2="590" stroke="#e3e3e3"/>
+<text x="633.3" y="612" font-size="16" text-anchor="middle" fill="#555">10</text>
+<line x1="850.0" y1="15" x2="850.0" y2="590" stroke="#e3e3e3"/>
+<text x="850.0" y="612" font-size="16" text-anchor="middle" fill="#555">50</text>
+<rect x="230.0" y="22" width="604.1" height="15" fill="#a8324a"/>
+<text x="222" y="34" font-size="15" text-anchor="end" fill="#333">bioformats-rs</text>
+<text x="839.1" y="34" font-size="14" fill="#333">44.43x</text>
+<rect x="230.0" y="41" width="394.1" height="15" fill="#2a6fb0"/>
+<text x="222" y="53" font-size="15" text-anchor="end" fill="#333">openslide-pure-rs</text>
+<text x="629.1" y="53" font-size="14" fill="#333">9.34x</text>
+<rect x="230.0" y="60" width="363.3" height="15" fill="#6b4fa0"/>
+<text x="222" y="72" font-size="15" text-anchor="end" fill="#333">circos-rs</text>
+<text x="598.3" y="72" font-size="14" fill="#333">7.43x</text>
+<rect x="230.0" y="79" width="254.9" height="15" fill="#2a6fb0"/>
+<text x="222" y="91" font-size="15" text-anchor="end" fill="#333">deconwolf-rs</text>
+<text x="489.9" y="91" font-size="14" fill="#333">3.32x</text>
+<rect x="230.0" y="98" width="226.5" height="15" fill="#2a6fb0"/>
+<text x="222" y="110" font-size="15" text-anchor="end" fill="#333">hdf5-pure-rs</text>
+<text x="461.5" y="110" font-size="14" fill="#333">2.69x</text>
+<rect x="230.0" y="117" width="222.0" height="15" fill="#2a6fb0"/>
+<text x="222" y="129" font-size="15" text-anchor="end" fill="#333">hmmer-pure-rs</text>
+<text x="457.0" y="129" font-size="14" fill="#333">2.60x</text>
+<rect x="230.0" y="136" width="196.4" height="15" fill="#3d8f3a"/>
+<text x="222" y="148" font-size="15" text-anchor="end" fill="#333">vireoSNP-rs</text>
+<text x="431.4" y="148" font-size="14" fill="#333">2.15x</text>
+<rect x="230.0" y="155" width="170.9" height="15" fill="#d07a2a"/>
+<text x="222" y="167" font-size="15" text-anchor="end" fill="#333">star-rs</text>
+<text x="405.9" y="167" font-size="14" fill="#333">1.78x</text>
+<rect x="230.0" y="174" width="153.2" height="15" fill="#2a6fb0"/>
+<text x="222" y="186" font-size="15" text-anchor="end" fill="#333">prodigal-rs</text>
+<text x="388.2" y="186" font-size="14" fill="#333">1.56x</text>
+<rect x="230.0" y="193" width="147.9" height="15" fill="#2a6fb0"/>
+<text x="222" y="205" font-size="15" text-anchor="end" fill="#333">cellsnp-lite-rs</text>
+<text x="382.9" y="205" font-size="14" fill="#333">1.50x</text>
+<rect x="230.0" y="212" width="139.6" height="15" fill="#d07a2a"/>
+<text x="222" y="224" font-size="15" text-anchor="end" fill="#333">fast_matrix_market-rs</text>
+<text x="374.6" y="224" font-size="14" fill="#333">1.41x</text>
+<rect x="230.0" y="231" width="138.6" height="15" fill="#a8324a"/>
+<text x="222" y="243" font-size="15" text-anchor="end" fill="#333">fastqc-compliant-rs</text>
+<text x="373.6" y="243" font-size="14" fill="#333">1.40x</text>
+<rect x="230.0" y="250" width="129.7" height="15" fill="#2a6fb0"/>
+<text x="222" y="262" font-size="15" text-anchor="end" fill="#333">minibwa-rs</text>
+<text x="364.7" y="262" font-size="14" fill="#333">1.31x</text>
+<rect x="230.0" y="269" width="129.7" height="15" fill="#d07a2a"/>
+<text x="222" y="281" font-size="15" text-anchor="end" fill="#333">bwa-mem2-pure-rs</text>
+<text x="364.7" y="281" font-size="14" fill="#333">1.31x</text>
+<rect x="230.0" y="288" width="123.4" height="15" fill="#d07a2a"/>
+<text x="222" y="300" font-size="15" text-anchor="end" fill="#333">diamond-rs</text>
+<text x="358.4" y="300" font-size="14" fill="#333">1.25x</text>
+<rect x="230.0" y="307" width="120.1" height="15" fill="#2a6fb0"/>
+<text x="222" y="319" font-size="15" text-anchor="end" fill="#333">crfsuite-compliant-rs</text>
+<text x="355.1" y="319" font-size="14" fill="#333">1.22x</text>
+<rect x="230.0" y="326" width="112.1" height="15" fill="#2a6fb0"/>
+<text x="222" y="338" font-size="15" text-anchor="end" fill="#333">minimap2-pure-rs</text>
+<text x="347.1" y="338" font-size="14" fill="#333">1.15x</text>
+<rect x="230.0" y="345" width="106.2" height="15" fill="#2a6fb0"/>
+<text x="222" y="357" font-size="15" text-anchor="end" fill="#333">lz4-pure-rs</text>
+<text x="341.2" y="357" font-size="14" fill="#333">1.10x</text>
+<rect x="230.0" y="364" width="101.2" height="15" fill="#d07a2a"/>
+<text x="222" y="376" font-size="15" text-anchor="end" fill="#333">kraken2-pure-rs</text>
+<text x="336.2" y="376" font-size="14" fill="#333">1.06x</text>
+<rect x="230.0" y="383" width="97.3" height="15" fill="#d07a2a"/>
+<text x="222" y="395" font-size="15" text-anchor="end" fill="#333">skesa-rs</text>
+<text x="332.3" y="395" font-size="14" fill="#333">1.03x</text>
+<rect x="230.0" y="402" width="93.3" height="15" fill="#2a6fb0"/>
+<text x="222" y="414" font-size="15" text-anchor="end" fill="#333">htslib-rs</text>
+<text x="328.3" y="414" font-size="14" fill="#333">1.00x</text>
+<rect x="230.0" y="421" width="90.6" height="15" fill="#2a6fb0"/>
+<text x="222" y="433" font-size="15" text-anchor="end" fill="#333">zstd-pure-rs</text>
+<text x="325.6" y="433" font-size="14" fill="#333">0.98x</text>
+<rect x="230.0" y="440" width="90.6" height="15" fill="#d07a2a"/>
+<text x="222" y="452" font-size="15" text-anchor="end" fill="#333">muscle-rs</text>
+<text x="325.6" y="452" font-size="14" fill="#333">0.98x</text>
+<rect x="230.0" y="459" width="85.0" height="15" fill="#d07a2a"/>
+<text x="222" y="471" font-size="15" text-anchor="end" fill="#333">clic-rs</text>
+<text x="320.0" y="471" font-size="14" fill="#333">0.94x</text>
+<rect x="230.0" y="478" width="82.1" height="15" fill="#2a6fb0"/>
+<text x="222" y="490" font-size="15" text-anchor="end" fill="#333">liblbfgs-compliant-rs</text>
+<text x="317.1" y="490" font-size="14" fill="#333">0.92x</text>
+<rect x="230.0" y="497" width="79.1" height="15" fill="#2a6fb0"/>
+<text x="222" y="509" font-size="15" text-anchor="end" fill="#333">blosc2-pure-rs</text>
+<text x="314.1" y="509" font-size="14" fill="#333">0.90x</text>
+<rect x="230.0" y="516" width="66.6" height="15" fill="#2a6fb0"/>
+<text x="222" y="528" font-size="15" text-anchor="end" fill="#333">libsais-rs</text>
+<text x="301.6" y="528" font-size="14" fill="#333">0.82x</text>
+<rect x="230.0" y="535" width="64.9" height="15" fill="#3d8f3a"/>
+<text x="222" y="547" font-size="15" text-anchor="end" fill="#333">gecco-rs</text>
+<text x="299.9" y="547" font-size="14" fill="#333">0.81x</text>
+<rect x="230.0" y="554" width="58.1" height="15" fill="#d07a2a"/>
+<text x="222" y="566" font-size="15" text-anchor="end" fill="#333">vtk-pure-rs</text>
+<text x="293.1" y="566" font-size="14" fill="#333">0.77x</text>
+<rect x="230.0" y="573" width="22.3" height="15" fill="#2a6fb0"/>
+<text x="222" y="585" font-size="15" text-anchor="end" fill="#333">mdbtools-pure-rs</text>
+<text x="257.3" y="585" font-size="14" fill="#333">0.59x</text>
+<line x1="323.3" y1="12" x2="323.3" y2="590" stroke="#333" stroke-dasharray="5,4" stroke-width="1.5"/>
+<text x="540.0" y="638" font-size="18" text-anchor="middle" fill="#333">Speed-up (original time / Rust time; log scale)</text>
+<rect x="855" y="428" width="135" height="150" fill="#fff" stroke="#ccc"/>
+<text x="865" y="450" font-size="15" font-weight="bold" fill="#333">original in</text>
+<rect x="865" y="462" width="16" height="16" fill="#2a6fb0"/><text x="889" y="476" font-size="15" fill="#333">C</text>
+<rect x="865" y="485" width="16" height="16" fill="#d07a2a"/><text x="889" y="499" font-size="15" fill="#333">C++</text>
+<rect x="865" y="508" width="16" height="16" fill="#a8324a"/><text x="889" y="522" font-size="15" fill="#333">Java</text>
+<rect x="865" y="531" width="16" height="16" fill="#6b4fa0"/><text x="889" y="545" font-size="15" fill="#333">Perl</text>
+<rect x="865" y="554" width="16" height="16" fill="#3d8f3a"/><text x="889" y="568" font-size="15" fill="#333">Python</text>
+<text x="500.0" y="668" font-size="15" text-anchor="middle" fill="#555">Right of the dashed line: Rust faster. Different benchmarks per tool: read the trend, not single bars.</text>
+<text x="990" y="692" font-size="13" text-anchor="end" fill="#888">Data: Henriksson 2026, Fig. 2, arXiv:2608.13029, CC BY 4.0. Redrawn.</text>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="520" fill="#ffffff"/>
+<rect x="150" y="15" width="700" height="470" rx="6" fill="#fff" stroke="#c9d1d9" stroke-width="2"/>
+<rect x="150" y="15" width="700" height="50" rx="0" fill="#eef1f4" stroke="#c9d1d9" stroke-width="0"/>
+<text x="500" y="48" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="bold">Tender: confocal microscope, requirements (excerpt)</text>
+<rect x="180" y="82" width="22" height="22" rx="3" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<path d="M184,93 l6,7 l10,-13" fill="none" stroke="#2a7f8f" stroke-width="3"/>
+<text x="220" y="100" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold">Data in an open, documented format</text>
+<text x="220" y="124" font-size="16" fill="#1b2a3a" text-anchor="start">(e.g. OME-TIFF / OME-Zarr) with full metadata</text>
+<rect x="180" y="148" width="22" height="22" rx="3" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<path d="M184,159 l6,7 l10,-13" fill="none" stroke="#2a7f8f" stroke-width="3"/>
+<text x="220" y="166" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold">Documented control interface</text>
+<text x="220" y="190" font-size="16" fill="#1b2a3a" text-anchor="start">or SDK usable from any language; protocol on request</text>
+<rect x="180" y="214" width="22" height="22" rx="3" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<path d="M184,225 l6,7 l10,-13" fill="none" stroke="#2a7f8f" stroke-width="3"/>
+<text x="220" y="232" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold">Data access under the EU Data Act</text>
+<text x="220" y="256" font-size="16" fill="#1b2a3a" text-anchor="start">described in the offer: what, how, which format</text>
+<rect x="180" y="280" width="22" height="22" rx="3" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<path d="M184,291 l6,7 l10,-13" fill="none" stroke="#2a7f8f" stroke-width="3"/>
+<text x="220" y="298" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold">Runs without cloud account or internet</text>
+<text x="220" y="322" font-size="16" fill="#1b2a3a" text-anchor="start">licence checks offline; no forced telemetry</text>
+<rect x="180" y="346" width="22" height="22" rx="3" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<path d="M184,357 l6,7 l10,-13" fill="none" stroke="#2a7f8f" stroke-width="3"/>
+<text x="220" y="364" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold">Security updates for the control PC</text>
+<text x="220" y="388" font-size="16" fill="#1b2a3a" text-anchor="start">supported OS for the instrument's service life</text>
+<rect x="180" y="412" width="22" height="22" rx="3" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<path d="M184,423 l6,7 l10,-13" fill="none" stroke="#2a7f8f" stroke-width="3"/>
+<text x="220" y="430" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold">No terms that limit lawful</text>
+<text x="220" y="454" font-size="16" fill="#1b2a3a" text-anchor="start">interoperability work by the university</text>
+<text x="988" y="510" font-size="14" fill="#8a97a5" text-anchor="end">illustrative; ask your procurement and legal office</text>
+</svg>

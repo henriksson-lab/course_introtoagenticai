@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 385" width="1000" height="385" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="385" fill="#fff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#777"/></marker><marker id="a2a7f8f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2a7f8f"/></marker><marker id="a6b4fa0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b4fa0"/></marker><marker id="aa8324a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a8324a"/></marker><marker id="a8a6a12" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a6a12"/></marker></defs>
+<rect x="190" y="15" width="220" height="70" rx="8" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+<text x="300" y="45" font-size="17" fill="#6b4fa0" text-anchor="middle" font-weight="bold">H1:</text>
+<text x="300" y="70" font-size="15" fill="#333" text-anchor="middle">GR acts directly</text>
+<rect x="420" y="15" width="220" height="70" rx="8" fill="#f6f1e1" stroke="#8a6a12" stroke-width="2"/>
+<text x="530" y="45" font-size="17" fill="#8a6a12" text-anchor="middle" font-weight="bold">H2:</text>
+<text x="530" y="70" font-size="15" fill="#333" text-anchor="middle">PR acts</text>
+<rect x="650" y="15" width="220" height="70" rx="8" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+<text x="760" y="45" font-size="17" fill="#2a7f8f" text-anchor="middle" font-weight="bold">H3:</text>
+<text x="760" y="70" font-size="15" fill="#333" text-anchor="middle">indirect, via a new protein</text>
+<text x="20" y="60" font-size="18" fill="#333" text-anchor="start" font-weight="bold">experiment</text>
+<line x1="20" y1="95" x2="870" y2="95" stroke="#ddd"/>
+<text x="20" y="125" font-size="18" fill="#333" text-anchor="start" font-weight="bold">siRNA NR3C1</text>
+<text x="300" y="125" font-size="17" fill="#333" text-anchor="middle">blocked</text>
+<text x="530" y="125" font-size="17" fill="#333" text-anchor="middle">unchanged</text>
+<text x="760" y="125" font-size="17" fill="#333" text-anchor="middle">blocked</text>
+<text x="890" y="125" font-size="17" fill="#2a7f8f" text-anchor="start" font-weight="bold">yes</text>
+<line x1="20" y1="150" x2="870" y2="150" stroke="#ddd"/>
+<text x="20" y="180" font-size="18" fill="#333" text-anchor="start" font-weight="bold">siRNA PGR</text>
+<text x="300" y="180" font-size="17" fill="#333" text-anchor="middle">unchanged</text>
+<text x="530" y="180" font-size="17" fill="#333" text-anchor="middle">blocked</text>
+<text x="760" y="180" font-size="17" fill="#333" text-anchor="middle">unchanged</text>
+<text x="890" y="180" font-size="17" fill="#2a7f8f" text-anchor="start" font-weight="bold">yes</text>
+<line x1="20" y1="205" x2="870" y2="205" stroke="#ddd"/>
+<text x="20" y="235" font-size="18" fill="#333" text-anchor="start" font-weight="bold">mifepristone</text>
+<text x="300" y="235" font-size="17" fill="#777" text-anchor="middle">blocked</text>
+<text x="530" y="235" font-size="17" fill="#777" text-anchor="middle">blocked</text>
+<text x="760" y="235" font-size="17" fill="#777" text-anchor="middle">blocked</text>
+<text x="890" y="235" font-size="17" fill="#a8324a" text-anchor="start" font-weight="bold">no</text>
+<line x1="20" y1="260" x2="870" y2="260" stroke="#ddd"/>
+<text x="20" y="290" font-size="18" fill="#333" text-anchor="start" font-weight="bold">+ cycloheximide</text>
+<text x="300" y="290" font-size="17" fill="#333" text-anchor="middle">still up</text>
+<text x="530" y="290" font-size="17" fill="#333" text-anchor="middle">still up</text>
+<text x="760" y="290" font-size="17" fill="#333" text-anchor="middle">blocked</text>
+<text x="890" y="290" font-size="17" fill="#2a7f8f" text-anchor="start" font-weight="bold">yes</text>
+<text x="890" y="60" font-size="17" fill="#333" text-anchor="start" font-weight="bold">tells</text>
+<text x="890" y="80" font-size="17" fill="#333" text-anchor="start" font-weight="bold">apart?</text>
+<text x="20" y="350" font-size="16" fill="#777" text-anchor="start">Mifepristone blocks both GR and PR (24205903), so it cannot tell H1 from H2. Ask the agent for this table.</text>
+<text x="20" y="372" font-size="16" fill="#777" text-anchor="start">Expected outcomes for the target induction under each hypothesis; to be tested, not results.</text>
+</svg>

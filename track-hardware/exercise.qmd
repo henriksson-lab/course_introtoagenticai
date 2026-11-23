@@ -1,0 +1,317 @@
+---
+title: "Exercise: decode an instrument protocol"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- **decoded** a complete USB recording of a (fictional) plate reader with an agent, without any hardware,
+- a **protocol specification** (`PROTOCOL.md`) where every command says how it was found,
+- a small **decoder and simulated driver** in Python that reproduces every recorded command byte for byte, and turns the recording back into the actions the user took,
+- checked that the **checksum** holds on every frame and that the decoded values match the **screenshots**,
+- worked through **four legal scenarios** (this part needs no computer and is for everyone, including leaders), and
+- an **inventory** of one instrument in your own lab, and a decision on what to do next.
+
+You do not write Python. You read tables, byte listings and the agent's claims, and you check them against what the user did. Your session will look different from anyone else's. Compare results: the numbers and checks below.
+
+## Before you start
+
+- Watch or read both lectures of this track: *Open control of lab instruments: why, and is it legal?* and *Reverse engineering instruments with agents*.
+- You have done Part 2 (a project folder, git). Python 3 is installed (the agent may install it; *Terminal survival kit*). No extra packages are needed: Python's built-in `sqlite3` reads the recording.
+- No instrument is needed. The recording is **synthetic**: the LumoPlate 3000 and its protocol were invented for this course.
+- Make a folder for the track in your course folder, with a `raw` folder inside:
+
+```text
+~/agentic-course/track-hardware/lumoplate/raw/
+```
+
+(Windows: `C:\Users\<you>\agentic-course\track-hardware\lumoplate\raw\`.)
+
+### The data
+
+| File | What it is |
+|---|---|
+| [lumoplate-capture.sqlite](data/lumoplate-capture.sqlite) | the recording: about 7 minutes of USB traffic on one bus, with the user's clicks and screenshot notes. Save it in `raw`. |
+| [lumoplate-capture-events.csv](data/lumoplate-capture-events.csv) | the same user events as a plain table, if you want to read them in a spreadsheet. |
+
+The recording has three tables. `packets`: one row per USB transfer, with the time in milliseconds, the device address, the endpoint, the direction (`OUT` = computer to device, `IN` = device to computer), the transfer type and the bytes in hex. `events`: what the user did or saw, with the same clock. `session`: a few notes about the recording.
+
+The course folder also holds `make-data.py`, the script that made the recording. It contains the answer. **Do not copy it into your folder or show it to the agent.**
+
+**What the user did** (from the events table): connected, set the incubation temperature to 37.0 °C, opened and closed the door to insert a plate, shook it, read the plate at 450 nm, looked at the results, started a read at 600 nm and stopped it by mistake, set the temperature to 25.0 °C, opened and closed the door, and disconnected.
+
+## Worked example
+
+### Step 1: set up the folder and its rules
+
+Start the agent in `~/agentic-course/track-hardware/lumoplate` and type:
+
+```text
+Make this folder a git repository with a README.md that says: this
+folder decodes a synthetic USB recording of a fictional plate reader,
+the LumoPlate 3000, made for a course exercise. Create the folders
+scripts, notes and results. Commit.
+```
+
+Then the rules the agent reads every session:
+
+::: {.panel-tabset}
+## Claude Code
+```text
+Create CLAUDE.md with these rules: raw/ is read-only: never change,
+move or overwrite anything in it. Use Python 3 with the standard library
+only (sqlite3, struct); install nothing. Scripts go in scripts/, notes
+in notes/, outputs in results/. Every claim about the protocol must be
+tested against the whole recording by a script before it goes into
+PROTOCOL.md, and PROTOCOL.md says for each fact how it was found and
+how many frames support it.
+```
+## Codex
+```text
+Create AGENTS.md with these rules: raw/ is read-only: never change,
+move or overwrite anything in it. Use Python 3 with the standard library
+only (sqlite3, struct); install nothing. Scripts go in scripts/, notes
+in notes/, outputs in results/. Every claim about the protocol must be
+tested against the whole recording by a script before it goes into
+PROTOCOL.md, and PROTOCOL.md says for each fact how it was found and
+how many frames support it.
+```
+:::
+
+**Check.** The folder has `raw/lumoplate-capture.sqlite`, the three empty folders and the rules file. The `.sqlite` file is not changed by anything that follows: note its size now.
+
+### Step 2: have the recording described back to you
+
+```text
+Open raw/lumoplate-capture.sqlite read-only. Describe its tables and
+columns, how many packets and events there are, how long the recording
+is, and which USB devices, endpoints and transfer types appear, with a
+count for each. List the events table in full. Do not interpret the
+bytes yet.
+```
+
+**Check.**
+
+- **2006** packets and **17** events; the recording runs for about **7 minutes** (packet times from under 1 s to about 415 s).
+- Two device addresses: **3** and **5**. Device 3 has only `interrupt` transfers; device 5 has `control` and `bulk` transfers.
+- The listed events match the summary under *The data* above. If the agent's numbers differ, ask it to show the query it used.
+
+### Step 3: separate the instrument from the noise
+
+```text
+Which device is most likely the plate reader, and what is the other
+one? Look at transfer types, packet sizes, timing, and whether packets
+appear near the user's actions. Explain the few control transfers at
+the start. From now on, keep only the plate reader's bulk transfers
+that carry data, and write a script scripts/extract.py that saves
+them to results/frames.csv (time, direction, bytes).
+```
+
+**Check.**
+
+- Device **3** sends short 4-byte interrupt reports in bursts at random times: a typical USB **mouse**, not the instrument. Its bursts are not tied to the plate reader's activity.
+- Device **5** is the plate reader. The six `control` transfers at the start are standard USB **enumeration** (the computer asks the device to describe itself); they happen for every USB device and are not part of the instrument's own protocol.
+- Device 5 also has some **empty** bulk IN packets (length 0). The agent should drop these and say so.
+- `results/frames.csv` has **818** rows: 409 `OUT` and 409 `IN`. If the number is different, ask why.
+
+### Step 4: helper functions that find the patterns
+
+```text
+Write scripts/patterns.py with small helper functions, and run them:
+1. group the frames by their first 3 bytes and direction, with counts
+   and lengths;
+2. for each group, list the user events within 2 seconds before its
+   frames;
+3. find frames that repeat at a regular interval;
+4. pair each OUT frame with the next IN frame and show how the first
+   bytes of the two relate.
+Summarise what you see in notes/patterns.md. Mark guesses as guesses.
+```
+
+**Check.** Look at the agent's summary and ask yourself whether it fits what the user did.
+
+- One kind of `OUT` frame appears about **390** times, roughly **once per second**, between connecting and disconnecting, near no event in particular. That is a **status poll**.
+- A handful of `OUT` frames appear **once or a few times**, each just after a user action. Count them against the events: two temperature settings, four door clicks, one shake, two plate reads, one stop.
+- Every `OUT` frame is followed a few milliseconds later by an `IN` frame. The agent should notice a simple relation between the command byte of a request and of its reply. Do not accept "they seem related"; ask for the rule and how many pairs follow it.
+
+### Step 5: find the values you know
+
+The screenshots tell you values the user chose: 37.0 and 25.0 °C, 30 s of shaking, 450 and 600 nm, and four absorbance values in the results table. Use them.
+
+```text
+The user typed these values: temperature 37.0 and later 25.0, shaking
+30 s, wavelengths 450 and 600 nm. The results table showed A1 = 2.458,
+A12 = 0.048, H1 = 2.459, D6 = 0.298. Search the frames near those
+events for these values in every common encoding: 8, 16 and 32-bit
+integers and 32-bit floats, both byte orders. Report where each value
+sits in which frame. Then decode the regular status replies in the same
+way and plot or tabulate the decoded temperature over time in
+results/temperature.csv.
+```
+
+**Check.**
+
+- Each typed value is found **exactly where you would expect it**, in a frame sent just after the matching click, and in **one** encoding that the agent names (for example "32-bit float, little-endian"). If the agent finds a value in several encodings, ask which one is consistent across all frames of that kind.
+- The four absorbance values are found in the replies the computer received **just before** the results screenshot (rounded to 3 decimals).
+- In `results/temperature.csv` the temperature starts near **22.4 °C**, rises to about **37 °C** within roughly a minute after the first setting, stays there, and falls to about **25 °C** after the second. Open the file and look. A temperature that jumps around randomly means the wrong bytes were decoded.
+
+### Step 6: the frame layout and the checksum
+
+```text
+Propose the general layout of a frame (start byte, command, length,
+payload, and anything at the end). Then find the rule for the last
+byte. Test these candidates on ALL 818 frames, with a script, and
+report how many frames pass each: XOR of various byte ranges; sum of
+various byte ranges modulo 256; the two's complement of that sum;
+CRC-8 variants. Stop at the first rule that holds for every frame,
+and say which byte range it covers.
+```
+
+**Check.**
+
+- The layout holds for **every** frame: a fixed first byte, then the command, then a length that equals the actual number of payload bytes, then the payload, then one final byte.
+- One checksum rule passes on **818 of 818** frames. A rule that passes on "most" frames is wrong. Ask the agent to show the script's output line, not only its conclusion.
+- Ask: "Would this rule also pass if I changed one byte in a frame?" The agent should test it by flipping a byte in a copy and showing that the check fails.
+
+### Step 7: write the protocol specification
+
+```text
+Write PROTOCOL.md: the frame layout, the checksum rule, the endpoints,
+and a table of every command seen (code, name you suggest, payload
+layout with types and byte order, the reply, and which user action it
+belongs to). For each fact say: found how (which script), supported by
+how many frames, and confidence. List what is still unknown, for
+example values of the status fields that never changed in the
+recording.
+```
+
+**Check.** Read it. Every command in the table should be tied to a user action you can find in the events, and every row should name its evidence. There should be an honest "unknown" section: for example, the recording shows only some values of the status byte, and only one plate type.
+
+### Step 8: a decoder and a simulated driver, tested against the log
+
+```text
+Write scripts/lumoplate.py with:
+1. decode(frame) -> a readable description, using PROTOCOL.md;
+2. a LumoPlate class with methods such as set_temperature(37.0),
+   door(open=True), shake(...), start_read(450), get_row(0), stop(),
+   status(), each of which builds the exact bytes to send;
+3. a FakeLumoPlate that answers like the recorded instrument, so the
+   driver can be run without hardware.
+Then write scripts/test_lumoplate.py that checks:
+a) for every OUT frame in the recording, the driver method you think
+   produced it builds identical bytes;
+b) the checksum validates on every frame;
+c) decoding the whole recording gives a timeline of actions that
+   matches every event in the events table (time, action, value);
+d) the decoded plate values for A1, A12, H1 and D6 match the
+   screenshot.
+Write the timeline to results/timeline.csv and run the tests.
+```
+
+**Check the result.**
+
+- The tests run and **all pass**, and the agent shows the output. Then ask it to break one thing on purpose (change 37.0 to 36.0 in one test) and show that the test fails. A test that cannot fail checks nothing.
+- Open `results/timeline.csv` next to the events table. Every event has a matching decoded action, with the right value, a few milliseconds to a few tenths of a second **after** the click: 37.0 °C, door open, door closed, shaking (orbital, 30 s), read at 450 nm, eight rows of results, read at 600 nm, stop, 25.0 °C, door open, door closed.
+- The decoded A1, A12, H1 and D6 match the screenshot to three decimals.
+- Two events have **no** command of their own: "user put a plate in the drawer" (nothing is sent) and "Disconnect" (the software simply stops polling). The agent should notice this, not invent a command.
+- `raw/lumoplate-capture.sqlite` has the same size as in step 1. `git status` shows only new files in `scripts`, `notes`, `results` and `PROTOCOL.md`.
+
+**Python or Rust?** Python is fine for this exercise. For a real driver that others will rely on, the lecture recommends Rust: ask the agent to port `lumoplate.py` to Rust with the same tests, if you want to see what that looks like.
+
+### Step 9: a second agent checks the specification
+
+Start the other agent (Codex if you used Claude Code, or the other way round) in the same folder, as in *Parallel workers: Claude and Codex*:
+
+```text
+Read PROTOCOL.md and check every claim in it against
+raw/lumoplate-capture.sqlite with your own script. Do not read
+scripts/. Report claims that are wrong, unsupported, or stated more
+confidently than the evidence allows.
+```
+
+**Check.** Read its report. Fix real problems with the first agent; ignore style comments. Commit.
+
+::: {.callout-note collapse="true"}
+## Answer key: the LumoPlate protocol (open after you have finished)
+
+- **Frame:** `A5` · command (1 byte) · length of payload (1 byte) · payload · checksum (1 byte).
+- **Checksum:** the two's complement of the byte sum: `(0x100 - (command + length + sum of payload)) & 0xFF`. Equivalently, the bytes from the command to the checksum add up to 0 modulo 256. The start byte `A5` is not included.
+- **Endpoints:** requests are bulk OUT on endpoint `0x02`; replies bulk IN on `0x82`. The reply's command is the request's command plus `0x80`.
+- **Numbers:** temperatures and absorbances are 32-bit floats, little-endian; the wavelength and the shaking time are 16-bit unsigned integers, little-endian.
+
+| Request | Name | Payload | Reply | Reply payload |
+|---|---|---|---|---|
+| `01` | hello | none | `81` | ASCII text `LP3000 fw 2.4.1` |
+| `10` | status | none | `90` | state (1 byte), temperature (float), door (1 byte: 0 closed, 1 open) |
+| `21` | set temperature | setpoint (float) | `A1` | `00` = OK |
+| `22` | shake | mode (1 byte; 2 = orbital), seconds (16-bit) | `A2` | `00` |
+| `30` | door | 1 = open, 0 = close | `B0` | `00` |
+| `40` | start read | wavelength in nm (16-bit), plate type (1 byte; 1 = 96-well flat) | `C0` | `00` |
+| `41` | get row | row (0–7 = A–H) | `C1` | row, then 12 absorbances (floats) |
+| `50` | stop | none | `D0` | `00` |
+
+- **States seen in the status reply:** 0 idle, 1 heating, 2 shaking, 3 reading, 4 data ready.
+- **Noise:** device 3 is a USB mouse; the six control transfers on device 5 are enumeration; empty bulk IN packets carry nothing.
+- **The values:** 37.0 = `00 00 14 42`, 25.0 = `00 00 C8 41`, 450 nm = `C2 01`, 600 nm = `58 02`, 30 s = `1E 00`. The 450 nm read is followed by eight `41` requests, one per row, starting about 24 s after Start, when the status has shown state 4.
+- **No command:** inserting the plate and disconnecting.
+:::
+
+### Part B: four legal scenarios (for everyone)
+
+This part needs no computer. Decide for each case: **allowed**, **not allowed**, or **ask the legal office**, and say why, from an EU and Swedish perspective. This is a teaching exercise, **not legal advice**; real cases depend on the contracts and the details. Discuss with a colleague before you open the answers.
+
+1. A research group owns a plate reader. The vendor refused to give out the protocol. A researcher decompiles **the part of the vendor program that talks to the instrument** to write an open driver, and publishes the driver and a description of the protocol.
+2. A researcher got the instrument working from Python by calling the vendor's DLL, and publishes the project on GitHub **with the DLL included**, "so others can use it".
+3. A researcher asks an agent to "translate the decompiled vendor functions into Rust" and publishes the result as an open driver.
+4. The software licence says "you may not reverse engineer, decompile or disassemble the software". A researcher does not decompile anything: they only **record the USB traffic** while using the software normally, and write a driver from the recording.
+
+::: {.callout-note collapse="true"}
+## Suggested answers
+
+1. **Allowed, if the conditions hold; check the details with the legal office.** The Software Directive (2009/24/EC) Art. 6, in Sweden upphovsrättslagen 26 h §, allows decompilation by a lawful user when it is indispensable for interoperability, the information was not readily available (the vendor refused: keep the reply) and it is limited to the parts needed. A licence term cannot remove this right (Art. 8; 26 h § last paragraph). Publishing the driver and a description of the protocol is the point of the exercise, but Art. 6(2) limits passing the information to others to what is necessary for interoperability, so how much of the protocol description to publish is a good question for the legal office.
+2. **Not allowed** without the vendor's permission. The DLL is the vendor's copyrighted program. The interoperability exception allows you to learn how to interoperate, not to distribute the vendor's code. Publish your own code and tell users to install the vendor software themselves, or write a driver that does not need the DLL.
+3. **Not allowed.** Translated code is still a copy of the vendor's expression (Art. 6(2)(c) forbids using the information for a program substantially similar in its expression; it is also plain copyright infringement). The vendor could even recognise its own deliberate oddities in your code. Write notes and a specification in your own words, and have the driver written from the specification only.
+4. **Allowed in the EU, despite the licence.** Recording the traffic while running the program normally is observing and testing its function, which a lawful user may do (Software Directive Art. 5(3); upphovsrättslagen 26 g § fourth paragraph). Terms that limit this are void (Art. 8; 26 g § sixth paragraph). Check that you do not break any protection measure on the way, and read the purchase contract too: it can contain other terms. In the US the answer could differ, because courts there have enforced such licence terms.
+:::
+
+## On your own project
+
+Choose one instrument in your lab or department whose software is closed: one that annoys people, or one that holds data you worry about. You do not need to record anything. The aim is an informed decision on what to do.
+
+**Privacy first.** Screenshots and logs from instrument PCs can show user names, sample or patient IDs, and network details. Do not paste them into a cloud agent unless your data rules allow it (*Privacy, ethics and safety*).
+
+1. **Inventory.** In your own project folder (`~/agentic-course/<your-project>/`), ask the agent to help you write `instrument-inventory.md`:
+
+    ```text
+    Help me write instrument-inventory.md for the <instrument> in our
+    lab. Ask me questions one at a time and record the answers: what
+    the instrument is and who owns it; which computer and operating
+    system controls it and whether that gets security updates; what
+    connects to what (USB, serial, network) and whether it needs
+    internet or a cloud account; which file formats it writes and
+    whether they are documented or open; whether the vendor documents
+    a protocol or offers an SDK, and on what terms; what the software
+    licence and the purchase or service contract say about reverse
+    engineering, data access and updates; and what we would do with
+    an open driver. Do not search for or guess legal conclusions.
+    ```
+
+2. **Ask the vendor first.** Ask the agent to draft a short, polite letter to the vendor asking for the protocol documentation or an SDK for interoperability, and, if the instrument is networked, how users can access the instrument's data under the EU Data Act. Send it yourself, if you decide to.
+3. **Check with your legal office** before any reverse engineering: bring the inventory, the licence text and the vendor's answer.
+4. **Only then plan.** If the answer is clear, ask the agent for a recording plan in the style of *Reverse engineering instruments with agents* (what to record, in what order, which tool, what is safe to send), as a plan only. Record nothing until the instrument's owner has agreed.
+5. Add a line to the **Log of AI use** in your project README.
+
+For leaders: the same inventory, done for the ten most important instruments in a department, is a good basis for the next procurement round.
+
+## What you should have now
+
+- `lumoplate/` with `PROTOCOL.md` (with evidence for every fact), `scripts/lumoplate.py` and passing tests, `results/timeline.csv` that matches every event, and a second agent's review, all in git.
+- Your answers to the four legal scenarios, and where your reasoning differed from the suggested answers.
+- `instrument-inventory.md` for one real instrument, and a decision: ask the vendor, ask the legal office, buy differently next time, or plan a recording.

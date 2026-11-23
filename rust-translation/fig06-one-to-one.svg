@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 390" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="390" fill="#fff"/>
+  <text x="180" y="35" font-size="20" font-weight="bold" text-anchor="middle" fill="#6b4fa0">original (C)</text>
+  <text x="820" y="35" font-size="20" font-weight="bold" text-anchor="middle" fill="#a8324a">translation (Rust)</text>
+  <g font-family="Consolas, Menlo, monospace" font-size="17" text-anchor="middle">
+    <rect x="60" y="55" width="240" height="44" rx="6" fill="#efeaf7" stroke="#6b4fa0"/><text x="180" y="83">ParseHeader()</text>
+    <rect x="60" y="115" width="240" height="44" rx="6" fill="#efeaf7" stroke="#6b4fa0"/><text x="180" y="143">ScorePair()</text>
+    <rect x="60" y="175" width="240" height="44" rx="6" fill="#efeaf7" stroke="#6b4fa0"/><text x="180" y="203">ScoreChain()</text>
+    <rect x="60" y="235" width="240" height="44" rx="6" fill="#efeaf7" stroke="#6b4fa0"/><text x="180" y="263">EmitRecord()</text>
+    <rect x="700" y="55" width="240" height="44" rx="6" fill="#fbe9ea" stroke="#a8324a"/><text x="820" y="83">parse_header()</text>
+    <rect x="700" y="115" width="240" height="44" rx="6" fill="#fbe9ea" stroke="#a8324a"/><text x="820" y="143">score_pair()</text>
+    <rect x="700" y="175" width="240" height="44" rx="6" fill="#fbe9ea" stroke="#a8324a"/><text x="820" y="203">score_chain()</text>
+    <rect x="700" y="235" width="240" height="44" rx="6" fill="#fbe9ea" stroke="#a8324a"/><text x="820" y="263">emit_record()</text>
+    <rect x="700" y="300" width="240" height="44" rx="6" fill="#fff" stroke="#a8324a" stroke-dasharray="6,4"/><text x="820" y="328" fill="#a8324a">adapt_input()</text>
+  </g>
+  <g stroke="#2a7f8f" stroke-width="2.5"><line x1="302" y1="77" x2="698" y2="77"/><line x1="302" y1="137" x2="698" y2="137"/><line x1="302" y1="197" x2="698" y2="197"/><line x1="302" y1="257" x2="698" y2="257"/></g>
+  <g stroke="#a8324a" stroke-width="4"><line x1="690" y1="296" x2="950" y2="348"/><line x1="690" y1="348" x2="950" y2="296"/></g>
+  <text x="500" y="320" font-size="17" text-anchor="middle" fill="#a8324a">new "helper" functions: treated as bugs</text>
+  <text x="500" y="378" font-size="18" text-anchor="middle" fill="#333">One function in, one function out, same files and folders: every piece can be checked against its original.</text>
+</svg>

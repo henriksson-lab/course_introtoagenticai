@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 470" width="1000" height="470" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="470" fill="#ffffff"/>
+<text x="250" y="40" font-size="21" fill="#2a7f8f" text-anchor="middle" font-weight="bold">You may publish</text>
+<text x="750" y="40" font-size="21" fill="#a8324a" text-anchor="middle" font-weight="bold">You may not publish</text>
+<rect x="40" y="70" width="420" height="105" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+<text x="250.0" y="117.2" font-size="19" fill="#2a7f8f" text-anchor="middle" font-weight="bold">Your own driver code</text>
+<text x="250.0" y="139.2" font-size="17" fill="#1b2a3a" text-anchor="middle">written by you (or your agent)</text>
+<rect x="40" y="195" width="420" height="105" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+<text x="250.0" y="242.2" font-size="19" fill="#2a7f8f" text-anchor="middle" font-weight="bold">A protocol description</text>
+<text x="250.0" y="264.2" font-size="17" fill="#1b2a3a" text-anchor="middle">commands, byte layout, timings</text>
+<rect x="40" y="320" width="420" height="105" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+<text x="250.0" y="367.2" font-size="19" fill="#2a7f8f" text-anchor="middle" font-weight="bold">Test logs you recorded</text>
+<text x="250.0" y="389.2" font-size="17" fill="#1b2a3a" text-anchor="middle">after checking them for secrets</text>
+<rect x="540" y="70" width="420" height="105" rx="10" fill="#f8e6ea" stroke="#a8324a" stroke-width="2"/>
+<text x="750.0" y="117.2" font-size="19" fill="#a8324a" text-anchor="middle" font-weight="bold">The vendor's DLL or SDK</text>
+<text x="750.0" y="139.2" font-size="17" fill="#1b2a3a" text-anchor="middle">even if your driver needs it</text>
+<rect x="540" y="195" width="420" height="105" rx="10" fill="#f8e6ea" stroke="#a8324a" stroke-width="2"/>
+<text x="750.0" y="242.2" font-size="19" fill="#a8324a" text-anchor="middle" font-weight="bold">Decompiled vendor code</text>
+<text x="750.0" y="264.2" font-size="17" fill="#1b2a3a" text-anchor="middle">or code "translated" from it</text>
+<rect x="540" y="320" width="420" height="105" rx="10" fill="#f8e6ea" stroke="#a8324a" stroke-width="2"/>
+<text x="750.0" y="367.2" font-size="19" fill="#a8324a" text-anchor="middle" font-weight="bold">Uploaded firmware</text>
+<text x="750.0" y="389.2" font-size="17" fill="#1b2a3a" text-anchor="middle">the blob is copyrighted</text>
+</svg>

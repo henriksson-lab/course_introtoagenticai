@@ -388,7 +388,7 @@ Here are the ways this analysis goes wrong, collected in one place. The first tw
 | Design formula | `~ batch + treatment` = compare within each batch; say it in words |
 
 ::: notes
-Here is the summary. You decide and check, the agent types. Raw counts and a sample sheet matched by name. Three QC plots that show swaps, outliers and batches. Odd samples are reported, and you decide, in writing. The design formula is a sentence you can say aloud, and the reference level decides whether up means up. Replicates must be real. padj, not p. Enrichment against the right background, read as a summary, not as proof. Your genes next to your verified literature. And a rerun from scratch. If you continue with another track, you will find the same pattern: a known answer first, then real data, with checks at every step. Image analysis in Python is the next one in the list, and it is the course's gentle introduction to Python.
+Here is the summary. You decide and check, the agent types. Raw counts and a sample sheet matched by name. Three QC plots that show swaps, outliers and batches. Odd samples are reported, and you decide, in writing. The design formula is a sentence you can say aloud, and the reference level decides whether up means up. Replicates must be real. padj, not p. Enrichment against the right background, read as a summary, not as proof. Your genes next to your verified literature. And a rerun from scratch. The next deck in this track takes the gene list further: what is known about the top genes, which regulators could explain them, and which predictions an experiment could test.
 :::
 
 ## Summary (continued)
@@ -402,7 +402,7 @@ Here is the summary. You decide and check, the agent types. Raw counts and a sam
 | Literature link | join with your verified table; new genes, new references checked |
 | Rerun | fresh session, scripts only, same numbers |
 
-**Next (Track C: Image analysis in Python, or any other track):** the same habits on another kind of data. Or apply this track to your own project.
+**Next (From gene lists to mechanisms):** the second deck of this track: a literature review of your top genes, the regulators behind them, and a mechanism with testable predictions.
 
 ::: notes
 The rest of the summary table, and where we go next.

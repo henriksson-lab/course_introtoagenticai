@@ -11,7 +11,11 @@
 #   synthetic-rnaseq.zip            the three files above, for download (the
 #                                   folder itself is deleted after zipping)
 #   truth.csv                       ANSWER KEY: which genes were planted as
-#                                   changed, and by how much (not in the zip)
+#                                   changed, by how much, and by which
+#                                   regulator (column program; not in the zip)
+#   regulons.csv                    a "curated" regulator -> target network
+#                                   for the same genes (for the deck "From
+#                                   gene lists to mechanisms"; not in the zip)
 #
 # The story: cultured cells, vehicle ("control") or drug ("treated"), 6 + 6
 # samples, RNA extracted on two days (batch day1 / day2, balanced: 3 control
@@ -27,6 +31,24 @@
 #   - Samples S08 and S11 are SWAPPED in the sample sheet: S08 is labelled
 #     control but is really treated, S11 is labelled treated but is really
 #     control. lab-notes.txt mentions the possible swap. The PCA shows it.
+#
+# Regulatory programs (added later; the counts above are unchanged by it):
+#   - The 400 planted genes belong to three programs, each driven by a
+#     fictional regulator (names chosen so that no real gene has them):
+#       RegA  switched ON by the drug, activates 160 of the up genes
+#       RegB  switched OFF by the drug, activates 140 of the down genes
+#       RegC  switched ON by the drug, activates 40 up genes and
+#             represses 60 down genes
+#   - regulons.csv (source, target, mor) is the network a participant gets.
+#     Like a real curated network it is incomplete and noisy: it lists 80%
+#     of each program's targets (mor = +1 activation, -1 repression), adds
+#     targets that do not respond in this experiment, and holds seven
+#     decoy regulators (RegD to RegJ) whose targets are unchanged genes.
+#     One decoy, RegD, shares 20 targets with RegA.
+#   - truth.csv column "program" says which regulator drives each planted
+#     gene ("none" for unchanged genes).
+#   This part uses its own random seed, after all counts are drawn, so the
+#   counts, sample sheet and planted fold changes are exactly as before.
 #
 # Needs only base R. Deterministic (fixed seed). Run from this folder:
 #     Rscript make-data.R
@@ -106,7 +128,40 @@ writeLines(c(
   "2026-03-20: all 12 libraries sent for sequencing. S03 had low input RNA,",
   "  expect fewer reads."
 ), file.path(out, "lab-notes.txt"))
-write.csv(data.frame(gene_id = ids, true_log2fc = round(lfc, 3), planted = lfc != 0),
+# ---- Regulatory programs and a curated network (own seed; see header) ----
+set.seed(20261124)
+up_s <- sample(up); dn_s <- sample(dn)
+program <- rep("none", G)
+program[up_s[1:160]] <- "RegA"
+program[dn_s[1:140]] <- "RegB"
+program[c(up_s[161:200], dn_s[141:200])] <- "RegC"
+mor_true <- ifelse(program == "RegC" & lfc < 0, -1, 1)   # RegC represses its down genes
+unchanged <- which(lfc == 0)
+net <- NULL
+for (r in c("RegA", "RegB", "RegC")) {
+  tg <- which(program == r)
+  listed <- tg[sort(sample(length(tg), round(0.8 * length(tg))))]   # 80% are known
+  extra <- sample(setdiff(unchanged, net$target_idx), c(RegA = 40, RegB = 35, RegC = 25)[[r]])
+  net <- rbind(net,
+               data.frame(source = r, target_idx = listed, mor = mor_true[listed]),
+               data.frame(source = r, target_idx = extra,
+                          mor = if (r == "RegC") sample(c(-1, 1), length(extra), TRUE) else 1))
+}
+decoy_n <- c(RegD = 40, RegE = 60, RegF = 35, RegG = 80, RegH = 30, RegI = 50, RegJ = 45)
+for (r in names(decoy_n)) {
+  tg <- sample(unchanged, decoy_n[[r]])
+  mor <- sample(c(-1, 1), length(tg), TRUE, prob = c(0.25, 0.75))
+  if (r == "RegD") {   # shares 20 targets with RegA
+    tg <- c(sample(which(program == "RegA"), 20), tg); mor <- c(rep(1, 20), mor)
+  }
+  net <- rbind(net, data.frame(source = r, target_idx = tg, mor = mor))
+}
+net <- net[order(net$source, net$target_idx), ]
+write.csv(data.frame(source = net$source, target = ids[net$target_idx], mor = net$mor),
+          "regulons.csv", row.names = FALSE, quote = FALSE)
+
+write.csv(data.frame(gene_id = ids, true_log2fc = round(lfc, 3), planted = lfc != 0,
+                     program = program),
           "truth.csv", row.names = FALSE, quote = FALSE)
 unlink("synthetic-rnaseq.zip")
 zip("synthetic-rnaseq.zip", file.path(out, c("counts.csv", "samples.csv", "lab-notes.txt")),
@@ -115,3 +170,5 @@ unlink(out, recursive = TRUE)   # keep only the zip in the repository
 
 cat("library sizes (M):\n"); print(round(colSums(counts) / 1e6, 2))
 cat("planted:", sum(lfc != 0), "up", sum(lfc > 0), "down", sum(lfc < 0), "\n")
+cat("programs:\n"); print(table(program[lfc != 0], sign(lfc[lfc != 0])))
+cat("regulons.csv: targets per regulator\n"); print(table(net$source))

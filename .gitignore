@@ -17,3 +17,7 @@ __pycache__/
 /copyright-credit/data/pre-publication/
 /first-delegations/data/reports/
 /first-delegations/data/messy-folder/
+
+# Rust build output
+target/
+Cargo.lock

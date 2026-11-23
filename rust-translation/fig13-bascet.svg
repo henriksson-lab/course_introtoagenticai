@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#fff"/>
+  <g text-anchor="middle">
+    <rect x="20" y="20" width="300" height="160" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="170" y="85" font-size="46" font-weight="bold" fill="#2a7f8f">~80x</text>
+    <text x="170" y="120" font-size="19" fill="#333">smaller to distribute</text>
+    <text x="170" y="150" font-size="16" fill="#555">200 MB binary instead of a container</text>
+    <rect x="350" y="20" width="300" height="160" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="500" y="85" font-size="46" font-weight="bold" fill="#2a7f8f">~10x</text>
+    <text x="500" y="120" font-size="19" fill="#333">faster to build</text>
+    <text x="500" y="150" font-size="16" fill="#555">20 min down to about 1 to 2 min</text>
+    <rect x="680" y="20" width="300" height="160" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+    <text x="830" y="85" font-size="46" font-weight="bold" fill="#2a7f8f">&gt;3x</text>
+    <text x="830" y="120" font-size="19" fill="#333">faster key steps</text>
+    <text x="830" y="150" font-size="16" fill="#555">SKESA and GECCO used as libraries</text>
+    <rect x="20" y="200" width="470" height="120" rx="10" fill="#f5efdd" stroke="#8a6a12" stroke-width="2"/>
+    <text x="255" y="245" font-size="21" font-weight="bold" fill="#8a6a12">Runs on native Windows</text>
+    <text x="255" y="275" font-size="17" fill="#333">no WSL2, no container; Unix-only calls</text>
+    <text x="255" y="298" font-size="17" fill="#333">were disabled or replaced</text>
+    <rect x="510" y="200" width="470" height="120" rx="10" fill="#f5efdd" stroke="#8a6a12" stroke-width="2"/>
+    <text x="745" y="245" font-size="21" font-weight="bold" fill="#8a6a12">Native Apple M3 binaries</text>
+    <text x="745" y="275" font-size="17" fill="#333">by cross-compiling; a container would</text>
+    <text x="745" y="298" font-size="17" fill="#333">need hardware emulation there</text>
+  </g>
+  <text x="500" y="358" font-size="18" text-anchor="middle" fill="#333">Bascet (single-cell microbial pipeline) after translating its upstream tools. The paper's numbers.</text>
+  <text x="990" y="392" font-size="13" text-anchor="end" fill="#888">Henriksson 2026, arXiv:2608.13029, CC BY 4.0</text>
+</svg>

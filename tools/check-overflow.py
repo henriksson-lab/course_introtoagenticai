@@ -1,6 +1,6 @@
 """Measure rendered reveal.js slide heights with headless Chrome.
 
-Usage: python3 tools/check-overflow.py <unit> [<unit> ...]
+Usage: python3 tools/check-overflow.py <unit>[:<deck>] ...   (deck defaults to lec)
   (units = folder names; render first with `quarto render`, decks are read from docs/)
 Needs google-chrome. If a deck prints FAILED (timeout), run it again on its own.
 Prints, per slide: index, content height (px), slide id. Overflow = height > 720.
@@ -40,22 +40,25 @@ JS = r"""
 """
 
 def measure(unit):
-    src = f'{REPO}/docs/{unit}/lec.html'
+    deck = 'lec'
+    if ':' in unit:
+        unit, deck = unit.split(':', 1)
+    src = f'{REPO}/docs/{unit}/{deck}.html'
     if not os.path.exists(src):
-        return unit, None
-    tmp = f'{REPO}/docs/{unit}/_measure.html'
+        return f'{unit}:{deck}', None
+    tmp = f'{REPO}/docs/{unit}/_measure-{deck}.html'
     s = open(src).read().replace('</body>', JS + '</body>')
     open(tmp, 'w').write(s)
-    prof = f'{SCR}/prof-{unit}'
+    prof = f'{SCR}/prof-{unit}-{deck}'
     r = subprocess.run(['timeout', '180', 'google-chrome', '--headless=new', '--disable-gpu', '--no-sandbox',
                         f'--user-data-dir={prof}', '--window-size=1280,720', '--virtual-time-budget=60000',
                         '--dump-dom', f'file://{tmp}'], capture_output=True, text=True)
     os.remove(tmp)
     m = re.search(r'<pre id="ovf">(.*?)</pre>', r.stdout, re.S)
     if not m:
-        return unit, None
+        return f'{unit}:{deck}', None
     rows = [l.split('\t') for l in html.unescape(m.group(1)).splitlines()]
-    return unit, [(int(a), int(b), c) for a, b, c in rows]
+    return f'{unit}:{deck}', [(int(a), int(b), c) for a, b, c in rows]
 
 if __name__ == '__main__':
     units = sys.argv[1:]

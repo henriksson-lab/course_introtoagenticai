@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 515" width="1000" height="515" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="515" fill="#fff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#777"/></marker><marker id="a2a7f8f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2a7f8f"/></marker><marker id="a6b4fa0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b4fa0"/></marker><marker id="aa8324a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a8324a"/></marker><marker id="a8a6a12" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a6a12"/></marker></defs>
+<text x="20" y="30" font-size="18" fill="#333" text-anchor="start" font-weight="bold">Synthetic pilot: regulator activity (decoupler ulm on the DESeq2 statistic)</text>
+<text x="460" y="76" font-size="17" fill="#333" text-anchor="end" font-weight="bold">RegA</text>
+<rect x="470.0" y="59" width="330.8" height="24" fill="#2a7f8f"/>
+<text x="808.8499999999999" y="77" font-size="16" fill="#333" text-anchor="start">+50.9</text>
+<text x="460" y="112" font-size="17" fill="#333" text-anchor="end" font-weight="bold">RegC</text>
+<rect x="470.0" y="95" width="222.3" height="24" fill="#2a7f8f"/>
+<text x="700.3" y="113" font-size="16" fill="#333" text-anchor="start">+34.2</text>
+<text x="460" y="148" font-size="17" fill="#333" text-anchor="end" font-weight="bold">RegD</text>
+<rect x="470.0" y="131" width="70.2" height="24" fill="#8a6a12"/>
+<text x="548.2" y="149" font-size="16" fill="#333" text-anchor="start">+10.8  (decoy)</text>
+<text x="460" y="184" font-size="17" fill="#333" text-anchor="end" font-weight="bold">RegE</text>
+<rect x="470.0" y="167" width="5.2" height="24" fill="#bbb"/>
+<text x="483.2" y="185" font-size="16" fill="#333" text-anchor="start">+0.8</text>
+<text x="480" y="220" font-size="17" fill="#333" text-anchor="start" font-weight="bold">RegH</text>
+<rect x="467.4" y="203" width="2.6" height="24" fill="#bbb"/>
+<text x="459.4" y="221" font-size="16" fill="#333" text-anchor="end">-0.4</text>
+<text x="480" y="256" font-size="17" fill="#333" text-anchor="start" font-weight="bold">RegJ</text>
+<rect x="466.8" y="239" width="3.2" height="24" fill="#bbb"/>
+<text x="458.75" y="257" font-size="16" fill="#333" text-anchor="end">-0.5</text>
+<text x="480" y="292" font-size="17" fill="#333" text-anchor="start" font-weight="bold">RegF</text>
+<rect x="466.8" y="275" width="3.2" height="24" fill="#bbb"/>
+<text x="458.75" y="293" font-size="16" fill="#333" text-anchor="end">-0.5</text>
+<text x="480" y="328" font-size="17" fill="#333" text-anchor="start" font-weight="bold">RegG</text>
+<rect x="466.8" y="311" width="3.2" height="24" fill="#bbb"/>
+<text x="458.75" y="329" font-size="16" fill="#333" text-anchor="end">-0.5</text>
+<text x="480" y="364" font-size="17" fill="#333" text-anchor="start" font-weight="bold">RegI</text>
+<rect x="465.4" y="347" width="4.5" height="24" fill="#bbb"/>
+<text x="457.45" y="365" font-size="16" fill="#333" text-anchor="end">-0.7</text>
+<text x="480" y="400" font-size="17" fill="#333" text-anchor="start" font-weight="bold">RegB</text>
+<rect x="243.2" y="383" width="226.8" height="24" fill="#a8324a"/>
+<text x="235.15" y="401" font-size="16" fill="#333" text-anchor="end">-34.9</text>
+<line x1="470" y1="50" x2="470" y2="415" stroke="#777" stroke-width="1.5"/>
+<text x="20" y="445" font-size="17" fill="#333" text-anchor="start">Planted: RegA on, RegB off, RegC on (activates 40 genes, represses 60). Decoys D to J: unchanged genes.</text>
+<text x="20" y="470" font-size="17" fill="#333" text-anchor="start">RegD is a decoy, yet p &lt; 1e-25: it shares 20 targets with RegA's program.</text>
+<text x="20" y="495" font-size="15" fill="#777" text-anchor="start">Swap corrected, ~ batch + treatment; network data/regulons.csv; decoupleR 2.17.</text>
+</svg>

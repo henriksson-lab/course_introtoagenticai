@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 480" width="1000" height="480" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="480" fill="#ffffff"/>
+<text x="250" y="40" font-size="21" fill="#a8324a" text-anchor="middle" font-weight="bold">Instrument vendor</text>
+<text x="250" y="66" font-size="17" fill="#1b2a3a" text-anchor="middle">(vertically integrated)</text>
+<rect x="130" y="280" width="240" height="120" rx="0" fill="#f8e6ea" stroke="#1b2a3a" stroke-width="1.5"/>
+<text x="250" y="346.0" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="bold">Initial sale</text>
+<rect x="130" y="190" width="240" height="90" rx="0" fill="#f6efdc" stroke="#1b2a3a" stroke-width="1.5"/>
+<text x="250" y="241.0" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="bold">Service contract</text>
+<rect x="130" y="130" width="240" height="60" rx="0" fill="#efe9f7" stroke="#1b2a3a" stroke-width="1.5"/>
+<text x="250" y="166.0" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="bold">Extra software modules</text>
+<rect x="130" y="80" width="240" height="50" rx="0" fill="#e3f1f3" stroke="#1b2a3a" stroke-width="1.5"/>
+<text x="250" y="111.0" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="bold">Own consumables</text>
+<text x="250" y="430" font-size="16" fill="#1b2a3a" text-anchor="middle">income over the instrument's life</text>
+<text x="400" y="150" font-size="17" fill="#a8324a" text-anchor="start" font-weight="bold">Lock-in keeps the</text>
+<text x="400" y="172" font-size="17" fill="#a8324a" text-anchor="start" font-weight="bold">later income</text>
+<path d="M390,90 C 380,110 380,260 390,290" fill="none" stroke="#a8324a" stroke-width="2"/>
+<text x="750" y="40" font-size="21" fill="#2a7f8f" text-anchor="middle" font-weight="bold">Part supplier</text>
+<text x="750" y="66" font-size="17" fill="#1b2a3a" text-anchor="middle">(cameras, stages, lasers)</text>
+<rect x="600" y="100" width="300" height="88" rx="10" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<text x="750.0" y="139.4" font-size="18" fill="#2a7f8f" text-anchor="middle" font-weight="bold">Sells to instrument builders</text>
+<text x="750.0" y="159.4" font-size="16" fill="#1b2a3a" text-anchor="middle">who need to integrate the part</text>
+<rect x="600" y="205" width="300" height="88" rx="10" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<text x="750.0" y="244.4" font-size="18" fill="#2a7f8f" text-anchor="middle" font-weight="bold">Documents the protocol</text>
+<text x="750.0" y="264.4" font-size="16" fill="#1b2a3a" text-anchor="middle">or ships an SDK</text>
+<rect x="600" y="310" width="300" height="88" rx="10" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<text x="750.0" y="349.4" font-size="18" fill="#2a7f8f" text-anchor="middle" font-weight="bold">Openness sells more parts</text>
+<text x="750.0" y="369.4" font-size="16" fill="#1b2a3a" text-anchor="middle">integration is the product</text>
+</svg>

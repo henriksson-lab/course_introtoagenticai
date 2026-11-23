@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="500" fill="#ffffff"/>
+<rect x="30" y="400" width="910" height="70" rx="8" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+<text x="50" y="430" font-size="19" fill="#2a7f8f" text-anchor="start" font-weight="bold">1. Replay against the log</text>
+<text x="50" y="456" font-size="16" fill="#1b2a3a" text-anchor="start">no hardware: the driver must reproduce every recorded exchange</text>
+<rect x="70" y="315" width="870" height="70" rx="8" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+<text x="90" y="345" font-size="19" fill="#2a7f8f" text-anchor="start" font-weight="bold">2. Read-only commands</text>
+<text x="90" y="371" font-size="16" fill="#1b2a3a" text-anchor="start">status, version, temperature: nothing moves, nothing heats</text>
+<rect x="110" y="230" width="830" height="70" rx="8" fill="#f6efdc" stroke="#8a6a12" stroke-width="2"/>
+<text x="130" y="260" font-size="19" fill="#8a6a12" text-anchor="start" font-weight="bold">3. Harmless settings, no sample</text>
+<text x="130" y="286" font-size="16" fill="#1b2a3a" text-anchor="start">small, reversible changes; vendor app at hand to reset</text>
+<rect x="150" y="145" width="790" height="70" rx="8" fill="#f6efdc" stroke="#8a6a12" stroke-width="2"/>
+<text x="170" y="175" font-size="19" fill="#8a6a12" text-anchor="start" font-weight="bold">4. Full run with a test plate</text>
+<text x="170" y="201" font-size="16" fill="#1b2a3a" text-anchor="start">water or dye, not your precious samples</text>
+<rect x="190" y="60" width="750" height="70" rx="8" fill="#f8e6ea" stroke="#a8324a" stroke-width="2"/>
+<text x="210" y="90" font-size="19" fill="#a8324a" text-anchor="start" font-weight="bold">5. Real experiments</text>
+<text x="210" y="116" font-size="16" fill="#1b2a3a" text-anchor="start">after the driver matches the vendor app on test runs</text>
+<text x="30" y="40" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold">Climb one step at a time; never send a command you have not seen the vendor app send</text>
+</svg>

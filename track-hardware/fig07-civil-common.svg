@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 370" width="1000" height="370" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="370" fill="#ffffff"/>
+<defs><marker id="a9162" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1b2a3a"/></marker></defs>
+<line x1="120" y1="150" x2="880" y2="150" stroke="#1b2a3a" stroke-width="3" marker-end="url(#a9162)" marker-start="url(#a9162)"/>
+<text x="150" y="120" font-size="19" fill="#2a7f8f" text-anchor="start" font-weight="bold">Sweden, most of the EU</text>
+<text x="850" y="120" font-size="19" fill="#6b4fa0" text-anchor="end" font-weight="bold">UK, US, Ireland</text>
+<rect x="40" y="190" width="420" height="160" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+<text x="250.0" y="242.7" font-size="19" fill="#2a7f8f" text-anchor="middle" font-weight="bold">Civil law ("Roman")</text>
+<text x="250.0" y="264.7" font-size="17" fill="#1b2a3a" text-anchor="middle">The written law is the main source.</text>
+<text x="250.0" y="286.7" font-size="17" fill="#1b2a3a" text-anchor="middle">Courts read the text, and the</text>
+<text x="250.0" y="308.7" font-size="17" fill="#1b2a3a" text-anchor="middle">preparatory works (in Sweden: propositioner)</text>
+<rect x="540" y="190" width="420" height="160" rx="10" fill="#efe9f7" stroke="#6b4fa0" stroke-width="2"/>
+<text x="750.0" y="242.7" font-size="19" fill="#6b4fa0" text-anchor="middle" font-weight="bold">Common law</text>
+<text x="750.0" y="264.7" font-size="17" fill="#1b2a3a" text-anchor="middle">Earlier court cases (precedent)</text>
+<text x="750.0" y="286.7" font-size="17" fill="#1b2a3a" text-anchor="middle">decide how the law is read.</text>
+<text x="750.0" y="308.7" font-size="17" fill="#1b2a3a" text-anchor="middle">One ruling can change practice.</text>
+<text x="500" y="40" font-size="18" fill="#1b2a3a" text-anchor="middle" font-weight="bold">Both: the EU Court of Justice has the last word on what EU law means</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#fff"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#555"/></marker></defs>
+  <text x="20" y="35" font-size="20" font-weight="bold" fill="#6b4fa0">Python or R (interpreted)</text>
+  <rect x="20" y="55" width="200" height="70" rx="8" fill="#efeaf7" stroke="#6b4fa0" stroke-width="2"/>
+  <text x="120" y="97" font-size="18" text-anchor="middle" fill="#333">fastq_stats.py</text>
+  <rect x="300" y="55" width="300" height="70" rx="8" fill="#f5f5f5" stroke="#888"/>
+  <text x="450" y="85" font-size="18" text-anchor="middle" fill="#333">+ Python interpreter</text>
+  <text x="450" y="110" font-size="18" text-anchor="middle" fill="#333">+ the right packages</text>
+  <rect x="680" y="55" width="300" height="70" rx="8" fill="#f5f5f5" stroke="#888"/>
+  <text x="830" y="85" font-size="18" text-anchor="middle" fill="#333">read and run line by line,</text>
+  <text x="830" y="110" font-size="18" text-anchor="middle" fill="#333">on every computer, every time</text>
+  <g stroke="#555" stroke-width="2.5" marker-end="url(#a)"><line x1="222" y1="90" x2="296" y2="90"/><line x1="602" y1="90" x2="676" y2="90"/></g>
+  <text x="20" y="200" font-size="20" font-weight="bold" fill="#a8324a">Rust (compiled)</text>
+  <rect x="20" y="220" width="200" height="70" rx="8" fill="#fbe9ea" stroke="#a8324a" stroke-width="2"/>
+  <text x="120" y="262" font-size="18" text-anchor="middle" fill="#333">main.rs</text>
+  <rect x="300" y="220" width="300" height="70" rx="8" fill="#f5f5f5" stroke="#888"/>
+  <text x="450" y="250" font-size="18" text-anchor="middle" fill="#333">cargo build --release</text>
+  <text x="450" y="275" font-size="16" text-anchor="middle" fill="#555">once, on the developer's machine</text>
+  <rect x="680" y="220" width="300" height="70" rx="8" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="830" y="250" font-size="18" text-anchor="middle" font-weight="bold" fill="#2a7f8f">fastq_stats.exe</text>
+  <text x="830" y="275" font-size="16" text-anchor="middle" fill="#333">one file: copy it and run it</text>
+  <g stroke="#555" stroke-width="2.5" marker-end="url(#a)"><line x1="222" y1="255" x2="296" y2="255"/><line x1="602" y1="255" x2="676" y2="255"/></g>
+  <text x="500" y="350" font-size="18" text-anchor="middle" fill="#333">The compiler checks types and memory use before the program ever runs.</text>
+  <text x="500" y="378" font-size="18" text-anchor="middle" fill="#333">You build one binary per system: Windows, macOS, Linux.</text>
+</svg>

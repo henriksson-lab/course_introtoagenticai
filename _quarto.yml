@@ -169,6 +169,12 @@ website:
                 href: legacy-code/lec.qmd
               - text: "Exercise: port an inherited script"
                 href: legacy-code/exercise.qmd
+          - section: "Translating code to Rust"
+            contents:
+              - text: "Lecture (slides)"
+                href: rust-translation/lec.qmd
+              - text: "Exercise: port a tool to Rust"
+                href: rust-translation/exercise.qmd
       - section: "Part 6: The wider picture"
         contents:
           - section: "Choosing a model"
@@ -215,6 +221,10 @@ website:
                 href: track-rnaseq/lec.qmd
               - text: "Exercise: RNA-seq by prompts"
                 href: track-rnaseq/exercise.qmd
+              - text: "Lecture: from gene lists to mechanisms"
+                href: track-rnaseq/lec-mechanism.qmd
+              - text: "Exercise: top genes and a mechanism"
+                href: track-rnaseq/exercise-mechanism.qmd
           - section: "B. Simulation"
             contents:
               - text: "Lecture (slides)"

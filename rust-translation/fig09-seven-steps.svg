@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 330" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="330" fill="#fff"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#555"/></marker></defs>
+  <g font-size="17" text-anchor="middle">
+    <rect x="10" y="40" width="130" height="110" rx="8" fill="#f5f5f5" stroke="#888"/><text x="75" y="75" font-weight="bold">1 scaffold</text><text x="75" y="102">static analysis,</text><text x="75" y="124">stubs for all</text><text x="75" y="144">functions</text>
+    <rect x="152" y="40" width="130" height="110" rx="8" fill="#fbe9ea" stroke="#a8324a"/><text x="217" y="75" font-weight="bold">2 translate</text><text x="217" y="102">all of it,</text><text x="217" y="124">bottom-up</text>
+    <rect x="294" y="40" width="130" height="110" rx="8" fill="#e3f1f3" stroke="#2a7f8f"/><text x="359" y="75" font-weight="bold">3 test</text><text x="359" y="102">synthetic data</text><text x="359" y="124">vs original</text>
+    <rect x="436" y="40" width="130" height="110" rx="8" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="3"/><text x="501" y="75" font-weight="bold">4 test</text><text x="501" y="102">real data</text><text x="501" y="124">vs original</text>
+    <rect x="578" y="40" width="130" height="110" rx="8" fill="#f5efdd" stroke="#8a6a12"/><text x="643" y="75" font-weight="bold">5 benchmark</text><text x="643" y="102">and speed</text><text x="643" y="124">up</text>
+    <rect x="720" y="40" width="130" height="110" rx="8" fill="#f5f5f5" stroke="#888"/><text x="785" y="75" font-weight="bold">6 clean up</text><text x="785" y="102">code-specific</text><text x="785" y="124">tidying</text>
+    <rect x="862" y="40" width="130" height="110" rx="8" fill="#f5f5f5" stroke="#888"/><text x="927" y="75" font-weight="bold">7 Rust API</text><text x="927" y="102">usable as a</text><text x="927" y="124">library</text>
+  </g>
+  <g stroke="#555" stroke-width="2" marker-end="url(#a)"><line x1="140" y1="95" x2="150" y2="95"/><line x1="282" y1="95" x2="292" y2="95"/><line x1="424" y1="95" x2="434" y2="95"/><line x1="566" y1="95" x2="576" y2="95"/><line x1="708" y1="95" x2="718" y2="95"/><line x1="850" y1="95" x2="860" y2="95"/></g>
+  <path d="M501,152 C501,215 217,215 217,155" fill="none" stroke="#a8324a" stroke-width="2.5" stroke-dasharray="7,5" marker-end="url(#a)"/>
+  <text x="360" y="232" font-size="17" text-anchor="middle" fill="#a8324a">differences send you back to fix the translation</text>
+  <text x="500" y="285" font-size="19" text-anchor="middle" fill="#333">The paper's "idealized steps". Correctness (1 to 4) comes before speed (5).</text>
+  <text x="990" y="322" font-size="13" text-anchor="end" fill="#888">Steps from Henriksson 2026, arXiv:2608.13029, CC BY 4.0</text>
+</svg>

@@ -192,6 +192,15 @@ These rules decide the order. Check any reordering against them.
     Zotero); a reusable "house style" for figures or reports.
 21. **Reading other people's code.** Explain, document, port (MATLAB → R/Python)
     and test that the results match.
+21b. **Translating code to Rust.** Why: speed, a single binary with no
+    Docker/Conda (runs natively, including on Windows and HPC), and possibly
+    higher security (memory safety, fewer dependencies). How: reference outputs
+    first, static-analysis-guided bottom-up translation with an agent,
+    equivalence testing, honest benchmarks; when not to translate; licences of
+    the original. Based on Henriksson 2026, "Static analysis-guided agentic AI
+    translation enables Rust as a full stack bioinformatics language",
+    [arXiv:2608.13029](https://arxiv.org/abs/2608.13029), and
+    [rustification](https://github.com/henriksson-lab/rustification).
 ### Part 6: The wider picture
 These units need little hands-on agent skill. They sit in Part 6 for now; each
 notes where it could move later.
@@ -438,6 +447,10 @@ literature review.
 
 - **A. Bulk RNA-seq.** Counts → QC → DESeq2 → volcano → enrichment → link back to
   the literature table from *Literature review*.
+  Second deck, *From gene lists to mechanisms*: literature review of the top
+  DE genes (the everyday workflow), TF and pathway activity inference, a
+  causal hypothesis chain with evidence labels, testable predictions; synthetic
+  data with planted regulators as a known answer.
 - **B. Simulation.** FEM heat or elasticity (scikit-fem), ODE models, or
   agent-based models; validate against an analytic solution.
 - **C. Image analysis in Python.** Basic Python scripts (scikit-image, with

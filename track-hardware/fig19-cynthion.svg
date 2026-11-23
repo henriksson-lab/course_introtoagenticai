@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="420" fill="#ffffff"/>
+<rect x="40" y="80" width="170" height="100" rx="6" fill="#eef1f4" stroke="#1b2a3a" stroke-width="2.5"/>
+<rect x="113.0" y="180" width="24" height="14" rx="0" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="0"/>
+<rect x="89.0" y="194" width="72" height="6" rx="2" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="0"/>
+<text x="125.0" y="136.0" font-size="16" fill="#1b2a3a" text-anchor="middle" font-weight="bold">vendor PC</text>
+<text x="125.0" y="222" font-size="16" fill="#1b2a3a" text-anchor="middle">no admin rights needed</text>
+<rect x="400" y="95" width="180" height="80" rx="8" fill="#f6efdc" stroke="#8a6a12" stroke-width="2.5"/>
+<text x="490" y="130" font-size="18" fill="#8a6a12" text-anchor="middle" font-weight="bold">USB analyser</text>
+<text x="490" y="155" font-size="16" fill="#1b2a3a" text-anchor="middle">(e.g. Cynthion)</text>
+<rect x="790" y="85" width="150" height="95" rx="8" fill="#fff" stroke="#6b4fa0" stroke-width="2.5"/>
+<rect x="802" y="97" width="67.5" height="30.400000000000002" rx="3" fill="#eef1f4" stroke="#6b4fa0" stroke-width="1.5"/>
+<rect x="802" y="154" width="126" height="12" rx="3" fill="#eef1f4" stroke="#6b4fa0" stroke-width="1.5"/>
+<circle cx="918" cy="109" r="7" fill="#6b4fa0" stroke="none" stroke-width="2"/>
+<text x="865.0" y="204" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="bold">Instrument</text>
+<defs><marker id="a5951" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1b2a3a"/></marker></defs>
+<line x1="220" y1="135" x2="392" y2="135" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#a5951)" marker-start="url(#a5951)"/>
+<defs><marker id="a5951" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1b2a3a"/></marker></defs>
+<line x1="588" y1="135" x2="782" y2="135" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#a5951)" marker-start="url(#a5951)"/>
+<defs><marker id="a168" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a6a12"/></marker></defs>
+<line x1="490" y1="180" x2="490" y2="255" stroke="#8a6a12" stroke-width="2.5" marker-end="url(#a168)"/>
+<rect x="410" y="260" width="160" height="80" rx="6" fill="#eef1f4" stroke="#2a7f8f" stroke-width="2.5"/>
+<rect x="478.0" y="340" width="24" height="14" rx="0" fill="#2a7f8f" stroke="#2a7f8f" stroke-width="0"/>
+<rect x="454.0" y="354" width="72" height="6" rx="2" fill="#2a7f8f" stroke="#2a7f8f" stroke-width="0"/>
+<text x="490.0" y="306.0" font-size="16" fill="#2a7f8f" text-anchor="middle" font-weight="bold">your laptop</text>
+<text x="40" y="300" font-size="17" fill="#1b2a3a" text-anchor="start">+ sees every packet on the wire,</text>
+<text x="52" y="326" font-size="17" fill="#1b2a3a" text-anchor="start">with exact timing</text>
+<text x="40" y="352" font-size="17" fill="#1b2a3a" text-anchor="start">+ works with any host OS</text>
+<text x="640" y="300" font-size="17" fill="#1b2a3a" text-anchor="start">- extra hardware, USB 2.0 only</text>
+<text x="640" y="326" font-size="17" fill="#1b2a3a" text-anchor="start">- no screenshots of the vendor PC</text>
+<text x="652" y="352" font-size="17" fill="#1b2a3a" text-anchor="start">(log what you do by hand)</text>
+</svg>

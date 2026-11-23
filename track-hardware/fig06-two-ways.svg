@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="500" fill="#ffffff"/>
+<rect x="70" y="40" width="170" height="100" rx="6" fill="#eef1f4" stroke="#1b2a3a" stroke-width="2.5"/>
+<rect x="143.0" y="140" width="24" height="14" rx="0" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="0"/>
+<rect x="119.0" y="154" width="72" height="6" rx="2" fill="#1b2a3a" stroke="#1b2a3a" stroke-width="0"/>
+<text x="155.0" y="96.0" font-size="16" fill="#1b2a3a" text-anchor="middle" font-weight="bold">vendor app</text>
+<rect x="760" y="45" width="150" height="95" rx="8" fill="#fff" stroke="#2a7f8f" stroke-width="2.5"/>
+<rect x="772" y="57" width="67.5" height="30.400000000000002" rx="3" fill="#eef1f4" stroke="#2a7f8f" stroke-width="1.5"/>
+<rect x="772" y="114" width="126" height="12" rx="3" fill="#eef1f4" stroke="#2a7f8f" stroke-width="1.5"/>
+<circle cx="888" cy="69" r="7" fill="#2a7f8f" stroke="none" stroke-width="2"/>
+<text x="835.0" y="164" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="bold">Instrument</text>
+<defs><marker id="a9162" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1b2a3a"/></marker></defs>
+<line x1="260" y1="90" x2="745" y2="90" stroke="#1b2a3a" stroke-width="2.5" marker-end="url(#a9162)" marker-start="url(#a9162)"/>
+<text x="500" y="75" font-size="17" fill="#1b2a3a" text-anchor="middle">commands and data over USB, serial, network</text>
+<defs><marker id="a8343" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b4fa0"/></marker></defs>
+<line x1="155" y1="175" x2="155" y2="250" stroke="#6b4fa0" stroke-width="2.5" marker-end="url(#a8343)"/>
+<defs><marker id="a5258" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a6a12"/></marker></defs>
+<line x1="500" y1="100" x2="500" y2="250" stroke="#8a6a12" stroke-width="2.5" marker-end="url(#a5258)"/>
+<rect x="30" y="255" width="420" height="220" rx="10" fill="#efe9f7" stroke="#6b4fa0" stroke-width="2"/>
+<text x="240.0" y="370.7" font-size="19" fill="#6b4fa0" text-anchor="middle" font-weight="bold"></text>
+<text x="50" y="292" font-size="21" fill="#6b4fa0" text-anchor="start" font-weight="bold">Decompilation</text>
+<text x="50" y="330" font-size="18" fill="#1b2a3a" text-anchor="start">1. Turn the program file (binary)</text>
+<text x="74" y="357" font-size="18" fill="#1b2a3a" text-anchor="start">into readable code (e.g. Ghidra)</text>
+<text x="50" y="384" font-size="18" fill="#1b2a3a" text-anchor="start">2. Find the part that talks to</text>
+<text x="74" y="411" font-size="18" fill="#1b2a3a" text-anchor="start">the instrument</text>
+<text x="50" y="438" font-size="18" fill="#1b2a3a" text-anchor="start">3. Extract the commands and rules</text>
+<rect x="480" y="255" width="490" height="220" rx="10" fill="#f6efdc" stroke="#8a6a12" stroke-width="2"/>
+<text x="725.0" y="370.7" font-size="19" fill="#8a6a12" text-anchor="middle" font-weight="bold"></text>
+<text x="500" y="292" font-size="21" fill="#8a6a12" text-anchor="start" font-weight="bold">Black-box reverse engineering</text>
+<text x="500" y="330" font-size="18" fill="#1b2a3a" text-anchor="start">1. Record the traffic while you use the</text>
+<text x="524" y="357" font-size="18" fill="#1b2a3a" text-anchor="start">vendor app (USB sniffer)</text>
+<text x="500" y="384" font-size="18" fill="#1b2a3a" text-anchor="start">2. Work out what the bytes mean</text>
+<text x="500" y="411" font-size="18" fill="#1b2a3a" text-anchor="start">3. Test your theory on the instrument</text>
+<text x="155" y="200" font-size="16" fill="#6b4fa0" text-anchor="start">the program</text>
+<text x="515" y="200" font-size="16" fill="#8a6a12" text-anchor="start">the traffic</text>
+</svg>

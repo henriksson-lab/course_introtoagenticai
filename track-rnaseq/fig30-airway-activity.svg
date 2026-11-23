@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 515" width="1000" height="515" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="515" fill="#fff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#777"/></marker><marker id="a2a7f8f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2a7f8f"/></marker><marker id="a6b4fa0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b4fa0"/></marker><marker id="aa8324a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a8324a"/></marker><marker id="a8a6a12" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a6a12"/></marker></defs>
+<text x="20" y="30" font-size="18" fill="#333" text-anchor="start" font-weight="bold">airway: top transcription factors by p-value (CollecTRI regulons, ulm)</text>
+<text x="460" y="76" font-size="17" fill="#333" text-anchor="end" font-weight="bold">PGR</text>
+<rect x="470.0" y="59" width="231.8" height="24" fill="#8a6a12"/>
+<text x="709.8" y="77" font-size="16" fill="#333" text-anchor="start">+6.1  (mean count 6)</text>
+<text x="460" y="112" font-size="17" fill="#333" text-anchor="end" font-weight="bold">NR3C1</text>
+<rect x="470.0" y="95" width="216.6" height="24" fill="#6b4fa0"/>
+<text x="694.6" y="113" font-size="16" fill="#333" text-anchor="start">+5.7  (mean count 2811)</text>
+<text x="460" y="148" font-size="17" fill="#333" text-anchor="end" font-weight="bold">TCF21</text>
+<rect x="470.0" y="131" width="205.2" height="24" fill="#2a7f8f"/>
+<text x="683.2" y="149" font-size="16" fill="#333" text-anchor="start">+5.4</text>
+<text x="460" y="184" font-size="17" fill="#333" text-anchor="end" font-weight="bold">SMAD7</text>
+<rect x="470.0" y="167" width="182.4" height="24" fill="#2a7f8f"/>
+<text x="660.4" y="185" font-size="16" fill="#333" text-anchor="start">+4.8</text>
+<text x="460" y="220" font-size="17" fill="#333" text-anchor="end" font-weight="bold">MYOCD</text>
+<rect x="470.0" y="203" width="182.4" height="24" fill="#2a7f8f"/>
+<text x="660.4" y="221" font-size="16" fill="#333" text-anchor="start">+4.8</text>
+<text x="460" y="256" font-size="17" fill="#333" text-anchor="end" font-weight="bold">KLF15</text>
+<rect x="470.0" y="239" width="163.4" height="24" fill="#2a7f8f"/>
+<text x="641.4" y="257" font-size="16" fill="#333" text-anchor="start">+4.3</text>
+<text x="480" y="292" font-size="17" fill="#333" text-anchor="start" font-weight="bold">SALL2</text>
+<rect x="287.6" y="275" width="182.4" height="24" fill="#a8324a"/>
+<text x="279.6" y="293" font-size="16" fill="#333" text-anchor="end">-4.8</text>
+<text x="480" y="328" font-size="17" fill="#333" text-anchor="start" font-weight="bold">WT1</text>
+<rect x="280.0" y="311" width="190.0" height="24" fill="#a8324a"/>
+<text x="272.0" y="329" font-size="16" fill="#333" text-anchor="end">-5.0</text>
+<text x="480" y="364" font-size="17" fill="#333" text-anchor="start" font-weight="bold">JDP2</text>
+<rect x="268.6" y="347" width="201.4" height="24" fill="#a8324a"/>
+<text x="260.6" y="365" font-size="16" fill="#333" text-anchor="end">-5.3</text>
+<text x="480" y="400" font-size="17" fill="#333" text-anchor="start" font-weight="bold">ATF3</text>
+<rect x="257.2" y="383" width="212.8" height="24" fill="#a8324a"/>
+<text x="249.20000000000005" y="401" font-size="16" fill="#333" text-anchor="end">-5.6</text>
+<line x1="470" y1="50" x2="470" y2="415" stroke="#777" stroke-width="1.5"/>
+<text x="20" y="445" font-size="17" fill="#333" text-anchor="start">Rank 1 is the progesterone receptor, which these cells barely express (mean count 6).</text>
+<text x="20" y="470" font-size="17" fill="#333" text-anchor="start">The glucocorticoid receptor, NR3C1, is rank 2. Its regulon shares 44 targets with PGR's 133.</text>
+<text x="20" y="495" font-size="15" fill="#777" text-anchor="start">~ cell + dex, DESeq2 stat; CollecTRI via OmnipathR 4.0.4, decoupleR 2.17; 2026-11-23.</text>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#fff"/>
+  <rect x="20" y="20" width="470" height="360" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="255" y="55" font-size="21" font-weight="bold" text-anchor="middle" fill="#2a7f8f">A fair comparison</text>
+  <g font-size="18" fill="#333">
+    <text x="45" y="95">✓ outputs identical first, then time</text>
+    <text x="45" y="130">✓ same machine, nothing else running</text>
+    <text x="45" y="165">✓ same input: real data, realistic size</text>
+    <text x="45" y="200">✓ same number of threads</text>
+    <text x="45" y="235">✓ both built with optimisation on</text>
+    <text x="45" y="270">✓ one warm-up run, then several runs;</text>
+    <text x="70" y="295">report the median</text>
+    <text x="45" y="330">✓ time <tspan font-weight="bold">and</tspan> peak memory</text>
+  </g>
+  <rect x="510" y="20" width="470" height="360" rx="10" fill="#fbe9ea" stroke="#a8324a" stroke-width="2"/>
+  <text x="745" y="55" font-size="21" font-weight="bold" text-anchor="middle" fill="#a8324a">Ways a benchmark flatters</text>
+  <g font-size="18" fill="#333">
+    <text x="535" y="95">✗ 8 threads of Rust vs 1 of C</text>
+    <text x="535" y="130">✗ original built without optimisation</text>
+    <text x="535" y="165">✗ tiny input: start-up time dominates</text>
+    <text x="535" y="200">✗ original's fast path (SIMD) disabled</text>
+    <text x="535" y="235">✗ first, cold run of one, warm of other</text>
+    <text x="535" y="270">✗ Java timed before it has warmed up</text>
+    <text x="535" y="305">✗ faster because it skips work:</text>
+    <text x="560" y="330">check the output!</text>
+  </g>
+  <text x="990" y="395" font-size="13" text-anchor="end" fill="#888">Left: common practice. Right: examples reported in the rustification README and the paper.</text>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="520" fill="#ffffff"/>
+<rect x="30" y="20" width="290" height="450" rx="14" fill="#fafbfc" stroke="#c9d1d9" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="115" y="45" width="130" height="90" rx="8" fill="#fff" stroke="#2a7f8f" stroke-width="2.5"/>
+<rect x="127" y="57" width="58.5" height="28.8" rx="3" fill="#eef1f4" stroke="#2a7f8f" stroke-width="1.5"/>
+<rect x="127" y="109" width="106" height="12" rx="3" fill="#eef1f4" stroke="#2a7f8f" stroke-width="1.5"/>
+<circle cx="223" cy="69" r="7" fill="#2a7f8f" stroke="none" stroke-width="2"/>
+<text x="180.0" y="159" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="bold">Microscope</text>
+<defs><marker id="a9037" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2a7f8f"/></marker></defs>
+<line x1="180" y1="182" x2="180" y2="206" stroke="#2a7f8f" stroke-width="2.5" marker-end="url(#a9037)" marker-start="url(#a9037)"/>
+<text x="192" y="200" font-size="15" fill="#8a97a5" text-anchor="start">secret protocol</text>
+<rect x="120" y="210" width="120" height="76" rx="6" fill="#eef1f4" stroke="#2a7f8f" stroke-width="2.5"/>
+<rect x="168.0" y="286" width="24" height="14" rx="0" fill="#2a7f8f" stroke="#2a7f8f" stroke-width="0"/>
+<rect x="144.0" y="300" width="72" height="6" rx="2" fill="#2a7f8f" stroke="#2a7f8f" stroke-width="0"/>
+<text x="180" y="245" font-size="16" fill="#2a7f8f" text-anchor="middle" font-weight="bold">vendor app A</text>
+<text x="180" y="268" font-size="15" fill="#1b2a3a" text-anchor="middle">Windows 10 PC</text>
+<defs><marker id="a9037" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2a7f8f"/></marker></defs>
+<line x1="180" y1="318" x2="180" y2="355" stroke="#2a7f8f" stroke-width="2.5" marker-end="url(#a9037)"/>
+<rect x="100" y="360" width="160" height="44" rx="6" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<text x="180" y="388" font-size="17" fill="#2a7f8f" text-anchor="middle" font-weight="bold">.xyz (closed)</text>
+<text x="180" y="440" font-size="16" fill="#1b2a3a" text-anchor="middle">only app A reads it</text>
+<rect x="350" y="20" width="290" height="450" rx="14" fill="#fafbfc" stroke="#c9d1d9" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="435" y="45" width="130" height="90" rx="8" fill="#fff" stroke="#6b4fa0" stroke-width="2.5"/>
+<rect x="447" y="57" width="58.5" height="28.8" rx="3" fill="#eef1f4" stroke="#6b4fa0" stroke-width="1.5"/>
+<rect x="447" y="109" width="106" height="12" rx="3" fill="#eef1f4" stroke="#6b4fa0" stroke-width="1.5"/>
+<circle cx="543" cy="69" r="7" fill="#6b4fa0" stroke="none" stroke-width="2"/>
+<text x="500.0" y="159" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="bold">Plate reader</text>
+<defs><marker id="a8343" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b4fa0"/></marker></defs>
+<line x1="500" y1="182" x2="500" y2="206" stroke="#6b4fa0" stroke-width="2.5" marker-end="url(#a8343)" marker-start="url(#a8343)"/>
+<text x="512" y="200" font-size="15" fill="#8a97a5" text-anchor="start">secret protocol</text>
+<rect x="440" y="210" width="120" height="76" rx="6" fill="#eef1f4" stroke="#6b4fa0" stroke-width="2.5"/>
+<rect x="488.0" y="286" width="24" height="14" rx="0" fill="#6b4fa0" stroke="#6b4fa0" stroke-width="0"/>
+<rect x="464.0" y="300" width="72" height="6" rx="2" fill="#6b4fa0" stroke="#6b4fa0" stroke-width="0"/>
+<text x="500" y="245" font-size="16" fill="#6b4fa0" text-anchor="middle" font-weight="bold">vendor app B</text>
+<text x="500" y="268" font-size="15" fill="#1b2a3a" text-anchor="middle">Windows 7 PC</text>
+<defs><marker id="a8343" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b4fa0"/></marker></defs>
+<line x1="500" y1="318" x2="500" y2="355" stroke="#6b4fa0" stroke-width="2.5" marker-end="url(#a8343)"/>
+<rect x="420" y="360" width="160" height="44" rx="6" fill="#fff" stroke="#6b4fa0" stroke-width="2"/>
+<text x="500" y="388" font-size="17" fill="#6b4fa0" text-anchor="middle" font-weight="bold">.pdx (closed)</text>
+<text x="500" y="440" font-size="16" fill="#1b2a3a" text-anchor="middle">only app B reads it</text>
+<rect x="670" y="20" width="290" height="450" rx="14" fill="#fafbfc" stroke="#c9d1d9" stroke-width="2" stroke-dasharray="8 6"/>
+<rect x="755" y="45" width="130" height="90" rx="8" fill="#fff" stroke="#8a6a12" stroke-width="2.5"/>
+<rect x="767" y="57" width="58.5" height="28.8" rx="3" fill="#eef1f4" stroke="#8a6a12" stroke-width="1.5"/>
+<rect x="767" y="109" width="106" height="12" rx="3" fill="#eef1f4" stroke="#8a6a12" stroke-width="1.5"/>
+<circle cx="863" cy="69" r="7" fill="#8a6a12" stroke="none" stroke-width="2"/>
+<text x="820.0" y="159" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="bold">Gel imager</text>
+<defs><marker id="a5258" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a6a12"/></marker></defs>
+<line x1="820" y1="182" x2="820" y2="206" stroke="#8a6a12" stroke-width="2.5" marker-end="url(#a5258)" marker-start="url(#a5258)"/>
+<text x="832" y="200" font-size="15" fill="#8a97a5" text-anchor="start">secret protocol</text>
+<rect x="760" y="210" width="120" height="76" rx="6" fill="#eef1f4" stroke="#8a6a12" stroke-width="2.5"/>
+<rect x="808.0" y="286" width="24" height="14" rx="0" fill="#8a6a12" stroke="#8a6a12" stroke-width="0"/>
+<rect x="784.0" y="300" width="72" height="6" rx="2" fill="#8a6a12" stroke="#8a6a12" stroke-width="0"/>
+<text x="820" y="245" font-size="16" fill="#8a6a12" text-anchor="middle" font-weight="bold">vendor app C</text>
+<text x="820" y="268" font-size="15" fill="#1b2a3a" text-anchor="middle">Windows XP PC</text>
+<defs><marker id="a5258" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a6a12"/></marker></defs>
+<line x1="820" y1="318" x2="820" y2="355" stroke="#8a6a12" stroke-width="2.5" marker-end="url(#a5258)"/>
+<rect x="740" y="360" width="160" height="44" rx="6" fill="#fff" stroke="#8a6a12" stroke-width="2"/>
+<text x="820" y="388" font-size="17" fill="#8a6a12" text-anchor="middle" font-weight="bold">.scn (closed)</text>
+<text x="820" y="440" font-size="16" fill="#1b2a3a" text-anchor="middle">only app C reads it</text>
+<text x="337" y="250" font-size="40" fill="#a8324a" text-anchor="middle" font-weight="bold">?</text>
+<text x="657" y="250" font-size="40" fill="#a8324a" text-anchor="middle" font-weight="bold">?</text>
+</svg>

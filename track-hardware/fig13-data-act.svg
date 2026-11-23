@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 500" width="1000" height="500" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="500" fill="#ffffff"/>
+<rect x="40" y="60" width="150" height="100" rx="8" fill="#fff" stroke="#2a7f8f" stroke-width="2.5"/>
+<rect x="52" y="72" width="67.5" height="32.0" rx="3" fill="#eef1f4" stroke="#2a7f8f" stroke-width="1.5"/>
+<rect x="52" y="134" width="126" height="12" rx="3" fill="#eef1f4" stroke="#2a7f8f" stroke-width="1.5"/>
+<circle cx="168" cy="84" r="7" fill="#2a7f8f" stroke="none" stroke-width="2"/>
+<text x="115.0" y="184" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="bold">Connected instrument</text>
+<rect x="300" y="40" width="340" height="140" rx="10" fill="#eef2fb" stroke="#3355aa" stroke-width="2"/>
+<text x="470.0" y="82.7" font-size="19" fill="#3355aa" text-anchor="middle" font-weight="bold">Data Act, Art. 4</text>
+<text x="470.0" y="104.7" font-size="17" fill="#1b2a3a" text-anchor="middle">the user can ask the data holder</text>
+<text x="470.0" y="126.7" font-size="17" fill="#1b2a3a" text-anchor="middle">for product data and metadata,</text>
+<text x="470.0" y="148.7" font-size="17" fill="#1b2a3a" text-anchor="middle">machine-readable, free of charge</text>
+<defs><marker id="a1607" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3355aa"/></marker></defs>
+<line x1="200" y1="110" x2="295" y2="110" stroke="#3355aa" stroke-width="2.5" marker-end="url(#a1607)"/>
+<rect x="740" y="60" width="230" height="100" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+<text x="855.0" y="93.7" font-size="19" fill="#2a7f8f" text-anchor="middle" font-weight="bold">User</text>
+<text x="855.0" y="115.7" font-size="17" fill="#1b2a3a" text-anchor="middle">owner or lessee,</text>
+<text x="855.0" y="137.7" font-size="17" fill="#1b2a3a" text-anchor="middle">e.g. your university</text>
+<defs><marker id="a1607" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#3355aa"/></marker></defs>
+<line x1="645" y1="110" x2="735" y2="110" stroke="#3355aa" stroke-width="2.5" marker-end="url(#a1607)"/>
+<text x="40" y="245" font-size="20" fill="#a8324a" text-anchor="start" font-weight="bold">Limits</text>
+<text x="40" y="280" font-size="17" fill="#1b2a3a" text-anchor="start">- covers data the product generates and is designed to make retrievable, not derived results or the vendor's code</text>
+<text x="40" y="314" font-size="17" fill="#1b2a3a" text-anchor="start">- trade secrets: confidentiality measures first; refusal only in exceptional, justified cases</text>
+<text x="40" y="348" font-size="17" fill="#1b2a3a" text-anchor="start">- you may not use the data to build a competing product</text>
+<text x="40" y="382" font-size="17" fill="#1b2a3a" text-anchor="start">- products from micro and small manufacturers are exempt</text>
+<text x="40" y="416" font-size="17" fill="#1b2a3a" text-anchor="start">- gives data access, not a documented control protocol</text>
+<text x="40" y="470" font-size="16" fill="#8a97a5" text-anchor="start">Regulation (EU) 2023/2854; applies from 12 September 2025</text>
+</svg>

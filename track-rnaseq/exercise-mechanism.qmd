@@ -1,0 +1,368 @@
+---
+title: "Exercise: top genes and a mechanism"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- a **top-gene list** made with a ranking rule you wrote, with up and down genes,
+- a **verified literature table** for those genes, with the experiment's context in every query and a context check on every row,
+- the genes sorted into **known here, known elsewhere, nothing found**, with the "nothing found" genes checked for alias and ID problems,
+- **transcription factor and pathway activities** for airway, with each top hit checked against what the cells express,
+- a **hypothesis chain** with a label (measured, cited, inferred, speculation) and a source on every arrow,
+- **three testable predictions**, each with the result that would refute it, and a table of **rival mechanisms**,
+- a check of the same method on the **synthetic pilot**, where the regulators are known, and
+- the same steps applied to **your own gene list**, if you have one.
+
+You do not write R. You choose rules, read tables and check references. Your session will look different from anyone else's; compare **results and checks**, not screens.
+
+## Before you start
+
+- You have done the first exercise of this track (*Exercise: from counts to a gene list*): you have `~/agentic-course/track-rnaseq/airway/` and `~/agentic-course/track-rnaseq/pilot/`, each with `results/tables/deseq2_all_genes.csv` and its scripts. If not, do at least steps 8 and 9 (airway) and steps 1 to 6 (pilot) of that exercise first.
+- You have done *Literature review*: you have a working `scripts/verify.py`, your contact e-mail in a `.env` file, and the habit of five random rows read by hand.
+- Download two more files for the pilot:
+
+| Download | What is inside |
+|---|---|
+| [regulons.csv](data/regulons.csv) | a "curated" network for the pilot genes: `source` (regulator), `target` (gene), `mor` (+1 activates, -1 represses). Ten fictional regulators. Goes into the pilot's `data/raw/`. |
+| [truth.csv](data/truth.csv) | the **answer key**, updated: it now also has a column `program`, the regulator that really drives each planted gene. Keep it out of the agent's folder until Part 3. If you downloaded it before, the first three columns are unchanged. |
+
+Both were made by [make-data.R](data/make-data.R).
+
+- Work in the airway folder for Parts 1 and 2. Start the agent there and check that git is clean ("Show me git status").
+
+| | Claude Code | Codex |
+|---|---|---|
+| Literature APIs and package installs | ask for permission per command; approve the ones you expected | network commands ask for approval outside the sandbox; approve them for this folder |
+| Long installs (decoupleR, OmnipathR) | let them run; the agent waits | the same |
+
+## Worked example
+
+### Part 1: the top genes and what is known about them (airway)
+
+#### Step 1: the ranking rule
+
+```text
+From results/tables/deseq2_all_genes.csv, make results/tables/top_genes.csv
+with the top 15 UP and top 15 DOWN genes, using this rule:
+padj < 0.01, mean count (baseMean) > 100, ranked by the absolute
+shrunken log2 fold change (DESeq2 lfcShrink, type "apeglm" or "ashr";
+ask me before installing anything, and tell me which you used).
+Save the script as scripts/06-top-genes.R. Report how many genes pass
+each filter, in order. Then show me which genes would enter and leave
+the list if I ranked by padj instead. Write the rule into README.md
+under "Top genes".
+```
+
+**Check.**
+
+- The filter counts shrink in a plausible way: about 4 000 genes at padj < 0.05 in the first exercise, fewer at 0.01, fewer again with the count filter.
+- 15 up and 15 down genes. Classic glucocorticoid targets should be among the up genes or just below: ZBTB16, FKBP5, KLF15, TSC22D3, PER1. Down genes might include VCAM1, LIF or TSLP.
+- No gene with a tiny mean count. If you see `LOC...` or `LINC...` names, ask what they are.
+- The README states the rule you gave, not a paraphrase.
+
+#### Step 2: aliases and the search plan
+
+```text
+Write search-plan-topgenes.md for a PubMed search on the 30 genes in
+results/tables/top_genes.csv. First fetch each gene's official symbol,
+full name and aliases from NCBI Gene with a script (E-utilities; read my
+e-mail from .env), save the raw responses under raw/ncbi-gene/<date>/,
+and list them for me. Then write three queries per gene:
+  A: (symbol OR aliases)[tiab]
+  B: A AND (glucocorticoid*[tiab] OR dexamethasone[tiab])
+  C: B AND (airway[tiab] OR "smooth muscle"[tiab])
+Flag every alias that is a common word or another gene's symbol.
+Do not search yet.
+```
+
+**Check.** Read the aliases for five genes. TSC22D3 must include GILZ; DUSP1 must include MKP-1. Remove aliases that are ordinary words or other genes ("remove the alias X from gene Y"). Commit the plan.
+
+#### Step 3: the search and the table
+
+Reuse your search script from *Literature review*, or let the agent adapt it:
+
+```text
+Run the queries in search-plan-topgenes.md. Save the raw responses and
+abstracts under raw/pubmed/<date>/ and write a log with the hit counts
+for A, B and C per gene. Then build results/literature_topgenes.csv from
+the saved records only. Columns: gene, direction_here, log2fc_here,
+claim, pmid, doi, year, title, evidence_type, cell_type, species,
+direction_in_paper, quote. At most 3 papers per gene, preferring query C,
+then B. cell_type, species and direction_in_paper come from the abstract;
+write "not stated" if the abstract does not say. No papers from memory.
+```
+
+**Check.**
+
+- Open the log. Genes with many hits for A and none for B: the response to glucocorticoids may be new. Genes with zero hits even for A: suspect an ID or alias problem.
+- Compare TSC22D3's hits with and without GILZ. In our search (2026-11-23), query B found 71 papers with the symbol alone and 423 with the alias.
+- Read five rows: does `direction_in_paper` agree with `direction_here`? Is `cell_type` right?
+
+#### Step 4: verification, with the context check
+
+```text
+Run scripts/verify.py on results/literature_topgenes.csv (adapt the
+column names if needed). Then add a context check: for each row, does
+the quote support the claim in the same direction as in our data, and
+does it name the cell type in cell_type? List rows where the direction
+differs or the cell type is not airway or smooth muscle. Do not fix
+anything yet.
+```
+
+Then plant three errors in a copy (a fake PMID, two swapped titles, one changed word in a quote), as in *Literature review*, and confirm the verifier flags all of them. Draw five random rows and read them yourself against the abstract.
+
+**Check.** Every PMID resolves, titles match, quotes are found. Rows about other cell types are kept, but marked: they support "known elsewhere", not "known here".
+
+#### Step 5: known here, known elsewhere, nothing found
+
+```text
+Using the search log and the verified table, sort the 30 genes into
+three groups: known in this context (glucocorticoid response in airway
+or smooth muscle), known elsewhere (glucocorticoid response in another
+tissue), and nothing found. Make results/known_unknown.md with a table:
+gene, direction here, group, hit counts A/B/C, and the best PMID.
+For every gene in "nothing found", check and report: aliases searched,
+mean count, whether its Ensembl ID maps to exactly one symbol, and a
+Europe PMC full-text search (gene AND (glucocorticoid OR dexamethasone)).
+```
+
+**Check.** Genes like DUSP1, KLF15, FKBP5, PER1 and TSC22D3 belong in "known here". If one of them lands in "nothing found", an alias or the context filter went wrong. For the "nothing found" genes, read the checks: are any of them low-count or ambiguous? The genes that survive are your candidates. In our run SPARCL1, RASL11B, FER1L6 and CACNB2 had no PubMed paper with glucocorticoids (query B, aliases included).
+
+Commit: "Top genes and verified literature".
+
+### Part 2: from the list to a mechanism (airway)
+
+#### Step 6: transcription factor and pathway activity
+
+```text
+Install the Bioconductor packages decoupleR and OmnipathR if needed
+(ask me first). Check the current decoupleR documentation and tell me
+both package versions. Then write scripts/07-activity.R:
+- input: the DESeq2 stat column from results/tables/deseq2_all_genes.csv,
+  by gene symbol (drop NAs; for duplicated symbols keep the gene with
+  the largest |stat|)
+- TF activity: CollecTRI network (get_collectri, human), method ulm
+- pathway activity: PROGENy (get_progeny, human, top 500), method mlm
+Save both full tables to results/tables/. Show me the top 15 TFs and
+all PROGENy pathways, each with score, p-value, number of targets
+measured, and the 5 targets that contribute most. Do not interpret yet.
+```
+
+Python users can do the same with the `decoupler` package (version 2): `dc.op.collectri`, `dc.op.progeny` and `dc.mt.ulm`. Ask the agent to check the current documentation, since the Python interface changed in version 2.
+
+**Check.**
+
+- NR3C1 (the glucocorticoid receptor) is among the top three TFs, with a positive score. KLF15 is active too.
+- PGR (the progesterone receptor) is at or near the top. Hold that thought.
+- PROGENy: "Androgen" has the strongest positive score. There is no glucocorticoid pathway in PROGENy.
+- The versions are written in the README.
+
+#### Step 7: check the top hits against the cells and the experiment
+
+```text
+For each of the top 10 TFs and the top 3 PROGENy pathways, make a table:
+regulator, score, mean count of the regulator's own gene in our data,
+its log2 fold change, whether the experiment stimulated it directly
+(dexamethasone is a glucocorticoid), and how many of its driving targets
+are shared with NR3C1's regulon. Flag hits that are barely expressed or
+whose score is mostly driven by targets shared with a stronger hit.
+```
+
+**Check.**
+
+- PGR: mean count about 6, barely expressed. Its regulon shares 44 of its 133 targets with NR3C1. A shared-target artefact, as with the decoy in the lecture.
+- NR3C1: mean count about 2 800, and its own mRNA goes **down** about 2-fold. If the agent concludes that glucocorticoid signalling is reduced, it confused expression with activity. Ask it to explain the difference.
+- "Androgen" in PROGENy: the androgen receptor is expressed but unchanged, and no androgen was added. The footprint overlaps the glucocorticoid response (ZBTB16, KLF15).
+
+#### Step 8: the hypothesis chain
+
+```text
+Draft a mechanism for the dexamethasone response in results/mechanism.md:
+a chain from stimulus to phenotype, as a Mermaid diagram plus a table
+with one row per arrow: from, to, evidence type (measured / cited /
+inferred / speculation), the source (a file and number from this
+project, or a PMID from results/literature_topgenes.csv), and a one-line
+reason. Only cite PMIDs that are already in my verified table; if an
+arrow needs a paper we do not have, label it speculation and list it
+under "to search". Use dashed arrows for inferred and speculation.
+Include at least one branch through a target gene that is itself a
+regulator (for example KLF15), and check whether that branch's
+downstream genes change in our data.
+```
+
+Ask the agent to render the diagram ("Make a Quarto page or PNG from the Mermaid diagram so I can see it") and open it.
+
+**Check.**
+
+- Every "cited" PMID is in your verified table. Ask: "List every PMID in mechanism.md that is not in literature_topgenes.csv." The answer must be: none.
+- Every "measured" arrow points to a number you can find in `results/`.
+- The phenotype at the end (less inflammation, less smooth muscle growth) is labelled speculation or cited, never measured: nobody measured it in this experiment.
+- Look for a cited arrow that your data do not support. In our session, KLF15 was up 22-fold, but PLCD1, a KLF15 target in airway smooth muscle according to PMID 28375666, did not change (padj 0.33). Did the agent notice such a disagreement, or did it keep the arrow because it was cited?
+- Search the "to search" list and add verified papers if you want to upgrade an arrow. Never upgrade an arrow by editing the label.
+
+#### Step 9: three predictions with refutation criteria
+
+```text
+Turn results/mechanism.md into results/predictions.md: three predictions
+that a wet-lab experiment in these cells could test. For each: the
+arrow it tests, the intervention, the control, the read-out (named
+genes, qPCR or RNA-seq), the expected direction and rough size, the
+result that would REFUTE it, and the cost (days, rough materials).
+At least one prediction must distinguish NR3C1 from PGR, and at least
+one must be about timing (direct versus indirect targets).
+```
+
+**Check.** Each prediction has a refutation that could really happen. "The genes might not change as much" is not a refutation; "GR protein down by more than 70%, and FKBP5 induction unchanged" is. Typical good answers: an NR3C1 knock-down (induction of FKBP5, TSC22D3, PER1, DUSP1, KLF15 much smaller) with a PGR knock-down as a contrast; a time course with and without cycloheximide (direct targets up by 1 to 2 hours and independent of new protein synthesis); a later time point or KLF15 overexpression for PLCD1. If the agent proposes mifepristone to separate GR from PR, ask: "Does mifepristone block only the glucocorticoid receptor?" (it also blocks the progesterone receptor; PMID 24205903 is a review).
+
+Optional, with *Track B: Simulation*: ask for a small ODE model of a direct and an indirect target after dexamethasone, with stated half-lives, and a plot of the predicted time courses. The model is a sharpening of the prediction, not evidence.
+
+#### Step 10: rival mechanisms
+
+```text
+Read results/mechanism.md. Now argue against it.
+1. Give three alternative mechanisms that could produce the same gene
+   changes, including at least one that does not involve NR3C1.
+2. For each, the evidence in this project that supports or weakens it.
+3. A table of experiments with the expected outcome under each
+   mechanism, marking which experiments give different outcomes.
+Do not tell me which mechanism you prefer. Save as results/rivals.md.
+```
+
+**Check.** You learned at least one thing you had not thought of. Each claimed piece of evidence points to a file or a verified PMID. Add one line to your **Log of AI use** about whether the agent agreed with you too easily earlier in the session.
+
+Commit: "TF activity, mechanism with evidence labels, predictions, rivals".
+
+### Part 3: the same method on the synthetic pilot (known answer)
+
+The pilot genes have no real names, so there is no literature to search. That makes it a clean test of the inference and of the agent's honesty. Start the agent in `~/agentic-course/track-rnaseq/pilot/`, copy `regulons.csv` into `data/raw/`, and commit it.
+
+#### Step 11: infer the regulators and propose a mechanism
+
+```text
+data/raw/regulons.csv is a curated regulator -> target network for
+these genes (columns source, target, mor: +1 activates, -1 represses).
+Using the corrected analysis in results/tables/deseq2_all_genes.csv:
+1. Infer regulator activities with decoupleR, method ulm, on the stat
+   column. Show all regulators with score, p-value, number of targets
+   measured, and the targets driving each score.
+2. Also run a simple over-representation test: for each regulator, how
+   many of its targets have padj < 0.05, and how many of those go up
+   and down.
+3. Which regulators were switched on or off by the treatment? Flag any
+   hit whose score could come from targets shared with another
+   regulator, and test it by rerunning without the shared targets.
+4. Write a short mechanism in results/mechanism.md with evidence labels.
+   You know nothing about these regulators beyond this file; say so.
+```
+
+**Check.**
+
+- The agent must not invent biology for RegA to RegJ. They are fictional, with no literature. Any sentence about what "RegA is known to do" is a hallucination; note it in your log.
+- Three regulators should stand out clearly, and one more should look significant but smaller. Did the agent find the shared-target problem on its own?
+
+#### Step 12: compare with the answer key
+
+Now copy `truth.csv` into the pilot folder (not into `data/raw`):
+
+```text
+truth.csv is the answer key. Its column "program" says which regulator
+really drives each planted gene ("none" for unchanged genes). Compare it
+with your mechanism: which regulators are truly active, in which
+direction, and does the network (regulons.csv) list all of their
+targets? How many of the genes with padj < 0.05 belong to each program?
+Was any regulator you called active not in truth.csv at all?
+```
+
+::: {.callout-note collapse="true" title="Answer key (synthetic pilot)"}
+**Planted (make-data.R).** Three programs cover all 400 planted genes:
+
+- **RegA** is switched on and activates 160 of the up genes.
+- **RegB** is switched off; it activates 140 of the down genes, so they go down.
+- **RegC** is switched on; it activates 40 up genes and represses 60 down genes.
+
+`regulons.csv` lists about 80% of each program's targets (128, 112 and 80), adds 25 to 40 targets per regulator that do not respond, and has seven decoys (RegD to RegJ) whose targets are unchanged genes. **RegD shares 20 targets with RegA's program**, 16 of which are also listed under RegA.
+
+**Expected results** (swap corrected, `~ batch + treatment`, decoupleR 2.17, ulm on `stat`):
+
+| Regulator | Score | Truth |
+|---|---|---|
+| RegA | about +51 | on |
+| RegC | about +34 | on (activates and represses) |
+| RegB | about -35 | off |
+| RegD | about +11, p about 1e-26 | **decoy**: without the 16 shared targets, score about 1.9, p about 0.06 |
+| RegE to RegJ | between -1 and +1 | inactive |
+
+Over-representation (padj < 0.05): RegA 125 of 168 targets (all up), RegB 105 of 147 (all down), RegC 76 of 105 (33 up, 43 down), RegD 19 of 60 (all up, all of them RegA-program genes), the others 0 or 1. Over-representation ignores direction, which is why RegC looks just as strong whether it activates or represses.
+
+Of the 421 genes at padj < 0.05: 155 belong to RegA's program, 132 to RegB's, 96 to RegC's, and 38 are not planted. 109 of the 421 are in no regulon at all: 38 false hits plus planted targets the network does not list. A real network is incomplete in the same way.
+
+**What a good session shows:** RegA, RegB and RegC with the right signs; RegD flagged as driven by shared targets; no invented biology for the fictional names; and the honest statement that the network cannot explain every changed gene.
+:::
+
+### Check the result
+
+- [ ] The top-gene rule is written in the README, and the list has up and down genes.
+- [ ] Every query used the treatment context; aliases were fetched by script and checked by you.
+- [ ] `verify.py` passes, the planted-errors test fails as it should, five random rows are read by you, and rows from other cell types are marked.
+- [ ] "Nothing found" genes were checked for aliases, mapping and read counts.
+- [ ] TF and pathway activities were checked against expression and the experiment; PGR and "Androgen" were recognised as artefacts of shared targets and missing pathways.
+- [ ] Every arrow in the chain has a label and a source; no PMID outside the verified table.
+- [ ] Three predictions, each with a refutation; one separates NR3C1 from PGR; one is about timing.
+- [ ] Rival mechanisms requested and read.
+- [ ] Pilot: RegA, RegB and RegC recovered with the right signs; RegD explained.
+
+::: {.callout-note collapse="true" title="Expected outcomes (airway)"}
+Numbers from our run on 2026-11-23 (DESeq2 1.52, airway 1.32, decoupleR 2.17, OmnipathR 4.0.4, gene symbols from org.Hs.eg.db). Your top list, hit counts and ranks will differ a little.
+
+- **Direction:** at padj < 0.05, 2 196 genes up and 1 797 down. Ranked by padj alone, 16 of the top 20 are up.
+- **Ranking:** the top 20 by padj and the top 20 by unshrunken fold change share 2 genes; with a mean count filter of 100, 8.
+- **Aliases (PubMed, query B):** TSC22D3 71 hits, with GILZ 423; DUSP1 81, with MKP-1 219; FKBP5 576, with FKBP51 739.
+- **Nothing found with glucocorticoids:** SPARCL1, RASL11B, FER1L6, CACNB2 (all well expressed and strongly changed).
+- **TF activity (CollecTRI, ulm, 730 TFs scored):** 1 PGR (+6.1), 2 NR3C1 (+5.7), then ATF3 (-5.6), TCF21, JDP2, WT1, SMAD7, SALL2, MYOCD; KLF15 at rank 12 (+4.3). PGR mean count 6; NR3C1 mean count about 2 800, log2 fold change -0.98.
+- **PROGENy (mlm, top 500):** Androgen +8.9, p53 -4.5, JAK-STAT -4.1, MAPK +3.5, NFkB +2.7. The androgen receptor is expressed (mean count about 1 300) and unchanged.
+- **Known targets:** FKBP5 log2 fold change 4.0, TSC22D3 3.2, PER1 3.2, DUSP1 2.9, KLF15 4.5, ZBTB16 7.4. All except ZBTB16 are NR3C1 targets in CollecTRI. PLCD1 0.19 (padj 0.33).
+
+Papers we verified for the chain (PMID: what the abstract supports):
+
+| PMID | Supports |
+|---|---|
+| 24926665 | the airway study: 1 µM dexamethasone for 18 h; DUSP1, KLF15, PER1, TSC22D3 among well-known responders |
+| 21257922 | KLF15 is a glucocorticoid receptor target in human airway smooth muscle |
+| 28375666 | KLF15 directly induced by glucocorticoids in airway smooth muscle; regulates PLCD1; genome-wide GR binding |
+| 17513787 | dexamethasone induces MKP-1 (DUSP1) in airway smooth muscle cells; GR binds its promoter |
+| 12519866 | FKBP51 mRNA induced within 2 h, directly through GR (lymphoblastoid cells) |
+| 12970399 | PLZF (ZBTB16) induced by dexamethasone within 2 h in smooth muscle cells; its tested promoter did not respond to GR |
+| 3216865 | dexamethasone lowers the receptor's own mRNA (rat liver, hepatoma cells) |
+| 24205903 | mifepristone blocks both the progesterone and the glucocorticoid receptor (review) |
+:::
+
+## On your own project
+
+::: {.callout-warning}
+**Privacy reminder.** Gene symbols and public literature are fine to send. Unpublished results are not personal data, but they may be confidential: check your group's rules before a cloud agent sees your gene list. Expression data from human participants stays under the rules from the first exercise of this track.
+:::
+
+**A. You have your own DE results (RNA-seq, proteomics, a CRISPR screen).** Repeat Steps 1 to 10 on your list. Write the ranking rule and the query context (your treatment, your tissue) before you start. If your organism is not human, ask the agent to check in the decoupler documentation which organisms CollecTRI and PROGENy offer, and how (some are translated from human by orthology, which adds uncertainty).
+
+**B. You have a gene list from a paper or a public dataset.** Use the public dataset from option B of the first exercise of this track, or a published supplementary table, and do Steps 1 to 5 (literature) and Steps 8 and 9 (mechanism and predictions) with the paper's own context.
+
+**C. Your project is not about genes.** The same pattern applies to any ranked list followed by an explanation: the top-scoring survey items, the schools with the largest change, the materials with the highest yield. Write the ranking rule, search the literature for the top items with the context, sort them into known here, known elsewhere and nothing found, and draft one causal chain with labelled arrows and one prediction that could fail.
+
+Whichever you choose:
+
+- Put the rule, the table, `mechanism.md` and `predictions.md` in your project folder and commit.
+- Add one line to your **Log of AI use**: date, tool, "mechanism deck", and which arrow or reference you corrected.
+
+## What you should have now
+
+- In `track-rnaseq/airway/`: `top_genes.csv` with its rule in the README, a search plan, raw downloads, `literature_topgenes.csv` with a verification report and your hand checks, `known_unknown.md`, TF and pathway activity tables, `mechanism.md` with a labelled diagram, `predictions.md` and `rivals.md`.
+- In `track-rnaseq/pilot/`: the regulator inference on the synthetic data, checked against the answer key.
+- A habit for every mechanism you read or write: **what is measured, what is cited, what is inferred, and what would prove it wrong.**

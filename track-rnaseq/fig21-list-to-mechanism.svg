@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 280" width="1000" height="280" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="280" fill="#fff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#777"/></marker><marker id="a2a7f8f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2a7f8f"/></marker><marker id="a6b4fa0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b4fa0"/></marker><marker id="aa8324a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a8324a"/></marker><marker id="a8a6a12" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a6a12"/></marker></defs>
+<rect x="15" y="60" width="145" height="110" rx="8" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+<text x="87" y="105" font-size="18" fill="#2a7f8f" text-anchor="middle" font-weight="bold">gene list</text>
+<text x="87" y="135" font-size="16" fill="#333" text-anchor="middle">DESeq2 results</text>
+<line x1="162" y1="115" x2="178" y2="115" stroke="#777" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="180" y="60" width="145" height="110" rx="8" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+<text x="252" y="105" font-size="18" fill="#2a7f8f" text-anchor="middle" font-weight="bold">top genes</text>
+<text x="252" y="135" font-size="16" fill="#333" text-anchor="middle">a rule you</text>
+<text x="252" y="155" font-size="16" fill="#333" text-anchor="middle">wrote</text>
+<line x1="327" y1="115" x2="343" y2="115" stroke="#777" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="345" y="60" width="145" height="110" rx="8" fill="#f6f1e1" stroke="#8a6a12" stroke-width="2"/>
+<text x="417" y="105" font-size="18" fill="#8a6a12" text-anchor="middle" font-weight="bold">literature table</text>
+<text x="417" y="135" font-size="16" fill="#333" text-anchor="middle">verified PMIDs</text>
+<line x1="492" y1="115" x2="508" y2="115" stroke="#777" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="510" y="60" width="145" height="110" rx="8" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+<text x="582" y="105" font-size="18" fill="#6b4fa0" text-anchor="middle" font-weight="bold">regulators</text>
+<text x="582" y="135" font-size="16" fill="#333" text-anchor="middle">TF / pathway</text>
+<text x="582" y="155" font-size="16" fill="#333" text-anchor="middle">activity</text>
+<line x1="657" y1="115" x2="673" y2="115" stroke="#777" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="675" y="60" width="145" height="110" rx="8" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+<text x="747" y="105" font-size="18" fill="#6b4fa0" text-anchor="middle" font-weight="bold">hypothesis</text>
+<text x="747" y="135" font-size="16" fill="#333" text-anchor="middle">evidence on</text>
+<text x="747" y="155" font-size="16" fill="#333" text-anchor="middle">each arrow</text>
+<line x1="822" y1="115" x2="838" y2="115" stroke="#777" stroke-width="2.5" marker-end="url(#a)"/>
+<rect x="840" y="60" width="145" height="110" rx="8" fill="#f9ecef" stroke="#a8324a" stroke-width="2"/>
+<text x="912" y="105" font-size="18" fill="#a8324a" text-anchor="middle" font-weight="bold">predictions</text>
+<text x="912" y="135" font-size="16" fill="#333" text-anchor="middle">what would</text>
+<text x="912" y="155" font-size="16" fill="#333" text-anchor="middle">refute it</text>
+<text x="15" y="40" font-size="18" fill="#8a6a12" text-anchor="start" font-weight="bold">Part 1: what is known about each gene</text>
+<text x="510" y="40" font-size="18" fill="#6b4fa0" text-anchor="start" font-weight="bold">Part 2: what could explain them all</text>
+<text x="500" y="225" font-size="18" fill="#333" text-anchor="middle">The agent searches, computes and drafts. You choose the rule, check every claim,</text>
+<text x="500" y="252" font-size="18" fill="#333" text-anchor="middle">and decide which prediction is worth an experiment.</text>
+</svg>

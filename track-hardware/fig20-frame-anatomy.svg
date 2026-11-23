@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" width="1000" height="440" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="440" fill="#ffffff"/>
+<text x="500" y="36" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="bold">One command from a fictional heated stage: "set temperature to 30.0 °C"</text>
+<rect x="60" y="70" width="80" height="70" rx="6" fill="#fff" stroke="#8a6a12" stroke-width="2.5"/>
+<text x="100" y="116" font-size="26" fill="#8a6a12" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">02</text>
+<rect x="148" y="70" width="80" height="70" rx="6" fill="#fff" stroke="#6b4fa0" stroke-width="2.5"/>
+<text x="188" y="116" font-size="26" fill="#6b4fa0" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">07</text>
+<rect x="236" y="70" width="80" height="70" rx="6" fill="#fff" stroke="#2a7f8f" stroke-width="2.5"/>
+<text x="276" y="116" font-size="26" fill="#2a7f8f" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">53</text>
+<rect x="324" y="70" width="80" height="70" rx="6" fill="#fff" stroke="#2a7f8f" stroke-width="2.5"/>
+<text x="364" y="116" font-size="26" fill="#2a7f8f" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">54</text>
+<rect x="412" y="70" width="80" height="70" rx="6" fill="#fff" stroke="#a8324a" stroke-width="2.5"/>
+<text x="452" y="116" font-size="26" fill="#a8324a" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">00</text>
+<rect x="500" y="70" width="80" height="70" rx="6" fill="#fff" stroke="#a8324a" stroke-width="2.5"/>
+<text x="540" y="116" font-size="26" fill="#a8324a" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">00</text>
+<rect x="588" y="70" width="80" height="70" rx="6" fill="#fff" stroke="#a8324a" stroke-width="2.5"/>
+<text x="628" y="116" font-size="26" fill="#a8324a" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">F0</text>
+<rect x="676" y="70" width="80" height="70" rx="6" fill="#fff" stroke="#a8324a" stroke-width="2.5"/>
+<text x="716" y="116" font-size="26" fill="#a8324a" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">41</text>
+<rect x="764" y="70" width="80" height="70" rx="6" fill="#fff" stroke="#1b2a3a" stroke-width="2.5"/>
+<text x="804" y="116" font-size="26" fill="#1b2a3a" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">B1</text>
+<rect x="852" y="70" width="80" height="70" rx="6" fill="#fff" stroke="#8a6a12" stroke-width="2.5"/>
+<text x="892" y="116" font-size="26" fill="#8a6a12" text-anchor="middle" font-weight="bold" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">03</text>
+<text x="100" y="168" font-size="16" fill="#8a6a12" text-anchor="middle">start</text>
+<text x="188" y="168" font-size="16" fill="#6b4fa0" text-anchor="middle">length</text>
+<text x="320" y="168" font-size="16" fill="#2a7f8f" text-anchor="middle">command "ST"</text>
+<text x="628" y="168" font-size="16" fill="#a8324a" text-anchor="middle">value: 4 bytes</text>
+<text x="804" y="168" font-size="16" fill="#1b2a3a" text-anchor="middle">check</text>
+<text x="892" y="168" font-size="16" fill="#8a6a12" text-anchor="middle">end</text>
+<line x1="232" y1="150" x2="400" y2="150" stroke="#2a7f8f" stroke-width="2"/>
+<line x1="408" y1="150" x2="752" y2="150" stroke="#a8324a" stroke-width="2"/>
+<rect x="40" y="210" width="450" height="200" rx="10" fill="#f8e6ea" stroke="#a8324a" stroke-width="2"/>
+<text x="265.0" y="315.7" font-size="19" fill="#a8324a" text-anchor="middle" font-weight="bold"></text>
+<text x="60" y="245" font-size="19" fill="#a8324a" text-anchor="start" font-weight="bold">Numbers hide in bytes</text>
+<text x="60" y="280" font-size="17" fill="#1b2a3a" text-anchor="start">00 00 F0 41, read as a 32-bit float</text>
+<text x="60" y="308" font-size="17" fill="#1b2a3a" text-anchor="start">with the lowest byte first</text>
+<text x="60" y="336" font-size="17" fill="#1b2a3a" text-anchor="start">("little-endian") = 30.0</text>
+<text x="60" y="364" font-size="17" fill="#1b2a3a" text-anchor="start">Read the other way round: nonsense</text>
+<rect x="520" y="210" width="450" height="200" rx="10" fill="#eef1f4" stroke="#1b2a3a" stroke-width="2"/>
+<text x="745.0" y="315.7" font-size="19" fill="#1b2a3a" text-anchor="middle" font-weight="bold"></text>
+<text x="540" y="245" font-size="19" fill="#1b2a3a" text-anchor="start" font-weight="bold">Typical parts of a frame</text>
+<text x="540" y="280" font-size="17" fill="#1b2a3a" text-anchor="start">- a fixed start byte (or text like "SET")</text>
+<text x="540" y="308" font-size="17" fill="#1b2a3a" text-anchor="start">- a length, a command code</text>
+<text x="540" y="336" font-size="17" fill="#1b2a3a" text-anchor="start">- the values (payload)</text>
+<text x="540" y="364" font-size="17" fill="#1b2a3a" text-anchor="start">- a checksum to catch transmission errors</text>
+<text x="540" y="392" font-size="17" fill="#1b2a3a" text-anchor="start">- sometimes an end byte</text>
+</svg>

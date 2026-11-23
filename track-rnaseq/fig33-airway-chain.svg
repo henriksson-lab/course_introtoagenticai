@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 590" width="1000" height="590" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="590" fill="#fff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#777"/></marker><marker id="a2a7f8f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2a7f8f"/></marker><marker id="a6b4fa0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b4fa0"/></marker><marker id="aa8324a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a8324a"/></marker><marker id="a8a6a12" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a6a12"/></marker></defs>
+<rect x="380" y="10" width="240" height="40" rx="8" fill="#f2f2f2" stroke="#333" stroke-width="2"/>
+<text x="500.0" y="36" font-size="17" fill="#333" text-anchor="middle" font-weight="bold">dexamethasone, 1 µM 18 h</text>
+<line x1="500" y1="52" x2="500" y2="88" stroke="#8a6a12" stroke-width="3.5" marker-end="url(#a8a6a12)"/>
+<text x="512" y="76" font-size="15" fill="#8a6a12" text-anchor="start" font-weight="bold">cited: 21257922</text>
+<rect x="330" y="90" width="340" height="56" rx="8" fill="#f3f0f8" stroke="#6b4fa0" stroke-width="2"/>
+<text x="500.0" y="116" font-size="17" fill="#6b4fa0" text-anchor="middle" font-weight="bold">glucocorticoid receptor (NR3C1)</text>
+<text x="500.0" y="137" font-size="15" fill="#333" text-anchor="middle">activity rank 2 of 730 TFs scored; mRNA down 2x</text>
+<text x="680" y="112" font-size="15" fill="#6b4fa0" text-anchor="start" font-weight="bold">inferred: decoupler</text>
+<text x="680" y="132" font-size="15" fill="#2a7f8f" text-anchor="start" font-weight="bold">measured: mRNA</text>
+<line x1="500" y1="148" x2="500" y2="186" stroke="#8a6a12" stroke-width="3.5" marker-end="url(#a8a6a12)"/>
+<text x="512" y="174" font-size="15" fill="#8a6a12" text-anchor="start" font-weight="bold">cited: 17513787, 28375666</text>
+<rect x="250" y="188" width="500" height="56" rx="8" fill="#f6f1e1" stroke="#8a6a12" stroke-width="2"/>
+<text x="500.0" y="214" font-size="17" fill="#8a6a12" text-anchor="middle" font-weight="bold">GR binds DNA near target genes</text>
+<text x="500.0" y="235" font-size="15" fill="#333" text-anchor="middle">GR ChIP at DUSP1 (ASM), genome-wide GR ChIP-seq (ASM)</text>
+<line x1="500" y1="246" x2="500" y2="282" stroke="#2a7f8f" stroke-width="3.5" marker-end="url(#a2a7f8f)"/>
+<text x="512" y="270" font-size="15" fill="#2a7f8f" text-anchor="start" font-weight="bold">measured: this data</text>
+<rect x="170" y="284" width="660" height="40" rx="8" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+<text x="500.0" y="310" font-size="17" fill="#2a7f8f" text-anchor="middle" font-weight="bold">FKBP5, TSC22D3, PER1, DUSP1, KLF15 up 8- to 22-fold; ZBTB16 up 160-fold</text>
+<line x1="330" y1="326" x2="230" y2="380" stroke="#8a6a12" stroke-width="3.5" marker-end="url(#a8a6a12)"/>
+<text x="150" y="360" font-size="15" fill="#8a6a12" text-anchor="end" font-weight="bold">cited: 17513787</text>
+<rect x="20" y="382" width="410" height="56" rx="8" fill="#f6f1e1" stroke="#8a6a12" stroke-width="2"/>
+<text x="225.0" y="408" font-size="17" fill="#8a6a12" text-anchor="middle" font-weight="bold">DUSP1 (MKP-1) dephosphorylates JNK</text>
+<text x="225.0" y="429" font-size="15" fill="#333" text-anchor="middle">less GRO-α release from ASM cells</text>
+<line x1="670" y1="326" x2="770" y2="380" stroke="#8a6a12" stroke-width="3.5" marker-end="url(#a8a6a12)"/>
+<text x="850" y="360" font-size="15" fill="#8a6a12" text-anchor="start" font-weight="bold">cited: 28375666</text>
+<rect x="570" y="382" width="410" height="56" rx="8" fill="#f9ecef" stroke="#a8324a" stroke-width="2"/>
+<text x="775.0" y="408" font-size="17" fill="#a8324a" text-anchor="middle" font-weight="bold">KLF15 regulates PLCD1</text>
+<text x="775.0" y="429" font-size="15" fill="#333" text-anchor="middle">but PLCD1 unchanged here (padj 0.33)</text>
+<line x1="225" y1="440" x2="400" y2="492" stroke="#a8324a" stroke-width="3.5" marker-end="url(#aa8324a)" stroke-dasharray="7,5"/>
+<line x1="775" y1="440" x2="600" y2="492" stroke="#a8324a" stroke-width="3.5" marker-end="url(#aa8324a)" stroke-dasharray="7,5"/>
+<text x="500" y="482" font-size="15" fill="#a8324a" text-anchor="middle" font-weight="bold">speculation</text>
+<rect x="300" y="494" width="400" height="56" rx="8" fill="#f9ecef" stroke="#a8324a" stroke-width="2"/>
+<text x="500.0" y="520" font-size="17" fill="#a8324a" text-anchor="middle" font-weight="bold">less inflammation, less ASM growth</text>
+<text x="500.0" y="541" font-size="15" fill="#333" text-anchor="middle">not measured in this experiment</text>
+<text x="20" y="578" font-size="15" fill="#777" text-anchor="start">ZBTB16: induced by GC in other smooth muscle (12970399), but that study found no GR response in its promoter.</text>
+</svg>

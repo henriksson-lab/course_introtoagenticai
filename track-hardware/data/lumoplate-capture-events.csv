@@ -1,0 +1,18 @@
+t_ms,kind,description
+2128,note,LumoPlate 3000 switched on and plugged in
+6219,click,user opened the LumoPlate Control app
+9111,click,"user clicked Connect; app shows 'Connected, firmware 2.4.1'"
+20030,click,user set incubation temperature to 37.0 °C and clicked Apply
+95113,click,user clicked Open door
+110032,note,user put a 96-well plate in the drawer
+118228,click,user clicked Close door
+130232,click,"user set shaking: orbital, 30 s, and clicked Shake"
+175258,click,"user selected wavelength 450 nm, plate type '96-well flat' and clicked Start"
+199523,screenshot,"results table shown: A1 = 2.458, A12 = 0.048, H1 = 2.459, D6 = 0.298"
+230277,click,"user selected wavelength 600 nm, plate type '96-well flat' and clicked Start"
+240222,click,user clicked Stop
+250034,note,"user: 'I pressed Stop by mistake, the 600 nm read was aborted'"
+300281,click,user set incubation temperature to 25.0 °C and clicked Apply
+340132,click,user clicked Open door
+355081,click,user clicked Close door
+400258,click,user clicked Disconnect and closed the app

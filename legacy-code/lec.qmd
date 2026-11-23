@@ -347,7 +347,7 @@ To sum up the division of labour. The agent is very good at the reading and writ
 | Faithful port | reproduce the old numbers, bugs included; one piece at a time |
 
 ::: notes
-The summary is the recipe. Keep the original untouched. Map it and document it before changing anything. Pin down the reference outputs. Port faithfully, piece by piece. Compare with a tolerance you chose in advance, and keep the comparison as a test. Write down every assumption, and fix bugs only after the port matches, measuring each fix. In the exercise you do all of this on a small plate-reader analysis with a hidden bug and a hidden assumption, and then on a piece of old code from your own project. This is the last unit of Part 5. Part 6 steps back to look at the wider picture, starting with the models themselves: how to choose between them, and how to read the benchmark graphs that are used to rank them.
+The summary is the recipe. Keep the original untouched. Map it and document it before changing anything. Pin down the reference outputs. Port faithfully, piece by piece. Compare with a tolerance you chose in advance, and keep the comparison as a test. Write down every assumption, and fix bugs only after the port matches, measuring each fix. In the exercise you do all of this on a small plate-reader analysis with a hidden bug and a hidden assumption, and then on a piece of old code from your own project. The next unit applies the same recipe to a new target: translating slow or hard-to-install code into Rust, a compiled language that gives one self-contained program, and proving that the translation gives identical results.
 :::
 
 ## Summary (continued)
@@ -360,7 +360,7 @@ The summary is the recipe. Keep the original untouched. Map it and document it b
 | Assumptions list | every hard-coded assumption, where it is, whether it holds for new data |
 | Fixes | after the port matches; one commit each; record how much each one moves the numbers |
 
-**Next (Choosing a model: families, sizes and benchmarks):** which model to run for which job, how to read model names and benchmark graphs, and why a small test on your own task beats a leaderboard.
+**Next (Translating code to Rust):** the same recipe with a new target: a fast, memory-safe program in one file that runs without Python, Conda or Docker, proven identical to the original on many inputs.
 
 ::: notes
 The rest of the summary table, and where we go next.

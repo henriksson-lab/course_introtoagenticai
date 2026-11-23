@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 520" width="1000" height="520" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="520" fill="#ffffff"/>
+<rect x="20" y="16" width="960" height="480" rx="10" fill="#1f2430" stroke="#1f2430" stroke-width="0"/>
+<text x="500.0" y="42" font-size="15" fill="#aab" text-anchor="middle">terminal: stage-reveng</text>
+<text x="44" y="76" font-size="17" fill="#e0c27a" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">Plan</text>
+<text x="44" y="106" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">1. Inventory C:\Program Files\StageSoft: list the .exe and</text>
+<text x="44" y="136" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">   .dll files; find which one opens the USB device.</text>
+<text x="44" y="166" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">2. Install Ghidra (needs Java) in tools/; run its headless</text>
+<text x="44" y="196" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">   analyser on that DLL only. Do not touch other files.</text>
+<text x="44" y="226" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">3. Find the functions that build and send frames; write</text>
+<text x="44" y="256" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">   what they do in notes/decompiled-notes.md (our words,</text>
+<text x="44" y="286" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">   no copied code).</text>
+<text x="44" y="316" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">4. Write PROTOCOL.md from the notes: commands, layout,</text>
+<text x="44" y="346" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">   checksum. Mark each fact: from code / from traffic.</text>
+<text x="44" y="376" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">5. Check PROTOCOL.md against a USB recording.</text>
+<text x="44" y="406" font-size="17" fill="#e8e8e8" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre"></text>
+<text x="44" y="436" font-size="17" fill="#7fc4cf" text-anchor="start" font-family="Menlo, Consolas, monospace" xml:space="preserve" style="white-space:pre">Shall I start with step 1?</text>
+<text x="970" y="486" font-size="14" fill="#9aa5b1" text-anchor="end">illustrative; your agent's plan will differ</text>
+</svg>

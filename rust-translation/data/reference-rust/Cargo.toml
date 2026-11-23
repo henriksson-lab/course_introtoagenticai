@@ -1,0 +1,10 @@
+[package]
+name = "fastq_stats"
+version = "0.1.0"
+edition = "2021"
+description = "Rust port of fastq_stats.py (course exercise reference solution)"
+
+[dependencies]
+
+[profile.release]
+opt-level = 3

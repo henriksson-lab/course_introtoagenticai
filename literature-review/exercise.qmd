@@ -346,6 +346,10 @@ Now do the same for a set of items from **your own project**: 5-15 genes, protei
 
 **Check the result:** every identifier resolves, the planted-errors test flags all four rows, five random rows are read by you and written up, and a colleague in your field could look at the page and say where each claim comes from.
 
+### Variant: the top genes of your own analysis
+
+If your items come from your own experiment, for example the top genes of an RNA-seq analysis, three things change. Write down **how "top" was chosen** (padj, fold change, expression level, up and down genes) before you search. Put the **experiment's context** into every query (gene and aliases AND treatment, optionally AND tissue), and keep the hit counts: genes with no hits are candidates for something new, or an alias or ID problem. And add a **context check** to the verification: same direction, similar cell type. The deck [From gene lists to mechanisms](../track-rnaseq/lec-mechanism.qmd) and its [exercise](../track-rnaseq/exercise-mechanism.qmd) in the RNA-seq track do this step by step and go on from the table to a mechanism.
+
 ## What you should have now
 
 - In `~/agentic-course/literature-review/`: `search-plan.md`, `scripts/` (search, verify, sample, export), a dated `raw/` folder, `results/literature_table.csv`, `results/verification_report.md`, `results/references.bib` and `notes/hand-checks.md`, all committed.

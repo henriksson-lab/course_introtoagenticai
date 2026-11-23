@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 340" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="340" fill="#fff"/>
+  <g font-family="Consolas, Menlo, monospace" font-size="22" fill="#333">
+    <text x="60" y="60">(0.1 + 0.2) + 0.3  =  0.6000000000000001</text>
+    <text x="60" y="105">0.1 + (0.2 + 0.3)  =  0.6</text>
+  </g>
+  <text x="60" y="145" font-size="18" fill="#555">Computers store decimals in binary with rounding, so the order of operations changes the last digits.</text>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#555"/></marker></defs>
+  <rect x="60" y="180" width="250" height="100" rx="8" fill="#e3f1f3" stroke="#2a7f8f"/>
+  <text x="185" y="215" font-size="18" text-anchor="middle" fill="#333">original: p = 0.04998</text>
+  <text x="185" y="250" font-size="18" text-anchor="middle" fill="#2a7f8f" font-weight="bold">gene in the list</text>
+  <rect x="380" y="180" width="250" height="100" rx="8" fill="#fbe9ea" stroke="#a8324a"/>
+  <text x="505" y="215" font-size="18" text-anchor="middle" fill="#333">translation: p = 0.05001</text>
+  <text x="505" y="250" font-size="18" text-anchor="middle" fill="#a8324a" font-weight="bold">gene dropped</text>
+  <text x="660" y="210" font-size="18" fill="#333">A tiny difference + a cut-off</text>
+  <text x="660" y="235" font-size="18" fill="#333">= a different result list,</text>
+  <text x="660" y="260" font-size="18" fill="#333">in a different order.</text>
+  <text x="990" y="330" font-size="13" text-anchor="end" fill="#888">illustrative p-values; the problem is described in Henriksson 2026 (HMMER)</text>
+</svg>

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 400" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="400" fill="#fff"/>
+  <rect x="20" y="20" width="470" height="300" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+  <text x="255" y="55" font-size="21" font-weight="bold" text-anchor="middle" fill="#2a7f8f">Ruled out by the compiler</text>
+  <text x="255" y="80" font-size="16" text-anchor="middle" fill="#555">(in ordinary, "safe" Rust)</text>
+  <g font-size="18" fill="#333">
+    <text x="45" y="120">✓ using memory after it was freed</text>
+    <text x="45" y="155">✓ reading past the end of an array</text>
+    <text x="70" y="180" font-size="16" fill="#555">(the program stops instead of reading junk)</text>
+    <text x="45" y="215">✓ two threads changing the same data</text>
+    <text x="45" y="250">✓ "null" values nobody checked for</text>
+    <text x="45" y="285">✓ mixing up types (text vs number)</text>
+  </g>
+  <rect x="510" y="20" width="470" height="300" rx="10" fill="#fbe9ea" stroke="#a8324a" stroke-width="2"/>
+  <text x="745" y="55" font-size="21" font-weight="bold" text-anchor="middle" fill="#a8324a">Still entirely possible</text>
+  <text x="745" y="80" font-size="16" text-anchor="middle" fill="#555">(the compiler cannot know your intent)</text>
+  <g font-size="18" fill="#333">
+    <text x="535" y="120">✗ a wrong formula, threshold or filter</text>
+    <text x="535" y="155">✗ a translation error by the agent</text>
+    <text x="535" y="190">✗ code marked <tspan font-family="Consolas, Menlo, monospace">unsafe</tspan>, which</text>
+    <text x="560" y="213">switches the checks off</text>
+    <text x="535" y="248">✗ a buggy or malicious dependency</text>
+    <text x="535" y="283">✗ memory leaks (allowed in safe Rust)</text>
+  </g>
+  <text x="500" y="365" font-size="19" text-anchor="middle" fill="#333">Memory safety removes one class of bugs, a class behind many security holes.</text>
+  <text x="500" y="390" font-size="19" text-anchor="middle" fill="#333">It does not make the science right.</text>
+</svg>

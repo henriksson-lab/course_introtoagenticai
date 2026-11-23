@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 540" width="1000" height="540" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="540" fill="#ffffff"/>
+<rect x="40" y="400" width="120" height="80" rx="8" fill="#fff" stroke="#2a7f8f" stroke-width="2.5"/>
+<rect x="52" y="412" width="54.0" height="25.6" rx="3" fill="#eef1f4" stroke="#2a7f8f" stroke-width="1.5"/>
+<rect x="52" y="454" width="96" height="12" rx="3" fill="#eef1f4" stroke="#2a7f8f" stroke-width="1.5"/>
+<circle cx="138" cy="424" r="7" fill="#2a7f8f" stroke="none" stroke-width="2"/>
+<text x="100.0" y="504" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="bold">Microscope</text>
+<defs><marker id="a9037" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2a7f8f"/></marker></defs>
+<line x1="100" y1="396" x2="100" y2="332" stroke="#2a7f8f" stroke-width="2.5" marker-end="url(#a9037)"/>
+<rect x="285" y="400" width="120" height="80" rx="8" fill="#fff" stroke="#6b4fa0" stroke-width="2.5"/>
+<rect x="297" y="412" width="54.0" height="25.6" rx="3" fill="#eef1f4" stroke="#6b4fa0" stroke-width="1.5"/>
+<rect x="297" y="454" width="96" height="12" rx="3" fill="#eef1f4" stroke="#6b4fa0" stroke-width="1.5"/>
+<circle cx="383" cy="424" r="7" fill="#6b4fa0" stroke="none" stroke-width="2"/>
+<text x="345.0" y="504" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="bold">Plate reader</text>
+<defs><marker id="a8343" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b4fa0"/></marker></defs>
+<line x1="345" y1="396" x2="345" y2="332" stroke="#6b4fa0" stroke-width="2.5" marker-end="url(#a8343)"/>
+<rect x="530" y="400" width="120" height="80" rx="8" fill="#fff" stroke="#8a6a12" stroke-width="2.5"/>
+<rect x="542" y="412" width="54.0" height="25.6" rx="3" fill="#eef1f4" stroke="#8a6a12" stroke-width="1.5"/>
+<rect x="542" y="454" width="96" height="12" rx="3" fill="#eef1f4" stroke="#8a6a12" stroke-width="1.5"/>
+<circle cx="628" cy="424" r="7" fill="#8a6a12" stroke="none" stroke-width="2"/>
+<text x="590.0" y="504" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="bold">Robot arm</text>
+<defs><marker id="a5258" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a6a12"/></marker></defs>
+<line x1="590" y1="396" x2="590" y2="332" stroke="#8a6a12" stroke-width="2.5" marker-end="url(#a5258)"/>
+<rect x="775" y="400" width="120" height="80" rx="8" fill="#fff" stroke="#a8324a" stroke-width="2.5"/>
+<rect x="787" y="412" width="54.0" height="25.6" rx="3" fill="#eef1f4" stroke="#a8324a" stroke-width="1.5"/>
+<rect x="787" y="454" width="96" height="12" rx="3" fill="#eef1f4" stroke="#a8324a" stroke-width="1.5"/>
+<circle cx="873" cy="424" r="7" fill="#a8324a" stroke="none" stroke-width="2"/>
+<text x="835.0" y="504" font-size="17" fill="#1b2a3a" text-anchor="middle" font-weight="bold">Gel imager</text>
+<defs><marker id="a3198" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a8324a"/></marker></defs>
+<line x1="835" y1="396" x2="835" y2="332" stroke="#a8324a" stroke-width="2.5" marker-end="url(#a3198)"/>
+<rect x="40" y="250" width="920" height="76" rx="12" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2.5"/>
+<text x="500" y="282" font-size="21" fill="#2a7f8f" text-anchor="middle" font-weight="bold">One open control layer (open-source drivers)</text>
+<text x="500" y="309" font-size="17" fill="#1b2a3a" text-anchor="middle">documented protocols, any operating system, scriptable</text>
+<rect x="40" y="60" width="215" height="110" rx="10" fill="#fff" stroke="#6b4fa0" stroke-width="2"/>
+<text x="147.5" y="98.7" font-size="19" fill="#6b4fa0" text-anchor="middle" font-weight="bold">Your own protocol</text>
+<text x="147.5" y="120.7" font-size="17" fill="#1b2a3a" text-anchor="middle">combine instruments</text>
+<text x="147.5" y="142.7" font-size="17" fill="#1b2a3a" text-anchor="middle">in one experiment</text>
+<defs><marker id="a8343" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6b4fa0"/></marker></defs>
+<line x1="147" y1="245" x2="147" y2="175" stroke="#6b4fa0" stroke-width="2.5" marker-end="url(#a8343)"/>
+<rect x="275" y="60" width="215" height="110" rx="10" fill="#fff" stroke="#2a7f8f" stroke-width="2"/>
+<text x="382.5" y="98.7" font-size="19" fill="#2a7f8f" text-anchor="middle" font-weight="bold">Open file formats</text>
+<text x="382.5" y="120.7" font-size="17" fill="#1b2a3a" text-anchor="middle">e.g. OME-Zarr,</text>
+<text x="382.5" y="142.7" font-size="17" fill="#1b2a3a" text-anchor="middle">CSV, TIFF</text>
+<defs><marker id="a9037" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#2a7f8f"/></marker></defs>
+<line x1="382" y1="245" x2="382" y2="175" stroke="#2a7f8f" stroke-width="2.5" marker-end="url(#a9037)"/>
+<rect x="510" y="60" width="215" height="110" rx="10" fill="#fff" stroke="#8a6a12" stroke-width="2"/>
+<text x="617.5" y="98.7" font-size="19" fill="#8a6a12" text-anchor="middle" font-weight="bold">Digital twin</text>
+<text x="617.5" y="120.7" font-size="17" fill="#1b2a3a" text-anchor="middle">simulate the run</text>
+<text x="617.5" y="142.7" font-size="17" fill="#1b2a3a" text-anchor="middle">before it is real</text>
+<defs><marker id="a5258" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#8a6a12"/></marker></defs>
+<line x1="617" y1="245" x2="617" y2="175" stroke="#8a6a12" stroke-width="2.5" marker-end="url(#a5258)"/>
+<rect x="745" y="60" width="215" height="110" rx="10" fill="#fff" stroke="#a8324a" stroke-width="2"/>
+<text x="852.5" y="98.7" font-size="19" fill="#a8324a" text-anchor="middle" font-weight="bold">Publishable method</text>
+<text x="852.5" y="120.7" font-size="17" fill="#1b2a3a" text-anchor="middle">the script is</text>
+<text x="852.5" y="142.7" font-size="17" fill="#1b2a3a" text-anchor="middle">the protocol</text>
+<defs><marker id="a3198" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#a8324a"/></marker></defs>
+<line x1="852" y1="245" x2="852" y2="175" stroke="#a8324a" stroke-width="2.5" marker-end="url(#a3198)"/>
+<text x="500" y="36" font-size="20" fill="#1b2a3a" text-anchor="middle" font-weight="bold">What open control would let a lab do</text>
+</svg>

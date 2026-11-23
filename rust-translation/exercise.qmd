@@ -1,0 +1,335 @@
+---
+title: "Exercise: port a small tool to Rust and prove it is the same"
+format:
+  html:
+    toc: true
+    code-copy: true
+    code-overflow: wrap
+    highlight-style: github
+---
+
+## Goal
+
+By the end of this exercise you should have:
+
+- **Rust installed** on your computer by the agent, the official way,
+- **reference outputs** from a small Python tool on its example data and on five awkward edge cases, committed before any translation,
+- a **faithful Rust port** of the tool, built with Cargo,
+- a **comparison script** that shows the two give byte-identical output, error messages and exit codes on every reference input and on 20 generated files,
+- a **fair benchmark** of both on a large generated file: time and peak memory,
+- a **release binary** that runs on its own, without Python, with a README that credits the original, and
+- a decision, with reasons, on whether a script from **your own project** is worth translating.
+
+All data in this exercise is **synthetic**. The colleague who wrote the script is made up.
+
+Your session will look different from anyone else's. Agents differ each run. Compare **results** (the outputs and the checks), not sessions.
+
+## Before you start
+
+- You have done *Reading other people's code*: you know the idea of an untouched `original/` folder, reference outputs and a comparison script.
+- **Python 3** must be installed, to run the original tool (no extra packages needed). If you used R in *Reproducible figures*, ask the agent to check whether Python 3 is available and, if not, to tell you how to install it and wait for your approval.
+- About **2 GB of free disk space** (Rust itself takes around 1 GB; the benchmark file is about 140 MB) and **30 to 60 minutes**. The Rust download is a few hundred megabytes, so use a good network.
+- **Windows:** the Rust installer may ask to install the Microsoft C++ build tools (Visual Studio). Say yes; Rust needs them to build programs on Windows. This needs some more disk space and can take a while.
+- Download [fastq-tool.zip](data/fastq-tool.zip) and unzip it into a new folder `rust-translation` inside your course folder, so that you have `~/agentic-course/rust-translation/fastq-tool/` (Windows: `C:\Users\<you>\agentic-course\rust-translation\fastq-tool\`). On Windows, check that the files are directly inside `fastq-tool`, not in a second folder of the same name.
+
+The zip holds:
+
+| File | What it is |
+|---|---|
+| `fastq_stats.py` | the tool: quality statistics and the 10 most common k-mers of a FASTQ file of sequencing reads |
+| `README.txt` | the colleague's note: "works fine on the test file but takes ages on a whole sequencing run" |
+| `reads.fastq` | 2000 synthetic reads (about 560 KB) |
+| `tiny.fastq` | 3 reads, small enough to check by hand |
+| `edge-cases/` | `empty.fastq`, `truncated.fastq` (last line missing), `all_n.fastq` (only N bases), `windows_line_endings.fastq`, `no_final_newline.fastq` |
+| `make_fastq.py` | makes synthetic reads; you will use it for a large benchmark file |
+
+A FASTQ file stores each read as four lines: a name starting with `@`, the bases (A, C, G, T, or N for unknown), a `+` line, and one quality character per base. A **k-mer** is a stretch of k bases; counting the most common ones is a quick way to spot adapters or contamination.
+
+Open `README.txt` and `tiny.fastq` in a text editor. Then, if you like, open `fastq_stats.py`: you do not need to understand it, but its docstring at the top lists the rules it follows.
+
+## Worked example
+
+### Step 1: set up the project, with the original locked
+
+Open a terminal in `~/agentic-course/rust-translation` and start the agent there.
+
+```text
+Set up a project folder for translating a small tool to Rust:
+1. Create a folder fastq-port/ here, and inside it a folder original/.
+2. Copy everything from fastq-tool/ into fastq-port/original/, unchanged,
+   including the edge-cases/ folder.
+3. Make fastq-port/ a git repository and commit the original files with
+   the message "Original tool and data as received".
+4. In fastq-port/, create a notes file for agents (CLAUDE.md if you are
+   Claude Code, AGENTS.md if you are Codex) with these rules:
+   - Never change, rename or delete anything in original/ or reference/.
+   - The original Python tool is the specification. When the Rust port
+     differs from it, the port is wrong.
+   - Faithful translation: one Rust function per Python function, no extra
+     helper functions, no new features, no "improvements".
+   Commit it.
+Do not change anything in fastq-tool/.
+```
+
+Close the agent (`/exit` or Ctrl+C twice) and start it again inside the project:
+
+::: {.panel-tabset}
+## Claude Code
+```bash
+cd fastq-port
+claude
+```
+## Codex
+```bash
+cd fastq-port
+codex
+```
+:::
+
+**Check:** `fastq-port/original/` holds the same files as `fastq-tool/`, including `edge-cases/`. Ask "show me the git log": two commits.
+
+### Step 2: let the agent install Rust
+
+Rust is installed with **rustup**, the official installer from [rust-lang.org/tools/install](https://rust-lang.org/tools/install/). It installs `rustc` (the compiler) and `cargo` (the build tool) into your home folder, not system-wide, and needs no administrator rights on macOS and Linux.
+
+```text
+Check whether Rust is installed: run cargo --version and rustc --version.
+If not, install it with rustup, the official method described on
+https://rust-lang.org/tools/install/ . Before you run anything, show me
+the exact command or download and explain what it will do, and wait for
+my approval. Use the default options. Afterwards, show me
+cargo --version and rustc --version.
+```
+
+What to expect:
+
+::: {.panel-tabset}
+## macOS and Linux
+The agent proposes the command from the official page:
+
+```bash
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+It downloads the installer over a secure connection and runs it. The agent will typically add `-s -- -y` to accept the defaults without questions. On macOS, if the build later complains about a missing linker, the agent will suggest installing Apple's command line tools (`xcode-select --install`).
+
+## Windows
+The agent downloads and runs `rustup-init.exe` from the official page (the address `https://win.rustup.rs` leads there). The installer may offer to install the Visual Studio C++ build tools first: accept. Afterwards, close and reopen the terminal (and restart the agent) so that `cargo` is found; the tools live in `%USERPROFILE%\.cargo\bin`.
+:::
+
+**Check:** `cargo --version` and `rustc --version` print version numbers. If `cargo` is "not found" right after installing, open a new terminal: the installer changed your `PATH`, and only new terminals see it. Codex may need you to approve network access for the download.
+
+### Step 3: pin down the reference outputs, including the awkward cases
+
+```text
+Create reference/ with the outputs of the ORIGINAL Python tool, before
+any translation. For each input file below, and for --k 5 (the default)
+and --k 7, run:
+    python original/fastq_stats.py <file> [--k 7]
+and save three things per run: the standard output, the error output
+(stderr), and the exit code.
+Inputs: original/reads.fastq, original/tiny.fastq and every file in
+original/edge-cases/.
+Name the files so that each run is easy to find, and write
+reference/RUNS.md listing every run with its command and exit code.
+Commit with the message "Reference outputs from the original tool".
+```
+
+(On some Windows and Mac computers the command is `python3` or `py` instead of `python`; the agent will find out.)
+
+#### Check the result
+
+1. **Count the runs:** 7 inputs × 2 values of k = 14 runs, each with output, error output and exit code.
+2. **`tiny.fastq` by hand.** Open `tiny.fastq` next to the reference output for it. Count the bases: 10 + 10 + 7 = **27**. Read 2 is in lower case; the tool counts it as upper case. There are **2 N** bases, in read 1. Do the numbers in the output agree?
+3. **The edge cases.** `truncated.fastq` must have exit code **1** and the error message `error: record starting at line 9 is incomplete`, with empty standard output. `empty.fastq` gives 0 reads and `NA` for the averages. `windows_line_endings.fastq` and `no_final_newline.fastq` give exactly the same numbers as `tiny.fastq`.
+
+::: {.callout-note collapse="true" title="Expected reference output for reads.fastq (k = 5)"}
+```text
+metric	value
+reads	2000
+bases	268872
+min_length	50
+max_length	150
+mean_length	134.44
+gc_percent	45.16
+n_bases	126
+n_percent	0.05
+reads_with_n	65
+mean_quality	33.40
+q30_percent	80.14
+
+kmer_5	count
+TTATT	441
+ATTAT	439
+AAATA	435
+TAATA	426
+TTATA	419
+TATTA	417
+AATAT	416
+TTTAT	407
+AATAA	405
+AAAAT	404
+```
+
+With `--k 7` the top of the list is the Illumina adapter, which the generator put at the end of about 5 % of the reads: `ATCGGAA 119`, `TCGGAAG 117`, `AGATCGG 116`, … A good example of why k-mer counts are worth computing.
+
+`tiny.fastq` (and the Windows-line-endings and no-final-newline files): 3 reads, 27 bases, lengths 7 to 10, mean length 9.00, GC 56.00 %, 2 N bases (7.41 %), 1 read with N, mean quality 25.59, Q30 48.15 %. All ten 5-mers have count 1, so their order is **alphabetical**: `ACGTA, ACGTG, ATTAC, CGTAC, CGTGG, GATTA, GGCCC, GGGCC, GTACG, GTGGG`.
+
+`all_n.fastq`: 2 reads, 10 bases, `gc_percent NA` (no A, C, G or T to divide by), 100.00 % N, mean quality 2.00, no k-mers.
+:::
+
+### Step 4: translate, faithfully
+
+Ask for a plan before any code. In Claude Code you can use **plan mode** (Shift+Tab); in Codex, ask it to plan first and wait.
+
+```text
+Translate original/fastq_stats.py into a Rust program in a Cargo project
+in rust/ (cargo new rust --name fastq_stats). Rules:
+- FAITHFUL: identical standard output, error messages and exit codes for
+  every input, including the edge cases in original/edge-cases/.
+- One Rust function per Python function, same names in snake_case,
+  no extra helper functions, no new features.
+- Only the Rust standard library: no external crates.
+- The same command line: fastq_stats <file> [--k K].
+Before writing code, list every place where Python and Rust behave
+differently in a way that could change the output here (reading lines,
+upper case, division, rounding to 2 decimals, sorting, error handling),
+and say how you will handle each. Then write the stubs for all
+functions, then fill them in from the bottom up. Build with
+cargo build --release. Do not compare with the reference yet.
+```
+
+**What to look for in the list of differences.** A good list mentions at least:
+
+- **Line endings.** Python, reading a file as text, turns Windows line endings (`\r\n`) into `\n`. Rust's standard line reading does not remove the `\r`. A naive port gets wrong lengths on `windows_line_endings.fastq`.
+- **Ties in sorting.** Python sorts the k-mers by count, then alphabetically. A port that sorts only by count lists equal counts in a random order.
+- **Rounding.** Python's `f"{x:.2f}"` and Rust's `format!("{:.2}", x)` round the same way; rounding by hand (`(x * 100).round() / 100`) can differ in the last digit.
+- **Division.** Python's `/` always gives a decimal number; in Rust, dividing two whole numbers throws away the remainder unless they are converted first.
+
+If the agent misses some, do not tell it yet. The comparison will show whether it handled them.
+
+### Step 5: compare on every input, and on 20 generated ones
+
+```text
+Write compare.py (Python, standard library only) that, for every run in
+reference/RUNS.md, runs the release binary rust/target/release/fastq_stats
+(fastq_stats.exe on Windows) with the same arguments and compares
+standard output, error output and exit code BYTE BY BYTE with the
+reference. Then, as a property test, generate 20 more FASTQ files with
+original/make_fastq.py (seeds 1 to 20, between 1 and 3000 reads each,
+written to a temporary folder outside reference/), run both the Python
+original and the Rust port on each with --k 5 and --k 7, and compare
+the same way. Print one line per comparison (PASS or FAIL and the first
+differing line) and a summary. Do not change anything in reference/ or
+original/. Run it and show me the summary.
+```
+
+#### Check the result
+
+1. **Read the summary yourself.** 14 reference runs + 40 generated runs = **54 comparisons**. How many failed, and on which files?
+2. **If something fails,** ask the agent where the first difference is and why, then let it fix the **port** (not the comparison) and rerun. The usual suspects are `windows_line_endings.fastq` (the `\r`), the order of tied k-mers in `tiny.fastq`, and the exact wording of the error message for `truncated.fastq`.
+3. **The cheating check.** Once everything passes:
+
+```text
+Did you change anything in reference/ or original/, loosen the
+comparison, or special-case any file name to make it pass? Show me with
+git which files changed since the reference commit.
+```
+
+Only files in `rust/` and `compare.py` should have changed.
+
+4. **Commit:** "Rust port identical to the original on all inputs".
+
+::: {.callout-note collapse="true" title="Expected result of the comparison"}
+All 54 comparisons pass: identical output, identical error message for `truncated.fastq`, exit code 1 there and 0 everywhere else. Our reference port, built the same way, passed all of them.
+
+A typical first port fails on one or two files: `windows_line_endings.fastq` (lengths 11, 11, 8 instead of 10, 10, 7, so 30 bases instead of 27, and a mean quality of 21.03 instead of 25.59, because each `\r` is read as a quality character), or `tiny.fastq` with the ten tied k-mers in a different order. The fixes are a line or two in the port. The reference does not change.
+:::
+
+### Step 6: benchmark both, fairly
+
+Make a large test file **on your own computer** (it is too big to download):
+
+```text
+Generate a large test file with
+    python original/make_fastq.py --reads 500000 --out bench/big.fastq
+(about 140 MB; it may take a few minutes). Add bench/ to .gitignore so
+that it is never committed.
+Then benchmark the Python original against the Rust release build on
+bench/big.fastq, fairly:
+- first check that both give byte-identical output on this file
+- same computer, nothing else heavy running, the same file and options
+- one warm-up run of each, then 3 timed runs of each; report the median
+- measure wall-clock time AND peak memory, with a tool that works on
+  this operating system
+Write the results as a table in BENCHMARK.md, with the computer's
+processor, operating system and the exact commands. Commit.
+```
+
+#### Check the result
+
+- **Outputs first.** Did the agent confirm identical output on `big.fastq` before timing? On this file the output starts with `reads 500000`, `bases 67421784`, `gc_percent 45.07`.
+- **Fairness.** Are both run on the same file, after a warm-up, with the release build of Rust (`target/release`, not `target/debug`)? A debug build can be many times slower.
+- **Plausibility.** Your speed-up will depend on your computer. Something between 10 and 40 times is plausible for this tool. If the agent reports a speed-up in the hundreds, ask whether both programs did the same work.
+
+::: {.callout-note collapse="true" title="Our numbers (a rough guide, not a target)"}
+On our test machine (Intel Xeon Gold 6138, Linux), with a file of **1 million** reads (about 290 MB) and three runs each, the Python original took about **165 s** with about 13 MB peak memory; our reference Rust port took about **9 s** with about 3 MB (medians: 164.6 s and 8.8 s). That is roughly **19 times faster**. The server was shared, so single runs varied by up to 25 %: one reason to take the median of several runs. A file of 500 000 reads takes about half as long with both. Laptops are often faster per core than this server processor, so expect shorter times, but a similar ratio.
+
+The Rust port is a plain, faithful translation without any tuning. It could be made faster still, for example by storing k-mers more compactly, but that is a separate step, after the comparison passes, with the comparison rerun afterwards.
+:::
+
+### Step 7: a binary that runs without Python, with credit
+
+```text
+1. Copy the release binary into a new folder dist/ (fastq_stats or
+   fastq_stats.exe).
+2. Show me that it runs WITHOUT Python: in one command, run it on
+   original/tiny.fastq in an environment where Python cannot be found
+   (for example with an empty PATH), and in the same environment show
+   that the python command fails. On Linux, also list the libraries the
+   binary needs (ldd); on macOS, otool -L.
+3. Write dist/README.md for a student: what the tool does, how to run it
+   on Windows, macOS and Linux, and that it is an AI-assisted translation
+   of fastq_stats.py by the original author (name them as in the
+   original README), verified byte for byte against the original on the
+   inputs in reference/ and 20 generated files. Add the date and the git
+   hash of the original commit.
+4. Add a line to this project's README "Log of AI use": date, tool, what
+   the agent did, how it was checked.
+Commit.
+```
+
+#### Check the result
+
+1. The binary runs on `tiny.fastq` and gives the reference numbers, while `python` in the same environment is "not found". On Linux, `ldd` lists only basic system libraries (such as `libc`), no Python.
+2. Copy `dist/fastq_stats` (or `.exe`) to a USB stick or another computer **of the same type** that has no Python, and run it there. (A binary for Windows does not run on a Mac, and vice versa; the agent can build for other systems, but that is beyond this exercise.)
+3. **The licence question.** The original folder has no licence file. In real life, what would you have to do before publishing this port on GitHub? (Answer: ask the author. Without a licence, all rights are reserved, and a translation is a derived work.) Write your answer in `dist/README.md`.
+
+## On your own project
+
+Pick **one script** from your own project (or from the inherited code in *Reading other people's code*) that is either **slow** or **hard to install** for others: the analysis that runs overnight, the script that needs a Conda environment nobody can recreate, the tool your students cannot install on Windows.
+
+1. **Decide with the checklist first.** In your project's README, answer the four questions of the decision chart from the lecture, one sentence each:
+   - Is it slow, run often, or hard to install for others? How often is it run, and by whom?
+   - Can you get reference outputs on real inputs? Which files?
+   - Does the licence allow a derived version? Whose code is it, and have you asked?
+   - Is the original stable, or still changing every week?
+
+   Then write your decision: **translate**, **not now** (and what is missing), or **no** (and why).
+2. **If no:** that is a fine result. Ask the agent instead for a `CODE_MAP.md` and a list of the script's dependencies with their versions, so that it is at least easier to install (*Reading other people's code*).
+3. **If yes:** follow the worked example on a copy:
+   - `port/original/` committed and locked, the rules in `CLAUDE.md` / `AGENTS.md`;
+   - **reference outputs first**, on real inputs and at least three awkward ones you choose (empty, broken, unusual characters, a missing value);
+   - ask for the list of Python-versus-Rust (or R-versus-Rust) differences **before** the translation;
+   - a faithful port, a byte-by-byte comparison (or, if the script writes decimal numbers in full precision, a tolerance you set in advance, as in the last unit);
+   - only when everything passes: a fair benchmark, and a release binary.
+
+   For a script that uses large libraries (pandas, Bioconductor packages, scikit-image), ask first: "What are the dependencies of this script, and which Rust crates could replace them?" The paper's advice is to back out until the dependencies are covered, and to get experience with small translations first.
+4. Add a line to your project README's **Log of AI use**: date, tool, what was translated or decided, and how it was checked.
+
+## What you should have now
+
+- `fastq-port/` with `original/` (untouched, first commit), `reference/` with 14 runs, `rust/` with a faithful Cargo project, `compare.py` passing 54 of 54 comparisons, `BENCHMARK.md`, and `dist/` with a binary that runs without Python and a README that credits the original.
+- Rust and Cargo installed, which you can use again for any port.
+- A written decision about one script in your own project, and, if you translated it, a comparison you can rerun.
+- Three habits for any translation: **the original is the specification**, **identical outputs before any timing**, and **credit the people whose code you translated**.

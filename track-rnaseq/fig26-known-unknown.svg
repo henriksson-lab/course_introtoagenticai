@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 420" width="1000" height="420" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="420" fill="#fff"/>
+<defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#777"/></marker><marker id="a2a7f8f" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#2a7f8f"/></marker><marker id="a6b4fa0" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#6b4fa0"/></marker><marker id="aa8324a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#a8324a"/></marker><marker id="a8a6a12" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0,0 L10,5 L0,10 z" fill="#8a6a12"/></marker></defs>
+<rect x="20" y="20" width="310" height="330" rx="8" fill="#eef6f7" stroke="#2a7f8f" stroke-width="2"/>
+<text x="175" y="55" font-size="20" fill="#2a7f8f" text-anchor="middle" font-weight="bold">known in this context</text>
+<text x="175" y="82" font-size="16" fill="#333" text-anchor="middle">GC + airway or smooth muscle</text>
+<rect x="75" y="105" width="200" height="34" rx="17" fill="#fff" stroke="#2a7f8f" stroke-width="1.5"/>
+<text x="175" y="128" font-size="17" fill="#333" text-anchor="middle" font-weight="bold">TSC22D3 (22)</text>
+<rect x="75" y="149" width="200" height="34" rx="17" fill="#fff" stroke="#2a7f8f" stroke-width="1.5"/>
+<text x="175" y="172" font-size="17" fill="#333" text-anchor="middle" font-weight="bold">FKBP5 (11)</text>
+<rect x="75" y="193" width="200" height="34" rx="17" fill="#fff" stroke="#2a7f8f" stroke-width="1.5"/>
+<text x="175" y="216" font-size="17" fill="#333" text-anchor="middle" font-weight="bold">PER1 (4)</text>
+<rect x="75" y="237" width="200" height="34" rx="17" fill="#fff" stroke="#2a7f8f" stroke-width="1.5"/>
+<text x="175" y="260" font-size="17" fill="#333" text-anchor="middle" font-weight="bold">ZBTB16 (4)</text>
+<text x="175" y="335" font-size="16" fill="#2a7f8f" text-anchor="middle" font-weight="bold">confirms the experiment worked</text>
+<rect x="350" y="20" width="310" height="330" rx="8" fill="#f6f1e1" stroke="#8a6a12" stroke-width="2"/>
+<text x="505" y="55" font-size="20" fill="#8a6a12" text-anchor="middle" font-weight="bold">known elsewhere</text>
+<text x="505" y="82" font-size="16" fill="#333" text-anchor="middle">GC, but other tissues</text>
+<rect x="405" y="105" width="200" height="34" rx="17" fill="#fff" stroke="#8a6a12" stroke-width="1.5"/>
+<text x="505" y="128" font-size="17" fill="#333" text-anchor="middle" font-weight="bold">FAM107A (brain)</text>
+<rect x="405" y="149" width="200" height="34" rx="17" fill="#fff" stroke="#8a6a12" stroke-width="1.5"/>
+<text x="505" y="172" font-size="17" fill="#333" text-anchor="middle" font-weight="bold">ANGPTL7 (eye)</text>
+<text x="505" y="335" font-size="16" fill="#8a6a12" text-anchor="middle" font-weight="bold">plausible here: cite the other context</text>
+<rect x="680" y="20" width="310" height="330" rx="8" fill="#f9ecef" stroke="#a8324a" stroke-width="2"/>
+<text x="835" y="55" font-size="20" fill="#a8324a" text-anchor="middle" font-weight="bold">nothing found</text>
+<text x="835" y="82" font-size="16" fill="#333" text-anchor="middle">with GC, any tissue</text>
+<rect x="735" y="105" width="200" height="34" rx="17" fill="#fff" stroke="#a8324a" stroke-width="1.5"/>
+<text x="835" y="128" font-size="17" fill="#333" text-anchor="middle" font-weight="bold">SPARCL1 (0)</text>
+<rect x="735" y="149" width="200" height="34" rx="17" fill="#fff" stroke="#a8324a" stroke-width="1.5"/>
+<text x="835" y="172" font-size="17" fill="#333" text-anchor="middle" font-weight="bold">RASL11B (0)</text>
+<rect x="735" y="193" width="200" height="34" rx="17" fill="#fff" stroke="#a8324a" stroke-width="1.5"/>
+<text x="835" y="216" font-size="17" fill="#333" text-anchor="middle" font-weight="bold">FER1L6 (0)</text>
+<rect x="735" y="237" width="200" height="34" rx="17" fill="#fff" stroke="#a8324a" stroke-width="1.5"/>
+<text x="835" y="260" font-size="17" fill="#333" text-anchor="middle" font-weight="bold">CACNB2 (0)</text>
+<text x="835" y="335" font-size="16" fill="#a8324a" text-anchor="middle" font-weight="bold">candidate novelty, or a name problem</text>
+<text x="20" y="385" font-size="16" fill="#777" text-anchor="start">airway, strongly changed genes. In brackets: PubMed hits for gene (with aliases) AND glucocorticoid AND</text>
+<text x="20" y="407" font-size="16" fill="#777" text-anchor="start">(airway OR smooth muscle), 2026-11-23. The bin is where reading starts, not a verdict.</text>
+</svg>

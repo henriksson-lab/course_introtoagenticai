@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 540" width="1000" height="540" font-family="Helvetica, Arial, sans-serif">
+<rect width="1000" height="540" fill="#ffffff"/>
+<text x="30" y="36" font-size="18" fill="#8a97a5" text-anchor="start" font-weight="bold">What you do</text>
+<text x="420" y="36" font-size="18" fill="#8a97a5" text-anchor="start" font-weight="bold">Legal basis</text>
+<text x="680" y="36" font-size="18" fill="#8a97a5" text-anchor="start" font-weight="bold">In the EU</text>
+<rect x="20" y="55" width="960" height="80" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+<text x="36" y="88" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold">Use the program and</text>
+<text x="36" y="112" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold">watch the USB traffic</text>
+<text x="420" y="100" font-size="17" fill="#1b2a3a" text-anchor="start">Software Dir. Art. 5(3)</text>
+<text x="680" y="88" font-size="17" fill="#2a7f8f" text-anchor="start" font-weight="bold">Allowed for a lawful user</text>
+<text x="680" y="112" font-size="16" fill="#1b2a3a" text-anchor="start">a licence term cannot forbid it</text>
+<rect x="20" y="147" width="960" height="80" rx="10" fill="#e3f1f3" stroke="#2a7f8f" stroke-width="2"/>
+<text x="36" y="180" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold">Take the instrument apart,</text>
+<text x="36" y="204" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold">test it</text>
+<text x="420" y="192" font-size="17" fill="#1b2a3a" text-anchor="start">Trade Secrets Dir. Art. 3(1)(b)</text>
+<text x="680" y="180" font-size="17" fill="#2a7f8f" text-anchor="start" font-weight="bold">Allowed, unless a contract says no</text>
+<text x="680" y="204" font-size="16" fill="#1b2a3a" text-anchor="start">a contract can forbid it</text>
+<rect x="20" y="239" width="960" height="80" rx="10" fill="#f6efdc" stroke="#8a6a12" stroke-width="2"/>
+<text x="36" y="272" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold">Decompile the parts needed</text>
+<text x="36" y="296" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold">to interoperate</text>
+<text x="420" y="284" font-size="17" fill="#1b2a3a" text-anchor="start">Software Dir. Art. 6</text>
+<text x="680" y="272" font-size="17" fill="#8a6a12" text-anchor="start" font-weight="bold">Allowed, under conditions</text>
+<text x="680" y="296" font-size="16" fill="#1b2a3a" text-anchor="start">a licence term cannot forbid it</text>
+<rect x="20" y="331" width="960" height="80" rx="10" fill="#f8e6ea" stroke="#a8324a" stroke-width="2"/>
+<text x="36" y="364" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold">Copy decompiled code into</text>
+<text x="36" y="388" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold">your driver</text>
+<text x="420" y="376" font-size="17" fill="#1b2a3a" text-anchor="start">copyright</text>
+<text x="680" y="364" font-size="17" fill="#a8324a" text-anchor="start" font-weight="bold">Not allowed</text>
+<rect x="20" y="423" width="960" height="80" rx="10" fill="#f8e6ea" stroke="#a8324a" stroke-width="2"/>
+<text x="36" y="456" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold">Share the vendor's DLL</text>
+<text x="36" y="480" font-size="18" fill="#1b2a3a" text-anchor="start" font-weight="bold">or firmware</text>
+<text x="420" y="468" font-size="17" fill="#1b2a3a" text-anchor="start">copyright</text>
+<text x="680" y="456" font-size="17" fill="#a8324a" text-anchor="start" font-weight="bold">Not allowed without a licence</text>
+<text x="980" y="532" font-size="14" fill="#8a97a5" text-anchor="end">simplified; not legal advice</text>
+</svg>

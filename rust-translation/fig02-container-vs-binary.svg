@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 440" font-family="Helvetica, Arial, sans-serif">
+  <rect width="1000" height="440" fill="#fff"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0,0 L10,5 L0,10 Z" fill="#555"/></marker></defs>
+  <text x="230" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#2a5f9f">Container image</text>
+  <rect x="40" y="45" width="380" height="330" rx="8" fill="#f3f7fb" stroke="#2a5f9f" stroke-width="2"/>
+  <rect x="60" y="62" width="340" height="60" rx="6" fill="#eee" stroke="#888"/>
+  <text x="230" y="98" font-size="18" text-anchor="middle" fill="#333">operating system files (Linux)</text>
+  <rect x="60" y="135" width="340" height="170" rx="6" fill="#eef6e6" stroke="#5a8f3a"/>
+  <text x="230" y="158" font-size="17" text-anchor="middle" fill="#3d6b26">Conda environment</text>
+  <g fill="#b9d99f" stroke="#5a8f3a">
+    <rect x="75" y="170" width="70" height="36"/><rect x="155" y="170" width="70" height="36"/><rect x="235" y="170" width="70" height="36"/><rect x="315" y="170" width="70" height="36"/>
+    <rect x="75" y="214" width="70" height="36"/><rect x="155" y="214" width="70" height="36"/><rect x="235" y="214" width="70" height="36"/><rect x="315" y="214" width="70" height="36"/>
+    <rect x="75" y="258" width="70" height="36" fill="#ddd"/><rect x="155" y="258" width="70" height="36" fill="#ddd"/><rect x="235" y="258" width="70" height="36" fill="#ddd"/><rect x="315" y="258" width="70" height="36" fill="#ddd"/>
+  </g>
+  <rect x="60" y="318" width="340" height="44" rx="6" fill="#fbe9ea" stroke="#a8324a"/>
+  <text x="230" y="346" font-size="18" text-anchor="middle" fill="#a8324a">your pipeline</text>
+  <text x="230" y="402" font-size="17" text-anchor="middle" fill="#333">tools talk through files and pipes</text>
+  <line x1="450" y1="210" x2="545" y2="210" stroke="#555" stroke-width="3" marker-end="url(#a)"/>
+  <text x="497" y="195" font-size="16" text-anchor="middle" fill="#555">translate</text>
+  <text x="760" y="30" font-size="20" font-weight="bold" text-anchor="middle" fill="#a8324a">One Rust binary</text>
+  <rect x="580" y="120" width="360" height="200" rx="8" fill="#fdf3ea" stroke="#d07a2a" stroke-width="2"/>
+  <g fill="#e6e6e6" stroke="#999">
+    <rect x="600" y="140" width="70" height="36"/><rect x="680" y="140" width="70" height="36"/><rect x="760" y="140" width="70" height="36"/><rect x="840" y="140" width="70" height="36"/>
+    <rect x="600" y="184" width="70" height="36"/><rect x="680" y="184" width="70" height="36"/><rect x="760" y="184" width="70" height="36"/><rect x="840" y="184" width="70" height="36"/>
+  </g>
+  <rect x="600" y="240" width="320" height="60" rx="6" fill="#fbe9ea" stroke="#a8324a"/>
+  <text x="760" y="276" font-size="18" text-anchor="middle" fill="#a8324a">your pipeline + translated tools</text>
+  <text x="760" y="352" font-size="17" text-anchor="middle" fill="#333">tools are called as functions inside one program;</text>
+  <text x="760" y="376" font-size="17" text-anchor="middle" fill="#333">Cargo manages all versions at build time</text>
+  <text x="990" y="432" font-size="13" text-anchor="end" fill="#888">After Henriksson 2026, Fig. 3a, arXiv:2608.13029, CC BY 4.0</text>
+</svg>
