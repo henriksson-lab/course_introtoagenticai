@@ -192,6 +192,10 @@ These rules decide the order. Check any reordering against them.
     Zotero); a reusable "house style" for figures or reports.
 21. **Reading other people's code.** Explain, document, port (MATLAB → R/Python)
     and test that the results match.
+### Part 6: The wider picture
+These units need little hands-on agent skill and could move earlier; each
+notes its own placement question.
+
 22. **Open-weights models and data privacy.** Closed models (Claude, GPT) vs
     open-weights models (e.g. Llama, Qwen, Mistral, gpt-oss) that anyone can
     download and run. Where the data goes in each case: the provider's cloud,
@@ -205,6 +209,62 @@ These rules decide the order. Check any reordering against them.
     *Privacy, ethics and safety* for participants whose own project involves
     sensitive data. *Privacy, ethics and safety* should point forward to it
     either way.
+23. **Labelling AI-generated content: the EU rules, watermarks and detection.**
+    No maths; pictures and small worked examples only.
+    - The rules: the EU AI Act's transparency obligations (Article 50).
+      Providers must mark AI-generated content in a machine-readable way;
+      people who publish deepfakes or AI-written text meant to inform the
+      public must disclose it. The EU code of practice on marking and labelling
+      AI-generated content. **[?]** Check current dates and status before
+      writing; they were being phased in during 2026.
+    - What it means for participants: course pages, figures, slides and press
+      texts they publish; their own university's disclosure rules.
+    - How marking works, at a basic level:
+      - *Metadata labels* (e.g. C2PA "content credentials"): a signed note
+        attached to the file. Easy to read, easy to strip by taking a
+        screenshot.
+      - *Invisible watermarks in images and audio* (e.g. Google's SynthID):
+        a pattern hidden in the pixels, invisible to the eye but detectable by
+        a program that knows the key. Survives some editing, not all.
+      - *Watermarks in text*: the model is nudged to prefer certain words
+        slightly more often. A detector that knows the rule counts them; with
+        enough text the excess is very unlikely to be chance. Show it as a
+        coin-flip analogy, not a formula. Paraphrasing or translating weakens
+        it, and short texts carry too little signal.
+    - "AI detectors" for student texts that use no watermark: why they are
+      unreliable, with false accusations especially against non-native
+      writers. Important for teachers: a detector score is not evidence.
+    - Exercise idea: inspect the content credentials of an AI-generated image;
+      run a toy text-watermark demo (a coin-flip simulation in a self-contained
+      HTML page) to see how much text a detector needs.
+    - **[?]** Placement: near *Privacy, ethics and safety*, or before *A course
+      or project page* (the first time participants publish content).
+24. **Limits of AI for biological research: safety guardrails.**
+    - Why they exist: providers block help that could make biological
+      weapons or dangerous pathogens easier to produce (dual-use concern).
+      Anthropic and OpenAI both run extra safeguards for biology in their most
+      capable models. **[?]** Check each provider's current public policy pages
+      before writing.
+    - When they occur: mostly around pathogens and toxins, such as enhancing
+      transmissibility or virulence, synthesis or acquisition routes for select
+      agents and toxins, or detailed protocols for working with them. Legitimate
+      work can trigger them too (virology, toxin biology, some protein design,
+      biosecurity research itself).
+    - What they look like: a refusal; a partial or vaguer answer than usual; a
+      warning message; in an agent, a task that stops partway or a session that
+      ends. Show real-looking (illustrative) examples of each.
+    - What to do: recognise it as a policy limit, not a bug; do not try to get
+      around it; use the provider's channels for legitimate research access
+      where they exist, your institution's biosafety officer, and ordinary
+      literature and colleagues. Never paste restricted or dual-use protocols
+      into a cloud model.
+    - Other limits for biologists, beyond safety guardrails: protocols the model
+      invents or gets subtly wrong (chemical hazards, concentrations, missing
+      safety steps), medical questions, and the gap between plausible text and
+      what actually works at the bench.
+    - Relevant for Track A (RNA-seq) and anyone in life sciences or medicine.
+      **[?]** Placement: a unit here, or a section of *How LLMs and agents
+      work, and how they fail*.
 
 ### Pending additions to existing units
 - *How LLMs and agents work*: add a high-level slide on **how each token
